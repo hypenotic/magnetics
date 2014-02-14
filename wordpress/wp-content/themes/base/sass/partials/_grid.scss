@@ -1,0 +1,76 @@
+$total-columns: 7;
+$column-width: 3.5em;
+$gutter-width: 1.5em;
+$grid-padding: $gutter-width;
+$desktop: 55em 15;
+
+@include border-box-sizing;
+
+.wrapper {
+    @include transition(transform 500ms ease);
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+    z-index: 2000;
+}
+
+.container {
+    @include container($total-columns, $desktop);
+    overflow: hidden;
+}
+
+header {
+    background: $black;
+    position: relative;
+}
+
+nav {
+    @include span-columns(1 omega);
+    @include at-breakpoint($desktop) {
+        @include span-columns(10 omega);
+    }
+}
+
+aside {
+    @include span-columns(7);
+    @include at-breakpoint($desktop) {
+        @include span-columns(4);
+    }
+}
+
+article {
+    @include span-columns(7);
+    @include at-breakpoint($desktop) {
+        @include span-columns(10 omega);
+        @include suffix(1);
+    }
+}
+
+footer {
+    background: $black;
+}
+
+.row {
+    @include span-columns(7);
+    @include at-breakpoint($desktop) {
+        @include pad(2, 2);
+        @include span-columns(15);
+    }
+}
+
+.columns-2 {
+    @include isolate-grid(7);
+    @include at-breakpoint($desktop) {
+        @include isolate-grid(7);
+    }
+}
+
+.columns-3 {
+    @include isolate-grid(7);
+    @include at-breakpoint($desktop) {
+        @include isolate-grid(5);
+        &:nth-child(2) {
+            @include pad(0, 1);
+        }
+    }
+}
