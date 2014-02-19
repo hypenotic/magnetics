@@ -1,0 +1,153 @@
+$offcanvas-panel-width: 20em;
+
+.offcanvas {
+    overflow-x: hidden;
+    .offcanvas-menu-button {
+
+        @include transition(transform 500ms ease);
+        float: right;
+        margin-right: 25px;
+        margin-top: 35px;
+        z-index: 2015;
+        @include at-breakpoint($desktop) {
+            display: none;
+            /* Hide For big screen*/
+        }
+        &.desktop {
+            display: block;
+            width: 46px;
+        }
+        &.left {
+            float: left;
+        }
+        a {
+            border: 2px solid #FFF;
+            display: block;
+            font-size: 0;
+            height: 39px;
+            margin: 20px 0 0 0;
+            overflow: hidden;
+            padding: 8px 11px;
+            position: relative;
+            width: 46px;
+            z-index: 9999;
+            &:before {
+                background: url("images/offcanvas-buttons.png") no-repeat;
+                content: '';
+                display: block;
+                height: 19px;
+                width: 20px;
+            }
+            &:hover {
+                border: 2px solid #092148;
+                &:before {
+                    background-position: -20px 0;
+                }
+            }
+        }
+    }
+    .offcanvas-close-button {
+        border: 2px solid #092148;
+        display: block;
+        font-size: 0;
+        height: 39px;
+        left: 75%;
+        overflow: hidden;
+        padding: 8px 12px;
+        position: relative;
+        top: 0;
+        width: 46px;
+        z-index: 9999;
+        &:before {
+            background: url("images/offcanvas-buttons.png") no-repeat 0px -19px;
+            content: '';
+            display: block;
+            height: 19px;
+            width: 20px;
+        }
+    }
+    .offcanvas-menu {
+        -webkit-overflow-scrolling: touch;
+        @include transition(all 0.3s);
+        @include translateX($offcanvas-panel-width);
+        background: $white;
+        display: block;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 60px 0px;
+        position: fixed;
+        right: 0px;
+        top: 0;
+        width: $offcanvas-panel-width;
+        z-index: 10;
+        z-index: 9999;
+        &.left {
+            left: 0px;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        ul {
+            @include adjust-font-size-to(15px);
+            margin: 0;
+            padding: 50px 0 0 0;
+            li {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                &.current-menu-item {
+                    background: #5c6f81;
+                    a {
+                        color: $white;
+                    }
+                }
+                a {
+                    @include adjust-font-size-to(22px);
+                    border-bottom: 1px solid #c0c9d1;
+                    color: #5c6f81;
+                    display: block;
+                    font-family: $ubuntulight;
+                    padding: 20px 30px;
+                    text-decoration: none;
+                    &:hover {
+                        background: #5c6f81;
+                        color: $white;
+                    }
+                }
+            }
+            &.sub-menu {
+                padding: 0;
+                li {
+                    @include transition(all 0.3s);
+                    height: 0;
+                    opacity: 0;
+                    a {
+                        color: #c0c9d1;
+                    }
+                }
+            }
+        }
+    }
+    &.open-left {
+        overflow-x: hidden;
+        .offcanvas-menu.left {
+            left: 0;
+        }
+        & .offcanvas-menu .sub-menu li {
+            height: 60px;
+            opacity: 1;
+        }
+    }
+    &.open-right {
+        overflow-x: hidden;
+        .offcanvas-menu.right {
+            @include translateY(0);
+            right: 0;
+        }
+        & .offcanvas-menu .sub-menu li {
+            height: 60px;
+            opacity: 1;
+        }
+    }
+}
