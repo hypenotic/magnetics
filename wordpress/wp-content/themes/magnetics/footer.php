@@ -1,38 +1,15 @@
-<?php /*?><footer>
-
-	<!--Footer row -->
+<footer>
 	<div class="container">
-		<div class="columns-3">
-			<h5>Column 1</h5>
-			<?php recentposts(); ?>
-		</div>
-		<div class="columns-3">
-			<h5>Column 2</h5>
-			<form action="#" method="post">
-            	<fieldset>
-                	<ol>
-                		<li><input name="EMAIL" placeholder="you@yourdomain.com" type="email" value=""  id="mce-EMAIL" required></li>
-              		</ol>
-              		<input type="submit" value="Yes">
-            	</fieldset>
-          	</form>
-		</div>
-		<div class="columns-3">
-			<h5>Column 3</h5>
-			<p>content here</p>
-		</div>
-	</div>
-
-	<!--Copyright row -->
-	<div class="container">
-		<div class="columns-2">
-			<p class="small">&copy; 1998 - <?php echo date("Y") ?> Company Name. All Rights Reserved.</p>
-		</div>
-		<div class="columns-2">
-			<p class="small">Made with love by B Corp certified <a href="http://hypenotic.com">Hypenotic</a></p>
-		</div>
-	</div>
-</footer><?php */?>
+    	<div class="column-span-9">
+        	<h2>RMA FORM</h2>
+            <p>Lorem ipsumu dolor sit amet, consectetur adipiscing elit. Etiam pharetra.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra</p>
+            <p><a href="#">Go to Form ></a></p>
+        </div>
+        <div class="column-span-8">
+	        <h2>Contact</h2>
+        </div>
+    </div>
+</footer>
 </div>
 <?php wp_footer();?>
 </body>

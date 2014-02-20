@@ -279,7 +279,7 @@ table {
     clear: both; }
   @media (min-width: 55em) {
     .container {
-      max-width: 49em; } }
+      max-width: 73em; } }
 
 .wrapper {
   background: #fff;
@@ -303,9 +303,9 @@ nav {
   display: inline; }
   @media (min-width: 55em) {
     .column-span-wide {
-      width: 100%;
+      width: 66.19718%;
       float: left;
-      margin-right: 2.12766%; } }
+      margin-right: 1.40845%; } }
 
 .column-span-1 {
   width: 85.18519%;
@@ -314,9 +314,9 @@ nav {
   display: inline; }
   @media (min-width: 55em) {
     .column-span-1 {
-      width: 100%;
+      width: 66.19718%;
       float: left;
-      margin-right: 2.12766%; } }
+      margin-right: 1.40845%; } }
 
 .column-span-2 {
   width: 85.18519%;
@@ -325,9 +325,9 @@ nav {
   display: inline; }
   @media (min-width: 55em) {
     .column-span-2 {
-      width: 14.89362%;
+      width: 9.85915%;
       float: left;
-      margin-right: 2.12766%; } }
+      margin-right: 1.40845%; } }
 
 .column-span-3 {
   width: 85.18519%;
@@ -336,9 +336,9 @@ nav {
   display: inline; }
   @media (min-width: 55em) {
     .column-span-3 {
-      width: 23.40426%;
+      width: 15.49296%;
       float: left;
-      margin-right: 2.12766%; } }
+      margin-right: 1.40845%; } }
 
 .column-span-4 {
   width: 85.18519%;
@@ -347,9 +347,9 @@ nav {
   display: inline; }
   @media (min-width: 55em) {
     .column-span-4 {
-      width: 31.91489%;
+      width: 21.12676%;
       float: left;
-      margin-right: 2.12766%; } }
+      margin-right: 1.40845%; } }
 
 .column-span-5 {
   width: 85.18519%;
@@ -358,9 +358,9 @@ nav {
   display: inline; }
   @media (min-width: 55em) {
     .column-span-5 {
-      width: 40.42553%;
+      width: 26.76056%;
       float: left;
-      margin-right: 2.12766%; } }
+      margin-right: 1.40845%; } }
 
 .column-span-7 {
   width: 85.18519%;
@@ -369,9 +369,9 @@ nav {
   display: inline; }
   @media (min-width: 55em) {
     .column-span-7 {
-      width: 57.44681%;
+      width: 38.02817%;
       float: left;
-      margin-right: 2.12766%; } }
+      margin-right: 1.40845%; } }
 
 .column-span-8 {
   width: 85.18519%;
@@ -380,9 +380,9 @@ nav {
   display: inline; }
   @media (min-width: 55em) {
     .column-span-8 {
-      width: 65.95745%;
+      width: 43.66197%;
       float: left;
-      margin-right: 2.12766%; } }
+      margin-right: 1.40845%; } }
 
 .column-span-9 {
   width: 85.18519%;
@@ -391,9 +391,9 @@ nav {
   display: inline; }
   @media (min-width: 55em) {
     .column-span-9 {
-      width: 74.46809%;
+      width: 49.29577%;
       float: left;
-      margin-right: 2.12766%; } }
+      margin-right: 1.40845%; } }
 
 .column-isolate-2 {
   width: 85.18519%;
@@ -406,15 +406,18 @@ nav {
     clear: left; }
   @media (min-width: 55em) {
     .column-isolate-2 {
-      width: 48.93617%;
+      width: 32.39437%;
       float: left;
-      margin-right: 2.12766%;
+      margin-right: 1.40845%;
       margin-right: -100%; }
-      .column-isolate-2:nth-child(2n + 1) {
+      .column-isolate-2:nth-child(3n + 1) {
         margin-left: 0%;
         clear: left; }
-      .column-isolate-2:nth-child(2n + 2) {
-        margin-left: 51.06383%;
+      .column-isolate-2:nth-child(3n + 2) {
+        margin-left: 33.80282%;
+        clear: none; }
+      .column-isolate-2:nth-child(3n + 3) {
+        margin-left: 67.60563%;
         clear: none; } }
 
 .column-isolate-3 {
@@ -428,18 +431,21 @@ nav {
     clear: left; }
   @media (min-width: 55em) {
     .column-isolate-3 {
-      width: 31.91489%;
+      width: 21.12676%;
       float: left;
-      margin-right: 2.12766%;
+      margin-right: 1.40845%;
       margin-right: -100%; }
-      .column-isolate-3:nth-child(3n + 1) {
+      .column-isolate-3:nth-child(4n + 1) {
         margin-left: 0%;
         clear: left; }
-      .column-isolate-3:nth-child(3n + 2) {
-        margin-left: 34.04255%;
+      .column-isolate-3:nth-child(4n + 2) {
+        margin-left: 22.53521%;
         clear: none; }
-      .column-isolate-3:nth-child(3n + 3) {
-        margin-left: 68.08511%;
+      .column-isolate-3:nth-child(4n + 3) {
+        margin-left: 45.07042%;
+        clear: none; }
+      .column-isolate-3:nth-child(4n + 4) {
+        margin-left: 67.60563%;
         clear: none; } }
 
 body {
@@ -508,11 +514,11 @@ a img.aligncenter {
   margin-right: auto; }
 
 .wp-caption {
+  /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
   background: #fff;
   border: 1px solid #f0f0f0;
   max-width: 96%;
-  /* Image does not overflow the content area */
-  padding: 5px 3px 10px;
   text-align: center; }
 
 .wp-caption.alignnone {
@@ -668,11 +674,12 @@ a {
     text-decoration: none; }
 
 .front-headline {
-  font-size: 2.5625em;
-  line-height: 1.17073em;
+  font-size: 16.875em;
+  line-height: 1.02222em;
   color: white;
+  font-family: "ubuntulight";
   text-align: center;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 81px #003770;
   text-transform: uppercase;
   width: 80%; }
   .front-headline a {
@@ -719,6 +726,22 @@ a {
   font-size: 0.3125em;
   line-height: 2.4em;
   color: #666; }
+
+footer {
+  background: #001f3f;
+  color: white;
+  padding: 80px 0px; }
+  footer h2 {
+    padding: 50px 0 100px; }
+  @media (min-width: 55em) {
+    footer .column-span-9 {
+      border-right: 1px solid white;
+      padding-right: 50px; } }
+  @media (min-width: 55em) {
+    footer .column-span-8 {
+      padding-left: 50px; } }
+  footer a {
+    color: white; }
 
 #pagination a.newer, #pagination a.older {
   background-color: #111;
@@ -826,8 +849,8 @@ footer input[type="text"], footer input[type="email"] {
   border: 1px solid #cacbc1;
   padding: 0.50em;
   width: 100%;
-  background-color: white;
   background-position: 95% -55px;
+  background-color: white;
   background-repeat: no-repeat; }
   footer input[type="text"]:focus, footer input[type="email"]:focus {
     border: 1px solid #3674bb;
@@ -1044,7 +1067,7 @@ footer input[type="submit"] {
 .banner span {
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
   display: inline-block;
   width: 100%; }
 
@@ -1195,3 +1218,20 @@ footer input[type="submit"] {
     .offcanvas.open-right .offcanvas-menu .sub-menu li {
       height: 60px;
       opacity: 1; }
+
+.error404 .bannertext p {
+  color: white;
+  text-align: center; }
+.error404 .bannertext .menu {
+  list-style: none;
+  padding: 0;
+  text-align: center; }
+  .error404 .bannertext .menu li {
+    display: inline-block; }
+    .error404 .bannertext .menu li a {
+      border-right: 3px solid #fff;
+      color: white;
+      font-family: "ubuntubold";
+      padding: 0px 15px 0 7px; }
+    .error404 .bannertext .menu li:last-child a {
+      border: none; }
