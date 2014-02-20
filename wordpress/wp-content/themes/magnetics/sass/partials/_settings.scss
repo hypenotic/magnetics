@@ -22,7 +22,8 @@ Version: 1.0
 // Partials
 @import "grid";
 @import "core";
-@import "typography";
+@import "typography-base";
+@import "typography-custom";
 @import "pagination";
 @import "form";
 @import "search";

@@ -21,10 +21,10 @@ module.exports = function(grunt) {
                 files: '<%= jshint.all %>',
                 tasks: ['jshint', 'uglify', 'notify:success']
             },
-         //   imagemin: {
-           //     files: ['images/**/*'],
-            //    tasks: ['imagemin', 'notify:success']
-            //},
+            imagemin: {
+                files: ['images/**/*'],
+                tasks: ['imagemin', 'notify:success']
+            },
             options: {
                 livereload: true
             }
@@ -91,20 +91,20 @@ module.exports = function(grunt) {
         },
 
         // image optimization
-       // imagemin: {
-//            dist: {
-//                options: {
-//                    optimizationLevel: 7,
-//                    progressive: true
-//                },
-//                files: [{
-//                    expand: true,
-//                    cwd: 'images/',
-//                    src: ['**/*.{png,jpg,gif}'],
-//                    dest: 'images/'
-//                }]
-//            }
-//        }
+       imagemin: {
+            dist: {
+                options: {
+                    optimizationLevel: 7,
+                    progressive: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'images/',
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: 'images/'
+                }]
+            }
+        }
 
     });
 

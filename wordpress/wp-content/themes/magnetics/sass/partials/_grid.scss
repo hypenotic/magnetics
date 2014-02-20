@@ -1,19 +1,19 @@
 $total-columns: 7;
-$column-width: 3.5em;
-$gutter-width: 1.5em;
+$column-width: 3em;
+$gutter-width: 1em;
 $grid-padding: $gutter-width;
-$desktop: 55em 15;
+$desktop: 55em 12;
 
 @include border-box-sizing;
-
-.wrapper {
-    background: #fff;
-    position: relative;
-}
 
 .container {
     @include container($total-columns, $desktop);
     overflow: hidden;
+}
+
+.wrapper {
+    background: #fff;
+    position: relative;
 }
 
 header {
@@ -29,46 +29,83 @@ nav {
     z-index: 1;
 }
 
-aside {
-    @include span-columns(7);
+// Span
+
+.column-span-wide {
+    @include span-columns(6);
+    @include at-breakpoint($desktop) {
+        @include span-columns(12);
+    }
+}
+
+.column-span-1 {
+    @include span-columns(6);
+    @include at-breakpoint($desktop) {
+        @include span-columns(12);
+    }
+}
+
+.column-span-2 {
+    @include span-columns(6);
+    @include at-breakpoint($desktop) {
+        @include span-columns(2);
+    }
+}
+
+.column-span-3 {
+    @include span-columns(6);
+    @include at-breakpoint($desktop) {
+        @include span-columns(3);
+    }
+}
+
+.column-span-4 {
+    @include span-columns(6);
     @include at-breakpoint($desktop) {
         @include span-columns(4);
     }
 }
 
-article {
-    @include span-columns(7);
+.column-span-5 {
+    @include span-columns(6);
     @include at-breakpoint($desktop) {
-        @include span-columns(10 omega);
-        @include suffix(1);
+        @include span-columns(5);
     }
 }
 
-footer {
-    background: $black;
-}
-
-.row {
-    @include span-columns(7);
+.column-span-7 {
+    @include span-columns(6);
     @include at-breakpoint($desktop) {
-        @include pad(2, 2);
-        @include span-columns(15);
+        @include span-columns(7);
     }
 }
 
-.columns-2 {
-    @include isolate-grid(7);
+.column-span-8 {
+    @include span-columns(6);
     @include at-breakpoint($desktop) {
-        @include isolate-grid(7);
+        @include span-columns(8);
     }
 }
 
-.columns-3 {
-    @include isolate-grid(7);
+.column-span-9 {
+    @include span-columns(6);
     @include at-breakpoint($desktop) {
-        @include isolate-grid(5);
-        &:nth-child(2) {
-            @include pad(0, 1);
-        }
+        @include span-columns(9);
+    }
+}
+
+// Isolate
+
+.column-isolate-2 {
+    @include isolate-grid(6);
+    @include at-breakpoint($desktop) {
+        @include isolate-grid(6);
+    }
+}
+
+.column-isolate-3 {
+    @include isolate-grid(6);
+    @include at-breakpoint($desktop) {
+        @include isolate-grid(4);
     }
 }

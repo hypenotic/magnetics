@@ -1,0 +1,55 @@
+.front-headline {
+    @include adjust-font-size-to(41px);
+    color: $white;
+    text-align: center;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    width: 80%;
+    & a {
+        color: $light-gray;
+    }
+}
+
+.headline {
+    @include adjust-font-size-to(110px);
+    color: $white;
+    text-align: center;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    width: 90%;
+}
+
+.subhead {
+    @include adjust-font-size-to(41px);
+    color: $white;
+    font-weight: 400;
+    text-align: center;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    width: 40%;
+}
+
+.meta {
+    @include adjust-font-size-to(14px);
+    text-transform: uppercase;
+    & a {
+        color: gray;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.sub-meta {
+    @include adjust-font-size-to(14px);
+    font-style: italic;
+    text-transform: none;
+}
+
+.small {
+    @include adjust-font-size-to(14px);
+}
+
+.wp-caption, .wp-caption-text {
+    @include adjust-font-size-to(5px);
+    color: #666;
+}
