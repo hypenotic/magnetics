@@ -1,6 +1,5 @@
 # Require any additional compass plugins here.
-require 'compass-normalize';
-require "susy";
+require 'susy';
 require 'sassy-buttons';
 
 # Set this to the root of your project when deployed:
@@ -12,6 +11,8 @@ javascripts_dir = "js"
 #fonts_dir = "fonts"
 
 output_style = :nested #compressed
+
+#sourcemap = true
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 relative_assets = true

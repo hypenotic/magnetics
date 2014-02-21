@@ -6,8 +6,6 @@ Author: Hypenotic
 Author URI: http://wordpress.org/
 Version: 1.0
 */
-/*! normalize.css v1.1.0 | MIT License | git.io/normalize */
-/*! normalize.css v1.1.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
 article,
 aside,
 details,
@@ -16,7 +14,6 @@ figure,
 footer,
 header,
 hgroup,
-main,
 nav,
 section,
 summary {
@@ -25,23 +22,20 @@ summary {
 audio,
 canvas,
 video {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1; }
+  display: inline-block; }
 
 audio:not([controls]) {
   display: none;
   height: 0; }
 
-[hidden] {
+[hidden], template {
   display: none; }
 
-/*! normalize.css v1.1.0 | Base | MIT License | git.io/normalize */
 html {
-  font-size: 100%;
-  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%; }
+  background: white;
+  color: black; }
 
 html,
 button,
@@ -53,15 +47,13 @@ textarea {
 body {
   margin: 0; }
 
-/*! normalize.css v1.1.0 | Links | MIT License | git.io/normalize */
-a:focus {
-  outline: thin dotted; }
+a {
+  background: transparent; }
+  a:focus {
+    outline: thin dotted; }
+  a:hover, a:active {
+    outline: 0; }
 
-a:active,
-a:hover {
-  outline: 0; }
-
-/*! normalize.css v1.1.0 | Typography | MIT License | git.io/normalize */
 h1 {
   font-size: 2em;
   margin: 0.67em 0; }
@@ -83,7 +75,7 @@ h5 {
   margin: 1.67em 0; }
 
 h6 {
-  font-size: 0.67em;
+  font-size: 0.75em;
   margin: 2.33em 0; }
 
 abbr[title] {
@@ -93,43 +85,27 @@ b,
 strong {
   font-weight: bold; }
 
-blockquote {
-  margin: 1em 40px; }
-
 dfn {
   font-style: italic; }
-
-hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0; }
 
 mark {
   background: #ff0;
   color: #000; }
-
-p,
-pre {
-  margin: 1em 0; }
 
 code,
 kbd,
 pre,
 samp {
   font-family: monospace, serif;
-  _font-family: 'courier new', monospace;
   font-size: 1em; }
 
 pre {
-  white-space: pre;
   white-space: pre-wrap;
+  white-space: pre;
   word-wrap: break-word; }
 
 q {
   quotes: "\201C" "\201D" "\2018" "\2019"; }
-
-q {
-  quotes: none; }
 
 q:before,
 q:after {
@@ -152,39 +128,13 @@ sup {
 sub {
   bottom: -0.25em; }
 
-dl,
-menu,
-ol,
-ul {
-  margin: 1em 0; }
-
-dd {
-  margin: 0 0 0 40px; }
-
-menu,
-ol,
-ul {
-  padding: 0 0 0 40px; }
-
-nav ul,
-nav ol {
-  list-style: none;
-  list-style-image: none; }
-
-/*! normalize.css v1.1.0 | Embedded Content | MIT License | git.io/normalize */
 img {
-  border: 0;
-  -ms-interpolation-mode: bicubic; }
+  border: 0; }
 
 svg:not(:root) {
   overflow: hidden; }
 
-/*! normalize.css v1.1.0 | Figures | MIT License | git.io/normalize */
 figure {
-  margin: 0; }
-
-/*! normalize.css v1.1.0 | Forms | MIT License | git.io/normalize */
-form {
   margin: 0; }
 
 fieldset {
@@ -195,8 +145,7 @@ fieldset {
 legend {
   border: 0;
   padding: 0;
-  white-space: normal;
-  *margin-left: -7px; }
+  white-space: normal; }
 
 button,
 input,
@@ -205,8 +154,7 @@ textarea {
   font-family: inherit;
   font-size: 100%;
   margin: 0;
-  vertical-align: baseline;
-  *vertical-align: middle; }
+  vertical-align: baseline; }
 
 button,
 input {
@@ -221,23 +169,20 @@ html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
-  cursor: pointer;
-  *overflow: visible; }
+  cursor: pointer; }
 
 button[disabled],
-html input[disabled] {
+input[disabled] {
   cursor: default; }
 
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
-  padding: 0;
-  *height: 13px;
-  *width: 13px; }
+  padding: 0; }
 
 input[type="search"] {
-  -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
+  -webkit-appearance: textfield;
   -webkit-box-sizing: content-box;
   box-sizing: content-box; }
 
@@ -245,8 +190,7 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
-button::-moz-focus-inner,
-input::-moz-focus-inner {
+button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
@@ -254,32 +198,17 @@ textarea {
   overflow: auto;
   vertical-align: top; }
 
-/*! normalize.css v1.1.0 | Tables | MIT License | git.io/normalize */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
 * {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 .container {
-  *zoom: 1;
-  max-width: 29em;
-  _width: 29em;
-  padding-left: 1em;
-  padding-right: 1em;
-  margin-left: auto;
-  margin-right: auto;
   overflow: hidden; }
-  .container:after {
-    content: "";
-    display: table;
-    clear: both; }
-  @media (min-width: 55em) {
-    .container {
-      max-width: 73em; } }
 
 .wrapper {
   background: #fff;
@@ -514,11 +443,11 @@ a img.aligncenter {
   margin-right: auto; }
 
 .wp-caption {
-  /* Image does not overflow the content area */
-  padding: 5px 3px 10px;
   background: #fff;
   border: 1px solid #f0f0f0;
   max-width: 96%;
+  /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
   text-align: center; }
 
 .wp-caption.alignnone {
@@ -538,11 +467,8 @@ a img.aligncenter {
   padding: 0;
   width: auto; }
 
-* html {
-  font-size: 100%; }
-
 html {
-  font-size: 16px;
+  font-size: 100%;
   line-height: 1.5em; }
 
 @font-face {
@@ -551,28 +477,24 @@ html {
   font-weight: normal;
   src: url("sass/fonts/opensans-light.eot");
   src: url("sass/fonts/opensans-light.eot?#iefix") format("embedded-opentype"), url("sass/fonts/opensans-light.woff") format("woff"), url("sass/fonts/opensans-light.ttf") format("truetype"), url("sass/fonts/opensans-light.svg#open_sanslight") format("svg"); }
-
 @font-face {
   font-family: 'ubuntubold';
   font-style: normal;
   font-weight: normal;
   src: url("sass/fonts/ubuntu-bold.eot");
   src: url("sass/fonts/ubuntu-bold.eot?#iefix") format("embedded-opentype"), url("sass/fonts/ubuntu-bold.woff") format("woff"), url("sass/fonts/ubuntu-bold.ttf") format("truetype"), url("sass/fonts/ubuntu-bold.svg#ubuntubold") format("svg"); }
-
 @font-face {
   font-family: 'ubuntulight';
   font-style: normal;
   font-weight: normal;
   src: url("sass/fonts/ubuntu-light.eot");
   src: url("sass/fonts/ubuntu-light.eot?#iefix") format("embedded-opentype"), url("sass/fonts/ubuntu-light.woff") format("woff"), url("sass/fonts/ubuntu-light.ttf") format("truetype"), url("sass/fonts/ubuntu-light.svg#ubuntulight") format("svg"); }
-
 @font-face {
   font-family: 'ubunturegular';
   font-style: normal;
   font-weight: normal;
   src: url("sass/fonts/ubuntu-regular.eot");
   src: url("sass/fonts/ubuntu-regular.eot?#iefix") format("embedded-opentype"), url("sass/fonts/ubuntu-regular.woff") format("woff"), url("sass/fonts/ubuntu-regular.ttf") format("truetype"), url("sass/fonts/ubuntu-regular.svg#ubunturegular") format("svg"); }
-
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   color: black;
   text-decoration: none; }
@@ -772,9 +694,9 @@ footer {
     float: right; }
 
 #pagination a {
-  -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   color: #F5F5F5;
   display: block;
@@ -841,16 +763,14 @@ fieldset {
       margin: 0 0 0 -40px; }
 
 footer input[type="text"], footer input[type="email"] {
-  -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   border: 1px solid #cacbc1;
   padding: 0.50em;
   width: 100%;
-  background-position: 95% -55px;
   background-color: white;
+  background-position: 95% -55px;
   background-repeat: no-repeat; }
   footer input[type="text"]:focus, footer input[type="email"]:focus {
     border: 1px solid #3674bb;
@@ -861,10 +781,8 @@ footer input[type="submit"] {
   padding: 0.5em 1.5em;
   display: inline-block;
   cursor: pointer;
-  -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4BA3CC', endColorstr='#FF276B8A');
@@ -883,8 +801,8 @@ footer input[type="submit"] {
     opacity: 0.6;
     background: false;
     cursor: default;
-    -webkit-box-shadow: none;
     -moz-box-shadow: none;
+    -webkit-box-shadow: none;
     box-shadow: none; }
   footer input[type="submit"]::-moz-focus-inner {
     padding: 0 !important;
@@ -1080,9 +998,9 @@ footer input[type="submit"] {
 .offcanvas {
   overflow-x: hidden; }
   .offcanvas .offcanvas-menu-button {
-    -webkit-transition: -webkit-transform 500ms ease;
     -moz-transition: -moz-transform 500ms ease;
     -o-transition: -o-transform 500ms ease;
+    -webkit-transition: -webkit-transform 500ms ease;
     transition: transform 500ms ease;
     float: right;
     margin-right: 25px;
@@ -1138,14 +1056,14 @@ footer input[type="submit"] {
       width: 20px; }
   .offcanvas .offcanvas-menu {
     -webkit-overflow-scrolling: touch;
-    -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
     transition: all 0.3s;
-    -webkit-transform: translateX(20em);
     -moz-transform: translateX(20em);
     -ms-transform: translateX(20em);
     -o-transform: translateX(20em);
+    -webkit-transform: translateX(20em);
     transform: translateX(20em);
     background: white;
     display: block;
@@ -1191,9 +1109,9 @@ footer input[type="submit"] {
       .offcanvas .offcanvas-menu ul.sub-menu {
         padding: 0; }
         .offcanvas .offcanvas-menu ul.sub-menu li {
-          -webkit-transition: all 0.3s;
           -moz-transition: all 0.3s;
           -o-transition: all 0.3s;
+          -webkit-transition: all 0.3s;
           transition: all 0.3s;
           height: 0;
           opacity: 0; }
@@ -1209,10 +1127,10 @@ footer input[type="submit"] {
   .offcanvas.open-right {
     overflow-x: hidden; }
     .offcanvas.open-right .offcanvas-menu.right {
-      -webkit-transform: translateY(0);
       -moz-transform: translateY(0);
       -ms-transform: translateY(0);
       -o-transform: translateY(0);
+      -webkit-transform: translateY(0);
       transform: translateY(0);
       right: 0; }
     .offcanvas.open-right .offcanvas-menu .sub-menu li {

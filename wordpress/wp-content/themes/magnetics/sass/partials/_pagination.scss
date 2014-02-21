@@ -46,9 +46,9 @@
 }
 
 #pagination a.newer {
+    @extend %position;
     //background:#111 url(../img/icon-arrow-left.png) no-repeat right center;
     @include border-right-radius(3px);
-    @extend %position;
     left: 0;
     margin-left: -160px;
     padding-right: 40px;
@@ -56,9 +56,9 @@
 }
 
 #pagination a.older {
+    @extend %position;
     //background:#111 url(../img/icon-arrow-right.png) no-repeat left center;
     @include border-left-radius(3px);
-    @extend %position;
     margin-right: -160px;
     padding-left: 40px;
     right: 0;
