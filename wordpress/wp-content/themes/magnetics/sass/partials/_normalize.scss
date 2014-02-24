@@ -7,11 +7,6 @@
 // Normalize.scss settings
 // =============================================================================
 
-// Set to true if you want to add support for IE6 and IE7
-// Notice: setting to true might render some elements
-// slightly differently than when set to false
-$legacy_support_for_ie: false !default;
-
 // Used also in Compass
 
 // Set the default font family here so you don't have to override it later
@@ -62,10 +57,6 @@ audio,
 canvas,
 video {
     display: inline-block;
-    @if $legacy_support_for_ie {
-        *display: inline;
-        *zoom: 1;
-    }
 }
 
 // 1. Prevents modern browsers from displaying 'audio' without controls
@@ -102,10 +93,10 @@ html {
     -webkit-text-size-adjust: 100%;
     background: $background;
     color: $color;
-    @if $legacy_support_for_ie {
-        font-size: 100%;
-        // 1
-    }
+    //   @if $legacy_support_for_ie {
+    //      font-size: 100%;
+    // 1
+    //  }
     // 2
 }
 
@@ -195,12 +186,6 @@ strong {
     font-weight: bold;
 }
 
-@if $legacy_support_for_ie {
-    blockquote {
-        margin: 1em 40px;
-    }
-}
-
 // Addresses styling not present in S5, Chrome
 
 dfn {
@@ -214,15 +199,6 @@ mark {
     color: #000;
 }
 
-// Addresses margins set differently in IE6/7
-
-@if $legacy_support_for_ie {
-    p,
-    pre {
-        margin: 1em 0;
-    }
-}
-
 // Corrects font family set oddly in IE6, S4/5, Chrome
 // en.wikipedia.org/wiki/User:Davidgothberg/Test59
 
@@ -232,9 +208,6 @@ pre,
 samp {
     font-family: monospace, serif;
     font-size: 1em;
-    @if $legacy_support_for_ie {
-        _font-family: 'courier new', monospace;
-    }
 }
 
 // Improves readability of pre-formatted text in all browsers
@@ -255,12 +228,6 @@ q {
 // 2. Addresses quote property not supported in S4
 
 // 1
-
-@if $legacy_support_for_ie {
-    q {
-        quotes: none;
-    }
-}
 
 // 2
 q:before,
@@ -295,48 +262,6 @@ sub {
 }
 
 // =============================================================================
-// Lists
-// =============================================================================
-
-// Addresses margins set differently in IE6/7
-
-@if $legacy_support_for_ie {
-    dl,
-    menu,
-    ol,
-    ul {
-        margin: 1em 0;
-    }
-}
-
-@if $legacy_support_for_ie {
-    dd {
-        margin: 0 0 0 40px;
-    }
-}
-
-// Addresses paddings set differently in IE6/7
-
-@if $legacy_support_for_ie {
-    menu,
-    ol,
-    ul {
-        padding: 0 0 0 40px;
-    }
-}
-
-// Corrects list images handled incorrectly in IE7
-
-nav {
-    ul,
-    ol {
-        @if $legacy_support_for_ie {
-            list-style-image: none;
-        }
-    }
-}
-
-// =============================================================================
 // Embedded content
 // =============================================================================
 
@@ -347,10 +272,6 @@ nav {
 img {
     border: 0;
     // 1
-    @if $legacy_support_for_ie {
-        -ms-interpolation-mode: bicubic;
-        // 2
-    }
 }
 
 // Corrects overflow displayed oddly in IE9
@@ -373,14 +294,6 @@ figure {
 // Forms
 // =============================================================================
 
-// Corrects margin displayed oddly in IE6/7
-
-@if $legacy_support_for_ie {
-    form {
-        margin: 0;
-    }
-}
-
 // Define consistent border, margin, and padding
 
 fieldset {
@@ -401,10 +314,6 @@ legend {
     // 2
     white-space: normal;
     // 3
-    @if $legacy_support_for_ie {
-        *margin-left: -7px;
-        // 4
-    }
 }
 
 // 1. Correct font family not being inherited in all browsers.
@@ -423,11 +332,6 @@ textarea {
     margin: 0;
     // 3
     vertical-align: baseline;
-    // 4
-    @if $legacy_support_for_ie {
-        *vertical-align: middle;
-        // 4
-    }
 }
 
 // Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
@@ -463,10 +367,6 @@ input[type="submit"] {
     // 2
     cursor: pointer;
     // 3
-    @if $legacy_support_for_ie {
-        *overflow: visible;
-        // 4
-    }
 }
 
 // Re-set default cursor for disabled elements
@@ -487,12 +387,6 @@ input[type="radio"] {
     // 1
     padding: 0;
     // 2
-    @if $legacy_support_for_ie {
-        *height: 13px;
-        // 3
-        *width: 13px;
-        // 3
-    }
 }
 
 // 1. Addresses appearance set to searchfield in S5, Chrome

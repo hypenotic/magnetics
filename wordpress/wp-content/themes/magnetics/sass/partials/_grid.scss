@@ -1,111 +1,22 @@
-$total-columns: 7;
-$column-width: 3em;
-$gutter-width: 1em;
-$grid-padding: $gutter-width;
-$desktop: 55em 18;
+$susy: (columns: 6, gutters: 1, gutter-position: inside);
 
-@include border-box-sizing;
+$desktop: layout(12);
+$container: 80em;
 
 .container {
-    //$large-container: susy-get(container, $desktop);
-    overflow: hidden;
-}
-
-.wrapper {
-    background: #fff;
-    position: relative;
-}
-
-header {
-    position: relative;
-}
-
-nav {
-    overflow: hidden;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-}
-
-// Span
-
-.column-span-wide {
-    @include span-columns(6);
-    @include at-breakpoint($desktop) {
-        @include span-columns(12);
-    }
-}
-
-.column-span-1 {
-    @include span-columns(6);
-    @include at-breakpoint($desktop) {
-        @include span-columns(12);
-    }
-}
-
-.column-span-2 {
-    @include span-columns(6);
-    @include at-breakpoint($desktop) {
-        @include span-columns(2);
-    }
-}
-
-.column-span-3 {
-    @include span-columns(6);
-    @include at-breakpoint($desktop) {
-        @include span-columns(3);
-    }
+    max-width: $container;
 }
 
 .column-span-4 {
-    @include span-columns(6);
-    @include at-breakpoint($desktop) {
-        @include span-columns(4);
-    }
-}
-
-.column-span-5 {
-    @include span-columns(6);
-    @include at-breakpoint($desktop) {
-        @include span-columns(5);
-    }
-}
-
-.column-span-7 {
-    @include span-columns(6);
-    @include at-breakpoint($desktop) {
-        @include span-columns(7);
+    @include span(6);
+    @include susy-breakpoint(55em, $desktop) {
+        @include span(4);
     }
 }
 
 .column-span-8 {
-    @include span-columns(6);
-    @include at-breakpoint($desktop) {
-        @include span-columns(8);
-    }
-}
-
-.column-span-9 {
-    @include span-columns(6);
-    @include at-breakpoint($desktop) {
-        @include span-columns(9);
-    }
-}
-
-// Isolate
-
-.column-isolate-2 {
-    @include isolate-grid(6);
-    @include at-breakpoint($desktop) {
-        @include isolate-grid(6);
-    }
-}
-
-.column-isolate-3 {
-    @include isolate-grid(6);
-    @include at-breakpoint($desktop) {
-        @include isolate-grid(4);
+    @include span(6);
+    @include susy-breakpoint(55em, $desktop) {
+        @include span(8);
     }
 }
