@@ -1,20 +1,21 @@
+//Mobile first - Global Settings
 $susy: (columns: 6, gutters: 1, gutter-position: inside);
 
+//Layouts
 $desktop: layout(12);
-$container: 80em;
 
 .container {
-    max-width: $container;
+    @include container(80em);
 }
 
-.column-span-4 {
+.span-4 {
     @include span(6);
     @include susy-breakpoint(55em, $desktop) {
         @include span(4);
     }
 }
 
-.column-span-8 {
+.span-8 {
     @include span(6);
     @include susy-breakpoint(55em, $desktop) {
         @include span(8);
