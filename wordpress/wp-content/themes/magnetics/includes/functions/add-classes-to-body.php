@@ -5,10 +5,12 @@
 * @example <?php body_class();?>
 */
 
-add_filter('body_class', 'add_slug_to_body_class');
 function add_slug_to_body_class($classes) {
 	global $post;
     	$classes[] = $post->post_name . ' offcanvas ';
 	return $classes;
 }
+
+add_filter('body_class', 'add_slug_to_body_class');
+
 ?>

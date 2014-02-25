@@ -3,6 +3,7 @@
 /**
 * Enqueue scripts
 */
+
 function my_scripts() {
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', includes_url(). 'js/jquery/jquery.js', null, '1.10.2',true);
@@ -11,4 +12,5 @@ function my_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'my_scripts' );
+
 ?>
