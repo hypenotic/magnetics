@@ -1,0 +1,351 @@
+@include establish-baseline;
+
+@font-face {
+    font-family: 'open_sanslight';
+    font-style: normal;
+    font-weight: normal;
+    src: url("sass/fonts/opensans-light.eot");
+    src: url("sass/fonts/opensans-light.eot?#iefix") format("embedded-opentype"), url("sass/fonts/opensans-light.woff") format("woff"), url("sass/fonts/opensans-light.ttf") format("truetype"), url("sass/fonts/opensans-light.svg#open_sanslight") format("svg");
+}
+
+
+@font-face {
+    font-family: 'ubuntubold';
+    font-style: normal;
+    font-weight: normal;
+    src: url("sass/fonts/ubuntu-bold.eot");
+    src: url("sass/fonts/ubuntu-bold.eot?#iefix") format("embedded-opentype"), url("sass/fonts/ubuntu-bold.woff") format("woff"), url("sass/fonts/ubuntu-bold.ttf") format("truetype"), url("sass/fonts/ubuntu-bold.svg#ubuntubold") format("svg");
+}
+
+
+@font-face {
+    font-family: 'ubuntulight';
+    font-style: normal;
+    font-weight: normal;
+    src: url("sass/fonts/ubuntu-light.eot");
+    src: url("sass/fonts/ubuntu-light.eot?#iefix") format("embedded-opentype"), url("sass/fonts/ubuntu-light.woff") format("woff"), url("sass/fonts/ubuntu-light.ttf") format("truetype"), url("sass/fonts/ubuntu-light.svg#ubuntulight") format("svg");
+}
+
+
+@font-face {
+    font-family: 'ubunturegular';
+    font-style: normal;
+    font-weight: normal;
+    src: url("sass/fonts/ubuntu-regular.eot");
+    src: url("sass/fonts/ubuntu-regular.eot?#iefix") format("embedded-opentype"), url("sass/fonts/ubuntu-regular.woff") format("woff"), url("sass/fonts/ubuntu-regular.ttf") format("truetype"), url("sass/fonts/ubuntu-regular.svg#ubunturegular") format("svg");
+}
+
+
+// Base
+$base-font-size: 16px;
+$base-line-height: 24px;
+$round-to-nearest-half-line: true;
+
+// Fonts
+
+$open_sanslight: "open_sanslight";
+$ubunturegular: "ubunturegular";
+$ubuntulight: "ubuntulight";
+$ubuntubold: "ubuntubold";
+
+/*
+@if true {
+$grid-background-baseline-height: $base-line-height;
+body {
+       @include debug-vertical-alignment;
+    }
+	font-family:$open_sanslight;
+}
+*/
+
+header {
+    ul {
+        list-style: none;
+        li {
+            float: left;
+            padding-left: 15px;
+            &.search-icon {
+                a {
+                    @include border-radius(50%);
+                    background: white;
+                    display: block;
+                    height: 46px;
+                    margin: 20px 0 0 0;
+                    overflow: hidden;
+                    text-indent: -9999px;
+                    width: 46px;
+                    z-index: 9999;
+                    &:before {
+                        background: url("images/search-icon.png") no-repeat center;
+                        content: '';
+                        float: right;
+                        height: 46px;
+                        width: 46px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    a {
+        color: $header_link;
+        text-decoration: none;
+        &:hover {
+            color: $header_link_hover;
+        }
+    }
+}
+
+h1 {
+    @include adjust-font-size-to(26px);
+    font-family: $ubuntubold;
+    margin: 0 auto rhythm(1, 26px);
+    text-transform: uppercase;
+    @include at-breakpoint($desktop) {
+        @include adjust-font-size-to(63px);
+        margin: 0 auto rhythm(1, 63px);
+    }
+}
+
+h2 {
+    @include adjust-font-size-to(24px);
+    font-family: $ubuntubold;
+    margin: 0 auto rhythm(0, 24px);
+    @include at-breakpoint($desktop) {
+        @include adjust-font-size-to(41px);
+        margin: 0 auto rhythm(0, 41px);
+    }
+}
+
+h3 {
+    @include adjust-font-size-to(22px);
+    font-family: $ubuntulight;
+    margin: 0 auto rhythm(0, 22px);
+    @include at-breakpoint($desktop) {
+        @include adjust-font-size-to(38px);
+        margin: 0 auto rhythm(0, 38px);
+    }
+}
+
+h4 {
+    @include adjust-font-size-to(20px);
+    font-family: $ubunturegular;
+    margin: 0 auto rhythm(0, 20px);
+    @include at-breakpoint($desktop) {
+        @include adjust-font-size-to(32px);
+        margin: 0 auto rhythm(0, 32px);
+    }
+}
+
+h5 {
+    @include adjust-font-size-to(18px);
+    font-family: $ubunturegular;
+    margin: 0 auto rhythm(0, 18px);
+    @include at-breakpoint($desktop) {
+        @include adjust-font-size-to(26px);
+        margin: 0 auto rhythm(0, 26px);
+    }
+}
+
+h6 {
+    @include adjust-font-size-to(16px);
+    font-family: $ubunturegular;
+    margin: 0 auto rhythm(0, 16px);
+    @include at-breakpoint($desktop) {
+        @include adjust-font-size-to(24px);
+        margin: 0 auto rhythm(0, 24px);
+    }
+}
+
+p, ul, ol {
+    @include adjust-font-size-to(16px);
+    font-family: $open_sanslight;
+    font-weight: 300;
+    margin: 0 auto rhythm(1, 16px);
+    @include at-breakpoint($desktop) {
+        @include adjust-font-size-to(24px);
+        margin: 0 auto rhythm(1, 24px);
+    }
+}
+
+ul li {
+    margin: 0 auto rhythm(0.5, 24px);
+}
+
+article p {
+    @include at-breakpoint($desktop) {
+        @include adjust-font-size-to(20px);
+        margin: 0 auto rhythm(0, 20px);
+    }
+}
+
+blockquote {
+    @include adjust-font-size-to(16px);
+    margin: 1em;
+    & p {
+        @include adjust-font-size-to(21px);
+        font-family: $ubuntulight;
+        font-weight: 300;
+    }
+    @include at-breakpoint($desktop) {
+        @include adjust-font-size-to(16px);
+        border-top: 1px solid $light_gray;
+        margin: 5em -10em 4em -5em;
+        padding-top: 1em;
+        & p {
+            @include adjust-font-size-to(41px);
+            font-family: $ubuntulight;
+            font-weight: 300;
+        }
+    }
+}
+
+a {
+    color: #4ba3cc;
+    &:hover {
+        color: $light-gray;
+        text-decoration: none;
+    }
+}
+
+.columns-1 ol {
+    border-top: 1px dotted #c5c9c9;
+    counter-reset: ordered-list;
+    margin: 50px 0 50px 0;
+    padding-left: 0px;
+    & li {
+        border-bottom: 1px dotted #c5c9c9;
+        list-style: none;
+        padding: 20px 20px 20px 70px;
+        &:before {
+            @include adjust-font-size-to(18px);
+            color: #4ba3cc;
+            content: counter(ordered-list);
+            counter-increment: ordered-list;
+            display: block;
+            float: left;
+            margin-left: -80px;
+            padding: 0 30px;
+        }
+    }
+}
+
+.columns-1 p:first-of-type {
+    @include adjust-font-size-to(20px);
+    margin: 0 auto rhythm(1, 20px);
+    @include at-breakpoint($desktop) {
+        @include adjust-font-size-to(41px);
+        margin: 0 auto rhythm(1, 41px);
+    }
+}
+
+.front-headline {
+    @include adjust-font-size-to(41px);
+    color: $white;
+    text-align: center;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    width: 80%;
+    & a {
+        color: $light-gray;
+    }
+}
+
+.headline {
+    @include adjust-font-size-to(110px);
+    color: $white;
+    text-align: center;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    width: 90%;
+}
+
+.subhead {
+    @include adjust-font-size-to(41px);
+    color: $white;
+    font-weight: 400;
+    text-align: center;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    width: 40%;
+}
+
+.meta {
+    @include adjust-font-size-to(14px);
+    text-transform: uppercase;
+    & a {
+        color: gray;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.sub-meta {
+    @include adjust-font-size-to(14px);
+    font-style: italic;
+    text-transform: none;
+}
+
+.small {
+    @include adjust-font-size-to(14px);
+}
+
+.wp-caption, .wp-caption-text {
+    @include adjust-font-size-to(5px);
+    color: #666;
+}
+
+footer {
+    background: #001f3f;
+    color: $white;
+    & h1, h2, h3, h4, h5, h6 {
+        @include adjust-font-size-to(20px);
+        font-weight: normal;
+        margin: 0 auto rhythm(1, 20px);
+        text-transform: uppercase;
+    }
+    & p, ul, input[type="email"] {
+        @include adjust-font-size-to(16px);
+    }
+    & ul {
+        list-style-type: none;
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+    & a {
+        border-bottom: 1px dotted $light_gray;
+        color: $white;
+        text-decoration: none;
+        &:hover {
+            border-bottom: none;
+            color: $light_gray;
+            text-decoration: none;
+        }
+    }
+}
+
+.symbol {
+    -moz-font-smoothing: antialiased;
+    -moz-text-rendering: optimizeLegibility;
+    -ms-font-smoothing: antialiased;
+    -ms-text-rendering: optimizeLegibility;
+    -o-font-smoothing: antialiased;
+    -o-text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-rendering: optimizeLegibility;
+    @include adjust-font-size-to(41px);
+    font-smoothing: antialiased;
+    margin-right: .25em;
+    text-rendering: optimizeLegibility;
+    & a {
+        border-bottom: none;
+        color: $light-gray;
+        text-decoration: none;
+        &:hover {
+            color: $white;
+            text-decoration: none;
+        }
+    }
+}

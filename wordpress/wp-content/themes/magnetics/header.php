@@ -50,12 +50,11 @@
 <header>
 	<nav>
     	<div class="container">
-            <div class="column-isolate-2 logo">
+            <div class="span-6 logo">
                 <h1><a href="<?php bloginfo('url');?>">Magnetics</a></h1>
             </div>
-            <div  class="offcanvas-menu-button right desktop"><a href="#">Mobile Menu</a></div> 
-        </div>
+            <div class="offcanvas-menu-button right desktop"><a href="#">Mobile Menu</a></div> 
+       </div>
     </nav>
 </header>
 <div class="wrapper">
-    

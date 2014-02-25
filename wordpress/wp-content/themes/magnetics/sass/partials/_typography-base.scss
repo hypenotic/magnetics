@@ -61,8 +61,7 @@ h1 {
     @include adjust-font-size-to(26px);
     font-family: $ubuntubold;
     margin: 0 auto rhythm(1, 26px);
-    text-transform: uppercase;
-    @include at-breakpoint($desktop) {
+    @include susy-breakpoint(55em, $desktop) {
         @include adjust-font-size-to(133px);
         margin: 0 auto rhythm(1, 133px);
     }
@@ -72,7 +71,7 @@ h2 {
     @include adjust-font-size-to(24px);
     font-family: $ubuntubold;
     margin: 0 auto rhythm(0, 24px);
-    @include at-breakpoint($desktop) {
+    @include susy-breakpoint(55em, $desktop) {
         @include adjust-font-size-to(66px);
         margin: 0 auto rhythm(0, 66px);
     }
@@ -82,7 +81,7 @@ h3 {
     @include adjust-font-size-to(22px);
     font-family: $ubuntulight;
     margin: 0 auto rhythm(0, 22px);
-    @include at-breakpoint($desktop) {
+    @include susy-breakpoint(55em, $desktop) {
         @include adjust-font-size-to(40px);
         margin: 0 auto rhythm(0, 40px);
     }
@@ -91,10 +90,10 @@ h3 {
 h4 {
     @include adjust-font-size-to(20px);
     font-family: $ubunturegular;
-    margin: 0 auto rhythm(0, 20px);
-    @include at-breakpoint($desktop) {
+    margin: 50px auto 20px;
+    @include susy-breakpoint(55em, $desktop) {
         @include adjust-font-size-to(37px);
-        margin: 0 auto rhythm(0, 37px);
+        margin: 100px auto 20px;
     }
 }
 
@@ -102,7 +101,7 @@ h5 {
     @include adjust-font-size-to(18px);
     font-family: $ubunturegular;
     margin: 0 auto rhythm(0, 18px);
-    @include at-breakpoint($desktop) {
+    @include susy-breakpoint(55em, $desktop) {
         @include adjust-font-size-to(24px);
         margin: 0 auto rhythm(0, 24px);
     }
@@ -112,7 +111,7 @@ h6 {
     @include adjust-font-size-to(16px);
     font-family: $ubunturegular;
     margin: 0 auto rhythm(0, 16px);
-    @include at-breakpoint($desktop) {
+    @include susy-breakpoint(55em, $desktop) {
         @include adjust-font-size-to(12px);
         margin: 0 auto rhythm(0, 12px);
     }
@@ -122,8 +121,9 @@ p, ul, ol {
     @include adjust-font-size-to(16px);
     font-family: $open_sanslight;
     margin: 0 auto rhythm(1, 16px);
-    @include at-breakpoint($desktop) {
+    @include susy-breakpoint(55em, $desktop) {
         @include adjust-font-size-to(32px);
+        line-height: 1.5em;
         margin: 0 auto rhythm(1, 32px);
     }
 }
@@ -131,7 +131,7 @@ p, ul, ol {
 blockquote {
     @include adjust-font-size-to(16px);
     font-family: $ubuntulight;
-    @include at-breakpoint($desktop) {
+    @include susy-breakpoint(55em, $desktop) {
         @include adjust-font-size-to(43px);
         margin: 0 auto rhythm(1, 43px);
     }

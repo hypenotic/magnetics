@@ -8,13 +8,13 @@ Version: 1.0
 */
 
 // Library
-@import "normalize";
 @import "breakpoint";
 @import "susy";
 @import "sassy-buttons";
 @import "compass";
 @import "compass/css3";
 @import "compass/typography/vertical_rhythm";
+@import "normalize";
 
 // Modules
 @import "modules/colors";
@@ -23,15 +23,18 @@ Version: 1.0
 // Partials
 @import "grid";
 @import "core";
+@import "navigation";
 
-//@import "typography-base";
-//@import "typography-custom";
+@import "typography-base";
+@import "typography-custom";
+
 //@import "pagination";
 @import "form";
 @import "search";
 
-//@import "banner";
-//@import "offcanvas";
+@import "banner";
+@import "offcanvas";
+@import "buttons";
 
 // Templates
 //@import "templates/error";

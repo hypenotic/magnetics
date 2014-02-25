@@ -10,15 +10,16 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             $image_url = wp_get_attachment_image_src($image_id,'banner', true);
 		}
     ?>
-<div class="banner">
-        <div class="bannertext">
 
-        
-        </div>
-        <span class="bannerimage" style="background-image:url('<?php echo $image_url[0]; ?>'); display: block;">
-            <span class="inner"></span>
-        </span>
-</div>
-
+    <div class="banner" style="background-image:url('<?php echo $image_url[0]; ?>'); display: block;">  	
+            <div class="container">
+                <section class="span-10">
+                    <?php the_title( '<h2>', '</h2>' ); ?>
+					<?php get_template_part( 'template-part', 'add_sub_heading' ); ?>
+                    <?php the_excerpt(); ?>
+                    <a href="<?php the_permalink();?>" class="button"><button class="white">Learn More</button></a>
+                </section>
+            </div>
+    </div>
 <?php endwhile; endif; wp_reset_query();?>
 <?php get_footer(); ?>
