@@ -13,19 +13,17 @@
 
 .headline {
     @include adjust-font-size-to(110px);
+    @include text-shadow(0 0 32px #003770);
     color: $white;
-    text-align: center;
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-    width: 90%;
+    margin-top: 120px;
 }
 
-.subhead {
+.sub-headline {
     @include adjust-font-size-to(41px);
+    @include text-shadow(0 0 32px #003770);
     color: $white;
-    font-weight: 400;
-    text-align: center;
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-    width: 40%;
+    font-family: $ubuntulight;
+    margin-bottom: 130px;
 }
 
 .meta {
@@ -59,17 +57,19 @@ footer {
     background: #001f3f;
     color: $white;
     padding: 80px 0px;
+    .span-10 {
+        float: none;
+        margin: 0 auto;
+    }
     h2 {
         padding: 50px 0 100px;
     }
-    .column-span-9 {
-        @include at-breakpoint($desktop) {
-            border-right: 1px solid $white;
-            padding-right: 50px;
-        }
+    h4 {
+        margin-top: 0;
     }
-    .column-span-8 {
-        @include at-breakpoint($desktop) {
+    .span-6:last-child {
+        @include susy-breakpoint(55em, $desktop) {
+            border-left: 1px solid $white;
             padding-left: 50px;
         }
     }

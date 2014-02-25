@@ -1,13 +1,21 @@
 .banner {
+    background-color: #001f3f;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: $white;
+    padding: 100px 0;
     position: relative;
+    .span-10 {
+        float: none;
+        margin: 0 auto;
+    }
 }
 
 .bannertext {
     left: 0;
-    position: absolute;
     right: 0;
     top: 35%;
-    @include at-breakpoint($desktop) {
+    @include susy-breakpoint(55em, $desktop) {
         top: 27%;
     }
 }

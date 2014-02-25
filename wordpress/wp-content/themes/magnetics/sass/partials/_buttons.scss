@@ -1,0 +1,29 @@
+.button {
+    text-decoration: none;
+}
+
+button {
+    @include sassy-button("flat", 0px, 24px, #9b59b6);
+    display: block;
+    font-family: $ubuntubold;
+    padding: 0.7em 1.2em;
+    text-shadow: none;
+    text-transform: uppercase;
+    &.white {
+        background: none;
+        border: 2px solid #fff;
+        color: #fff;
+        &:hover {
+            background: #67c4a1;
+        }
+    }
+}
+
+.gform_button {
+    @include sassy-button("flat", 5px, 16px, #97b32d);
+    display: block;
+    margin: 0 auto;
+    padding: 1em 3em;
+    text-shadow: none;
+    text-transform: uppercase;
+}

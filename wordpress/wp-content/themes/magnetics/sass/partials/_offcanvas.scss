@@ -4,18 +4,17 @@ $offcanvas-panel-width: 20em;
     overflow-x: hidden;
     .offcanvas-menu-button {
 
-        @include transition(transform 500ms ease);
-        float: right;
-        margin-right: 25px;
-        margin-top: 35px;
-        z-index: 2015;
-        @include at-breakpoint($desktop) {
+        position: absolute;
+        right: 60px;
+        top: 25px;
+        width: 46px;
+        z-index: 2;
+        @include susy-breakpoint(55em, $desktop) {
             display: none;
             /* Hide For big screen*/
         }
         &.desktop {
             display: block;
-            width: 46px;
         }
         &.left {
             float: left;
@@ -24,13 +23,13 @@ $offcanvas-panel-width: 20em;
             border: 2px solid #FFF;
             display: block;
             font-size: 0;
-            height: 39px;
+            height: 25px;
             margin: 20px 0 0 0;
             overflow: hidden;
-            padding: 8px 11px;
+            padding: 7px 10px 3px;
             position: relative;
-            width: 46px;
-            z-index: 9999;
+            width: 20px;
+            z-index: 2;
             &:before {
                 background: url("images/offcanvas-buttons.png") no-repeat;
                 content: '';
@@ -50,13 +49,11 @@ $offcanvas-panel-width: 20em;
         border: 2px solid #092148;
         display: block;
         font-size: 0;
-        height: 39px;
-        left: 75%;
-        overflow: hidden;
-        padding: 8px 12px;
-        position: relative;
-        top: 0;
-        width: 46px;
+        height: 25px;
+        padding: 7px 10px 3px;
+        position: absolute;
+        right: 5%;
+        width: 20px;
         z-index: 9999;
         &:before {
             background: url("images/offcanvas-buttons.png") no-repeat 0px -19px;
@@ -91,7 +88,7 @@ $offcanvas-panel-width: 20em;
         ul {
             @include adjust-font-size-to(15px);
             margin: 0;
-            padding: 50px 0 0 0;
+            padding: 100px 0 0 0;
             li {
                 list-style: none;
                 margin: 0;
@@ -108,7 +105,7 @@ $offcanvas-panel-width: 20em;
                     color: #5c6f81;
                     display: block;
                     font-family: $ubuntulight;
-                    padding: 20px 30px;
+                    padding: 15px 30px;
                     text-decoration: none;
                     &:hover {
                         background: #5c6f81;
