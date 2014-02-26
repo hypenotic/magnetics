@@ -1,9 +1,13 @@
+.content-wrapper {
+    background: $body_bg;
+}
+
 .front-headline {
     @include adjust-font-size-to(270px);
+    @include text-shadow(0 0 81px #003770);
     color: $white;
     font-family: $ubuntulight;
     text-align: center;
-    text-shadow: 0 0 81px #003770;
     text-transform: uppercase;
     width: 80%;
     & a {
@@ -15,7 +19,7 @@
     @include adjust-font-size-to(110px);
     @include text-shadow(0 0 32px #003770);
     color: $white;
-    margin-top: 120px;
+    padding-top: 220px;
 }
 
 .sub-headline {
@@ -23,7 +27,7 @@
     @include text-shadow(0 0 32px #003770);
     color: $white;
     font-family: $ubuntulight;
-    margin-bottom: 130px;
+    padding-bottom: 130px;
 }
 
 .meta {

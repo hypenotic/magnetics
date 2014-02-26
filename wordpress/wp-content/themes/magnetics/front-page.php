@@ -11,14 +11,20 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		}
     ?>
 
-    <div class="banner" style="background-image:url('<?php echo $image_url[0]; ?>'); display: block;">  	
+    <div class="banner" style=" display: block;">  	
             <div class="container">
-                <section class="span-10">
-                    <?php the_title( '<h2>', '</h2>' ); ?>
-					<?php get_template_part( 'template-part', 'add_sub_heading' ); ?>
-                    <?php the_excerpt(); ?>
-                    <a href="<?php the_permalink();?>" class="button"><button class="white">Learn More</button></a>
-                </section>
+	            <div class="span-10 center">
+                        <div class="span-6">
+                        	<img src="<?php echo $image_url[0]; ?>" />
+                        </div>
+                        <div class="span-6">
+                            <?php the_title( '<h2 class="sub-headline">', '</h2>' ); ?>
+                            <?php get_template_part( 'template-part', 'add_sub_heading' ); ?>
+                            <?php the_excerpt(); ?>
+                            <br />
+                            <a href="<?php the_permalink();?>" class="button"><button class="white">Learn More</button></a>
+                        </div>
+                </div>
             </div>
     </div>
 <?php endwhile; endif; wp_reset_query();?>
