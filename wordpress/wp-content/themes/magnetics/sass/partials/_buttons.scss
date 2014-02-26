@@ -6,7 +6,7 @@ button {
     @include sassy-button("flat", 0px, 24px, #9b59b6);
     display: block;
     font-family: $ubuntubold;
-    padding: 0.7em 1.2em;
+    padding: 0.5em 1.5em;
     text-shadow: none;
     text-transform: uppercase;
     &.white {

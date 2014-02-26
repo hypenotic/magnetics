@@ -14,6 +14,10 @@ header {
     z-index: 2000;
 }
 
+.wrapper {
+    z-index: 10;
+}
+
 .span-4 {
     @include span(6);
     @include susy-breakpoint(55em, $desktop) {
@@ -21,8 +25,16 @@ header {
     }
 }
 
+.span-5 {
+    @include span(6);
+    @include susy-breakpoint(55em, $desktop) {
+        @include span(5);
+    }
+}
+
 .span-6 {
     @include span(6);
+    position: relative;
     @include susy-breakpoint(55em, $desktop) {
         @include span(6);
     }
@@ -49,30 +61,17 @@ header {
     }
 }
 
-.logo {
-    opacity: 1;
-    h1 {
+.center {
+    float: none;
+    margin: 0 auto;
+}
 
-        background-image: url(images/logo.png);
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        border: 0;
-        height: 101px;
-        margin-left: 0;
-        margin-top: 20px;
-        max-width: 412px;
-        padding: 0;
-        width: 75%;
-        @include susy-breakpoint(55em, $desktop) {
-            width: 100%;
-        }
-        a {
-            display: block;
-            text-indent: -999em;
-        }
+.block-grid-2 {
+    @include gallery(12 of 12);
+    &:nth-child(1n + 1) {
+        clear: both;
     }
-    a:hover & {
-        opacity: .5;
-        transition: opacity .3s ease-in-out;
+    @include susy-breakpoint(55em, $desktop) {
+        @include gallery(6 of 12);
     }
 }
