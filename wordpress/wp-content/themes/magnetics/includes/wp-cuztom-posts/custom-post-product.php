@@ -7,7 +7,7 @@ $args = array(
 	'supports'	=> array( 'title', 'thumbnail' )
  	);
 
-$product = register_cuztom_post_type( 'Products', $args);
+$product = register_cuztom_post_type( 'Product', $args);
 
 $product->add_meta_box( 
 	'product',
@@ -20,7 +20,7 @@ $product->add_meta_box(
 				'type'          => 'text'
                 ),
 			array(
-				'name'          => 'team_description',
+				'name'          => 'description',
 				'label'         => 'Description',
 				'description'   => '',
 				'type'          => 'textarea'

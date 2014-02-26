@@ -7,6 +7,6 @@ $args = array(
 	'supports'	=> array( 'title', 'editor', 'author', 'thumbnail', 'excerpt' )
  	);
 
-$integration = register_cuztom_post_type( 'Integrations', $args);
+$integration = register_cuztom_post_type( 'Integration', $args);
 
 ?>
