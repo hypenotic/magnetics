@@ -8,13 +8,13 @@ Version: 1.0
 */
 
 // Library
+@import "normalize";
 @import "breakpoint";
 @import "susy";
 @import "sassy-buttons";
 @import "compass";
 @import "compass/css3";
 @import "compass/typography/vertical_rhythm";
-@import "normalize";
 
 // Modules
 @import "modules/colors";
