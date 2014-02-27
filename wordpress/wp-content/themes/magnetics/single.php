@@ -1,28 +1,28 @@
 <?php get_header(); ?>
-
 <section> 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <div class="container">
-        <div class="row">
-            <p class="meta"><i><?php echo get_the_date(); ?></i></p>
-            <h1><?php the_title(); ?></h1>
-            <p class="meta"><span class="sub-meta">By</span> <?php echo the_author_posts_link(); ?> <span class="sub-meta">in</span> <?php echo get_the_category_list(' / '); ?></p>
-        </div>
-        <div class="row">
-            <?php the_content(); ?>
-            <div style="float: left;">
-            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        	<div class="span-9 center">
+            	<?php the_title("<h2>","</h2>");?>
+				<p class="meta"><span class="sub-meta">Written by</span> <?php echo the_author_posts_link(); ?></p>
+                <?php
+					if(get_post_meta($post->ID,'_brochure_content',true)) {
+				?>
+                <p><a href="<?php echo get_post_meta($post->ID,'_brochure_file',true);?>" target="_blank" class="download">Download this article</a></p>
+                <?php
+					}
+					if(get_post_meta($post->ID,'_brochure_content',true)) {
+				?>
+                <p class="description"><?php echo get_post_meta($post->ID,'_brochure_content',true);?></p>
+                <?php } ?>
+                <?php the_content();?>
             </div>
-            <div class="fb-share-button" data-href="<?php bloginfo('url')?>" data-type="button_count"></div>
-        </div>
     </div>
 <?php endwhile; endif; ?>
 </section>
 
-<!-- Pagination for mobile -->
 <div class="container">
-    <div class="row mobile-pagination">
+    <div class="span-8 center">
 		<?php previous_post_link( '<span class="prev">%link</span>', '<< Previous' );?>
         <?php next_post_link( '<span class="next">%link</span>', 'Next >>' );?>
     </div>
@@ -32,11 +32,5 @@
 <div id="pagination">
     <?php previous_post_link( '%link', '%title' );?>
     <?php next_post_link( '%link', '%title' );?>
-</div>
-
-<div class="container">
-    <div class="row">
-        <?php comments_template() ?>
-    </div>
 </div>
 <?php get_footer(); ?>
