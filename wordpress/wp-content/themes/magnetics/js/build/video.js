@@ -1028,16 +1028,17 @@ function (a) {
         },
         bgvid: function () {
             var b = a("body").attr("data-mp4-url");
-			
-                var c = new a.BigVideo({
-                    useFlashForFirefox: !1
-                });
-                c.init(), c.show("https://s3.amazonaws.com/whiteboard.is/videos/bg-loop-new.mp4", {
-                    altSource: "https://s3.amazonaws.com/whiteboard.is/videos/bg-loop-new.ogv",
-                    ambient: !0,
-                    loop: !0,
-                    useFlashForFirefox: !1
-                })
+				if(a("body").hasClass('single')==false){
+					var c = new a.BigVideo({
+						useFlashForFirefox: !1
+					});
+					c.init(), c.show("https://s3.amazonaws.com/whiteboard.is/videos/bg-loop-new.mp4", {
+						altSource: "https://s3.amazonaws.com/whiteboard.is/videos/bg-loop-new.ogv",
+						ambient: !0,
+						loop: !0,
+						useFlashForFirefox: !1
+					})
+				}
         },
         hiliter: function () {
             a(".hiliter").each(function () {

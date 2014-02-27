@@ -44,7 +44,6 @@
         <a href="#" class="offcanvas-close-button" title="Close Menu">Close Menu</a>
 		<?php wp_nav_menu(array('theme_location'=>'header-menu'));?>
     </div>
-
 <!-- Menu Section Ends -->
 <header>
 	<nav>

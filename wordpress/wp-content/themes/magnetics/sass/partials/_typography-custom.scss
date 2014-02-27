@@ -19,7 +19,6 @@
     @include adjust-font-size-to(110px);
     @include text-shadow(0 0 32px #003770);
     color: $white;
-    padding-top: 220px;
 }
 
 .sub-headline {
@@ -31,10 +30,11 @@
 }
 
 .meta {
-    @include adjust-font-size-to(14px);
+    @include adjust-font-size-to(16px);
+    font-family: $ubunturegular;
     text-transform: uppercase;
     & a {
-        color: gray;
+        color: $body_bg;
         text-decoration: none;
         &:hover {
             text-decoration: underline;
@@ -43,9 +43,8 @@
 }
 
 .sub-meta {
-    @include adjust-font-size-to(14px);
-    font-style: italic;
-    text-transform: none;
+    @include adjust-font-size-to(16px);
+    color: $body_bg;
 }
 
 .small {
@@ -80,4 +79,44 @@ footer {
     a {
         color: $white;
     }
+}
+
+.single {
+    nav {
+        background: $body_bg;
+    }
+    .wrapper {
+        background: #e7e7e7;
+        .center {
+            color: $body_bg;
+            h3 {
+                font-family: $ubuntubold;
+            }
+        }
+    }
+}
+
+a.download {
+    @include adjust-font-size-to(14px);
+    color: $body_bg;
+    font-family: $ubunturegular;
+    font-weight: 400;
+    padding-left: 32px;
+    position: relative;
+    text-decoration: none;
+    &:before {
+        background: url(images/download-icon.png) no-repeat;
+        content: '';
+        height: 23px;
+        left: 0;
+        position: absolute;
+        top: 4px;
+        width: 24px;
+    }
+}
+
+.description {
+    @include adjust-font-size-to(30px);
+    color: #4da483;
+    font-family: $ubunturegular;
 }
