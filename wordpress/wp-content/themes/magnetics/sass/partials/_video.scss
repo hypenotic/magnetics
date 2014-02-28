@@ -9,8 +9,7 @@ video {
 }
 
 .video-on .wrapper {
-    -webkit-filter: blur(6px);
-    opacity: 0.5;
+    //@include opacity(0.5);
 }
 
 #big-video-wrap {
