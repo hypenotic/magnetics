@@ -7,7 +7,7 @@
 
 function add_slug_to_body_class($classes) {
 	global $post;
-    	$classes[] = $post->post_name . ' offcanvas ';
+    	$classes[] = $post->post_name . ' offcanvas dark';
 	return $classes;
 }
 

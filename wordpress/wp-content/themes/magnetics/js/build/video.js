@@ -659,7 +659,6 @@ function (a) {
                 }
             })
         }
-
         function e(b) {
             var c = b || "toggle";
             "toggle" === c && (c = v ? "pause" : "play"), "pause" === c ? (j.pause(), a("#big-video-control-play").css("background-position", "-16px"), v = !1) : "play" === c && (j.play(), a("#big-video-control-play").css("background-position", "0"), v = !0)
@@ -1020,7 +1019,7 @@ function () {
 function (a) {
     var c, d, e = a(window),
         f = a("body"),
-        g = (a(".page-wrap"), !1);
+        g = (a(".wrapper"), !1);
     touch = Modernizr.touch;
     var h = {
         scroll: function () {
@@ -1028,7 +1027,7 @@ function (a) {
         },
         bgvid: function () {
             var b = a("body").attr("data-mp4-url");
-				if(a("body").hasClass('single')==false){
+				//if(a("body").hasClass('single')==false){
 					var c = new a.BigVideo({
 						useFlashForFirefox: !1
 					});
@@ -1038,7 +1037,7 @@ function (a) {
 						loop: !0,
 						useFlashForFirefox: !1
 					})
-				}
+				//}
         },
         hiliter: function () {
             a(".hiliter").each(function () {
