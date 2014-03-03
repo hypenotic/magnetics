@@ -16,6 +16,9 @@ video {
     top: 0;
     width: 100%;
     z-index: -1;
+    .single & {
+        display: none;
+    }
     #big-video-vid {
         display: none;
         top: 0;
