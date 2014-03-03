@@ -1304,9 +1304,9 @@ video {
   position: relative; }
   .tabs .tab-header {
     list-style: none;
+    overflow: hidden;
     padding-left: 0;
-    position: relative;
-    overflow: hidden; }
+    position: relative; }
     .tabs .tab-header li {
       background: #00b7c2;
       display: inline-block;
@@ -1319,12 +1319,16 @@ video {
       .tabs .tab-header li a {
         color: white;
         display: block;
-        padding: 25px 50px;
+        padding: 25px 50px 50px;
         text-decoration: none; }
   .tabs .tab-content {
     color: #001f3f;
-    padding: 25px 50px; }
+    padding: 0px 50px 100px; }
     .tabs .tab-content .tab {
       display: none; }
+      .tabs .tab-content .tabh1, .tabs .tab-content .tab h2, .tabs .tab-content .tab h3, .tabs .tab-content .tab h4, .tabs .tab-content .tab h5, .tabs .tab-content .tab h6 {
+        margin: 80px 0 20px; }
+        .tabs .tab-content .tabh1:first-child, .tabs .tab-content .tab h2:first-child, .tabs .tab-content .tab h3:first-child, .tabs .tab-content .tab h4:first-child, .tabs .tab-content .tab h5:first-child, .tabs .tab-content .tab h6:first-child {
+          margin-top: 50px; }
     .tabs .tab-content .active-tab-content {
       display: block; }
