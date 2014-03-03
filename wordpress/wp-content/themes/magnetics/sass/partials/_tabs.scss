@@ -1,0 +1,40 @@
+.tabs {
+    background: $white;
+    margin-top: 150px;
+    overflow: hidden;
+    position: relative;
+    .tab-header {
+        list-style: none;
+        overflow: hidden;
+        padding-left: 0;
+        position: relative;
+        li {
+            background: #00b7c2;
+            display: inline-block;
+            float: left;
+            width: 50%;
+            &.active-tab-header {
+                background: $white;
+                a {
+                    color: #00b7c2;
+                }
+            }
+            a {
+                color: $white;
+                display: block;
+                padding: 25px 50px;
+                text-decoration: none;
+            }
+        }
+    }
+    .tab-content {
+        color: $body_bg;
+        padding: 25px 50px;
+        .tab {
+            display: none;
+        }
+        .active-tab-content {
+            display: block;
+        }
+    }
+}

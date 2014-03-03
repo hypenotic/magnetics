@@ -33,10 +33,19 @@
         var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
         })();
     </script>
-<script src="<?php bloginfo('template_url');?>/js/modernizr-2.6.2.min.js"></script>
 </head>
 
 <body <?php body_class();?>>
+<div id="big-video-wrap">
+	<div id="big-video-vid">
+    	<video preload="auto" muted autoplay src="https://s3.amazonaws.com/whiteboard.is/videos/bg-loop-new.mp4"></video>
+        <div></div>
+     </div>
+	<div id="big-video-image">
+		<img src="<?php bloginfo('template_url');?>/images/homepage-banner.jpg" />	
+        <div></div>
+     </div>
+</div>        
 <!-- Menu Section Starts -->
     <!-- Left Menu Section -->
     <!-- Right Menu Section -->

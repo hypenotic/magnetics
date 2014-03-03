@@ -15,12 +15,15 @@ header {
 }
 
 .wrapper {
+    background: rgba(0, 31, 63, 0.7);
     padding-top: 200px;
+    position: relative;
     z-index: 10;
 }
 
 .span-4 {
     @include span(6);
+    position: relative;
     @include susy-breakpoint(55em, $desktop) {
         @include span(4);
     }
@@ -28,6 +31,7 @@ header {
 
 .span-5 {
     @include span(6);
+    position: relative;
     @include susy-breakpoint(55em, $desktop) {
         @include span(5);
     }
@@ -41,8 +45,17 @@ header {
     }
 }
 
+.span-7 {
+    @include span(6);
+    position: relative;
+    @include susy-breakpoint(55em, $desktop) {
+        @include span(7);
+    }
+}
+
 .span-8 {
     @include span(6);
+    position: relative;
     @include susy-breakpoint(55em, $desktop) {
         @include span(8);
     }
@@ -50,6 +63,7 @@ header {
 
 .span-9 {
     @include span(6);
+    position: relative;
     @include susy-breakpoint(55em, $desktop) {
         @include span(9);
     }
@@ -57,13 +71,23 @@ header {
 
 .span-10 {
     @include span(6);
+    position: relative;
     @include susy-breakpoint(55em, $desktop) {
         @include span(10);
     }
 }
 
+.span-11 {
+    @include span(6);
+    position: relative;
+    @include susy-breakpoint(55em, $desktop) {
+        @include span(11);
+    }
+}
+
 .span-12 {
     @include span(6);
+    position: relative;
     @include susy-breakpoint(55em, $desktop) {
         @include span(12);
     }

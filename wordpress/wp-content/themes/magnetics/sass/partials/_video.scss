@@ -1,15 +1,11 @@
 $video_bg: #001f3f;
 
 video {
-    width: 100%;
+    min-width: 100%;
 }
 
 .vjs-control-bar {
     display: none;
-}
-
-.video-on .wrapper {
-    //@include opacity(0.5);
 }
 
 #big-video-wrap {
@@ -20,94 +16,25 @@ video {
     top: 0;
     width: 100%;
     z-index: -1;
-    &:after {
-        @include opacity(0.5);
-        background-color: $video_bg;
-        content: "";
-        height: 100%;
-        left: 0;
-        position: absolute;
+    #big-video-vid {
+        display: none;
         top: 0;
         width: 100%;
-        z-index: 0;
+        @include susy-breakpoint(55em, $desktop) {
+            display: block;
+        }
     }
-}
+    #big-video-image {
 
-.video-player {
-    -webkit-backface-visibility: hidden;
-    -webkit-transform-style: preserve-3d;
-    @include transition(opacity 0.3s ease);
-    background-color: rgba(0, 31, 63, 0.5);
-    display: none;
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10000;
-}
-
-.video-player .close-btn {
-    -webkit-background-clip: padding-box;
-    @include transition(all 0.25s ease);
-    background-clip: padding-box;
-    background-color: #fff;
-    border-radius: 100px;
-    color: #fe5607;
-    cursor: pointer;
-    display: inline-block;
-    padding: 20px;
-    position: absolute;
-    right: -20px;
-    top: -20px;
-    z-index: 100;
-}
-
-.video-player .close-btn:after {
-    color: #fe5607;
-    content: "X";
-    font-family: Lato,sans-serif;
-    font-weight: 00;
-    height: 40px;
-    left: 0;
-    padding-top: 10px;
-    position: absolute;
-    top: 0;
-    width: 40px;
-    z-index: 1;
-}
-
-.video-player .player-container {
-    @include transition(all 0.5s ease);
-    display: table;
-    height: 100%;
-    left: 20%;
-    position: absolute;
-    top: 0;
-    width: 60%;
-    z-index: 1;
-}
-
-.video-player .player-inner-wrap {
-    display: table-cell;
-    position: relative;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.video-player .iframe-wrapper {
-    -webkit-backface-visibility: hidden;
-    -webkit-transform-style: preserve-3d;
-    @include box-shadow(0 0 25px rgba(0, 31, 63, 0.5));
-    background-color: $video_bg;
-    height: 0;
-    padding-bottom: 56.25%;
-    position: relative;
-    width: 100%;
-}
-
-.video-player.zoomed .player-container {
-    left: 15%;
-    width: 70%;
+        display: block;
+        @include susy-breakpoint(55em, $desktop) {
+            display: none;
+        }
+        img {
+            height: 100%;
+        }
+    }
+    video {
+        position: absolute;
+    }
 }
