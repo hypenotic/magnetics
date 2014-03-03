@@ -14,10 +14,10 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <div class="banner" style=" display: block;">  	
             <div class="container">
 	            <div class="span-10 center">
-                        <div class="span-6">
+                        <div class="span-7">
                         	<img src="<?php echo $image_url[0]; ?>" />
                         </div>
-                        <div class="span-6">
+                        <div class="span-5">
                             <?php the_title( '<h2 class="sub-headline">', '</h2>' ); ?>
                             <?php get_template_part( 'template-part', 'add_sub_heading' ); ?>
                             <?php the_excerpt(); ?>

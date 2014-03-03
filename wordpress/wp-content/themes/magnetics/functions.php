@@ -8,6 +8,7 @@ include('includes/wp-cuztom-posts/custom-post-product.php');
 include('includes/wp-cuztom-posts/custom-post-integration.php');
 include('includes/wp-cuztom-posts/custom-post-brochure.php');
 include('includes/wp-cuztom-posts/custom-post-post.php');
+include('includes/wp-cuztom-posts/custom-post-page.php');
 
 //Load custom functions
 require_once('includes/functions/add-classes-to-body.php');

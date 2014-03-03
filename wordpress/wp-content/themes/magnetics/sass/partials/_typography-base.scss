@@ -141,7 +141,14 @@ a {
     color: #4ba3cc;
     &:hover {
         color: $light-gray;
+        outline: none;
         text-decoration: none;
+    }
+    &:active {
+        outline: none;
+    }
+    &:focus {
+        outline: none;
     }
 }
 

@@ -23,16 +23,6 @@
     </div>
 </footer>
 </div>
-<div class="video-player">
-<div class="player-container">
-<div class="player-inner-wrap">
-<div class="iframe-wrapper">
-<div class="close-btn"> </div>
- 
-</div>
-</div>
-</div>
-</div>
 <?php wp_footer();?>
 </body>
 </html>
