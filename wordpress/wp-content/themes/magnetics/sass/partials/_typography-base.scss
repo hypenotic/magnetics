@@ -10,6 +10,24 @@
 
 
 @font-face {
+    font-family: 'open_sansregular';
+    font-style: normal;
+    font-weight: normal;
+    src: url("sass/fonts/opensans-regular-webfont.eot");
+    src: url("sass/fonts/opensans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("sass/fonts/opensans-regular-webfont.woff") format("woff"), url("sass/fonts/opensans-regular-webfont.ttf") format("truetype"), url("sass/fonts/opensans-regular-webfont.svg#open_sansregular") format("svg");
+}
+
+
+@font-face {
+    font-family: 'open_sanssemibold';
+    font-style: normal;
+    font-weight: normal;
+    src: url("sass/fonts/opensans-semibold-webfont.eot");
+    src: url("sass/fonts/opensans-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("sass/fonts/opensans-semibold-webfont.woff") format("woff"), url("sass/fonts/opensans-semibold-webfont.ttf") format("truetype"), url("sass/fonts/opensans-semibold-webfont.svg#open_sanssemibold") format("svg");
+}
+
+
+@font-face {
     font-family: 'ubuntubold';
     font-style: normal;
     font-weight: normal;
@@ -42,10 +60,16 @@ $base-line-height: 24px;
 $round-to-nearest-half-line: true;
 
 // Fonts
+$open_sansregular: "open_sansregular";
 $open_sanslight: "open_sanslight";
+$open_sanssemibold: "open_sanssemibold";
 $ubunturegular: "ubunturegular";
 $ubuntulight: "ubuntulight";
 $ubuntubold: "ubuntubold";
+
+strong {
+    font-family: $open_sanssemibold;
+}
 
 h1, h2, h3, h4, h5, h6 {
     a {
@@ -112,8 +136,8 @@ h6 {
     font-family: $ubunturegular;
     margin: 0 auto rhythm(0, 16px);
     @include susy-breakpoint(55em, $desktop) {
-        @include adjust-font-size-to(12px);
-        margin: 0 auto rhythm(0, 12px);
+        @include adjust-font-size-to(16px);
+        margin: 0 auto rhythm(0, 16px);
     }
 }
 
@@ -138,9 +162,9 @@ blockquote {
 }
 
 a {
-    color: #4ba3cc;
+    color: $body_bg;
     &:hover {
-        color: $light-gray;
+        color: $body_bg;
         outline: none;
         text-decoration: none;
     }

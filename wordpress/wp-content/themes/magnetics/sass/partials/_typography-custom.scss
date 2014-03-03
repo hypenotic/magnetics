@@ -36,19 +36,25 @@
 .meta {
     @include adjust-font-size-to(16px);
     font-family: $ubunturegular;
-    text-transform: uppercase;
-    & a {
-        color: $body_bg;
-        text-decoration: none;
-        &:hover {
-            text-decoration: underline;
+    span {
+        display: block;
+        & a {
+            color: $body_bg;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
         }
+    }
+    &.inline-meta span {
+        display: inline;
     }
 }
 
 .sub-meta {
     @include adjust-font-size-to(16px);
     color: $body_bg;
+    margin-bottom: 20px;
 }
 
 .small {
@@ -86,36 +92,70 @@ footer {
 }
 
 .single {
+    header {
+        position: fixed;
+        width: 100%;
+    }
     nav {
         background: $body_bg;
+    }
+    .page-content {
+        background: none;
     }
     .wrapper {
         background: #e7e7e7;
         .center {
             color: $body_bg;
+            h2 {
+                line-height: 1.35em;
+                margin: 70px 0 100px;
+            }
             h3 {
                 font-family: $ubuntubold;
+                margin: 50px 0 25px;
+            }
+            p {
+                margin-bottom: 40px;
+                margin-top: 20px;
             }
         }
     }
 }
 
 a.download {
-    @include adjust-font-size-to(14px);
-    color: $body_bg;
-    font-family: $ubunturegular;
+    @include adjust-font-size-to(18px);
+    font-family: $ubuntubold;
     font-weight: 400;
     padding-left: 32px;
     position: relative;
     text-decoration: none;
     &:before {
-        background: url(images/download-icon.png) no-repeat;
+        background: url(images/site-icons.png) no-repeat;
         content: '';
-        height: 23px;
+        height: 27px;
         left: 0;
         position: absolute;
-        top: 4px;
-        width: 24px;
+        top: -9px;
+        width: 27px;
+    }
+}
+
+a.more {
+    @include adjust-font-size-to(18px);
+    font-family: $ubuntubold;
+    font-weight: 400;
+    margin-left: 15px;
+    padding-left: 32px;
+    position: relative;
+    text-decoration: none;
+    &:before {
+        background: url(images/site-icons.png) no-repeat -52px 0;
+        content: '';
+        height: 17px;
+        left: 0;
+        position: absolute;
+        top: -5px;
+        width: 27px;
     }
 }
 
@@ -123,6 +163,8 @@ a.download {
     @include adjust-font-size-to(30px);
     color: #4da483;
     font-family: $ubunturegular;
+    line-height: 1.5em;
+    margin: 50px 0 100px;
 }
 
 .page-title {

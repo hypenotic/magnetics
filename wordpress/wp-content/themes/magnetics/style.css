@@ -514,6 +514,18 @@ html {
   src: url("sass/fonts/opensans-light.eot");
   src: url("sass/fonts/opensans-light.eot?#iefix") format("embedded-opentype"), url("sass/fonts/opensans-light.woff") format("woff"), url("sass/fonts/opensans-light.ttf") format("truetype"), url("sass/fonts/opensans-light.svg#open_sanslight") format("svg"); }
 @font-face {
+  font-family: 'open_sansregular';
+  font-style: normal;
+  font-weight: normal;
+  src: url("sass/fonts/opensans-regular-webfont.eot");
+  src: url("sass/fonts/opensans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("sass/fonts/opensans-regular-webfont.woff") format("woff"), url("sass/fonts/opensans-regular-webfont.ttf") format("truetype"), url("sass/fonts/opensans-regular-webfont.svg#open_sansregular") format("svg"); }
+@font-face {
+  font-family: 'open_sanssemibold';
+  font-style: normal;
+  font-weight: normal;
+  src: url("sass/fonts/opensans-semibold-webfont.eot");
+  src: url("sass/fonts/opensans-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("sass/fonts/opensans-semibold-webfont.woff") format("woff"), url("sass/fonts/opensans-semibold-webfont.ttf") format("truetype"), url("sass/fonts/opensans-semibold-webfont.svg#open_sanssemibold") format("svg"); }
+@font-face {
   font-family: 'ubuntubold';
   font-style: normal;
   font-weight: normal;
@@ -531,6 +543,9 @@ html {
   font-weight: normal;
   src: url("sass/fonts/ubuntu-regular.eot");
   src: url("sass/fonts/ubuntu-regular.eot?#iefix") format("embedded-opentype"), url("sass/fonts/ubuntu-regular.woff") format("woff"), url("sass/fonts/ubuntu-regular.ttf") format("truetype"), url("sass/fonts/ubuntu-regular.svg#ubunturegular") format("svg"); }
+strong {
+  font-family: "open_sanssemibold"; }
+
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   color: white;
   text-decoration: none; }
@@ -599,8 +614,8 @@ h6 {
   margin: 0 auto 0em; }
   @media (min-width: 55em) {
     h6 {
-      font-size: 0.75em;
-      line-height: 2em;
+      font-size: 1em;
+      line-height: 1.5em;
       margin: 0 auto 0em; } }
 
 p, ul, ol {
@@ -626,9 +641,9 @@ blockquote {
       margin: 0 auto 0.55814em; } }
 
 a {
-  color: #4ba3cc; }
+  color: #001f3f; }
   a:hover {
-    color: #cccccc;
+    color: #001f3f;
     outline: none;
     text-decoration: none; }
   a:active {
@@ -695,18 +710,22 @@ a {
 .meta {
   font-size: 1em;
   line-height: 1.5em;
-  font-family: "ubunturegular";
-  text-transform: uppercase; }
-  .meta a {
-    color: #001f3f;
-    text-decoration: none; }
-    .meta a:hover {
-      text-decoration: underline; }
+  font-family: "ubunturegular"; }
+  .meta span {
+    display: block; }
+    .meta span a {
+      color: #001f3f;
+      text-decoration: none; }
+      .meta span a:hover {
+        text-decoration: underline; }
+  .meta.inline-meta span {
+    display: inline; }
 
 .sub-meta {
   font-size: 1em;
   line-height: 1.5em;
-  color: #001f3f; }
+  color: #001f3f;
+  margin-bottom: 20px; }
 
 .small {
   font-size: 0.875em;
@@ -735,38 +754,69 @@ footer {
   footer a {
     color: white; }
 
+.single header {
+  position: fixed;
+  width: 100%; }
 .single nav {
   background: #001f3f; }
+.single .page-content {
+  background: none; }
 .single .wrapper {
   background: #e7e7e7; }
   .single .wrapper .center {
     color: #001f3f; }
+    .single .wrapper .center h2 {
+      line-height: 1.35em;
+      margin: 70px 0 100px; }
     .single .wrapper .center h3 {
-      font-family: "ubuntubold"; }
+      font-family: "ubuntubold";
+      margin: 50px 0 25px; }
+    .single .wrapper .center p {
+      margin-bottom: 40px;
+      margin-top: 20px; }
 
 a.download {
-  font-size: 0.875em;
-  line-height: 1.71429em;
-  color: #001f3f;
-  font-family: "ubunturegular";
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  font-family: "ubuntubold";
   font-weight: 400;
   padding-left: 32px;
   position: relative;
   text-decoration: none; }
   a.download:before {
-    background: url(images/download-icon.png) no-repeat;
+    background: url(images/site-icons.png) no-repeat;
     content: '';
-    height: 23px;
+    height: 27px;
     left: 0;
     position: absolute;
-    top: 4px;
-    width: 24px; }
+    top: -9px;
+    width: 27px; }
+
+a.more {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  font-family: "ubuntubold";
+  font-weight: 400;
+  margin-left: 15px;
+  padding-left: 32px;
+  position: relative;
+  text-decoration: none; }
+  a.more:before {
+    background: url(images/site-icons.png) no-repeat -52px 0;
+    content: '';
+    height: 17px;
+    left: 0;
+    position: absolute;
+    top: -5px;
+    width: 27px; }
 
 .description {
   font-size: 1.875em;
   line-height: 1.2em;
   color: #4da483;
-  font-family: "ubunturegular"; }
+  font-family: "ubunturegular";
+  line-height: 1.5em;
+  margin: 50px 0 100px; }
 
 .page-title {
   padding-bottom: 200px;
@@ -1280,6 +1330,8 @@ video {
   top: 0;
   width: 100%;
   z-index: -1; }
+  .single #big-video-wrap {
+    display: none; }
   #big-video-wrap #big-video-vid {
     display: none;
     top: 0;
