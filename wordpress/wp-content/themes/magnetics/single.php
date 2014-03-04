@@ -20,7 +20,7 @@
             </div>
     </div>
 <?php endwhile; endif; ?>
-<section class="pagination container">
+<section class="container" id="pagination">
     <div class="span-9 center">
         <p><a href="#">< Return to Products Page</a></p>
         <p><a href="#">< Return to Articles Page</a></p>
@@ -28,13 +28,7 @@
 		<hr />
     </div>
 </section>
-
-<section class="container">    
-    <div class="span-9 center">
-        <h6>OTHER ARTICLES RELATED TO SAESPY</h6>
-        <hr />
-    </div>
-</section>
+<?php get_template_part( 'template-part', 'add_related_posts' ); ?>
 <?php
 	$next_article = new WP_Query(array(
 	'posts_per_page' => 1,
@@ -42,7 +36,7 @@
 	));
 	if($next_article->have_posts()) {
 ?>
-<section class="container">
+<section class="container related">
     <div class="span-9 center">
         <h6>ARTICLE</h6>
         <?php while($next_article->have_posts()):$next_article->the_post(); ?>
@@ -57,7 +51,7 @@
 				?>
                 <span><a href="<?php echo get_post_meta($post->ID,'_brochure_file',true);?>" target="_blank" class="download"></a></span>
                 <?php } ?>
-            	<span><a href="<?php the_permalink();?>" class="more" target="_blank"></a></span>
+            	<span><a href="<?php the_permalink();?>" class="more"></a></span>
             </p>
         </div>
         <?php endwhile; ?>

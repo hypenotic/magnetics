@@ -28,6 +28,15 @@
 
 
 @font-face {
+    font-family: 'open_sansextrabold';
+    font-style: normal;
+    font-weight: normal;
+    src: url("sass/fonts/opensans-extrabold-webfont.eot");
+    src: url("sass/fonts/opensans-extrabold-webfont.eot?#iefix") format("embedded-opentype"), url("sass/fonts/opensans-extrabold-webfont.woff") format("woff"), url("sass/fonts/opensans-extrabold-webfont.ttf") format("truetype"), url("sass/fonts/opensans-extrabold-webfont.svg#open_sansextrabold") format("svg");
+}
+
+
+@font-face {
     font-family: 'ubuntubold';
     font-style: normal;
     font-weight: normal;
@@ -63,6 +72,7 @@ $round-to-nearest-half-line: true;
 $open_sansregular: "open_sansregular";
 $open_sanslight: "open_sanslight";
 $open_sanssemibold: "open_sanssemibold";
+$open_sansextrabold: "open_sansextrabold";
 $ubunturegular: "ubunturegular";
 $ubuntulight: "ubuntulight";
 $ubuntubold: "ubuntubold";
@@ -174,6 +184,12 @@ a {
     &:focus {
         outline: none;
     }
+}
+
+hr {
+    border-color: $body_bg;
+    margin-bottom: 50px;
+    margin-top: 60px;
 }
 
 .logo {

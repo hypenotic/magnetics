@@ -108,17 +108,17 @@ footer {
             color: $body_bg;
             h2 {
                 line-height: 1.35em;
-                margin: 70px 0 100px;
-            }
-            h3 {
-                font-family: $ubuntubold;
-                margin: 50px 0 25px;
+                margin: 70px 0 80px;
             }
             p {
                 margin-bottom: 40px;
                 margin-top: 20px;
             }
         }
+    }
+    h3 {
+        font-family: $ubuntubold;
+        margin: 50px 0 25px;
     }
 }
 
@@ -190,4 +190,47 @@ a.more {
     background-color: $body_bg;
     padding: 0px 0 200px;
     position: relative;
+}
+
+.related {
+    div.span-5 {
+        padding-left: 0;
+    }
+    h3 {
+        margin-top: 30px;
+    }
+}
+
+.green-box {
+    color: #4DA483;
+    & p, h3, a {
+        color: #4DA483;
+    }
+    & a.download:before {
+        background-position: -29px 0;
+    }
+    & a.more:before {
+        background-position: -78px 0;
+    }
+}
+
+.articles-and-brochures {
+    @extend .single;
+}
+
+.filter {
+    list-style: none;
+    padding: 0;
+    li {
+        background: #d1d1d1;
+        display: inline-block;
+        float: left;
+        a {
+            @include adjust-font-size-to(14px);
+            display: block;
+            font-family: $ubuntubold;
+            padding: 5px 15px 8px;
+            text-decoration: none;
+        }
+    }
 }
