@@ -1250,6 +1250,12 @@ footer input[type="submit"] {
         padding: 0; }
         .offcanvas .offcanvas-menu ul li.current-menu-item {
           background: #5c6f81; }
+          .offcanvas .offcanvas-menu ul li.current-menu-item ul li {
+            background: white; }
+            .offcanvas .offcanvas-menu ul li.current-menu-item ul li a {
+              color: #5c6f81; }
+              .offcanvas .offcanvas-menu ul li.current-menu-item ul li a:hover {
+                color: white; }
           .offcanvas .offcanvas-menu ul li.current-menu-item a {
             color: white; }
         .offcanvas .offcanvas-menu ul li a {
