@@ -230,6 +230,7 @@ header {
   float: left;
   padding-left: 4.16667%;
   padding-right: 4.16667%;
+  overflow: hidden;
   position: relative; }
   @media (min-width: 55em) {
     .span-4 {
@@ -249,6 +250,7 @@ header {
   float: left;
   padding-left: 4.16667%;
   padding-right: 4.16667%;
+  overflow: hidden;
   position: relative; }
   @media (min-width: 55em) {
     .span-5 {
@@ -268,6 +270,7 @@ header {
   float: left;
   padding-left: 4.16667%;
   padding-right: 4.16667%;
+  overflow: hidden;
   position: relative; }
   @media (min-width: 55em) {
     .span-6 {
@@ -287,6 +290,7 @@ header {
   float: left;
   padding-left: 4.16667%;
   padding-right: 4.16667%;
+  overflow: hidden;
   position: relative; }
   @media (min-width: 55em) {
     .span-7 {
@@ -306,6 +310,7 @@ header {
   float: left;
   padding-left: 4.16667%;
   padding-right: 4.16667%;
+  overflow: hidden;
   position: relative; }
   @media (min-width: 55em) {
     .span-8 {
@@ -325,6 +330,7 @@ header {
   float: left;
   padding-left: 4.16667%;
   padding-right: 4.16667%;
+  overflow: hidden;
   position: relative; }
   @media (min-width: 55em) {
     .span-9 {
@@ -344,6 +350,7 @@ header {
   float: left;
   padding-left: 4.16667%;
   padding-right: 4.16667%;
+  overflow: hidden;
   position: relative; }
   @media (min-width: 55em) {
     .span-10 {
@@ -363,6 +370,7 @@ header {
   float: left;
   padding-left: 4.16667%;
   padding-right: 4.16667%;
+  overflow: hidden;
   position: relative; }
   @media (min-width: 55em) {
     .span-11 {
@@ -382,6 +390,7 @@ header {
   float: left;
   padding-left: 4.16667%;
   padding-right: 4.16667%;
+  overflow: hidden;
   position: relative; }
   @media (min-width: 55em) {
     .span-12 {
@@ -526,6 +535,12 @@ html {
   src: url("sass/fonts/opensans-semibold-webfont.eot");
   src: url("sass/fonts/opensans-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("sass/fonts/opensans-semibold-webfont.woff") format("woff"), url("sass/fonts/opensans-semibold-webfont.ttf") format("truetype"), url("sass/fonts/opensans-semibold-webfont.svg#open_sanssemibold") format("svg"); }
 @font-face {
+  font-family: 'open_sansextrabold';
+  font-style: normal;
+  font-weight: normal;
+  src: url("sass/fonts/opensans-extrabold-webfont.eot");
+  src: url("sass/fonts/opensans-extrabold-webfont.eot?#iefix") format("embedded-opentype"), url("sass/fonts/opensans-extrabold-webfont.woff") format("woff"), url("sass/fonts/opensans-extrabold-webfont.ttf") format("truetype"), url("sass/fonts/opensans-extrabold-webfont.svg#open_sansextrabold") format("svg"); }
+@font-face {
   font-family: 'ubuntubold';
   font-style: normal;
   font-weight: normal;
@@ -651,6 +666,11 @@ a {
   a:focus {
     outline: none; }
 
+hr {
+  border-color: #001f3f;
+  margin-bottom: 50px;
+  margin-top: 60px; }
+
 .logo {
   opacity: 1; }
   .logo h1 {
@@ -754,26 +774,26 @@ footer {
   footer a {
     color: white; }
 
-.single header {
+.single header, .articles-and-brochures header {
   position: fixed;
   width: 100%; }
-.single nav {
+.single nav, .articles-and-brochures nav {
   background: #001f3f; }
-.single .page-content {
+.single .page-content, .articles-and-brochures .page-content {
   background: none; }
-.single .wrapper {
+.single .wrapper, .articles-and-brochures .wrapper {
   background: #e7e7e7; }
-  .single .wrapper .center {
+  .single .wrapper .center, .articles-and-brochures .wrapper .center {
     color: #001f3f; }
-    .single .wrapper .center h2 {
+    .single .wrapper .center h2, .articles-and-brochures .wrapper .center h2 {
       line-height: 1.35em;
-      margin: 70px 0 100px; }
-    .single .wrapper .center h3 {
-      font-family: "ubuntubold";
-      margin: 50px 0 25px; }
-    .single .wrapper .center p {
+      margin: 70px 0 80px; }
+    .single .wrapper .center p, .articles-and-brochures .wrapper .center p {
       margin-bottom: 40px;
       margin-top: 20px; }
+.single h3, .articles-and-brochures h3 {
+  font-family: "ubuntubold";
+  margin: 50px 0 25px; }
 
 a.download {
   font-size: 1.125em;
@@ -839,6 +859,40 @@ a.more {
   background-color: #001f3f;
   padding: 0px 0 200px;
   position: relative; }
+
+.related div.span-5 {
+  padding-left: 0; }
+.related h3 {
+  margin-top: 30px; }
+
+.green-box {
+  color: #4DA483; }
+  .green-box p, .green-box h3, .green-box a {
+    color: #4DA483; }
+  .green-box a.download:before {
+    background-position: -29px 0; }
+  .green-box a.more:before {
+    background-position: -78px 0; }
+
+.filter {
+  list-style: none;
+  padding: 0; }
+  .filter li {
+    background: #d1d1d1;
+    display: inline-block;
+    float: left; }
+    .filter li a {
+      font-size: 0.875em;
+      line-height: 1.71429em;
+      display: block;
+      font-family: "ubuntubold";
+      padding: 5px 15px 8px;
+      text-decoration: none; }
+
+#pagination {
+  padding-top: 100px; }
+  #pagination a {
+    font-family: "open_sansextrabold"; }
 
 fieldset {
   border: 0;
@@ -1330,7 +1384,7 @@ video {
   top: 0;
   width: 100%;
   z-index: -1; }
-  .single #big-video-wrap {
+  .single #big-video-wrap, .articles-and-brochures #big-video-wrap, .articles-and-brochures #big-video-wrap {
     display: none; }
   #big-video-wrap #big-video-vid {
     display: none;

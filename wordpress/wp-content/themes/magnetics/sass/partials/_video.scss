@@ -16,7 +16,7 @@ video {
     top: 0;
     width: 100%;
     z-index: -1;
-    .single & {
+    .single &,.articles-and-brochures & {
         display: none;
     }
     #big-video-vid {
