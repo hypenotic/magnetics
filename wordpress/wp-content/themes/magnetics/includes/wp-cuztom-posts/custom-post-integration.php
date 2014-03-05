@@ -8,5 +8,17 @@ $args = array(
  	);
 
 $integration = register_cuztom_post_type( 'Integration', $args);
+$integration->add_meta_box(
+	'',
+	'Integration Details',
+		array(
+			array(
+				'name'          => 'sub_heading',
+				'label'         => 'Sub Heading',
+				'description'   => 'This will be displayed below Title',
+				'type'          => 'text',          
+			)
+		)
+	);
 
 ?>

@@ -91,7 +91,10 @@ footer {
     }
 }
 
-.single {
+.single-post {
+    #big-video-wrap {
+        display: none;
+    }
     header {
         position: fixed;
         width: 100%;
@@ -215,7 +218,7 @@ a.more {
 }
 
 .articles-and-brochures {
-    @extend .single;
+    @extend .single-post;
 }
 
 .filter {
