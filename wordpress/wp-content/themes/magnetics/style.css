@@ -774,24 +774,24 @@ footer {
   footer a {
     color: white; }
 
-.single header, .articles-and-brochures header {
+.single-post header, .articles-and-brochures header {
   position: fixed;
   width: 100%; }
-.single nav, .articles-and-brochures nav {
+.single-post nav, .articles-and-brochures nav {
   background: #001f3f; }
-.single .page-content, .articles-and-brochures .page-content {
+.single-post .page-content, .articles-and-brochures .page-content {
   background: none; }
-.single .wrapper, .articles-and-brochures .wrapper {
+.single-post .wrapper, .articles-and-brochures .wrapper {
   background: #e7e7e7; }
-  .single .wrapper .center, .articles-and-brochures .wrapper .center {
+  .single-post .wrapper .center, .articles-and-brochures .wrapper .center {
     color: #001f3f; }
-    .single .wrapper .center h2, .articles-and-brochures .wrapper .center h2 {
+    .single-post .wrapper .center h2, .articles-and-brochures .wrapper .center h2 {
       line-height: 1.35em;
       margin: 70px 0 80px; }
-    .single .wrapper .center p, .articles-and-brochures .wrapper .center p {
+    .single-post .wrapper .center p, .articles-and-brochures .wrapper .center p {
       margin-bottom: 40px;
       margin-top: 20px; }
-.single h3, .articles-and-brochures h3 {
+.single-post h3, .articles-and-brochures h3 {
   font-family: "ubuntubold";
   margin: 50px 0 25px; }
 
@@ -1390,8 +1390,6 @@ video {
   top: 0;
   width: 100%;
   z-index: -1; }
-  .single #big-video-wrap, .articles-and-brochures #big-video-wrap, .articles-and-brochures #big-video-wrap {
-    display: none; }
   #big-video-wrap #big-video-vid {
     display: none;
     top: 0;

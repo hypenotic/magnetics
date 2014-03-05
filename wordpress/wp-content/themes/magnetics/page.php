@@ -1,8 +1,6 @@
 <?php get_header(); ?>
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
-	$page_id=get_the_ID();
-?>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
     <?php // Get the feature banner image
         if (has_post_thumbnail()) {
