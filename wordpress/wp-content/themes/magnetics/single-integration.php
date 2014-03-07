@@ -14,6 +14,11 @@
             <?php the_content(); ?>
         </section>
      </div>
+     
+     
+     
+     
+     
 </div>          
 <?php endwhile;endif;wp_reset_query();?>
 <?php get_footer(); ?>
