@@ -20,9 +20,12 @@ button {
 }
 
 .gform_button {
-    @include sassy-button("flat", 5px, 16px, #97b32d);
+    @include sassy-button("flat", 0px, 16px);
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
     display: block;
-    margin: 0 auto;
+    float: right;
     padding: 1em 3em;
     text-shadow: none;
     text-transform: uppercase;

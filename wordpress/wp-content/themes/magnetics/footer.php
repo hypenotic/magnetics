@@ -15,7 +15,7 @@
                         Markham, Ontario <br />
                         L3R 5H6  Canada<br />
                     </p>
-                    <p><a href="mailto:info@marinemagnetics.com">info@marinemagnetics.com</a>
+                    <p><a href="mailto:info@marinemagnetics.com">info@marinemagnetics.com</a></p>
                     <p>Tel. +1 (905) 479-9727</p>
                     <p>Fax. +1 (905) 479-9484</p>
             </div>

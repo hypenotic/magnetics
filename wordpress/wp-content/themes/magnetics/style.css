@@ -565,7 +565,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   color: white;
   text-decoration: none; }
   h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
-    color: #666666; }
+    color: #67c4a1; }
 
 h1 {
   font-size: 1.625em;
@@ -658,7 +658,7 @@ blockquote {
 a {
   color: #001f3f; }
   a:hover {
-    color: #001f3f;
+    color: #67C4A1;
     outline: none;
     text-decoration: none; }
   a:active {
@@ -774,6 +774,8 @@ footer {
   footer a {
     color: white; }
 
+.single-post #big-video-wrap, .articles-and-brochures #big-video-wrap {
+  display: none; }
 .single-post header, .articles-and-brochures header {
   position: fixed;
   width: 100%; }
@@ -888,6 +890,32 @@ a.more {
       font-family: "ubuntubold";
       padding: 5px 15px 8px;
       text-decoration: none; }
+
+.error404 .page-title {
+  padding-bottom: 0px; }
+.error404 .page-content p {
+  color: white;
+  text-align: center; }
+.error404 .page-content #menu-404-page-menu {
+  list-style: none;
+  padding: 0;
+  text-align: center; }
+  .error404 .page-content #menu-404-page-menu li {
+    display: inline-block; }
+    .error404 .page-content #menu-404-page-menu li a {
+      border-right: 3px solid #fff;
+      color: white;
+      font-family: "ubuntubold";
+      padding: 0px 15px 0 7px; }
+    .error404 .page-content #menu-404-page-menu li:last-child a {
+      border: none; }
+
+.contact .wrapper {
+  background: rgba(0, 116, 217, 0.7); }
+  .contact .wrapper .page-title:after {
+    background: none; }
+  .contact .wrapper .page-content {
+    background: none; }
 
 #pagination {
   padding-top: 100px; }
@@ -1034,6 +1062,21 @@ footer input[type="submit"] {
   font-style: italic !important;
   line-height: 2.2em;
   text-align: center !important; }
+
+.gform_wrapper input[type=text], .gform_wrapper textarea {
+  font-size: 16px !important;
+  padding: 5px 10px 5px 10px !important; }
+.gform_wrapper .top_label .gfield_label {
+  display: none !important; }
+.gform_wrapper .top_label input.medium {
+  display: block;
+  margin-top: 17px;
+  width: 97.2% !important; }
+.gform_wrapper .top_label select.medium {
+  width: 100% !important; }
+.gform_wrapper .top_label textarea.textarea {
+  width: 97.2% !important;
+  margin-top: 17px; }
 
 #search {
   background-color: #162a33;
@@ -1344,26 +1387,29 @@ button {
   padding: 0.5em 1.5em;
   display: inline-block;
   cursor: pointer;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
   *zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF97B32D', endColorstr='#FF526119');
-  background-color: #97b32d;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0B99C2', endColorstr='#FF064D61');
+  background-color: #0b99c2;
   border: 0;
   color: white;
-  text-shadow: #414d13 0 -1px 0;
+  text-shadow: #043a49 0 -1px 0;
+  background: none;
+  border: 2px solid #fff;
+  color: #fff;
   display: block;
-  margin: 0 auto;
+  float: right;
   padding: 1em 3em;
   text-shadow: none;
   text-transform: uppercase; }
   .gform_button:hover {
     text-decoration: none; }
   .gform_button:hover {
-    background-color: #869f28; }
+    background-color: #0a86aa; }
   .gform_button:active {
-    background-color: #7b9225; }
+    background-color: #097b9b; }
   .gform_button.disabled, .gform_button[disabled] {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
     opacity: 0.6;
