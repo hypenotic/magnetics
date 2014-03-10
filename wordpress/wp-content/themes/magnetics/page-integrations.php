@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Integration Archive
+Template Name: Integrations
 */
 
 get_header(); ?>

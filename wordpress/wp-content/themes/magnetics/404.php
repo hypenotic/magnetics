@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: 404 Error Page
+Template Name: 404
 */
 
  get_header(); ?>
