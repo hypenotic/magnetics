@@ -28,4 +28,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             </div>
     </div>
 <?php endwhile; endif; wp_reset_query();?>
-<?php get_footer(); ?>
+</div>
+<?php wp_footer();?>
+</body>
+</html>
