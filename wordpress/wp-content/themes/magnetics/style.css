@@ -217,7 +217,6 @@ header {
   z-index: 2000; }
 
 .wrapper {
-  background: rgba(0, 31, 63, 0.7);
   padding-top: 200px;
   position: relative;
   z-index: 10; }
@@ -1075,8 +1074,8 @@ footer input[type="submit"] {
 .gform_wrapper .top_label select.medium {
   width: 100% !important; }
 .gform_wrapper .top_label textarea.textarea {
-  width: 97.2% !important;
-  margin-top: 17px; }
+  margin-top: 17px;
+  width: 97.2% !important; }
 
 #search {
   background-color: #162a33;
