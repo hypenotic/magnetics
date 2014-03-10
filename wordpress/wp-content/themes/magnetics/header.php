@@ -38,7 +38,7 @@
 <body <?php body_class();?>>
 <div id="big-video-wrap">
 	<div id="big-video-vid">
-    	<video preload="auto" muted autoplay src="https://s3.amazonaws.com/whiteboard.is/videos/bg-loop-new.mp4"></video>
+    	<video preload="auto" muted loop autoplay src="<?php bloginfo('template_url');?>/videos/shutterstock_v3711827.mp4"></video>
         <div></div>
      </div>
 	<div id="big-video-image">
