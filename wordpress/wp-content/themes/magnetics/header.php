@@ -36,6 +36,7 @@
 </head>
 
 <body <?php body_class();?>>
+    <!--
 <div id="big-video-wrap">
 	<div id="big-video-vid">
     	<video preload="auto" muted loop autoplay src="<?php bloginfo('template_url');?>/videos/shutterstock_v3711827.mp4"></video>
@@ -45,7 +46,8 @@
 		<img src="<?php bloginfo('template_url');?>/images/homepage-banner.jpg" />	
         <div></div>
      </div>
-</div>        
+</div>
+-->     
 <!-- Menu Section Starts -->
     <!-- Left Menu Section -->
     <!-- Right Menu Section -->

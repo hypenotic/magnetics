@@ -18,9 +18,9 @@ footer {
         padding: 0.50em;
         width: 100%;
         background: {
+            color: white;
             //image: image_url("newsletter-icons.png");
             position: 95% -55px;
-            color: white;
             repeat: no-repeat;
         };
         &:focus {
