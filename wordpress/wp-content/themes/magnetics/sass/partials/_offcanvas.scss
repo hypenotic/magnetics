@@ -97,10 +97,10 @@ $offcanvas-panel-width: 20em;
                 padding: 0;
                 &.current-menu-item {
                     background: #5c6f81;
-                    & ul li {
+                    & ul.sub-menu li {
                         background: $white;
                         a {
-                            color: #5c6f81;
+                            color: #C0C9D1;
                             &:hover {
                                 color: $white;
                             }

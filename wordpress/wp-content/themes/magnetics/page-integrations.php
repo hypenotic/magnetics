@@ -4,6 +4,7 @@ Template Name: Integrations
 */
 
 get_header(); ?>
+<?php get_template_part( 'template-part', 'add_video' ); ?>
 <div class="page-title">
         <div class="container">
             <section class="span-10 center">
