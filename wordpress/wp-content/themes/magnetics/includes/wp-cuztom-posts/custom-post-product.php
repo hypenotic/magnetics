@@ -30,7 +30,7 @@ $product->add_meta_box(
 
 $product->add_meta_box(
 	'product_options',
-	'Options',
+	'Configurations',
 	array(
 		'bundle',    
 			array( 
@@ -44,14 +44,27 @@ $product->add_meta_box(
 					'name'          => 'content',
 					'label'         => 'Description',
 					'description'   => '',
-					'type'          => 'WYSIWYG',          
+					'type'          => 'textarea',          
 				),
 				array(
 			        'name'          => 'image',
 			        'label'         => 'Image',
 			        'description'   => '',
 			        'type'          => 'image',
-			    )
+			    ),
+			    array(
+        			'name'          => 'config',
+        			'label'         => 'Select',
+        			'description'   => 'Select what type of configuration',
+        			'type'          => 'select',
+        			'options'       => array(
+						'value1'    => 'Select configuration type',
+            			'value2'    => 'What\'s in the box',
+            			'value3'    => 'Accessories',
+            			'value4'    => 'Integrations'
+        				),
+        			'default_value' => 'value1'
+     			)
 			)
 		)
 	);

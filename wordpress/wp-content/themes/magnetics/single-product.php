@@ -1,6 +1,28 @@
 <?php get_header(); ?>
+
 <?php get_template_part( 'template-part', 'add_video' ); ?>
-<?php if(have_posts()):while(have_posts()):the_post();?>
+
+<?php // Loop starts
+    if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+    <?php // Get post meta
+        $config_title   = get_post_meta($post->ID, '_product_options', true);
+        $config_desc    = get_post_meta($post->ID, '_product_options_description', true);
+        $config_image   = get_post_meta($post->ID, '_work_id_video' ,true);
+        //$image_id   = get_post_thumbnail_id();
+        $image_url  = wp_get_attachment_image_src($image_id,'banner', true);
+    ?>
+
+
+<?php $arraytest = print_r(get_post_meta($post->ID, '_product_options', true));?>
+
+<?php 
+    foreach( $teams as $post ) :  setup_postdata($post); 
+?>
+<?php echo get_post_meta(get_the_ID(), '__product_options_title', true); ?>
+ <?php endforeach; ?>
+
+
 <div class="page-title">
     <div class="container">
         <section class="span-10 center">
@@ -114,6 +136,10 @@
             </ul>
         </section>
      </div>
+
+
+
+
 </div>          
 <?php endwhile;endif;wp_reset_query();?>
 <?php get_footer(); ?>
