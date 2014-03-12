@@ -38,9 +38,12 @@ get_header(); ?>
 	        </div>	       
     	</div>            
         <div class="container related">
-        	<?php if(have_posts()): while(have_posts()):the_post();?>
+        	<?php if(have_posts()): while(have_posts()):the_post();
+						$post_type=get_post_type(get_the_ID());
+						if($post_type=='post') $post_type = "Article";
+			?>
         	<div class="span-9 center">
-            	<h6>ARTICLE</h6>
+                <h6><?php echo strtoupper($post_type);?></h6>
             	<div class="span-5"><h3><?php the_title();?></h3></div>
             	<div class="span-7">
                 	<p><?php echo get_post_meta(get_the_ID(),'_brochure_content',true);?></p>

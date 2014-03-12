@@ -280,3 +280,14 @@ a.more {
         }
     }
 }
+
+.green-bg {
+    background: #67c4a1;
+    padding: 240px 0;
+}
+
+.grey-bg {
+    @extend .green-bg;
+    background: #e7e7e7;
+    color: $body_bg;
+}
