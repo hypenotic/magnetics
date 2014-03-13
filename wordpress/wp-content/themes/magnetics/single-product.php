@@ -39,12 +39,24 @@
                 <?php the_content(); ?>
         </section>
         
-        <section class="span-10 center">
+        <section class="span-10 center product_slides">
                 <?php //the_content(); ?>
-                <div class="stem_bg_white"></div>
-                <div class="stem_bg_green"></div>
+                <div class="stem">
+                    <div class="stem_bg_white"></div>
+                    <div class="stem_bg_green"></div>
+                </div>
             <ul class="product_slide">
-                <li class="fade left clearfix">
+            
+                <li class="first fade left clearfix" id="product_slide_1">
+                		<div class="grid-5">
+                            <div class="product_slide_mask">
+                            </div>
+                            <div class="product_slide_content">
+                            </div>
+                         </div>
+                         <div class="grid-5"></div>
+                </li>
+                <li class="fade left clearfix" id="product_slide_2">
                 		<div class="grid-5">
                             <div class="product_slide_icon">
                             </div>
@@ -57,7 +69,7 @@
                          </div>
                          <div class="grid-5"></div>
                 </li>
-                <li class="fade right clearfix">
+                <li class="fade right clearfix" id="product_slide_3">
 	                         <div class="grid-5"></div>
                 		<div class="grid-5">
                             <div class="product_slide_icon">
@@ -70,7 +82,7 @@
                             </div>
                          </div>   
                 </li>
-                <li class="fade left clearfix">
+                <li class="fade left clearfix" id="product_slide_4">
                     	<div class="grid-5">
                             <div class="product_slide_icon">
                             </div>
@@ -83,7 +95,7 @@
                          </div>   
                                                      <div class="grid-5"></div>
                 </li>
-                <li class="fade right clearfix">
+                <li class="fade right clearfix" id="product_slide_5">
                          <div class="grid-5"></div>                		
                         <div class="grid-5">
                             <div class="product_slide_icon">
@@ -96,7 +108,7 @@
                             </div>
                          </div>                          
                 </li>
-                <li class="fade left clearfix">
+                <li class="fade left clearfix" id="product_slide_6">
                 		<div class="grid-5">
                             <div class="product_slide_icon">
                             </div>
@@ -109,7 +121,7 @@
                          </div>   
                          <div class="grid-5"></div>                            
                 </li>
-                <li class="fade right clearfix">
+                <li class="fade right clearfix" id="product_slide_7">
                          <div class="grid-5"></div>                
                 		<div class="grid-5">
                             <div class="product_slide_icon">
@@ -122,7 +134,7 @@
                             </div>
                          </div>          
                 </li>
-                <li class="fade left clearfix">
+                <li class="fade left clearfix" id="product_slide_8">
                 		<div class="grid-5">
                             <div class="product_slide_icon">
                             </div>
@@ -134,6 +146,16 @@
                             </div>
                          </div>   
                          <div class="grid-5"></div>                            
+                </li>
+                
+                <li class="last fade left clearfix" id="product_slide_9">
+                		<div class="grid-5">
+                            <div class="product_slide_mask">
+                            </div>
+                            <div class="product_slide_content">
+                            </div>
+                         </div>
+                         <div class="grid-5"></div>
                 </li>
                 
             </ul>
