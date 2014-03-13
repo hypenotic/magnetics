@@ -43,12 +43,12 @@
 	
 	$(document).ready(function()
 	{
-	//	setup_tweets();
+		//	setup_tweets();
 		setup_fade();
 		
 		// trigger events
 		$(window).trigger('resize');
-				
+		
 	});
 	
 	
@@ -68,50 +68,54 @@
 		
 		
 		// vars
-		var posts = $('.product_slide li.fade').reverse();
+		var posts = $('.product_slide li.fade');//.reverse();
 		
-				var height=10;		
+		var previousScroll = 0;	
+		var count = 1;
 		$(window).on('scroll', function(){
 				var scroll = $(window).scrollTop();
-
+				var d_h=$(document).height();	
 				var offset = $(".product_slide").offset();
-				var top = offset.top-scroll;
-				if(top<=250) {
-					height += 40;					
-					$('.stem_bg_green').height(height);
+				var  product_slide_height=$(".product_slide").height();
+				var height = $(".stem_bg_green").height();
+				var top = offset.top - scroll;
+				$(".stem_bg_green").height();
+				if (scroll > previousScroll){
+					if(top <= $(window).height()/2) {	
+						count++;
+						if(height < product_slide_height ) {
+							height = 40*count;										
+							$('.stem_bg_green').height(height);
+						}
+					}
+				} else {
+					count--;	
+					if(height>0) {
+						height = 40*count;					
+						$('.stem_bg_green').height(height);
+					}
 				}
+				previousScroll = scroll;
 				
-				
-			// find new scroll
-			var scroll = $(window).scrollTop(),
-				middle = $(window).height() / 2;
+				var middle = $(window).height() / 2;
 			
 			
 			// fade posts
-			posts.addClass('fade').each(function( i ){
+			$('.product_slide > li').each(function( el ){
 				
 				// vars
 				var post = $(this),
-					relative = post.position().top - scroll,
-					stem_class = "";
-				
+					relative = post.offset().top - scroll;
 				
 				if( relative < middle)
 				{
-					if( post.hasClass('tweet') )
-					{
-						stem_class = "tweet";
-					}
-					
-					$('#stem-holder').attr('class', stem_class);
-					
+					$('.product_slide > li').each(function( el ){
+						$(this).addClass('fade');
+					});
 					post.removeClass('fade');
-					
-					return false;
 				}
 				
 			});
-
 		});
 		
 		
