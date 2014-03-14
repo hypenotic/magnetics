@@ -295,3 +295,35 @@ a.more {
 #title {
     margin-bottom: 100px;
 }
+
+.configuration_list {
+    position: relative;
+    ul {
+        list-style: none;
+        padding: 30px 0 70px;
+        li {
+            padding: 0 0 40px 375px;
+            position: relative;
+            img {
+                left: 0;
+                position: absolute;
+                top: 17px;
+            }
+            p {
+                @include adjust-font-size-to(13px);
+            }
+        }
+    }
+    h3 {
+        margin-top: 30px;
+        &:after {
+            border-color: $white transparent transparent transparent;
+            border-style: solid;
+            border-width: 12px 10px 0 10px;
+            content: '';
+            margin-left: 15px;
+            position: absolute;
+            top: 20px;
+        }
+    }
+}
