@@ -65,15 +65,18 @@
             background: url(images/sprite.png) 0 0;
             bottom: 0;
             position: absolute;
-            top: 53px;
+            top: 69px;
             width: 71px;
         }
         .product_slide_icon {
             background: url(images/sprite.png) -72px 0;
-            height: 53px;
+            height: 69px;
             position: absolute;
             top: 0;
             width: 72px;
+        }
+        .icon-2 {
+            background-position: -144px 0;
         }
     }
 }

@@ -72,7 +72,7 @@
                 <li class="fade right clearfix" id="product_slide_3">
 	                         <div class="grid-5"></div>
                 		<div class="grid-5">
-                            <div class="product_slide_icon">
+                            <div class="product_slide_icon icon-2">
                             </div>
                             <div class="product_slide_mask">
                             </div>
@@ -165,6 +165,57 @@
    		<div class="container">
         	<div class="span-10 center">
             	<h2>Configurations</h2>
+                    <section  class="configuration_list">
+                    	<h3>What's in the box</h3>
+                        <ul>
+                        	<li>
+                            	<img src="<?php bloginfo('template_url');?>/images/configuration_dummy.jpg" />
+                                <h6>Overhauser Sensor</h6>
+                            	<p>Omnidirectional sensor that does not contain any consumable parts </p>
+                                <p><a href="#">Learn More</a></p>
+                            </li>
+                        	<li>
+                            	<img src="<?php bloginfo('template_url');?>/images/configuration_dummy.jpg" />
+                                <h6>Electronics Module</h6>
+                                <p>Omnidirectional sensor that does not contain any consumable parts </p>
+                                <p><a href="#">Learn More</a></p>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="configuration_list">
+                    	<h3>Accessories</h3>                    
+                            <ul>
+                                <li>
+                                    <img src="<?php bloginfo('template_url');?>/images/configuration_dummy.jpg" />
+                                    <h6>Overhauser Sensor</h6>
+                                    <p>Omnidirectional sensor that does not contain any consumable parts </p>
+                                    <p><a href="#">Learn More</a></p>
+                                </li>
+                                <li>
+                                    <img src="<?php bloginfo('template_url');?>/images/configuration_dummy.jpg" />
+                                    <h6>Electronics Module</h6>
+                                    <p>Omnidirectional sensor that does not contain any consumable parts </p>
+                                    <p><a href="#">Learn More</a></p>
+                                </li>
+                            </ul>
+                    </section>
+                    <section class="configuration_list">
+                    	<h3>Integrations</h3>                    
+                            <ul>
+                                <li>
+                                    <img src="<?php bloginfo('template_url');?>/images/configuration_dummy.jpg" />
+                                    <h6>Overhauser Sensor</h6>
+                                    <p>Omnidirectional sensor that does not contain any consumable parts </p>
+                                    <p><a href="#">Learn More</a></p>
+                                </li>
+                                <li>
+                                    <img src="<?php bloginfo('template_url');?>/images/configuration_dummy.jpg" />
+                                    <h6>Electronics Module</h6>
+                                    <p>Omnidirectional sensor that does not contain any consumable parts </p>
+                                    <p><a href="#">Learn More</a></p>
+                                </li>
+                            </ul>
+                    </section>
             </div>
         </div>
     </div>
