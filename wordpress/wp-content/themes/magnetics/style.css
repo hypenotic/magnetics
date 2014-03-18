@@ -711,6 +711,9 @@ hr {
   .front-headline a {
     color: #cccccc; }
 
+.section-headline {
+  margin-bottom: 250px; }
+
 .headline {
   font-size: 6.875em;
   line-height: 1.09091em;
@@ -741,7 +744,9 @@ hr {
       .meta span a:hover {
         text-decoration: underline; }
   .meta.inline-meta span {
-    display: inline; }
+    display: inline-block;
+    margin-bottom: 50px;
+    margin-top: 20px; }
 
 .sub-meta {
   font-size: 1em;
@@ -921,7 +926,8 @@ a.more {
 
 .green-bg, .grey-bg {
   background: #67c4a1;
-  padding: 240px 0; }
+  padding: 240px 0;
+  position: relative; }
 
 .grey-bg {
   background: #e7e7e7;
@@ -934,17 +940,20 @@ a.more {
   position: relative; }
   .configuration_list ul {
     list-style: none;
-    padding: 30px 0 100px; }
+    padding: 30px 0 70px; }
     .configuration_list ul li {
       padding: 0 0 40px 375px;
       position: relative; }
       .configuration_list ul li img {
         left: 0;
         position: absolute;
-        top: 17px; }
+        top: 17px;
+        width: 300px; }
       .configuration_list ul li p {
         font-size: 0.8125em;
         line-height: 1.84615em; }
+      .configuration_list ul li a:hover {
+        color: #001F3F; }
   .configuration_list h3 {
     margin-top: 30px; }
     .configuration_list h3:after {
@@ -1420,6 +1429,15 @@ button {
     color: #fff; }
     button.white:hover {
       background: #67c4a1; }
+  button.callus-button {
+    background: #001f3f;
+    bottom: 0;
+    position: absolute;
+    right: 5%;
+    text-transform: none; }
+    button.callus-button a {
+      color: white;
+      text-decoration: none; }
 
 .gform_button {
   font-size: 16px;

@@ -14,7 +14,7 @@
     ?>
 
 
-<?php $arraytest = print_r(get_post_meta($post->ID, '_product_options', true));?>
+<?php $arraytest = get_post_meta($post->ID, '_product_options', true);?>
 
 <?php 
 	if($teams):
@@ -164,66 +164,89 @@
 	<div class="green-bg">
    		<div class="container">
         	<div class="span-10 center">
-            	<h2>Configurations</h2>
+            	<h2 class="section-headline">Configurations</h2>
+					<?php 
+                        $configs = get_post_meta( get_the_ID(),'_product_options',true );
+						if($configs) {
+                     ?>
                     <section  class="configuration_list">
                     	<h3>What's in the box</h3>
                         <ul>
-                        	<li>
-                            	<img src="<?php bloginfo('template_url');?>/images/configuration_dummy.jpg" />
-                                <h6>Overhauser Sensor</h6>
-                            	<p>Omnidirectional sensor that does not contain any consumable parts </p>
-                                <p><a href="#">Learn More</a></p>
-                            </li>
-                        	<li>
-                            	<img src="<?php bloginfo('template_url');?>/images/configuration_dummy.jpg" />
-                                <h6>Electronics Module</h6>
-                                <p>Omnidirectional sensor that does not contain any consumable parts </p>
-                                <p><a href="#">Learn More</a></p>
-                            </li>
+                        	<?php foreach($configs as $config) {
+								if($config['_config']=='value2'){	
+							 ?>
+								<li>
+                                	<?php if($config['_image']){ 
+											$img =$config['_image'];
+											}else {
+											$img= get_bloginfo('template_url')."/images/configuration_dummy.jpg";	
+										}
+									?>	
+									<img src="<?php echo $img;?>" />
+									<h6><?php echo $config['_title'];?></h6>
+									<p><?php echo $config['_content'];?></p>
+									<p><a href="#">Learn More</a></p>
+								</li>
+								<?php } ?>
+                            <?php } ?>
                         </ul>
                     </section>
                     <section class="configuration_list">
                     	<h3>Accessories</h3>                    
                             <ul>
-                                <li>
-                                    <img src="<?php bloginfo('template_url');?>/images/configuration_dummy.jpg" />
-                                    <h6>Overhauser Sensor</h6>
-                                    <p>Omnidirectional sensor that does not contain any consumable parts </p>
-                                    <p><a href="#">Learn More</a></p>
-                                </li>
-                                <li>
-                                    <img src="<?php bloginfo('template_url');?>/images/configuration_dummy.jpg" />
-                                    <h6>Electronics Module</h6>
-                                    <p>Omnidirectional sensor that does not contain any consumable parts </p>
-                                    <p><a href="#">Learn More</a></p>
-                                </li>
+                                <?php foreach($configs as $config) {
+								if($config['_config']=='value3'){	
+							 ?>
+								<li>
+                                	<?php if($config['_image']){ 
+											$img =$config['_image'];
+											}else {
+											$img= get_bloginfo('template_url')."/images/configuration_dummy.jpg";	
+										}
+									?>	
+									<img src="<?php echo $img;?>" />
+									<h6><?php echo $config['_title'];?></h6>
+									<p><?php echo $config['_content'];?></p>
+									<p><a href="#">Learn More</a></p>
+								</li>
+								<?php } ?>
+                            <?php } ?>
                             </ul>
                     </section>
                     <section class="configuration_list">
                     	<h3>Integrations</h3>                    
                             <ul>
-                                <li>
-                                    <img src="<?php bloginfo('template_url');?>/images/configuration_dummy.jpg" />
-                                    <h6>Overhauser Sensor</h6>
-                                    <p>Omnidirectional sensor that does not contain any consumable parts </p>
-                                    <p><a href="#">Learn More</a></p>
-                                </li>
-                                <li>
-                                    <img src="<?php bloginfo('template_url');?>/images/configuration_dummy.jpg" />
-                                    <h6>Electronics Module</h6>
-                                    <p>Omnidirectional sensor that does not contain any consumable parts </p>
-                                    <p><a href="#">Learn More</a></p>
-                                </li>
+							<?php foreach($configs as $config) {
+								if($config['_config']=='value1'){	
+							 ?>
+								<li>
+                                	<?php if($config['_image']){ 
+											$img =$config['_image'];
+											}else {
+											$img= get_bloginfo('template_url')."/images/configuration_dummy.jpg";	
+										}
+									?>	
+									<img src="<?php echo $img;?>" />
+									<h6><?php echo $config['_title'];?></h6>
+									<p><?php echo $config['_content'];?></p>
+									<p><a href="#">Learn More</a></p>
+								</li>
+								<?php } ?>
+                            <?php } ?>
                             </ul>
                     </section>
+                    
+                   <?php } ?> 
             </div>
         </div>
+                            
+                    <button class="callus-button"><a href="#">Call Us!</a></button>
     </div>
     
 	<div class="grey-bg">
    		<div class="container">
         	<div class="span-10 center">
-            	<h2>Articles & Brochures</h2>
+            	<h2 class="section-headline">Articles & Brochures</h2>
 				<?php 
                 	$paged  = (get_query_var('paged')) ? get_query_var('paged') : 1;
             	    $args =array(
@@ -250,8 +273,7 @@
                                         <span><a href="<?php the_permalink();?>" class="more"></a></span>
                                     </p>
                                 </div>
-                                <hr />                
-                            
+                                <hr />
 	                    <?php endwhile;endif;wp_reset_query();?>
     						</div>
 

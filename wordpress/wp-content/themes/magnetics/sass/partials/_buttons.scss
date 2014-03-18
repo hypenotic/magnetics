@@ -17,6 +17,17 @@ button {
             background: #67c4a1;
         }
     }
+    &.callus-button {
+        background: $body_bg;
+        bottom: 0;
+        position: absolute;
+        right: 5%;
+        text-transform: none;
+        a {
+            color: $white;
+            text-decoration: none;
+        }
+    }
 }
 
 .gform_button {
