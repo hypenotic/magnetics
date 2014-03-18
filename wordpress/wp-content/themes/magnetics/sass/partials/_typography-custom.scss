@@ -51,7 +51,9 @@
         }
     }
     &.inline-meta span {
-        display: inline;
+        display: inline-block;
+        margin-bottom: 50px;
+        margin-top: 20px;
     }
 }
 
@@ -317,6 +319,9 @@ a.more {
             }
             p {
                 @include adjust-font-size-to(13px);
+            }
+            & a:hover {
+                color: #001F3F;
             }
         }
     }

@@ -744,7 +744,9 @@ hr {
       .meta span a:hover {
         text-decoration: underline; }
   .meta.inline-meta span {
-    display: inline; }
+    display: inline-block;
+    margin-bottom: 50px;
+    margin-top: 20px; }
 
 .sub-meta {
   font-size: 1em;
@@ -950,6 +952,8 @@ a.more {
       .configuration_list ul li p {
         font-size: 0.8125em;
         line-height: 1.84615em; }
+      .configuration_list ul li a:hover {
+        color: #001F3F; }
   .configuration_list h3 {
     margin-top: 30px; }
     .configuration_list h3:after {

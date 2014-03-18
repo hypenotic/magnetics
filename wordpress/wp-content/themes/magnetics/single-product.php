@@ -273,8 +273,7 @@
                                         <span><a href="<?php the_permalink();?>" class="more"></a></span>
                                     </p>
                                 </div>
-                                <hr />                
-                            	<br />
+                                <hr />
 	                    <?php endwhile;endif;wp_reset_query();?>
     						</div>
 
