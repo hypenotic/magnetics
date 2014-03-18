@@ -15,6 +15,10 @@
     }
 }
 
+.section-headline {
+    margin-bottom: 250px;
+}
+
 .headline {
     @include adjust-font-size-to(110px);
     @include text-shadow(0 0 32px #003770);
@@ -284,6 +288,7 @@ a.more {
 .green-bg {
     background: #67c4a1;
     padding: 240px 0;
+    position: relative;
 }
 
 .grey-bg {
@@ -308,6 +313,7 @@ a.more {
                 left: 0;
                 position: absolute;
                 top: 17px;
+                width: 300px;
             }
             p {
                 @include adjust-font-size-to(13px);
