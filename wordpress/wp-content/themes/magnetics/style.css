@@ -888,7 +888,18 @@ a.more {
   .single-product video#bgvid {
     position: relative;
     z-index: 1; }
-    .single-product video#bgvid:after {
+  .single-product header {
+    width: 100%; }
+  .single-product nav {
+    background: #001f3f; }
+  .single-product .wrapper {
+    background: none;
+    padding: 143px 0 0 0; }
+  .single-product .page-title {
+    background: #001f3f; }
+  .single-product .video-wrapper {
+    position: relative; }
+    .single-product .video-wrapper:after {
       background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 31, 63, 0)), color-stop(100%, #001f3f));
       background: -webkit-gradient(linear, left top, left bottom, left, right);
       background: -webkit-linear-gradient(top, rgba(0, 31, 63, 0) 0%, #001f3f 100%);
@@ -900,16 +911,7 @@ a.more {
       left: 0;
       position: absolute;
       width: 100%;
-      z-index: -1; }
-  .single-product header {
-    width: 100%; }
-  .single-product nav {
-    background: #001f3f; }
-  .single-product .wrapper {
-    background: none;
-    padding: 143px 0 0 0; }
-  .single-product .page-title {
-    background: #001f3f; }
+      z-index: 1; }
   .single-product .page-content {
     background: none;
     margin-top: -6px;
@@ -917,8 +919,8 @@ a.more {
   .single-product #title {
     background: #001f3f;
     margin-bottom: 0;
-    padding-top: 100px;
-    padding-bottom: 100px; }
+    padding-bottom: 100px;
+    padding-top: 100px; }
 
 .filter {
   list-style: none;
@@ -1707,7 +1709,7 @@ video#bgvid {
     left: 49.7%;
     position: fixed;
     top: 0;
-    width: 71px;
+    width: 70px;
     z-index: 0; }
   .stem .stem_bg_green {
     -moz-transition: all 0.5s;
@@ -1719,5 +1721,5 @@ video#bgvid {
     left: 49.7%;
     position: fixed;
     top: 0px;
-    width: 71px;
+    width: 70px;
     z-index: 1; }

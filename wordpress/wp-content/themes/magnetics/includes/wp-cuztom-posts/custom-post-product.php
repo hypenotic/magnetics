@@ -91,4 +91,16 @@ $product->add_meta_box(
 		)
 	);
 
+$product->add_meta_box( 
+	'product_color',
+	'Product Color',
+		array(
+			array(
+				'name'          => 'color',
+				'label'         => 'Select Color',
+				'description'   => '',
+				'type'          => 'color'
+            )
+		)
+	);	
 ?>
