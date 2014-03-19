@@ -86,14 +86,14 @@
 						count++;
 						if(height < product_slide_height ) {
 							height = (scroll-top)/2.2; 
-							$('.stem_bg_green').height(height);
+				//			$('.stem_bg_green').height(height);
 						}
 					}
 				} else {
 					count--;	
 					if(height>0) {
 							height = (scroll-top)/2.2;										
-							$('.stem_bg_green').height(height);
+					//		$('.stem_bg_green').height(height);
 					}
 				}
 				previousScroll = scroll;
