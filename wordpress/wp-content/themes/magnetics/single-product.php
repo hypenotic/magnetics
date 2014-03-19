@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php get_template_part( 'template-part', 'add_video' ); ?>
+<?php //get_template_part( 'template-part', 'add_video' ); ?>
 
 <?php // Loop starts
     if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -32,6 +32,10 @@
     </div>    
 </div>     
 <div class="page-content">  	
+                <div class="stem">
+                    <div class="stem_bg_green"></div>
+                    <div class="stem_bg_white"></div>
+                </div>
     <div class="container">
         <section class="span-10 center text-center">
 				<?php the_title( '<h2 id="title">', '</h2>' ); ?>
@@ -41,10 +45,7 @@
         
         <section class="span-10 center product_slides">
                 <?php //the_content(); ?>
-                <div class="stem">
-                    <div class="stem_bg_white"></div>
-                    <div class="stem_bg_green"></div>
-                </div>
+
             <ul class="product_slide">
             
                 <li class="first fade left clearfix" id="product_slide_1">
