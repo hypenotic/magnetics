@@ -1668,7 +1668,7 @@ video#bgvid {
       .product_slide li.left .product_slide_mask {
         right: -66px; }
       .product_slide li.left .product_slide_icon {
-        right: -67px; }
+        right: -66px; }
     .product_slide li.right {
       text-align: right; }
       .product_slide li.right .product_slide_icon {
@@ -1692,7 +1692,7 @@ video#bgvid {
       height: 69px;
       position: absolute;
       top: 0;
-      width: 72px; }
+      width: 71px; }
     .product_slide li .icon-2 {
       background-position: -144px 0; }
 
@@ -1709,7 +1709,7 @@ video#bgvid {
     left: 49.7%;
     position: fixed;
     top: 0;
-    width: 70px;
+    width: 69px;
     z-index: 0; }
   .stem .stem_bg_green {
     -moz-transition: all 0.5s;
@@ -1721,5 +1721,5 @@ video#bgvid {
     left: 49.7%;
     position: fixed;
     top: 0px;
-    width: 70px;
+    width: 69px;
     z-index: 1; }
