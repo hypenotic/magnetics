@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php //get_template_part( 'template-part', 'add_video' ); ?>
+<?php get_template_part( 'template-part', 'add_video' ); ?>
 
 <?php // Loop starts
     if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -23,14 +23,14 @@
 <?php echo get_post_meta(get_the_ID(), '__product_options_title', true); ?>
  <?php endforeach; endif; ?>
 
-
+<?php /*?>
 <div class="page-title">
     <div class="container">
         <section class="span-10 center">
 				<img src="<?php bloginfo('template_url');?>/images/product_image.png" />
         </section>
     </div>    
-</div>     
+</div>     <?php */?>
 <div class="page-content">  	
                 <div class="stem">
                     <div class="stem_bg_green"></div>

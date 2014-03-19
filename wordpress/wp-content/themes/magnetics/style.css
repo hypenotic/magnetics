@@ -885,6 +885,22 @@ a.more {
 
 .single-product {
   background: #001f3f; }
+  .single-product video#bgvid {
+    position: relative;
+    z-index: 1; }
+    .single-product video#bgvid:after {
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 31, 63, 0)), color-stop(100%, #001f3f));
+      background: -webkit-gradient(linear, left top, left bottom, left, right);
+      background: -webkit-linear-gradient(top, rgba(0, 31, 63, 0) 0%, #001f3f 100%);
+      background: linear-gradient(to bottom, rgba(0, 31, 63, 0) 0%, #001f3f 100%);
+      bottom: 0;
+      content: "";
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$body_bg',endColorstr='$body_bg',GradientType=0);
+      height: 35%;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      z-index: -1; }
   .single-product header {
     width: 100%; }
   .single-product nav {
@@ -896,10 +912,12 @@ a.more {
     background: #001f3f; }
   .single-product .page-content {
     background: none;
+    margin-top: -6px;
     padding-bottom: 0; }
   .single-product #title {
     background: #001f3f;
     margin-bottom: 0;
+    padding-top: 100px;
     padding-bottom: 100px; }
 
 .filter {
