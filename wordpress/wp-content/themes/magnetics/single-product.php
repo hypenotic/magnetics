@@ -1,14 +1,19 @@
 <?php get_header(); ?>
-
+<div class="video-wrapper">
 <?php get_template_part( 'template-part', 'add_video' ); ?>
-
+</div>
 <?php // Loop starts
     if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
     <?php // Get post meta
         $config_title   = get_post_meta($post->ID, '_product_options', true);
         $config_desc    = get_post_meta($post->ID, '_product_options_description', true);
-        $config_image   = get_post_meta($post->ID, '_work_id_video' ,true);
+		$config_image   = get_post_meta($post->ID, '_work_id_video' ,true);
+		$product_color   = get_post_meta($post->ID, '_product_color_color' ,true);
+		$bg='';
+		if($product_color) {
+			$bg='style="background:'.$product_color.';"';
+		}
         //$image_id   = get_post_thumbnail_id();
         $image_url  = wp_get_attachment_image_src($image_id,'banner', true);
     ?>
@@ -31,9 +36,10 @@
         </section>
     </div>    
 </div>     <?php */?>
+
 <div class="page-content">  	
                 <div class="stem">
-                    <div class="stem_bg_green"></div>
+                    <div class="stem_bg_green" <?php echo $bg;?>></div>
                     <div class="stem_bg_white"></div>
                 </div>
     <div class="container">
@@ -162,7 +168,7 @@
             </ul>
         </section>
      </div>
-	<div class="green-bg">
+	<div class="green-bg" <?php echo $bg;?>>
    		<div class="container">
         	<div class="span-10 center">
             	<h2 class="section-headline">Configurations</h2>
