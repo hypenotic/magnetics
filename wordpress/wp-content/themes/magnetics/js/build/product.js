@@ -79,20 +79,21 @@
 				var  product_slide_height=$(".product_slide").height();
 				var height = $(".stem_bg_green").height();
 				var top = offset.top - scroll;
-				$(".stem_bg_green").height();
+				var y = window.scrollY;
+				//console.log("You've scrolled " + $(window).scrollTop() + " pixels");
 				if (scroll > previousScroll){
 					if(top <= $(window).height()/2) {	
 						count++;
 						if(height < product_slide_height ) {
-							height = 40*count;										
+							height = (scroll-top)/2.2; 
 							$('.stem_bg_green').height(height);
 						}
 					}
 				} else {
 					count--;	
 					if(height>0) {
-						height = 40*count;					
-						$('.stem_bg_green').height(height);
+							height = (scroll-top)/2.2;										
+							$('.stem_bg_green').height(height);
 					}
 				}
 				previousScroll = scroll;

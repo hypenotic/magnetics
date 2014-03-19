@@ -170,7 +170,7 @@
 						if($configs) {
                      ?>
                     <section  class="configuration_list">
-                    	<h3>What's in the box</h3>
+                    	<h3 class="list_header">What's in the box</h3>
                         <ul>
                         	<?php foreach($configs as $config) {
 								if($config['_config']=='value2'){	
@@ -184,15 +184,14 @@
 									?>	
 									<img src="<?php echo $img;?>" />
 									<h6><?php echo $config['_title'];?></h6>
-									<p><?php echo $config['_content'];?></p>
-									<p><a href="#">Learn More</a></p>
+									<p class="shortner"><?php echo $config['_content'];?></p>
 								</li>
 								<?php } ?>
                             <?php } ?>
                         </ul>
                     </section>
                     <section class="configuration_list">
-                    	<h3>Accessories</h3>                    
+                    	<h3 class="list_header">Accessories</h3>                    
                             <ul>
                                 <?php foreach($configs as $config) {
 								if($config['_config']=='value3'){	
@@ -206,15 +205,14 @@
 									?>	
 									<img src="<?php echo $img;?>" />
 									<h6><?php echo $config['_title'];?></h6>
-									<p><?php echo $config['_content'];?></p>
-									<p><a href="#">Learn More</a></p>
+                                    <p class="shortner"><?php echo $config['_content'];?></p>
 								</li>
 								<?php } ?>
                             <?php } ?>
                             </ul>
                     </section>
                     <section class="configuration_list">
-                    	<h3>Integrations</h3>                    
+                    	<h3 class="list_header">Integrations</h3>                    
                             <ul>
 							<?php foreach($configs as $config) {
 								if($config['_config']=='value1'){	
@@ -228,8 +226,7 @@
 									?>	
 									<img src="<?php echo $img;?>" />
 									<h6><?php echo $config['_title'];?></h6>
-									<p><?php echo $config['_content'];?></p>
-									<p><a href="#">Learn More</a></p>
+                                    <p class="shortner"><?php echo $config['_content'];?></p>
 								</li>
 								<?php } ?>
                             <?php } ?>
