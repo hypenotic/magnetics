@@ -12,4 +12,8 @@ jQuery(document).ready(function(e) {
 		e('.tab-content .tab#'+id).addClass('active-tab-content');
 		return false;
 	});
+	e('.list_header').click(function(){
+		e(this).next('ul').toggle();
+		e(this).toggleClass('active');
+	});
 });

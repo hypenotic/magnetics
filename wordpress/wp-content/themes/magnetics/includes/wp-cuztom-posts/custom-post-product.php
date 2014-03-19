@@ -69,4 +69,26 @@ $product->add_meta_box(
 		)
 	);
 
+$product->add_meta_box(
+	'product_features',
+	'Features',
+	array(
+		'bundle',    
+			array( 
+				array(
+					'name'          => 'title',
+					'label'         => 'Title',
+					'description'   => '',
+					'type'          => 'text',          
+				),
+				array(
+					'name'          => 'content',
+					'label'         => 'Description',
+					'description'   => '',
+					'type'          => 'textarea',          
+				),
+			)
+		)
+	);
+
 ?>

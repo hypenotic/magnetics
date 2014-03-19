@@ -306,9 +306,12 @@ a.more {
 .configuration_list {
     position: relative;
     ul {
+        @include transition(all 0.5s);
+        display: none;
         list-style: none;
         padding: 30px 0 70px;
         li {
+            min-height: 200px;
             padding: 0 0 40px 375px;
             position: relative;
             img {
@@ -336,5 +339,41 @@ a.more {
             position: absolute;
             top: 20px;
         }
+        &.active:after {
+            border-color: transparent transparent transparent $white;
+            border-style: solid;
+            border-width: 10px 0px 10px 12px;
+            position: absolute;
+            top: 17px;
+        }
+    }
+}
+
+a.morelink {
+    display: block;
+    outline: none;
+    &:after {
+        border-color: $body_bg transparent transparent transparent;
+        border-style: solid;
+        border-width: 12px 10px 0 10px;
+        content: '';
+        margin-left: 10px;
+        position: absolute;
+        top: 20px;
+    }
+    &.less:after {
+        border-color: transparent transparent transparent $body_bg;
+        border-style: solid;
+        border-width: 10px 0px 10px 12px;
+        position: absolute;
+        top: 17px;
+    }
+}
+
+.morecontent {
+    @include transition(all 0.5s);
+    position: relative;
+    span {
+        display: none;
     }
 }
