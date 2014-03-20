@@ -51,6 +51,8 @@ header {
 .span-7 {
     @include span(6);
     overflow: hidden;
+    padding-left: 0;
+    padding-right: 0;
     position: relative;
     @include susy-breakpoint(55em, $desktop) {
         @include span(7);
@@ -78,6 +80,8 @@ header {
 .span-10 {
     @include span(6);
     overflow: hidden;
+    padding-left: 30px;
+    padding-right: 30px;
     position: relative;
     @include susy-breakpoint(55em, $desktop) {
         @include span(10);
