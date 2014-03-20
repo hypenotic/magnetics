@@ -373,14 +373,20 @@ a.more {
         list-style: none;
         padding: 30px 0 70px;
         li {
+
             min-height: 200px;
-            padding: 0 0 40px 375px;
+            padding: 0 0 40px 0px;
             position: relative;
+            @include susy-breakpoint(55em, $desktop) {
+                padding: 0 0 40px 375px;
+            }
             img {
-                left: 0;
-                position: absolute;
-                top: 17px;
-                width: 300px;
+                @include susy-breakpoint(55em, $desktop) {
+                    left: 0;
+                    position: absolute;
+                    top: 17px;
+                    width: 300px;
+                }
             }
             p {
                 @include adjust-font-size-to(13px);
@@ -399,14 +405,20 @@ a.more {
             content: '';
             margin-left: 15px;
             position: absolute;
-            top: 20px;
+            top: 15px;
+            @include susy-breakpoint(55em, $desktop) {
+                top: 20px;
+            }
         }
         &.active:after {
             border-color: transparent transparent transparent $white;
             border-style: solid;
             border-width: 10px 0px 10px 12px;
             position: absolute;
-            top: 17px;
+            top: 8px;
+            @include susy-breakpoint(55em, $desktop) {
+                top: 17px;
+            }
         }
     }
 }
@@ -417,18 +429,26 @@ a.morelink {
     &:after {
         border-color: $body_bg transparent transparent transparent;
         border-style: solid;
-        border-width: 12px 10px 0 10px;
+        border-width: 8px 6px 0 6px;
         content: '';
         margin-left: 10px;
         position: absolute;
-        top: 20px;
+        top: 9px;
+        @include susy-breakpoint(55em, $desktop) {
+            border-width: 12px 10px 0 10px;
+            top: 20px;
+        }
     }
     &.less:after {
         border-color: transparent transparent transparent $body_bg;
         border-style: solid;
-        border-width: 10px 0px 10px 12px;
+        border-width: 6px 0px 6px 8px;
         position: absolute;
-        top: 17px;
+        top: 6px;
+        @include susy-breakpoint(55em, $desktop) {
+            border-width: 10px 0px 10px 12px;
+            top: 17px;
+        }
     }
 }
 
