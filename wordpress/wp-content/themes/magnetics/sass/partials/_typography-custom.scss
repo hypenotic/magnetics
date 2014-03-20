@@ -236,6 +236,13 @@ a.more {
     header {
         width: 100%;
     }
+    .header-image {
+        left: 10%;
+        position: absolute;
+        top: 0;
+        width: 80%;
+        z-index: 1;
+    }
     nav {
         background: $body_bg;
     }
@@ -245,6 +252,12 @@ a.more {
     }
     .page-title {
         background: $body_bg;
+    }
+    &.offcanvas .offcanvas-menu-button a:hover {
+        border-color: $white;
+    }
+    &.offcanvas .offcanvas-menu-button a:hover:before {
+        background-position: 0px 0;
     }
     .video-wrapper {
         position: relative;
@@ -424,5 +437,12 @@ a.morelink {
     position: relative;
     span {
         display: none;
+    }
+}
+
+.hide-on-mobile {
+    display: none;
+    @include susy-breakpoint(55em, $desktop) {
+        display: block;
     }
 }

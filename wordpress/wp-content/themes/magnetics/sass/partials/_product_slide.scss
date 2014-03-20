@@ -25,7 +25,10 @@
             float: left;
             min-height: 100px;
             position: relative;
-            width: 50%;
+            width: 100%;
+            @include susy-breakpoint(55em, $desktop) {
+                width: 49.9%;
+            }
         }
         .product_slide_content {
             width: 80%;
@@ -33,22 +36,44 @@
         &.left {
             text-align: left;
             .product_slide_mask {
-                right: -66px;
+                left: 0px;
+                @include susy-breakpoint(55em, $desktop) {
+                    left: 100%;
+                }
             }
             .product_slide_icon {
-                right: -66px;
+                left: 0px;
+                @include susy-breakpoint(55em, $desktop) {
+                    left: 100%;
+                }
+            }
+            .product_slide_content {
+                padding-bottom: 100px;
+                padding-left: 100px;
+                @include susy-breakpoint(55em, $desktop) {
+                    padding-bottom: 0px;
+                    padding-left: 0;
+                }
             }
         }
         &.right {
-            text-align: right;
+
+            text-align: left;
+            @include susy-breakpoint(55em, $desktop) {
+                text-align: right;
+            }
             .product_slide_icon {
-                left: -5px;
+                left: 0;
             }
             .product_slide_mask {
-                left: -5px;
+                left: 0px;
             }
             .product_slide_content {
+                padding-bottom: 100px;
                 padding-left: 100px;
+                @include susy-breakpoint(55em, $desktop) {
+                    padding-bottom: 0px;
+                }
             }
         }
         &.first {
@@ -62,21 +87,21 @@
             }
         }
         .product_slide_mask {
-            background: url(images/sprite.png) 0 0;
+            background: url(images/sprite.png) 1px 0;
             bottom: 0;
             position: absolute;
             top: 69px;
-            width: 71px;
+            width: 72px;
         }
         .product_slide_icon {
-            background: url(images/sprite.png) -72px 0;
+            background: url(images/sprite.png) -71px 0;
             height: 69px;
             position: absolute;
             top: 0;
-            width: 71px;
+            width: 72px;
         }
         .icon-2 {
-            background-position: -144px 0;
+            background-position: -143px 0;
         }
     }
 }
@@ -92,22 +117,28 @@
     position: relative;
     z-index: -1;
     .stem_bg_white {
-        background: #FFF;
+        background: #fff;
         height: 100%;
-        left: 49.7%;
+        left: 37px;
         position: fixed;
         top: 0;
-        width: 69px;
+        width: 70px;
         z-index: 0;
+        @include susy-breakpoint(55em, $desktop) {
+            left: 50%;
+        }
     }
     .stem_bg_green {
         @include transition(all 0.5s);
         background: #67c4a1;
         height: 50%;
-        left: 49.7%;
+        left: 37px;
         position: fixed;
         top: 0px;
-        width: 69px;
+        width: 70px;
         z-index: 1;
+        @include susy-breakpoint(55em, $desktop) {
+            left: 50%;
+        }
     }
 }

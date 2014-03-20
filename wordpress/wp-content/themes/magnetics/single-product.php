@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 <div class="video-wrapper">
 <?php get_template_part( 'template-part', 'add_video' ); ?>
+	<div class="header-image">
+		<img src="<?php bloginfo('template_url');?>/images/product_image.png" />
+    </div>
 </div>
 <?php // Loop starts
     if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -61,7 +64,7 @@
                             <div class="product_slide_content">
                             </div>
                          </div>
-                         <div class="grid-5"></div>
+                         <div class="grid-5 hide-on-mobile"></div>
                 </li>
                 <li class="fade left clearfix" id="product_slide_2">
                 		<div class="grid-5">
@@ -74,10 +77,10 @@
                                 <p>SeaSPY’s accuracy is 0.1nT—the highest absolute accuracy of any magnetometer on the market. No matter where you are or in which direction you are surveying, SeaSPY gives you consistent, repeatable data you can trust.</p>
                             </div>
                          </div>
-                         <div class="grid-5"></div>
+                         <div class="grid-5 hide-on-mobile"></div>
                 </li>
                 <li class="fade right clearfix" id="product_slide_3">
-	                         <div class="grid-5"></div>
+	                         <div class="grid-5 hide-on-mobile"></div>
                 		<div class="grid-5">
                             <div class="product_slide_icon icon-2">
                             </div>
@@ -100,10 +103,10 @@
                                 <p>SeaSPY’s accuracy is 0.1nT—the highest absolute accuracy of any magnetometer on the market. No matter where you are or in which direction you are surveying, SeaSPY gives you consistent, repeatable data you can trust.</p>
                             </div>
                          </div>   
-                                                     <div class="grid-5"></div>
+                                                     <div class="grid-5 hide-on-mobile"></div>
                 </li>
                 <li class="fade right clearfix" id="product_slide_5">
-                         <div class="grid-5"></div>                		
+                         <div class="grid-5 hide-on-mobile"></div>                		
                         <div class="grid-5">
                             <div class="product_slide_icon">
                             </div>
@@ -126,10 +129,10 @@
                                 <p>SeaSPY’s accuracy is 0.1nT—the highest absolute accuracy of any magnetometer on the market. No matter where you are or in which direction you are surveying, SeaSPY gives you consistent, repeatable data you can trust.</p>
                             </div>
                          </div>   
-                         <div class="grid-5"></div>                            
+                         <div class="grid-5 hide-on-mobile"></div>                            
                 </li>
                 <li class="fade right clearfix" id="product_slide_7">
-                         <div class="grid-5"></div>                
+                         <div class="grid-5 hide-on-mobile"></div>                
                 		<div class="grid-5">
                             <div class="product_slide_icon">
                             </div>
@@ -152,7 +155,7 @@
                                 <p>SeaSPY’s accuracy is 0.1nT—the highest absolute accuracy of any magnetometer on the market. No matter where you are or in which direction you are surveying, SeaSPY gives you consistent, repeatable data you can trust.</p>
                             </div>
                          </div>   
-                         <div class="grid-5"></div>                            
+                         <div class="grid-5 hide-on-mobile"></div>                            
                 </li>
                 
                 <li class="last fade left clearfix" id="product_slide_9">
@@ -162,7 +165,7 @@
                             <div class="product_slide_content">
                             </div>
                          </div>
-                         <div class="grid-5"></div>
+                         <div class="grid-5 hide-on-mobile"></div>
                 </li>
                 
             </ul>
