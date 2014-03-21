@@ -4,7 +4,7 @@ Template Name: 404
 */
 
  get_header(); ?>
-
+<?php get_template_part( 'template-part', 'add_video' ); ?>
 <?php 
 	query_posts('post_type=page&p=21');	
 	if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

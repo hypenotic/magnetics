@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php get_template_part( 'template-part', 'add_video' ); ?>
 <?php if(have_posts()):while(have_posts()):the_post();?>
 <div class="page-title">
     <div class="container">

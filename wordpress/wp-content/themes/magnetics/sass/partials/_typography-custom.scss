@@ -3,13 +3,17 @@
 }
 
 .front-headline {
-    @include adjust-font-size-to(270px);
+
+    @include adjust-font-size-to(130px);
     @include text-shadow(0 0 81px #003770);
     color: $white;
     font-family: $ubuntulight;
     text-align: center;
     text-transform: uppercase;
     width: 80%;
+    @include susy-breakpoint(55em, $desktop) {
+        @include adjust-font-size-to(270px);
+    }
     & a {
         color: $light-gray;
     }
@@ -107,6 +111,12 @@ footer {
     }
     nav {
         background: $body_bg;
+    }
+    &.offcanvas .offcanvas-menu-button a:hover {
+        border-color: $white;
+    }
+    &.offcanvas .offcanvas-menu-button a:hover:before {
+        background-position: 0px 0;
     }
     .page-content {
         background: none;
@@ -223,7 +233,7 @@ a.more {
     }
 }
 
-.articles-and-brochures {
+.articles-and-brochures, .single-brochure {
     @extend .single-post;
 }
 
@@ -308,7 +318,7 @@ a.more {
 
 .error404 {
     .page-title {
-        padding-bottom: 0px;
+        padding-bottom: 5px;
     }
     .page-content {
         p {
@@ -336,6 +346,12 @@ a.more {
 }
 
 .contact {
+    .contact-map {
+        height: 100%;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
     .wrapper {
         background: rgba(0, 116, 217, 0.7);
         .page-title {
@@ -345,6 +361,9 @@ a.more {
         }
         .page-content {
             background: none;
+            a {
+                color: $white;
+            }
         }
     }
 }

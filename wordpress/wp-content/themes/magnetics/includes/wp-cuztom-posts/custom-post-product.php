@@ -87,6 +87,28 @@ $product->add_meta_box(
 					'description'   => '',
 					'type'          => 'textarea',          
 				),
+				array(
+        			'name'          => 'icon',
+        			'label'         => 'Select',
+        			'description'   => 'Select what type of post',
+        			'type'          => 'select',
+        			'options'       => array(
+            			''    => 'post',
+            			'icon-2'    => 'blockquote'
+        				),
+        			'default_value' => ''
+     			),
+				array(
+        			'name'          => 'direction',
+        			'label'         => 'Select',
+        			'description'   => 'Select direction of post',
+        			'type'          => 'select',
+        			'options'       => array(
+            			'left'    => 'left',
+            			'right'    => 'right'
+        				),
+        			'default_value' => 'left'
+     			)
 			)
 		)
 	);

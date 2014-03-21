@@ -36,18 +36,9 @@
 </head>
 
 <body <?php body_class();?>>
-    <!--
-<div id="big-video-wrap">
-	<div id="big-video-vid">
-    	<video preload="auto" muted loop autoplay src="<?php bloginfo('template_url');?>/videos/shutterstock_v3711827.mp4"></video>
-        <div></div>
-     </div>
-	<div id="big-video-image">
-		<img src="<?php bloginfo('template_url');?>/images/homepage-banner.jpg" />	
-        <div></div>
-     </div>
-</div>
--->     
+<?php if(is_page(28)) { ?>
+<div class="contact-map" style="background-image:url(<?php bloginfo('template_url');?>/images/contact-map.jpg);"></div>
+<?php } ?>
 <!-- Menu Section Starts -->
     <!-- Left Menu Section -->
     <!-- Right Menu Section -->

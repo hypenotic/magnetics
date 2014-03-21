@@ -53,11 +53,13 @@
         </section>
         
         <section class="span-10 center product_slides">
-                <?php //the_content(); ?>
+			<?php 
+            $features = get_post_meta( get_the_ID(),'_product_features',true );
+            if($features) {
+            ?>
 
             <ul class="product_slide">
-            
-                <li class="first fade left clearfix" id="product_slide_1">
+                <li class="first fade left clearfix">
                 		<div class="grid-5">
                             <div class="product_slide_mask">
                             </div>
@@ -66,99 +68,42 @@
                          </div>
                          <div class="grid-5 hide-on-mobile"></div>
                 </li>
-                <li class="fade left clearfix" id="product_slide_2">
+                <?php
+					foreach($features as $feature) {
+						$direction=$feature['_direction'];
+						$icon = $feature['_icon'];
+						$title = $feature['_title'];
+						$content = $feature['_content'];
+				?>
+                <li class="fade <?php echo $direction;?> clearfix">
+                		<?php 
+						if($direction == 'left') {
+						?>
                 		<div class="grid-5">
-                            <div class="product_slide_icon">
-                            </div>
-                            <div class="product_slide_mask">
-                            </div>
+                            <div class="product_slide_icon <?php echo $icon;?>"></div>
+                            <div class="product_slide_mask"></div>
                             <div class="product_slide_content">
-                                <h5>High Sensitivity</h5>
-                                <p>SeaSPY’s accuracy is 0.1nT—the highest absolute accuracy of any magnetometer on the market. No matter where you are or in which direction you are surveying, SeaSPY gives you consistent, repeatable data you can trust.</p>
+                                <h5><?php echo $title;?></h5>
+                                <p><?php echo $content;?></p>
                             </div>
                          </div>
                          <div class="grid-5 hide-on-mobile"></div>
-                </li>
-                <li class="fade right clearfix" id="product_slide_3">
-	                         <div class="grid-5 hide-on-mobile"></div>
+                        <?php 
+						}else {
+						?> 
+                        <div class="grid-5 hide-on-mobile"></div>
                 		<div class="grid-5">
-                            <div class="product_slide_icon icon-2">
-                            </div>
-                            <div class="product_slide_mask">
-                            </div>
+                            <div class="product_slide_icon <?php echo $icon;?>"></div>
+                            <div class="product_slide_mask"></div>
                             <div class="product_slide_content">
-                                <h5>High Sensitivity</h5>
-                                <p>SeaSPY’s accuracy is 0.1nT—the highest absolute accuracy of any magnetometer on the market. No matter where you are or in which direction you are surveying, SeaSPY gives you consistent, repeatable data you can trust.</p>
+								<h5><?php echo $title;?></h5>
+                                <p><?php echo $content;?></p>
                             </div>
-                         </div>   
+                         </div>
+                        <?php } ?>
                 </li>
-                <li class="fade left clearfix" id="product_slide_4">
-                    	<div class="grid-5">
-                            <div class="product_slide_icon">
-                            </div>
-                            <div class="product_slide_mask">
-                            </div>
-                            <div class="product_slide_content">
-                                <h5>High Sensitivity</h5>
-                                <p>SeaSPY’s accuracy is 0.1nT—the highest absolute accuracy of any magnetometer on the market. No matter where you are or in which direction you are surveying, SeaSPY gives you consistent, repeatable data you can trust.</p>
-                            </div>
-                         </div>   
-                                                     <div class="grid-5 hide-on-mobile"></div>
-                </li>
-                <li class="fade right clearfix" id="product_slide_5">
-                         <div class="grid-5 hide-on-mobile"></div>                		
-                        <div class="grid-5">
-                            <div class="product_slide_icon">
-                            </div>
-                            <div class="product_slide_mask">
-                            </div>
-                            <div class="product_slide_content">
-                                <h5>High Sensitivity</h5>
-                                <p>SeaSPY’s accuracy is 0.1nT—the highest absolute accuracy of any magnetometer on the market. No matter where you are or in which direction you are surveying, SeaSPY gives you consistent, repeatable data you can trust.</p>
-                            </div>
-                         </div>                          
-                </li>
-                <li class="fade left clearfix" id="product_slide_6">
-                		<div class="grid-5">
-                            <div class="product_slide_icon">
-                            </div>
-                            <div class="product_slide_mask">
-                            </div>
-                            <div class="product_slide_content">
-                                <h5>High Sensitivity</h5>
-                                <p>SeaSPY’s accuracy is 0.1nT—the highest absolute accuracy of any magnetometer on the market. No matter where you are or in which direction you are surveying, SeaSPY gives you consistent, repeatable data you can trust.</p>
-                            </div>
-                         </div>   
-                         <div class="grid-5 hide-on-mobile"></div>                            
-                </li>
-                <li class="fade right clearfix" id="product_slide_7">
-                         <div class="grid-5 hide-on-mobile"></div>                
-                		<div class="grid-5">
-                            <div class="product_slide_icon">
-                            </div>
-                            <div class="product_slide_mask">
-                            </div>
-                            <div class="product_slide_content">
-                                <h5>High Sensitivity</h5>
-                                <p>SeaSPY’s accuracy is 0.1nT—the highest absolute accuracy of any magnetometer on the market. No matter where you are or in which direction you are surveying, SeaSPY gives you consistent, repeatable data you can trust.</p>
-                            </div>
-                         </div>          
-                </li>
-                <li class="fade left clearfix" id="product_slide_8">
-                		<div class="grid-5">
-                            <div class="product_slide_icon">
-                            </div>
-                            <div class="product_slide_mask">
-                            </div>
-                            <div class="product_slide_content">
-                                <h5>High Sensitivity</h5>
-                                <p>SeaSPY’s accuracy is 0.1nT—the highest absolute accuracy of any magnetometer on the market. No matter where you are or in which direction you are surveying, SeaSPY gives you consistent, repeatable data you can trust.</p>
-                            </div>
-                         </div>   
-                         <div class="grid-5 hide-on-mobile"></div>                            
-                </li>
-                
-                <li class="last fade left clearfix" id="product_slide_9">
+                <?php } ?>
+                <li class="last fade left clearfix">
                 		<div class="grid-5">
                             <div class="product_slide_mask">
                             </div>
@@ -166,9 +111,9 @@
                             </div>
                          </div>
                          <div class="grid-5 hide-on-mobile"></div>
-                </li>
-                
+                </li>                
             </ul>
+            <?php } ?>
         </section>
      </div>
 	<div class="green-bg" <?php echo $bg;?>>
