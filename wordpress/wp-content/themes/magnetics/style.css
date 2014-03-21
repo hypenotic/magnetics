@@ -704,14 +704,18 @@ hr {
   background: #001f3f; }
 
 .front-headline {
-  font-size: 16.875em;
-  line-height: 1.02222em;
+  font-size: 8.125em;
+  line-height: 1.10769em;
   text-shadow: 0 0 81px #003770;
   color: white;
   font-family: "ubuntulight";
   text-align: center;
   text-transform: uppercase;
   width: 80%; }
+  @media (min-width: 55em) {
+    .front-headline {
+      font-size: 16.875em;
+      line-height: 1.02222em; } }
   .front-headline a {
     color: #cccccc; }
 
@@ -785,26 +789,30 @@ footer {
   footer a {
     color: white; }
 
-.single-post #big-video-wrap, .articles-and-brochures #big-video-wrap {
+.single-post #big-video-wrap, .articles-and-brochures #big-video-wrap, .single-brochure #big-video-wrap {
   display: none; }
-.single-post header, .articles-and-brochures header {
+.single-post header, .articles-and-brochures header, .single-brochure header {
   position: fixed;
   width: 100%; }
-.single-post nav, .articles-and-brochures nav {
+.single-post nav, .articles-and-brochures nav, .single-brochure nav {
   background: #001f3f; }
-.single-post .page-content, .articles-and-brochures .page-content {
+.single-post.offcanvas .offcanvas-menu-button a:hover, .offcanvas.articles-and-brochures .offcanvas-menu-button a:hover, .offcanvas.single-brochure .offcanvas-menu-button a:hover {
+  border-color: white; }
+.single-post.offcanvas .offcanvas-menu-button a:hover:before, .offcanvas.articles-and-brochures .offcanvas-menu-button a:hover:before, .offcanvas.single-brochure .offcanvas-menu-button a:hover:before {
+  background-position: 0px 0; }
+.single-post .page-content, .articles-and-brochures .page-content, .single-brochure .page-content {
   background: none; }
-.single-post .wrapper, .articles-and-brochures .wrapper {
+.single-post .wrapper, .articles-and-brochures .wrapper, .single-brochure .wrapper {
   background: #e7e7e7; }
-  .single-post .wrapper .center, .articles-and-brochures .wrapper .center {
+  .single-post .wrapper .center, .articles-and-brochures .wrapper .center, .single-brochure .wrapper .center {
     color: #001f3f; }
-    .single-post .wrapper .center h2, .articles-and-brochures .wrapper .center h2 {
+    .single-post .wrapper .center h2, .articles-and-brochures .wrapper .center h2, .single-brochure .wrapper .center h2 {
       line-height: 1.35em;
       margin: 70px 0 80px; }
-    .single-post .wrapper .center p, .articles-and-brochures .wrapper .center p {
+    .single-post .wrapper .center p, .articles-and-brochures .wrapper .center p, .single-brochure .wrapper .center p {
       margin-bottom: 40px;
       margin-top: 20px; }
-.single-post h3, .articles-and-brochures h3 {
+.single-post h3, .articles-and-brochures h3, .single-brochure h3 {
   font-family: "ubuntubold";
   margin: 50px 0 25px; }
 
@@ -952,7 +960,7 @@ a.more {
       text-decoration: none; }
 
 .error404 .page-title {
-  padding-bottom: 0px; }
+  padding-bottom: 5px; }
 .error404 .page-content p {
   color: white;
   text-align: center; }
@@ -970,12 +978,19 @@ a.more {
     .error404 .page-content #menu-404-page-menu li:last-child a {
       border: none; }
 
+.contact .contact-map {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%; }
 .contact .wrapper {
   background: rgba(0, 116, 217, 0.7); }
   .contact .wrapper .page-title:after {
     background: none; }
   .contact .wrapper .page-content {
     background: none; }
+    .contact .wrapper .page-content a {
+      color: white; }
 
 .green-bg, .grey-bg {
   background: #67c4a1;
