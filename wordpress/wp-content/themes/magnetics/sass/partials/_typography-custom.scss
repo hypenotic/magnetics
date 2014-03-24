@@ -485,3 +485,16 @@ a.morelink {
         display: block;
     }
 }
+
+.post-title {
+    margin-top: 20px;
+}
+
+.colored-section {
+    span {
+        @include adjust-font-size-to(9px);
+        display: inline-block;
+        min-width: 200px;
+        padding: 3px 10px 3px;
+    }
+}

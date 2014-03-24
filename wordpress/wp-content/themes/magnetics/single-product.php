@@ -12,11 +12,20 @@
         $config_title   = get_post_meta($post->ID, '_product_options', true);
         $config_desc    = get_post_meta($post->ID, '_product_options_description', true);
 		$config_image   = get_post_meta($post->ID, '_work_id_video' ,true);
-		$product_color   = get_post_meta($post->ID, '_product_color_color' ,true);
-		$bg='';
-		if($product_color) {
-			$bg='style="background:'.$product_color.';"';
+			$taxonomy = 'product_category';
+			$terms = get_the_terms( $post->ID, $taxonomy );
+			foreach($terms as $term) {
+				 $cat_id[]=$term->term_id;
+			}
+		$term_meta =  get_option( "term_meta_product_category_".$cat_id[0] );
+		$color = $term_meta['_product_category_color'];
+		
+		if($color) {
+			$style= "style='background-color:".$color.";'";
+		}else {	
+			$style= "style='background-color:#67c4a1;'";
 		}
+		
         //$image_id   = get_post_thumbnail_id();
         $image_url  = wp_get_attachment_image_src($image_id,'banner', true);
     ?>
@@ -31,18 +40,9 @@
 <?php echo get_post_meta(get_the_ID(), '__product_options_title', true); ?>
  <?php endforeach; endif; ?>
 
-<?php /*?>
-<div class="page-title">
-    <div class="container">
-        <section class="span-10 center">
-				<img src="<?php bloginfo('template_url');?>/images/product_image.png" />
-        </section>
-    </div>    
-</div>     <?php */?>
-
 <div class="page-content">  	
                 <div class="stem">
-                    <div class="stem_bg_green" <?php echo $bg;?>></div>
+                    <div class="stem_bg_green" <?php echo $style;?>></div>
                     <div class="stem_bg_white"></div>
                 </div>
     <div class="container">
@@ -116,7 +116,7 @@
             <?php } ?>
         </section>
      </div>
-	<div class="green-bg" <?php echo $bg;?>>
+	<div class="green-bg" <?php echo $style;?>>
    		<div class="container">
         	<div class="span-10 center">
             	<h2 class="section-headline">Configurations</h2>

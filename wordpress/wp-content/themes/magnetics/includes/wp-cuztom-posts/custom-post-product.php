@@ -9,6 +9,24 @@ $args = array(
 
 $product = register_cuztom_post_type( 'Product', $args);
 
+// Register custom taxonomies.
+$product_category = register_cuztom_taxonomy( 'Product Category', 'product' );
+
+// Add Color Picker Option
+$product_category->add_term_meta (
+	array(
+		array(
+			'name'        => 'product_category_color',
+			'label'       => 'Color',
+			'description' => 'Please choose a color',
+			'type'        => 'color'
+		)
+	)
+);
+	
+	
+
+
 $product->add_meta_box( 
 	'product',
 	'Overview',
@@ -112,17 +130,4 @@ $product->add_meta_box(
 			)
 		)
 	);
-
-$product->add_meta_box( 
-	'product_color',
-	'Product Color',
-		array(
-			array(
-				'name'          => 'color',
-				'label'         => 'Select Color',
-				'description'   => '',
-				'type'          => 'color'
-            )
-		)
-	);	
 ?>
