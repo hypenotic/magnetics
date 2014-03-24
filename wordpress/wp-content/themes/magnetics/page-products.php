@@ -5,14 +5,6 @@ Template Name: Products
 
 get_header(); ?>
 <?php get_template_part( 'template-part', 'add_video' ); ?>
-<?php 
-    $paged  = (get_query_var('paged')) ? get_query_var('paged') : 1;
-    $args   =array(
-    	'post_type' => 'product',
-    	'paged' => $paged
-    );
-    query_posts($args);
-?>
 
 <div class="page-title">
         <div class="container">
@@ -24,14 +16,44 @@ get_header(); ?>
 </div>     
 <div class="page-content">  	
     <div class="container">
-        <section class="span-10 center">
-			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-            <div class="block-grid-2">
-                <h4><?php the_title(); ?></h4>
+		<?php        
+		$product_categories = get_terms( 'product_category', array('hide_empty' => false) );
+		if($product_categories) {
+			foreach($product_categories as $category) {
+			
+			$term_meta =  get_option( "term_meta_product_category_".$category->term_id );
+			$color = $term_meta['_product_category_color'];
+			if($color) {
+				$style= "style='background-color:".$color.";'";
+			}else {
+				
+				$style= "style='background-color:#67c4a1;'";
+			}
+        ?>	
+        <section class="span-10 center">    
+            <p class="colored-section"><span <?php echo $style;?>><?php echo $category->name;?></span></p>
+			<?php 
+			$args = array(
+			'posts_per_page' => 2, // set number of post per category here
+			'taxonomy' => 'product_category',
+			'term' => $category->slug,
+			'post_type' => 'product'
+			);
+			
+			$products= new WP_Query( $args );
+			if($products->have_posts()):
+				while ( $products->have_posts()) : $products->the_post( ); 
+			?>
+            <div class="span-6">
+                <h4 class="post-title"><?php the_title(); ?></h4>
                 <p class="meta"><?php the_excerpt(); ?></p>
             </div>
-            <?php endwhile; endif; ?>
+            <?php endwhile; endif; wp_reset_postdata(); ?>
         </section>
+       <?php 
+			}
+		}
+	   ?> 
     </div>
 </div>            
 
