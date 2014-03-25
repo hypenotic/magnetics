@@ -33,6 +33,16 @@
         var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
         })();
     </script>
+
+    <script type='text/javascript'>
+    (function (d, t) {
+      var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      bh.type = 'text/javascript';
+      bh.src = '//www.bugherd.com/sidebarv2.js?apikey=1wpsnobnz9aehqcpybypga';
+      s.parentNode.insertBefore(bh, s);
+      })(document, 'script');
+    </script>
+    
 </head>
 
 <body <?php body_class();?>>
