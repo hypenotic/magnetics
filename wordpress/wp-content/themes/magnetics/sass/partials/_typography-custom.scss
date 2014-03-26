@@ -218,6 +218,18 @@ a.more {
     h3 {
         margin-top: 30px;
     }
+    & .span-9:hover {
+        & p, h3 {
+            color: #4DA483;
+        }
+        & a.download:before {
+            background-position: -29px 0;
+        }
+        & a.more:before {
+            background-position: -78px 0;
+            left: 4px;
+        }
+    }
 }
 
 .green-box {
@@ -300,18 +312,23 @@ a.more {
 }
 
 .filter {
+    display: inline-block;
     list-style: none;
-    padding: 0;
+    padding: 0 0 100px;
     li {
         background: #d1d1d1;
         display: inline-block;
         float: left;
+        padding-right: 10px;
         a {
-            @include adjust-font-size-to(14px);
+            @include adjust-font-size-to(11px);
             display: block;
             font-family: $ubuntubold;
             padding: 5px 15px 8px;
             text-decoration: none;
+        }
+        &.active a {
+            color: $white;
         }
     }
 }

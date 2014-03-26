@@ -19,7 +19,7 @@ get_header(); ?>
             	<?php the_title("<h2>","</h2>");?>
                  <?php 
 					$args = array(
-							'hide_empty' => '0',
+							'hide_empty' => 1,
 							'orderby' => 'name',
 							'order' => 'ASC',
 							'exclude' => 1
@@ -30,9 +30,21 @@ get_header(); ?>
                 
 	             <h3>Select a Category</h3>
                  	<ul class="filter">
-						<?php foreach($categories as $category) { ?>
-                        <li><a href="#"><?php echo $category->cat_name;?></a></li>
-                        <?php } ?>
+						<?php 
+						$i=1;
+						$default_color = "#67c4a1";
+						foreach($categories as $category) { 							
+							$term_meta =  get_option( "term_meta_product_category_".$category->term_id );
+							$color = $term_meta['_product_category_color'];
+							if($color) {
+							$color=	$color ;
+							}else {
+							$color=	$default_color ;
+							}
+							
+						?>
+                        <li <?php if($i==1) { echo 'class="active"';}?> data-background="<?php echo $color; ?>"><a href="#" id="<?php echo $category->slug;?>"><?php echo $category->cat_name;?></a></li>
+                        <?php $i++;} ?>
                  	</ul>
                  <?php } ?>
 	        </div>	       
@@ -41,8 +53,10 @@ get_header(); ?>
         	<?php if(have_posts()): while(have_posts()):the_post();
 						$post_type=get_post_type(get_the_ID());
 						if($post_type=='post') $post_type = "Article";
+						
+						$category = get_the_category( get_the_ID() );
 			?>
-        	<div class="span-9 center">
+        	<div class="span-9 center" data-category="<?php echo $category[0]->slug;?>">
                 <h6><?php echo strtoupper($post_type);?></h6>
             	<div class="span-5"><h3><?php the_title();?></h3></div>
             	<div class="span-7">

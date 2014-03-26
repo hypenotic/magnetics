@@ -12,17 +12,22 @@
         $config_title   = get_post_meta($post->ID, '_product_options', true);
         $config_desc    = get_post_meta($post->ID, '_product_options_description', true);
 		$config_image   = get_post_meta($post->ID, '_work_id_video' ,true);
-			$taxonomy = 'product_category';
+			$taxonomy = 'category';
 			$terms = get_the_terms( $post->ID, $taxonomy );
-			foreach($terms as $term) {
-				 $cat_id[]=$term->term_id;
+			if($terms) {
+				foreach($terms as $term) {
+					 $cat_id[]=$term->term_id;
+				}
+				$term_meta =  get_option( "term_meta_product_category_".$cat_id[0] );
+				$color = $term_meta['_product_category_color'];
+				if($color) {
+					$style= "style='background-color:".$color.";'";
+				}
+				else {	
+					$style= "style='background-color:#67c4a1;'";
+				}	
 			}
-		$term_meta =  get_option( "term_meta_product_category_".$cat_id[0] );
-		$color = $term_meta['_product_category_color'];
-		
-		if($color) {
-			$style= "style='background-color:".$color.";'";
-		}else {	
+		else {	
 			$style= "style='background-color:#67c4a1;'";
 		}
 		
