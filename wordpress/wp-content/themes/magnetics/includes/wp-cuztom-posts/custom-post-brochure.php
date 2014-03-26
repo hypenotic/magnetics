@@ -8,6 +8,7 @@ $args = array(
  	);
 
 $brochure = register_cuztom_post_type( 'Brochure', $args);
+$brochure->add_taxonomy( 'Category' );
 
 $brochure->add_meta_box(
 	'brochure',

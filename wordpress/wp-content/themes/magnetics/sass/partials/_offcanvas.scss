@@ -139,6 +139,9 @@ $offcanvas-panel-width: 20em;
                     a {
                         color: #c0c9d1;
                     }
+                    &.current-menu-item a {
+                        color: $white;
+                    }
                 }
             }
         }

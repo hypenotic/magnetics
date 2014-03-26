@@ -885,6 +885,13 @@ a.more {
   padding-left: 0; }
 .related h3 {
   margin-top: 30px; }
+.related .span-9:hover p, .related .span-9:hover h3 {
+  color: #4DA483; }
+.related .span-9:hover a.download:before {
+  background-position: -29px 0; }
+.related .span-9:hover a.more:before {
+  background-position: -78px 0;
+  left: 4px; }
 
 .green-box {
   color: #4DA483; }
@@ -945,19 +952,23 @@ a.more {
     padding-top: 100px; }
 
 .filter {
+  display: inline-block;
   list-style: none;
-  padding: 0; }
+  padding: 0 0 100px; }
   .filter li {
     background: #d1d1d1;
     display: inline-block;
-    float: left; }
+    float: left;
+    padding-right: 10px; }
     .filter li a {
-      font-size: 0.875em;
-      line-height: 1.71429em;
+      font-size: 0.6875em;
+      line-height: 2.18182em;
       display: block;
       font-family: "ubuntubold";
       padding: 5px 15px 8px;
       text-decoration: none; }
+    .filter li.active a {
+      color: white; }
 
 .error404 .page-title {
   padding-bottom: 5px; }
@@ -1517,6 +1528,8 @@ footer input[type="submit"] {
           opacity: 0; }
           .offcanvas .offcanvas-menu ul.sub-menu li a {
             color: #c0c9d1; }
+          .offcanvas .offcanvas-menu ul.sub-menu li.current-menu-item a {
+            color: white; }
   .offcanvas.open-left, .offcanvas.open-right {
     overflow-x: hidden; }
     .offcanvas.open-left .offcanvas-menu, .offcanvas.open-right .offcanvas-menu {

@@ -10,7 +10,7 @@ $args = array(
 $product = register_cuztom_post_type( 'Product', $args);
 
 // Register custom taxonomies.
-$product_category = register_cuztom_taxonomy( 'Product Category', 'product' );
+$product_category = register_cuztom_taxonomy( 'Category', 'product' );
 
 // Add Color Picker Option
 $product_category->add_term_meta (

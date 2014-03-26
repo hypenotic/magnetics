@@ -17,7 +17,7 @@ get_header(); ?>
 <div class="page-content">  	
     <div class="container">
 		<?php        
-		$product_categories = get_terms( 'product_category', array('hide_empty' => false) );
+		$product_categories = get_terms( 'category', array('hide_empty' => false,'exclude'=>array(1)) );
 		if($product_categories) {
 			foreach($product_categories as $category) {
 			
@@ -35,7 +35,7 @@ get_header(); ?>
 			<?php 
 			$args = array(
 			'posts_per_page' => 2, // set number of post per category here
-			'taxonomy' => 'product_category',
+			'taxonomy' => 'category',
 			'term' => $category->slug,
 			'post_type' => 'product'
 			);
