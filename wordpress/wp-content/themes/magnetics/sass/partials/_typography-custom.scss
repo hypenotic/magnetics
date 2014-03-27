@@ -385,18 +385,6 @@ a.more {
     }
 }
 
-.green-bg {
-    background: #67c4a1;
-    padding: 240px 0;
-    position: relative;
-}
-
-.grey-bg {
-    @extend .green-bg;
-    background: #e7e7e7;
-    color: $body_bg;
-}
-
 #title {
     margin-bottom: 100px;
 }
@@ -509,7 +497,7 @@ a.morelink {
 
 .colored-section {
     span {
-        @include adjust-font-size-to(9px);
+        @include adjust-font-size-to(16px);
         display: inline-block;
         min-width: 200px;
         padding: 3px 10px 3px;

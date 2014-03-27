@@ -120,3 +120,15 @@ header {
         @include gallery(6 of 12);
     }
 }
+
+.green-bg {
+    background: #67c4a1;
+    padding: 240px 0;
+    position: relative;
+}
+
+.grey-bg {
+    @extend .green-bg;
+    background: #e7e7e7;
+    color: $body_bg;
+}
