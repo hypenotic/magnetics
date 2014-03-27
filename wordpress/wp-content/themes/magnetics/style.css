@@ -441,6 +441,15 @@ header {
         margin-right: -100%;
         clear: none; } }
 
+.green-bg, .grey-bg {
+  background: #67c4a1;
+  padding: 240px 0;
+  position: relative; }
+
+.grey-bg {
+  background: #e7e7e7;
+  color: #001f3f; }
+
 body {
   color: white; }
 
@@ -1003,15 +1012,6 @@ a.more {
     .contact .wrapper .page-content a {
       color: white; }
 
-.green-bg, .grey-bg {
-  background: #67c4a1;
-  padding: 240px 0;
-  position: relative; }
-
-.grey-bg {
-  background: #e7e7e7;
-  color: #001f3f; }
-
 #title {
   margin-bottom: 100px; }
 
@@ -1111,8 +1111,8 @@ a.morelink {
   margin-top: 20px; }
 
 .colored-section span {
-  font-size: 0.5625em;
-  line-height: 2.66667em;
+  font-size: 1em;
+  line-height: 1.5em;
   display: inline-block;
   min-width: 200px;
   padding: 3px 10px 3px; }

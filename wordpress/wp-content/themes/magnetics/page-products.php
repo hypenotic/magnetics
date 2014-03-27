@@ -17,7 +17,7 @@ get_header(); ?>
 <div class="page-content">  	
     <div class="container">
 		<?php        
-		$product_categories = get_terms( 'category', array('hide_empty' => false,'exclude'=>array(1)) );
+		$product_categories = get_terms( 'category', array('hide_empty' => 1,'exclude'=>array(1)) );
 		if($product_categories) {
 			foreach($product_categories as $category) {
 			
