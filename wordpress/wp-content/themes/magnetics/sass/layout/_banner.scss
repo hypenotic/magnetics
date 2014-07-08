@@ -1,0 +1,45 @@
+.banner {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: $white;
+    padding-bottom: 200px;
+    position: relative;
+    &:after {
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 31, 63, 0)), color-stop(100%, $body_bg));
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 31, 63, 0)), to($body_bg));
+        background: -webkit-linear-gradient(top, rgba(0, 31, 63, 0) 0%, $body_bg 100%);
+        background: linear-gradient(to bottom, rgba(0, 31, 63, 0) 0%, $body_bg 100%);
+        bottom: 0;
+        content: "";
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$body_bg',endColorstr='$body_bg',GradientType=0);
+        height: 25%;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+}
+
+.bannertext {
+    left: 0;
+    right: 0;
+    top: 35%;
+    @include media($bp-large) {
+        top: 27%;
+    }
+}
+
+.banner span {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    width: 100%;
+}
+
+.banner span .inner {
+    /* height/width of image */
+    display: block;
+    height: 0;
+    padding-top: 57%;
+}

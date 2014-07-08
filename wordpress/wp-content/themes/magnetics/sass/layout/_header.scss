@@ -1,0 +1,15 @@
+header {
+    //background-color: $purple;
+    color: $white;
+    height: 20%;
+    .logo {
+        @include span-columns(5);
+        @include media($bp-large) {
+            @include span-columns(6);
+        }
+    }
+    img {
+        @include padding(1em null 1em null);
+        height: 5.5em;
+    }
+}

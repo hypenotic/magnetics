@@ -1,0 +1,140 @@
+strong {
+    font-family: $open_sanssemibold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    a {
+        color: $white;
+        text-decoration: none;
+        &:hover {
+            color: $header_link_hover;
+        }
+    }
+}
+
+h1 {
+    font-size: em(26);
+    font-family: $ubuntubold;
+    margin: 0;
+    @include media($bp-large) {
+        font-size: em(133);
+    }
+}
+
+h2 {
+    font-size: em(24);
+    font-family: $ubuntubold;
+    font-weight: normal;
+    margin: 0;
+    @include media($bp-large) {
+        font-size: em(66);
+    }
+}
+
+h3 {
+    font-size: em(22);
+    font-family: $ubuntulight;
+    @include media($bp-large) {
+        font-size: em(40);
+    }
+}
+
+h4 {
+    font-size: em(20);
+    font-family: $ubunturegular;
+    margin: 50px auto 20px;
+    @include media($bp-large) {
+        font-size: em(37);
+        margin: 100px auto 20px;
+    }
+}
+
+h5 {
+    font-size: em(18);
+    font-family: $ubunturegular;
+    margin: 0 auto rhythm(0, 18px);
+    @include media($bp-large) {
+        font-size: em(24);
+        margin: 0 auto rhythm(0, 24px);
+    }
+}
+
+h6 {
+    font-size: em(16);
+    font-family: $ubunturegular;
+    margin: 0 auto rhythm(0, 16px);
+}
+
+p, ul, ol {
+    font-size: em(16);
+    font-family: $open_sanslight;
+    margin: 0 auto rhythm(1, 16px);
+    @include media($bp-large) {
+        font-size: em(32);
+        line-height: 1.5em;
+        margin: 0 auto rhythm(1, 32px);
+    }
+}
+
+blockquote {
+    font-size: em(16);
+    font-family: $ubuntulight;
+    @include media($bp-large) {
+        font-size: em(43);
+        margin: 0 auto rhythm(1, em(43));
+    }
+}
+
+a {
+    color: $body_bg;
+    &:hover {
+        color: #67C4A1;
+        outline: none;
+        text-decoration: none;
+    }
+    &:active {
+        outline: none;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+hr {
+    border-color: $body_bg;
+    margin-bottom: 50px;
+    margin-top: 60px;
+    clear: both;
+}
+
+.logo {
+    opacity: 1;
+    h1 {
+        background-image: url(images/logo.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border: 0;
+        height: 101px;
+        margin-left: 0;
+        margin-top: 20px;
+        max-width: 412px;
+        padding: 0;
+        width: 75%;
+        @include media($bp-large) {
+            width: 100%;
+        }
+
+        a {
+            display: block;
+            text-indent: -999em;
+        }
+    }
+    a:hover & {
+        opacity: .5;
+        transition: opacity .3s ease-in-out;
+    }
+}
+
+.text-center {
+    text-align: center;
+}

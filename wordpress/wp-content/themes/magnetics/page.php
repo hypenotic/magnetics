@@ -10,7 +10,7 @@
     ?>        
     <div class="page-title">
             <div class="container">
-                <section class="span-10 center">
+                <section class="span-10-center">
                     <?php the_title( '<h1 class="headline">', '</h1>' ); ?>
                     <?php get_template_part( 'template-part', 'add_sub_heading' ); ?>
 	            </section>
@@ -18,14 +18,14 @@
     </div>     
     <div class="page-content">  	
             <div class="container">
-                <section class="span-10 center">
+                <section class="span-10-center">
                     <?php the_content(); ?>
                 </section>
                 <?php 
 					$tabs = get_pages( array( 'child_of' => $post->ID, 'sort_column' => 'post_date', 'sort_order' => 'desc' ) ); 
 					if($tabs) {
 				?>
-                <section class="span-10 center">
+                <section class="span-10-center">
                 	<div class="tabs">
                     	<ul class="tab-header">
                        		<?php 

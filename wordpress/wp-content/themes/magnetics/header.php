@@ -50,12 +50,14 @@
 <div class="contact-map" style="background-image:url(<?php bloginfo('template_url');?>/images/contact-map.jpg);"></div>
 <?php } ?>
 <!-- Menu Section Starts -->
-    <!-- Left Menu Section -->
-    <!-- Right Menu Section -->
-    <div class="offcanvas-menu right">
-        <a href="#" class="offcanvas-close-button" title="Close Menu">Close Menu</a>
-		<?php wp_nav_menu(array('theme_location'=>'header-menu'));?>
-    </div>
+    <!-- Pushy Menu -->
+        <nav class="pushy pushy-right">
+        	<a href="javascript:void(0)" class="close-pushy">x</a>
+			<?php wp_nav_menu(array('theme_location'=>'header-menu'));?>
+        </nav>
+ <!-- Site Overlay -->
+<div class="site-overlay"></div>
+
 <!-- Menu Section Ends -->
 <header>
 	<nav>
@@ -63,7 +65,7 @@
             <div class="span-6 logo">
                 <h1><a href="<?php bloginfo('url');?>">Magnetics</a></h1>
             </div>
-            <div class="offcanvas-menu-button right desktop"><a href="#">Mobile Menu</a></div> 
+            <div class="menu-btn"><span>Menu</span></div>
        </div>
     </nav>
 </header>

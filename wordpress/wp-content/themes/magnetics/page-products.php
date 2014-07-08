@@ -8,7 +8,7 @@ get_header(); ?>
 
 <div class="page-title">
         <div class="container">
-            <section class="span-10 center">
+            <section class="span-10-center">
                 <h1 class="headline">Products</h1>
                 <p class="sub-headline">We make marine magnetometers. Period.</p>
             </section>
@@ -30,7 +30,7 @@ get_header(); ?>
 				$style= "style='background-color:#67c4a1;'";
 			}
         ?>	
-        <section class="span-10 center">    
+        <section class="span-10-center">    
             <p class="colored-section"><span <?php echo $style;?>><?php echo $category->name;?></span></p>
 			<?php 
 			$args = array(

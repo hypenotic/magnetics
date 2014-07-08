@@ -1,0 +1,32 @@
+/*!
+Theme Name: Magnetics
+Theme URI: http://wordpress.org/
+Description: The 2014 default theme for WordPress.
+Author: Hypenotic
+Author URI: http://wordpress.org/
+Version: 1.0
+*/
+
+// Library
+@import "../bower/normalize-scss/normalize";
+@import "../bower/bourbon/dist/bourbon";
+@import "base/base";
+@import "../bower/neat/app/assets/stylesheets/neat";
+
+// Typography
+@import "base/typography-base";
+@import "base/typography-custom";
+
+// Layout
+@import "layout/grid";
+@import "layout/header";
+@import "layout/banner";
+@import "layout/offcanvas";
+@import "layout/video";
+@import "layout/product_slide";
+
+//@import "pagination";
+//@import "form";
+//@import "search";
+//@import "tabs";
+//@import "product_slide";

@@ -51,13 +51,13 @@
                     <div class="stem_bg_white"></div>
                 </div>
     <div class="container">
-        <section class="span-10 center text-center">
+        <section class="span-10-center text-center">
 				<?php the_title( '<h2 id="title">', '</h2>' ); ?>
                 <?php get_template_part( 'template-part', 'add_sub_heading' ); ?>
                 <?php the_content(); ?>
         </section>
         
-        <section class="span-10 center product_slides">
+        <section class="span-10-center product_slides">
 			<?php 
             $features = get_post_meta( get_the_ID(),'_product_features',true );
             if($features) {
@@ -123,7 +123,7 @@
      </div>
 	<div class="green-bg" <?php echo $style;?>>
    		<div class="container">
-        	<div class="span-10 center">
+        	<div class="span-10-center">
             	<h2 class="section-headline">Configurations</h2>
 					<?php 
                         $configs = get_post_meta( get_the_ID(),'_product_options',true );
@@ -202,7 +202,7 @@
     
 	<div class="grey-bg">
    		<div class="container">
-        	<div class="span-10 center">
+        	<div class="span-10-center">
             	<h2 class="section-headline">Articles & Brochures</h2>
 				<?php 
                 	$paged  = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -217,20 +217,20 @@
 								$post_type=get_post_type(get_the_ID());
 								if($post_type=='post') $post_type = "Article";
 							?>
-                                <h6><?php echo strtoupper($post_type);?></h6>
-                                <div class="span-5"><h3><?php the_title();?></h3></div>
-                                <div class="span-7">
-                                    <p><?php echo get_post_meta(get_the_ID(),'_brochure_content',true);?></p>
-                                    <p class="meta inline-meta">
-                                         <?php
-                                            if(get_post_meta($post->ID,'_brochure_file',true)) {
-                                        ?>
-                                        <span><a href="<?php echo get_post_meta($post->ID,'_brochure_file',true);?>" target="_blank" class="download"></a></span>
-                                        <?php } ?>
-                                        <span><a href="<?php the_permalink();?>" class="more"></a></span>
-                                    </p>
-                                </div>
-                                <hr />
+								<h6><?php echo strtoupper($post_type);?></h6>
+								<div class="span-5"><h3><?php the_title();?></h3></div>
+								<div class="span-6">
+									<p><?php echo get_post_meta(get_the_ID(),'_brochure_content',true);?></p>
+									<p class="meta inline-meta">
+										 <?php
+											if(get_post_meta($post->ID,'_brochure_file',true)) {
+										?>
+										<span><a href="<?php echo get_post_meta($post->ID,'_brochure_file',true);?>" target="_blank" class="download"></a></span>
+										<?php } ?>
+										<span><a href="<?php the_permalink();?>" class="more"></a></span>
+									</p>
+								</div>
+								<hr />
 	                    <?php endwhile;endif;wp_reset_query();?>
     						</div>
 
