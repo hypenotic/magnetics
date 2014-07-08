@@ -1,0 +1,53 @@
+$video_bg: #001f3f;
+
+video {
+    min-width: 100%;
+}
+
+.vjs-control-bar {
+    display: none;
+}
+
+#big-video-wrap {
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+    #big-video-vid {
+        display: none;
+        top: 0;
+        width: 100%;
+        @include media($bp-large) {
+            display: block;
+        }
+    }
+    #big-video-image {
+        display: block;
+        @include media($bp-large) {
+            display: none;
+        }
+
+        img {
+            height: 100%;
+        }
+    }
+    video {
+        position: absolute;
+    }
+}
+
+video#bgvid {
+    //background: url(polina.jpg) no-repeat;
+    bottom: 0;
+    background-size: cover;
+    height: auto;
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    right: 0;
+    width: auto;
+    z-index: -100;
+}

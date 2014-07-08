@@ -2,7 +2,7 @@
 <section class="page-content"> 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <div class="container">
-        	<div class="span-9 center">
+        	<div class="span-8-center single-content">
             	<?php the_title("<h2>","</h2>");?>
 				<p class="meta"><span class="sub-meta">Written by <?php echo the_author_posts_link(); ?></span>
                 <?php
@@ -21,7 +21,7 @@
     </div>
 <?php endwhile; endif; ?>
 <section class="container" id="pagination">
-    <div class="span-9 center">
+    <div class="span-8-center single-content">
         <p><a href="#">< Return to Products Page</a></p>
         <p><a href="#">< Return to Articles Page</a></p>
         
@@ -37,7 +37,7 @@
 	if($next_article->have_posts()) {
 ?>
 <section class="container related">
-    <div class="span-9 center">
+    <div class="span-8-center single-content">
         <h6>ARTICLE</h6>
         <?php while($next_article->have_posts()):$next_article->the_post(); ?>
         <div class="span-5">

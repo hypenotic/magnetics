@@ -10,20 +10,28 @@ module.exports = function(grunt) {
         watch: {
             clear: {
                 //clear terminal on any watch task. beauty.
-                files: ['sass/**/*.{scss,sass}', 'js/build/*.js', 'images/**/*'], //or be more specific
+                files: ['sass/**/*.{scss,sass}', 'js/build/*.js', 'images/**/*', '*.php', 'includes/{,*/}*.php'], //or be more specific
                 tasks: ['clear']
             },
-            sass: {
-                files: ['sass/**/*.{scss,sass}'],
-                tasks: ['sass', 'prettysass', 'notify:success']
+            imagemin: {
+                files: ['images/**/*'],
+                tasks: ['imagemin', 'notify:success']
             },
             js: {
                 files: '<%= jshint.all %>',
                 tasks: ['jshint', 'uglify', 'notify:success']
             },
-            imagemin: {
-                files: ['images/**/*'],
-                tasks: ['imagemin', 'notify:success']
+            php: {
+                files: ['*.php', 'includes/{,*/}*.php'],
+                tasks: ['notify:success']
+            },
+            html: {
+                files: ['*.html'],
+                tasks: ['notify:success']
+            },
+            sass: {
+                files: ['sass/**/*.{scss,sass}'],
+                tasks: ['sass', 'prettysass', 'notify:success']
             },
             options: {
                 livereload: true
@@ -33,9 +41,8 @@ module.exports = function(grunt) {
         sass: {
             dist: {
               options: {
-                style: 'nested',
+                style: 'expanded',
                 //sourcemap: 'true',
-                compass: true
               },
               files: {
                 'style.css': 'sass/style.scss',
@@ -72,7 +79,7 @@ module.exports = function(grunt) {
         //Sort SASS properties alphabetically and indent
         prettysass: {
             options: {
-                alphabetize: true,
+                alphabetize: false,
                 indent: 4
             },
             app: {
@@ -91,7 +98,7 @@ module.exports = function(grunt) {
         },
 
         // image optimization
-       imagemin: {
+        imagemin: {
             dist: {
                 options: {
                     optimizationLevel: 7,

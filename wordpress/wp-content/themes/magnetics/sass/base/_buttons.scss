@@ -1,0 +1,44 @@
+.button {
+    text-decoration: none;
+}
+
+button {
+    @include appearance(none);
+    display: block;
+    font-family: $ubuntubold;
+    padding: 0.5em 1.5em;
+    text-shadow: none;
+    text-transform: uppercase;
+    &.white {
+        background: none;
+        border: 2px solid #fff;
+        color: #fff;
+        &:hover {
+            background: #67c4a1;
+        }
+    }
+    &.callus-button {
+        background: $body_bg;
+        bottom: 0;
+        position: absolute;
+        right: 5%;
+        text-transform: none;
+        border: none;
+        a {
+            color: $white;
+            text-decoration: none;
+        }
+    }
+}
+
+.gform_button {
+    @include appearance(none);
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
+    display: block;
+    float: right;
+    padding: 1em 3em;
+    text-shadow: none;
+    text-transform: uppercase;
+}

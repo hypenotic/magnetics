@@ -1,0 +1,129 @@
+.container {
+    @include outer-container;
+    position: relative;
+    @include pad(0px 4.16667%);
+    @include media($bp-large) {
+        @include pad(0px 10px);
+    }
+}
+
+header {
+    position: relative;
+    z-index: 2000;
+}
+
+.wrapper {
+    //background: rgba(0, 31, 63, 0.7);
+    padding-top: 200px;
+    position: relative;
+    z-index: 10;
+}
+
+.span-4 {
+    @include span-columns(5);
+    @include media($bp-large) {
+        @include span-columns(4);
+    }
+}
+
+.span-5 {
+    @include span-columns(5);
+    @include media($bp-large) {
+        @include span-columns(5);
+    }
+}
+
+.span-6 {
+    @include span-columns(5);
+    @include media($bp-large) {
+        @include span-columns(6);
+    }
+}
+
+.span-7 {
+    @include span-columns(5);
+    @include media($bp-large) {
+        @include span-columns(7);
+    }
+}
+
+.span-8 {
+    @include span-columns(5);
+    @include media($bp-large) {
+        @include span-columns(8);
+    }
+}
+
+.span-9 {
+    @include span-columns(5);
+    @include media($bp-large) {
+        @include span-columns(9);
+    }
+}
+
+.span-10 {
+    @include span-columns(6);
+    @include media($bp-large) {
+        @include span-columns(10);
+    }
+}
+
+.span-10-center {
+    @include span-columns(4);
+    @include shift(0.5);
+}
+
+.span-8-center {
+    @include span-columns(3);
+    @include shift(1);
+}
+
+.span-11 {
+    @include span-columns(6);
+    overflow: hidden;
+    position: relative;
+    @include media($bp-large) {
+        @include span-columns(11);
+    }
+}
+
+.span-12 {
+    @include span-columns(6);
+    overflow: hidden;
+    position: relative;
+    @include media($bp-large) {
+        @include span-columns(12);
+    }
+}
+
+.center {
+    float: none;
+    margin: 0 auto;
+}
+
+.block-grid-2 {
+    overflow: hidden;
+    @include span-columns(15);
+    @include media($bp-large) {
+        @include span-columns(3);
+        &:nth-of-type(2) {
+            @include shift(1);
+            @include span-columns(4);
+        }
+        &:nth-of-type(3) {
+            @include shift(1);
+        }
+    }
+}
+
+.green-bg {
+    background: #67c4a1;
+    padding: 240px 0;
+    position: relative;
+}
+
+.grey-bg {
+    @extend .green-bg;
+    background: #e7e7e7;
+    color: $body_bg;
+}

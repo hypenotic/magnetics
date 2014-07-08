@@ -1,6 +1,6 @@
 <footer>
 	<div class="container">
-    	<div class="span-10">
+    	<div class="span-10-center">
             <div class="span-6">
                 <h2>RMA FORM</h2>
                 <p>Lorem ipsumu dolor sit amet, consectetur adipiscing elit. Etiam pharetra.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra</p>
