@@ -767,9 +767,9 @@ p, ul, ol {
 }
 @media screen and (min-width: 50em) {
   p, ul, ol {
-    font-size: 2em;
+    font-size: 1.25em;
     line-height: 1.5em;
-    margin: 0 auto rhythm(1, 32px);
+    margin: 0 auto rhythm(1, 20px);
   }
 }
 
@@ -897,9 +897,10 @@ a:hover .logo {
   }
 }
 
-.meta {
-  font-size: 1em;
-  font-family: "ubunturegular";
+@media screen and (min-width: 50em) {
+  .meta {
+    font-size: 1.5em;
+  }
 }
 .meta span {
   display: block;
@@ -1109,9 +1110,6 @@ a.more:before {
 .single-product header {
   width: 100%;
 }
-.single-product header nav {
-  background: #001f3f;
-}
 .single-product .header-image {
   left: 10%;
   position: absolute;
@@ -1121,7 +1119,7 @@ a.more:before {
 }
 .single-product .wrapper {
   background: none;
-  padding: 143px 0 0 0;
+  padding: 0;
 }
 .single-product .page-title {
   background: #001f3f;
@@ -1353,10 +1351,11 @@ a.morelink.less:after {
 }
 
 .colored-section span {
-  font-size: 1em;
+  font-size: 0.75em;
+  font-family: "ubuntubold";
   display: inline-block;
-  min-width: 200px;
-  padding: 3px 10px 3px;
+  min-width: 250px;
+  padding: 3px 50px 3px 20px;
 }
 
 button {
@@ -1626,7 +1625,7 @@ header {
   float: left;
   display: block;
   margin-right: 5.85151%;
-  width: 311.70301%;
+  width: 100%;
 }
 .block-grid-2:last-child {
   margin-right: 0;
@@ -1636,23 +1635,16 @@ header {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 23.23176%;
+    width: 48.82117%;
   }
   .block-grid-2:last-child {
     margin-right: 0;
   }
-  .block-grid-2:nth-of-type(2) {
-    margin-left: 8.5298%;
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%;
-  }
-  .block-grid-2:nth-of-type(2):last-child {
+  .block-grid-2:nth-child(2n) {
     margin-right: 0;
   }
-  .block-grid-2:nth-of-type(3) {
-    margin-left: 8.5298%;
+  .block-grid-2:nth-child(2n+1) {
+    clear: left;
   }
 }
 
@@ -1665,6 +1657,19 @@ header {
 .grey-bg {
   background: #e7e7e7;
   color: #001f3f;
+}
+
+.product-section {
+  padding-bottom: 100px;
+}
+.product-section:last-child {
+  padding-bottom: 0;
+}
+
+@media screen and (min-width: 50em) {
+  .section-content {
+    width: 80%;
+  }
 }
 
 header {

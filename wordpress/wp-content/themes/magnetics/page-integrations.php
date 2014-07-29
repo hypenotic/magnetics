@@ -27,9 +27,11 @@ get_header(); ?>
         <section class="span-10-center">
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             <div class="block-grid-2">
-                <h4><?php the_title(); ?></h4>
-                <p class="meta"><?php the_excerpt(); ?></p>
-                <a href="<?php the_permalink();?>" class="button"><button class="white">View</button></a>
+				<div class="section-content">
+					<h4><?php the_title(); ?></h4>
+					<?php the_excerpt('<p class="meta">','</p>');?>
+					<p><a href="<?php the_permalink();?>" class="button"><button class="white">View</button></a></p>
+				</div>
             </div>
             <?php endwhile; endif; ?>
         </section>

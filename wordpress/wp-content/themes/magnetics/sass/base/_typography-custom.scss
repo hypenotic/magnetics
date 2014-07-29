@@ -52,8 +52,11 @@
 }
 
 .meta {
-    font-size: em(16);
-    font-family: $ubunturegular;
+    @include media($bp-large) {
+        font-size: em(24);
+    }
+
+    //font-family: $ubunturegular;
     span {
         display: block;
         & a {
@@ -273,9 +276,6 @@ a.more {
     }
     header {
         width: 100%;
-        nav {
-            background: $body_bg;
-        }
     }
     .header-image {
         left: 10%;
@@ -286,7 +286,7 @@ a.more {
     }
     .wrapper {
         background: none;
-        padding: 143px 0 0 0;
+        padding: 0;
     }
     .page-title {
         background: $body_bg;
@@ -513,10 +513,11 @@ a.morelink {
 
 .colored-section {
     span {
-        font-size: em(16);
+        font-size: em(12);
+        font-family: $ubuntubold;
         display: inline-block;
-        min-width: 200px;
-        padding: 3px 10px 3px;
+        min-width: 250px;
+        padding: 3px 50px 3px 20px;
     }
 }
 

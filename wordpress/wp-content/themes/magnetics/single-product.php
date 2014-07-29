@@ -56,70 +56,68 @@
                 <?php get_template_part( 'template-part', 'add_sub_heading' ); ?>
                 <?php the_content(); ?>
         </section>
-        
-        <section class="span-10-center product_slides">
-			<?php 
-            $features = get_post_meta( get_the_ID(),'_product_features',true );
-            if($features) {
-            ?>
-
-            <ul class="product_slide">
-                <li class="first fade left clearfix">
-                		<div class="grid-5">
-                            <div class="product_slide_mask">
-                            </div>
-                            <div class="product_slide_content">
-                            </div>
-                         </div>
-                         <div class="grid-5 hide-on-mobile"></div>
-                </li>
-                <?php
-					foreach($features as $feature) {
-						$direction=$feature['_direction'];
-						$icon = $feature['_icon'];
-						$title = $feature['_title'];
-						$content = $feature['_content'];
-				?>
-                <li class="fade <?php echo $direction;?> clearfix">
-                		<?php 
-						if($direction == 'left') {
-						?>
-                		<div class="grid-5">
-                            <div class="product_slide_icon <?php echo $icon;?>"></div>
-                            <div class="product_slide_mask"></div>
-                            <div class="product_slide_content">
-                                <h5><?php echo $title;?></h5>
-                                <p><?php echo $content;?></p>
-                            </div>
-                         </div>
-                         <div class="grid-5 hide-on-mobile"></div>
-                        <?php 
-						}else {
-						?> 
-                        <div class="grid-5 hide-on-mobile"></div>
-                		<div class="grid-5">
-                            <div class="product_slide_icon <?php echo $icon;?>"></div>
-                            <div class="product_slide_mask"></div>
-                            <div class="product_slide_content">
-								<h5><?php echo $title;?></h5>
-                                <p><?php echo $content;?></p>
-                            </div>
-                         </div>
-                        <?php } ?>
-                </li>
-                <?php } ?>
-                <li class="last fade left clearfix">
-                		<div class="grid-5">
-                            <div class="product_slide_mask">
-                            </div>
-                            <div class="product_slide_content">
-                            </div>
-                         </div>
-                         <div class="grid-5 hide-on-mobile"></div>
-                </li>                
-            </ul>
-            <?php } ?>
-        </section>
+        <?php 
+		$features = get_post_meta( get_the_ID(),'_product_features',true );
+		if(count($features)>1) {
+		?>
+			<section class="span-10-center product_slides">
+				<ul class="product_slide">
+					<li class="first fade left clearfix">
+							<div class="grid-5">
+								<div class="product_slide_mask">
+								</div>
+								<div class="product_slide_content">
+								</div>
+							 </div>
+							 <div class="grid-5 hide-on-mobile"></div>
+					</li>
+					<?php
+						foreach($features as $feature) {
+							$direction=$feature['_direction'];
+							$icon = $feature['_icon'];
+							$title = $feature['_title'];
+							$content = $feature['_content'];
+					?>
+					<li class="fade <?php echo $direction;?> clearfix">
+							<?php 
+							if($direction == 'left') {
+							?>
+							<div class="grid-5">
+								<div class="product_slide_icon <?php echo $icon;?>"></div>
+								<div class="product_slide_mask"></div>
+								<div class="product_slide_content">
+									<h5><?php echo $title;?></h5>
+									<p><?php echo $content;?></p>
+								</div>
+							 </div>
+							 <div class="grid-5 hide-on-mobile"></div>
+							<?php 
+							}else {
+							?> 
+							<div class="grid-5 hide-on-mobile"></div>
+							<div class="grid-5">
+								<div class="product_slide_icon <?php echo $icon;?>"></div>
+								<div class="product_slide_mask"></div>
+								<div class="product_slide_content">
+									<h5><?php echo $title;?></h5>
+									<p><?php echo $content;?></p>
+								</div>
+							 </div>
+							<?php } ?>
+					</li>
+					<?php } ?>
+					<li class="last fade left clearfix">
+							<div class="grid-5">
+								<div class="product_slide_mask">
+								</div>
+								<div class="product_slide_content">
+								</div>
+							 </div>
+							 <div class="grid-5 hide-on-mobile"></div>
+					</li>                
+				</ul>
+			</section>
+        <?php } ?>
      </div>
 	<div class="green-bg" <?php echo $style;?>>
    		<div class="container">
@@ -239,4 +237,5 @@
     </div>
 </div>          
 <?php endwhile;endif;wp_reset_query();?>
+
 <?php get_footer(); ?>
