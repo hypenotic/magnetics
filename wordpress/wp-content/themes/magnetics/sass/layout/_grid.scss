@@ -103,16 +103,10 @@ header {
 
 .block-grid-2 {
     overflow: hidden;
-    @include span-columns(15);
+    @include span-columns(5);
     @include media($bp-large) {
-        @include span-columns(3);
-        &:nth-of-type(2) {
-            @include shift(1);
-            @include span-columns(4);
-        }
-        &:nth-of-type(3) {
-            @include shift(1);
-        }
+        @include span-columns(6);
+        @include omega(2n);
     }
 }
 
@@ -126,4 +120,17 @@ header {
     @extend .green-bg;
     background: #e7e7e7;
     color: $body_bg;
+}
+
+.product-section {
+    padding-bottom: 100px;
+    &:last-child {
+        padding-bottom: 0;
+    }
+}
+
+.section-content {
+    @include media($bp-large) {
+        width: 80%;
+    }
 }
