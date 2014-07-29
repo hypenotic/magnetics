@@ -13,7 +13,7 @@
       'menuWidth': '15.625em',
       'speed': '300'
     }, options);
-
+	var overlay = $('.site-overlay');
     var menuLink = this,
         menu = $(settings.menu),
         push = $(settings.push),
@@ -60,12 +60,18 @@
       if (menu._state === 'closed') {
         menu.open();
 		menuLink.addClass('active');
+		overlay.show();
       } else {
 		menu.close();
 		menuLink.removeClass('active');
+		overlay.hide();
       }
     });
-
+	overlay.on('click.bigSlide', function(e) {
+		menuLink.removeClass('active');
+		menu.close();
+		overlay.hide();
+	});
     menuLink.on('touchend', function(e){
       menuLink.trigger('click.bigSlide');
       e.preventDefault();

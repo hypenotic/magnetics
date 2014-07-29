@@ -1752,22 +1752,13 @@ header img {
 
 /* Site Overlay */
 .site-overlay {
-  display: none;
-}
-
-.pushy-active .site-overlay {
   bottom: 0;
-  display: block;
+  display: none;
   position: fixed;
-  right: 15em;
+  right: 15.625em;
   top: 0;
   width: 100%;
   z-index: 9999;
-}
-@media screen and (min-width: 50em) {
-  .pushy-active .site-overlay {
-    right: 20em;
-  }
 }
 
 /*
@@ -1910,6 +1901,7 @@ Nav Panel
 
 #nav-toggle.active span:before, #nav-toggle.active span:after {
   top: 0;
+  background: #001f3f;
 }
 
 #nav-toggle.active span:before {
