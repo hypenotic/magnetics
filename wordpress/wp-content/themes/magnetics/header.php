@@ -51,22 +51,23 @@
 <?php } ?>
 <!-- Menu Section Starts -->
     <!-- Pushy Menu -->
-        <nav class="pushy pushy-right">
-        	<a href="javascript:void(0)" class="close-pushy">x</a>
+        <nav id="menu" class="panel" role="navigation">
 			<?php wp_nav_menu(array('theme_location'=>'header-menu'));?>
         </nav>
  <!-- Site Overlay -->
 <div class="site-overlay"></div>
 
 <!-- Menu Section Ends -->
-<header>
+<header class="wrap push">
 	<nav>
     	<div class="container">
             <div class="span-6 logo">
                 <h1><a href="<?php bloginfo('url');?>">Magnetics</a></h1>
             </div>
-            <div class="menu-btn"><span>Menu</span></div>
+            <div class="menu-btn">
+				<a id="nav-toggle" href="#menu"><span></span></a>
+			</div>
        </div>
     </nav>
 </header>
-<div class="wrapper">
+<div class="wrapper wrap push">

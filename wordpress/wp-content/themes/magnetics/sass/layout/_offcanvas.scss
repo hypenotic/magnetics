@@ -1,63 +1,45 @@
-/*! Pushy - v0.9.1 - 2013-9-16 */
+/* Site Overlay */
 
-/* Menu Appearance */
-.menu-btn {
-    position: absolute;
-    cursor: pointer;
-    right: 30px;
-    top: 30px;
-    width: 46px;
-    z-index: 2;
-    span {
-        border: 2px solid #FFF;
-        display: block;
-        font-size: 0;
-        height: 37px;
-        margin: 20px 0 0 0;
-        overflow: hidden;
-        padding: 7px 10px 3px;
-        position: relative;
-        width: 45px;
-        z-index: 2;
-        &:before {
-            background: url("images/offcanvas-buttons.png") no-repeat;
-            content: '';
-            display: block;
-            height: 19px;
-            width: 20px;
-        }
-        &:hover {
-            border: 2px solid #092148;
-            &.single-product {
-                border: 2px solid $white;
-            }
-            &:before {
-                background-position: -20px 0;
-                &.single-product {
-                    background-position: 0px 0;
-                }
-            }
-        }
+.site-overlay {
+    display: none;
+}
+
+.pushy-active .site-overlay {
+    bottom: 0;
+    display: block;
+    position: fixed;
+    right: 15em;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    @include media($bp-large) {
+        right: 20em;
     }
 }
 
-.pushy {
+/*
+Nav Panel
+======================================
+*/
+
+.panel {
     -webkit-overflow-scrolling: touch;
     background: $white;
     height: 100%;
     overflow: auto;
     padding-top: 75px;
     position: fixed;
-    right: 0;
+    right: -15em;
     top: 0;
     width: 15em;
     z-index: 9999;
     @include media($bp-large) {
+        right: -20em;
         width: 20em;
     }
 
-    /* enables momentum scrolling in iOS overflow elements */
-    .close-pushy {
+    /*should match the above value*/
+    .close-menu {
         border: 2px solid #092148;
         display: block;
         font-size: 0;
@@ -79,7 +61,7 @@
         //@include adjust-font-size-to(15px);
         font-size: $base-font-size;
         margin: 0;
-        padding: 100px 0 200px 0;
+        padding: 0px 0 200px 0;
         li {
             list-style: none;
             margin: 0;
@@ -130,50 +112,57 @@
     }
 }
 
-/* Menu Movement */
-
-.pushy-right {
-    @include transform(translate3d(15em, 0, 0));
-    @include media($bp-large) {
-        @include transform(translate3d(20em, 0, 0));
+#nav-toggle {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    cursor: pointer;
+    padding: 10px 35px 16px 0px;
+    span {
+        cursor: pointer;
+        height: 5px;
+        width: 35px;
+        background: white;
+        position: absolute;
+        display: block;
+        content: '';
     }
 }
 
-.pushy-open {
-    @include transform(translate3d(0, 0, 0));
-}
-
-.container-push, .push-push {
-    @include transform(translate3d(-15em, 0, 0));
-    @include media($bp-large) {
-        @include transform(translate3d(-20em, 0, 0));
-    }
-}
-
-/* Menu Transitions */
-
-.pushy, .wrapper, .push {
-    /* improves performance issues on mobile*/
-    -webkit-backface-visibility: hidden;
-    -webkit-perspective: 1000;
-    @include transition(transform 0.2s cubic-bezier(0.16, 0.68, 0.43, 0.99));
-}
-
-/* Site Overlay */
-
-.site-overlay {
-    display: none;
-}
-
-.pushy-active .site-overlay {
-    bottom: 0;
+#nav-toggle span:before, #nav-toggle span:after {
+    cursor: pointer;
+    height: 5px;
+    width: 35px;
+    background: white;
+    position: absolute;
     display: block;
-    position: fixed;
-    right: 15em;
+    content: '';
+}
+
+#nav-toggle span:before {
+    top: -10px;
+}
+
+#nav-toggle span:after {
+    bottom: -10px;
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+    transition: all 500ms ease-in-out;
+}
+
+#nav-toggle.active span {
+    background-color: transparent;
+}
+
+#nav-toggle.active span:before, #nav-toggle.active span:after {
     top: 0;
-    width: 100%;
-    z-index: 9999;
-    @include media($bp-large) {
-        right: 20em;
-    }
+}
+
+#nav-toggle.active span:before {
+    transform: rotate(45deg);
+}
+
+#nav-toggle.active span:after {
+    transform: rotate(-45deg);
 }
