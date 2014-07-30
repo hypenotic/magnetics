@@ -10,7 +10,7 @@
       'menu': ('#menu'),
       'push': ('.push'),
       'side': 'left',
-      'menuWidth': '15.625em',
+      'menuWidth': '15em',
       'speed': '300'
     }, options);
 	var overlay = $('.site-overlay');

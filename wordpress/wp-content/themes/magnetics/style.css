@@ -480,6 +480,9 @@ http://drinchev.github.io/monosocialiconsfont/
 body {
   color: white;
 }
+body#tinymce.wp-editor {
+  color: #333;
+}
 
 img {
   max-width: 100%;
@@ -643,6 +646,16 @@ button.callus-button a {
   overflow: hidden;
   padding-left: 0;
   position: relative;
+  margin-top: 0px;
+}
+.tabs .tab-header h6 {
+  margin-bottom: 1em;
+  font-family: "ubuntulight";
+  margin-top: 0px;
+  font-weight: normal;
+}
+.tabs .tab-header h5 {
+  margin-bottom: 0.5em;
 }
 .tabs .tab-header li {
   background: #00b7c2;
@@ -1213,7 +1226,10 @@ a.more:before {
   width: 100%;
 }
 .contact .wrapper {
-  background: rgba(0, 116, 217, 0.7);
+  background: rgba(0, 116, 217, 0.85);
+}
+.contact .wrapper .page-title {
+  padding-bottom: 50px;
 }
 .contact .wrapper .page-title:after {
   background: none;
@@ -1856,18 +1872,23 @@ Nav Panel
   color: white;
 }
 
-#nav-toggle {
+.menu-btn {
   position: absolute;
   right: 30px;
-  top: 50%;
+  top: 45%;
+}
+
+#nav-toggle {
   cursor: pointer;
-  padding: 10px 35px 16px 0px;
+  padding: 15px 33px 18px 8px;
+  border: 2px solid #001f3f;
+  display: block;
 }
 #nav-toggle span {
   cursor: pointer;
-  height: 5px;
-  width: 35px;
-  background: white;
+  height: 3px;
+  width: 25px;
+  background: #001f3f;
   position: absolute;
   display: block;
   content: '';
@@ -1875,20 +1896,20 @@ Nav Panel
 
 #nav-toggle span:before, #nav-toggle span:after {
   cursor: pointer;
-  height: 5px;
-  width: 35px;
-  background: white;
+  height: 3px;
+  width: 25px;
+  background: #001f3f;
   position: absolute;
   display: block;
   content: '';
 }
 
 #nav-toggle span:before {
-  top: -10px;
+  top: -8px;
 }
 
 #nav-toggle span:after {
-  bottom: -10px;
+  bottom: -8px;
 }
 
 #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {

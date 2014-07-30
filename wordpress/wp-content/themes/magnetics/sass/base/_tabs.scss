@@ -8,6 +8,16 @@
         overflow: hidden;
         padding-left: 0;
         position: relative;
+        margin-top: 0px;
+        h6 {
+            margin-bottom: 1em;
+            font-family: $ubuntulight;
+            margin-top: 0px;
+            font-weight: normal;
+        }
+        h5 {
+            margin-bottom: 0.5em;
+        }
         li {
             background: #00b7c2;
             display: inline-block;
