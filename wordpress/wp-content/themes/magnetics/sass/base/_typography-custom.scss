@@ -386,8 +386,9 @@ a.more {
         width: 100%;
     }
     .wrapper {
-        background: rgba(0, 116, 217, 0.7);
+        background: rgba(0, 116, 217, 0.85);
         .page-title {
+            padding-bottom: 50px;
             &:after {
                 background: none;
             }
