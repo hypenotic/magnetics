@@ -50,4 +50,21 @@ video#bgvid {
     right: 0;
     width: auto;
     z-index: -100;
+    display: none;
+    @include media($bp-large) {
+        display: block;
+    }
+}
+
+.mobile-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba($video_bg, 0.5);
+    top: 0;
+    z-index: -100;
+    display: block;
+    @include media($bp-large) {
+        display: none;
+    }
 }
