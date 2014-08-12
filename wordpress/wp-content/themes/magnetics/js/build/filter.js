@@ -5,7 +5,7 @@ jQuery(document).ready(function(e) {
 			}
 		});
 		var id=	e('.filter li a').attr('id');
-		e('.related .span-9').each(function(){
+		e('.related .span-filter').each(function(){
 			if(e(this).attr('data-category')==id) {
 				e(this).show();
 			}else {
@@ -23,7 +23,7 @@ jQuery(document).ready(function(e) {
 		});
 		e(this).parent().addClass('active');
 		e(this).parent().css('background-color',e(this).parent().attr('data-background'));
-		e('.related .span-9').each(function(){
+		e('.related .span-filter').each(function(){
 			if(e(this).attr('data-category')==id) {
 				e(this).show();
 			}else {

@@ -758,19 +758,18 @@ h4 {
 h5 {
   font-size: 1.125em;
   font-family: "ubunturegular";
-  margin: 0 auto rhythm(0, 18px);
+  margin-bottom: 0;
 }
 @media screen and (min-width: 50em) {
   h5 {
     font-size: 1.5em;
-    margin: 0 auto rhythm(0, 24px);
   }
 }
 
 h6 {
   font-size: 1em;
+  margin-bottom: 0;
   font-family: "ubunturegular";
-  margin: 0 auto rhythm(0, 16px);
 }
 
 p, ul, ol {
@@ -817,35 +816,6 @@ hr {
   margin-bottom: 50px;
   margin-top: 60px;
   clear: both;
-}
-
-.logo {
-  opacity: 1;
-}
-.logo h1 {
-  background-image: url(images/logo.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  border: 0;
-  height: 101px;
-  margin-left: 0;
-  margin-top: 20px;
-  max-width: 412px;
-  padding: 0;
-  width: 75%;
-}
-@media screen and (min-width: 50em) {
-  .logo h1 {
-    width: 100%;
-  }
-}
-.logo h1 a {
-  display: block;
-  text-indent: -999em;
-}
-a:hover .logo {
-  opacity: .5;
-  transition: opacity .3s ease-in-out;
 }
 
 .text-center {
@@ -975,6 +945,9 @@ footer a:hover {
   border-bottom: none;
 }
 
+.single-post, .articles-and-brochures, .single-brochure {
+  color: #001f3f;
+}
 .single-post #big-video-wrap, .articles-and-brochures #big-video-wrap, .single-brochure #big-video-wrap {
   display: none;
 }
@@ -1387,6 +1360,36 @@ button {
   font-family: "open_sansextrabold";
 }
 
+.logo {
+  opacity: 1;
+}
+.logo h1 {
+  background-image: url(images/logo.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border: 0;
+  height: 101px;
+  margin-left: 0;
+  margin-top: 0px;
+  max-width: 412px;
+  padding: 0;
+  width: 75%;
+}
+@media screen and (min-width: 50em) {
+  .logo h1 {
+    width: 100%;
+  }
+}
+.logo h1 a {
+  display: block;
+  text-indent: -999em;
+  height: 100%;
+}
+a:hover .logo {
+  opacity: .5;
+  transition: opacity .3s ease-in-out;
+}
+
 .container {
   max-width: 80em;
   margin-left: auto;
@@ -1771,7 +1774,7 @@ header img {
   bottom: 0;
   display: none;
   position: fixed;
-  right: 15.625em;
+  right: 15em;
   top: 0;
   width: 100%;
   z-index: 9999;
@@ -1875,7 +1878,7 @@ Nav Panel
 .menu-btn {
   position: absolute;
   right: 30px;
-  top: 45%;
+  top: 33%;
 }
 
 #nav-toggle {
@@ -1883,6 +1886,9 @@ Nav Panel
   padding: 15px 33px 18px 8px;
   border: 2px solid #001f3f;
   display: block;
+}
+.single #nav-toggle, .articles-and-brochures #nav-toggle, .single-brochure #nav-toggle {
+  border: 2px solid white;
 }
 #nav-toggle span {
   cursor: pointer;
@@ -1893,6 +1899,9 @@ Nav Panel
   display: block;
   content: '';
 }
+.single #nav-toggle span, .articles-and-brochures #nav-toggle span, .single-brochure #nav-toggle span {
+  background: white;
+}
 
 #nav-toggle span:before, #nav-toggle span:after {
   cursor: pointer;
@@ -1902,6 +1911,9 @@ Nav Panel
   position: absolute;
   display: block;
   content: '';
+}
+.single #nav-toggle span:before, .articles-and-brochures #nav-toggle span:before, .single-brochure #nav-toggle span:before, .single #nav-toggle span:after, .articles-and-brochures #nav-toggle span:after, .single-brochure #nav-toggle span:after {
+  background: white;
 }
 
 #nav-toggle span:before {
@@ -1925,6 +1937,9 @@ Nav Panel
 #nav-toggle.active span:before, #nav-toggle.active span:after {
   background: #001f3f;
   top: 0;
+}
+.single #nav-toggle.active span:before, .articles-and-brochures #nav-toggle.active span:before, .single-brochure #nav-toggle.active span:before, .single #nav-toggle.active span:after, .articles-and-brochures #nav-toggle.active span:after, .single-brochure #nav-toggle.active span:after {
+  background: white;
 }
 
 #nav-toggle.active span:before {

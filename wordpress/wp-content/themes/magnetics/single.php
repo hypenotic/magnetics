@@ -22,8 +22,8 @@
 <?php endwhile; endif; ?>
 <section class="container" id="pagination">
     <div class="span-8-center single-content">
-        <p><a href="#">< Return to Products Page</a></p>
-        <p><a href="#">< Return to Articles Page</a></p>
+        <p><a href="<?php bloginfo('url');?>/products">< Return to Products Page</a></p>
+        <p><a href="<?php bloginfo('url');?>/articles-and-brochures/">< Return to Articles Page</a></p>
         
 		<hr />
     </div>

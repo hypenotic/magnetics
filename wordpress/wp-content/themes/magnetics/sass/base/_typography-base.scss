@@ -52,17 +52,16 @@ h4 {
 h5 {
     font-size: em(18);
     font-family: $ubunturegular;
-    margin: 0 auto rhythm(0, 18px);
+    margin-bottom: 0;
     @include media($bp-large) {
         font-size: em(24);
-        margin: 0 auto rhythm(0, 24px);
     }
 }
 
 h6 {
     font-size: em(16);
+    margin-bottom: 0;
     font-family: $ubunturegular;
-    margin: 0 auto rhythm(0, 16px);
 }
 
 p, ul, ol {
@@ -105,34 +104,6 @@ hr {
     margin-bottom: 50px;
     margin-top: 60px;
     clear: both;
-}
-
-.logo {
-    opacity: 1;
-    h1 {
-        background-image: url(images/logo.png);
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        border: 0;
-        height: 101px;
-        margin-left: 0;
-        margin-top: 20px;
-        max-width: 412px;
-        padding: 0;
-        width: 75%;
-        @include media($bp-large) {
-            width: 100%;
-        }
-
-        a {
-            display: block;
-            text-indent: -999em;
-        }
-    }
-    a:hover & {
-        opacity: .5;
-        transition: opacity .3s ease-in-out;
-    }
 }
 
 .text-center {

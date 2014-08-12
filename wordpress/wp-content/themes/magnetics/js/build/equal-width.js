@@ -1,5 +1,5 @@
 function equalWidth() {
-    var span = jQuery('.equal-width-category span'),
+    var span = jQuery('.equal-width-category span,.filter li'),
         widest = 0,
         thisWidth = 0;
 

@@ -15,7 +15,7 @@ get_header(); ?>
 
 <section class="page-content">
 	<div class="container">
-        	<div class="span-9 center">
+        	<div class="span-8-center">
             	<?php the_title("<h2>","</h2>");?>
                  <?php 
 					$args = array(
@@ -56,10 +56,10 @@ get_header(); ?>
 						
 						$category = get_the_category( get_the_ID() );
 			?>
-        	<div class="span-9 center" data-category="<?php echo $category[0]->slug;?>">
+        	<div class="span-8-center" data-category="<?php echo $category[0]->slug;?>">
                 <h6><?php echo strtoupper($post_type);?></h6>
             	<div class="span-5"><h3><?php the_title();?></h3></div>
-            	<div class="span-7">
+            	<div class="span-6">
                 	<p><?php echo get_post_meta(get_the_ID(),'_brochure_content',true);?></p>
                     <p class="meta inline-meta">
                          <?php
