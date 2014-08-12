@@ -4,7 +4,7 @@
     bottom: 0;
     display: none;
     position: fixed;
-    right: 15.625em;
+    right: 15em;
     top: 0;
     width: 100%;
     z-index: 9999;
@@ -108,19 +108,25 @@ Nav Panel
 .menu-btn {
     position: absolute;
     right: 30px;
-    top: 45%;
+    top: 33%;
 }
 
 #nav-toggle {
     cursor: pointer;
     padding: 15px 33px 18px 8px;
     border: 2px solid $body_bg;
+    .single &, .articles-and-brochures &, .single-brochure & {
+        border: 2px solid $white;
+    }
     display: block;
     span {
         cursor: pointer;
         height: 3px;
         width: 25px;
         background: $body_bg;
+        .single &, .articles-and-brochures &, .single-brochure & {
+            background: $white;
+        }
         position: absolute;
         display: block;
         content: '';
@@ -132,6 +138,9 @@ Nav Panel
     height: 3px;
     width: 25px;
     background: $body_bg;
+    .single &, .articles-and-brochures &, .single-brochure & {
+        background: $white;
+    }
     position: absolute;
     display: block;
     content: '';
@@ -155,6 +164,9 @@ Nav Panel
 
 #nav-toggle.active span:before, #nav-toggle.active span:after {
     background: $body_bg;
+    .single &, .articles-and-brochures &, .single-brochure & {
+        background: $white;
+    }
     top: 0;
 }
 
