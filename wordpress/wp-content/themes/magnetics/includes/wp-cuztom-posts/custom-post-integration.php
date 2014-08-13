@@ -20,5 +20,37 @@ $integration->add_meta_box(
 			)
 		)
 	);
-
+$integration->add_meta_box(
+	'software_partners',
+	'Software Partners',	
+	array(
+		'bundle',    
+			array( 
+				array(
+					'name'          => 'title',
+					'label'         => 'Title',
+					'description'   => '',
+					'type'          => 'text',          
+				),
+				array(
+					'name'          => 'content',
+					'label'         => 'Description',
+					'description'   => '',
+					'type'          => 'textarea',          
+				),
+				array(
+			        'name'          => 'Logo',
+			        'label'         => 'Company Logo',
+			        'description'   => '',
+			        'type'          => 'image',
+			    ),
+			    array(
+        			'name'          => 'link',
+        			'label'         => 'Website URL',
+        			'description'   => 'Please enter website url.',
+        			'type'          => 'text'
+     			)
+			)
+		)
+);	
 ?>

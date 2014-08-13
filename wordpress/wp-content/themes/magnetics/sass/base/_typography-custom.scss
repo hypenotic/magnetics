@@ -559,6 +559,21 @@ button {
     }
     a:hover & {
         opacity: .5;
-        transition: opacity .3s ease-in-out;
+        @include transition(opacity 0.3s ease-in-out);
+    }
+}
+
+.full-width {
+    @include transition(all 0.3s ease-in-out);
+    a {
+        color: $white;
+        text-decoration: none;
+        border-bottom: 1px solid;
+    }
+    &:hover {
+        color: $body_bg;
+        a {
+            color: $body_bg;
+        }
     }
 }
