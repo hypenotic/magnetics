@@ -69,18 +69,16 @@ header {
 }
 
 .span-10-center {
-    @include span-columns(5);
-    @include media($bp-large) {
-        @include span-columns(4);
-        @include shift(0.5);
-    }
+    @include span-columns(4);
+    @include shift(0.5);
 }
 
 .span-8-center {
-    @include span-columns(5);
+    @include span-columns(4);
+    @include shift(0.5);
     @include media($bp-large) {
-        @include span-columns(3);
-        @include shift(1);
+        @include span-columns(7);
+        @include shift(2.5);
     }
 }
 

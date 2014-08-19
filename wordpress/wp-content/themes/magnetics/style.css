@@ -660,8 +660,8 @@ button.callus-button a {
 .tabs .tab-header li {
   background: #00b7c2;
   display: inline-block;
-  float: left;
   width: 50%;
+  float: left;
 }
 .tabs .tab-header li.active-tab-header {
   background: white;
@@ -1612,29 +1612,19 @@ header {
   float: left;
   display: block;
   margin-right: 5.85151%;
-  width: 100%;
+  width: 78.8297%;
+  margin-left: 10.58515%;
 }
 .span-10-center:last-child {
   margin-right: 0;
-}
-@media screen and (min-width: 50em) {
-  .span-10-center {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%;
-    margin-left: 4.2649%;
-  }
-  .span-10-center:last-child {
-    margin-right: 0;
-  }
 }
 
 .span-8-center {
   float: left;
   display: block;
   margin-right: 5.85151%;
-  width: 100%;
+  width: 78.8297%;
+  margin-left: 10.58515%;
 }
 .span-8-center:last-child {
   margin-right: 0;
@@ -1644,8 +1634,8 @@ header {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 23.23176%;
-    margin-left: 8.5298%;
+    width: 57.35098%;
+    margin-left: 21.32451%;
   }
   .span-8-center:last-child {
     margin-right: 0;
