@@ -18,10 +18,14 @@
 	
 	if( $related_posts->have_posts() ) {
 	?>
+	<section class="container">
+         <div class="span-8-center">
+            <h6>OTHER ARTICLES RELATED TO SAESPY</h6>
+		</div>
+	</section>	
      <section class="container related green-box">    
 	 <?php while($related_posts->have_posts()): $related_posts->the_post(); ?>
          <div class="span-8-center">
-            <h6>OTHER ARTICLES RELATED TO SAESPY</h6>
                 <div class="span-5">
 	                <h3><?php the_title();?></h3>
                 </div>

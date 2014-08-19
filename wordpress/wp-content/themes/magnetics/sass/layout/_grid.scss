@@ -62,7 +62,7 @@ header {
 }
 
 .span-10 {
-    @include span-columns(6);
+    @include span-columns(5);
     @include media($bp-large) {
         @include span-columns(10);
     }
@@ -74,12 +74,16 @@ header {
 }
 
 .span-8-center {
-    @include span-columns(3);
-    @include shift(1);
+    @include span-columns(4);
+    @include shift(0.5);
+    @include media($bp-large) {
+        @include span-columns(7);
+        @include shift(2.5);
+    }
 }
 
 .span-11 {
-    @include span-columns(6);
+    @include span-columns(5);
     overflow: hidden;
     position: relative;
     @include media($bp-large) {
@@ -88,7 +92,7 @@ header {
 }
 
 .span-12 {
-    @include span-columns(6);
+    @include span-columns(5);
     overflow: hidden;
     position: relative;
     @include media($bp-large) {
@@ -112,7 +116,7 @@ header {
 
 .green-bg {
     background: #67c4a1;
-    padding: 240px 0;
+    padding: 200px 0;
     position: relative;
 }
 
