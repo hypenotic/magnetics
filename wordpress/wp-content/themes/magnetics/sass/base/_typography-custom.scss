@@ -444,7 +444,7 @@ a.more {
                 @include media($bp-large) {
                     left: 0;
                     position: absolute;
-                    top: 17px;
+                    top: 0px;
                     width: 300px;
                 }
             }
@@ -493,10 +493,9 @@ a.morelink {
         content: '';
         margin-left: 10px;
         position: absolute;
-        top: 9px;
+        bottom: 5px;
         @include media($bp-large) {
             border-width: 12px 10px 0 10px;
-            top: 20px;
         }
     }
     &.less:after {
@@ -504,10 +503,9 @@ a.morelink {
         border-style: solid;
         border-width: 6px 0px 6px 8px;
         position: absolute;
-        top: 6px;
+        bottom: 0px;
         @include media($bp-large) {
-            border-width: 10px 0px 10px 12px;
-            top: 17px;
+            border-width: 10px 0px 10px 10px;
         }
     }
 }
