@@ -4,7 +4,7 @@
     <div class="container">
         	<div class="span-8-center single-content">
             	<?php the_title("<h2>","</h2>");?>
-				<p class="meta"><span class="sub-meta">Written by <?php echo the_author_posts_link(); ?></span>
+				<p class="meta"><span class="sub-meta">Written by <?php echo ucfirst(get_the_author()); ?></span>
                 <?php
 					if(get_post_meta($post->ID,'_brochure_file',true)) {
 				?>

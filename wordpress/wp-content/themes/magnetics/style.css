@@ -736,25 +736,25 @@ h2 {
 }
 
 h3 {
-  font-size: 1.375em;
+  font-size: 1.25em;
   line-height: 1.2em;
   font-family: "ubuntulight";
 }
 @media screen and (min-width: 50em) {
   h3 {
-    font-size: 2.5em;
+    font-size: 2.25em;
   }
 }
 
 h4 {
-  font-size: 1.25em;
+  font-size: 1.125em;
   line-height: 1.2em;
   font-family: "ubunturegular";
   margin: 50px auto 20px;
 }
 @media screen and (min-width: 50em) {
   h4 {
-    font-size: 2.3125em;
+    font-size: 2em;
     margin: 100px auto 20px;
   }
 }
@@ -881,6 +881,7 @@ hr {
   }
 }
 .home .sub-headline {
+  font-family: "ubuntubold";
   padding-bottom: 20px;
 }
 @media screen and (min-width: 50em) {
@@ -889,6 +890,9 @@ hr {
   }
 }
 
+.meta {
+  font-family: "ubunturegular";
+}
 @media screen and (min-width: 50em) {
   .meta {
     font-size: 1.5em;
@@ -911,7 +915,7 @@ hr {
 }
 
 .sub-meta {
-  font-size: 1em;
+  font-size: 0.875em;
   color: #001f3f;
   margin-bottom: 20px;
 }
@@ -1011,12 +1015,15 @@ footer a:hover {
 }
 
 a.download {
-  font-size: 1.125em;
+  font-size: 1em;
   font-family: "ubuntubold";
   font-weight: 400;
-  padding-left: 32px;
+  padding-left: 35px;
   position: relative;
   text-decoration: none;
+}
+.articles-and-brochures a.download, .single-product a.download {
+  padding-left: 20px;
 }
 a.download:before {
   background: url(images/site-icons.png) no-repeat;
@@ -1024,8 +1031,11 @@ a.download:before {
   height: 27px;
   left: 0;
   position: absolute;
-  top: -9px;
+  top: -2px;
   width: 27px;
+}
+.articles-and-brochures a.download:before, .single-product a.download:before {
+  top: -15px;
 }
 
 a.more {
@@ -1056,13 +1066,18 @@ a.more:before {
 }
 @media screen and (min-width: 50em) {
   .description {
-    font-size: 1.875em;
+    font-size: 1.5em;
   }
 }
 
 .page-title {
-  padding-bottom: 200px;
+  padding-bottom: 100px;
   position: relative;
+}
+@media screen and (min-width: 50em) {
+  .page-title {
+    padding-bottom: 200px;
+  }
 }
 .page-title:after {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 31, 63, 0)), color-stop(100%, #001f3f));
@@ -1135,6 +1150,7 @@ a.more:before {
 .single-product .wrapper {
   background: none;
   padding: 0;
+  overflow: hidden;
 }
 .single-product .page-title {
   background: #001f3f;
@@ -1168,10 +1184,14 @@ a.more:before {
   padding-bottom: 0;
 }
 .single-product #title {
-  background: #001f3f;
   margin-bottom: 0;
   padding-bottom: 100px;
   padding-top: 100px;
+}
+@media screen and (min-width: 50em) {
+  .single-product #title {
+    background: #001f3f;
+  }
 }
 
 .filter {
@@ -1184,6 +1204,14 @@ a.more:before {
   display: inline-block;
   float: left;
   padding-right: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+@media screen and (min-width: 50em) {
+  .filter li {
+    margin-bottom: 0px;
+    margin-right: 0px;
+  }
 }
 .filter li a {
   font-size: 0.6875em;
@@ -1292,24 +1320,18 @@ a.more:before {
   content: '';
   margin-left: 15px;
   position: absolute;
-  top: 15px;
-}
-@media screen and (min-width: 50em) {
-  .configuration_list h3:after {
-    top: 20px;
-  }
+  bottom: 5px;
+  width: 0;
+  height: 0;
 }
 .configuration_list h3.active:after {
   border-color: transparent transparent transparent white;
   border-style: solid;
   border-width: 10px 0px 10px 12px;
   position: absolute;
-  top: 8px;
-}
-@media screen and (min-width: 50em) {
-  .configuration_list h3.active:after {
-    top: 17px;
-  }
+  top: 5px;
+  width: 0;
+  height: 0;
 }
 
 a.morelink {
@@ -1367,11 +1389,17 @@ a.morelink.less:after {
 }
 
 .colored-section span {
-  font-size: 0.75em;
+  font-size: 1em;
+  line-height: 1.5em;
   font-family: "ubuntubold";
   display: inline-block;
   min-width: 250px;
   padding: 3px 50px 3px 20px;
+}
+@media screen and (min-width: 50em) {
+  .colored-section span {
+    font-size: 0.75em;
+  }
 }
 
 button {
@@ -2101,11 +2129,16 @@ video#bgvid {
 }
 
 .mobile-bg {
+  background-image: url(images/mobile-video-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+  bottom: 0;
+  min-height: 100%;
+  min-width: 100%;
   position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 31, 63, 0.5);
-  top: 0;
+  right: 0;
+  width: auto;
   z-index: -100;
   display: block;
 }
@@ -2243,7 +2276,7 @@ video#bgvid {
 .stem .stem_bg_white {
   background: #fff;
   height: 100%;
-  left: 31px;
+  left: 14%;
   position: fixed;
   top: 0;
   width: 70px;
@@ -2262,7 +2295,7 @@ video#bgvid {
   backface-visibility: hidden;
   background: #67c4a1;
   height: 50%;
-  left: 31px;
+  left: 14%;
   position: fixed;
   top: 0px;
   width: 70px;

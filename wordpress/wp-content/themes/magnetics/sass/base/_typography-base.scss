@@ -34,21 +34,21 @@ h2 {
 }
 
 h3 {
-    font-size: em(22);
+    font-size: em(20);
     line-height: 1.2em;
     font-family: $ubuntulight;
     @include media($bp-large) {
-        font-size: em(40);
+        font-size: em(36);
     }
 }
 
 h4 {
-    font-size: em(20);
+    font-size: em(18);
     line-height: 1.2em;
     font-family: $ubunturegular;
     margin: 50px auto 20px;
     @include media($bp-large) {
-        font-size: em(37);
+        font-size: em(32);
         margin: 100px auto 20px;
     }
 }

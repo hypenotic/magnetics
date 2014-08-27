@@ -46,6 +46,7 @@
     font-family: $ubuntulight;
     padding-bottom: 130px;
     .home & {
+        font-family: $ubuntubold;
         @include media($bp-large) {
             font-size: em(50);
         }
@@ -59,7 +60,7 @@
         font-size: em(24);
     }
 
-    //font-family: $ubunturegular;
+    font-family: $ubunturegular;
     span {
         display: block;
         & a {
@@ -78,7 +79,7 @@
 }
 
 .sub-meta {
-    font-size: em(16);
+    font-size: em(14);
     color: $body_bg;
     margin-bottom: 20px;
 }
@@ -176,10 +177,13 @@ footer {
 }
 
 a.download {
-    font-size: em(18);
+    font-size: em(16);
     font-family: $ubuntubold;
     font-weight: 400;
-    padding-left: 32px;
+    padding-left: 35px;
+    .articles-and-brochures &, .single-product & {
+        padding-left: 20px;
+    }
     position: relative;
     text-decoration: none;
     &:before {
@@ -188,7 +192,10 @@ a.download {
         height: 27px;
         left: 0;
         position: absolute;
-        top: -9px;
+        top: -2px;
+        .articles-and-brochures &, .single-product & {
+            top: -15px;
+        }
         width: 27px;
     }
 }
@@ -215,7 +222,7 @@ a.more {
 .description {
     font-size: em(18);
     @include media($bp-large) {
-        font-size: em(30);
+        font-size: em(24);
     }
 
     color: #4da483;
@@ -225,7 +232,11 @@ a.more {
 }
 
 .page-title {
-    padding-bottom: 200px;
+    padding-bottom: 100px;
+    @include media($bp-large) {
+        padding-bottom: 200px;
+    }
+
     position: relative;
     &:after {
         background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 31, 63, 0)), color-stop(100%, $body_bg));
@@ -306,6 +317,7 @@ a.more {
     .wrapper {
         background: none;
         padding: 0;
+        overflow: hidden;
     }
     .page-title {
         background: $body_bg;
@@ -339,7 +351,10 @@ a.more {
         padding-bottom: 0;
     }
     #title {
-        background: $body_bg;
+        @include media($bp-large) {
+            background: $body_bg;
+        }
+
         margin-bottom: 0;
         padding-bottom: 100px;
         padding-top: 100px;
@@ -355,6 +370,13 @@ a.more {
         display: inline-block;
         float: left;
         padding-right: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        @include media($bp-large) {
+            margin-bottom: 0px;
+            margin-right: 0px;
+        }
+
         a {
             font-size: em(11);
             display: block;
@@ -465,20 +487,18 @@ a.more {
             content: '';
             margin-left: 15px;
             position: absolute;
-            top: 15px;
-            @include media($bp-large) {
-                top: 20px;
-            }
+            bottom: 5px;
+            width: 0;
+            height: 0;
         }
         &.active:after {
             border-color: transparent transparent transparent $white;
             border-style: solid;
             border-width: 10px 0px 10px 12px;
             position: absolute;
-            top: 8px;
-            @include media($bp-large) {
-                top: 17px;
-            }
+            top: 5px;
+            width: 0;
+            height: 0;
         }
     }
 }
@@ -531,7 +551,12 @@ a.morelink {
 
 .colored-section {
     span {
-        font-size: em(12);
+        font-size: em(16);
+        line-height: 1.5em;
+        @include media($bp-large) {
+            font-size: em(12);
+        }
+
         font-family: $ubuntubold;
         display: inline-block;
         min-width: 250px;
