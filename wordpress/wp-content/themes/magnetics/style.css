@@ -1022,7 +1022,7 @@ a.download {
   position: relative;
   text-decoration: none;
 }
-.articles-and-brochures a.download {
+.articles-and-brochures a.download, .single-product a.download {
   padding-left: 20px;
 }
 a.download:before {
@@ -1034,7 +1034,7 @@ a.download:before {
   top: -2px;
   width: 27px;
 }
-.articles-and-brochures a.download:before {
+.articles-and-brochures a.download:before, .single-product a.download:before {
   top: -15px;
 }
 
@@ -1150,6 +1150,7 @@ a.more:before {
 .single-product .wrapper {
   background: none;
   padding: 0;
+  overflow: hidden;
 }
 .single-product .page-title {
   background: #001f3f;
@@ -1183,10 +1184,14 @@ a.more:before {
   padding-bottom: 0;
 }
 .single-product #title {
-  background: #001f3f;
   margin-bottom: 0;
   padding-bottom: 100px;
   padding-top: 100px;
+}
+@media screen and (min-width: 50em) {
+  .single-product #title {
+    background: #001f3f;
+  }
 }
 
 .filter {
@@ -2124,13 +2129,16 @@ video#bgvid {
 }
 
 .mobile-bg {
-  position: fixed;
-  width: 100%;
-  height: 100%;
   background-image: url(images/mobile-video-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  top: 0;
+  height: auto;
+  bottom: 0;
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+  right: 0;
+  width: auto;
   z-index: -100;
   display: block;
 }
@@ -2268,7 +2276,7 @@ video#bgvid {
 .stem .stem_bg_white {
   background: #fff;
   height: 100%;
-  left: 31px;
+  left: 14%;
   position: fixed;
   top: 0;
   width: 70px;
@@ -2287,7 +2295,7 @@ video#bgvid {
   backface-visibility: hidden;
   background: #67c4a1;
   height: 50%;
-  left: 31px;
+  left: 14%;
   position: fixed;
   top: 0px;
   width: 70px;
