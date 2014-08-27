@@ -1,9 +1,4 @@
-<?php
-/*
-Template Name: Article & Brochures Archive
-*/
-get_header(); ?>
-
+<?php get_header(); ?>
 <?php 
     $paged  = (get_query_var('paged')) ? get_query_var('paged') : 1;
     $args   =array(

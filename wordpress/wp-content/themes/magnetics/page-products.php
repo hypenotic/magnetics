@@ -1,9 +1,4 @@
-<?php
-/*
-Template Name: Products
-*/
-
-get_header(); ?>
+<?php get_header(); ?>
 <?php get_template_part( 'template-part', 'add_video' ); ?>
 
 <div class="page-title">
@@ -45,7 +40,7 @@ get_header(); ?>
 			?>
             <div class="span-6">
 				<div class="section-content">
-					<h4 class="post-title"><?php the_title(); ?></h4>
+					<h4 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
 					<p>
 						<?php 
 							$description=get_post_meta(get_the_ID(),'_product_description',true); 

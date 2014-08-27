@@ -46,10 +46,10 @@
  <?php endforeach; endif; ?>
 
 <div class="page-content">  	
-                <div class="stem">
-                    <div class="stem_bg_green" <?php echo $style;?>></div>
-                    <div class="stem_bg_white"></div>
-                </div>
+		<div class="stem">
+			<div class="stem_bg_green" <?php echo $style;?>></div>
+			<div class="stem_bg_white"></div>
+		</div>
     <div class="container">
         <section class="span-10-center text-center">
 				<?php the_title( '<h2 id="title">', '</h2>' ); ?>
