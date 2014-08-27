@@ -16,6 +16,7 @@ h1 {
     font-size: em(26);
     font-family: $ubuntubold;
     margin: 0;
+    line-height: 1.2em;
     @include media($bp-large) {
         font-size: em(133);
     }
@@ -23,6 +24,7 @@ h1 {
 
 h2 {
     font-size: em(24);
+    line-height: 1.2em;
     font-family: $ubuntubold;
     font-weight: normal;
     margin: 0;
@@ -33,6 +35,7 @@ h2 {
 
 h3 {
     font-size: em(22);
+    line-height: 1.2em;
     font-family: $ubuntulight;
     @include media($bp-large) {
         font-size: em(40);
@@ -41,6 +44,7 @@ h3 {
 
 h4 {
     font-size: em(20);
+    line-height: 1.2em;
     font-family: $ubunturegular;
     margin: 50px auto 20px;
     @include media($bp-large) {
@@ -51,6 +55,7 @@ h4 {
 
 h5 {
     font-size: em(18);
+    line-height: 1.2em;
     font-family: $ubunturegular;
     margin-bottom: 0;
     @include media($bp-large) {
@@ -60,6 +65,7 @@ h5 {
 
 h6 {
     font-size: em(16);
+    line-height: 1.2em;
     margin-bottom: 0;
     font-family: $ubunturegular;
 }

@@ -172,8 +172,9 @@
                     <section class="configuration_list">
                     	<h3 class="list_header">Integrations</h3>                    
                             <ul>
-							<?php foreach($configs as $config) {
-								if($config['_config']=='value1'){	
+							<?php 
+							foreach($configs as $config) {
+								if($config['_config']=='value4'){	
 							 ?>
 								<li>
                                 	<?php if($config['_image']){ 
