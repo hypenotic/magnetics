@@ -11,7 +11,7 @@
 	};
 
 
-	function is_mobile()
+	function isMobile()
 	{
 		var mobile = false;
 		
@@ -44,7 +44,7 @@
 	$(document).ready(function()
 	{
 		//	setup_tweets();
-		setup_fade();
+		setupFade();
 		
 		// trigger events
 		$(window).trigger('resize');
@@ -57,7 +57,7 @@
 	*
 	*/
 	
-	function setup_fade()
+	function setupFade()
 	{
 	
 		// validate
@@ -74,9 +74,9 @@
 		var count = 1;
 		$(window).on('scroll', function(){
 				var scroll = $(window).scrollTop();
-				var d_h=$(document).height();	
+				var dH=$(document).height();	
 				var offset = $(".product_slide").offset();
-				var  product_slide_height=$(".product_slide").height();
+				var  productSlideHeight=$(".product_slide").height();
 				var height = $(".stem_bg_green").height();
 				var top = offset.top - scroll;
 				var y = window.scrollY;
@@ -84,7 +84,7 @@
 				if (scroll > previousScroll){
 					if(top <= $(window).height()/2) {	
 						count++;
-						if(height < product_slide_height ) {
+						if(height < productSlideHeight ) {
 							height = (scroll-top)/2.2; 
 				//			$('.stem_bg_green').height(height);
 						}

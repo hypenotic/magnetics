@@ -1,10 +1,8 @@
 header {
-    //background-color: $purple;
-    color: $white;
     height: 20%;
     .logo {
         @include span-columns(5);
-        @include media($bp-large) {
+        @include media($screenLarge) {
             @include span-columns(6);
         }
     }

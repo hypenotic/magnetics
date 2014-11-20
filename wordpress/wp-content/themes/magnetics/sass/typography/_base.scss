@@ -1,0 +1,97 @@
+h1, h2, h3, h4, h5, h6 {
+    a {
+        text-decoration: none;
+        &:hover {}
+    }
+}
+
+h1 {
+    font-size: em(26);
+    margin: 0;
+    line-height: 1.2em;
+    @include media($screenLarge) {
+        font-size: em(133);
+    }
+}
+
+h2 {
+    font-size: em(24);
+    line-height: 1.2em;
+    font-weight: normal;
+    margin: 0;
+    @include media($screenLarge) {
+        font-size: em(66);
+    }
+}
+
+h3 {
+    font-size: em(20);
+    line-height: 1.2em;
+    font-weight: 200;
+    @include media($screenLarge) {
+        font-size: em(36);
+    }
+}
+
+h4 {
+    font-size: em(18);
+    line-height: 1.2em;
+    font-weight: normal;
+    margin: 50px auto 20px;
+    @include media($screenLarge) {
+        font-size: em(32);
+        margin: 100px auto 20px;
+    }
+}
+
+h5 {
+    font-size: em(18);
+    line-height: 1.2em;
+    font-weight: normal;
+    margin-bottom: 0;
+    @include media($screenLarge) {
+        font-size: em(24);
+    }
+}
+
+h6 {
+    font-size: em(16);
+    line-height: 1.2em;
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+p, ul, ol {
+    font-size: em(16);
+    margin: 0 auto rhythm(1, 16px);
+    @include media($screenLarge) {
+        font-size: em(20);
+        line-height: 1.5em;
+        margin: 0 auto rhythm(1, 20px);
+    }
+}
+
+blockquote {
+    font-size: em(16);
+    @include media($screenLarge) {
+        font-size: em(43);
+        margin: 0 auto rhythm(1, em(43));
+    }
+}
+
+a {
+    &:hover {
+        outline: none;
+        text-decoration: none;
+    }
+    &:active {
+        outline: none;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+.text-center {
+    text-align: center;
+}

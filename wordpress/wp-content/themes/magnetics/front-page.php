@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php get_template_part( 'template-part', 'add_video' ); ?>
+
     <div class="container">
         <div class="span-8">
             <img src="http://hypelabs.ca/magnetics/wordpress/wp-content/uploads/2014/02/home-page-icon.png" />

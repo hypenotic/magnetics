@@ -1,131 +1,30 @@
 // Typography
-/* 
-http://drinchev.github.io/monosocialiconsfont/
-*/
-
-@font-face {
-    font-family: 'Mono Social Icons Font';
-    src: url("fonts/MonoSocialIconsFont-1.10.eot");
-    src: url("fonts/MonoSocialIconsFont-1.10.eot?#iefix") format("embedded-opentype"), url("fonts/MonoSocialIconsFont-1.10.woff") format("woff"), url("fonts/MonoSocialIconsFont-1.10.ttf") format("truetype"), url("fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont") format("svg");
-    src: url("fonts/MonoSocialIconsFont-1.10.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-@font-face {
-    font-family: 'open_sanslight';
-    font-style: normal;
-    font-weight: normal;
-    src: url("sass/fonts/opensans-light.eot");
-    src: url("sass/fonts/opensans-light.eot?#iefix") format("embedded-opentype"), url("sass/fonts/opensans-light.woff") format("woff"), url("sass/fonts/opensans-light.ttf") format("truetype"), url("sass/fonts/opensans-light.svg#open_sanslight") format("svg");
-}
-
-
-@font-face {
-    font-family: 'open_sansregular';
-    font-style: normal;
-    font-weight: normal;
-    src: url("sass/fonts/opensans-regular-webfont.eot");
-    src: url("sass/fonts/opensans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("sass/fonts/opensans-regular-webfont.woff") format("woff"), url("sass/fonts/opensans-regular-webfont.ttf") format("truetype"), url("sass/fonts/opensans-regular-webfont.svg#open_sansregular") format("svg");
-}
-
-
-@font-face {
-    font-family: 'open_sanssemibold';
-    font-style: normal;
-    font-weight: normal;
-    src: url("sass/fonts/opensans-semibold-webfont.eot");
-    src: url("sass/fonts/opensans-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("sass/fonts/opensans-semibold-webfont.woff") format("woff"), url("sass/fonts/opensans-semibold-webfont.ttf") format("truetype"), url("sass/fonts/opensans-semibold-webfont.svg#open_sanssemibold") format("svg");
-}
-
-
-@font-face {
-    font-family: 'open_sansextrabold';
-    font-style: normal;
-    font-weight: normal;
-    src: url("sass/fonts/opensans-extrabold-webfont.eot");
-    src: url("sass/fonts/opensans-extrabold-webfont.eot?#iefix") format("embedded-opentype"), url("sass/fonts/opensans-extrabold-webfont.woff") format("woff"), url("sass/fonts/opensans-extrabold-webfont.ttf") format("truetype"), url("sass/fonts/opensans-extrabold-webfont.svg#open_sansextrabold") format("svg");
-}
-
-
-@font-face {
-    font-family: 'ubuntubold';
-    font-style: normal;
-    font-weight: normal;
-    src: url("sass/fonts/ubuntu-bold.eot");
-    src: url("sass/fonts/ubuntu-bold.eot?#iefix") format("embedded-opentype"), url("sass/fonts/ubuntu-bold.woff") format("woff"), url("sass/fonts/ubuntu-bold.ttf") format("truetype"), url("sass/fonts/ubuntu-bold.svg#ubuntubold") format("svg");
-}
-
-
-@font-face {
-    font-family: 'ubuntulight';
-    font-style: normal;
-    font-weight: normal;
-    src: url("sass/fonts/ubuntu-light.eot");
-    src: url("sass/fonts/ubuntu-light.eot?#iefix") format("embedded-opentype"), url("sass/fonts/ubuntu-light.woff") format("woff"), url("sass/fonts/ubuntu-light.ttf") format("truetype"), url("sass/fonts/ubuntu-light.svg#ubuntulight") format("svg");
-}
-
-
-@font-face {
-    font-family: 'ubunturegular';
-    font-style: normal;
-    font-weight: normal;
-    src: url("sass/fonts/ubuntu-regular.eot");
-    src: url("sass/fonts/ubuntu-regular.eot?#iefix") format("embedded-opentype"), url("sass/fonts/ubuntu-regular.woff") format("woff"), url("sass/fonts/ubuntu-regular.ttf") format("truetype"), url("sass/fonts/ubuntu-regular.svg#ubunturegular") format("svg");
-}
-
-
-// Fonts
-$open_sansregular: "open_sansregular";
-$open_sanslight: "open_sanslight";
-$open_sanssemibold: "open_sanssemibold";
-$open_sansextrabold: "open_sansextrabold";
-$ubunturegular: "ubunturegular";
-$ubuntulight: "ubuntulight";
-$ubuntubold: "ubuntubold";
-
-$icon-font: "Mono Social Icons Font";
-$base-font-family: $open_sansregular;
+$base-font-family: $helvetica;
 $header-font-family: $base-font-family;
 
-// Sizes
+// Font Sizes
 $base-font-size: 1em;
-$base-line-height: $base-font-size * 1.5;
-$unitless-line-height: $base-line-height / ($base-line-height * 0 + 1);
+$h1-font-size: $base-font-size * 2.25;
+$h2-font-size: $base-font-size * 2;
+$h3-font-size: $base-font-size * 1.75;
+$h4-font-size: $base-font-size * 1.5;
+$h5-font-size: $base-font-size * 1.25;
+$h6-font-size: $base-font-size;
 
-// Strip units from line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#Prefer_unitless_numbers_for_line-height_values
-$header-line-height: $base-font-size * 1.25;
-$base-border-radius: em(3);
+// Line height
+$base-line-height: 1.5;
+$header-line-height: 1.25;
 
-// Basic Color Variables
-$body_font: rgba(255, 255, 255, 1);
-$body_bg: rgba(0, 31, 63, 1);
-$footer_bg: rgba(57, 67, 77, 1);
-
-// Headers
-$header_link: rgba(0, 0, 0, 1);
-$header_link_hover: #67c4a1;
-
-// Search
-$search-bar-background: rgb(22, 42, 51);
-$search-autocomplete-selected-background: rgb(200, 200, 200);
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$base-z-index: 0;
 
 // Colors
 $blue: #477dca;
 $dark-gray: #333333;
 $medium-gray: #999999;
-$light-gray: #f2f2f2;
-$light-red: #fbe3e4;
-$light-yellow: #fff6bf;
-$light-green: #e6efc2;
-$white: white;
-$purple: #484e66;
-$pink: #eb3778;
-$bg-footer: #8fcf5c;
-$green: #8fcf5c;
-$dark-green: #4aaf4f;
-$orange: #f5a338;
+$light-gray: #dddddd;
 
 // Background Color
 $base-background-color: white;
@@ -142,19 +41,14 @@ $hover-button-color: $hover-link-color;
 
 // Border color
 $base-border-color: $light-gray;
-
-// Flash Colors
-$alert-color: $light-yellow;
-$error-color: $light-red;
-$notice-color: $light-yellow;
-$success-color: $light-green;
+$base-border: 1px solid $base-border-color;
 
 // Forms
 $form-border-color: $base-border-color;
 $form-border-color-hover: darken($base-border-color, 10);
 $form-border-color-focus: $base-accent-color;
 $form-border-radius: $base-border-radius;
-$form-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+$form-box-shadow: inset 0 1px 3px rgba(black, 0.06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
-$form-font-size: 2em;
+$form-font-size: $base-font-size;
 $form-font-family: $base-font-family;

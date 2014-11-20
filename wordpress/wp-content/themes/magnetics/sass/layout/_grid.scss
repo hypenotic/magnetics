@@ -2,7 +2,7 @@
     @include outer-container;
     position: relative;
     @include pad(0px 4.16667%);
-    @include media($bp-large) {
+    @include media($screenLarge) {
         @include pad(0px 10px);
     }
 }
@@ -21,49 +21,49 @@ header {
 
 .span-4 {
     @include span-columns(5);
-    @include media($bp-large) {
+    @include media($screenLarge) {
         @include span-columns(4);
     }
 }
 
 .span-5 {
     @include span-columns(5);
-    @include media($bp-large) {
+    @include media($screenLarge) {
         @include span-columns(5);
     }
 }
 
 .span-6 {
     @include span-columns(5);
-    @include media($bp-large) {
+    @include media($screenLarge) {
         @include span-columns(6);
     }
 }
 
 .span-7 {
     @include span-columns(5);
-    @include media($bp-large) {
+    @include media($screenLarge) {
         @include span-columns(7);
     }
 }
 
 .span-8 {
     @include span-columns(5);
-    @include media($bp-large) {
+    @include media($screenLarge) {
         @include span-columns(8);
     }
 }
 
 .span-9 {
     @include span-columns(5);
-    @include media($bp-large) {
+    @include media($screenLarge) {
         @include span-columns(9);
     }
 }
 
 .span-10 {
     @include span-columns(5);
-    @include media($bp-large) {
+    @include media($screenLarge) {
         @include span-columns(10);
     }
 }
@@ -76,7 +76,7 @@ header {
 .span-8-center {
     @include span-columns(4);
     @include shift(0.5);
-    @include media($bp-large) {
+    @include media($screenLarge) {
         @include span-columns(7);
         @include shift(2.5);
     }
@@ -86,7 +86,7 @@ header {
     @include span-columns(5);
     overflow: hidden;
     position: relative;
-    @include media($bp-large) {
+    @include media($screenLarge) {
         @include span-columns(11);
     }
 }
@@ -95,7 +95,7 @@ header {
     @include span-columns(5);
     overflow: hidden;
     position: relative;
-    @include media($bp-large) {
+    @include media($screenLarge) {
         @include span-columns(12);
     }
 }
@@ -108,22 +108,10 @@ header {
 .block-grid-2 {
     overflow: hidden;
     @include span-columns(5);
-    @include media($bp-large) {
+    @include media($screenLarge) {
         @include span-columns(6);
         @include omega(2n);
     }
-}
-
-.green-bg {
-    background: #67c4a1;
-    padding: 200px 0;
-    position: relative;
-}
-
-.grey-bg {
-    @extend .green-bg;
-    background: #e7e7e7;
-    color: $body_bg;
 }
 
 .product-section {
@@ -134,7 +122,7 @@ header {
 }
 
 .section-content {
-    @include media($bp-large) {
+    @include media($screenLarge) {
         width: 80%;
     }
 }
@@ -145,7 +133,6 @@ header {
     overflow: hidden;
     padding-top: 100px;
     padding-bottom: 100px;
-    border-bottom: 1px solid $white;
     &:nth-of-type(1) {
         margin-top: 100px;
     }
