@@ -13,12 +13,12 @@ Version: 1.0
 @import "base/base";
 @import "../bower/neat/app/assets/stylesheets/neat";
 
-// Colours
-@import "colours";
-
 // Variables
+@import "colours/_variables.scss";
 @import "typography/_variables.scss";
 @import "layout/_variables.scss";
+
+// Colours
 
 // Typography
 @import "typography/base";
