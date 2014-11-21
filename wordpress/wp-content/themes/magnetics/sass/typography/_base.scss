@@ -1,0 +1,99 @@
+/* Modular Scale ---------------------- 16px @ 1:1.618   275px @ 1:1.618     ----------------------*/
+
+h1, h2, h3, h4, h5, h6 {
+    a {
+        text-decoration: none;
+        &:hover {}
+    }
+}
+
+h1 {
+    font-size: em($fontSizeHeading);
+    margin: 0;
+    line-height: em($fontSizeLarge);
+    @include media($screenLarge) {
+        font-size: em(133);
+    }
+}
+
+h2 {
+    font-size: em($fontSizeSubheading);
+    line-height: em($fontSizeBody);
+    font-weight: normal;
+    margin: 0;
+    @include media($screenLarge) {
+        font-size: em(66);
+    }
+}
+
+h3 {
+    font-size: em($fontSizeLarge);
+    line-height: em($fontSizeSmall);
+    font-weight: 200;
+    @include media($screenLarge) {
+        font-size: em(36);
+    }
+}
+
+h4 {
+    font-size: em($fontSizeLarge);
+    line-height: em($fontSizeCaption);
+    font-weight: normal;
+    margin: 50px auto 20px;
+    @include media($screenLarge) {
+        font-size: em(32);
+        margin: 100px auto 20px;
+    }
+}
+
+h5 {
+    font-size: em($fontSizeLarge);
+    line-height: em($fontSizeCaption);
+    font-weight: normal;
+    margin-bottom: 0;
+    @include media($screenLarge) {
+        font-size: em(24);
+    }
+}
+
+h6 {
+    font-size: em($fontSizeBody);
+    line-height: em($fontSizeCaption);
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+p, ul, ol {
+    font-size: em($fontSizeBody);
+    margin: 0 auto rhythm(1, $fontSizeBody);
+    @include media($screenLarge) {
+        font-size: em(20);
+        line-height: 1.5em;
+        margin: 0 auto rhythm(1, $fontSizeLarge);
+    }
+}
+
+blockquote {
+    font-size: em($fontSizeBody);
+    @include media($screenLarge) {
+        font-size: em($fontSizeSubheading);
+        margin: 0 auto rhythm(1, $fontSizeSubheading);
+    }
+}
+
+a {
+    &:hover {
+        outline: none;
+        text-decoration: none;
+    }
+    &:active {
+        outline: none;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+.text-center {
+    text-align: center;
+}

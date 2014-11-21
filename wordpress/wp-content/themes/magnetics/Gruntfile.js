@@ -19,7 +19,8 @@ module.exports = function(grunt) {
             },
             js: {
                 files: '<%= jshint.all %>',
-                tasks: ['jshint', 'uglify', 'notify:success']
+                tasks: [ 'notify:success']
+                //tasks: ['jshint', 'uglify', 'notify:success']
             },
             php: {
                 files: ['*.php', 'includes/{,*/}*.php'],

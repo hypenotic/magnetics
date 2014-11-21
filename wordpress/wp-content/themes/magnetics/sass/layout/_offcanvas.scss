@@ -17,7 +17,6 @@ Nav Panel
 
 .panel {
     -webkit-overflow-scrolling: touch;
-    background: $white;
     height: 100%;
     overflow: auto;
     padding-top: 75px;
@@ -26,7 +25,7 @@ Nav Panel
     top: 0;
     width: 15em;
     z-index: 9999;
-    @include media($bp-large) {
+    @include media($screenLarge) {
         right: -20em;
         width: 20em;
     }
@@ -62,16 +61,16 @@ Nav Panel
             &.current-menu-item {
                 background: #5c6f81;
                 & ul.sub-menu li {
-                    background: $white;
+                    background: white;
                     a {
                         color: #C0C9D1;
                         &:hover {
-                            color: $white;
+                            color: white;
                         }
                     }
                 }
                 a {
-                    color: $white;
+                    color: white;
                 }
             }
             a {
@@ -81,12 +80,10 @@ Nav Panel
                 border-bottom: 1px solid #c0c9d1;
                 color: #5c6f81;
                 display: block;
-                font-family: $ubuntulight;
                 padding: 15px 30px;
                 text-decoration: none;
                 &:hover {
                     background: #5c6f81;
-                    color: $white;
                 }
             }
         }
@@ -98,7 +95,7 @@ Nav Panel
                     color: #c0c9d1;
                 }
                 &.current-menu-item a {
-                    color: $white;
+                    color: white;
                 }
             }
         }
@@ -114,18 +111,16 @@ Nav Panel
 #nav-toggle {
     cursor: pointer;
     padding: 15px 33px 18px 8px;
-    border: 2px solid $body_bg;
     .single &, .articles-and-brochures &, .single-brochure & {
-        border: 2px solid $white;
+        border: 2px solid white;
     }
     display: block;
     span {
         cursor: pointer;
         height: 3px;
         width: 25px;
-        background: $body_bg;
         .single &, .articles-and-brochures &, .single-brochure & {
-            background: $white;
+            background: white;
         }
         position: absolute;
         display: block;
@@ -137,10 +132,7 @@ Nav Panel
     cursor: pointer;
     height: 3px;
     width: 25px;
-    background: $body_bg;
-    .single &, .articles-and-brochures &, .single-brochure & {
-        background: $white;
-    }
+    .single &, .articles-and-brochures &, .single-brochure & {}
     position: absolute;
     display: block;
     content: '';
@@ -163,9 +155,8 @@ Nav Panel
 }
 
 #nav-toggle.active span:before, #nav-toggle.active span:after {
-    background: $body_bg;
     .single &, .articles-and-brochures &, .single-brochure & {
-        background: $white;
+        background: white;
     }
     top: 0;
 }

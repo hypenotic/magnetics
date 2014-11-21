@@ -13,18 +13,26 @@ Version: 1.0
 @import "base/base";
 @import "../bower/neat/app/assets/stylesheets/neat";
 
+// Variables
+@import "colours/_variables.scss";
+@import "typography/_variables.scss";
+@import "layout/_variables.scss";
+
+// Colours
+
 // Typography
-@import "base/typography-base";
-@import "base/typography-custom";
+@import "typography/base";
+@import "typography/custom";
+@import "typography/fonts";
 
 // Layout
 @import "layout/grid";
 @import "layout/header";
 @import "layout/banner";
 @import "layout/offcanvas";
-@import "layout/video";
 @import "layout/product_slide";
 
+// etc
 //@import "pagination";
 //@import "form";
 //@import "search";
