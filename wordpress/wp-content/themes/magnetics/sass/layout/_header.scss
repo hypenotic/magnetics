@@ -1,13 +1,21 @@
 header {
-    height: 20%;
-    .logo {
-        @include span-columns(5);
-        @include media($screenLarge) {
-            @include span-columns(6);
-        }
+    @include media($mobile) {
+        padding: em($fontSizeSmall) 0;
     }
-    img {
-        @include padding(1em null 1em null);
-        height: 5.5em;
+
+    @include media($desktop) {
+        padding: em($fontSizeBody) 0;
+    }
+
+    & .logo {
+        height: auto;
+        @include media($mobile) {
+            max-width: 200px;
+        }
+
+        @include media($desktop) {
+            @include shift(1);
+            max-width: 300px;
+        }
     }
 }

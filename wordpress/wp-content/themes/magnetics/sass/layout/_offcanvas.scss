@@ -111,17 +111,13 @@ Nav Panel
 #nav-toggle {
     cursor: pointer;
     padding: 15px 33px 18px 8px;
-    .single &, .articles-and-brochures &, .single-brochure & {
-        border: 2px solid white;
-    }
+    border: 2px solid white;
     display: block;
     span {
         cursor: pointer;
         height: 3px;
         width: 25px;
-        .single &, .articles-and-brochures &, .single-brochure & {
-            background: white;
-        }
+        background: white;
         position: absolute;
         display: block;
         content: '';
@@ -155,9 +151,7 @@ Nav Panel
 }
 
 #nav-toggle.active span:before, #nav-toggle.active span:after {
-    .single &, .articles-and-brochures &, .single-brochure & {
-        background: white;
-    }
+    background: white;
     top: 0;
 }
 

@@ -21,16 +21,23 @@ Version: 1.0
 // Colours
 
 // Typography
+@import "typography/_helpers";
 @import "typography/base";
 @import "typography/custom";
 @import "typography/fonts";
 
 // Layout
-@import "layout/grid";
+@import "layout/custom";
 @import "layout/header";
 @import "layout/banner";
 @import "layout/offcanvas";
 @import "layout/product_slide";
+
+// Components
+@import "components/tabs";
+
+// Pages
+@import "pages/about";
 
 // etc
 //@import "pagination";

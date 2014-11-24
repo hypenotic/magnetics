@@ -1,3 +1,13 @@
-section:first-of-type {
+body.about {
     background: $gray;
+    & section {
+        & article {
+            color: white;
+            @include outer-container($screenLarge);
+            @include pad(0 default 0 default);
+            @include media($screenLarge) {
+                margin-top: 200px;
+            }
+        }
+    }
 }

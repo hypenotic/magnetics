@@ -1,3 +1,9 @@
-$screenLarge: 1160px;
-$screenMedium: 787px;
+$screenOuter: 1160px;
+$screenLarge: 1024px;
+$screenMedium: 698px;
 $screenSmall: 480px;
+
+$mobile: new-breakpoint(min-width $screenSmall 0);
+$tablet: new-breakpoint(min-width $screenMedium 6);
+$desktop: new-breakpoint(min-width $screenLarge 12);
+$desktopOuter: new-breakpoint(min-width $screenOuter 12);
