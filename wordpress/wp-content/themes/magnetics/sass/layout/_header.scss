@@ -1,4 +1,4 @@
-header {
+body > header {
     @include media($mobile) {
         padding: em($fontSizeSmall) 0;
     }

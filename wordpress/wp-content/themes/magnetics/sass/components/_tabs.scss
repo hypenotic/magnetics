@@ -1,1 +1,10 @@
-
+.tabs {
+    & .tab-content {
+        & .tab {
+            display: none;
+            &.active-tab-content {
+                display: block;
+            }
+        }
+    }
+}

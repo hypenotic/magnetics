@@ -49,5 +49,3 @@
 
 
 </header>
-
-<div class="wrapper wrap push">

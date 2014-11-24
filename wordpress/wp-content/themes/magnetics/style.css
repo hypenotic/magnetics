@@ -765,7 +765,7 @@ h3 {
   line-height: 1.5625em;
   font-weight: 600;
   letter-spacing: 0.5px;
-  margin-bottom: 0.95794em;
+  margin-bottom: 1em;
 }
 
 h4 {
@@ -793,7 +793,7 @@ p, ul, ol {
   font-size: 1.125em;
   margin: 0 auto rhythm(1, 18);
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 850px) {
   p, ul, ol {
     font-size: 1.125em;
     line-height: 1.5em;
@@ -804,7 +804,7 @@ p, ul, ol {
 blockquote {
   font-size: 1.125em;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 850px) {
   blockquote {
     font-size: 1.5625em;
     margin: 0 auto rhythm(1, 25);
@@ -847,33 +847,76 @@ a:focus {
   src: url("./fonts/Icomoon/icomoon.eot");
   src: url("./fonts/Icomoon/icomoon.eot?#iefix") format("embedded-opentype"), url("./fonts/Icomoon/icomoon.woff") format("woff"), url("./fonts/Icomoon/icomoon.ttf") format("truetype"), url("./fonts/Icomoon/icomoon.svg#icomoon") format("svg");
 }
+article {
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2.35765% 0 2.35765%;
+  color: #4d4e51;
+}
+article:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .outer-container {
-  max-width: 1024px;
+  max-width: 850px;
 }
 
 @media screen and (min-width: 480px) {
-  header {
-    padding: 0.61806em 0;
+  body > header {
+    padding: 0.875em 0;
   }
 }
-@media screen and (min-width: 1024px) {
-  header {
+@media screen and (min-width: 850px) {
+  body > header {
     padding: 1.125em 0;
   }
 }
-header .logo {
+body > header .logo {
   height: auto;
 }
 @media screen and (min-width: 480px) {
-  header .logo {
+  body > header .logo {
     max-width: 200px;
   }
 }
-@media screen and (min-width: 1024px) {
-  header .logo {
+@media screen and (min-width: 850px) {
+  body > header .logo {
     margin-left: 8.5298%;
     max-width: 300px;
   }
+}
+
+#footer {
+  background: #1d3955;
+  padding-top: 48px;
+}
+#footer footer {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 850px;
+  padding: 48px 4.7153%;
+}
+#footer footer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#footer footer section {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  color: white;
+}
+#footer footer section:last-child {
+  margin-right: 0;
+}
+#footer footer section:first-child {
+  border-right: 1px solid white;
 }
 
 /* Site Overlay */
@@ -903,7 +946,7 @@ Nav Panel
   z-index: 9999;
   /*should match the above value*/
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 850px) {
   .panel {
     right: -20em;
     width: 20em;
@@ -1079,7 +1122,7 @@ Nav Panel
   position: relative;
   width: 100%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 850px) {
   .product_slide li .grid-5 {
     width: 49.9%;
   }
@@ -1093,7 +1136,7 @@ Nav Panel
 .product_slide li.left .product_slide_mask {
   left: 0px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 850px) {
   .product_slide li.left .product_slide_mask {
     left: 100%;
   }
@@ -1101,7 +1144,7 @@ Nav Panel
 .product_slide li.left .product_slide_icon {
   left: 0px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 850px) {
   .product_slide li.left .product_slide_icon {
     left: 100%;
   }
@@ -1110,7 +1153,7 @@ Nav Panel
   padding-bottom: 100px;
   padding-left: 100px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 850px) {
   .product_slide li.left .product_slide_content {
     padding-bottom: 0px;
     padding-left: 0;
@@ -1119,7 +1162,7 @@ Nav Panel
 .product_slide li.right {
   text-align: left;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 850px) {
   .product_slide li.right {
     text-align: right;
   }
@@ -1134,7 +1177,7 @@ Nav Panel
   padding-bottom: 100px;
   padding-left: 100px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 850px) {
   .product_slide li.right .product_slide_content {
     padding-bottom: 0px;
   }
@@ -1181,7 +1224,7 @@ Nav Panel
   width: 70px;
   z-index: 0;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 850px) {
   .stem .stem_bg_white {
     left: 50%;
   }
@@ -1200,29 +1243,72 @@ Nav Panel
   width: 70px;
   z-index: 1;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 850px) {
   .stem .stem_bg_green {
     left: 50%;
   }
 }
 
+.tabs .tab-content .tab {
+  display: none;
+}
+.tabs .tab-content .tab.active-tab-content {
+  display: block;
+}
+
 body.about {
   background: #667c8f;
 }
-body.about section article {
+body.about section:first-of-type article {
   color: white;
-  max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 2.35765% 0 2.35765%;
+  padding-bottom: 140px;
 }
-body.about section article:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-@media screen and (min-width: 1024px) {
-  body.about section article {
+@media screen and (min-width: 850px) {
+  body.about section:first-of-type article {
     margin-top: 200px;
   }
+}
+body.about .tabs {
+  background: white;
+}
+body.about .tabs header {
+  margin-bottom: 96px;
+}
+body.about .tabs ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+body.about .tabs ul li {
+  width: 50%;
+  float: left;
+  background: #1d3955;
+  color: white;
+  /* enable <a> to fill height */
+  display: flex;
+  align-items: stretch;
+}
+body.about .tabs ul li.active-tab-header {
+  background: white;
+}
+body.about .tabs ul li.active-tab-header a {
+  color: #4d4e51;
+}
+body.about .tabs ul li:first-child {
+  flex-direction: row-reverse;
+}
+body.about .tabs ul li a {
+  padding: 48px 4.7153%;
+  max-width: 425px;
+  display: block;
+  color: white;
+}
+body.about .tabs ul li a h3, body.about .tabs ul li a h4 {
+  line-height: 1.125em;
+  margin-bottom: 0;
+}
+body.about .tabs ul li a p {
+  font-size: 0.875em;
 }

@@ -6,82 +6,38 @@
     <?php the_content(); ?>
   </article>
 </section>
-<?php global $post; ?>
-<?php print_r(get_post_meta($post->ID, 'Page Tabs', true)); ?>
-              
 
-<?php echo get_post_meta(get_the_ID(),'_tabs_tabLeft',true); ?>
-                            
+<?php if(get_post_meta(get_the_ID(), '_page_tabs_tableft', true) && get_post_meta(get_the_ID(), '_page_tabs_tabright', true)) { ?>
 
-<?php print_r(get_post_meta(get_the_ID(), 'page_tabs', true)); ?> 
-<?php print_r(get_post_meta(get_the_ID(), '_page_tabs', true)); ?> 
-<?php print_r(get_post_meta(get_the_ID(), '_page_tabs_tabs_tabLeft', true)); ?> 
+<section class="tabs">
 
+    <header>
+        <ul class="tab-header">
+            <li class="active-tab-header">
+                <a href="#" id="tab-1">
+                    <?php  echo get_post_meta(get_the_ID(), '_page_tabs_tableft', true); ?>   
+                </a>
+            </li>
+            <li>
+                <a href="#" id="tab-2">
+                    <?php  echo get_post_meta(get_the_ID(), '_page_tabs_tabright', true); ?>   
+                </a>
+            </li>
+        </ul>
+    </header>
 
+    <article class="tab-content">
+        <div id="tab-1" class="tab active-tab-content">
+                <?php  echo get_post_meta(get_the_ID(), '_page_tabs_tablefttextarea', true); ?>
+        </div>
+         <div id="tab-2" class="tab">
+                <?php  echo get_post_meta(get_the_ID(), '_page_tabs_tabrighttextarea', true); ?> 
+        </div>
+    </article>
 
-<?php /*
-   array(
-                    'name'          => 'tabLeft',
-                    'label'         => 'Overview Text',
-                    'description'   => '',
-                    'type'          => 'wysiwyg'
-                ),
-                array(
-                    'name'          => 'tabLeftTextArea',
-                    'label'         => 'Content',
-                    'description'   => '',
-                    'type'          => 'wysiwyg'
-                )
-            ),
+</section>
 
-            'Right Tab' => array(
-                array(
-                    'name'          => 'tabRight',
-                    'label'         => 'Overview Text',
-                    'description'   => '',
-                    'type'          => 'wysiwyg'
-                ),
-                array(
-                    'name'          => 'tabRightTextArea',
-                    'label'         => 'Content',
-                    'description'   => '',
-                    'type'          => 'wysiwyg'
-                ) 
-
-                
-
-
-
-
-                	<div class="tabs">
-                    	<ul class="tab-header">
-                       		<?php 
-							$i=1;	
-							foreach($tabs as $tab) { 
-								$sub_heading=get_post_meta($tab->ID,'_sub_heading',true);
-							?>	
-                            <li <?php if($i==1) { ?>class="active-tab-header" <?php } ?>>
-                            	<a href="#" id="tab-<?php echo $tab->ID;?>">
-                                    <h5><?php echo $tab->post_title; ?></h5>
-                                    <h6><?php if($sub_heading) echo $sub_heading; ?></h6>
-                                </a>
-                            </li>
-                       		<?php $i++; } ?>
-                        </ul>
-                        <div class="tab-content">
-                        	<?php 
-							$j=1;	
-							foreach($tabs as $tab) { 
-								$sub_heading=get_post_meta($tab->ID,'_sub_heading',true);
-							?>	
-                            <div id="tab-<?php echo $tab->ID;?>" class="tab <?php if($j==1) echo "active-tab-content"?>">
-								<?php echo $tab->post_content; ?>
-                            </div>
-                            <?php $j++; } ?>
-                        </div>
-                    </div>
-
-                    */ ?>
+<?php } ?>
 
 
 <?php endwhile; endif; ?>

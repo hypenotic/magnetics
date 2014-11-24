@@ -2,7 +2,7 @@
 //Create article custom post type
 $pages = new Cuztom_Post_Type('page');
 $pages->add_meta_box(
-    'page_tabs',
+    'page_tabs', // page tabs
     'Page Tabs',
     array(
         'tabs',

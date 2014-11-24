@@ -27,8 +27,10 @@ Version: 1.0
 @import "typography/fonts";
 
 // Layout
+@import "layout/base";
 @import "layout/custom";
 @import "layout/header";
+@import "layout/footer";
 @import "layout/banner";
 @import "layout/offcanvas";
 @import "layout/product_slide";
