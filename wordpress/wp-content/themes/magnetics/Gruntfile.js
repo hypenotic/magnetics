@@ -11,7 +11,7 @@ module.exports = function(grunt) {
             clear: {
                 //clear terminal on any watch task. beauty.
                 // files: ['sass/**/*.{scss,sass}', 'js/build/*.js', 'images/**/*', '*.php', 'includes/{,*/}*.php'], //or be more specific
-                files: ['sass/**/*.{scss,sass}'], //or be more specific
+                files: ['sass/**/*.{scss,sass}', 'js/build/*.js'], //or be more specific
                 
                 tasks: ['clear']
             },
@@ -21,8 +21,7 @@ module.exports = function(grunt) {
             },
             js: {
                 files: '<%= jshint.all %>',
-                tasks: [ 'notify:success']
-                //tasks: ['jshint', 'uglify', 'notify:success']
+                tasks: ['jshint', 'uglify', 'notify:success']
             },
             php: {
                 files: ['*.php', 'includes/{,*/}*.php'],

@@ -98,6 +98,45 @@ $pages->add_meta_box(
 );
 
 $pages->add_meta_box(
+    'page_tabs', // page tabs
+    'Page Tabs',
+    array(
+        'tabs',
+        array(
+            'Left Tab' => array(
+                array(
+                    'name'          => 'tabLeft',
+                    'label'         => 'Overview Text',
+                    'description'   => '',
+                    'type'          => 'wysiwyg'
+                ),
+                array(
+                    'name'          => 'tabLeftTextArea',
+                    'label'         => 'Content',
+                    'description'   => '',
+                    'type'          => 'wysiwyg'
+                )
+            ),
+
+            'Right Tab' => array(
+                array(
+                    'name'          => 'tabRight',
+                    'label'         => 'Overview Text',
+                    'description'   => '',
+                    'type'          => 'wysiwyg'
+                ),
+                array(
+                    'name'          => 'tabRightTextArea',
+                    'label'         => 'Content',
+                    'description'   => '',
+                    'type'          => 'wysiwyg'
+                )
+            )
+        )
+    )
+);
+
+$pages->add_meta_box(
     'content_block_1',
     'Content Area (Optional)', 
     array(
@@ -105,6 +144,22 @@ $pages->add_meta_box(
             'name'          => 'text',
             'label'         => 'Text',
             'description'   => 'Text area',
+            'type'          => 'wysiwyg',
+            
+        ),
+    )
+);
+
+
+
+$posts->add_meta_box(
+    'content_block_timeline',
+    'Vertical "Timeline" Content', 
+    array(
+        array(
+            'name'          => 'text',
+            'label'         => 'List Items',
+            'description'   => '',
             'type'          => 'wysiwyg',
             
         ),
@@ -149,6 +204,24 @@ $posts->add_meta_box(
             'description'   => 'Upload Logo',
             'type'          => 'file',  
         ),
+        array(
+            'name'          => 'post_article',
+            'label'         => 'Select Article',
+            'description'   => 'Select associated article',
+            'type'          => 'post_select',
+            'args'          => array(
+                'post_type' => 'article',
+            )
+        ),
+        array(
+            'name'          => 'post_brochure',
+            'label'         => 'Select Brochure',
+            'description'   => 'Select associated brochure',
+            'type'          => 'post_select',
+            'args'          => array(
+                'post_type' => 'brochure',
+            )
+        )
 
     )
 );
@@ -171,6 +244,8 @@ $posts->add_meta_box(
         ),
     )
 );
+
+
 
 $posts->add_meta_box(
     'content_block_1',
