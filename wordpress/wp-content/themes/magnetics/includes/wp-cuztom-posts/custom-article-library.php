@@ -1,9 +1,16 @@
-<?php
-//Create article custom post type
-$article = new Cuztom_Post_Type('post');
+<?php //CPT for article library
+
+$args = array(
+	'has_archive' => true,
+	//'menu_position' => 5,
+	'menu_icon' => 'dashicons-welcome-learn-more', //http://melchoyce.github.io/dashicons/
+	'supports'	=> array( 'title' ),
+ 	);
+
+$article = register_cuztom_post_type( 'Article', $args);
 
 $article->add_meta_box(
-	'brochure',
+	'article',
 	'Article',
 		array(
 			array(
