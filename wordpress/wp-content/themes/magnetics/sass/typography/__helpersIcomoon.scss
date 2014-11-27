@@ -11,6 +11,14 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.download:before {
+    content: "\e601";
+}
+
+.go:before {
+    content: "\e602";
+}
+
 .icon-MarineMagnetics:before {
     content: "\e600";
 }

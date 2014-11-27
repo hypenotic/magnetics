@@ -69,7 +69,9 @@ p, ul, ol {
 }
 
 blockquote {
-    font-size: em($fontSizeBody);
+    font-size: em($fontSizeLarge);
+    line-height: em($fontSizeSubheading);
+    font-family: $fontSecondary;
     @include media($screenLarge) {
         font-size: em($fontSizeSubheading);
         margin: 0 auto rhythm(1, $fontSizeSubheading);

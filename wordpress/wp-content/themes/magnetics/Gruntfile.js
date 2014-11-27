@@ -10,7 +10,9 @@ module.exports = function(grunt) {
         watch: {
             clear: {
                 //clear terminal on any watch task. beauty.
-                files: ['sass/**/*.{scss,sass}', 'js/build/*.js', 'images/**/*', '*.php', 'includes/{,*/}*.php'], //or be more specific
+                // files: ['sass/**/*.{scss,sass}', 'js/build/*.js', 'images/**/*', '*.php', 'includes/{,*/}*.php'], //or be more specific
+                files: ['sass/**/*.{scss,sass}'], //or be more specific
+                
                 tasks: ['clear']
             },
             imagemin: {

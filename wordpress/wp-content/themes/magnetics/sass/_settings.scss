@@ -13,6 +13,9 @@ Version: 1.0
 @import "base/base";
 @import "../bower/neat/app/assets/stylesheets/neat";
 
+// Helpers
+@import "colours/_helpers";
+
 // Variables
 @import "colours/_variables";
 @import "typography/_variables";
@@ -39,7 +42,8 @@ Version: 1.0
 @import "components/tabs";
 
 // Pages
-@import "pages/about";
+@import "states/about";
+@import "states/product";
 
 // etc
 //@import "pagination";
