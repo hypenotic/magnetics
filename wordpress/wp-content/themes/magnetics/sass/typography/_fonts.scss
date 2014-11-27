@@ -1,11 +1,4 @@
 // http://drinchev.github.io/monosocialiconsfont/
-@include font-face(MonoSocialIconsFont, "/fonts/MonoSocialIconsFont-1.10", 200);
+@include font-face(monoSocialIcons, "/fonts/MonoSocialIconsFont-1.10", 200);
 
-// open sans
-@include font-face(openSans, "/fonts/Open_Sans/opensans-light-webfont", 200);
-
-@include font-face(openSans, "/fonts/Open_Sans/opensans-regular-webfont", 400);
-
-@include font-face(openSans, "/fonts/Open_Sans/opensans-semibold-webfont", 600);
-
-@include font-face(openSans, "/fonts/Open_Sans/opensans-extrabold-webfont", 800);
+@include font-face(icomoon, "./fonts/Icomoon/icomoon");

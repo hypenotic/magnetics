@@ -1,21 +1,25 @@
 //  Typefaces
-$fontPrimary: "opensans";
+$fontPrimary: "open-sans";
 $fontSecondary: "minion-pro";
 $fontIcons: "Mono Social Icons Font";
+$fontIconsSecondary: "icomoon";
 
 //  Type Sizes
 $fontSizeCaption: 6.112;
-$fontSizeSmall: 9.889;
-$fontSizeBody: 16;
-$fontSizeLarge: 25.888;
-$fontSizeSubheading: 41.887;
-$fontSizeHeading: 67.773;
-$fontSizePoster: 109.657;
+$fontSizeSmall: 14;
+$fontSizeBodySecondary: 16;
+$fontSizeBody: 18;
+$fontSizeLarge: 24;
+$fontSizeSubheading: 25;
+$fontSizeHeading: 48.829;
+$fontSizePoster: 89;
+
+/* 18px @ 1:1.5 */
 
 /* 
-	Modular Scale 
+	Modular Scale @ 1.125
 	275px = About page tab height
 	16px @ 1:1.618
 	275px @ 1:1.618	
-	http://modularscale.com/scale/?px1=16&px2=275&ra1=1.618&ra2=0
+	http://modularscale.com/scale/?px1=16&px2=275&ra1=1.25&ra2=0
 */

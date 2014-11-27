@@ -1,0 +1,41 @@
+.single-product {
+    & section[role="main"] {
+        & header {
+            color: white;
+            text-align: center;
+            display: flex;
+            & h1 {
+                @include opacity(0.3);
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            & img {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin-top: -50%;
+            }
+            & h3 {
+                text-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
+            }
+        }
+        & article {
+            ul {
+                @include outer-container;
+                & li {
+                    width: 50%;
+                    margin-top: 48px;
+                    &:nth-child(even) {
+                        clear: left;
+                        float: left;
+                    }
+                    &:nth-child(odd) {
+                        clear: right;
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
+}

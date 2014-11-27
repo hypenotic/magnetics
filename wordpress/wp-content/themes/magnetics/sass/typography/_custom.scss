@@ -1,5 +1,6 @@
-p {
-    &.personal {
-        font-family: $fontSecondary;
-    }
+.intimate {
+    font-size: em($fontSizeLarge);
+    line-height: em($fontSizeSubheading);
+    font-family: $fontSecondary;
+    font-weight: normal;
 }

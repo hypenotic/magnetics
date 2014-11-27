@@ -1,0 +1,22 @@
+article.overview {
+    @include outer-container;
+    & h6 {
+        text-transform: uppercase;
+    }
+    &:hover {
+        & h3 {
+            color: $orange;
+            @include span-columns(3);
+            & a:hover {
+                text-decoration: underline;
+            }
+        }
+        & .download, &.go {
+            color: $teal;
+        }
+    }
+    & p, & footer {
+        @include span-columns(8);
+        @include shift(1);
+    }
+}

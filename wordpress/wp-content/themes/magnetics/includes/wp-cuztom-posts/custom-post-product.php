@@ -4,7 +4,7 @@ $args = array(
 	'has_archive' => true,
 	'menu_position' => 5,
 	'menu_icon' => 'dashicons-products', //http://melchoyce.github.io/dashicons/
-	'supports'	=> array( 'title', 'thumbnail' )
+	'supports'	=> array( 'title', 'thumbnail', 'editor' )
  	);
 
 $product = register_cuztom_post_type( 'Product', $args);
@@ -24,9 +24,6 @@ $product_category->add_term_meta (
 	)
 );
 	
-	
-
-
 $product->add_meta_box( 
 	'product',
 	'Overview',
@@ -34,6 +31,12 @@ $product->add_meta_box(
 			array(
 				'name'          => 'title',
 				'label'         => 'Title',
+				'description'   => '',
+				'type'          => 'text'
+                ),
+			array(
+				'name'          => 'tagline',
+				'label'         => 'Tagline',
 				'description'   => '',
 				'type'          => 'text'
                 ),
@@ -127,6 +130,70 @@ $product->add_meta_box(
         				),
         			'default_value' => 'left'
      			)
+			)
+		)
+	);
+
+
+$product->add_meta_box(
+	'product_features',
+	'Features',
+	array(
+		'bundle',    
+			array( 
+				array(
+					'name'          => 'title',
+					'label'         => 'Title',
+					'description'   => '',
+					'type'          => 'text',          
+				),
+				array(
+					'name'          => 'content',
+					'label'         => 'Description',
+					'description'   => '',
+					'type'          => 'textarea',          
+				),
+				array(
+        			'name'          => 'icon',
+        			'label'         => 'Select',
+        			'description'   => 'Select what type of post',
+        			'type'          => 'select',
+        			'options'       => array(
+            			''    => 'post',
+            			'icon-2'    => 'blockquote'
+        				),
+        			'default_value' => ''
+     			),
+				array(
+        			'name'          => 'direction',
+        			'label'         => 'Select',
+        			'description'   => 'Select direction of post',
+        			'type'          => 'select',
+        			'options'       => array(
+            			'left'    => 'left',
+            			'right'    => 'right'
+        				),
+        			'default_value' => 'left'
+     			)
+			)
+		)
+	);
+
+$product->add_meta_box(
+	'product_brochure',
+	'Brochure',
+		array(
+			array(
+				'name'          => 'content',
+				'label'         => 'Description',
+				'description'   => '',
+				'type'          => 'textarea',          
+			),
+			array(
+				'name'          => 'file',
+				'label'         => 'File',
+				'description'   => 'Upload/Select PDF file',
+				'type'          => 'file',
 			)
 		)
 	);

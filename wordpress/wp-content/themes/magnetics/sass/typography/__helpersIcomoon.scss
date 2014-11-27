@@ -1,0 +1,24 @@
+[class^="icon-"], [class*=" icon-"] {
+    font-family: $fontIconsSecondary;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.download:before {
+    content: "\e601";
+}
+
+.go:before {
+    content: "\e602";
+}
+
+.icon-MarineMagnetics:before {
+    content: "\e600";
+}
