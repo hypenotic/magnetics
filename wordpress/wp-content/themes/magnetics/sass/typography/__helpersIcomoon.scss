@@ -11,11 +11,11 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.download:before {
+.icon.resource:before {
     content: "\e601";
 }
 
-.go:before {
+.icon.read:before {
     content: "\e602";
 }
 

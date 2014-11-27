@@ -1,0 +1,1 @@
+<span class="sub-meta">Written by <?php echo ucfirst(get_the_author()); ?></span>

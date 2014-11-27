@@ -4,10 +4,12 @@
 include('includes/wp-cuztom-helper/cuztom.php');
 
 //Include post custom posts type. Dependent on /wp-cuztom-helper classes.
-include('includes/wp-cuztom-posts/custom-post-integration.php');
-include('includes/wp-cuztom-posts/custom-post-page.php');
-include('includes/wp-cuztom-posts/custom-post-post.php');
-include('includes/wp-cuztom-posts/custom-post-product.php');
+//include('includes/wp-cuztom-posts/custom-post-integration.php');
+//include('includes/wp-cuztom-posts/custom-post-page.php');
+include('includes/wp-cuztom-posts/custom-article-library.php');
+include('includes/wp-cuztom-posts/custom-brochure-library.php');
+include('includes/wp-cuztom-posts/custom-generic.php');
+//include('includes/wp-cuztom-posts/custom-post-product.php');
 
 //Load custom functions
 require_once('includes/functions/add-classes-to-body.php');

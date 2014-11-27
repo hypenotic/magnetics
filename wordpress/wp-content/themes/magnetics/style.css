@@ -727,11 +727,11 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.download:before {
+.icon.resource:before {
   content: "\e601";
 }
 
-.go:before {
+.icon.read:before {
   content: "\e602";
 }
 
@@ -1254,6 +1254,16 @@ Nav Panel
 }
 .tabs .tab-content .tab.active-tab-content {
   display: block;
+}
+
+section#timeline > ul {
+  margin: 0;
+}
+@media screen and (min-width: 850px) {
+  section#timeline > ul > li {
+    list-style: none;
+    width: 40%;
+  }
 }
 
 body.about {
