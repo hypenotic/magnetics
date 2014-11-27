@@ -56,6 +56,24 @@ $pages->add_meta_box(
             'description'   => 'Dimensions 1400px x 800px',
             'type'          => 'image',
         ),
+        array(
+        	'name'          => 'post_article',
+        	'label'         => 'Select Article',
+        	'description'   => 'Select associated article',
+        	'type'          => 'post_select',
+        	'args'          => array(
+            	'post_type' => 'article',
+        	)
+    	),
+    	array(
+        	'name'          => 'post_brochure',
+        	'label'         => 'Select Brochure',
+        	'description'   => 'Select associated brochure',
+        	'type'          => 'post_select',
+        	'args'          => array(
+            	'post_type' => 'brochure',
+        	)
+    	)
 
     )
 );

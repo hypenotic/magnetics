@@ -9,7 +9,7 @@ $args = array(
 
 $brochure = register_cuztom_post_type( 'Brochure', $args);
 
-$article->add_meta_box(
+$brochure->add_meta_box(
 	'brochure',
 	'Brochure',
 		array(
