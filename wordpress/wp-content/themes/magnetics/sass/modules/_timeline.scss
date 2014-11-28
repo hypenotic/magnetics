@@ -1,0 +1,19 @@
+section#timeline {
+    background: white;
+    & > ul {
+        max-width: $screenLarge;
+        margin: 0 auto;
+        font-size: $fontSizeBodySecondary;
+        @include media($screenLarge) {
+            position: relative;
+            left: 5%;
+        }
+
+        & > li {
+            @include media($screenLarge) {
+                list-style: none;
+                width: 40%;
+            }
+        }
+    }
+}

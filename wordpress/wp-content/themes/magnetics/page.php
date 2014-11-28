@@ -7,12 +7,15 @@
   </article>
 </section>
 
-<?php if(get_post_meta(get_the_ID(), '_page_tabs_tableft', true) && get_post_meta(get_the_ID(), '_page_tabs_tabright', true)) { ?>
+<?php 
 
-    <?php get_template_part( 'template', 'tabsTwo' ); ?>
+$metaTabs = get_post_meta(get_the_ID(), '_page_tabs_tableft', true) && get_post_meta(get_the_ID(), '_page_tabs_tabright', true);
 
-<?php } ?>
+if($metaTabs) { 
 
+	get_template_part( 'template', 'tabsTwo' ); 
+
+} ?>
 
 <?php endwhile; endif; ?>
 <?php get_footer(); ?>

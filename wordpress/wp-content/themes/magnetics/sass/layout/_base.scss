@@ -1,5 +1,5 @@
 article {
     @include outer-container($screenLarge);
-    @include pad(0 default 0 default);
+    @include pad(default);
     color: $grayDark;
 }

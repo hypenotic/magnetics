@@ -1,27 +1,23 @@
 <?php get_header(); ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     
+<section role="main">
 
-<section>
+    <?php get_template_part( 'module', 'banner' ); ?>
+
   <article>
     <h2><?php the_title(); ?></h2>
-
-    <?php get_template_part( 'module', 'author' ); ?>
-    <?php get_template_part( 'template', 'allBrochure' ); ?>
-    <?php get_template_part( 'template', 'allArticle' ); ?>
-
-    <?php the_content(); ?>
-
+        <?php get_template_part( 'module', 'author' ); ?>
+        <?php get_template_part( 'template', 'brochureFile' ); ?>
+        <?php get_template_part( 'template', 'articleFile' ); ?>
+        <?php the_content(); ?>
   </article>
+
+  <!-- timeline -->
+  <?php get_template_part( 'module', 'timeline' ); ?>
 </section>
 
-<!-- product timeline -->
-<?php get_template_part( 'module', 'timeline' ); ?> 
 
-
-                <?php the_content();?>
-            </div>
-    </div>
 <?php endwhile; endif; ?>
 
 <section class="container" id="pagination">

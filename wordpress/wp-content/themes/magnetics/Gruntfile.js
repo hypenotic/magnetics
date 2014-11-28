@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 
     // load all grunt tasks matching the `grunt-*` pattern
     require('load-grunt-tasks')(grunt);
-
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.initConfig({
 
         // watch for changes and trigger compass, jshint, uglify and livereload
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
             },
             js: {
                 files: '<%= jshint.all %>',
-                tasks: ['jshint', 'uglify', 'notify:success']
+                tasks: ['jshint', 'concat', 'notify:success']
             },
             php: {
                 files: ['*.php', 'includes/{,*/}*.php'],
@@ -58,12 +58,23 @@ module.exports = function(grunt) {
             options: {
                 jshintrc: '.jshintrc',
                 "force": true,
-                spawn: false
+                spawn: false,
+                ignores: ['js/build/isotope.pkgd.min.js']
             },
             all: [
                 'Gruntfile.js',
                 'js/build/**/*.js'
             ]
+        },
+
+        concat: {
+            options: {
+                separator: ';',
+            },
+            dist: {
+                src: ['js/jquery.fittext.js','js/build/states/products.js','js/build/jquery.debouncedresize.js', 'js/build/*.js', 'js/build/**/*.js'],
+                dest: 'js/app.min.js',
+            },
         },
 
         // uglify to concat, minify, and make source maps
