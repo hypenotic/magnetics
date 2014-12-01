@@ -1,5 +1,5 @@
 <?php
-	// Grab this post's associated brochure
+	// Custom meta values 
 	$metaAssociatedBrochurePostID = get_post_meta($post->ID,'_banner_post_brochure',true);
 	
 	if($metaAssociatedBrochurePostID) {

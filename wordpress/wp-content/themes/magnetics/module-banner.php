@@ -5,6 +5,7 @@
 	// Video Background
 	$bannerVideoURL = false;
 
+	// Custom meta values 
 	$metaBannerVideoDefault = get_post_meta($post->ID, '_banner_default_video', true);
 	$metaBannerVideo = 	get_post_meta($post->ID, '_banner_video', true);
 
@@ -27,6 +28,8 @@
 
 	 // Banner Image
 	$bannerImageURL = false;
+	
+	// Custom meta values 
 	$metaBannerImageID = get_post_meta($post->ID, '_banner_image', true);
 
  	if ($metaBannerImageID) { 
@@ -39,6 +42,7 @@
 
 	<?php  
 	// Banner Heading
+	// Custom meta values 
 	$metaBannerHeading = get_post_meta($post->ID, '_banner_heading', true);
 	
 	if($metaBannerHeading) { ?>
@@ -48,7 +52,7 @@
 
 	<?php 
 	// Banner Subheading
-
+	// Custom meta values 
 	$metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
 
 	if($metaBannerSubheading) { ?>

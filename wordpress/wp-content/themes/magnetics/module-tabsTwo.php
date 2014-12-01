@@ -1,6 +1,5 @@
-
 <?php 
-
+    // Custom meta values 
     $metaTabsTabLeft = get_post_meta(get_the_ID(), '_page_tabs_tableft', true)
     $metaTabsTabLeftContent = get_post_meta(get_the_ID(), '_page_tabs_tablefttextarea', true);
  

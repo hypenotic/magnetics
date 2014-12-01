@@ -1,5 +1,5 @@
 <?php
-	// Grab this post's associated article
+	// Custom meta values 
 	$metaAssociatedArticle = get_post_meta($post->ID,'_banner_post_article',true);
 	
 	if($metaAssociatedArticle) {
