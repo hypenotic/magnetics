@@ -1,8 +1,8 @@
 .tabs {
-    & .tab-content {
+    & > section {
         & .tab {
             display: none;
-            &.active-tab-content {
+            &.active {
                 display: block;
             }
         }

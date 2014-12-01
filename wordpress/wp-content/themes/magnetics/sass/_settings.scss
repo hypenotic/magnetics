@@ -34,13 +34,16 @@ Version: 1.0
 @import "layout/custom";
 @import "layout/header";
 @import "layout/footer";
-@import "layout/banner";
 @import "layout/offcanvas";
 @import "layout/product_slide";
 
+// Layout - Modules
+@import "modules/tabs";
+@import "modules/banner";
+@import "modules/timeline";
+
 // Components
 @import "components/tabs";
-@import "components/timeline";
 
 // Pages
 @import "states/about";

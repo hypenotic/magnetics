@@ -861,7 +861,7 @@ article {
   max-width: 850px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 2.35765% 0 2.35765%;
+  padding: 2.35765%;
   color: #4d4e51;
 }
 article:after {
@@ -1249,21 +1249,105 @@ Nav Panel
   }
 }
 
-.tabs .tab-content .tab {
-  display: none;
+.tabs {
+  background: white;
 }
-.tabs .tab-content .tab.active-tab-content {
+.tabs header {
+  margin-bottom: 96px;
+}
+.tabs ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+.tabs ul li {
+  width: 50%;
+  float: left;
+  background: #1d3955;
+  color: white;
+  /* enable <a> to fill height */
+  display: flex;
+  align-items: stretch;
+}
+.tabs ul li.active-tab-header {
+  background: white;
+}
+.tabs ul li.active-tab-header a {
+  color: #4d4e51;
+}
+.tabs ul li:first-child {
+  flex-direction: row-reverse;
+}
+.tabs ul li a {
+  padding: 48px 4.7153%;
+  max-width: 425px;
   display: block;
+  color: white;
+}
+.tabs ul li a h3, .tabs ul li a h4 {
+  line-height: 1.125em;
+  margin-bottom: 0;
+}
+.tabs ul li a p {
+  font-size: 0.875em;
 }
 
+.banner {
+  text-align: center;
+}
+.banner video {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: 100%;
+  z-index: -1;
+}
+.banner img {
+  max-width: 850px;
+  width: 90%;
+  height: auto;
+}
+.banner h3 {
+  color: white;
+  max-width: 850px;
+  margin: 0 auto;
+  text-shadow: 0px 0px 50px rgba(0, 0, 0, 0.6);
+}
+.banner p {
+  color: white;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+section#timeline {
+  background: white;
+}
 section#timeline > ul {
-  margin: 0;
+  max-width: 1160px;
+  margin: 0 auto;
+  font-size: 16;
+}
+@media screen and (min-width: 850px) {
+  section#timeline > ul {
+    position: relative;
+    left: 5%;
+  }
 }
 @media screen and (min-width: 850px) {
   section#timeline > ul > li {
     list-style: none;
     width: 40%;
   }
+}
+
+.tabs > section .tab {
+  display: none;
+}
+.tabs > section .tab.active {
+  display: block;
 }
 
 body.about {
@@ -1278,94 +1362,20 @@ body.about section:first-of-type article {
     margin-top: 200px;
   }
 }
-body.about .tabs {
-  background: white;
-}
-body.about .tabs header {
-  margin-bottom: 96px;
-}
-body.about .tabs ul {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-body.about .tabs ul li {
-  width: 50%;
-  float: left;
-  background: #1d3955;
-  color: white;
-  /* enable <a> to fill height */
-  display: flex;
-  align-items: stretch;
-}
-body.about .tabs ul li.active-tab-header {
-  background: white;
-}
-body.about .tabs ul li.active-tab-header a {
-  color: #4d4e51;
-}
-body.about .tabs ul li:first-child {
-  flex-direction: row-reverse;
-}
-body.about .tabs ul li a {
-  padding: 48px 4.7153%;
-  max-width: 425px;
-  display: block;
-  color: white;
-}
-body.about .tabs ul li a h3, body.about .tabs ul li a h4 {
-  line-height: 1.125em;
-  margin-bottom: 0;
-}
-body.about .tabs ul li a p {
-  font-size: 0.875em;
-}
 
-.single-product section[role="main"] header {
+body.products.single section[role="main"] article h2 {
+  filter: alpha(opactiy=70);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  opacity: 0.7;
   color: white;
-  text-align: center;
-  display: flex;
-}
-.single-product section[role="main"] header h1 {
-  filter: alpha(opactiy=30);
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-  -moz-opacity: 0.3;
-  -khtml-opacity: 0.3;
-  opacity: 0.3;
+  font-weight: 800;
+  line-height: 40%;
   position: absolute;
-  top: 0;
+  top: -2%;
   left: 0;
-}
-.single-product section[role="main"] header img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-top: -50%;
-}
-.single-product section[role="main"] header h3 {
-  text-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
-}
-.single-product section[role="main"] article ul {
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto;
-}
-.single-product section[role="main"] article ul:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.single-product section[role="main"] article ul li {
-  width: 50%;
-  margin-top: 48px;
-}
-.single-product section[role="main"] article ul li:nth-child(even) {
-  clear: left;
-  float: left;
-}
-.single-product section[role="main"] article ul li:nth-child(odd) {
-  clear: right;
-  float: right;
+  text-align: center;
+  width: 100%;
+  z-index: -1;
 }

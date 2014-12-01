@@ -1,0 +1,27 @@
+.banner {
+    text-align: center;
+    & video {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: auto;
+        height: 100%;
+        z-index: -1;
+    }
+    & img {
+        max-width: $screenLarge;
+        width: 90%;
+        height: auto;
+    }
+    & h3 {
+        color: white;
+        max-width: $screenLarge;
+        margin: 0 auto;
+        text-shadow: 0px 0px 50px rgba(0, 0, 0, 0.6);
+    }
+    & p {
+        color: white;
+        max-width: $screenLarge;
+        margin: 0 auto;
+    }
+}

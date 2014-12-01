@@ -6,8 +6,19 @@
 */
 
 function add_slug_to_body_class($classes) {
+	
 	global $post;
-    	$classes[] = $post->post_name . ' offcanvas dark';
+
+	$categories = get_the_category();
+
+	$category_slugs = array();
+	foreach ($categories as $category)
+	{
+	    $category_slugs[] = $category->slug;
+	}
+
+
+	$classes[] = implode(' ',$category_slugs) . ' ' . $post->post_name . ' offcanvas dark';
 	return $classes;
 }
 

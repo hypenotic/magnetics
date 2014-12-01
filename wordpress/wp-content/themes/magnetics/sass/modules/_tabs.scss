@@ -1,0 +1,44 @@
+.tabs {
+    background: white;
+    & header {
+        margin-bottom: 96px;
+    }
+    & ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        & li {
+            width: 50%;
+            float: left;
+            background: $blueDark;
+            color: white;
+            /* enable <a> to fill height */
+            display: flex;
+            align-items: stretch;
+            &.active-tab-header {
+                background: white;
+                & a {
+                    color: $grayDark;
+                }
+            }
+            &:first-child {
+                flex-direction: row-reverse;
+            }
+            & a {
+                padding: 48px 4.7153%;
+                max-width: 425px;
+                display: block;
+                color: white;
+                & h3, & h4 {
+                    line-height: em($fontSizeBody);
+                    margin-bottom: 0;
+                }
+                & p {
+                    font-size: em($fontSizeSmall);
+                }
+            }
+        }
+    }
+}

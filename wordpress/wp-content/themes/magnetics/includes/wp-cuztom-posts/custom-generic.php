@@ -42,6 +42,14 @@ $pages->add_meta_box(
             'type'          => 'text',
             
         ),
+
+        array(
+            'name'          => 'default_video',
+            'label'         => 'Default Video',
+            'description'   => 'Show the default underwater background',
+            'type'          => 'checkbox',
+            
+        ),
         
         array(
             'name'          => 'video',
@@ -182,6 +190,14 @@ $posts->add_meta_box(
             'label'         => 'Subheading',
             'description'   => 'Enter Subheadine',
             'type'          => 'text',
+            
+        ),
+
+        array(
+            'name'          => 'default_video',
+            'label'         => 'Default Video',
+            'description'   => 'Show the default underwater background',
+            'type'          => 'checkbox',
             
         ),
         
