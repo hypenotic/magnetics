@@ -1,14 +1,72 @@
 <?php
-	$more_articles = new WP_Query(array(
-	'posts_per_page' => 2,
-	'post__not_in' => array($post->ID)
-	));
-	if($more_articles->have_posts()) {
-?>
-        <?php while($more_articles->have_posts()):$more_articles->the_post(); ?>
-     
-            <?php get_template_part( 'template-', 'articleOverview' ); ?>
 
-        <?php endwhile; ?>
+	/**
+	* Shows related posts by tag if available and category if not
+	*
+	* @author Justin Tallant
+	* @param string $title h4 above list of related posts
+	* @param int $count max number of posts to show
+	* @return mixed related posts wrapped in div or null if none found
+	*/
+
+	global $post;
+
+	$tag_ids = array();
+
+	$current_cat = get_the_category($post->ID);
+	$current_cat = $current_cat[0]->cat_ID;
+	$this_cat = '';
+
+	$tags = get_the_tags($post->ID);
+
+	if ( $tags ) {
+		foreach($tags as $tag) {
+			$tag_ids[] = $tag->term_id;
+		}
+	} else {
+		$this_cat = $current_cat;
+	}
+
+	$args = array(
+		'post_type'   => get_post_type(),
+		'numberposts' => 2,
+		'orderby'     => 'rand',
+		'tag__in'     => $tag_ids,
+		'cat'         => $this_cat,
+		'exclude'     => $post->ID
+	);
+
+	$related_posts = get_posts($args);
+
+	/**
+	 * If the tags are only assigned to this post try getting
+	 * the posts again without the tag__in arg and set the cat
+	 * arg to this category.
+	 */
+	if ( empty($related_posts) ) {
+		$args['tag__in'] = '';
+		$args['cat'] = $current_cat;
+		$related_posts = get_posts($args);
+	}
+
+	if ( empty($related_posts) ) {
+		return;
+	}
+
+	?>
+
+	<section id="related">
+	<h6>Other Posts related to '<?php the_title(); ?>'</h6>
+	<!-- Start Loop -->
+	<?php 
+	 foreach ( $related_posts as $post ) {
+?>
+
+	<?php get_template_part('template','postOverview'); ?>
+	 	
+ 	<!-- End Loop -->
+	<?php }
+	wp_reset_postdata();?>
+
+</section>
   
-<?php } ?>
