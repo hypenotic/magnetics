@@ -158,7 +158,19 @@ $pages->add_meta_box(
     )
 );
 
-
+$posts->add_meta_box(
+    'author',
+    'Author', 
+    array(
+        array(
+            'name'          => 'show',
+            'label'         => 'Show Author',
+            'description'   => '',
+            'type'          => 'checkbox',
+            
+        ),
+    )
+);
 
 $posts->add_meta_box(
     'content_block_timeline',

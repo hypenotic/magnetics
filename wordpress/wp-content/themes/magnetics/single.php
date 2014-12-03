@@ -15,7 +15,7 @@
         <?php get_template_part( 'module', 'author' ); ?>
 
          <!-- Template: Attached Files -->
-        <?php get_template_part( 'module', 'brochureFile' ); ?>
+        <?php get_template_part( 'template', 'brochureFile' ); ?>
         <?php get_template_part( 'template', 'articleFile' ); ?>
 
         <?php the_content(); ?>
@@ -29,8 +29,8 @@
 <?php endwhile; endif; ?>
 
 <section class="container" id="pagination">
-        <a href="<?php bloginfo('url');?>/products">&laquote; Return to Products Page</a>
-        <a href="<?php bloginfo('url');?>/articles-and-brochures/">&laquote; Return to Articles Page</a>
+        <a href="<?php bloginfo('url');?>/products">&laquo; Return to Products Page</a>
+        <a href="<?php bloginfo('url');?>/articles-and-brochures/">&laquo; Return to Articles Page</a>
 </section>
 
 <!-- Module: Related Posts -->
