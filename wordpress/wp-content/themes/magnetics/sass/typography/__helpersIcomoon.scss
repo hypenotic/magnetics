@@ -1,4 +1,4 @@
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"], .icon {
     font-family: $fontIconsSecondary;
     speak: none;
     font-style: normal;
@@ -15,7 +15,7 @@
     content: "\e601";
 }
 
-.icon.read:before {
+.icon.more:before {
     content: "\e602";
 }
 

@@ -1,36 +1,50 @@
 <?php get_header(); ?>
 
-<?php 
-    $paged  = (get_query_var('paged')) ? get_query_var('paged') : 1;
-    $args   =array(
-        'post_type' => array('post','brochure'),
-        'paged' => $paged
-    );
-    query_posts($args);
-?>
+<section role="main">
 
-<h3>Select a Category</h3>
-<?php
+        <header>
+        <?php 
+            if ( is_post_type_archive() ) {
+         ?>
+            <h1>Articles <br />&amp; Brochures</h1>
+        <?php
+            } 
+        ?>
 
-    $args = array(
-        'child_of' => 2,
-        'hide_empty' => FALSE,
-        'title_li' => '',
-    );
-    wp_list_categories( $args ); 
+        <section id="categories">
+            <nav class="left">
+                <h3>Select a Category:</h3>
+                <ul>
+                <?php
 
-?>
+                    $category = get_category_by_slug('products'); 
+                    $categoryID = $category->term_id;
+                    $args = array(
+                        'child_of' => $categoryID,
+                        'hide_empty' => FALSE,
+                        'title_li' => '',
+                    );
+                    wp_list_categories( $args ); 
 
-<section id="archive">  
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    
-        <?php get_template_part('template','postOverview'); ?>
+                ?>
+                </ul>
+            </nav>
+        </section>
+    </header>
 
-    <?php endwhile; endif; ?>
-</section>
+    <section id="archive">  
+        <!-- start loop -->
+        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        
+            <?php get_template_part('template','postOverview'); ?>
 
-<section class="pagination">
-        <?php pagination(); ?>
+        <!-- end loop -->
+        <?php endwhile; endif; ?>
+    </section>
+
+    <section class="pagination">
+            <?php pagination(); ?>
+    </section>
 </section>
 
 <?php get_footer(); ?>

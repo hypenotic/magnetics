@@ -1,19 +1,17 @@
-jQuery(document).ready(function(e) {
-    e('.tab-header li a').click(function(){
-		var id= e(this).attr('id');
-		
-		e('.tab-header li').each(function() {
-			e(this).removeClass('active-tab-header');
-		});
-		e(this).parent('li').addClass('active-tab-header');
-		e('.tab-content .tab').each(function() {
-			e(this).removeClass('active-tab-content');
-		});
-		e('.tab-content .tab#'+id).addClass('active-tab-content');
+jQuery(document).ready(function($) {
+	$('.tabs header li a').click(function(e){
+		$(this).parent().addClass('active');
+		$('.tabs .active').removeClass('active');
+		$('.tabs > section:nth-child('+parseInt($(this).parent().index()+2)+')').addClass('active');
 		return false;
+
 	});
-	e('.list_header').click(function(){
-		e(this).next('ul').toggle();
-		e(this).toggleClass('active');
-	});
+
+	$('.tabs header select').change(function(e){
+
+		$('.tabs .active').removeClass('active');
+		$('.tabs > section:nth-child('+parseInt($(this).find('option:selected').index()+2)+')').addClass('active');
+		return false;
+		});
+
 });

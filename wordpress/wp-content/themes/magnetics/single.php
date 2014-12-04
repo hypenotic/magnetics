@@ -23,6 +23,10 @@
 
   <!-- Module: Timeline -->
   <?php get_template_part( 'module', 'timeline' ); ?>
+
+    <!-- Module: productInformation -->
+  <?php get_template_part( 'module', 'tabsProduct' ); ?>
+
 </section>
 
 <!-- End Loop -->

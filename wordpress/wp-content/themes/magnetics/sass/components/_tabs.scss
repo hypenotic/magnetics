@@ -8,3 +8,32 @@
         }
     }
 }
+
+.tabs.boxes {
+    & ul {
+        & li {
+            &.current-cat, &.active {
+                & a {
+                    background: $blueDark;
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+            & a {
+                font-size: em($fontSizeBodySecondary);
+                margin: 4px 4px 4px 0;
+                background: $grayLight;
+                padding: 8px;
+                @include media($screenLarge) {
+                    padding: 8px 18px;
+                    font-size: em($fontSizeBodySecondary);
+                    margin: 0 10px 0px 0;
+                }
+
+                text-decoration: underline;
+                font-weight: 700;
+                color: $blueDark;
+            }
+        }
+    }
+}

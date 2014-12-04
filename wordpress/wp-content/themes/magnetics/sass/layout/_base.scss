@@ -3,3 +3,7 @@ article {
     @include pad(default);
     color: $grayDark;
 }
+
+blockquote {
+    border: 0px;
+}

@@ -14,20 +14,31 @@
 		
 		<h6><?php echo $postType; ?></h6>	
 
-		<h3><?php the_title();?></h3>
+		<header>
 
-		<p><?php 
-			// Out on a limb here. If there's no brochureDescription, 
-			// we can just call excerpt. Vice versa.
-			echo $brochureDescription; 
-			the_excerpt(); ?></p>
+			<h3><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
 
-		<footer>
+		</header>
 
-        <?php get_template_part( 'template', 'brochureFile' ); ?>
-        <?php get_template_part( 'template', 'articleFile' ); ?>
+		<section>
+			
+			<?php 
+				// Out on a limb here. If there's no brochureDescription, 
+				// we can just call excerpt. Vice versa.
+				echo $brochureDescription; 
+				the_excerpt(); 
+			?>
 
-		<a href="<?php the_permalink();?>" class="more"></a>
-		</footer>
-		
+			<footer>
+				<?php if($postType == 'brochure') { ?>
+				<?php get_template_part( 'template', 'brochureFile' ); ?>
+				<?php } else { ?>
+				<?php get_template_part( 'template', 'articleFile' ); ?>
+				<?php } ?>
+
+				<a href="<?php the_permalink();?>" class="icon more"></a>
+			</footer>
+
+		</section>
+ 
 	</article>

@@ -1,13 +1,28 @@
+body.products.single > header {
+    background: none;
+}
+
 body > header {
-    @include media($desktop) {
-        padding: em($fontSizeBody) 0;
+    background: $gray;
+    @include media($screenLarge) {
+        padding: em($fontSizeSmall) 0;
     }
 
-    & .logo {
-        height: auto;
-        @include media($desktop) {
-            @include shift(1);
-            max-width: 300px;
+    & nav {
+        position: absolute;
+        top: 0;
+        @include shift(-1);
+    }
+    & > a.logo {
+        display: inline-block;
+        padding: 4px;
+        & img {
+            height: auto;
+            max-width: 140px;
+            @include media($screenLarge) {
+                @include shift(1);
+                max-width: 300px;
+            }
         }
     }
 }

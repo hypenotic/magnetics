@@ -254,6 +254,33 @@ $posts->add_meta_box(
     )
 );
 
+$posts->add_meta_box(
+    'product_tabs',
+    'Product Tabs', 
+    array(
+        array(
+            'name'          => 'whats_in_the_box',
+            'label'         => 'What\'s In The Box',
+            'type'          => 'wysiwyg',  
+        ),
+        array(
+            'name'          => 'additional_options',
+            'label'         => 'Additional Options',
+            'type'          => 'wysiwyg',  
+        ),
+        array(
+            'name'          => 'meta_integrations',
+            'label'         => 'Meta Integrations',
+            'type'          => 'wysiwyg',  
+        ),
+        array(
+            'name'          => 'system_at_a_glance',
+            'label'         => 'System at a Glance',
+            'type'          => 'wysiwyg',  
+        ),
+    )
+);
+
 $posts->add_meta_box( 
     'full_width',
     'Full width image (Optional)',
@@ -272,8 +299,6 @@ $posts->add_meta_box(
         ),
     )
 );
-
-
 
 $posts->add_meta_box(
     'content_block_1',
