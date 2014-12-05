@@ -6,11 +6,10 @@
     $metaTabsTabRight = get_post_meta(get_the_ID(), '_page_tabs_tabright', true);
     $metaTabsTabRightContent = get_post_meta(get_the_ID(), '_page_tabs_tabrighttextarea', true);
 
-
+    if ($metaTabsTabLeft && $metaTabsTabLeftContent && $metaTabsTabRight && $metaTabsTabRightContent) {
 ?>
 
 <section class="tabs">
-
     <header>
         <ul>
             <li class="active">
@@ -34,3 +33,5 @@
     </article>
 
 </section>
+
+<?php } ?>

@@ -39,7 +39,7 @@
 </a>
 
     <nav>
-          <div class="menu-btn"><span>Menu</span></div>
+          <div class="menu-btn text"><span>Menu</span></div>
           <div class="menu-btn">
                <a id="nav-toggle" href="#menu"><span></span></a>
           </div>

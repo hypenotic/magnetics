@@ -8,8 +8,12 @@
          ?>
             <h1>Articles <br />&amp; Brochures</h1>
         <?php
-            } 
-        ?>
+            }  else { ?>
+
+         <h1><?php echo single_cat_title(); ?></h1>
+
+       <?php } ?>
+       
 
         <section id="categories">
             <nav class="left">

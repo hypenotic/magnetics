@@ -74,6 +74,16 @@ p, ul, ol {
     }
 }
 
+ol {
+    counter-reset: numeral-counter;
+    & > li:before {
+        content: counter(numeral-counter, decimal);
+        counter-increment: numeral-counter;
+        font-family: $fontSecondary;
+        font-size: em($fontSizeLarge);
+    }
+}
+
 blockquote {
     font-size: em($fontSizeBody);
     line-height: em($fontSizeBody);

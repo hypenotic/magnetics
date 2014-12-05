@@ -56,7 +56,7 @@
 	?>
 
 	<section id="related">
-	<h6>Other Posts related to '<?php the_title(); ?>'</h6>
+		<h2>Related Articles</h2>
 	<!-- Start Loop -->
 	<?php 
 	 foreach ( $related_posts as $post ) {

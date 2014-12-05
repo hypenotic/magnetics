@@ -15,7 +15,7 @@ section[role="main"] {
                     color: $blueDark;
                 }
                 & li {
-                    &.current-cat {
+                    &.current-cat, &:hover {
                         & a {
                             background: $blueDark;
                             text-decoration: none;

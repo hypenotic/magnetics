@@ -10,30 +10,63 @@
 }
 
 .tabs.boxes {
+    & header {
+        max-width: $screenLarge;
+        margin: 0 auto;
+    }
+    & select {
+        padding: em($fontSizeBodySecondary);
+        margin: em($fontSizeBodySecondary) 0;
+        width: 100%;
+        @include media($screenLarge) {
+            display: none;
+        }
+    }
     & ul {
+        display: block;
+        max-width: $screenLarge;
+        margin: 0 auto;
+        border-top: 1px solid $gray;
+        min-height: 78px;
+        display: none;
+        @include media($screenLarge) {
+            display: block;
+        }
+
         & li {
+            width: 25%;
+            float: left;
+            color: white;
+            display: inline-block;
+            float: left;
+            text-align: center;
+            border-right: 1px solid $gray;
+            border-bottom: 1px solid $gray;
+            background: none;
+            &:first-child {
+                border-left: 1px solid $gray;
+            }
             &.current-cat, &.active {
+                border-bottom: 0px;
                 & a {
-                    background: $blueDark;
-                    text-decoration: none;
-                    color: white;
+                    background: none;
+                    border: none;
+                    font-weight: bold;
                 }
             }
             & a {
-                font-size: em($fontSizeBodySecondary);
-                margin: 4px 4px 4px 0;
-                background: $grayLight;
-                padding: 8px;
                 @include media($screenLarge) {
-                    padding: 8px 18px;
+                    padding: 8px 30px;
                     font-size: em($fontSizeBodySecondary);
-                    margin: 0 10px 0px 0;
+                    margin: 0;
+                    color: $gray;
                 }
-
-                text-decoration: underline;
-                font-weight: 700;
-                color: $blueDark;
             }
         }
+    }
+    & article {
+        border-left: 1px solid $gray;
+        border-right: 1px solid $gray;
+        border-bottom: 1px solid $gray;
     }
 }
