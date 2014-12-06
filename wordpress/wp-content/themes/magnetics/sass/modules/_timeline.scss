@@ -1,57 +1,118 @@
 /* Timeline Dots */
 @mixin dot {
     content: '';
-    width: 40px;
-    height: 40px;
-    background: $blueDark;
+    width: 12px;
+    height: 12px;
+    @include media($screenLarge) {
+        width: 40px;
+        height: 40px;
+    }
+
+    background-position: center center;
+    background-repeat: no-repeat !important;
+    background-size: 30% 28%;
+    background: $gray;
     position: absolute;
     border-radius: 100px;
-    border:2px solid $teal;
+    border: 0px;
+    @include media($screenLarge) {
+        border: 1px solid $teal;
+        background: $blueDark;
+    }
+}
+
+@mixin dotQuote {
+    @include dot;
+    width: 24px;
+    height: 24px;
+    background: $gray url(images/quoteEndWhite.png);
+    @include media($screenLarge) {
+        background: $blueDark url(images/quoteEndWhite.png);
+        width: 70px;
+        height: 70px;
+    }
 }
 
 section#timeline {
     background: white;
+    padding: 96px 0;
     & > ul {
         max-width: $screenLarge;
         margin: 0 auto;
         font-size: $fontSizeBodySecondary;
-
         &:before {
             content: '';
             position: absolute;
             top: 0;
-            left: 50%;
+            left: 20px;
             height: 100%;
-            width: 4px;
-            background: $teal;
-        }
-
-        & > li {
-
+            width: 2px;
+            background: $grayLight;
             @include media($screenLarge) {
+                left: 50%;
+                background: $teal;
+            }
+        }
+        & > li {
+            padding: 9.4153%;
+            margin-bottom: 40px;
+            @include media($screenLarge) {
+                padding: 0 4.7153% 4.7153% 4.7153%;
                 list-style: none;
-                width: 40%;
-                margin-left:10%;
+                width: 49.999%;
+                box-sizing: border-box;
+                &:nth-child(2) {
+                    margin-top: 80px;
+                }
             }
 
+            &:before {
+                @include dot;
+                top: 47px;
+                left: 0;
+                margin-left: -23px;
+                margin-top: 14px;
+                @include media($screenLarge) {
+                    margin-top: 0;
+                    top: auto;
+                    left: 0;
+                    margin-left: -18px;
+                }
+            }
+            &.quote {
+                &:before {
+                    @include dotQuote;
+                    margin-left: -12px;
+                    left: 22px;
+                    top: 72px;
+                    @include media($screenLarge) {
+                        left: 0;
+                        margin-left: -35px;
+                        top: auto;
+                    }
+                }
+            }
             &.left {
+                @include media($screenLarge) {
+                    list-style: none;
+                    margin-left: 0%;
+                }
 
                 &:before {
-
-
-
+                    left: 22px;
+                    right: 0%;
+                    left: auto;
+                    margin-right: -22px;
                 }
-
-                @include media($screenLarge) {
-                list-style: none;
-                margin-left:0%;
+                &.quote:before {
+                    margin-left: -30px;
+                    right: auto;
+                    @include media($screenLarge) {
+                        right: 0;
+                        margin-right: -37px;
+                    }
                 }
-
-
-
             }
-           
-            
         }
     }
 }

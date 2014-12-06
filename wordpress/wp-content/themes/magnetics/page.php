@@ -5,7 +5,6 @@
 	$tabLeft 	= get_post_meta(get_the_ID(), '_page_tabs_tableft', true);
 	$tabRight 	= get_post_meta(get_the_ID(), '_page_tabs_tabright', true);
 ?>
-
 <!-- Start loop -->
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -19,7 +18,7 @@
 <!-- tabLeft AND tabRight have data --> 
 <?php if ($tabLeft && $tabRight) { ?>
 
-    <?php get_template_part( 'template', 'tabsTwo' ); ?>
+    <?php get_template_part( 'module', 'tabsTwo' ); ?>
 
 <?php } ?>
 

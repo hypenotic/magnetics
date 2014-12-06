@@ -9,29 +9,47 @@
   <?php get_template_part( 'module', 'banner' ); ?>
 
   <article>
-    <h2><?php the_title(); ?></h2>
+    <h1><?php the_title(); ?></h1>
 
+        <header class="meta">
          <!-- Module: Author -->
         <?php get_template_part( 'module', 'author' ); ?>
 
-         <!-- Template: Attached Files -->
-        <?php get_template_part( 'template', 'brochureFile' ); ?>
-        <?php get_template_part( 'template', 'articleFile' ); ?>
 
+        <?php if(in_category('articles')) { ?> 
+           <!-- Template: Attached Files -->
+          <?php get_template_part( 'template', 'brochureFile' ); ?>
+          <?php get_template_part( 'template', 'articleFile' ); ?>
+        <?php } ?>
+        </header>
+
+        <section class="content">
         <?php the_content(); ?>
+        </section>
+
+    <?php if(in_category('articles')) { ?>    
+    <footer class="container">
+      <a class="return" href="<?php bloginfo('url');?>/products">&laquo; Return to Products Page</a>
+      <a class="return" href="<?php bloginfo('url');?>/articles-and-brochures/">&laquo; Return to Articles Page</a>
+    </footer>
+    <?php } ?>
+
+
   </article>
+
 
   <!-- Module: Timeline -->
   <?php get_template_part( 'module', 'timeline' ); ?>
+
+    <!-- Module: productInformation -->
+  <?php get_template_part( 'module', 'tabsProduct' ); ?>
+
 </section>
 
 <!-- End Loop -->
 <?php endwhile; endif; ?>
 
-<section class="container" id="pagination">
-        <a href="<?php bloginfo('url');?>/products">&laquo; Return to Products Page</a>
-        <a href="<?php bloginfo('url');?>/articles-and-brochures/">&laquo; Return to Articles Page</a>
-</section>
+
 
 <!-- Module: Related Posts -->
 <?php get_template_part( 'module', 'postsRelated' ); ?>

@@ -8,3 +8,65 @@
         }
     }
 }
+
+.tabs.boxes {
+    & header {
+        max-width: $screenLarge;
+        margin: 0 auto;
+    }
+    & select {
+        padding: em($fontSizeBodySecondary);
+        margin: em($fontSizeBodySecondary) 0;
+        width: 100%;
+        @include media($screenLarge) {
+            display: none;
+        }
+    }
+    & ul {
+        display: block;
+        max-width: $screenLarge;
+        margin: 0 auto;
+        border-top: 1px solid $gray;
+        min-height: 78px;
+        display: none;
+        @include media($screenLarge) {
+            display: block;
+        }
+
+        & li {
+            width: 25%;
+            float: left;
+            color: white;
+            display: inline-block;
+            float: left;
+            text-align: center;
+            border-right: 1px solid $gray;
+            border-bottom: 1px solid $gray;
+            background: none;
+            &:first-child {
+                border-left: 1px solid $gray;
+            }
+            &.current-cat, &.active {
+                border-bottom: 0px;
+                & a {
+                    background: none;
+                    border: none;
+                    font-weight: bold;
+                }
+            }
+            & a {
+                @include media($screenLarge) {
+                    padding: 8px 30px;
+                    font-size: em($fontSizeBodySecondary);
+                    margin: 0;
+                    color: $gray;
+                }
+            }
+        }
+    }
+    & article {
+        border-left: 1px solid $gray;
+        border-right: 1px solid $gray;
+        border-bottom: 1px solid $gray;
+    }
+}

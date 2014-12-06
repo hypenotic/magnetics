@@ -1,0 +1,15 @@
+#related {
+    background: white;
+    padding: $spacingSection 0;
+    & > * {
+        max-width: $screenLarge;
+        margin: 0 auto;
+    }
+    & a.resource span {
+        display: none;
+    }
+    article {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

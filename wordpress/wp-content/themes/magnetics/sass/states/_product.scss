@@ -1,7 +1,7 @@
 body.products.single {
     & section[role="main"] {
         & article {
-            h2 {
+            h1 {
                 @include opacity(0.7);
                 color: white;
                 font-weight: 800;

@@ -37,16 +37,5 @@ require_once('includes/functions/add-placeholder-field-gravity-forms.php');
 //require_once('includes/shortcodes/readmore.php');
 //require_once('includes/shortcodes/tab.php');
 
-add_action('pre_get_posts', 'add_my_custom_post_type');
-
-/**
- * @param WP_Query $query
- * @return WP_Query
- */
-function add_my_custom_post_type($query) {
-
-        $query->set('post_type', array('post', 'brochure'));
-        return $query;
-}
 
 ?>

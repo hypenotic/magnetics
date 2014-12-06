@@ -17,6 +17,6 @@
 
 	if ($metaPDF) { ?>
 
-	<a href="<?php echo $metaPDF; ?>" target="_blank" class="resource icon">Download this Article</a>
+	<a href="<?php echo $metaPDF; ?>" target="_blank" class="resource icon"><span>Download this Article</span></a>
 
 	<?php } ?>

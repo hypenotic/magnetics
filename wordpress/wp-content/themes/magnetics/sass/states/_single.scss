@@ -1,0 +1,28 @@
+body.articles.single {
+    & h1 {
+        color: $gray;
+    }
+    & #author {
+        & .fn {
+            display: block;
+            text-align: center;
+        }
+        & img {
+            border-radius: 1000px;
+        }
+    }
+    & aside.meta {
+        @include span-columns(2);
+    }
+    & section.content {
+        @include span-columns(10);
+    }
+    & footer {
+        & .return {
+            font-weight: bold;
+            color: $blueDark;
+            text-decoration: underline;
+            line-height: em($fontSizeSubheading);
+        }
+    }
+}

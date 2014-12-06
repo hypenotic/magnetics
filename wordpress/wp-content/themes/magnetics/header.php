@@ -34,18 +34,16 @@
 <!-- Menu Section Ends -->
 
 <header>
-<a href="<?php bloginfo('url') ?>" title="Marine Magnetics" alt="Marine Magnetics - Home">
-  <img class="logo" src="<?php bloginfo('template_url') ?>/images/logo.png" />
+<a class="logo" href="<?php bloginfo('url') ?>" title="Marine Magnetics" alt="Marine Magnetics - Home">
+  <img src="<?php bloginfo('template_url') ?>/images/logo.png" />
 </a>
 
     <nav>
-        <div class="container">
-            <div class="menu-btn"><span>Menu</span></div>
-            <div class="menu-btn">
+          <div class="menu-btn text"><span>Menu</span></div>
+          <div class="menu-btn">
                <a id="nav-toggle" href="#menu"><span></span></a>
           </div>
-        </div>
-     </nav>
+   </nav>
 
 
 </header>
