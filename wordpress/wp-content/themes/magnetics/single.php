@@ -37,19 +37,24 @@
 
   </article>
 
+<?php if(in_category('products') && !in_category('product-integrations')) { ?>
+  <!-- Module: Steps -->
+  <?php get_template_part('module', 'callUs'); ?>
+<?php } ?>
 
   <!-- Module: Timeline -->
   <?php get_template_part( 'module', 'timeline' ); ?>
 
-    <!-- Module: productInformation -->
+  <!-- Module: Steps -->
+  <?php get_template_part('module', 'steps'); ?>
+
+  <!-- Module: productInformation -->
   <?php get_template_part( 'module', 'tabsProduct' ); ?>
 
 </section>
 
 <!-- End Loop -->
 <?php endwhile; endif; ?>
-
-
 
 <!-- Module: Related Posts -->
 <?php get_template_part( 'module', 'postsRelated' ); ?>

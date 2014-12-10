@@ -3,7 +3,6 @@
     padding-top: $spacingSection;
     & footer {
         @include outer-container;
-        max-width: 850px;
         padding: 48px 4.7153%;
         & section {
             @include span-columns(6);

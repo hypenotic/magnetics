@@ -1,6 +1,7 @@
 <?php
 	// Custom meta values 
 	$metaPDF = get_post_meta($post->ID,'_brochure_file',true);
+	$metaPDFName = rtrim($metaPDF, "/");
 
 	if(!$metaPDF) {
 
@@ -17,7 +18,7 @@
 
 	if ($metaPDF) { ?>
 
-	<a href="<?php echo $metaPDF; ?>" target="_blank" class="resource icon"><span>Download this Brochure</span></a>
+	<a href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span>Download this Brochure</span></a>
 
 	<?php } ?>
 

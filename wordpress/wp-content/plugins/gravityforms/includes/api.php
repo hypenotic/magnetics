@@ -1,4 +1,9 @@
 <?php
+
+if(!class_exists('GFForms')){
+    die();
+}
+
 /**
  * API for standard Gravity Forms functionality.
  *
@@ -33,12 +38,40 @@ class GFAPI {
             return false;
 
         //loading form columns into meta
-        $form_info            = GFFormsModel::get_form($form_id);
+        $form_info            = GFFormsModel::get_form($form_id, true);
         $form["is_active"]    = $form_info->is_active;
         $form["date_created"] = $form_info->date_created;
+        $form["is_trash"] = $form_info->is_trash;
 
         return $form;
 
+    }
+
+    /**
+     * Returns all the form objects
+     *
+     * @since  1.8.11.5
+     * @access public
+     * @static
+     *
+     * @param bool $active
+     * @param bool $trash
+     *
+     * @return mixed The array of Forms
+     */
+    public static function get_forms( $active = true, $trash = false ) {
+
+        $form_ids = GFFormsModel::get_form_ids( $active, $trash );
+        if ( empty( $form_ids ) ) {
+            return array();
+        }
+
+        $forms = array();
+        foreach ( $form_ids as $form_id ) {
+            $forms[] = GFAPI::get_form( $form_id );
+        }
+
+        return $forms;
     }
 
     /**
@@ -135,9 +168,6 @@ class GFAPI {
         if (false === $result)
             return new WP_Error("error_updating_form", __("Error updating form", "gravityforms"), $wpdb->last_error);
 
-        if (0 === $result)
-            return new WP_Error("not_found", sprintf(__("Form with id %s not found", "gravityforms"), $form_id), $form_id);
-
         //updating form title and is_active flag
         $is_active = rgar($form_meta, "is_active") ? "1" : "0";
         $result    = $wpdb->query($wpdb->prepare("UPDATE $form_table_name SET title=%s, is_active=%s WHERE id=%d", $form_meta["title"], $is_active, $form_meta["id"]));
@@ -146,6 +176,59 @@ class GFAPI {
 
         return true;
     }
+
+    /**
+     * Updates a form property - a column in the main forms table. e.g. is_trash, is_active, title
+     *
+     * @since  1.8.3.15
+     * @access public
+     * @static
+     *
+     * @param array $form_ids The IDs of the forms to update
+     * @param array $property_key The name of the column in the database e.g. is_trash, is_active, title
+     * @param array $value The new value
+     *
+     * @return mixed Either a WP_Error instance or the result of the query
+     */
+    public static function update_forms_property($form_ids, $property_key, $value){
+        global $wpdb;
+        $table = GFFormsModel::get_form_table_name();
+        $property_key = esc_sql($property_key);
+        $value = esc_sql($value);
+        if(!is_numeric($value)){
+            $value = sprintf("'%s'", $value);
+        }
+        $in_str_arr = array_fill(0, count($form_ids), '%d');
+        $in_str     = join($in_str_arr, ",");
+        $result     = $wpdb->query($wpdb->prepare(
+                "
+                UPDATE $table
+                SET {$property_key} = {$value}
+                WHERE id IN ($in_str)
+                ", $form_ids
+            )
+        );
+
+        return $result;
+    }
+
+    /**
+     * Updates the property of one form - columns in the main forms table. e.g. is_trash, is_active, title
+     *
+     * @since  1.8.3.15
+     * @access public
+     * @static
+     *
+     * @param array $form_id The ID of the forms to update
+     * @param string|int $property_key The name of the column in the database e.g. is_trash, is_active, title
+     * @param string $value The new value
+     *
+     * @return mixed Either a WP_Error instance or the result of the query
+     */
+    public static function update_form_property($form_id, $property_key, $value){
+        return self::update_forms_property(array($form_id), $property_key, $value);
+    }
+
 
     /**
      * Adds multiple form objects.
@@ -424,13 +507,16 @@ class GFAPI {
     public static function update_entry($entry, $entry_id = null) {
         global $wpdb;
 
-        if (empty($entry_id))
-            $entry_id = $entry["id"];
+        if (empty($entry_id)) {
+            $entry_id = $entry['id'];
+        } else {
+            $entry["id"] = $entry_id;
+        }
 
         if (empty($entry_id))
             return new WP_Error("missing_entry_id", __("Missing entry id", "gravityforms"));
 
-        $current_entry = self::get_entry($entry_id);
+        $current_entry = $original_entry = self::get_entry($entry_id);
 
         if(!$current_entry)
             return new WP_Error("not_found", __("Entry not found", "gravityforms"), $entry_id);
@@ -447,24 +533,28 @@ class GFAPI {
         if (false === self::form_id_exists($form_id))
             return new WP_Error("invalid_form_id", __("The form for this entry does not exist", "gravityforms"));
 
+
+        $entry = apply_filters("gform_entry_pre_update", $entry, $original_entry);
+
         // use values in the entry object if present
         $post_id        = isset($entry["post_id"]) ? intval($entry["post_id"]) : 'NULL';
-        $date_created   = isset($entry["date_created"]) ? sprintf("'%s'", mysql_real_escape_string($entry["date_created"])) : "utc_timestamp()";
+        $date_created   = isset($entry["date_created"]) ? sprintf("'%s'", esc_sql($entry["date_created"])) : "utc_timestamp()";
         $is_starred     = isset($entry["is_starred"]) ? $entry["is_starred"] : 0;
         $is_read        = isset($entry["is_read"]) ? $entry["is_read"] : 0;
         $ip             = isset($entry["ip"]) ? $entry["ip"] : GFFormsModel::get_ip();
         $source_url     = isset($entry["source_url"]) ? $entry["source_url"] : GFFormsModel::get_current_page_url();
         $user_agent     = isset($entry["user_agent"]) ? $entry["user_agent"] : "API";
         $currency       = isset($entry["currency"]) ? $entry["currency"] : GFCommon::get_currency();
-        $payment_status = isset($entry["payment_status"]) ? sprintf("'%s'", mysql_real_escape_string($entry["payment_status"])) : 'NULL';
+        $payment_status = isset($entry["payment_status"]) ? sprintf("'%s'", esc_sql($entry["payment_status"])) : 'NULL';
         $payment_date   = strtotime(rgar($entry, "payment_date")) ? "'" . gmdate('Y-m-d H:i:s', strtotime("{$entry["payment_date"]}")) . "'" : "NULL";
         $payment_amount = isset($entry["payment_amount"]) ? (float)$entry["payment_amount"] : 'NULL';
         $payment_method = isset($entry["payment_method"]) ? $entry["payment_method"] : '';
-        $transaction_id = isset($entry["transaction_id"]) ? sprintf("'%s'", mysql_real_escape_string($entry["transaction_id"])) : 'NULL';
+        $transaction_id = isset($entry["transaction_id"]) ? sprintf("'%s'", esc_sql($entry["transaction_id"])) : 'NULL';
         $is_fulfilled   = isset($entry["is_fulfilled"]) ? intval($entry["is_fulfilled"]) : 'NULL';
+        $status = isset($entry["status"]) ? $entry["status"] : "active";
 
         global $current_user;
-        $user_id = isset($entry["created_by"]) ? mysql_real_escape_string($entry["created_by"]) : "";
+        $user_id = isset($entry["created_by"]) ? esc_sql($entry["created_by"]) : "";
         if (empty($user_id))
             $user_id = $current_user && $current_user->ID ? $current_user->ID : 'NULL';
 
@@ -490,10 +580,11 @@ class GFAPI {
                 is_fulfilled = {$is_fulfilled},
                 created_by = {$user_id},
                 transaction_type = {$transaction_type},
+                status = %s,
                 payment_method = %s
                 WHERE
                 id = %d
-                ", $form_id, $is_starred, $is_read, $ip, $source_url, $user_agent, $currency, $payment_method, $entry_id));
+                ", $form_id, $is_starred, $is_read, $ip, $source_url, $user_agent, $currency, $status, $payment_method, $entry_id));
         if (false === $result)
             return new WP_Error("update_entry_properties_failed", __("There was a problem while updating the entry properties", "gravityforms"), $wpdb->last_error);
 
@@ -560,6 +651,8 @@ class GFAPI {
                 return new WP_Error("update_field_values_failed", __("There was a problem while updating the field values", "gravityforms"), $wpdb->last_error);
         }
 
+        do_action("gform_post_update_entry", $entry, $original_entry);
+
         return true;
     }
 
@@ -580,32 +673,39 @@ class GFAPI {
     public static function add_entry($entry) {
         global $wpdb;
 
+        if(!is_array($entry)){
+            return new WP_Error("invalid_entry_object", __("The entry object must be an array", "gravityforms"));
+        }
+
         // make sure the form id exists
         $form_id = rgar($entry, "form_id");
-        if (empty($form_id))
+        if (empty($form_id)){
             return new WP_Error("empty_form_id", __("The form id must be specified", "gravityforms"));
+        }
 
-        if (false === self::form_id_exists($form_id))
+        if (false === self::form_id_exists($form_id)){
             return new WP_Error("invalid_form_id", __("The form for this entry does not exist", "gravityforms"));
+        }
 
         // use values in the entry object if present
         $post_id        = isset($entry["post_id"]) ? intval($entry["post_id"]) : 'NULL';
-        $date_created   = isset($entry["date_created"]) && $entry["date_created"] != "" ? sprintf("'%s'", mysql_real_escape_string($entry["date_created"])) : "utc_timestamp()";
+        $date_created   = isset($entry["date_created"]) && $entry["date_created"] != "" ? sprintf("'%s'", esc_sql($entry["date_created"])) : "utc_timestamp()";
         $is_starred     = isset($entry["is_starred"]) ? $entry["is_starred"] : 0;
         $is_read        = isset($entry["is_read"]) ? $entry["is_read"] : 0;
         $ip             = isset($entry["ip"]) ? $entry["ip"] : GFFormsModel::get_ip();
         $source_url     = isset($entry["source_url"]) ? $entry["source_url"] : GFFormsModel::get_current_page_url();
         $user_agent     = isset($entry["user_agent"]) ? $entry["user_agent"] : "API";
         $currency       = isset($entry["currency"]) ? $entry["currency"] : GFCommon::get_currency();
-        $payment_status = isset($entry["payment_status"]) ? sprintf("'%s'", mysql_real_escape_string($entry["payment_status"])) : 'NULL';
+        $payment_status = isset($entry["payment_status"]) ? sprintf("'%s'", esc_sql($entry["payment_status"])) : 'NULL';
         $payment_date   = strtotime(rgar($entry, "payment_date")) ? sprintf("'%s'", gmdate('Y-m-d H:i:s', strtotime("{$entry["payment_date"]}"))) : "NULL";
         $payment_amount = isset($entry["payment_amount"]) ? (float)$entry["payment_amount"] : 'NULL';
         $payment_method = isset($entry["payment_method"]) ? $entry["payment_method"] : '';
-        $transaction_id = isset($entry["transaction_id"]) ? sprintf("'%s'", mysql_real_escape_string($entry["transaction_id"])) : 'NULL';
+        $transaction_id = isset($entry["transaction_id"]) ? sprintf("'%s'", esc_sql($entry["transaction_id"])) : 'NULL';
         $is_fulfilled   = isset($entry["is_fulfilled"]) ? intval($entry["is_fulfilled"]) : 'NULL';
+        $status = isset($entry["status"]) ? $entry["status"] : "active";
 
         global $current_user;
-        $user_id = isset($entry["created_by"]) ? mysql_real_escape_string($entry["created_by"]) : "";
+        $user_id = isset($entry["created_by"]) ? esc_sql($entry["created_by"]) : "";
         if (empty($user_id))
             $user_id = $current_user && $current_user->ID ? $current_user->ID : 'NULL';
 
@@ -614,10 +714,10 @@ class GFAPI {
         $lead_table = GFFormsModel::get_lead_table_name();
         $result     = $wpdb->query($wpdb->prepare("
                 INSERT INTO $lead_table
-                (form_id, post_id, date_created, is_starred, is_read, ip, source_url, user_agent, currency, payment_status, payment_date, payment_amount, transaction_id, is_fulfilled, created_by, transaction_type, payment_method)
+                (form_id, post_id, date_created, is_starred, is_read, ip, source_url, user_agent, currency, payment_status, payment_date, payment_amount, transaction_id, is_fulfilled, created_by, transaction_type, status, payment_method)
                 VALUES
-                (%d, {$post_id}, {$date_created}, %d,  %d, %s, %s, %s, %s, {$payment_status}, {$payment_date}, {$payment_amount}, {$transaction_id}, {$is_fulfilled}, {$user_id}, {$transaction_type}, %s)
-                ", $form_id, $is_starred, $is_read, $ip, $source_url, $user_agent, $currency, $payment_method));
+                (%d, {$post_id}, {$date_created}, %d,  %d, %s, %s, %s, %s, {$payment_status}, {$payment_date}, {$payment_amount}, {$transaction_id}, {$is_fulfilled}, {$user_id}, {$transaction_type}, %s, %s)
+                ", $form_id, $is_starred, $is_read, $ip, $source_url, $user_agent, $currency, $status, $payment_method));
         if (false === $result)
             return new WP_Error("insert_entry_properties_failed", __("There was a problem while inserting the entry properties", "gravityforms"), $wpdb->last_error);
         // reading newly created lead id
@@ -680,6 +780,23 @@ class GFAPI {
         GFFormsModel::delete_lead($entry_id);
 
         return true;
+    }
+
+    /**
+     * Updates a single property of an entry.
+     *
+     * @since  1.8.3.1
+     * @access public
+     * @static
+     *
+     * @param int $entry_id The ID of the Entry object
+     * @param string $property The property of the Entry object to be updated
+     * @param mixed $value The value to which the property should be set
+     *
+     * @return bool Whether the entry property was updated successfully
+     */
+    public static function update_entry_property( $entry_id, $property, $value ) {
+        return GFFormsModel::update_lead_property( $entry_id, $property, $value );
     }
 
     // FEEDS ------------------------------------------------------
@@ -809,6 +926,23 @@ class GFAPI {
 
         return $wpdb->insert_id;
     }
+
+    // PERMISSIONS ------------------------------------------------
+    /**
+     * Checks the permissions for the current user. Returns true if the current user has any of the specified capabilities.
+     * IMPORTANT: Call this before calling any of the other API Functions as permission checks are not performed at lower levels.
+     *
+     * @since  1.8.5.10
+     * @access public
+     * @static
+     *
+     * @param array|string $capabilities An array of capabilities, or a single capability
+     * @return bool Returns true if the current user has any of the specified capabilities
+     */
+    public static function current_user_can_any($capabilities){
+        return GFCommon::current_user_can_any($capabilities);
+    }
+
 
 
     // HELPERS ----------------------------------------------------

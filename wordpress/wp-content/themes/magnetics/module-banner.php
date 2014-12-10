@@ -6,27 +6,26 @@
 	$bannerVideoURL = false;
 
 	// Custom meta values 
-	$metaBannerVideoDefault = get_post_meta($post->ID, '_banner_default_video', true);
 	$metaBannerVideo = 	get_post_meta($post->ID, '_banner_video', true);
+	$metaBannerBackgroundImageID = 	get_post_meta($post->ID, '_banner_background_image', true);
+
+	$metaBannerBackgroundImageAttachment = wp_get_attachment_image_src( $metaBannerBackgroundImageID, 'full' );
+	$metaBannerBackgroundImageAttachmentURL = $metaBannerBackgroundImageAttachment[0];
 
 	// Have they added a video?
- 	if($metaBannerVideoDefault != -1) {
- 		$bannerVideoURL = get_bloginfo('template_url').'/videos/shutterstock_v3711827.mp4';
- 	} else if ($metaBannerVideo != -1) {
- 		$bannerVideoURL = $metaBannerVideo;
- 	} else {
-
- 	}
-
- 	if ($bannerVideoURL !== false) { ?>
-
+ 	if(!$metaBannerBackgroundImageID && !in_category('products')) {
+ 	?>
  	<video autoplay loop id="bgvid">
-		<source src="<?php echo $bannerVideoURL; ?>" type="video/mp4">
+		<source src="<?php echo get_bloginfo('template_url').'/videos/shutterstock_v3711827.mp4' ?>" type="video/mp4">
 	</video>
 
 	<div class="mobile-bg"></div>
 
-	 <?php	} 
+	 <?php	}  else { ?>
+
+	<img class="bgimg" src="<?php echo $metaBannerBackgroundImageAttachmentURL; ?>" />
+
+	<?php }
 
 	 // Banner Image
 	$bannerImageURL = false;
