@@ -61,7 +61,14 @@
         </article>
     </section>
     <section>
+
+    <?php get_template_part( 'template', 'brochureFileOptions' ); ?>
+
+      
+
         <article>
+
+
             <?php echo $metaSystemAtAGlance; ?> 
         </article>
     </section>

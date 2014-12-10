@@ -1,7 +1,7 @@
 <?php
 
 function namespace_add_custom_types( $query ) {
-  if( is_post_type_archive() && empty( $query->query_vars['suppress_filters'] ) ) {
+  if( !is_admin() && is_post_type_archive() && empty( $query->query_vars['suppress_filters'] ) ) {
     $query->set( 'post_type', array(
      'brochure','post'
 		));

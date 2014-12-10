@@ -26,74 +26,24 @@ $pages = new Cuztom_Post_Type('page');
 
 $pages->add_meta_box(
     'banner',
-    'Featured banner OR video (Optional)', 
+    'Featured banner OR video', 
     array(
         array(
-            'name'          => 'heading',
-            'label'         => 'Headline',
-            'description'   => 'Enter Headline',
-            'type'          => 'text',
-            
+            'name'          => 'image',
+            'label'         => 'Banner Image',
+            'description'   => 'Dimensions 1200px x 600px',
+            'type'          => 'image',
         ),
         array(
             'name'          => 'subheading',
             'label'         => 'Subheading',
-            'description'   => 'Enter Subheadine',
+            'description'   => 'Text that will overlay image',
             'type'          => 'text',
-            
-        ),
-
-        array(
-            'name'          => 'default_video',
-            'label'         => 'Default Video',
-            'description'   => 'Show the default underwater background',
-            'type'          => 'checkbox',
-            
-        ),
-        
-        array(
-            'name'          => 'video',
-            'label'         => 'Banner Video',
-            'description'   => 'Enter Video URL/Link',
-            'type'          => 'text',
-            
         ),
         array(
-            'name'          => 'image',
-            'label'         => 'Banner Image',
+            'name'          => 'background_image',
+            'label'         => 'Background Image',
             'description'   => 'Dimensions 1400px x 800px',
-            'type'          => 'image',
-        ),
-        array(
-        	'name'          => 'post_article',
-        	'label'         => 'Select Article',
-        	'description'   => 'Select associated article',
-        	'type'          => 'post_select',
-        	'args'          => array(
-            	'post_type' => 'article',
-        	)
-    	),
-    	array(
-        	'name'          => 'post_brochure',
-        	'label'         => 'Select Brochure',
-        	'description'   => 'Select associated brochure',
-        	'type'          => 'post_select',
-        	'args'          => array(
-            	'post_type' => 'brochure',
-        	)
-    	)
-
-    )
-);
-
-$pages->add_meta_box( 
-    'full_width',
-    'Full width image (Optional)',
-    array(
-        array(
-            'name'          => 'image',
-            'label'         => 'Image',
-            'description'   => 'Dimensions 1200px x 600px',
             'type'          => 'image',
         ),
         array(
@@ -102,8 +52,59 @@ $pages->add_meta_box(
             'description'   => 'Text that will overlay image',
             'type'          => 'textarea',
         ),
+        array(
+        	'name'          => 'post_article',
+        	'label'         => 'Select Article',
+        	'description'   => 'Select associated article',
+        	'type'          => 'post_select',
+        	'args'          => array(
+            	'post_type' => 'article',
+        	),
+            'repeatable'    =>  'true'
+    	),
+    	array(
+        	'name'          => 'post_brochure',
+        	'label'         => 'Select Brochure',
+        	'description'   => 'Select associated brochure',
+        	'type'          => 'post_select',
+        	'args'          => array(
+            	'post_type' => 'brochure',
+        	),
+            'repeatable'    =>  'true'
+    	)
     )
 );
+
+$pages->add_meta_box(
+    'integrations',
+    'Integrations', 
+    array(
+        array(
+            'name'          => 'image',
+            'label'         => 'Banner Image',
+            'description'   => 'Dimensions 1200px x 600px',
+            'type'          => 'image',
+        ),
+        array(
+            'name'          => 'subheading',
+            'label'         => 'Subheading',
+            'description'   => 'Text that will overlay image',
+            'type'          => 'text',
+        ),
+        array(
+            'name'          => 'post_brochure',
+            'label'         => 'Select Brochure',
+            'description'   => 'Select associated brochure',
+            'type'          => 'post_select',
+            'args'          => array(
+                'post_type' => 'brochure',
+            ),
+            'repeatable'    =>  'true'
+        )
+    )
+);
+
+
 
 $pages->add_meta_box(
     'page_tabs', // page tabs
@@ -158,6 +159,8 @@ $pages->add_meta_box(
     )
 );
 
+
+
 $posts->add_meta_box(
     'author',
     'Author', 
@@ -187,6 +190,34 @@ $posts->add_meta_box(
 );
 
 $posts->add_meta_box(
+    'steps',
+    'Steps',    
+    array(
+        'bundle',    
+            array( 
+                array(
+                    'name'          => 'title',
+                    'label'         => 'Title',
+                    'description'   => 'e.g. Step 1',
+                    'type'          => 'text',          
+                ),
+                array(
+                    'name'          => 'image',
+                    'label'         => 'Screenshot',
+                    'description'   => '',
+                    'type'          => 'image',          
+                ),
+                 array(
+                    'name'          => 'text',
+                    'label'         => 'Text',
+                    'description'   => '',
+                    'type'          => 'textarea',
+                )
+            )
+        )
+);    
+
+$posts->add_meta_box(
     'banner',
     'Featured banner OR video (Optional)', 
     array(
@@ -206,32 +237,25 @@ $posts->add_meta_box(
         ),
 
         array(
-            'name'          => 'default_video',
-            'label'         => 'Default Video',
-            'description'   => 'Show the default underwater background',
-            'type'          => 'checkbox',
-            
-        ),
-        
-        array(
-            'name'          => 'video',
-            'label'         => 'Banner Video',
-            'description'   => 'Enter Video URL/Link',
-            'type'          => 'text',
-            
-        ),
-        array(
             'name'          => 'image',
             'label'         => 'Banner Image',
             'description'   => 'Dimensions 1200px x 600px',
             'type'          => 'image',
         ),
         array(
-            'name'          => 'logo',
-            'label'         => 'Logo',
-            'description'   => 'Upload Logo',
-            'type'          => 'file',  
+            'name'          => 'background_image',
+            'label'         => 'Background Image',
+            'type'          => 'image',
         ),
+
+    )
+);
+
+
+$posts->add_meta_box(
+    'related_content',
+    'Related Content', 
+    array(
         array(
             'name'          => 'post_article',
             'label'         => 'Select Article',
@@ -239,7 +263,8 @@ $posts->add_meta_box(
             'type'          => 'post_select',
             'args'          => array(
                 'post_type' => 'article',
-            )
+            ),
+            'repeatable'    =>  'true'
         ),
         array(
             'name'          => 'post_brochure',
@@ -248,11 +273,22 @@ $posts->add_meta_box(
             'type'          => 'post_select',
             'args'          => array(
                 'post_type' => 'brochure',
-            )
+            ),
+            'repeatable'    =>  'true'
+        ),
+        array(
+            'name'          => 'post_related_products',
+            'label'         => 'Related Products',
+            'description'   => 'Select related products',
+            'type'          => 'post_select',
+            'args'          => array(
+                'post_type' => 'post',
+            ),
+            'repeatable'    =>  'true'
         )
-
     )
 );
+
 
 $posts->add_meta_box(
     'product_tabs',
@@ -278,6 +314,14 @@ $posts->add_meta_box(
             'label'         => 'System at a Glance',
             'type'          => 'wysiwyg',  
         ),
+
+       array(
+            'name'          => 'system_at_a_glance_PDF',
+            'label'         => 'File',
+            'description'   => 'System at a Glance',
+            'type'          => 'file',
+        )
+
     )
 );
 
@@ -296,6 +340,32 @@ $posts->add_meta_box(
             'label'         => 'Text Overlay',
             'description'   => 'Text that will overlay image',
             'type'          => 'textarea',
+        ),
+    )
+);
+
+$posts->add_meta_box(
+    'integrations',
+    'Vendor Information', 
+    array(
+        array(
+            'name'          => 'link',
+            'label'         => 'Vendor',
+            'description'   => 'Link to Vendor',
+            'type'          => 'text',
+            
+        ),
+        array(
+            'name'          => 'image',
+            'label'         => 'Integration Vendor Logo',
+            'description'   => '',
+            'type'          => 'image',
+        ),
+        array(
+            'name'          => 'text',
+            'label'         => 'Vendor Blurb',
+            'description'   => '',
+            'type'          => 'wysiwyg',
         ),
     )
 );

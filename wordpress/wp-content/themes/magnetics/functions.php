@@ -9,6 +9,7 @@ include('includes/wp-cuztom-helper/cuztom.php');
 include('includes/wp-cuztom-posts/custom-article-library.php');
 include('includes/wp-cuztom-posts/custom-brochure-library.php');
 include('includes/wp-cuztom-posts/custom-generic.php');
+include('includes/wp-cuztom-posts/custom-team-members.php');
 //include('includes/wp-cuztom-posts/custom-post-product.php');
 
 //Load custom functions
