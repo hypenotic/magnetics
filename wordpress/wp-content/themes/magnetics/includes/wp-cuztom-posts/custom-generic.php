@@ -283,6 +283,7 @@ $posts->add_meta_box(
             'type'          => 'post_select',
             'args'          => array(
                 'post_type' => 'post',
+                'cat'       =>  7
             ),
             'repeatable'    =>  'true'
         )
@@ -302,17 +303,41 @@ $posts->add_meta_box(
         array(
             'name'          => 'additional_options',
             'label'         => 'Additional Options',
-            'type'          => 'wysiwyg',  
+            'description'   => 'Select your additional options',
+            'type'          => 'post_select',
+            'args'          => array(
+                'post_type' => 'additional_options'
+            ),
+            'repeatable'    =>  'true'
         ),
         array(
-            'name'          => 'meta_integrations',
-            'label'         => 'Meta Integrations',
-            'type'          => 'wysiwyg',  
+            'name'          => 'post_meta_integrations',
+            'label'         => 'Integrations',
+            'description'   => 'Select your related integrations here',
+            'type'          => 'post_select',
+            'args'          => array(
+                'post_type' => 'post',
+                'cat'       => 11
+            ),
+            'repeatable'    =>  'true'
         ),
+        array(
+            'name'          => 'plays_well_with',
+            'label'         => 'Plays Well With',
+            'type'          => 'post_select',
+            'args'          => array(
+                'post_type' => 'post',
+                'cat'       =>  7
+            ),
+            'repeatable'    =>  'true'
+        ),
+
         array(
             'name'          => 'system_at_a_glance',
             'label'         => 'System at a Glance',
-            'type'          => 'wysiwyg',  
+            'description'   => 'Upload system images',
+            'type'          => 'image',
+            'repeatable'    =>  'true'  
         ),
 
        array(

@@ -21,12 +21,12 @@
                 <ul>
                 <?php
 
-                    $category = get_category_by_slug('products'); 
-                    $categoryID = $category->term_id;
+                    // children of products category
                     $args = array(
-                        'child_of' => $categoryID,
+                        'child_of' => 7,
                         'hide_empty' => FALSE,
                         'title_li' => '',
+                        'exclude' => 11
                     );
                     wp_list_categories( $args ); 
 
