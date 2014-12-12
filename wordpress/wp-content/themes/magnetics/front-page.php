@@ -8,7 +8,7 @@
 
 <section class="owl-carousel">
 <?php 
-query_posts('post_type=post&category=products');
+query_posts('post_type=post&cat=4,5,6');
 if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <div class="item">
 <?php
