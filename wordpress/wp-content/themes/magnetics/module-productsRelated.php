@@ -27,9 +27,9 @@
 
 	?>
 
-	<section id="related">
+	<section class="related">
 
-	<h2>Related Products</h2>
+	<h3>Related Products</h3>
 
 	<ul>
 
@@ -44,5 +44,5 @@
 	<br style="clear:both" />
 	</ul>
 
-</section>
+	</section>
   

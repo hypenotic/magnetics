@@ -1,10 +1,24 @@
-#related {
-    background: white;
-    padding: $spacingSection 0;
+section[role="main"] .related {
+    background:white;
+}
+
+.related {
+    @include pad($spacingSection default);
+
+    @include media($screenLarge) {
+        @include pad($spacingSection 0);
+    }
+
     & > * {
         max-width: $screenLarge;
         margin: 0 auto;
     }
+
+    & h2 {
+        color:$blueDark;
+        margin:0 auto;
+    }
+
     & a.resource span {
         display: none;
     }
@@ -13,3 +27,22 @@
         padding-right: 0;
     }
 }
+
+.single section[role="main"] .related {
+    background:white;
+}
+
+.single footer .related {
+    padding:0;
+
+    & a {
+        color:white;
+        &:hover {
+            text-decoration:underline;
+        }
+    }
+    & ul {
+        padding:$spacingSectionSmall 0;
+    }
+}
+

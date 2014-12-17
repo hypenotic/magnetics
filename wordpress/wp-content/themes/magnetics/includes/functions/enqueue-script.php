@@ -6,7 +6,6 @@
 
 function my_scripts() {
 	wp_enqueue_script('jquery');
-	wp_enqueue_script( 'typekit', get_template_directory_uri() . '/js/lib/typekit.js', '1.0', true);
 	wp_enqueue_script( 'app', get_template_directory_uri() . '/js/app.min.js', array('jquery'), '1.0', true);
 }
 

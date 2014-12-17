@@ -11,14 +11,18 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon.resource:before {
-    content: "\e601";
+.icon.mail:before {
+    content: "\f0e0";
 }
-
 .icon.more:before {
     content: "\e602";
 }
-
-.icon-MarineMagnetics:before {
-    content: "\e600";
+.icon.resource:before {
+    content: "\e601";
+}
+.icon.view:before {
+    content: "\e5f0";
+}
+.icon.printer:before {
+    content: "\e608";
 }

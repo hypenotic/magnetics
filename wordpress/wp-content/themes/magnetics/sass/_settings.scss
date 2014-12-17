@@ -40,9 +40,11 @@ Version: 1.0
 
 // Layout - Modules
 @import "modules/tabs";
+@import "modules/steps";
 @import "modules/banner";
 @import "modules/timeline";
 @import "modules/postsRelated";
+@import "modules/team";
 
 // Layout - Templates
 @import "templates/articleOverview.scss";
@@ -51,11 +53,16 @@ Version: 1.0
 @import "components/tabs";
 @import "components/nav";
 @import "components/slider";
+@import "components/buttons";
+@import "components/forms";
 
-// Pages
+// Pages (States)
 @import "states/about";
 @import "states/product";
 @import "states/archive";
+@import "states/home";
+@import "states/contact";
+@import "states/single";
 
 // etc
 //@import "pagination";

@@ -5,12 +5,8 @@
 // Neat Overrides
 // $column: 90px;
 // $gutter: 30px;
-// $grid-columns: 12;
 $max-width: 850px;
 
 // Neat Breakpoints
-$medium-screen: em(640);
-$large-screen: em(860);
-
-$medium-screen-up: new-breakpoint(min-width $medium-screen 4);
-$large-screen-up: new-breakpoint(min-width $large-screen 8);
+$medium-screen: new-breakpoint(min-width em(640) 7);
+$screenLarge: new-breakpoint(min-width em(850) 12);

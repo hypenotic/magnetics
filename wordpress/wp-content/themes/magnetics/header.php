@@ -33,17 +33,17 @@
   </nav>
 <!-- Menu Section Ends -->
 
-<header>
-<a class="logo" href="<?php bloginfo('url') ?>" title="Marine Magnetics" alt="Marine Magnetics - Home">
-  <img src="<?php bloginfo('template_url') ?>/images/logo.png" />
-</a>
-
-    <nav>
+   <nav id="toggler">
           <div class="menu-btn text"><span>Menu</span></div>
           <div class="menu-btn">
                <a id="nav-toggle" href="#menu"><span></span></a>
           </div>
    </nav>
 
+<header>
+<a class="logo" href="<?php bloginfo('url') ?>" title="Marine Magnetics" alt="Marine Magnetics - Home">
+  <img src="<?php bloginfo('template_url') ?>/images/logo.png" />
+</a>
 
+ 
 </header>

@@ -7,22 +7,32 @@
 
 	// Banner Background Image
 	$metaBannerImageID  = get_post_meta(get_the_ID(), '_banner_image', true);
+	$metaBannerBackgroundImageID  = get_post_meta(get_the_ID(), '_banner_background_image', true);
 	$metaBannerSubheading  = get_post_meta(get_the_ID(), '_banner_subheading', true);
 
 	$metaBannerImageAttachment = wp_get_attachment_image_src( $metaBannerImageID, 'full' );
 	$metaBannerImageAttachmentURL = $metaBannerImageAttachment[0];
+	
+	$metaBannerBackgroundImageAttachment = wp_get_attachment_image_src( $metaBannerBackgroundImageID, 'full' );
+	$metaBannerBackgroundImageAttachmentURL = $metaBannerBackgroundImageAttachment[0];
+
+
 
 
 ?>
 <!-- Start loop -->
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
+<?php if($metaBannerBackgroundImageID) { ?>
+<section role="main" style="background-image:url(<?php echo $metaBannerBackgroundImageAttachmentURL; ?>)">
+<?php } else { ?>
+<section role="main">
+<?php } ?>
 
-<section>
 <?php
 		if($metaBannerImageAttachmentURL ) { 
 ?>
-	<header style="background-image:url(<?php echo $metaBannerImageAttachmentURL; ?>)">
+	<header class="masthead" style="background-image:url(<?php echo $metaBannerImageAttachmentURL; ?>); background-size:cover;background-repeat:no-repeat;">
 			<h1><?php the_title(); ?></h1>
 <?php
 		if($metaBannerSubheading  !== -1) { ?>
@@ -42,13 +52,19 @@
     	<?php } ?>
     	<?php the_content(); ?>
   	</article>
-</section>
 
-	<?php if(is_page('contact')) { ?>
+  	<?php if(is_page('contact')) { ?>
 
 		 <?php get_template_part( 'module', 'team' ); ?>
 
-		<?php } ?>
+	<?php } ?>
+
+	<?php get_template_part( 'module', 'contentOptional' ); ?>
+
+
+</section>
+
+	
 
 <!-- tabLeft AND tabRight have data --> 
 <?php if ($tabLeft && $tabRight) { ?>

@@ -25,6 +25,8 @@ Nav Panel
     top: 0;
     width: 15em;
     z-index: 9999;
+    background:white;
+
     @include media($screenLarge) {
         right: -20em;
         width: 20em;
@@ -74,8 +76,8 @@ Nav Panel
                 }
             }
             a {
-                //@include adjust-font-size-to(22px);
-                font-size: 1.375em;
+               
+                font-size: 1em;
                 line-height: 1.63636em;
                 border-bottom: 1px solid #c0c9d1;
                 color: #5c6f81;
@@ -84,6 +86,7 @@ Nav Panel
                 text-decoration: none;
                 &:hover {
                     background: #5c6f81;
+                    color:white;
                 }
             }
         }
@@ -113,6 +116,7 @@ Nav Panel
     padding: 15px 33px 18px 8px;
     border: 2px solid white;
     display: block;
+    margin-right: -10px;
     span {
         cursor: pointer;
         height: 3px;
@@ -124,14 +128,41 @@ Nav Panel
     }
 }
 
+nav#toggler {
+    z-index:10000;
+}
+
+
+
+#nav-toggle.active {
+    cursor: pointer;
+    padding: 15px 33px 18px 8px;
+    border: 2px solid #5c6f81;
+    display: block;
+    position: fixed;
+    right: 20px;
+
+    span {
+        cursor: pointer;
+        height: 3px;
+        width: 25px;
+        background: #5c6f81;
+        position: absolute;
+        display: block;
+        content: '';
+    }
+}
+
+
+
 #nav-toggle span:before, #nav-toggle span:after {
     cursor: pointer;
     height: 3px;
     width: 25px;
-    .single &, .articles-and-brochures &, .single-brochure & {}
     position: absolute;
     display: block;
     content: '';
+    background: white;
 }
 
 #nav-toggle span:before {
@@ -151,7 +182,7 @@ Nav Panel
 }
 
 #nav-toggle.active span:before, #nav-toggle.active span:after {
-    background: white;
+    background: #5c6f81;
     top: 0;
 }
 
@@ -167,4 +198,32 @@ Nav Panel
     -o-transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
+}
+
+body.archive.products {
+    & #nav-toggle span:before, #nav-toggle span:after, #nav-toggle span {
+            cursor: pointer;
+            height: 3px;
+            width: 25px;
+            .single &, .articles-and-brochures &, .single-brochure & {}
+            position: absolute;
+            display: block;
+            content: '';
+            background: $blueDark;
+        }
+        & #toggler{
+            opacity:0.8;
+            & .menu-btn.text {
+                color: $blueDark; 
+            }
+        }
+
+        #toggler .active {
+            & span {
+                background:none;
+                &:after, &:before {
+                    background: $blueDark;
+                }
+            }
+        }
 }

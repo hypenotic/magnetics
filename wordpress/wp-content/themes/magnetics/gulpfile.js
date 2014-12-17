@@ -9,16 +9,15 @@ var	browserSync = require('browser-sync');
 gulp.task('browser-sync', function() {
     //watch files
     var files = [
-    './style.css'
+    './style.css',
+    './js/app.min.js'
     ];
  
     //initialize browsersync
     browserSync.init(files, {
     //browsersync with a php server
     proxy: "dev.marinemagnetics.com",
-    host:'dev.marinemagnetics.com',
-    notify: true,
-    open: "external"
+    host:'dev.marinemagnetics.com'
     });
 });
 
@@ -31,6 +30,15 @@ gulp.task('sass', function () {
 			.pipe(browserSync.reload({stream:true}));
 });
 
-gulp.task('default', ['sass', 'browser-sync'], function(){
-	gulp.watch("sass/**/*.scss", ['sass']);
+gulp.task('jsConcat', function () {
+        gulp.src('./js/build/**/*.js')
+            .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+            .pipe(concat('app.min.js'))
+            .pipe(gulp.dest('./js/'))
+            .pipe(browserSync.reload({stream:true}));
+});
+
+gulp.task('default', ['sass', 'jsConcat', 'browser-sync'], function(){
+	gulp.watch("./sass/**/*.scss", ['sass']);
+    gulp.watch("./js/build/**/*.js", ['jsConcat']);
 });

@@ -1,60 +1,70 @@
 <?php get_header(); ?>
 
-<section role="main">
 
-<?php get_header(); ?>
-
-    <video autoplay loop id="bgvid">
-        <source src="<?php echo get_bloginfo('template_url').'/videos/shutterstock_v3711827.mp4' ?>" type="video/mp4">
-    </video>
+    <div class="background">
+        <video autoplay loop id="bgvid">
+            <source src="<?php echo get_bloginfo('template_url').'/videos/shutterstock_v3711827.mp4' ?>" type="video/mp4">
+        </video>
+    </div>
 
     <div class="mobile-bg"></div>
 
-    <header>
-    <h1>Products</h1>
-    <h4> <?php echo category_description(); ?></h4>
+    <header class="banner">
+        <h2>Products</h2>
+        <h4><?php echo category_description(); ?></h4>
     </header>
 
-<section>
-<?php 
-query_posts('post_type=post&category=products');
-if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    <div class="product">
+<section role="main">
 
-   
+
+
+    <section class="products">
+
     <?php
-$category = get_the_category(); 
-?>
-    <label class="<?php echo $category[0]->slug; ?>"><?php echo $category[0]->cat_name; ?></label>
-    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-    <?php  
-    // Banner Heading
-    // Custom meta values 
-    $metaBannerHeading = get_post_meta($post->ID, '_banner_heading', true);
-    
-    if($metaBannerHeading  !== -1) { ?>
-        <h3><?php echo $metaBannerHeading; ?></h3>
-    <?php } ?>
+    $parentCatName = single_cat_title('',false);
+    $parentCatID = get_cat_ID($parentCatName);
+    $childCats = get_categories( 'child_of='.$parentCatID );
+    if(is_array($childCats)):
+    foreach($childCats as $category){ ?>
+    <label class="<?php echo $category->slug; ?>"><span><?php echo $category->cat_name; ?></span></label>
+    <?php query_posts('cat='.$category->term_id);
+    while(have_posts()): the_post(); $do_not_duplicate = $post->ID; ?>
+    <!-- POST CODE -->
 
-    <?php 
-    // Banner Subheading
-    // Custom meta values 
-    $metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
+    <div class="product <?php echo $category->slug; ?>">
 
-    if($metaBannerSubheading !== -1) { ?>
-        <p><?php the_title() ?>. <?php echo $metaBannerSubheading; ?></p>
-    <?php } ?>
+     <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 
-    <a class="button clear" href="<?php the_permalink(); ?>" title="Learn More">Learn More</a>
+        <?php 
+        // Banner Subheading
+        // Custom meta values 
+        $metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
+
+        if($metaBannerSubheading !== -1) { ?>
+            <p><?php the_title() ?>. <?php echo $metaBannerSubheading; ?>
+
+             
+            </p>
+
+            <!--
+                <a class="button clear" href="<?php the_permalink(); ?>" title="Learn More">Learn More</a>
+            -->
+
+        <?php } ?>
+
+       
 
     </div>
 
-<?php endwhile; endif; wp_reset_query();?>
+    <!-- END POST CODE -->
+    <?php
+    endwhile; 
+    wp_reset_query(); 
+    }
+    endif;
+    ?>
 
 </section>
-
-<?php get_footer(); ?>
-
 
 </section>
 

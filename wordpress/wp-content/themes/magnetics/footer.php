@@ -21,7 +21,7 @@
         </section>
 
         <section>
-            <h2>Contact</h2>
+            <h3>Contact</h3>
                 <h4>Marine Magnetics Corp.</h4>
                 <br /> <br />
                 <p>

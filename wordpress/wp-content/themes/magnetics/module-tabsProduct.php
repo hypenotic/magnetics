@@ -11,160 +11,174 @@
 ?>
 
 <section class="tabs boxes">
-    <header>
-    <h1>Specs</h1>
+    <h2>Specs</h2>
 
-        <select> 
-            <option class="tab-1" selected="selected">What's in the Box ▾</option> 
-            <option class="tab-2">Additional Options</option> 
-            <option class="tab-3">Meta Integrations</option> 
-            <option class="tab-4">System at a Glance</option> 
-        </select> 
-
-        <ul>
+        <ul class="resp-tabs-list">
             <li class="active">
-                <a href="#">
-                    What's In The Box   
-                </a>
+                What's In The Box   
             </li>
             <li>
-                <a href="#">  
-                    Additional Options
-                </a>
+                Additional Options
             </li>
              <li>
-                <a href="#">
-                    Meta Integrations
-                </a>
+                Meta Integrations
             </li>
             <li >
-                <a href="#">
-                    System At a Glance  
-                </a>
+                System At a Glance  
             </li>                     
         </ul>
 
-    </header>
+        <br style="clear:both" />
 
-    <section class="active">
-        <article>
-            <?php echo $metaWhatsInTheBox; ?>
-        </article>  
-    </section>
+        <div class="resp-tabs-container">
+            <div>
+                    <?php echo $metaWhatsInTheBox; ?>  
+            </div>
 
-    <section>
-        <article>
-            
-    <?php
-        if($metaAdditionalOptions) {
-            $args = array(
-                'post_type'   => array('additional_options'),
-                'post__in'    =>     $metaAdditionalOptions
-            );
-     
+            <div>
+                    
+            <?php
+                if($metaAdditionalOptions) {
+                    $args = array(
+                        'post_type'   => array('additional_options'),
+                        'post__in'    =>     $metaAdditionalOptions
+                    );
+             
 
-    $related_posts = get_posts($args);
+            $related_posts = get_posts($args);
 
-     foreach ( $related_posts as $post ) { ?>
-        <h3 id="<?php sanitize_title(get_the_title()); ?>"><?php the_title();?></h3>
-        <p><?php echo $post->post_content; ?></p>
-    <!-- End Loop -->
-    <?php }
-       } 
-    wp_reset_postdata();?>
+             foreach ( $related_posts as $post ) { ?>
+                <h3 id="<?php sanitize_title(get_the_title()); ?>"><?php the_title();?></h3>
+                <p><?php echo $post->post_content; ?></p>
+            <!-- End Loop -->
+            <?php }
+               } 
+            wp_reset_postdata();?>
 
-        </article>
-    </section>
-    <section>
-        <article>
-            
-   <?php
+            </div>
+            <div>
+                    
+           <?php
 
-        if($metaIntegrations) {
-            $args = array(
-                'post__in'    =>  $metaIntegrations
-            );
+                if($metaIntegrations) {
+                    $args = array(
+                        'post__in'    =>  $metaIntegrations
+                    );
 
 
-    $related_posts = get_posts($args);
+            $related_posts = get_posts($args);
 
-     foreach ( $related_posts as $post ) { 
+             foreach ( $related_posts as $post ) { 
 
-        $metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
- 
-        ?>
-        <h3><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
-        <p><?php echo $metaBannerSubheading; ?></p>
-    <!-- End Loop -->
-    <?php }
-    }
-    wp_reset_postdata();?>
+                $metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
+         
+                ?>
+                <h3><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
+                <p><?php echo $metaBannerSubheading; ?></p>
+            <!-- End Loop -->
+            <?php }
+            }
+            wp_reset_postdata();?>
 
-        </article>
-    </section>
-    <section>
+            <br style="clear:both" />
 
-    <?php get_template_part( 'template', 'brochureFileOptions' ); ?>
 
-        <article>
-            <ul>
-<?php
-        if($metaAdditionalOptions) {
-            $args = array(
-                'post_type'   => array('additional_options'),
-                'post__in'    =>     $metaAdditionalOptions
-            );
+            </div>
+            <div>
 
-    $related_posts = get_posts($args);
 
-     foreach ( $related_posts as $post ) { ?>
-            <li><?php the_title(); ?></li>
-    <!-- End Loop -->
-<?php   }
-    } 
-    wp_reset_postdata();?>
-            </ul>
+                <?php get_template_part( 'template', 'brochureFileOptions' ); ?>
+                
+                <h3>The <?php the_title() ?> comes with:</h3>
 
-            <ul>
- <?php
-        if($metaIntegrations) {
-            $args = array(
-                'post__in'    =>     $metaIntegrations
-            );
-        } 
+                <section class="images">
 
-    $related_posts = get_posts($args);
+        <?php 
 
-     foreach ( $related_posts as $post ) { 
+                 if($metaSystemAtAGlance) {
+                    foreach($metaSystemAtAGlance as $image) { ?>
 
-        $metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
- 
-        ?>
-                <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-    <!-- End Loop -->
-    <?php }
-    wp_reset_postdata();?>
-            </ul>
+                    <?php if ($image) {
+                        echo wp_get_attachment_image($image, 'full', 'class=item');
+                        }
+                    ?>
 
-        <ul>
+                <?php }
+             }
+
+
+         ?>
+                </section>
+
+                 <footer>
+                    <ul>
+                    <li>Additional Options</li>
+        <?php
+                if($metaAdditionalOptions) {
+                    $args = array(
+                        'post_type'   => array('additional_options'),
+                        'post__in'    =>     $metaAdditionalOptions
+                    );
+
+            $related_posts = get_posts($args);
+
+             foreach ( $related_posts as $post ) { ?>
+                    <li><?php the_title(); ?></li>
+            <!-- End Loop -->
+            <?php   }
+                } 
+            wp_reset_postdata();?>
+                    </ul>
+
+                    <ul>
+                    <li>Meta Integrations</li>
          <?php
-        if($metaPlaysWellWith) {
-            $args = array(
-                'post__in'    =>     $metaPlaysWellWith
-            );
-        } 
+                if($metaIntegrations) {
+                    $args = array(
+                        'post__in'    =>     $metaIntegrations
+                    );
+                } 
 
-    $related_posts = get_posts($args);
+            $related_posts = get_posts($args);
 
-     foreach ( $related_posts as $post ) { 
-        ?>
-        <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-    <!-- End Loop -->
-    <?php }
-    wp_reset_postdata();?>
-            </ul>
-        </article>
-    </section>
+             foreach ( $related_posts as $post ) { 
+
+                $metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
+         
+                ?>
+                        <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+            <!-- End Loop -->
+            <?php }
+            wp_reset_postdata();?>
+                    </ul>
+
+                <ul>
+                <li>Plays Well With</li>
+                 <?php
+                if($metaPlaysWellWith) {
+                    $args = array(
+                        'post__in'    =>     $metaPlaysWellWith
+                    );
+                } 
+
+            $related_posts = get_posts($args);
+
+             foreach ( $related_posts as $post ) { 
+                ?>
+                <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+            <!-- End Loop -->
+            <?php }
+            wp_reset_postdata();?>
+
+
+           
+                        </ul>
+                    </footer>
+                
+                <br style="clear:both" />
+            </div>
+        </div>
 </section>
 
-<?php } ?>
+ <?php } ?>
+

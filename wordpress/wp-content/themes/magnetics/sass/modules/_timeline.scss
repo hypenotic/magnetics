@@ -16,7 +16,7 @@
     border-radius: 100px;
     border: 0px;
     @include media($screenLarge) {
-        border: 1px solid $teal;
+        border: 2px solid white;
         background: $blueDark;
     }
 }
@@ -27,37 +27,59 @@
     height: 24px;
     background: $gray url(images/quoteEndWhite.png);
     @include media($screenLarge) {
-        background: $blueDark url(images/quoteEndWhite.png);
+        background: $blueDark url(images/quoteEndWhite.png) 45% 47%;
         width: 70px;
         height: 70px;
     }
 }
 
 section#timeline {
+    @include pad($spacingSection default 0 default);
+
+    @include media($screenLarge) {
+            @include pad($spacingSectionLarge 0 0 0);
+            box-sizing:border-box;
+    }
+
     background: white;
-    padding: 96px 0;
     & > ul {
-        max-width: $screenLarge;
+        max-width: $screenOuter;
         margin: 0 auto;
-        font-size: $fontSizeBodySecondary;
+        & p {
+            font-size: em($fontSizeSmall);
+        }
+        & blockquote {
+          padding:0;
+          @include margin(16px 0);
+          & + p > small {
+                line-height:em($fontSizeBodySecondary);
+                & a {
+                    display:block;
+                    text-decoration:underline;
+                    color:$blueSteel;
+                }
+            }
+        }
+
         &:before {
             content: '';
             position: absolute;
             top: 0;
-            left: 20px;
+            left: -9px;
             height: 100%;
             width: 2px;
             background: $grayLight;
             @include media($screenLarge) {
+
                 left: 50%;
                 background: $teal;
             }
         }
         & > li {
-            padding: 9.4153%;
             margin-bottom: 40px;
             @include media($screenLarge) {
-                padding: 0 4.7153% 4.7153% 4.7153%;
+
+                padding: 0 8.4153% 6.4153% 8.4153%;
                 list-style: none;
                 width: 49.999%;
                 box-sizing: border-box;
@@ -96,6 +118,7 @@ section#timeline {
                 @include media($screenLarge) {
                     list-style: none;
                     margin-left: 0%;
+                    text-align:right;
                 }
 
                 &:before {

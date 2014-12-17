@@ -1,0 +1,52 @@
+.home {
+
+	display:flex;
+	justify-content:center;
+	flex-direction:column;
+	align-items:center;
+	height:100%;
+
+	& header {
+		background:none;
+		position:fixed;
+		width:100%;
+		top:0;
+	}
+
+	& #toggler {
+		z-index:100000;
+	}
+
+	& #nav-toggle span:before, #nav-toggle span:after, #nav-toggle span {
+        cursor: pointer;
+        height: 3px;
+        width: 25px;
+        .single &, .articles-and-brochures &, .single-brochure & {}
+        position: absolute;
+        display: block;
+        content: '';
+        background: $blueDark;
+    }
+    & #toggler{
+        opacity:0.8;
+        & .menu-btn.text {
+            color: $blueDark; 
+        }
+    }
+
+    #toggler .active {
+        & span {
+            background:none;
+            &:after, &:before {
+                background: $blueDark;
+            }
+        }
+    }
+
+    .owl-carousel {
+	   margin-bottom: 0px;
+	}
+
+
+}
+
