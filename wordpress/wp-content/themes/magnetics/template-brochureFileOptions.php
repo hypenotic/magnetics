@@ -17,11 +17,11 @@
 	}
 
 	if ($metaPDF) { ?>
-
+	<aside class="options">
 	<a href="<?php echo $metaPDF; ?>" download class="resource icon" title="Download this brochure"></a>
-	<a href="<?php echo $metaPDF; ?>" class="view icon" title="View &amp; print this brochure"></a>
-	<a href="mailto:" class="share icon" title="Share this brochure"></a>
-
+	<a href="<?php echo $metaPDF; ?>" class="printer icon" title="View &amp; print this brochure"></a>
+	<a href="mailto:" class="mail icon" title="Share this brochure"></a>
+	</aside>
 
 	<?php } ?>
 

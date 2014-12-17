@@ -15,16 +15,18 @@
 	// Have they added a video?
  	if(!$metaBannerBackgroundImageID && !in_category('products')) {
  	?>
- 	<video autoplay loop id="bgvid">
-		<source src="<?php echo get_bloginfo('template_url').'/videos/shutterstock_v3711827.mp4' ?>" type="video/mp4">
-	</video>
+ 	<div class="background">
+	 	<video autoplay loop>
+			<source src="<?php echo get_bloginfo('template_url').'/videos/shutterstock_v3711827.mp4' ?>" type="video/mp4">
+		</video>
+	</div>
 
 	<div class="mobile-bg"></div>
 
 	 <?php	}  else { ?>
-
-	<img class="bgimg" src="<?php echo $metaBannerBackgroundImageAttachmentURL; ?>" />
-
+ 	<div class="background">
+		<img src="<?php echo $metaBannerBackgroundImageAttachmentURL; ?>" />
+	</div>
 	<?php }
 
 	 // Banner Image

@@ -1,0 +1,38 @@
+section#steps {
+
+	background:white;
+	padding-top: $spacingSectionLarge;
+
+	& h2 {
+		max-width:$screenOuter;
+		margin:0 auto;
+	}
+
+	& ol {
+		max-width: $screenOuter;
+		margin:0 auto;
+		& li {
+			padding-bottom:$spacingSection;
+		}
+	}
+
+	& ol li:before {
+		display:none;
+	}
+
+	@include media($screenLarge) {
+
+		& .enlarges {
+			@include span-columns(4);
+			& img {
+				height:auto;
+			}
+		}
+
+		& section.description {
+			@include span-columns(6);
+			@include shift(1);
+		}
+
+	}	
+}

@@ -9,7 +9,35 @@
             display: block;
         }
     }
-    & ul {
+    & h2 {
+        color:$blueDark;
+        margin:0 auto;
+    }
+    .resp-accordion {
+        background: #efefef;
+        &.resp-tab-active {
+            background: $blueDark;
+        }
+        & div {
+                @include pad($spacingSectionSmall default);
+                display: block;
+                & h4 {
+
+                    font-size:em($fontSizeSmall);
+                    line-height: em($fontSizeBody);
+
+                    @include media($screenLarge) {
+                        font-size:em($fontSizeBody);
+                        line-height: em($fontSizeBody);
+                    }
+
+                }
+                & p {
+                    font-size: em($fontSizeSmall);
+                }
+        }
+    }
+    & ul.two {
         margin: 0;
         padding: 0;
         display: flex;
@@ -19,32 +47,47 @@
             width: 50%;
             float: left;
             background: $blueDark;
-            color: white;
-            /* enable <a> to fill height */
             display: flex;
             align-items: stretch;
-            &.active {
+            flex-direction: column;
+            color: white;
+            &.resp-tab-active {
                 background: white;
-                & a {
-                    color: $grayDark;
+                    color: $blueDark;
+
+                & > *:first-child {
+                    text-decoration:none;
                 }
             }
-            &:first-child {
-                flex-direction: row-reverse;
+            & > *:first-child {
+                text-decoration:underline;
             }
-            & a {
+            & div {
                 padding: 48px 4.7153%;
-                max-width: 425px;
                 display: block;
                 color: white;
                 & h3, & h4 {
+                    
+                    font-size:em($fontSizeSmall);
                     line-height: em($fontSizeBody);
-                    margin-bottom: 0;
+
+                    @include media($screenLarge) {
+                        font-size:em($fontSizeBody);
+                        line-height: em($fontSizeBody);
+                    }
                 }
                 & p {
                     font-size: em($fontSizeSmall);
                 }
             }
+        }
+    }
+    & .resp-tab-content.two {
+
+        margin-top: $spacingSection;
+
+        @include media($screenLarge) {
+        margin-top: $spacingSectionLarge;
         }
     }
 }

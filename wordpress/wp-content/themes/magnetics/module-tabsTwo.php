@@ -8,29 +8,35 @@
 
     if ($metaTabsTabLeft && $metaTabsTabLeftContent && $metaTabsTabRight && $metaTabsTabRightContent) {
 ?>
-
 <section class="tabs">
-    <header>
-        <ul>
-            <li class="active">
-                <a href="#" id="tab-1">
-                    <?php echo $metaTabsTabLeft;  ?>   
-                </a>
-            </li>
-            <li>
-                <a href="#" id="tab-2">
-                    <?php echo $metaTabsTabRight; ?>   
-                </a>
-            </li>
-        </ul>
-    </header>
+    <ul class="resp-tabs-list two">
+        <li>
+            <div>
+            <?php echo $metaTabsTabLeft;  ?> 
+            </div>  
+        </li>
+        <li>
+            <div>
+            <?php echo $metaTabsTabRight; ?>  
+            </div> 
+        </li>
+    </ul>
 
-    <article id="tab-1" class="tab active">
+    <div class="resp-tabs-container two">
+
+        <div>
+            <article>
             <?php echo $metaTabsTabLeftContent; ?>
-    </article>
-     <article id="tab-2" class="tab">
+            </article>
+        </div>
+
+         <div>
+            <article>
             <?php echo $metaTabsTabRightContent; ?> 
-    </article>
+            </article>
+        </div>
+
+    </div>
 
 </section>
 

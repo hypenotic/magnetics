@@ -1,10 +1,13 @@
 <?php 
 	$steps = get_post_meta($post->ID,'_steps',true);
+
+    if(count($steps) > 1) {
  ?>
 <section id="steps">
-	<ol
+    <h2>Step by step</h2>
+    <ol>
         <!-- For loop cycle through Array -->
-        <?php if($steps) {
+        <?php
             foreach($steps as $step) {
             // Get custom meta values    
             $title  = $step['_title'];
@@ -12,26 +15,31 @@
             $text  	= $step['_text'];
         ?>      
         <li>
-         <?php if ($image) {
-            echo wp_get_attachment_image($image);
-        } ?>
+            <div class="enlarges">
+             <?php if ($image) {
+                echo wp_get_attachment_image($image, 'full');
+            } ?>
+            </div>
 
-        <h3><?php if ($title) { 
-           echo $title;
-        } ?></h3>
+            <section class="description">
+            <h3><?php if ($title) { 
+               echo $title;
+            } ?></h3>
 
-        <p><?php if ($text) { 
-           echo $text;
-        } ?></p>
-
+            <p><?php if ($text) { 
+               echo $text;
+            } ?></p>
+            </section>
+            <br style="clear:both" />
        </li>
 
 <?php 
 		} 
 ?>
 	</ol>
-<?	
-	} 
-?>
 
 </section>
+
+<?  
+    } 
+?>

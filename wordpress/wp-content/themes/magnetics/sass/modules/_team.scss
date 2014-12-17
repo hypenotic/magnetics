@@ -1,0 +1,30 @@
+section#team {
+
+	@include outer-container($screenOuter);
+
+	h2 {
+		margin-bottom:$spacingSection;
+	}
+
+	& ul.list {
+
+		& li {
+
+			text-align:center;
+			margin-bottom: $spacingSection;
+
+			@include media($screenLarge) {
+				@include span-columns(3);
+				&:nth-child(3n-1), &:nth-child(3n) {
+					@include shift(1);
+				}
+			}
+
+			& img {
+			border-radius:1000px;
+			}
+
+		}
+
+	}
+}

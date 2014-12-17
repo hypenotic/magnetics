@@ -18,7 +18,6 @@
 
         <?php if(in_category('articles')) { ?> 
            <!-- Template: Attached Files -->
-          <?php get_template_part( 'template', 'brochureFile' ); ?>
           <?php get_template_part( 'template', 'articleFile' ); ?>
         <?php } ?>
         </header>
@@ -27,7 +26,8 @@
         <?php the_content(); ?>
         </section>
 
-    <?php if(in_category('articles')) { ?>    
+    <?php if(in_category('articles')) { ?> 
+    <br style="clear:both" />   
     <footer class="container">
       <a class="return" href="<?php bloginfo('url');?>/products">&laquo; Return to Products Page</a>
       <a class="return" href="<?php bloginfo('url');?>/articles-and-brochures/">&laquo; Return to Articles Page</a>
@@ -51,12 +51,14 @@
   <!-- Module: productInformation -->
   <?php get_template_part( 'module', 'tabsProduct' ); ?>
 
+  <!-- Module: Related Posts -->
+  <?php get_template_part( 'module', 'postsRelated' ); ?>
+
 </section>
 
 <!-- End Loop -->
 <?php endwhile; endif; ?>
 
-<!-- Module: Related Posts -->
-<?php get_template_part( 'module', 'postsRelated' ); ?>
+
 
 <?php get_footer(); ?>

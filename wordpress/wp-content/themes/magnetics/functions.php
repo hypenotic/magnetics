@@ -15,7 +15,7 @@ include('includes/wp-cuztom-posts/custom-product-options.php');
 //Load custom functions
 require_once('includes/functions/add-classes-to-body.php');
 require_once('includes/functions/admin-tinymce.php');
-require_once('includes/functions/archives.php');
+// require_once('includes/functions/archives.php');
 require_once('includes/functions/get-parent-category-name.php');
 //require_once('includes/functions/custom-login-logo.php');
 require_once('includes/functions/enqueue-style.php');

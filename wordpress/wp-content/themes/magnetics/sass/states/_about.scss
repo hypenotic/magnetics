@@ -3,10 +3,19 @@ body.about {
     & section:first-of-type {
         & article {
             color: white;
-            padding-bottom: 140px;
+            @include pad($spacingSection default);
+
             @include media($screenLarge) {
-                margin-top: 200px;
-            }
+	            @include pad($spacingSectionLarge default);
+		    }
+
+        }
+    }
+    #footer {
+    	border-top:0;
+
+        @include media($screenLarge) {
+            border-top: $spacingSectionLarge solid white;
         }
     }
 }

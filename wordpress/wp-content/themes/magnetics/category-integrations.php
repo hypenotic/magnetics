@@ -4,46 +4,35 @@
 
 <?php get_header(); ?>
 
-    <video autoplay loop id="bgvid">
-        <source src="<?php echo get_bloginfo('template_url').'/videos/shutterstock_v3711827.mp4' ?>" type="video/mp4">
-    </video>
+    <div class="background">
+        <video autoplay loop id="bgvid">
+            <source src="<?php echo get_bloginfo('template_url').'/videos/shutterstock_v3711827.mp4' ?>" type="video/mp4">
+        </video>
+    </div>
 
     <div class="mobile-bg"></div>
 
-    <header>
-    <h1>Integrations</h1>
-    <h4> <?php echo category_description(); ?></h4>
+    <header class="banner">
+        <h2>Integrations</h2>
+        <h4><?php echo category_description(); ?></h4>
     </header>
 
-
 <section class="tabs">
-    <header>
-    <h1>Specs</h1>
-
-        <select> 
-            <option class="tab-1" selected="selected">Hardware Integrations ▾</option> 
-            <option class="tab-2">Software Integrations</option> 
-        </select> 
-
-        <ul>
-            <li class="active">
-                <a href="#">
+    <ul class="resp-tabs-list">
+            <li >
                     <h3>Hardware Integrations</h3>
                     <p><?php echo category_description( 10 ); ?> </p>
-                </a>
             </li>
             <li>
-                <a href="#">  
                     <h3>Software Integrations</h3>
                     </p><?php echo category_description( 9 ); ?> </p>
-                </a>
             </li>                 
         </ul>
 
-    </header>
+    <div class="resp-tabs-container">
 
-    <section class="active">
-      
+    <div >
+      <article>
    <?php 
 query_posts('post_type=post&cat=9');
 if ( have_posts() ) : while ( have_posts() ) : the_post(); 
@@ -61,22 +50,25 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 
         ?>
         <img src="<?php echo $metaIntegrationsImageAttachmentURL; ?>" />
+        <section>
+            <h4><?php the_title(); ?></h4>
 
-    <h4><?php the_title(); ?></h4>
+            <?php echo $metaIntegrationsText; ?>
 
-    <p><?php echo $metaIntegrationsText; ?></p>
+            <a href="//<?php echo $metaIntegrationsLink ?>" title="<?php the_title(); ?>"><?php echo $metaIntegrationsLink; ?></a> 
+        </section>
 
-    <a href="//<?php echo $metaIntegrationsLink ?>" title="<?php the_title(); ?>"><?php echo $metaIntegrationsLink; ?></a>
-    
+        <br style="clear:both" />
     </div>
 
 <?php endwhile; endif; wp_reset_query();?>
 
-    </section>
+        </article>
+    </div>
     
 
-    <section>
-
+    <div>
+    <article>
     <?php 
 query_posts('post_type=post&cat=10');
 if ( have_posts() ) : while ( have_posts() ) : the_post(); 
@@ -94,18 +86,20 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 
         ?>
         <img src="<?php echo $metaIntegrationsImageAttachmentURL; ?>" />
+            <section>
+                <h4><?php the_title(); ?></h4>
 
-    <h4><?php the_title(); ?></h4>
+                <p><?php echo $metaIntegrationsText; ?></p>
 
-    <p><?php echo $metaIntegrationsText; ?></p>
-
-    <a href="//<?php echo $metaIntegrationsLink ?>" title="<?php the_title(); ?>"><?php echo $metaIntegrationsLink; ?></a>
-    
+                <a href="//<?php echo $metaIntegrationsLink ?>" title="<?php the_title(); ?>"><?php echo $metaIntegrationsLink; ?></a>
+            </section>
+            <br style="clear:both" />
     </div>
 
 <?php endwhile; endif; wp_reset_query();?>
 
-    </section>
+    </article>
+    </div>
 
 <!-- tabs -->
 </section>

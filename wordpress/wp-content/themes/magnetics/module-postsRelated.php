@@ -79,10 +79,10 @@
 	?>
 
 
-	<section id="related">
+	<section class="related">
 
 	<?php if ( in_category( 'products' )) { ?>
-		<h1>Articles &amp; Brochures</h1>
+		<h2>Articles &amp; Brochures</h2>
 	<!-- Start Loop -->
 	<?php } else { ?>
 		<h2>Related Articles</h2>

@@ -1,8 +1,36 @@
 body.products.single {
+
+    & #nav-toggle span:before, #nav-toggle span:after, #nav-toggle span {
+        cursor: pointer;
+        height: 3px;
+        width: 25px;
+        .single &, .articles-and-brochures &, .single-brochure & {}
+        position: absolute;
+        display: block;
+        content: '';
+        background: $blueDark;
+    }
+    & #toggler{
+        opacity:0.8;
+        & .menu-btn.text {
+            color: $blueDark; 
+        }
+    }
+
+    #toggler .active {
+        & span {
+            background:none;
+            &:after, &:before {
+                background: $blueDark;
+            }
+        }
+    }
+
+
     & section[role="main"] {
         & article {
             h1 {
-                @include opacity(0.7);
+                @include opacity(0.2);
                 color: white;
                 font-weight: 800;
                 line-height: 40%;
@@ -12,6 +40,69 @@ body.products.single {
                 text-align: center;
                 width: 100%;
                 z-index: -1;
+            }
+        }
+
+
+        & .tabs aside.options {
+
+            @include media($screenLarge) {
+                @include span-columns(1);
+            }
+            & + h3 {
+                color:$orange;
+            }
+
+
+            a {
+
+                @include media($screenLarge) {
+                    display:block;
+                }
+
+                margin-bottom:10px;
+                color: $blueDark;
+                &:hover {
+                    color: $teal;
+                }
+            }
+        }
+
+        & .tabs .images {
+            margin-bottom:em($spacingSectionSmall);
+            @include media($screenLarge) {
+                @include span-columns(10);
+                @include shift(0);
+            }
+
+        }
+
+        & .tabs section footer {
+
+            @include media($screenLarge) {
+                @include span-columns(11);
+                margin-top:$spacingSection;
+            }
+
+            & ul {
+                margin-bottom:em($spacingSectionSmall);
+                @include media($screenLarge) {
+                    @include span-columns(4);
+                }
+                & li {
+                    &:first-child {
+                        color:$orange;
+                        margin-bottom:4px;
+                    }
+                    font-weight:bold;
+                    color:black;
+                    font-size:em($fontSizeSmall);
+                    line-height:em($fontSizeBody);
+                    margin-bottom:4px;
+                    & a {
+                        color:black;
+                    }
+                }
             }
         }
     }

@@ -16,12 +16,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: em($fontSizeHeading);
+    font-size: em($fontSizeSubheading);
     margin: 0;
     line-height: em($fontSizeBody);
     font-weight: 800;
     @include media($screenLarge) {
-        font-size: em($fontSizePoster);
+        font-size: em($fontSizeHeading);
         margin: 0;
         line-height: em($fontSizeBody);
         font-weight: 800;
@@ -29,10 +29,17 @@ h1 {
 }
 
 h2 {
-    font-size: em($fontSizeSubheading);
+    font-size: em($fontSizeHeading);
     line-height: em($fontSizeBody);
-    font-weight: normal;
-    margin: 0;
+    font-weight: 700;
+    padding: $spacingSectionSmall 0;
+
+    @include media($screenLarge) {
+        font-size: em($fontSizeHeading);
+        line-height: em($fontSizeBody);
+        font-weight: 700;
+        padding: $spacingSectionLarge 0;
+    }
 }
 
 h3 {
@@ -109,4 +116,9 @@ a {
 
 .text-center {
     text-align: center;
+}
+
+blockquote, blockquote p {
+    color:$blueSteel;
+    line-height:em($fontSizeBody);
 }

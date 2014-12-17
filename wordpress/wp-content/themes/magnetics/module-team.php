@@ -1,5 +1,7 @@
 <section id="team">
 
+        <h2>Our Team</h2>
+
 		<!-- Get custom meta values -->
 <?php 
         $teams = get_posts(array('post_type' => 'team'));
@@ -9,6 +11,9 @@
 	    $team = get_post_meta($post->ID,'_teammate',true);
 ?>
         <!-- For loop cycle through Array -->
+
+         <ul class="list">
+
         <?php if($team) {
             foreach($team as $teammate) {
             // Get custom meta values    
@@ -19,8 +24,8 @@
             $fax  	= $teammate['_fax'];
             $image  = $teammate['_image'];
         ?>
-        
-        <ul class="list">
+
+       
             <li>
              <?php if ($image) {
                 echo wp_get_attachment_image($image) . '<br>';
@@ -46,13 +51,15 @@
                 echo $fax . '<br>';
             endif ?>
            </li>
-        </ul>
+
       
         <?php
                 }
             }
         ?>
     <!-- end loop -->
+
+            </ul>
     <?php 
     endforeach; 
     wp_reset_postdata();
