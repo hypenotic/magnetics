@@ -34,8 +34,10 @@
 	<ul>
 
 	<?php 
-	 foreach ( $related_posts as $post ) { ?>
-		<li>
+	 foreach ( $related_posts as $post ) { 
+
+	 $category = get_the_category();?>
+		<li class="<?php echo $category[0]->slug; ?>">
 			<a href="<?php the_permalink(); ?>"><?php the_title();?></a>
 		</li>
  	<!-- End Loop -->

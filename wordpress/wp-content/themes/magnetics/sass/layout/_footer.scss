@@ -1,13 +1,5 @@
 #footer {
-    .related {
-        padding:0;
-        & ul {
-            padding-top: $spacingSectionSmall;
-            & a {
-                color:white;
-            }
-        }
-    }
+
     background: $blueDark;
     padding-top: $spacingSection;
     & footer {

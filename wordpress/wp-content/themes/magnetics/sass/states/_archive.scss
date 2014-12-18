@@ -1,4 +1,4 @@
-section[role="main"] {
+.archive section[role="main"] {
     & > header {
         @include outer-container($screenLarge);
         @include pad(default);

@@ -43,10 +43,31 @@
 
 .masthead {
   height:50vh;
-  @include pad(20vh 0 0 0);
+  display:flex;
+
+
+  flex-direction:column;
+  @include fontShadow($blackOverlayLight);
+  @include pad(default);
+  & > h1 {
+    padding-top:5vh;
+    @include media($screenLarge) {
+      padding-top:20vh;
+    }
+  }
   & > * {
     @include pad(0 default);
-    @include outer-container($screenLarge);
     color:white;
+    margin:0 auto;
+    width:100%;
+
+    @include media($screenLarge) {
+      width: $screenLarge;
+        max-width: $screenLarge;
+    }
+
+  }
+  & > h1 {
+    padding-bottom:$spacingSectionSmall;
   }
 }

@@ -1,5 +1,10 @@
 jQuery(document).ready(function($){
-		$('body.products > section > article > h1').fitText();
+		$('body.products > section > article > h1').fitText(0.34,{ maxFontSize: '380px'});
+
+		jQuery('h1').html(function(i, v) { 
+		    return  jQuery.trim(v).replace(/([\S]*)\s(.*)/, "$1 <span>$2</span>");
+		});
+
 
 		var $container = $('.tabs.boxes .images');
 		// initialize Isotope

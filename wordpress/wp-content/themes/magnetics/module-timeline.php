@@ -3,7 +3,15 @@
 
 	if($metaContentBlockTimelineText) { ?>
 
-<section id="timeline">
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+
+<section id="timeline" >
 	<?php echo $metaContentBlockTimelineText; ?>
 </section>
 <?php } ?>

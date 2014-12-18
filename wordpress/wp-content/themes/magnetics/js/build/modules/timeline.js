@@ -1,8 +1,11 @@
 jQuery(document).ready(function($){
 
 	var $container = $('#timeline > ul');
+
+	$container.addClass('gradient');
 	// initialize Isotope
 	$container.isotope();
+
 
 	// update columnWidth on window resize
 	$(window).on('debouncedresize', function(){
