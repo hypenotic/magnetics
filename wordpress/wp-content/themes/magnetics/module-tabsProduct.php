@@ -11,7 +11,7 @@
 ?>
 
 <section class="tabs boxes">
-    <h2>Specs</h2>
+    <h2>Specifications</h2>
 
         <ul class="resp-tabs-list">
             <li class="active">
@@ -21,7 +21,7 @@
                 Additional Options
             </li>
              <li>
-                Meta Integrations
+                Integrations
             </li>
             <li >
                 System At a Glance  

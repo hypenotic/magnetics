@@ -5,6 +5,7 @@ body.products.single > header, body.category-products > header, body.category-in
 body > header {
     background: $gray;
     z-index:10000;
+    padding: 25px 20px 14px 20px;
     @include media($screenLarge) {
         padding: em($fontSizeSmall) 0;
     }
@@ -18,7 +19,7 @@ body > header {
 
         & img {
             height: auto;
-            max-width: 140px;
+            max-width: 200px;
             @include media($screenLarge) {
                 max-width: 300px;
             }

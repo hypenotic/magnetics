@@ -1,9 +1,6 @@
 html {
 	height:100%;
 }
-section[role="main"] {
-	padding-bottom:$spacingSectionLarge;
-}
 
 article {
     @include outer-container;

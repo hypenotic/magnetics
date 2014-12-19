@@ -40,9 +40,12 @@
     & ul.two {
         margin: 0;
         padding: 0;
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
+        @include media($screenLarge) {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+        }
+
         & li {
             width: 50%;
             float: left;
@@ -52,20 +55,19 @@
             flex-direction: column;
             color: white;
             &.resp-tab-active {
-                background: white;
+                    background: white;
                     color: $blueDark;
 
-                & > *:first-child {
+                & h3:first-of-type {
                     text-decoration:none;
                 }
             }
-            & > *:first-child {
+            & h3:first-of-type {
                 text-decoration:underline;
             }
             & div {
                 padding: 48px 4.7153%;
                 display: block;
-                color: white;
                 & h3, & h4 {
                     
                     font-size:em($fontSizeSmall);

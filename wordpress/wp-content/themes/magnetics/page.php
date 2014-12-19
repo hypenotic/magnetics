@@ -24,7 +24,7 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <?php if($metaBannerBackgroundImageID) { ?>
-<section role="main" style="background-image:url(<?php echo $metaBannerBackgroundImageAttachmentURL; ?>)">
+<section role="main" style="background-image:url(<?php echo $metaBannerBackgroundImageAttachmentURL; ?>); background-position: center center;">
 <?php } else { ?>
 <section role="main">
 <?php } ?>
@@ -32,7 +32,7 @@
 <?php
 		if($metaBannerImageAttachmentURL ) { 
 ?>
-	<header class="masthead" style="background-image:url(<?php echo $metaBannerImageAttachmentURL; ?>); background-size:cover;background-repeat:no-repeat;">
+	<header class="masthead" style="background-image:url(<?php echo $metaBannerImageAttachmentURL; ?>); background-size:cover;background-repeat:no-repeat;background-position: center center;">
 			<h1><?php the_title(); ?></h1>
 <?php
 		if($metaBannerSubheading  !== -1) { ?>

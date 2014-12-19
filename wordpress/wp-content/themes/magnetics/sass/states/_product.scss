@@ -30,16 +30,25 @@ body.products.single {
     & section[role="main"] {
         & article {
             h1 {
-                @include opacity(0.2);
+                @include opacity(0.7);
                 color: white;
-                font-weight: 800;
-                line-height: 40%;
+                font-weight: 700;
                 position: absolute;
+                line-height:60%;
                 top: -2%;
-                left: 0;
+                left: -1%;
                 text-align: center;
                 width: 100%;
                 z-index: -1;
+                margin:0 auto;
+                max-width:100%;
+
+                & span {
+                    display:block;
+                    font-size:50%;
+                    line-height:160%;
+                }
+
             }
         }
 
@@ -77,10 +86,11 @@ body.products.single {
 
         }
 
-        & .tabs section footer {
+        & .tabs .images + footer {
 
             @include media($screenLarge) {
                 @include span-columns(11);
+                @include shift(1);
                 margin-top:$spacingSection;
             }
 
