@@ -7,7 +7,10 @@ body.contact {
 		& article {
 			color:white;
 			max-width:$screenOuter;
-			padding:0;
+			@include media($screenLarge) {
+				padding:0;	
+			}
+
 			padding-top:$spacingSectionLarge;
 		}
 
@@ -74,6 +77,11 @@ body.contact {
 				@include shift(1);
 				float:right;
 			}
+		}
+
+		& .optional {
+			@include pad(default);
+			padding-bottom:$spacingSectionLarge;
 		}
 
 		& .optional a.icon {
