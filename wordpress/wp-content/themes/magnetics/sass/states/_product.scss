@@ -8,12 +8,11 @@ body.products.single {
         position: absolute;
         display: block;
         content: '';
-        background: $blueDark;
+        background: white;
     }
     & #toggler{
         opacity:0.8;
-        & .menu-btn.text {
-            color: $blueDark; 
+        & .menu-btn.text { 
         }
     }
 

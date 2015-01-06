@@ -4,6 +4,11 @@ section#team {
 
 	h2 {
 		margin-bottom:$spacingSection;
+		text-align:center;
+
+		@include media($screenLarge) {
+			text-align:left;
+		}
 	}
 
 	& ul.list {

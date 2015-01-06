@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: em($fontSizeSubheading);
+    font-size: em($fontSizeHeadingSmall);
     margin: 0;
     line-height: em($fontSizeBody);
     font-weight: 800;
@@ -29,7 +29,7 @@ h1 {
 }
 
 h2 {
-    font-size: em($fontSizeHeading);
+    font-size: em($fontSizeHeadingSmall);
     line-height: em($fontSizeBody);
     font-weight: 700;
     padding: $spacingSectionSmall 0;
@@ -73,11 +73,11 @@ h6 {
 
 p, ul, ol {
     font-size: em($fontSizeBody);
-    margin: 0 auto rhythm(1, $fontSizeBody);
+    margin: 0 0 em($fontSizeBody) 0;
     @include media($screenLarge) {
         font-size: em($fontSizeBody);
         line-height: em($fontSizeLarge);
-        margin: 0 auto rhythm(1, $fontSizeLarge);
+        margin: 0 0 em($fontSizeLarge) 0;
     }
 }
 

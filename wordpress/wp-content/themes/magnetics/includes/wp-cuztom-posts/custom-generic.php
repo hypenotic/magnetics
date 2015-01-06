@@ -175,6 +175,8 @@ $posts->add_meta_box(
     )
 );
 
+
+
 $posts->add_meta_box(
     'content_block_timeline',
     'Vertical "Timeline" Content', 
@@ -290,6 +292,27 @@ $posts->add_meta_box(
     )
 );
 
+$posts->add_meta_box(
+    'additional_options',
+    'Additional Options', 
+    array(
+        'bundle', 
+        array(
+            array(
+                'name'          => 'title',
+                'label'         => 'Title',
+                'description'   => '',
+                'type'          => 'text'
+            ),
+            array(
+                'name'          => 'description',
+                'label'         => 'Description',
+                'description'   => '',
+                'type'          => 'textarea'
+            )
+        )
+    )
+);
 
 $posts->add_meta_box(
     'product_tabs',
@@ -299,16 +322,6 @@ $posts->add_meta_box(
             'name'          => 'whats_in_the_box',
             'label'         => 'What\'s In The Box',
             'type'          => 'wysiwyg',  
-        ),
-        array(
-            'name'          => 'additional_options',
-            'label'         => 'Additional Options',
-            'description'   => 'Select your additional options',
-            'type'          => 'post_select',
-            'args'          => array(
-                'post_type' => 'additional_options'
-            ),
-            'repeatable'    =>  'true'
         ),
         array(
             'name'          => 'post_meta_integrations',

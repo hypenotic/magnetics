@@ -1,12 +1,13 @@
 <?php 
     // Custom meta values 
     $metaWhatsInTheBox = get_post_meta(get_the_ID(), '_product_tabs_whats_in_the_box', true);
-    $metaAdditionalOptions = get_post_meta(get_the_ID(), '_product_tabs_additional_options', true);
+    $metaAdditionalOptions = get_post_meta(get_the_ID(), '_additional_options', true);
     $metaIntegrations = get_post_meta(get_the_ID(), '_product_tabs_post_meta_integrations', true);
     $metaPlaysWellWith = get_post_meta(get_the_ID(), '_product_tabs_plays_well_with', true);
     $metaSystemAtAGlance = get_post_meta(get_the_ID(), '_product_tabs_system_at_a_glance', true);
 
-    if($metaWhatsInTheBox && $metaAdditionalOptions && $metaIntegrations && $metaSystemAtAGlance) {
+
+    if($metaWhatsInTheBox || $metaAdditionalOptions || $metaIntegrations || $metaSystemAtAGlance) {
 
 ?>
 
@@ -39,21 +40,15 @@
                     
             <?php
                 if($metaAdditionalOptions) {
-                    $args = array(
-                        'post_type'   => array('additional_options'),
-                        'post__in'    =>     $metaAdditionalOptions
-                    );
-             
-
-            $related_posts = get_posts($args);
-
-             foreach ( $related_posts as $post ) { ?>
-                <h3 id="<?php sanitize_title(get_the_title()); ?>"><?php the_title();?></h3>
-                <p><?php echo $post->post_content; ?></p>
+                    
+                    foreach ( $metaAdditionalOptions as $option ) { ?>
+                <h3 id="<?php sanitize_title($option['_title']); ?>"><?php echo $option['_title']; ?></h3>
+                <p><?php echo $option['_description']; ?></p>
             <!-- End Loop -->
             <?php }
-               } 
-            wp_reset_postdata();?>
+
+                } 
+            ?>
 
             </div>
             <div>
@@ -113,21 +108,18 @@
                  <footer>
                     <ul>
                     <li>Additional Options</li>
-        <?php
-                if($metaAdditionalOptions) {
-                    $args = array(
-                        'post_type'   => array('additional_options'),
-                        'post__in'    =>     $metaAdditionalOptions
-                    );
 
-            $related_posts = get_posts($args);
-
-             foreach ( $related_posts as $post ) { ?>
-                    <li><?php the_title(); ?></li>
+                    <?php
+                        if($metaAdditionalOptions) {
+                    
+                        foreach ( $metaAdditionalOptions as $option ) { ?>
+                <li><?php echo $option['_title']; ?></li>
             <!-- End Loop -->
-            <?php   }
+            <?php }
+
                 } 
-            wp_reset_postdata();?>
+            ?>
+        
                     </ul>
 
                     <ul>
