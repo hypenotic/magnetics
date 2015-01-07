@@ -8,6 +8,10 @@
 	* @param int $count max number of posts to show
 	* @return mixed related posts wrapped in div or null if none found
 	*/
+	
+    $metaRelatedArticles = get_post_meta(get_the_ID(), '_related_content_post_article', true);
+    $metaRelatedBrochures = get_post_meta(get_the_ID(), '_related_content_post_brochure', true);
+    $metaRelatedProducts = get_post_meta(get_the_ID(), '_related_content_post_related_products', true);
 
 	global $post;
 
@@ -27,14 +31,33 @@
 		$this_cat = $current_cat;
 	}
 
-	$args = array(
-		'post_type'   => get_post_type(),
-		'numberposts' => 2,
-		'orderby'     => 'rand',
-		'tag__in'     => $tag_ids,
-		'cat'         => $this_cat,
-		'exclude'     => $post->ID
-	);
+
+
+	if($metaRelatedArticles || $metaRelatedBrochures) {
+		
+		$metaRelatedMerged = array_merge($metaRelatedArticles, $metaRelatedBrochures);
+
+		$args = array(
+			'post_type'   => array('article','brochure','post'),
+			'post__in'    =>	 $metaRelatedMerged
+		);
+
+	} else {
+
+		$args = array(
+			'post_type'   => get_post_type(),
+			'numberposts' => 2,
+			'orderby'     => 'rand',
+			'tag__in'     => $tag_ids,
+			'cat'         => $this_cat,
+			'exclude'     => $post->ID
+		);
+
+		
+	}
+
+
+ 
 
 	$related_posts = get_posts($args);
 
@@ -55,9 +78,16 @@
 
 	?>
 
-	<section id="related">
-	<h6>Other Posts related to '<?php the_title(); ?>'</h6>
+
+	<section class="related">
+
+	<?php if ( in_category( 'products' )) { ?>
+		<h2>Articles &amp; Brochures</h2>
 	<!-- Start Loop -->
+	<?php } else { ?>
+		<h2>Related Articles</h2>
+	<?php } ?>
+
 	<?php 
 	 foreach ( $related_posts as $post ) {
 ?>

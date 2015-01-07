@@ -1,15 +1,33 @@
 #footer {
+
     background: $blueDark;
     padding-top: $spacingSection;
     & footer {
         @include outer-container;
-        max-width: 850px;
-        padding: 48px 4.7153%;
-        & section {
-            @include span-columns(6);
-            color: white;
-            &:first-child {
-                border-right: 1px solid white;
+        @include pad(48px default);
+        color: white;
+
+        @include media($screenLarge) {
+
+            @include pad(48px 0);
+
+            & > section {
+
+                &:last-child {
+                    @include shift(1);
+                }
+                & > *:first-child {
+                    padding-top:0;
+                }
+
+                @include span-columns(5);
+
+                &:first-child {
+                    border-right: 1px solid white;
+                    margin-right:0;
+                    @include pad(0 default 0 0);
+                }
+
             }
         }
     }

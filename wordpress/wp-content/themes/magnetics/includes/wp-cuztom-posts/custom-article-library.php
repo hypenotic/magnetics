@@ -2,6 +2,7 @@
 
 $args = array(
 	'has_archive' => true,
+	'public' => false,
 	//'menu_position' => 5,
 	'menu_icon' => 'dashicons-welcome-learn-more', //http://melchoyce.github.io/dashicons/
 	'supports'	=> array( 'title' ),

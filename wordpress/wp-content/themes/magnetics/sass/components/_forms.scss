@@ -1,0 +1,22 @@
+body .gform_wrapper input[type="text"], body .gform_wrapper  input[type="email"], body .gform_wrapper textarea {
+
+	background:white;
+	border:0px;
+	color: $blueDark;
+	font-weight:300;
+	border-radius:0;
+	padding:16px 8px;
+	font-size:1em;
+	font-family: $fontPrimary;
+	
+}
+
+body .gform_wrapper , body .gform_footer {
+	margin:0;
+	padding:0;
+}
+
+body .gform_wrapper input[type="submit"] {
+	@extend .button;
+	font-size:0.8em !important;
+}

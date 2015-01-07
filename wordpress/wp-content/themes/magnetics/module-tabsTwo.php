@@ -1,36 +1,43 @@
 <?php 
     // Custom meta values 
-    $metaTabsTabLeft = get_post_meta(get_the_ID(), '_page_tabs_tableft', true)
+    $metaTabsTabLeft = get_post_meta(get_the_ID(), '_page_tabs_tableft', true);
     $metaTabsTabLeftContent = get_post_meta(get_the_ID(), '_page_tabs_tablefttextarea', true);
  
     $metaTabsTabRight = get_post_meta(get_the_ID(), '_page_tabs_tabright', true);
     $metaTabsTabRightContent = get_post_meta(get_the_ID(), '_page_tabs_tabrighttextarea', true);
 
-
+    if ($metaTabsTabLeft && $metaTabsTabLeftContent && $metaTabsTabRight && $metaTabsTabRightContent) {
 ?>
-
 <section class="tabs">
+    <ul class="resp-tabs-list two">
+        <li>
+            <div>
+            <?php echo $metaTabsTabLeft;  ?> 
+            </div>  
+        </li>
+        <li>
+            <div>
+            <?php echo $metaTabsTabRight; ?>  
+            </div> 
+        </li>
+    </ul>
 
-    <header>
-        <ul>
-            <li class="active">
-                <a href="#" id="tab-1">
-                    <?php  echo $metaTabsTabLeft;  ?>   
-                </a>
-            </li>
-            <li>
-                <a href="#" id="tab-2">
-                    <?php  echo $metaTabsTabRight; ?>   
-                </a>
-            </li>
-        </ul>
-    </header>
+    <div class="resp-tabs-container two">
 
-    <section id="tab-1" class="tab active">
-            <?php  echo $metaTabsTabLeftContent; ?>
-    </section>
-     <section id="tab-2" class="tab">
-            <?php  echo $metaTabsTabsRightContent ?> 
-    </section>
+        <div>
+            <article>
+            <?php echo $metaTabsTabLeftContent; ?>
+            </article>
+        </div>
+
+         <div>
+            <article>
+            <?php echo $metaTabsTabRightContent; ?> 
+            </article>
+        </div>
+
+    </div>
 
 </section>
+
+<?php } ?>

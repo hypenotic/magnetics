@@ -1,5 +1,13 @@
+html {
+	height:100%;
+}
+
 article {
-    @include outer-container($screenLarge);
+    @include outer-container;
     @include pad(default);
     color: $grayDark;
+}
+
+blockquote {
+    border: 0px;
 }
