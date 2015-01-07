@@ -5,6 +5,7 @@
 <?php 
 query_posts('post_type=products');
 if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
     <div class="item">
 <?php
 
@@ -44,7 +45,9 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
     </div>
 
-<?php endwhile; endif; wp_reset_query();?>
+<?php 
+        endwhile; endif; wp_reset_query();
+?>
 
 </section>
 <?php get_footer(); ?>

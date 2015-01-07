@@ -18,7 +18,7 @@
     </header>
 
 <section class="tabs">
-    <ul class="resp-tabs-list">
+    <ul class="resp-tabs-list two">
             <li >
                     <h3>Hardware Integrations</h3>
                     <p><?php echo category_description( 10 ); ?> </p>
@@ -29,7 +29,7 @@
             </li>                 
         </ul>
 
-    <div class="resp-tabs-container">
+    <div class="resp-tabs-container two">
 
     <div >
       <article>

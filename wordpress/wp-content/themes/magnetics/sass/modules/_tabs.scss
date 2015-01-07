@@ -21,8 +21,11 @@
         & div {
                 @include pad($spacingSectionSmall default);
                 display: block;
+
+
                 & h4 {
 
+                    font-weight:normal;
                     font-size:em($fontSizeSmall);
                     line-height: em($fontSizeBody);
 
@@ -92,6 +95,17 @@
         margin-top: $spacingSectionLarge;
         }
     }
+}
+.resp-tabs-container.two {
+
+    & p {
+        font-size:em($fontSizeSmall) !important;
+    }
+    
+    & .resp-accordion h3 {
+        padding-top:$spacingSectionSmall;
+    }
+
 }
 
 .custom-dropdown--large {

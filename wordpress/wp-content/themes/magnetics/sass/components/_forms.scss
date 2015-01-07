@@ -2,12 +2,13 @@ body .gform_wrapper input[type="text"], body .gform_wrapper  input[type="email"]
 
 	background:white;
 	border:0px;
-	font-size: 0.68em !important;
+	color: $blueDark;
 	font-weight:300;
 	border-radius:0;
-	padding:8px;
+	padding:16px 8px;
+	font-size:1em;
 	font-family: $fontPrimary;
-
+	
 }
 
 body .gform_wrapper , body .gform_footer {
@@ -17,5 +18,5 @@ body .gform_wrapper , body .gform_footer {
 
 body .gform_wrapper input[type="submit"] {
 	@extend .button;
-	font-size:0.68em !important;
+	font-size:0.8em !important;
 }

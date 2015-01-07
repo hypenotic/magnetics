@@ -16,6 +16,9 @@
                 &:last-child {
                     @include shift(1);
                 }
+                & > *:first-child {
+                    padding-top:0;
+                }
 
                 @include span-columns(5);
 

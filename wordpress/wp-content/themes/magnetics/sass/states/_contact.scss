@@ -2,13 +2,15 @@ body.contact {
 
 	& section[role="main"] {
 		background: $gray;
+		background-repeat:no-repeat;
 		color:white;
+		background-position:top center;
 
 		& article {
 			color:white;
 			max-width:$screenOuter;
 			@include media($screenLarge) {
-				padding:0;	
+
 			}
 
 			padding-top:$spacingSectionLarge;

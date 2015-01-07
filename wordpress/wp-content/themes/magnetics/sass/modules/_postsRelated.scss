@@ -1,6 +1,9 @@
 section[role="main"] .related {
     background:white;
 }
+footer .related {
+    padding:0;
+}
 
 .related {
     @include pad($spacingSection default);
