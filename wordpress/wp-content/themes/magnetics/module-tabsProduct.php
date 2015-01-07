@@ -123,7 +123,7 @@
                     </ul>
 
                     <ul>
-                    <li>Meta Integrations</li>
+                    <li>Integrates With</li>
          <?php
                 if($metaIntegrations) {
                     $args = array(

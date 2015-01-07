@@ -1,0 +1,9 @@
+.error404 .banner {
+	height:100vh;
+	justify-content: center;
+
+	& h1 {
+		margin-bottom: $spacingSectionSmall;
+		text-align:center;
+	}
+}

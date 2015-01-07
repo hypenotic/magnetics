@@ -1018,6 +1018,8 @@ nav#toggler {
           width: 40.29137%; }
           #footer footer > section:last-child {
             margin-left: 8.5298%; }
+          #footer footer > section > *:first-child {
+            padding-top: 0; }
           #footer footer > section:last-child {
             margin-right: 0; }
           #footer footer > section:first-child {
@@ -1344,6 +1346,7 @@ body.archive.products #toggler .active span {
       padding: 32px 2.35765%;
       display: block; }
       .tabs .resp-accordion div h4 {
+        font-weight: normal;
         font-size: 0.875em;
         line-height: 1.125em; }
         @media screen and (min-width: 850px) {
@@ -1392,6 +1395,11 @@ body.archive.products #toggler .active span {
     @media screen and (min-width: 850px) {
       .tabs .resp-tab-content.two {
         margin-top: 92px; } }
+
+.resp-tabs-container.two p {
+  font-size: 0.875em !important; }
+.resp-tabs-container.two .resp-accordion h3 {
+  padding-top: 32px; }
 
 .custom-dropdown--large {
   font-size: 1.5em; }
@@ -1707,6 +1715,9 @@ section#timeline {
 section[role="main"] .related {
   background: white; }
 
+footer .related {
+  padding: 0; }
+
 .related {
   padding: 48px 2.35765%; }
   @media screen and (min-width: 850px) {
@@ -1751,6 +1762,8 @@ section.related ul {
         background: white !important;
         color: #001f3f;
         text-decoration: none !important; }
+  section.related ul li.product-integrations a {
+    background: #00c7d5; }
   section.related ul li.base-stations a, section.related ul li.hardware-product-integrations a {
     background: #00c7d5; }
   section.related ul li.marine-gradiometers, section.related ul li.software-product-integrations a {
@@ -2305,10 +2318,11 @@ nav.left ul {
 body .gform_wrapper input[type="text"], body .gform_wrapper input[type="email"], body .gform_wrapper textarea {
   background: white;
   border: 0px;
-  font-size: 0.68em !important;
+  color: #001f3f;
   font-weight: 300;
   border-radius: 0;
-  padding: 8px;
+  padding: 16px 8px;
+  font-size: 1em;
   font-family: "open-sans"; }
 
 body .gform_wrapper, body .gform_footer {
@@ -2316,7 +2330,7 @@ body .gform_wrapper, body .gform_footer {
   padding: 0; }
 
 body .gform_wrapper input[type="submit"] {
-  font-size: 0.68em !important; }
+  font-size: 0.8em !important; }
 
 body.about {
   background: #667c8f; }
@@ -2587,14 +2601,13 @@ body.products.single section[role="main"] .tabs .images + footer ul {
 
 body.contact section[role="main"] {
   background: #667c8f;
-  color: white; }
+  background-repeat: no-repeat;
+  color: white;
+  background-position: top center; }
   body.contact section[role="main"] article {
     color: white;
     max-width: 1080px;
     padding-top: 92px; }
-    @media screen and (min-width: 850px) {
-      body.contact section[role="main"] article {
-        padding: 0; } }
   body.contact section[role="main"] .optional {
     max-width: 850px;
     margin-left: auto;
@@ -2737,3 +2750,10 @@ body.articles.single footer.container {
   @media screen and (min-width: 850px) {
     body.articles.single footer.container {
       margin-left: 25.58941%; } }
+
+.error404 .banner {
+  height: 100vh;
+  justify-content: center; }
+  .error404 .banner h1 {
+    margin-bottom: 32px;
+    text-align: center; }

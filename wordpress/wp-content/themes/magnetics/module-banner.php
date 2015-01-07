@@ -6,8 +6,8 @@
 	$bannerVideoURL = false;
 
 	// Custom meta values 
-	$metaBannerVideo = 	get_post_meta($post->ID, '_banner_video', true);
-	$metaBannerBackgroundImageID = 	get_post_meta($post->ID, '_banner_background_image', true);
+	$metaBannerVideo = get_post_meta($post->ID, '_banner_video', true);
+	$metaBannerBackgroundImageID = get_post_meta($post->ID, '_banner_background_image', true);
 
 	$metaBannerBackgroundImageAttachment = wp_get_attachment_image_src( $metaBannerBackgroundImageID, 'full' );
 	$metaBannerBackgroundImageAttachmentURL = $metaBannerBackgroundImageAttachment[0];

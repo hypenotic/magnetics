@@ -217,7 +217,37 @@ $posts->add_meta_box(
                 )
             )
         )
-);    
+); 
+
+/*
+
+TODO: Update WP Cuztom Posts to support wysiwyg bundling
+
+$posts->add_meta_box(
+    'timeline',
+    'Timeline',    
+    array(
+        'bundle',    
+            array( 
+                array(
+                    'name'          => 'type',
+                    'label'         => 'Timeline Type',
+                    'type'          => 'select',
+                        'options'       => array(
+                            'paragraph'    => 'Paragraph',
+                            'quote'        => 'Quote',
+                        ),
+                    'default_value' => 'paragraph'       
+                ),
+                 array(
+                    'name'          => 'text',
+                    'label'         => 'Text',
+                    'type'          => 'textarea',
+                )
+            )
+        )
+);
+*/
 
 $posts->add_meta_box(
     'banner',

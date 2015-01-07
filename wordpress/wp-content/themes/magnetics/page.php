@@ -24,7 +24,7 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <?php if($metaBannerBackgroundImageID) { ?>
-<section role="main" style="background-image:url(<?php echo $metaBannerBackgroundImageAttachmentURL; ?>); background-position: center center;">
+<section role="main" style="background-image:url(<?php echo $metaBannerBackgroundImageAttachmentURL; ?>);">
 <?php } else { ?>
 <section role="main">
 <?php } ?>

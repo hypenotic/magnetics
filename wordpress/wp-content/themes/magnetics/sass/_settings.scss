@@ -47,7 +47,6 @@ Version: 1.0
 @import "modules/productsRelated";
 @import "modules/team";
 
-
 // Layout - Templates
 @import "templates/articleOverview.scss";
 
@@ -65,6 +64,7 @@ Version: 1.0
 @import "states/home";
 @import "states/contact";
 @import "states/single";
+@import "states/404";
 
 // etc
 //@import "pagination";
