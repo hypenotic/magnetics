@@ -27,7 +27,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     $metaBannerHeading = get_post_meta($post->ID, '_banner_heading', true);
     
     if($metaBannerHeading  !== -1) { ?>
-        <h3><?php echo $metaBannerHeading; ?></h3>
+        <h3><?php the_title(); ?></h3>
     <?php } ?>
 
     <?php 
@@ -36,7 +36,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     $metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
 
     if($metaBannerSubheading !== -1) { ?>
-        <p><?php the_title() ?>. <?php echo $metaBannerSubheading; ?></p>
+        <p><?php echo $metaBannerSubheading; ?></p>
     <?php } ?>
     <a class="button clear" href="<?php the_permalink(); ?>" title="Learn More">Learn More</a>
         </section>

@@ -16,7 +16,6 @@
         }
         & > h2 {
         max-width: $screenOuter; 
-        @include pad($spacingSectionLarge default);
 
             @include media($screenLarge) {
                 @include pad($spacingSectionLarge 0);
@@ -35,9 +34,8 @@
         }
 
         & > li {
-            min-height: 93px;
             width: 25%;
-            padding: 16px 5%;
+            padding: 32px 5%;
             box-sizing:border-box;
             float: left;
             display: inline-block;
@@ -54,7 +52,9 @@
             }
             background: none;
             &.current-cat, &.resp-tab-active {
-                border-bottom: 0px;
+                background:$blueDark;
+                color:white;
+                font-weight:bold;
                 & a {
                     background: none;
                     border: none;
@@ -81,9 +81,6 @@
 
             @include pad(em($spacingSection) default);
 
-            border-left: 1px solid $gray;
-            border-right: 1px solid $gray;
-            border-bottom: 1px solid $gray;
 
             &:first-child {
                 border-left: 1px solid $gray;
@@ -124,7 +121,6 @@ h6.resp-accordion {
 
 .resp-tab-content {
     display: none;
-    padding: 15px;
 }
 
 .resp-tab-active {
@@ -141,6 +137,7 @@ h6.resp-accordion {
 }
 
 .resp-tab-content {
+    @include pad($spacingSectionSmall default);
 }
 
 h6.resp-accordion {

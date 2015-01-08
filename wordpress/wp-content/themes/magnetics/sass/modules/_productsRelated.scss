@@ -15,6 +15,8 @@ section.related {
 				color:white;
 				text-decoration:none;
 				display:inline-block;
+				background:$teal;
+				
 				&:hover {
 					background:white !important;
 					color: $blueDark;
