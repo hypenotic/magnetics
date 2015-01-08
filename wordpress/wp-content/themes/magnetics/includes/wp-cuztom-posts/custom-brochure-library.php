@@ -1,8 +1,7 @@
 <?php //CPT for article library
 
 $args = array(
-	'has_archive' => true,
-	'public' => false,
+	'has_archive' => false,
 	//'menu_position' => 5,
 	'menu_icon' => 'dashicons-welcome-learn-more', //http://melchoyce.github.io/dashicons/
 	'supports'	=> array( 'title' ),

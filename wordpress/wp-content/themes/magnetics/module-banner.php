@@ -13,8 +13,17 @@
 	$metaBannerBackgroundImageAttachmentURL = $metaBannerBackgroundImageAttachment[0];
 
 	// Have they added a video?
- 	if(!$metaBannerBackgroundImageID && !in_category('products')) {
+ 	if(!$metaBannerBackgroundImageID ) {
  	?>
+
+ 	<script>
+ 		jQuery(document).ready(function($){
+
+ 			$('.menu-btn').addClass('dark');
+
+ 		});
+ 	</script>
+
  	<div class="background">
 	 	<video autoplay loop>
 			<source src="<?php echo get_bloginfo('template_url').'/videos/shutterstock_v3711827.mp4' ?>" type="video/mp4">
@@ -33,15 +42,41 @@
 	$bannerImageURL = false;
 	
 	// Custom meta values 
-	$metaBannerImageID = get_post_meta($post->ID, '_banner_image', true);
+	$metaBannerImageIDs = get_post_meta($post->ID, '_banner_image', true);
 
- 	if ($metaBannerImageID  !== -1) { 
-		$metaBannerImageAttachment = wp_get_attachment_image_src( $metaBannerImageID, 'full' );
+	if ($metaBannerImageIDs  == -1) { ?>
+
+
+	<? } elseif (sizeof($metaBannerImageIDs) == 1) {
+
+ 
+		$metaBannerImageAttachment = wp_get_attachment_image_src( $metaBannerImageIDs[0], 'full' );
 		$metaBannerImageAttachmentURL = $metaBannerImageAttachment[0];
 
 		?>
 	<img src="<?php echo $metaBannerImageAttachmentURL; ?>">
+	
+	<?php } elseif (sizeof($metaBannerImageIDs) > 1) { ?>
+
+
+	<section class="owl-carousel owl-theme">
+
+		<?php foreach($metaBannerImageIDs as $metaBannerImageID ) { ?>
+
+		<div class="item">
+
+			<?php $metaBannerImageAttachment = wp_get_attachment_image_src( $metaBannerImageID, 'full' );
+					$metaBannerImageAttachmentURL = $metaBannerImageAttachment[0];
+
+			?>
+			<img src="<?php echo $metaBannerImageAttachmentURL; ?>">
+	   
+		</div>
+
+		<? } ?>
+		</section>
 	<?php } ?>
+
 
 
 	<?php  

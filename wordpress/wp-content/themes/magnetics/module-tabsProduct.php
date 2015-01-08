@@ -14,16 +14,20 @@
 <section class="tabs boxes">
     <h2>Specifications</h2>
 
-        <ul class="resp-tabs-list">
+        <ul class="resp-tabs-list <?php if($metaIntegrations[0] == 0) {echo 'three'; } ?>">
             <li class="active">
                 What's In The Box   
             </li>
             <li>
                 Additional Options
             </li>
+
+            <?php if(!($metaIntegrations[0] == 0))  { ?>
              <li>
                 Integrations
             </li>
+            <?php } ?>
+
             <li >
                 System At a Glance  
             </li>                     

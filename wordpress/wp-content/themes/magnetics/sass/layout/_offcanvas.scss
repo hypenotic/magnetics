@@ -110,7 +110,12 @@ Nav Panel
     right: 30px;
     top: 33%;
 }
-
+.dark #nav-toggle {
+    border-color:$blueDark;
+    & span {
+        background:$blueDark;
+    }
+}
 #nav-toggle {
     cursor: pointer;
     padding: 15px 33px 18px 8px;
@@ -134,6 +139,7 @@ nav#toggler {
 
 
 
+
 #nav-toggle.active {
     cursor: pointer;
     padding: 15px 33px 18px 8px;
@@ -153,6 +159,16 @@ nav#toggler {
     }
 }
 
+
+.dark #nav-toggle span:before, .dark #nav-toggle span:after {
+    cursor: pointer;
+    height: 3px;
+    width: 25px;
+    position: absolute;
+    display: block;
+    content: '';
+    background: $blueDark;
+}
 
 
 #nav-toggle span:before, #nav-toggle span:after {

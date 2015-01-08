@@ -1,5 +1,15 @@
 body.products.single {
 
+    .owl-carousel {
+        margin-bottom: $spacingSectionSmall;
+        & img {
+            @include media($screenLarge) {
+                @include span-columns(8);
+                @include shift(2);
+            }
+        }
+    }
+
     & #nav-toggle span:before, #nav-toggle span:after, #nav-toggle span {
         cursor: pointer;
         height: 3px;
