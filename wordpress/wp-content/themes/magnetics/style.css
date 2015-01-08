@@ -931,6 +931,8 @@ nav#toggler {
   nav#toggler .menu-btn.text {
     font-family: "open-sans";
     display: none; }
+    nav#toggler .menu-btn.text.dark {
+      color: #001f3f; }
     @media screen and (min-width: 850px) {
       nav#toggler .menu-btn.text {
         display: block;
@@ -1118,6 +1120,11 @@ Nav Panel
   right: 30px;
   top: 33%; }
 
+.dark #nav-toggle {
+  border-color: #001f3f; }
+  .dark #nav-toggle span {
+    background: #001f3f; }
+
 #nav-toggle {
   cursor: pointer;
   padding: 15px 33px 18px 8px;
@@ -1151,6 +1158,15 @@ nav#toggler {
     position: absolute;
     display: block;
     content: ''; }
+
+.dark #nav-toggle span:before, .dark #nav-toggle span:after {
+  cursor: pointer;
+  height: 3px;
+  width: 25px;
+  position: absolute;
+  display: block;
+  content: '';
+  background: #001f3f; }
 
 #nav-toggle span:before, #nav-toggle span:after {
   cursor: pointer;
@@ -1338,6 +1354,8 @@ body.archive.products #toggler .active span {
   .tabs h2 {
     color: #001f3f;
     margin: 0 auto; }
+  .tabs .resp-tabs-list.three li {
+    width: 33.33%; }
   .tabs .resp-accordion {
     background: #efefef; }
     .tabs .resp-accordion.resp-tab-active {
@@ -2346,6 +2364,17 @@ body.about {
       body.about #footer {
         border-top: 92px solid white; } }
 
+body.products.single .owl-carousel {
+  margin-bottom: 32px; }
+  @media screen and (min-width: 850px) {
+    body.products.single .owl-carousel img {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 65.88078%;
+      margin-left: 17.05961%; }
+      body.products.single .owl-carousel img:last-child {
+        margin-right: 0; } }
 body.products.single #nav-toggle span:before, body.products.single #nav-toggle span:after, body.products.single #nav-toggle span {
   cursor: pointer;
   height: 3px;

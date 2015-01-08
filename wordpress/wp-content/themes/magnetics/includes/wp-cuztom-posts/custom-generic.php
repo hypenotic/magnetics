@@ -59,6 +59,7 @@ $pages->add_meta_box(
         	'type'          => 'post_select',
         	'args'          => array(
             	'post_type' => 'article',
+                'show_option_none'   => '-- Select Article --'
         	),
             'repeatable'    =>  'true'
     	),
@@ -69,6 +70,7 @@ $pages->add_meta_box(
         	'type'          => 'post_select',
         	'args'          => array(
             	'post_type' => 'brochure',
+                'show_option_none'   => '-- Select Brochure --'
         	),
             'repeatable'    =>  'true'
     	)
@@ -98,6 +100,7 @@ $pages->add_meta_box(
             'type'          => 'post_select',
             'args'          => array(
                 'post_type' => 'brochure',
+                'show_option_none'   => '-- Select Brochure --'
             ),
             'repeatable'    =>  'true'
         )
@@ -258,7 +261,6 @@ $posts->add_meta_box(
             'label'         => 'Headline',
             'description'   => 'Enter Headline',
             'type'          => 'text',
-            
         ),
         array(
             'name'          => 'subheading',
@@ -273,6 +275,7 @@ $posts->add_meta_box(
             'label'         => 'Banner Image',
             'description'   => 'Dimensions 1200px x 600px',
             'type'          => 'image',
+            'repeatable'    => true
         ),
         array(
             'name'          => 'background_image',
@@ -295,6 +298,7 @@ $posts->add_meta_box(
             'type'          => 'post_select',
             'args'          => array(
                 'post_type' => 'article',
+                'show_option_none'   => '-- Select Article --'
             ),
             'repeatable'    =>  'true'
         ),
@@ -305,6 +309,7 @@ $posts->add_meta_box(
             'type'          => 'post_select',
             'args'          => array(
                 'post_type' => 'brochure',
+                'show_option_none'   => '-- Select Brochure --'
             ),
             'repeatable'    =>  'true'
         ),
@@ -315,7 +320,8 @@ $posts->add_meta_box(
             'type'          => 'post_select',
             'args'          => array(
                 'post_type' => 'post',
-                'cat'       =>  7
+                'cat'       =>  7,
+                'show_option_none'   => '-- Select Related --'
             ),
             'repeatable'    =>  'true'
         )
@@ -360,7 +366,8 @@ $posts->add_meta_box(
             'type'          => 'post_select',
             'args'          => array(
                 'post_type' => 'post',
-                'cat'       => 11
+                'cat'       => 11,
+                'show_option_none'   => '-- Select Integrations --'
             ),
             'repeatable'    =>  'true'
         ),
@@ -370,7 +377,8 @@ $posts->add_meta_box(
             'type'          => 'post_select',
             'args'          => array(
                 'post_type' => 'post',
-                'cat'       =>  7
+                'cat'       =>  7,
+                'show_option_none'   => '-- Select Products --'
             ),
             'repeatable'    =>  'true'
         ),

@@ -13,6 +13,11 @@
         color:$blueDark;
         margin:0 auto;
     }
+    .resp-tabs-list.three {
+        & li {
+            width:33.33%;
+        }
+    }
     .resp-accordion {
         background: #efefef;
         &.resp-tab-active {

@@ -42,6 +42,12 @@ nav#toggler {
     .menu-btn.text {
         font-family: $fontPrimary;
         display: none;
+        
+        &.dark {
+            color:$blueDark;
+        }
+
+
         @include media($screenLarge) {
             display: block;
             margin-right: 48px;
