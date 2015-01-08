@@ -10,7 +10,7 @@
     <footer>
         <section>   
          
-         <?php if(in_category('products') || is_category('integrations') && !is_404()) { ?>  
+         <?php if(in_category('products') || && !is_404()) { ?>  
         <!-- Module: productInformation -->
         <?php get_template_part( 'module', 'productsRelated' ); ?>
         <?php } else { ?>
