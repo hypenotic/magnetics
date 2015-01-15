@@ -2483,7 +2483,7 @@ body.products.single section[role="main"] .tabs .images + footer ul {
     color: #667c8f;
     text-transform: uppercase;
     font-weight: 800;
-    padding: 48px 0;
+    padding: 48px 2.35765%;
     letter-spacing: -2px; }
   .archive section[role="main"] > header #categories nav > h3 {
     color: #001f3f; }
@@ -2523,9 +2523,6 @@ body.products.single section[role="main"] .tabs .images + footer ul {
     content: "";
     display: table;
     clear: both; }
-  @media screen and (min-width: 850px) {
-    .archive header.banner {
-      padding: 0; } }
   .archive header.banner h2 {
     padding: 32px 0; }
 
