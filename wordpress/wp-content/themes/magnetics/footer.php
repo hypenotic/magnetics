@@ -1,13 +1,27 @@
+<?php if(is_category('products') || is_front_page()) { ?>
+
+<?php wp_footer();?>
+</body>
+</html>
+    
+<?php } else { ?>
+
 <section id="footer">
     <footer>
         <section>   
-            <h2>RMA FORM</h2>
-            <p>Lorem ipsumu dolor sit amet, consectetur adipiscing elit. Etiam pharetra.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra</p>
-            <p><a href="#">Go to Form ></a></p>
+         
+         <?php if(in_category('products') || !is_404()) { ?>  
+        <!-- Module: productInformation -->
+        <?php get_template_part( 'module', 'productsRelated' ); ?>
+        <?php } else { ?>
+       <!-- Module: rmaformOverview -->
+        <?php get_template_part( 'module', 'rmaformOverview' ); ?>
+        <?php } ?>
+
         </section>
 
         <section>
-            <h2>Contact</h2>
+            <h3>Contact</h3>
                 <h4>Marine Magnetics Corp.</h4>
                 <br /> <br />
                 <p>
@@ -24,3 +38,5 @@
 <?php wp_footer();?>
 </body>
 </html>
+
+<?php } ?>

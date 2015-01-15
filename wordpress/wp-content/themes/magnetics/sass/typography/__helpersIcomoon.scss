@@ -1,4 +1,4 @@
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"], .icon {
     font-family: $fontIconsSecondary;
     speak: none;
     font-style: normal;
@@ -11,14 +11,18 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon.mail:before {
+    content: "\f0e0";
+}
+.icon.more:before {
+    content: "\e602";
+}
 .icon.resource:before {
     content: "\e601";
 }
-
-.icon.read:before {
-    content: "\e602";
+.icon.view:before {
+    content: "\e5f0";
 }
-
-.icon-MarineMagnetics:before {
-    content: "\e600";
+.icon.printer:before {
+    content: "\e608";
 }

@@ -1,0 +1,26 @@
+.home {
+
+	display:flex;
+	justify-content:center;
+	flex-direction:column;
+	align-items:center;
+	height:100%;
+
+	& header {
+		background:none;
+		position:fixed;
+		width:100%;
+		top:0;
+	}
+
+	& #toggler {
+		z-index:100000;
+	}
+
+    .owl-carousel {
+	   margin-bottom: 0px;
+	}
+
+
+}
+

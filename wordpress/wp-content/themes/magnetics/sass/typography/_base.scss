@@ -16,23 +16,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: em($fontSizePoster);
+    font-size: em($fontSizeHeadingSmall);
     margin: 0;
-    line-height: em($fontSizeLarge);
+    line-height: em($fontSizeBody);
     font-weight: 800;
+    @include media($screenLarge) {
+        font-size: em($fontSizeHeading);
+        margin: 0;
+        line-height: em($fontSizeBody);
+        font-weight: 800;
+    }
 }
 
 h2 {
-    font-size: em($fontSizeSubheading);
+    font-size: em($fontSizeHeadingSmall);
     line-height: em($fontSizeBody);
-    font-weight: normal;
-    margin: 0;
+    font-weight: 700;
+    padding: $spacingSectionSmall 0;
+
+    @include media($screenLarge) {
+        font-size: em($fontSizeHeading);
+        line-height: em($fontSizeBody);
+        font-weight: 700;
+        padding: $spacingSectionLarge 0;
+    }
 }
 
 h3 {
     font-size: em($fontSizeLarge);
-    line-height: em($fontSizeSubheading);
-    font-weight: 600;
+    line-height: em($fontSizeBody);
+    font-weight: 700;
     letter-spacing: 0.5px;
     margin-bottom: em($fontSizeBodySecondary);
 }
@@ -53,24 +66,34 @@ h5 {
 
 h6 {
     font-size: em($fontSizeBody);
-    line-height: em($fontSizeCaption);
+    line-height: em($fontSizeBody);
     margin-bottom: 0;
     font-weight: normal;
 }
 
 p, ul, ol {
     font-size: em($fontSizeBody);
-    margin: 0 auto rhythm(1, $fontSizeBody);
+    margin: 0 0 em($fontSizeBody) 0;
     @include media($screenLarge) {
         font-size: em($fontSizeBody);
         line-height: em($fontSizeLarge);
-        margin: 0 auto rhythm(1, $fontSizeLarge);
+        margin: 0 0 em($fontSizeLarge) 0;
+    }
+}
+
+ol {
+    counter-reset: numeral-counter;
+    & > li:before {
+        content: counter(numeral-counter, decimal);
+        counter-increment: numeral-counter;
+        font-family: $fontSecondary;
+        font-size: em($fontSizeLarge);
     }
 }
 
 blockquote {
-    font-size: em($fontSizeLarge);
-    line-height: em($fontSizeSubheading);
+    font-size: em($fontSizeBody);
+    line-height: em($fontSizeBody);
     font-family: $fontSecondary;
     @include media($screenLarge) {
         font-size: em($fontSizeSubheading);
@@ -93,4 +116,9 @@ a {
 
 .text-center {
     text-align: center;
+}
+
+blockquote, blockquote p {
+    color:$blueSteel;
+    line-height:em($fontSizeBody);
 }

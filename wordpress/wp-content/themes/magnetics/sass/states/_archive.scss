@@ -1,0 +1,181 @@
+.archive section[role="main"] {
+    & > header {
+        @include outer-container($screenLarge);
+        @include pad(default);
+        & > h1 {
+            color: $gray;
+            text-transform: uppercase;
+            font-weight: 800;
+            @include pad($spacingSection default);
+            letter-spacing: -2px;
+        }
+        & #categories {
+            & nav {
+                & > h3 {
+                    color: $blueDark;
+                }
+                & li {
+                    &.current-cat, &:hover {
+                        & a {
+                            background: $blueDark;
+                            text-decoration: none;
+                            color: white;
+                        }
+                    }
+                    & a {
+                        font-size: em($fontSizeBodySecondary);
+                        margin: 4px 4px 4px 0;
+                        background: $grayLight;
+                        padding: 8px;
+                        @include media($screenLarge) {
+                            padding: 8px 18px;
+                            font-size: em($fontSizeBodySecondary);
+                            margin: 0 10px 0px 0;
+                        }
+
+                        text-decoration: underline;
+                        font-weight: 700;
+                        color: $blueDark;
+                    }
+                }
+            }
+        }
+    }
+    & .icon.resource span {
+        display: none;
+    }
+}
+
+.archive {
+    & header.banner {
+        height:46vh;
+        display:flex;
+        flex-direction: column;
+        justify-content:flex-end;
+        @include outer-container($screenOuter);
+        @include pad($spacingSectionSmall default);
+        margin-bottom: $spacingSectionLarge;
+        color:white;
+        @include fontShadow($blackOverlayLight);
+
+        @include media($screenLarge) {
+        }
+
+        & h2 {
+            @include pad($spacingSectionSmall 0);
+        }
+    }
+}
+
+.category-integrations section[role="main"] {
+    & .vendor {
+
+        clear:both;
+        margin-top: $spacingSection;
+
+        @include media($screenLarge) {
+
+        & img {
+            @include span-columns(3);
+        }
+        & section {
+            @include span-columns(7);
+            @include shift(1);
+        }
+        & a {
+            font-weight:bold;
+        }
+
+        }
+    }
+}
+
+.category-products section[role="main"], .category-product-integrations section[role="main"] {
+
+    & section.products {
+
+        ul {
+            margin:0;
+            padding:0;
+        }
+
+        color:white;
+        @include pad($spacingSectionLarge default);
+        @include outer-container($screenOuter);
+
+        & h3 a {
+            color:white;
+
+            &:hover {
+                color:$orange;
+            }
+        }
+
+        & .base-stations h3 a:hover, & .hardware-product-integrations h3 a:hover {
+            color:$teal;
+        }
+        & .marine-gradiometers h3 a:hover, & .software-product-integrations h3 a:hover {
+            color:$blueLight;
+        }
+        & .marine-magnetometers h3 a:hover {
+            color:$orange;
+        }
+
+        & label {
+
+            clear:both;
+            display:block;
+            margin-bottom:$spacingSectionSmall;
+
+            span {
+                display:inline-block;
+                color:white;
+                font-weight:bold;
+                padding:4px 8px;
+            }
+
+            &.base-stations span, &.hardware-product-integrations span {
+                background:$teal;
+            }
+            &.marine-gradiometers span, &.software-product-integrations span {
+                background:$blueLight;
+            }
+            &.marine-magnetometers span {
+                background:$orange;
+            }
+        }
+
+    }
+
+    
+
+    background: -moz-linear-gradient(top, rgba(0,31,63,0) 0%, rgba(0,31,63,1) 300px, rgba(0,31,63,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,31,63,0)), color-stop(300px,rgba(0,31,63,1)), color-stop(100%,rgba(0,31,63,1)));
+    background: -webkit-linear-gradient(top, rgba(0,31,63,0) 0%,rgba(0,31,63,1) 300px,rgba(0,31,63,1) 100%);
+    background: -o-linear-gradient(top, rgba(0,31,63,0) 0%,rgba(0,31,63,1) 300px,rgba(0,31,63,1) 100%);
+    background: -ms-linear-gradient(top, rgba(0,31,63,0) 0%,rgba(0,31,63,1) 300px,rgba(0,31,63,1) 100%);
+    background: linear-gradient(to bottom, rgba(0,31,63,0) 0%,rgba(0,31,63,1) 300px,rgba(0,31,63,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00001f3f', endColorstr='#001f3f',GradientType=0 );
+
+
+    & ul .product {
+
+        display:flex;
+        flex-direction:column;
+        margin:0;
+        margin-bottom:$spacingSectionLarge;
+
+
+        @include media($screenLarge) {
+            @include span-columns(5);
+            &:nth-child(2n) {
+                @include shift(1);
+            }
+        }
+
+        p {
+            min-height:140px;
+        }
+
+    }
+} 

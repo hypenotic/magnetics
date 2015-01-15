@@ -1,0 +1,42 @@
+section.related {
+
+	& ul {
+
+		padding-top: $spacingSectionSmall;
+
+		& li {
+
+			margin:0 0 20px 0;
+
+			& > a {
+				padding:10px 20px;
+				font-weight:500;
+				transition:0.2s all ease-in-out;
+				color:white;
+				text-decoration:none;
+				display:inline-block;
+				background:$teal;
+				
+				&:hover {
+					background:white !important;
+					color: $blueDark;
+					text-decoration:none !important;
+				}
+			}
+		}
+
+		& li.product-integrations a {
+			background:$teal;
+		}
+
+		& li.base-stations a, & li.hardware-product-integrations a {
+			background:$teal;
+		}
+		& li.marine-gradiometers, & li.software-product-integrations a {
+			background:$blueLight;
+		}
+		& li.marine-magnetometers a {
+			background:$orange;
+		}
+	}
+}

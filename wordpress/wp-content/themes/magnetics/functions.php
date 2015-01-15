@@ -9,12 +9,12 @@ include('includes/wp-cuztom-helper/cuztom.php');
 include('includes/wp-cuztom-posts/custom-article-library.php');
 include('includes/wp-cuztom-posts/custom-brochure-library.php');
 include('includes/wp-cuztom-posts/custom-generic.php');
-//include('includes/wp-cuztom-posts/custom-post-product.php');
+include('includes/wp-cuztom-posts/custom-team-members.php');
 
 //Load custom functions
 require_once('includes/functions/add-classes-to-body.php');
 require_once('includes/functions/admin-tinymce.php');
-require_once('includes/functions/archives.php');
+// require_once('includes/functions/archives.php');
 require_once('includes/functions/get-parent-category-name.php');
 //require_once('includes/functions/custom-login-logo.php');
 require_once('includes/functions/enqueue-style.php');
@@ -37,16 +37,5 @@ require_once('includes/functions/add-placeholder-field-gravity-forms.php');
 //require_once('includes/shortcodes/readmore.php');
 //require_once('includes/shortcodes/tab.php');
 
-add_action('pre_get_posts', 'add_my_custom_post_type');
-
-/**
- * @param WP_Query $query
- * @return WP_Query
- */
-function add_my_custom_post_type($query) {
-
-        $query->set('post_type', array('post', 'brochure'));
-        return $query;
-}
 
 ?>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title><?php wp_title( '|', true, 'right' ); ?><?php bloginfo('name') ?></title>
 <?php 
-    $args   =array('post_type' => 'post','posts_per_page' => 1);query_posts($args);
+    $args = array('post_type' => 'post','posts_per_page' => 1);query_posts($args);
     if (have_posts()) : while(have_posts()) : the_post();
     if (is_single()) { ?>
         <meta property="og:url" content="<?php the_permalink() ?>"/>
@@ -22,6 +22,18 @@
 <?php wp_reset_query(); ?>
 
 <?php wp_head(); ?>
+
+<script type='text/javascript'>
+(function (d, t) {
+  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+  bh.type = 'text/javascript';
+  bh.src = '//www.bugherd.com/sidebarv2.js?apikey=1wpsnobnz9aehqcpybypga';
+  s.parentNode.insertBefore(bh, s);
+  })(document, 'script');
+</script>
+
+
+
 </head>
 
 <body <?php body_class();?>>
@@ -33,19 +45,17 @@
   </nav>
 <!-- Menu Section Ends -->
 
-<header>
-<a href="<?php bloginfo('url') ?>" title="Marine Magnetics" alt="Marine Magnetics - Home">
-  <img class="logo" src="<?php bloginfo('template_url') ?>/images/logo.png" />
-</a>
-
-    <nav>
-        <div class="container">
-            <div class="menu-btn"><span>Menu</span></div>
-            <div class="menu-btn">
+   <nav id="toggler">
+          <div class="menu-btn text"><span>Menu</span></div>
+          <div class="menu-btn">
                <a id="nav-toggle" href="#menu"><span></span></a>
           </div>
-        </div>
-     </nav>
+   </nav>
 
+<header>
+<a class="logo" href="<?php bloginfo('url') ?>" title="Marine Magnetics" alt="Marine Magnetics - Home">
+  <img src="<?php bloginfo('template_url') ?>/images/logo.png" />
+</a>
 
+ 
 </header>

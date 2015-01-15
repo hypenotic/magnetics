@@ -1,17 +1,130 @@
 body.products.single {
+
+    .owl-carousel {
+        margin-bottom: $spacingSectionSmall;
+        & img {
+            @include media($screenLarge) {
+                @include span-columns(8);
+                @include shift(2);
+            }
+        }
+    }
+
+    & #nav-toggle span:before, #nav-toggle span:after, #nav-toggle span {
+        cursor: pointer;
+        height: 3px;
+        width: 25px;
+        .single &, .articles-and-brochures &, .single-brochure & {}
+        position: absolute;
+        display: block;
+        content: '';
+        background: white;
+    }
+    & #toggler{
+        opacity:0.8;
+        & .menu-btn.text { 
+        }
+    }
+
+    #toggler .active {
+        & span {
+            background:none;
+            &:after, &:before {
+                background: $blueDark;
+            }
+        }
+    }
+
+
     & section[role="main"] {
         & article {
-            h2 {
+            h1 {
                 @include opacity(0.7);
                 color: white;
-                font-weight: 800;
-                line-height: 40%;
+                font-weight: 700;
                 position: absolute;
+                line-height:60%;
                 top: -2%;
-                left: 0;
+                left: -1%;
                 text-align: center;
                 width: 100%;
                 z-index: -1;
+                margin:0 auto;
+                max-width:100%;
+
+                & span {
+                    display:block;
+                    font-size:50%;
+                    line-height:160%;
+                }
+
+            }
+        }
+
+        & .tabs {
+        }
+
+        & .tabs aside.options {
+
+            @include media($screenLarge) {
+                @include span-columns(1);
+            }
+            & + h3 {
+                color:$orange;
+            }
+
+
+            a {
+
+                @include media($screenLarge) {
+                    display:block;
+                }
+
+                margin-bottom:10px;
+                color: $blueDark;
+                &:hover {
+                    color: $teal;
+                }
+            }
+        }
+
+        & .tabs .images {
+            margin-bottom:em($spacingSectionSmall);
+            @include media($screenLarge) {
+                @include span-columns(10);
+                @include shift(0);
+            }
+
+        }
+
+        & .tabs .images + footer {
+
+            @include media($screenLarge) {
+                @include span-columns(11);
+                @include shift(1);
+                margin-top:$spacingSection;
+            }
+
+            & ul {
+                margin-bottom:em($spacingSectionSmall);
+                @include media($screenLarge) {
+                    @include span-columns(4);
+                }
+                & li {
+                    &:first-child {
+                        color:$orange;
+                        margin-bottom:4px;
+                        font-weight:bold;
+                    }
+                    
+                    color:black;
+                    font-size:em($fontSizeSmall);
+                    line-height:em($fontSizeBody);
+                    margin-bottom:4px;
+                    & a {
+                        color:black;
+                    }
+                }
             }
         }
     }

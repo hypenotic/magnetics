@@ -17,8 +17,20 @@ function add_slug_to_body_class($classes) {
 	    $category_slugs[] = $category->slug;
 	}
 
+	function get_the_slug( $id=null ){
+	  if( empty($id) ):
+	    global $post;
+	    if( empty($post) )
+	      return ''; // No global $post var available.
+	    $id = $post->ID;
+	  endif;
 
-	$classes[] = implode(' ',$category_slugs) . ' ' . $post->post_name . ' offcanvas dark';
+	  $slug = basename( get_permalink($id) );
+	  return $slug;
+	}
+
+
+	$classes[] = implode(' ',$category_slugs) . ' ' . get_the_slug()  . ' ' . $post->post_name . ' offcanvas dark';
 	return $classes;
 }
 

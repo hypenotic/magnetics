@@ -1,11 +1,11 @@
 <?php //CPT for article library
 
 $args = array(
-	'has_archive' => true,
+	'has_archive' => false,
 	//'menu_position' => 5,
 	'menu_icon' => 'dashicons-welcome-learn-more', //http://melchoyce.github.io/dashicons/
 	'supports'	=> array( 'title' ),
-	'rewrite' => array('slug' => 'articles-brochures'),
+	// 'rewrite' => array('slug' => 'articles-and-brochures'),
  	);
 
 $brochure = register_cuztom_post_type( 'Brochure', $args);
