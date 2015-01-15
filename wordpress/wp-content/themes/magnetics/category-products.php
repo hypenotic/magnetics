@@ -26,12 +26,15 @@
     $childCats = get_categories( 'child_of='.$parentCatID );
     if(is_array($childCats)):
     foreach($childCats as $category){ ?>
+
+
     <label class="<?php echo $category->slug; ?>"><span><?php echo $category->cat_name; ?></span></label>
+    <ul>
     <?php query_posts('cat='.$category->term_id);
     while(have_posts()): the_post(); $do_not_duplicate = $post->ID; ?>
     <!-- POST CODE -->
 
-    <div class="product <?php echo $category->slug; ?>">
+    <li class="product <?php echo $category->slug; ?>">
 
      <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 
@@ -54,15 +57,19 @@
 
        
 
-    </div>
+    </li>
 
     <!-- END POST CODE -->
     <?php
     endwhile; 
+    ?>
+    </ul>
+    <?php
     wp_reset_query(); 
     }
     endif;
     ?>
+    
 
 </section>
 

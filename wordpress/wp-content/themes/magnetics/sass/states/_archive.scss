@@ -53,7 +53,7 @@
         flex-direction: column;
         justify-content:flex-end;
         @include outer-container($screenOuter);
-        @include pad($spacingSectionSmall 0);
+        @include pad($spacingSectionSmall default);
         margin-bottom: $spacingSectionLarge;
         color:white;
         @include fontShadow($blackOverlayLight);
@@ -95,8 +95,13 @@
 
     & section.products {
 
+        ul {
+            margin:0;
+            padding:0;
+        }
+
         color:white;
-        @include pad($spacingSectionLarge 0);
+        @include pad($spacingSectionLarge default);
         @include outer-container($screenOuter);
 
         & h3 a {
@@ -154,16 +159,17 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00001f3f', endColorstr='#001f3f',GradientType=0 );
 
 
-    & .product {
+    & ul .product {
 
         display:flex;
         flex-direction:column;
-
+        margin:0;
         margin-bottom:$spacingSectionLarge;
+
 
         @include media($screenLarge) {
             @include span-columns(5);
-            &:nth-child(2n+1) {
+            &:nth-child(2n) {
                 @include shift(1);
             }
         }

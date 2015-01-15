@@ -3,6 +3,9 @@
     & header {
         margin-bottom: 96px;
     }
+    &.boxes {
+        @include pad(default);
+    }
     & > section {
         display: none;
         &.active {

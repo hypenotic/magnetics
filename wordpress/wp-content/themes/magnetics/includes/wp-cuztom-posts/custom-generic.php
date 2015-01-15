@@ -47,6 +47,12 @@ $pages->add_meta_box(
             'type'          => 'image',
         ),
         array(
+            'name'          => 'darkmenu',
+            'label'         => 'Dark Menu',
+            'description'   => 'Make the menu dark?',
+            'type'          => 'checkbox',
+        ),
+        array(
             'name'          => 'text',
             'label'         => 'Text Overlay',
             'description'   => 'Text that will overlay image',
@@ -276,6 +282,12 @@ $posts->add_meta_box(
             'description'   => 'Dimensions 1200px x 600px',
             'type'          => 'image',
             'repeatable'    => true
+        ),
+        array(
+            'name'          => 'darkmenu',
+            'label'         => 'Dark Menu',
+            'description'   => 'Make the menu dark?',
+            'type'          => 'checkbox',
         ),
         array(
             'name'          => 'background_image',

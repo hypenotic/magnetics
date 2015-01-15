@@ -34,7 +34,7 @@
     <div >
       <article>
    <?php 
-query_posts('post_type=post&cat=9');
+query_posts('post_type=post&cat=10');
 if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 
     $metaIntegrationsLink = get_post_meta($post->ID, '_integrations_link', true);
@@ -70,7 +70,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
     <div>
     <article>
     <?php 
-query_posts('post_type=post&cat=10');
+query_posts('post_type=post&cat=9');
 if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 
     $metaIntegrationsLink = get_post_meta($post->ID, '_integrations_link', true);

@@ -3,9 +3,11 @@
     content: '';
     width: 12px;
     height: 12px;
+    display:none;
     @include media($screenLarge) {
         width: 40px;
         height: 40px;
+        display:block;
     }
 
     background-position: center center;
@@ -34,7 +36,7 @@
 }
 
 section#timeline {
-    @include pad($spacingSection default 0 default);
+    @include pad($spacingSection 2.35765% 0 2.35765%);
 
     @include media($screenLarge) {
             @include pad($spacingSectionLarge 0 0 0);

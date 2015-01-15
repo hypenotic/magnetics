@@ -12,8 +12,25 @@
 	$metaBannerBackgroundImageAttachment = wp_get_attachment_image_src( $metaBannerBackgroundImageID, 'full' );
 	$metaBannerBackgroundImageAttachmentURL = $metaBannerBackgroundImageAttachment[0];
 
+	$metaDarkMenu = get_post_meta($post->ID, '_banner_darkmenu', true); ?>
+
+
+	<?php 
+
+	if($metaDarkMenu) { ?>
+
+ 	<script>
+ 		jQuery(document).ready(function($){
+
+ 			$('.menu-btn').addClass('dark');
+
+ 		});
+ 	</script>
+
+	<?php }
+
 	// Have they added a video?
- 	if(!$metaBannerBackgroundImageID ) {
+ 	if(!$metaBannerBackgroundImageID) {
  	?>
 
  	<script>

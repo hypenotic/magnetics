@@ -36,34 +36,40 @@
         <br style="clear:both" />
 
         <div class="resp-tabs-container">
-            <div>
+
+             <?php
+                if($metaWhatsInTheBox) { ?>
+
+            <div id="whatsinthebox">
                     <?php echo $metaWhatsInTheBox; ?>  
             </div>
+            <?php } ?>
+            <!-- end #metawhatsinthebox -->
 
-            <div>
-                    
             <?php
-                if($metaAdditionalOptions) {
+                if($metaAdditionalOptions) { ?>
+
+            <div id="additionaloptions">
                     
-                    foreach ( $metaAdditionalOptions as $option ) { ?>
+                <?php foreach ( $metaAdditionalOptions as $option ) { ?>
                 <h3 id="<?php sanitize_title($option['_title']); ?>"><?php echo $option['_title']; ?></h3>
                 <p><?php echo $option['_description']; ?></p>
             <!-- End Loop -->
-            <?php }
-
-                } 
-            ?>
+            <?php } ?>
 
             </div>
-            <div>
-                    
-           <?php
 
-                if($metaIntegrations) {
-                    $args = array(
-                        'post__in'    =>  $metaIntegrations
-                    );
+           <?php  } ?>
+           <!-- end #additionaloptions -->
 
+            <?php if(!($metaIntegrations[0] == 0))  { ?>
+            <div id="integrations"> 
+            <?php
+
+            if($metaIntegrations) {
+                $args = array(
+                    'post__in'    =>  $metaIntegrations
+                );
 
             $related_posts = get_posts($args);
 
@@ -83,18 +89,20 @@
 
 
             </div>
-            <div>
+            <?php } ?>
+            <!-- end integrations -->
 
+            <div>
 
                 <?php get_template_part( 'template', 'brochureFileOptions' ); ?>
                 
                 <h3>The <?php the_title() ?> comes with:</h3>
 
                 <section class="images">
+            
+            <?php 
 
-        <?php 
-
-                 if($metaSystemAtAGlance) {
+             if($metaSystemAtAGlance) {
                     foreach($metaSystemAtAGlance as $image) { ?>
 
                     <?php if ($image) {
@@ -104,9 +112,7 @@
 
                 <?php }
              }
-
-
-         ?>
+            ?>
                 </section>
 
                  <footer>
