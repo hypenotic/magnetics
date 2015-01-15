@@ -6,7 +6,7 @@
             color: $gray;
             text-transform: uppercase;
             font-weight: 800;
-            padding: $spacingSection 0;
+            @include pad($spacingSection default);
             letter-spacing: -2px;
         }
         & #categories {
@@ -59,7 +59,6 @@
         @include fontShadow($blackOverlayLight);
 
         @include media($screenLarge) {
-          @include pad(0);
         }
 
         & h2 {

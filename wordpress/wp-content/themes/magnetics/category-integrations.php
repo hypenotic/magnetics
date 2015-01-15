@@ -4,6 +4,14 @@
 
 <?php get_header(); ?>
 
+    <script>
+        jQuery(document).ready(function($){
+
+            $('.menu-btn').addClass('dark');
+
+        });
+    </script>
+    
     <div class="background">
         <video autoplay loop id="bgvid">
             <source src="<?php echo get_bloginfo('template_url').'/videos/shutterstock_v3711827.mp4' ?>" type="video/mp4">
