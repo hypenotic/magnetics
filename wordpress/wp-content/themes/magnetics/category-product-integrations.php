@@ -48,10 +48,7 @@
         $metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
 
         if($metaBannerSubheading !== -1) { ?>
-            <p><?php the_title() ?>. <?php echo $metaBannerSubheading; ?>
-
-             
-            </p>
+            <p><?php echo $metaBannerSubheading; ?></p>
 
             <!--
                 <a class="button clear" href="<?php the_permalink(); ?>" title="Learn More">Learn More</a>

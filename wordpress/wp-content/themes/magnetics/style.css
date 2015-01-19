@@ -2564,6 +2564,9 @@ body.products.single section[role="main"] .tabs .images + footer ul {
     .category-products section[role="main"] section.products ul, .category-product-integrations section[role="main"] section.products ul {
       margin: 0;
       padding: 0; }
+      @media screen and (min-width: 850px) {
+        .category-products section[role="main"] section.products ul li.product, .category-product-integrations section[role="main"] section.products ul li.product {
+          min-height: 340px; } }
     .category-products section[role="main"] section.products:after, .category-product-integrations section[role="main"] section.products:after {
       content: "";
       display: table;
