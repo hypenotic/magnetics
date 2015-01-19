@@ -97,6 +97,13 @@
         ul {
             margin:0;
             padding:0;
+
+            & li.product {
+                @include media($screenLarge) {
+                    min-height:340px;
+                } 
+                
+            }
         }
 
         color:white;
