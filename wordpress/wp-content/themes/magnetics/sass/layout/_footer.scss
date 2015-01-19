@@ -23,7 +23,6 @@
                 @include span-columns(5);
 
                 &:first-child {
-                    border-right: 1px solid white;
                     margin-right:0;
                     @include pad(0 default 0 0);
                 }
