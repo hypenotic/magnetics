@@ -19,6 +19,18 @@
 
     .owl-carousel {
 	   margin-bottom: 0px;
+	   	& .item {
+	   		overflow:hidden;
+
+	   		& img {
+
+	            @include media($screenLarge) {
+	                @include shift(-1);
+	                @include span-columns(7);
+	            }
+	   		}
+
+	   	}
 	}
 
 

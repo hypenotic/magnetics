@@ -1087,7 +1087,8 @@ Nav Panel
         .panel ul li.current-menu-item ul.sub-menu li {
           background: white; }
           .panel ul li.current-menu-item ul.sub-menu li a {
-            color: #C0C9D1; }
+            color: #5c6f81;
+            padding-left: 8px; }
             .panel ul li.current-menu-item ul.sub-menu li a:hover {
               color: white; }
         .panel ul li.current-menu-item a {
@@ -2629,6 +2630,17 @@ body.products.single section[role="main"] .tabs .images + footer ul {
     z-index: 100000; }
   .home .owl-carousel {
     margin-bottom: 0px; }
+    .home .owl-carousel .item {
+      overflow: hidden; }
+      @media screen and (min-width: 850px) {
+        .home .owl-carousel .item img {
+          margin-left: -8.5298%;
+          float: left;
+          display: block;
+          margin-right: 2.35765%;
+          width: 57.35098%; }
+          .home .owl-carousel .item img:last-child {
+            margin-right: 0; } }
 
 body.contact section[role="main"] {
   background: #667c8f;
