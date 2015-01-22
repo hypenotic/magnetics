@@ -78,6 +78,59 @@
     ?>
     
 
+
+    <?php
+
+    // integrations
+
+    $parentCatID = get_category_by_slug('product-integrations');
+    $category = get_category($parentCatID); 
+
+    print_r($parentCatID)
+ ;   ?>
+
+
+
+    <label class="<?php echo $category->slug; ?>"><span><?php echo $category->cat_name; ?></span></label>
+    <ul>
+    <?php query_posts('cat='.$category->term_id);
+    while(have_posts()): the_post(); $do_not_duplicate = $post->ID; ?>
+    <!-- POST CODE -->
+
+    <li class="product <?php echo $category->slug; ?>">
+
+     <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+
+        <?php 
+        // Banner Subheading
+        // Custom meta values 
+        $metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
+
+        if($metaBannerSubheading !== -1) { ?>
+            <p><?php the_title() ?>. <?php echo $metaBannerSubheading; ?>
+
+             
+            </p>
+
+            <!--
+                <a class="button clear" href="<?php the_permalink(); ?>" title="Learn More">Learn More</a>
+            -->
+
+        <?php } ?>
+
+       
+
+    </li>
+
+    <!-- END POST CODE -->
+    <?php
+    endwhile; 
+    ?>
+    </ul>
+    <?php
+    wp_reset_query(); 
+    ?>
+
 </section>
 
 </section>

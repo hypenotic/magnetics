@@ -141,7 +141,7 @@
                 padding:4px 8px;
             }
 
-            &.base-stations span, &.hardware-product-integrations span {
+            &.base-stations span, &.hardware-product-integrations span, &.product-integrations span {
                 background:$teal;
             }
             &.marine-gradiometers span, &.software-product-integrations span {
@@ -177,6 +177,9 @@
             @include span-columns(5);
             &:nth-child(2n) {
                 @include shift(1);
+            }
+            &:nth-child(2n + 1) {
+                clear:left;
             }
         }
 

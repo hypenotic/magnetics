@@ -57,5 +57,5 @@
   <img src="<?php bloginfo('template_url') ?>/images/logo.png" />
 </a>
 
- 
 </header>
+<?php get_template_part( 'module', 'callUs' ); ?>
