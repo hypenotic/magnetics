@@ -1819,6 +1819,39 @@ section#team {
     section#team ul.list li img {
       border-radius: 1000px; }
 
+a#call {
+  position: fixed;
+  right: 0;
+  top: 40%;
+  z-index: 10;
+  background: #00c7d5;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.625em;
+  padding: 2px 12px;
+  display: block;
+  -ms-transform: rotate(-90deg);
+  /* IE 9 */
+  -ms-transform-origin: 100% 100%;
+  /* IE 9 */
+  -webkit-transform: rotate(90deg);
+  /* Chrome, Safari, Opera */
+  -webkit-transform-origin: 100% 100%;
+  /* Chrome, Safari, Opera */
+  transform: rotate(-90deg);
+  transform-origin: 100% 100%;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px; }
+  a#call:hover {
+    background: orange; }
+  @media screen and (min-width: 850px) {
+    a#call {
+      padding: 8px 18px;
+      font-weight: bold;
+      font-size: 1.125em; } }
+
 article.overview:hover h3 a {
   color: #fb8547; }
   article.overview:hover h3 a:hover {
@@ -2591,7 +2624,7 @@ body.products.single section[role="main"] .tabs .images + footer ul {
         color: white;
         font-weight: bold;
         padding: 4px 8px; }
-      .category-products section[role="main"] section.products label.base-stations span, .category-products section[role="main"] section.products label.hardware-product-integrations span, .category-product-integrations section[role="main"] section.products label.base-stations span, .category-product-integrations section[role="main"] section.products label.hardware-product-integrations span {
+      .category-products section[role="main"] section.products label.base-stations span, .category-products section[role="main"] section.products label.hardware-product-integrations span, .category-products section[role="main"] section.products label.product-integrations span, .category-product-integrations section[role="main"] section.products label.base-stations span, .category-product-integrations section[role="main"] section.products label.hardware-product-integrations span, .category-product-integrations section[role="main"] section.products label.product-integrations span {
         background: #00c7d5; }
       .category-products section[role="main"] section.products label.marine-gradiometers span, .category-products section[role="main"] section.products label.software-product-integrations span, .category-product-integrations section[role="main"] section.products label.marine-gradiometers span, .category-product-integrations section[role="main"] section.products label.software-product-integrations span {
         background: #0088c7; }
@@ -2611,7 +2644,9 @@ body.products.single section[role="main"] .tabs .images + footer ul {
         .category-products section[role="main"] ul .product:last-child, .category-product-integrations section[role="main"] ul .product:last-child {
           margin-right: 0; }
         .category-products section[role="main"] ul .product:nth-child(2n), .category-product-integrations section[role="main"] ul .product:nth-child(2n) {
-          margin-left: 8.5298%; } }
+          margin-left: 8.5298%; }
+        .category-products section[role="main"] ul .product:nth-child(2n + 1), .category-product-integrations section[role="main"] ul .product:nth-child(2n + 1) {
+          clear: left; } }
     .category-products section[role="main"] ul .product p, .category-product-integrations section[role="main"] ul .product p {
       min-height: 140px; }
 
