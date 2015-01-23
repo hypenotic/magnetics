@@ -34,6 +34,13 @@ $pages->add_meta_box(
             'description'   => 'Dimensions 1200px x 600px',
             'type'          => 'image',
         ),
+
+        array(
+            'name'          => 'heading_short',
+            'label'         => 'Short Heading',
+            'description'   => 'Top Large Text',
+            'type'          => 'text',
+        ),
         array(
             'name'          => 'subheading',
             'label'         => 'Subheading',

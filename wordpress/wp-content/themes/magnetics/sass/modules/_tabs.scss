@@ -4,7 +4,6 @@
         margin-bottom: 96px;
     }
     &.boxes {
-        @include pad(default);
     }
     & > section {
         display: none;
@@ -22,9 +21,9 @@
         }
     }
     .resp-accordion {
-        background: #efefef;
+        background: $blueDark;
         &.resp-tab-active {
-            background: $blueDark;
+            background: white;
         }
         & div {
                 @include pad($spacingSectionSmall default);

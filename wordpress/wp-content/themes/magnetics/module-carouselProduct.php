@@ -14,11 +14,10 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     $metaBannerImageID = get_post_meta($post->ID, '_banner_image', true);
 
     if ($metaBannerImageID  !== -1) { 
-        $metaBannerImageAttachment = wp_get_attachment_image_src( $metaBannerImageID, 'full' );
-        $metaBannerImageAttachmentURL = $metaBannerImageAttachment[0];
+          $metaBannerImageAttachmentURL = wp_get_attachment_image_src( $metaBannerImageID[0], 'full' );
 
         ?>
-        <img src="<?php echo $metaBannerImageAttachmentURL; ?>">
+        <img src="<?php echo $metaBannerImageAttachmentURL[0]; ?>">
     <?php } ?>
         <section>
     <?php  

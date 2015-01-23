@@ -8,6 +8,17 @@
   overflow: hidden;
   z-index:-1;
 
+  & .overlay {
+    width:100%;
+    height:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:2;
+    background:$blueSteel;
+    opacity:0.5;
+  }
+
   & > video {
     -webkit-filter: contrast(140%) hue-rotate(-5deg) saturate(73%);
     transform: rotateY(180deg);
