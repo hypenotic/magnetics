@@ -14,7 +14,7 @@
 <section class="tabs boxes">
     <h2>Specifications</h2>
 
-        <ul class="resp-tabs-list <?php if($metaIntegrations[0] == 0) {echo 'three'; } ?>">
+        <ul class="resp-tabs-list <?php if($metaIntegrations[0] == 0) {echo 'three'; } else { echo 'four'; } ?>">
             <li class="active">
                 What's In The Box   
             </li>
