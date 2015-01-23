@@ -7,11 +7,17 @@
         @include pad(48px default);
         color: white;
 
+        a {
+            color:$teal;
+        }
+
         @include media($screenLarge) {
 
             @include pad(48px 0);
 
             & > section {
+
+
 
                 &:last-child {
                     @include shift(1);
