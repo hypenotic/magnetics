@@ -6,18 +6,16 @@
         @include outer-container;
         @include pad(48px default);
         color: white;
-
-        a {
+        & > section:last-child a {
             color:$teal;
         }
+        
 
         @include media($screenLarge) {
 
             @include pad(48px 0);
 
             & > section {
-
-
 
                 &:last-child {
                     @include shift(1);
