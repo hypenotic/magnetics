@@ -1019,7 +1019,7 @@ nav#toggler {
       content: "";
       display: table;
       clear: both; }
-    #footer footer a {
+    #footer footer > section:last-child a {
       color: #00c7d5; }
     @media screen and (min-width: 850px) {
       #footer footer {
@@ -1652,7 +1652,6 @@ section#timeline {
       margin-bottom: 40px; }
       @media screen and (min-width: 850px) {
         section#timeline > ul > li {
-          min-height: 350px;
           padding: 0 8.4153% 6.4153% 8.4153%;
           list-style: none;
           width: 49.999%;
@@ -1731,7 +1730,8 @@ section#timeline {
         section#timeline > ul > li.left {
           list-style: none;
           margin-left: 0%;
-          text-align: right; } }
+          text-align: right;
+          min-height: 350px; } }
       section#timeline > ul > li.left:before {
         left: 22px;
         right: 0%;

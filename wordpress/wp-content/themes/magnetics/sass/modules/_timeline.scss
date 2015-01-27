@@ -97,7 +97,7 @@ section#timeline {
         & > li {
             margin-bottom: 40px;
             @include media($screenLarge) {
-                min-height:350px;
+                
                 padding: 0 8.4153% 6.4153% 8.4153%;
                 list-style: none;
                 width: 49.999%;
@@ -138,6 +138,7 @@ section#timeline {
                     list-style: none;
                     margin-left: 0%;
                     text-align:right;
+                    min-height:350px;
                 }
 
                 &:before {
