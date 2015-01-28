@@ -71,6 +71,9 @@ body.contact {
 				text-shadow:none;
 			}
 		}
+		a.resource {
+			border-bottom:0px;
+		}
 
 		@include media($screenLarge) {
 
@@ -87,8 +90,12 @@ body.contact {
 		}
 
 		& .optional a.icon {
+			display:block;
 			&:hover {
 				color:$orange;
+				&:before {
+					color:$teal;
+				}
 			}
 
 			font-size:em($fontSizeBody);

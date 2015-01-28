@@ -9,7 +9,9 @@
         & > section:last-child a {
             color:$teal;
         }
-        
+        p > a {   
+            color:$teal;
+        }
 
         @include media($screenLarge) {
 

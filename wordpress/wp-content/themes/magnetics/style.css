@@ -769,13 +769,21 @@ blockquote {
       font-size: 1.5625em;
       margin: 0 auto rhythm(1, 25); } }
 
-a:hover {
-  outline: none;
+p > a, a[href^=mailto] {
+  text-decoration: none !important;
+  display: inline-block;
+  border-bottom: 1px solid;
+  padding-bottom: 2px; }
+
+a {
   text-decoration: none; }
-a:active {
-  outline: none; }
-a:focus {
-  outline: none; }
+  a:hover {
+    outline: none;
+    text-decoration: none; }
+  a:active {
+    outline: none; }
+  a:focus {
+    outline: none; }
 
 .text-center {
   text-align: center; }
@@ -1020,6 +1028,8 @@ nav#toggler {
       display: table;
       clear: both; }
     #footer footer > section:last-child a {
+      color: #00c7d5; }
+    #footer footer p > a {
       color: #00c7d5; }
     @media screen and (min-width: 850px) {
       #footer footer {
@@ -1389,17 +1399,24 @@ body.archive.products #toggler .active span {
       width: 50%;
       float: left;
       background: #001f3f;
+      transform: all 0.3s ease-in-out;
       display: flex;
       align-items: stretch;
       flex-direction: column;
       color: white; }
+      .tabs ul.two li:hover {
+        background: #062949; }
       .tabs ul.two li.resp-tab-active {
         background: white;
         color: #001f3f; }
+        .tabs ul.two li.resp-tab-active:hover {
+          background: white; }
         .tabs ul.two li.resp-tab-active h3:first-of-type {
-          text-decoration: none; }
+          border-bottom: 0px; }
       .tabs ul.two li h3:first-of-type {
-        text-decoration: underline; }
+        display: inline-block;
+        padding-bottom: 3px;
+        border-bottom: 1.5px solid white; }
       .tabs ul.two li div {
         padding: 48px 4.7153%;
         display: block; }
@@ -1947,6 +1964,8 @@ article.overview:last-of-type:after {
     text-align: center;
     background: #001f3f;
     color: white; }
+    .tabs.boxes > ul > li:hover {
+      background: #062949; }
     @media screen and (min-width: 850px) {
       .tabs.boxes > ul > li:first-child {
         border-left: 1px solid #667c8f; } }
@@ -1984,6 +2003,8 @@ article.overview:last-of-type:after {
   @media screen and (min-width: 850px) {
     .resp-tabs-list li {
       font-weight: 300; } }
+  .resp-tabs-list li:hover {
+    background: #062949; }
 
 .resp-tabs-container {
   padding: 0px;
@@ -2445,8 +2466,8 @@ body.products.single section[role="main"] article h1 {
   color: white;
   font-weight: 700;
   position: absolute;
-  line-height: 60%;
-  top: -2%;
+  line-height: 70%;
+  top: -1%;
   left: -1%;
   text-align: center;
   width: 100%;
@@ -2585,6 +2606,20 @@ body.products.single section[role="main"] .tabs .images + footer ul {
 .category-integrations section[role="main"] .vendor {
   clear: both;
   margin-top: 48px; }
+  .category-integrations section[role="main"] .vendor a:last-of-type {
+    color: #001f3f;
+    display: block;
+    transition: all 0.2s ease-in-out; }
+    .category-integrations section[role="main"] .vendor a:last-of-type:hover {
+      color: #fb8547; }
+      .category-integrations section[role="main"] .vendor a:last-of-type:hover:after {
+        color: #00c7d5; }
+  .category-integrations section[role="main"] .vendor a:after {
+    font-family: "fontAwesome";
+    content: "\f08e";
+    padding-left: 6px;
+    opacity: 0.9;
+    font-size: 80%; }
   @media screen and (min-width: 850px) {
     .category-integrations section[role="main"] .vendor img {
       float: left;
@@ -2670,8 +2705,9 @@ body.products.single section[role="main"] .tabs .images + footer ul {
           margin-left: 8.5298%; }
         .category-products section[role="main"] ul .product:nth-child(2n + 1), .category-product-integrations section[role="main"] ul .product:nth-child(2n + 1) {
           clear: left; } }
-    .category-products section[role="main"] ul .product p, .category-product-integrations section[role="main"] ul .product p {
-      min-height: 140px; }
+    @media screen and (min-width: 850px) {
+      .category-products section[role="main"] ul .product p, .category-product-integrations section[role="main"] ul .product p {
+        min-height: 140px; } }
 
 .home {
   display: flex;
@@ -2752,6 +2788,8 @@ body.contact section[role="main"] {
       background: white;
       color: #001f3f;
       text-shadow: none; }
+  body.contact section[role="main"] a.resource {
+    border-bottom: 0px; }
   @media screen and (min-width: 850px) {
     body.contact section[role="main"] .gform_wrapper {
       float: left;
@@ -2766,11 +2804,14 @@ body.contact section[role="main"] {
     padding: 2.35765%;
     padding-bottom: 92px; }
   body.contact section[role="main"] .optional a.icon {
+    display: block;
     font-size: 1.125em;
     text-decoration: none;
     font-weight: 200; }
     body.contact section[role="main"] .optional a.icon:hover {
       color: #fb8547; }
+      body.contact section[role="main"] .optional a.icon:hover:before {
+        color: #00c7d5; }
     body.contact section[role="main"] .optional a.icon:before {
       float: right; }
 
