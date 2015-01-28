@@ -87,8 +87,7 @@
     $parentCatID = get_category_by_slug('product-integrations');
     $category = get_category($parentCatID); 
 
-    print_r($parentCatID)
- ;   ?>
+    ?>
 
 
 
