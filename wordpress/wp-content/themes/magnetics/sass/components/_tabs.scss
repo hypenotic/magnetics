@@ -31,6 +31,10 @@
         }
 
         & > li {
+
+            &:hover {
+                background:$blueMediumDark;
+            }
             width: 25%;
             padding: 48px 5%;
             box-sizing:border-box;
@@ -94,6 +98,10 @@ ul.resp-tabs-list, p {
 
     @include media($screenLarge) {
         font-weight: 300;
+    }
+
+    &:hover {
+        background:$blueMediumDark;
     }
 
     display: inline-block;

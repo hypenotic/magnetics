@@ -60,6 +60,12 @@
             width: 50%;
             float: left;
             background: $blueDark;
+            transform:all 0.3s ease-in-out;
+
+            &:hover {
+                background: $blueMediumDark;
+            }
+
             display: flex;
             align-items: stretch;
             flex-direction: column;
@@ -68,12 +74,19 @@
                     background: white;
                     color: $blueDark;
 
+                &:hover {
+                    background:white;
+                }
+
                 & h3:first-of-type {
-                    text-decoration:none;
+                    border-bottom:0px;
                 }
             }
+
             & h3:first-of-type {
-                text-decoration:underline;
+                display:inline-block;
+                padding-bottom:3px;
+                border-bottom:1.5px solid white;
             }
             & div {
                 padding: 48px 4.7153%;

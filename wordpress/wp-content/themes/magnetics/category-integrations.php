@@ -28,13 +28,17 @@
 
 <section class="tabs">
     <ul class="resp-tabs-list two">
-            <li >
+            <li>
+                <div>
                     <h3>Hardware Integrations</h3>
-                    <p><?php echo category_description( 10 ); ?> </p>
+                   <?php echo category_description( 10 ); ?>
+                </div>
             </li>
             <li>
+                <div>
                     <h3>Software Integrations</h3>
-                    </p><?php echo category_description( 9 ); ?> </p>
+                    <?php echo category_description( 9 ); ?>
+                </div>
             </li>                 
         </ul>
 
@@ -64,7 +68,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 
             <?php echo $metaIntegrationsText; ?>
 
-            <a href="//<?php echo $metaIntegrationsLink ?>" title="<?php the_title(); ?>"><?php echo $metaIntegrationsLink; ?></a> 
+            <a target="_blank" href="//<?php echo $metaIntegrationsLink ?>" title="<?php the_title(); ?>"><?php echo $metaIntegrationsLink; ?></a> 
         </section>
 
         <br style="clear:both" />

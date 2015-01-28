@@ -70,6 +70,26 @@
 .category-integrations section[role="main"] {
     & .vendor {
 
+        & a:last-of-type {
+            color:$blueDark;
+            display:block;
+            transition:all 0.2s ease-in-out;
+
+            &:hover {
+                color:$orange;
+                &:after {
+                    color:$teal;
+                }
+            }
+        }
+        & a:after {
+            font-family:$fontIcons;
+            content: "\f08e";   
+            padding-left:6px;
+            opacity:0.9;
+            font-size:80%;
+
+        }
         clear:both;
         margin-top: $spacingSection;
 
@@ -101,7 +121,7 @@
             & li.product {
                 @include media($screenLarge) {
                     min-height:340px;
-                } 
+                }
                 
             }
         }
@@ -184,7 +204,10 @@
         }
 
         p {
-            min-height:140px;
+            @include media($screenLarge) {
+                min-height:140px;
+            }
+            
         }
 
     }

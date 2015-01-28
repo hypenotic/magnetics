@@ -1,7 +1,7 @@
 jQuery(document).ready(function($){
 		
 
-	jQuery("h1").css("font-size", window.innerWidth*1.3/(jQuery('h1').html().length))
+	jQuery("body.single.products h1").css("font-size", window.innerWidth*1.3/(jQuery('h1').html().length))
 		
 		/*
 		jQuery('h1').html(function(i, v) { 
