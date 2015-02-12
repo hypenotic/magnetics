@@ -52,7 +52,7 @@
         $metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
 
         if($metaBannerSubheading !== -1) { ?>
-            <p><?php the_title() ?>. <?php echo $metaBannerSubheading; ?>
+            <p><?php echo $metaBannerSubheading; ?>
 
              
             </p>
@@ -107,7 +107,7 @@
         $metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
 
         if($metaBannerSubheading !== -1) { ?>
-            <p><?php the_title() ?>. <?php echo $metaBannerSubheading; ?>
+            <p><?php echo $metaBannerSubheading; ?>
 
              
             </p>

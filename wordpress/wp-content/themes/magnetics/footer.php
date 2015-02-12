@@ -10,7 +10,7 @@
     <footer>
         <section>   
          
-         <?php if(in_category('products') || !is_404() && !is_page('about') || !is_page('contact')) { ?>  
+         <?php if(in_category('products') && is_single()) { ?>  
         <!-- Module: productInformation -->
         <?php get_template_part( 'module', 'productsRelated' ); ?>
         <?php } else { ?>
