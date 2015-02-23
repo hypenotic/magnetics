@@ -909,7 +909,7 @@ blockquote {
   .masthead > h1 {
     padding-bottom: 32px; }
 
-body.products.single > header, body.category-products > header, body.category-integrations > header, body.category-product-integrations > header {
+body.products.single > header, body.category-products > header, body.category-integrations > header, body.category-product-integrations > header, body.product-integrations header {
   background: none; }
 
 body > header {
@@ -1553,7 +1553,8 @@ section#steps {
 .banner {
   display: flex;
   flex-direction: column;
-  color: white; }
+  color: white;
+  min-height: 70vh; }
   @media screen and (min-width: 850px) {
     .banner > img {
       float: left;
@@ -1888,11 +1889,10 @@ a#call {
       font-weight: bold;
       font-size: 1.125em; } }
 
-article.overview:hover h3 a {
-  color: #fb8547; }
-  article.overview:hover h3 a:hover {
-    text-decoration: underline; }
-article.overview:hover a.resource, article.overview:hover a.more {
+article.overview h3 a:hover {
+  color: #fb8547;
+  text-decoration: underline; }
+article.overview a.resource:hover, article.overview a.more:hover {
   color: #00c7d5; }
 article.overview > h6 {
   text-transform: uppercase;
@@ -2435,6 +2435,9 @@ body.about {
       body.about #footer {
         border-top: 92px solid white; } }
 
+.b-o-b .tabs.boxes {
+  display: none; }
+
 body.products.single .owl-carousel {
   margin-bottom: 32px; }
   @media screen and (min-width: 850px) {
@@ -2903,6 +2906,14 @@ body.articles.single footer.container {
     margin-bottom: 32px;
     text-align: center; }
 
+body.product-integrations #nav-toggle span:before, body.product-integrations #nav-toggle span:after, body.product-integrations #nav-toggle span {
+  cursor: pointer;
+  height: 3px;
+  width: 25px;
+  position: absolute;
+  display: block;
+  content: '';
+  background: white; }
 body.product-integrations article h1 {
   filter: alpha(opactiy=70);
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
