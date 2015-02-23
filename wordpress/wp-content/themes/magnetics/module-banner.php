@@ -51,8 +51,7 @@
 	<div class="mobile-bg"></div>
 
 	 <?php	}  else { ?>
- 	<div class="background">
-		<img src="<?php echo $metaBannerBackgroundImageAttachmentURL; ?>" />
+ 	<div class="background" style="background-image:url(<?php echo $metaBannerBackgroundImageAttachmentURL; ?>);background-size:cover">
 	</div>
 	<?php }
 

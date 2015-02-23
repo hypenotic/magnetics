@@ -1,17 +1,13 @@
 article.overview {
-    &:hover {
         & h3 {
-            & a {
+            & a:hover {
                 color: $orange;
-                &:hover {
                     text-decoration: underline;
-                }
             }
         }
-        & a.resource, & a.more {
+        & a.resource:hover, & a.more:hover {
             color: $teal;
         }
-    }
     & > h6 {
         text-transform: uppercase;
         font-size: em($fontSizeSmall);
