@@ -43,12 +43,12 @@
             <?php if ($email):
                 echo '<i class="fa fa-envelope"></i> <a href="mailto:' . $email . '">' . $email . '</a><br>';
             endif ?>
-            <?php if ($phone):
-                echo '<i class="fa fa-phone"></i> ' . $phone . '<br>';
+            <?php if ($phone): 
+                echo '<i class="fa fa-phone"></i> <span class="contactNumber">' . $phone . '</span><br>';
             endif ?>
 
             <?php if ($fax):
-                echo $fax . '<br>';
+                echo '<span class="contactNumber">'.$fax . '</span><br>';
             endif ?>
            </li>
 
