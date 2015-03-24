@@ -2,11 +2,14 @@
 		// Custom meta values 
 		$brochureFile = get_post_meta($post->ID,'_brochure_file',true);
 		$brochureDescription = get_post_meta($post->ID,'_brochure_content',true);
+		$articleDescription = get_post_meta($post->ID,'_article_content',true);
+		$articleFile = get_post_meta($post->ID,'_article_file',true);
+		
 		$postType = get_post_type( get_the_ID());
 		$postCategory = get_top_category();
 
 		if($postType !== 'brochure') {
-			$postType = $postCategory->name;
+			$postType == 'Article';
 		}
 	?>
 
@@ -26,6 +29,7 @@
 				// Out on a limb here. If there's no brochureDescription, 
 				// we can just call excerpt. Vice versa.
 				echo $brochureDescription; 
+				echo $articleDescription;
 				the_excerpt(); 
 			?>
 
@@ -36,7 +40,7 @@
 				<?php get_template_part( 'template', 'articleFile' ); ?>
 				<?php } ?>
 
-				<a href="<?php the_permalink();?>" class="icon more"></a>
+				
 			</footer>
 
 		</section>

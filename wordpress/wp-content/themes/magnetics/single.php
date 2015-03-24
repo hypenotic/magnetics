@@ -11,7 +11,7 @@
   <article>
 
     
-    <?php $metaBannerHeadingShort = get_post_meta($post->ID, '_banner_heading_short', true);
+    <?php /*$metaBannerHeadingShort = get_post_meta($post->ID, '_banner_heading_short', true);
     
     if ($metaBannerHeadingShort) { ?>
 
@@ -22,7 +22,9 @@
     
     <h1><?php the_title(); ?></h1>
 
-    <?php } ?>
+    <?php }*/ ?>
+
+    <h1><?php the_title(); ?></h1>
 
         <header class="meta">
          <!-- Module: Author -->

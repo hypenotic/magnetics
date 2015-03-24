@@ -22,7 +22,7 @@
 
 
     <header class="banner">
-        <h2>Integrations</h2>
+        <h1>Integrations</h1>
         <h4><?php echo category_description(); ?></h4>
     </header>
 

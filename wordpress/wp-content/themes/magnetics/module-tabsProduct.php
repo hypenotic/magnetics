@@ -7,30 +7,39 @@
     $metaSystemAtAGlance = get_post_meta(get_the_ID(), '_product_tabs_system_at_a_glance', true);
 
 
-    if($metaWhatsInTheBox || $metaAdditionalOptions || $metaIntegrations || $metaSystemAtAGlance) {
+    if($metaWhatsInTheBox || ($metaAdditionalOptions[0]['_title'] !== '') || !$metaIntegrations[0] == 0 || !$metaSystemAtAGlance[0] == 0) {
+
 
 ?>
+
+
+
 
 <section class="tabs boxes">
     <h2>Specifications</h2>
 
-        <ul class="resp-tabs-list <?php if($metaIntegrations[0] == 0) {echo 'three'; } else { echo 'four'; } ?>">
-            <li class="active">
+        <ul class="resp-tabs-list">
+             <?php if($metaWhatsInTheBox)  { ?>
+            <li >
                 What's In The Box   
             </li>
-            <li>
+            <?php } ?>
+             <?php if((!$metaAdditionalOptions[0]['_title'] !== false))  { ?>
+            <li >
                 Additional Options
-            </li>
-
-            <?php if(!($metaIntegrations[0] == 0))  { ?>
-             <li>
-                Integrations
             </li>
             <?php } ?>
 
-            <li >
+            <?php if(!$metaIntegrations[0] == 0)  { ?>
+             <li >
+                Integrations
+            </li>
+            <?php } ?>
+            <?php if(!$metaSystemAtAGlance[0] == 0)  { ?>
+            <li>
                 System At a Glance  
-            </li>                     
+            </li>     
+            <?php } ?>                
         </ul>
 
         <br style="clear:both" />
@@ -47,7 +56,7 @@
             <!-- end #metawhatsinthebox -->
 
             <?php
-                if($metaAdditionalOptions) { ?>
+                if((!$metaAdditionalOptions[0]['_title'] != false)) { ?>
 
             <div id="additionaloptions">
                     
@@ -92,6 +101,7 @@
             <?php } ?>
             <!-- end integrations -->
 
+<?php if(!$metaSystemAtAGlance[0] == 0) { ?>
             <div>
 
                 <?php get_template_part( 'template', 'brochureFileOptions' ); ?>
@@ -179,6 +189,8 @@
                 
                 <br style="clear:both" />
             </div>
+
+            <?php } ?>
         </div>
 </section>
 

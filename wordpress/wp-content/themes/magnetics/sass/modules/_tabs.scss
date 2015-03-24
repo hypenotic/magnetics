@@ -1,4 +1,11 @@
 .tabs {
+
+    & h2 {
+        @include pad(0 default);
+        @include media($screenLarge) {
+            padding:0;
+        }
+    }
     background: white;
     & header {
         margin-bottom: 96px;
@@ -15,9 +22,10 @@
         color:$blueDark;
         margin:0 auto;
     }
-    .resp-tabs-list.three {
+    .resp-tabs-list {
+        
         & li {
-            width:33.33%;
+            flex: 1 0 auto;
         }
     }
     .resp-accordion {
@@ -63,7 +71,7 @@
             transform:all 0.3s ease-in-out;
 
             &:hover {
-                background: $blueMediumDark;
+                background: $blueSteel;
             }
 
             display: flex;

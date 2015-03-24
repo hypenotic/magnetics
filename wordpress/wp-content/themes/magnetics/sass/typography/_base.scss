@@ -47,7 +47,7 @@ h3 {
     line-height: em($fontSizeBody);
     font-weight: 700;
     letter-spacing: 0.5px;
-    margin-bottom: em($fontSizeBodySecondary);
+    margin-bottom: em($fontSizeCaption);
 }
 
 h4 {
@@ -101,10 +101,16 @@ blockquote {
     }
 }
 
-p > a, a[href^=mailto] {
+p > a {
     text-decoration:none !important;
     display:inline-block;
     border-bottom:1px solid;
+    padding-bottom:2px;
+}
+a[href^=mailto] {
+    text-decoration:none !important;
+    display:inline-block;
+    border-bottom:0px;
     padding-bottom:2px;
 }
 a {

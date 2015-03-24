@@ -1,4 +1,18 @@
 body.about {
+
+    & > header {
+        position:absolute;
+        
+        @include media($screenOuter) {
+            
+            @include shift(1);
+        }
+    }
+    & .masthead {
+        display:flex;
+        justify-content: center;
+    }
+
     background: $gray;
     & section:first-of-type {
         & article {

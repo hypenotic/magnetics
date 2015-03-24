@@ -1,3 +1,3 @@
-        <h2>RMA FORM</h2>
-            <p>Lorem ipsumu dolor sit amet, consectetur adipiscing elit. Etiam pharetra.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra</p>
+        <h3>RMA FORM</h3>
+            <p>The following form will provide you with the information and instructions for the return of merchandise purchased from us for examination, credit, or exchange.</p>
             <p><a href="#">Get Started ></a></p>

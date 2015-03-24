@@ -8,6 +8,7 @@ jQuery(document).ready(function($){
       	 itemsTablet: false,
       	 itemsMobile : false,
       	 navigation:true,
+            autoHeight : true,  
       	 theme:'owl-theme'
 	});
 

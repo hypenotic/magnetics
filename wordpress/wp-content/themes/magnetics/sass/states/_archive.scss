@@ -1,3 +1,13 @@
+.archive > header:first-of-type {
+        
+        position:absolute;
+
+        @include media(1280px) {
+            
+            @include shift(1);
+        }
+    }
+
 .archive section[role="main"] {
     & > header {
         @include outer-container($screenLarge);
@@ -48,13 +58,16 @@
 
 .archive {
     & header.banner {
-        height:46vh;
+        height: 50vh;
+        box-sizing:border-box;
+        min-height:0;
+        flex-direction: column;
+        text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
         display:flex;
         flex-direction: column;
         justify-content:flex-end;
         @include outer-container($screenOuter);
         @include pad($spacingSectionSmall default);
-        margin-bottom: $spacingSectionLarge;
         color:white;
         @include fontShadow($blackOverlayLight);
 
@@ -120,7 +133,12 @@
 
             & li.product {
                 @include media($screenLarge) {
-                    min-height:340px;
+                    min-height:280px;
+                }
+
+                & a {
+                    color:white;
+                    transition:all 0.3s ease-in-out;
                 }
                 
             }
@@ -138,13 +156,13 @@
             }
         }
 
-        & .base-stations h3 a:hover, & .hardware-product-integrations h3 a:hover {
+        & .base-stations a:hover h3, & .hardware-product-integrations h3 a:hover {
             color:$teal;
         }
-        & .marine-gradiometers h3 a:hover, & .software-product-integrations h3 a:hover {
+        & .marine-gradiometers a:hover h3, & .software-product-integrations h3 a:hover {
             color:$blueLight;
         }
-        & .marine-magnetometers h3 a:hover {
+        & .marine-magnetometers a:hover h3 {
             color:$orange;
         }
 
@@ -190,7 +208,7 @@
         display:flex;
         flex-direction:column;
         margin:0;
-        margin-bottom:$spacingSectionLarge;
+        margin-bottom:$spacingSectionSmall;
 
 
         @include media($screenLarge) {

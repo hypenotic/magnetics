@@ -26,14 +26,17 @@
         margin: 0 auto;
         border-top: 1px solid $blueDark;
         display: none;
+
         @include media($screenLarge) {
             display: block;
+            display: flex;
+            flex-direction: row;
         }
 
         & > li {
 
             &:hover {
-                background:$blueMediumDark;
+                background:$blueSteel;
             }
             width: 25%;
             padding: 48px 3%;

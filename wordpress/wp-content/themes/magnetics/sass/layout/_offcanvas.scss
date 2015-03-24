@@ -69,10 +69,9 @@ Nav Panel
                 & ul.sub-menu li {
                     background: white;
                     a {
-                        color: #5c6f81;
-                        padding-left:8px;
+                        color: #5C6F81;
                         &:hover {
-                            color: white;
+                            color: white !important;
                         }
                     }
                 }
@@ -100,7 +99,7 @@ Nav Panel
             li {
                 @include transition(all 0.3s);
                 a {
-                    color: #c0c9d1;
+                    color: #5C6F81;
                 }
                 &.current-menu-item a {
                     color: white;
