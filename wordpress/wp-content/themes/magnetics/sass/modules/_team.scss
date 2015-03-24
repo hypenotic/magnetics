@@ -18,6 +18,14 @@ section#team {
 			text-align:center;
 			margin-bottom: $spacingSection;
 
+			.contactNumber {
+				font-size:90%;
+			}
+			& a {
+				margin-bottom:8px;
+				display:inline-block;
+			}
+
 			@include media($screenLarge) {
 				@include span-columns(3);
 				&:nth-child(3n-1), &:nth-child(3n) {

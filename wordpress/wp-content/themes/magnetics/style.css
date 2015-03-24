@@ -1843,6 +1843,11 @@ section#team {
   section#team ul.list li {
     text-align: center;
     margin-bottom: 48px; }
+    section#team ul.list li .contactNumber {
+      font-size: 90%; }
+    section#team ul.list li a {
+      margin-bottom: 8px;
+      display: inline-block; }
     @media screen and (min-width: 850px) {
       section#team ul.list li {
         float: left;
