@@ -817,8 +817,8 @@ blockquote, blockquote p {
   font-family: fontAwesome;
   font-weight: normal;
   font-style: normal;
-  src: url("./fonts/FontAwesome/fontAwesome.eot");
-  src: url("./fonts/FontAwesome/fontAwesome.eot?#iefix") format("embedded-opentype"), url("./fonts/FontAwesome/fontAwesome.woff") format("woff"), url("./fonts/FontAwesome/fontAwesome.ttf") format("truetype"), url("./fonts/FontAwesome/fontAwesome.svg#fontAwesome") format("svg"); }
+  src: url("./fonts/FontAwesome/fontawesome.eot");
+  src: url("./fonts/FontAwesome/fontawesome.eot?#iefix") format("embedded-opentype"), url("./fonts/FontAwesome/fontawesome.woff") format("woff"), url("./fonts/FontAwesome/fontawesome.ttf") format("truetype"), url("./fonts/FontAwesome/fontawesome.svg#fontAwesome") format("svg"); }
 html {
   height: 100%; }
 
