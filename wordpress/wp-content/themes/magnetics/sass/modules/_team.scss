@@ -28,6 +28,7 @@ section#team {
 
 			@include media($screenLarge) {
 				@include span-columns(3);
+				padding:2.35765%;
 				&:nth-child(3n-1), &:nth-child(3n) {
 					@include shift(1);
 				}

@@ -22,7 +22,7 @@
  	<script>
  		jQuery(document).ready(function($){
 
- 			$('.menu-btn').addClass('dark');
+ 		//	$('.menu-btn').addClass('dark');
 
  		});
  	</script>
@@ -36,7 +36,7 @@
  	<script>
  		jQuery(document).ready(function($){
 
- 			$('.menu-btn').addClass('dark');
+ 			// $('.menu-btn').addClass('dark');
 
  		});
  	</script>
@@ -63,6 +63,7 @@
 
 	if ($metaBannerImageIDs  == -1) { ?>
 
+	<div class="bannerImage"></div>
 
 	<? } elseif (sizeof($metaBannerImageIDs) == 1) {
 
@@ -71,7 +72,7 @@
 		$metaBannerImageAttachmentURL = $metaBannerImageAttachment[0];
 
 		?>
-	<img src="<?php echo $metaBannerImageAttachmentURL; ?>">
+	<img class="bannerImage" src="<?php echo $metaBannerImageAttachmentURL; ?>">
 	
 	<?php } elseif (sizeof($metaBannerImageIDs) > 1) { ?>
 
@@ -94,16 +95,18 @@
 		</section>
 	<?php } ?>
 
-
+	<div class="text">
+	<h1><?php the_title(); ?></h1>
 
 	<?php  
 	// Banner Heading
 	// Custom meta values 
-	$metaBannerHeading = get_post_meta($post->ID, '_banner_heading', true);
+	/*$metaBannerHeading = get_post_meta($post->ID, '_banner_heading', true);
 	
 	if($metaBannerHeading  !== -1) { ?>
 	<h3><?php echo $metaBannerHeading; ?></h3>
-	<?php } ?>
+	<?php }
+	*/ ?>
 
 
 	<?php 
@@ -112,7 +115,8 @@
 	$metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
 
 	if($metaBannerSubheading !== -1) { ?>
-	<p><?php echo $metaBannerSubheading; ?></p>
+	<h4><?php echo $metaBannerSubheading; ?></h4>
 	<?php } ?>
+	</div>
 
 </section>

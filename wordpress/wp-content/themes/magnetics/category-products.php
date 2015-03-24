@@ -18,7 +18,7 @@
     <div class="mobile-bg"></div>
 
     <header class="banner">
-        <h2>Products</h2>
+        <h1>Products</h1>
         <h4><?php echo category_description(); ?></h4>
     </header>
 
@@ -43,8 +43,8 @@
     <!-- POST CODE -->
 
     <li class="product <?php echo $category->slug; ?>">
-
-     <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+     <h3><?php the_title(); ?></h3>
 
         <?php 
         // Banner Subheading
@@ -63,7 +63,7 @@
 
         <?php } ?>
 
-       
+       </a>
 
     </li>
 

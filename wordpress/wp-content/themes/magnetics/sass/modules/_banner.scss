@@ -1,35 +1,68 @@
 .banner {
     display:flex;
     flex-direction:column;
+    @include media($screenLarge) {
+    flex-direction:row-reverse;
+    max-width:1080px;
+    margin:0 auto;
+    align-items:center;
+    }
     color:white;
     min-height:70vh;
+    padding-top:2em;
+    @include pad(0 default);
+
+    .bannerImage {
+        max-height:40vh;
+        display:block;
+        min-width:1px;
+    }
+
+    & .text {
+        margin-bottom:$spacingSectionSmall;
+        @include media($screenLarge) {
+            @include span-columns(8);
+        margin-bottom:$spacingSectionLarge;
+        }
+    }
+
 
     & > img {
         @include media($screenLarge) {
-            @include span-columns(8);
+            @include span-columns(5);
             @include shift(2);
         }
     }
-    & > h3 {
-        text-align:center;
-        @include fontShadow($blackOverlayLight);
-        @include media($screenLarge) {
-            @include span-columns(8);
-            @include shift(2);
-        }
+
+    & h1 {
+          padding-bottom: 18px;
+           padding-top: 40px;
     }
-    & > p {
-        text-align:center;
-        @include media($screenLarge) {
-            text-align:center;
-            @include span-columns(8);
-            @include shift(2);
-        }
-    }
+
+ 
+
 }
 
 .owl-carousel  {
         color:white;
+            padding-top:4em;
+        @include media($screenLarge) {
+            padding-top:0;
+        }
+        @include media($screenLarge) {
+            @include span-columns(5);
+        }
+        & .owl-stage {
+            transition:0.001s !important;
+        }
+        & .owl-item {
+            display:flex;
+            align-items:center;
+            height:100%;
+            & img {
+                max-height: 40vh;
+            }
+        }
 
         & .owl-item .item  {
 

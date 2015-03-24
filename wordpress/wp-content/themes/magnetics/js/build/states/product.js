@@ -1,8 +1,8 @@
 jQuery(document).ready(function($){
 		
-
+/*
 	jQuery("body.single.products h1, body.single.product-integrations h1").css("font-size", window.innerWidth*1.3/(jQuery('h1').html().length))
-		
+		*/
 		/*
 		jQuery('h1').html(function(i, v) { 
 		    return  jQuery.trim(v).replace(/([\S]*)\s(.*)/, "$1 <span>$2</span>");
@@ -30,9 +30,9 @@ jQuery(document).ready(function($){
 
 	// update columnWidth on window resize
 	jQuery(window).on('debouncedresize', function(){
-
+/*
 		jQuery("body.single.products h1, body.single.product-integrations h1").css("font-size", window.innerWidth*1.3/(jQuery('h1').html().length))
-	  
+	  */
 
 
 	  $container.isotope({

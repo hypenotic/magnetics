@@ -1,19 +1,24 @@
-body.products.single > header, body.category-products > header, body.category-integrations > header, body.category-product-integrations > header, body.product-integrations header {
+body.products.single > header, body.about > header, body.category-products > header, body.category-integrations > header, body.category-product-integrations > header, body.product-integrations header {
     background: none;
 }
 
+
 body > header {
+
+
+
     background: $gray;
     z-index:10000;
-    padding: 25px 20px 14px 20px;
-    @include media($screenLarge) {
+
+    padding: 25px 2.35765% 14px 2.35765%;
+    @include media(1280px) {
         padding: em($fontSizeSmall) 0;
     }
 
     & > a.logo {
         display: inline-block;
         padding: 4px;
-        @include media($screenLarge) {
+        @include media($screenOuter) {
             @include shift(1);
         }
 
