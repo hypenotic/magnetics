@@ -11,9 +11,12 @@ footer .related {
     @include media($screenLarge) {
         @include pad($spacingSection 0);
     }
+    & > article {
+         @include pad($spacingSectionSmall 0);
+    }
 
     & > * {
-        max-width: $screenLarge;
+        max-width: $screenOuter;
         margin: 0 auto;
     }
 

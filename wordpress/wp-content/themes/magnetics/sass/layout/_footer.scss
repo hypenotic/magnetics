@@ -1,10 +1,14 @@
+.archive #footer footer {
+     @include pad(48px default);
+}
+
 #footer {
 
     background: $blueDark;
     padding-top: $spacingSection;
     & footer {
-        @include outer-container;
-        @include pad(48px default);
+        @include outer-container(1080px);
+       
         color: white;
         & > section:last-child a {
             color:$teal;

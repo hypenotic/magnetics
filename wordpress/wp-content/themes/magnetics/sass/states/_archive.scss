@@ -1,4 +1,4 @@
-.archive > header:first-of-type {
+.archive:not(.blog) > header:first-of-type {
         
         position:absolute;
 
@@ -7,6 +7,49 @@
             @include shift(1);
         }
     }
+
+.archive.blog section[role="main"]  {
+    & > header {
+        @include pad(0 default);
+        & h1 {
+            padding:$spacingSectionLarge 0 $spacingSectionSmall 0;
+        }
+    }
+    & #categories li {
+        margin:8px 0 ;
+    }
+}
+.archive #footer footer {
+    max-width:850px;
+}
+#archive article {
+         @include pad(0 default);
+         & h6 {
+             @include pad($spacingSectionSmall 0 0 0);
+         }
+         @include media($screenLarge) {
+              @include pad($spacingSectionSmall 2.5%);
+         }
+ 
+}
+
+section[role="main"] > section.pagination {
+      @include pad($spacingSectionSmall default);
+      text-transform:uppercase;
+      font-weight:500;
+
+      @include media($screenLarge) {
+        max-width:850px;
+        padding:$spacingSectionSmall 0;
+        margin:0 auto;
+      }
+      &:before {
+        content:'Pages: ';
+        font-weight:bold;
+        color:$orange;
+      }
+}
+
 
 .archive section[role="main"] {
     & > header {

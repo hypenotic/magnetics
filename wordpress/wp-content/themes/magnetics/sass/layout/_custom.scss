@@ -2,6 +2,15 @@
     max-width: $screenLarge;
 }
 
+section[role="main"] > section {
+  @include media($screenMedium) {
+    padding:48px 2.5% 48px 2.5% !important;
+  }
+}
+
+#footer footer {
+}
+
 .background {
   position: fixed;
   top: 0; right: 0; bottom: 0; left: 0;

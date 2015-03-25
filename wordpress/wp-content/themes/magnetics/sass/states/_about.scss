@@ -1,3 +1,7 @@
+body.about #footer footer {
+    @include outer-container(850px);
+}
+
 body.about {
 
     & > header {
