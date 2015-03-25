@@ -24,7 +24,6 @@
         & > ul {
         display: block;
         margin: 0 auto;
-        border-top: 1px solid $blueDark;
         display: none;
 
         @include media($screenLarge) {
@@ -49,7 +48,6 @@
             @include media($screenLarge) {
 
                 &:first-child {
-                    border-left: 1px solid $gray;
                 }
             }
             background: $blueDark;
@@ -146,6 +144,9 @@ h6.resp-accordion {
 }
 
 .resp-tab-content {
+    @include media($screenLarge) {
+        padding:0;
+    }
     @include pad($spacingSectionSmall default);
 }
 

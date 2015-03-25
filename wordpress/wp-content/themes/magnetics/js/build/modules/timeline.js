@@ -25,6 +25,11 @@ jQuery(document).ready(function($){
 		if(window.innerWidth > 860) {
 			if(jQuery(e).css('left').charAt(0) === '0') {
 				jQuery(e).addClass('left');
+
+			}
+
+			if(jQuery(e).css('left').split('px')[0] > 0) {
+				jQuery(e).addClass('rightSide');
 			}
 		}
 

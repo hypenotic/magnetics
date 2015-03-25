@@ -1,6 +1,10 @@
 <?php
 	// Custom meta values 
 	$metaPDF = get_post_meta($post->ID,'_article_file',true);
+		$articleDescription = get_post_meta($post->ID,'_article_content',true);
+		$articleFile = get_post_meta($post->ID,'_article_file',true);
+		
+
 
 	if(!$metaPDF) {
 
@@ -15,8 +19,28 @@
 		wp_reset_query();
 	}
 
-	if ($metaPDF) { ?>
+		if ($metaPDF) { ?>
 
-	<a href="<?php echo $metaPDF; ?>" target="_blank" class="resource icon"><span>Download</span></a>
+	<header>
 
+			<h3><a href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" ><?php the_title();?></a></h3>
+
+		</header>
+
+		<section>
+			
+			<?php 
+				// Out on a limb here. If there's no brochureDescription, 
+				// we can just call excerpt. Vice versa.
+				echo $brochureDescription; 
+				echo $articleDescription;
+				the_excerpt(); 
+			?>
+
+			<footer>
+
+	<a href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span>Download this Brochure</span></a>
+</footer>
+
+		</section>
 	<?php } ?>

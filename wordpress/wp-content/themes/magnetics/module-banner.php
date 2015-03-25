@@ -72,7 +72,14 @@
 		$metaBannerImageAttachmentURL = $metaBannerImageAttachment[0];
 
 		?>
-	<img class="bannerImage" src="<?php echo $metaBannerImageAttachmentURL; ?>">
+	<img class="bannerImage" src="<?php 
+	if($metaBannerImageAttachmentURL) {
+		echo $metaBannerImageAttachmentURL;	
+	} else {
+	  echo 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; 
+	}
+	  ?>">
+	
 	
 	<?php } elseif (sizeof($metaBannerImageIDs) > 1) { ?>
 
