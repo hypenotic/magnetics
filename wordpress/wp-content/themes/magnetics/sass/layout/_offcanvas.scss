@@ -101,6 +101,9 @@ Nav Panel
                 @include transition(all 0.3s);
                 a {
                     color: #5C6F81;
+                    &:hover {
+                        color:white !important;
+                    }
                 }
                 &.current-menu-item a {
                     color: white;
