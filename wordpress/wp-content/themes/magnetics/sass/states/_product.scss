@@ -19,7 +19,7 @@ body.products.single {
         & img {
             @include media($screenLarge) {
                 @include span-columns(8);
-                @include shift(2);
+                @include shift(1);
             }
         }
     }
