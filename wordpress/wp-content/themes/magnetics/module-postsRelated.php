@@ -38,9 +38,11 @@
 		$metaRelatedMerged = array_merge($metaRelatedArticles, $metaRelatedBrochures);
 
 		$args = array(
-			'post_type'   => array('article','brochure','post'),
-			'post__in'    =>	 $metaRelatedMerged
+			'post_type'   => array('article','brochure'),
+			'post__in'    =>	 $metaRelatedMerged,
+			'posts_per_page' => -1 
 		);
+
 
 	} else {
 
@@ -90,7 +92,10 @@
 
 	<?php 
 	 foreach ( $related_posts as $post ) {
+
 ?>
+
+
 
 	<?php get_template_part('template','postOverview'); ?>
 	 	

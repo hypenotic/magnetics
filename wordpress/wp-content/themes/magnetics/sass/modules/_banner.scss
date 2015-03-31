@@ -1,3 +1,4 @@
+
 .banner {
     display:flex;
     flex-direction:column;
@@ -8,13 +9,14 @@
     margin:0 auto;
     align-items:center;
 
+
     }
     align-items:center;
     color:white;
     min-height:70vh;
     padding-top:2em;
     @include pad(0 default);
-
+    padding-top:0;
     .bannerImage {
         max-height:40vh;
         display:block;
@@ -32,7 +34,7 @@
         }
         margin-bottom:$spacingSectionSmall;
         @include media($screenLarge) {
-            @include span-columns(8);
+            width:48.82117 !important;
             margin-bottom:0;
         }
     }
@@ -40,16 +42,14 @@
 
     & > img {
         @include media($screenLarge) {
-            @include span-columns(5);
+            @include span-columns(6);
                 @include media($screenLarge) {
-            @include shift(-1);
         }
         }
     }
 
     & h1 {
           padding-bottom: 18px;
-           padding-top: 40px;
     }
 
  

@@ -1,4 +1,22 @@
+        @include media($screenLarge) {
+
+            section[role="main"] > section.tabs {
+                padding:0 !important;
+            }
+        }
+
+#additionaloptions {
+      max-width: 850px;
+  margin: 0 auto;
+}
 .tabs {
+
+    & #systemataglance img {
+        max-width:250px;
+        height:auto;
+    }
+
+
 
     & h2 {
         @include pad($spacingSectionLarge default);

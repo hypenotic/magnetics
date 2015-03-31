@@ -5,21 +5,22 @@ body.products.single > header, body.about > header, body.category-products > hea
 
 body > header {
 
-
+    & .container {
+        max-width:1080px;
+        margin:0 auto;
+    }
 
     background: $gray;
     z-index:10000;
-
-    padding: 25px 2.35765% 14px 2.35765%;
+    @include pad(25px 0 14px default);
     @include media(1280px) {
         padding: em($fontSizeSmall) 0;
     }
 
-    & > a.logo {
+    &  a.logo {
         display: inline-block;
         padding: 4px;
         @include media($screenOuter) {
-            @include shift(1);
         }
 
         & img {

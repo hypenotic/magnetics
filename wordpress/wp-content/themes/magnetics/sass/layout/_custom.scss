@@ -2,9 +2,9 @@
     max-width: $screenLarge;
 }
 
-section[role="main"] > section {
+section[role="main"] > section, section[role="main"] > article  {
   @include media($screenMedium) {
-    padding:48px 2.5% 48px 2.5% !important;
+    padding:$spacingSectionLarge 2.5% $spacingSectionLarge 2.5% !important;
   }
 }
 

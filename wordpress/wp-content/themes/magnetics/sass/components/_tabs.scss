@@ -16,7 +16,7 @@
             height:auto !important;
         }
         & > h2 {
-        max-width: $screenOuter; 
+        max-width: $screenLarge; 
 
             @include media($screenLarge) {
                 display: block;
@@ -76,14 +76,21 @@
         }
     }
 
+         & #whatsinthebox {
+            max-width:850px;
+            margin:0 auto;
+        }
+
     & > div.resp-tabs-container {
+
+
 
         max-width:$screenOuter;
         margin:0 auto;
 
         @include media($screenLarge) {
 
-            @include pad(em($spacingSection) default);
+            @include pad($spacingSectionLarge 0);
 
 
             &:first-child {
@@ -148,9 +155,10 @@ h6.resp-accordion {
 
 .resp-tab-content {
     @include media($screenLarge) {
-        padding:0;
     }
-    @include pad($spacingSectionSmall default);
+    & > article {
+        @include pad($spacingSectionLarge default);
+    }
 }
 
 h6.resp-accordion {
