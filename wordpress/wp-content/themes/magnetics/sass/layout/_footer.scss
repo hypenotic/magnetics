@@ -14,7 +14,8 @@
     padding-top: $spacingSection;
     & footer {
         @include outer-container(1080px);
-       
+                @include pad($spacingSectionSmall default);
+    
         color: white;
         & > section:last-child a {
             color:$teal;

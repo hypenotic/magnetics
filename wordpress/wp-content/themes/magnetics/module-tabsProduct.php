@@ -24,7 +24,7 @@
                 What's In The Box   
             </li>
             <?php } ?>
-             <?php if(isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== false))  { ?>
+             <?php if(isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== ''))  { ?>
             <li >
                 Additional Options
             </li>
