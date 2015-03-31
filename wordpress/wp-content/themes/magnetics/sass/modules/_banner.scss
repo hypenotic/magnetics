@@ -1,5 +1,6 @@
 
 .banner {
+    max-height:40vh;
     display:flex;
     flex-direction:column;
     @include media($screenLarge) {
@@ -8,27 +9,28 @@
     max-width:1080px;
     margin:0 auto;
     align-items:center;
-
-
+    @include pad(0 default);
     }
     align-items:center;
     color:white;
     min-height:70vh;
-    padding-top:2em;
-    @include pad(0 default);
-    padding-top:0;
+     @include pad(10vh default 0 default);
     .bannerImage {
-        max-height:40vh;
+        
         display:block;
         min-width:1px;
     }
 
     & .text {
-        width:100%;
+        max-width:100%;
+        @include media($screenLarge) {
+          max-width:48.82117%;
+        }
         min-height:300px;
         display:flex;
         flex-direction:column;
         align-items:left;
+        justify-content: center;
         & h4 {
             text-shadow:1px 1px 4px rgba(0,0,0,1);
         }

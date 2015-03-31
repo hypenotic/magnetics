@@ -111,6 +111,7 @@ section[role="main"] > section.pagination {
 .archive {
     & header.banner {
         height: 55vh;
+
         box-sizing:border-box;
         min-height:0;
         flex-direction: column;
@@ -124,6 +125,7 @@ section[role="main"] > section.pagination {
         @include fontShadow($blackOverlayLight);
 
         @include media($screenLarge) {
+          min-height: 350px;
         }
 
         & h2 {

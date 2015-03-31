@@ -9,6 +9,14 @@
       max-width: 850px;
   margin: 0 auto;
 }
+
+.resp-tab-content {
+      @include pad($spacingSectionSmall default);
+      
+     @include media($screenLarge) {
+            @include pad($spacingSectionSmall 0);
+        }
+}
 .tabs {
 
     & #systemataglance img {
