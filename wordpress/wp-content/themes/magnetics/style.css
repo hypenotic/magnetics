@@ -1608,9 +1608,6 @@ section#steps {
       width: 43%;
       float: right; } }
 
-video {
-  display: none; }
-
 .banner {
   display: flex;
   flex-direction: column;
