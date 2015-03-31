@@ -18,7 +18,7 @@ body.contact {
 
 		& .optional {
 
-			@include outer-container($screenLarge);
+			@include outer-container($screenOuter);
 
 		}
 		& h6 {

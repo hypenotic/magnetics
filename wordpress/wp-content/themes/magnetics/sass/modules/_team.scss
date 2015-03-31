@@ -15,7 +15,7 @@ section#team {
 
 		& li {
 
-			text-align:center;
+			text-align:left;
 			margin-bottom: $spacingSection;
 
 			.contactNumber {
@@ -28,13 +28,14 @@ section#team {
 
 			@include media($screenLarge) {
 				@include span-columns(3);
-				padding:2.35765%;
+				padding:2.35765% 2.35765% 2.35765% 0 ;
 				&:nth-child(3n-1), &:nth-child(3n) {
 					@include shift(1);
 				}
 			}
 
 			& img {
+				margin-bottom:24px;
 			border-radius:1000px;
 			}
 

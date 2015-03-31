@@ -2,11 +2,20 @@
     display:none;
 }
 
+#integrations, #systemataglance {
+    max-width:850px;
+    margin:0 auto;
+}
+
 body.products.single {
+
+    .banner + article {
+        display:none;
+    }
 
    & > header {
         position:absolute;
-        
+        width:100%;
         @include media(1280px) {
             
             @include shift(1);

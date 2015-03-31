@@ -145,7 +145,7 @@ body .dark #nav-toggle {
 }
 
 nav#toggler {
-    z-index:10000;
+    z-index:1000000;
 }
 
 
@@ -229,7 +229,7 @@ body.archive.products {
         & #toggler{
             opacity:0.8;
             & .menu-btn.text {
-                color: $blueDark; 
+                color: white;
             }
         }
 

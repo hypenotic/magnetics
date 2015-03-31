@@ -9,7 +9,7 @@
 		$postCategory = get_top_category();
 
 		if($postType !== 'brochure') {
-			$postType == 'Article';
+			$postType == 'article';
 		}
 	?>
 
@@ -25,6 +25,6 @@
 				<?php } ?>
 
 				
-
+<br style="clear:both" />
  
 	</article>

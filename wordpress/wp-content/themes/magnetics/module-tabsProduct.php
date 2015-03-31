@@ -7,7 +7,7 @@
     $metaSystemAtAGlance = get_post_meta(get_the_ID(), '_product_tabs_system_at_a_glance', true);
 
 
-    if($metaWhatsInTheBox || (isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== '')) || !$metaIntegrations[0] == 0 || !$metaSystemAtAGlance[0] == 0) {
+    if($metaWhatsInTheBox || (isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== '')) || (!$metaIntegrations[0] == 0) || (!$metaSystemAtAGlance[0] == 0)) {
 
 
 ?>
@@ -24,7 +24,7 @@
                 What's In The Box   
             </li>
             <?php } ?>
-             <?php if(isset($metaAdditionalOptions[0]['_title']) && (!$metaAdditionalOptions[0]['_title'] !== false))  { ?>
+             <?php if(isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== false))  { ?>
             <li >
                 Additional Options
             </li>
@@ -56,8 +56,7 @@
             <!-- end #metawhatsinthebox -->
 
             <?php
-                if(isset($metaAdditionalOptions[0]['_title']) && (!$metaAdditionalOptions[0]['_title'] != false)) { ?>
-
+              if(isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== false))  { ?>
             <div id="additionaloptions">
                     
                 <?php foreach ( $metaAdditionalOptions as $option ) { ?>
@@ -102,7 +101,7 @@
             <!-- end integrations -->
 
 <?php if(!$metaSystemAtAGlance[0] == 0) { ?>
-            <div>
+            <div id="systemataglance">
 
                 <?php get_template_part( 'template', 'brochureFileOptions' ); ?>
                 

@@ -1,12 +1,6 @@
 <?php get_header(); ?>
 
-    <script>
-        jQuery(document).ready(function($){
-
-            $('.menu-btn').addClass('dark');
-
-        });
-    </script>
+  
 
     <div class="background">
     <div class="overlay"></div>
