@@ -2669,13 +2669,8 @@ body.products.single .owl-carousel, body.product-integrations .owl-carousel {
   margin-bottom: 32px; }
   @media screen and (min-width: 850px) {
     body.products.single .owl-carousel img, body.product-integrations .owl-carousel img {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 65.88078%;
-      margin-left: 8.5298%; }
-      body.products.single .owl-carousel img:last-child, body.product-integrations .owl-carousel img:last-child {
-        margin-right: 0; } }
+      margin-left: 8.5298%;
+      width: 100%; } }
 body.products.single #nav-toggle span:before, body.products.single #nav-toggle span:after, body.products.single #nav-toggle span, body.product-integrations #nav-toggle span:before, body.product-integrations #nav-toggle span:after, body.product-integrations #nav-toggle span {
   cursor: pointer;
   height: 3px;
