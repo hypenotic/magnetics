@@ -26,8 +26,8 @@ body.products.single, body.product-integrations {
         margin-bottom: $spacingSectionSmall;
         & img {
             @include media($screenLarge) {
-                @include span-columns(8);
                 @include shift(1);
+                width:100%;
             }
         }
     }
