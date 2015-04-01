@@ -1,9 +1,11 @@
 
 .banner {
-    max-height:40vh;
-    display:flex;
+
+    
     flex-direction:column;
     @include media($screenLarge) {
+    max-height:40vh;
+    display:flex;
     flex-direction:row-reverse;
     min-height:600px;
     max-width:1080px;
@@ -16,9 +18,16 @@
     min-height:70vh;
      @include pad(10vh default 0 default);
     .bannerImage {
-        
+        margin:0 auto;
+
+           @include pad(5vh default 0 default);
         display:block;
         min-width:1px;
+        max-height:40vh;
+          @include media($screenLarge) {
+          max-width:48.82117%;
+
+        }
     }
 
     & .text {
@@ -44,7 +53,6 @@
 
     & > img {
         @include media($screenLarge) {
-            @include span-columns(6);
                 @include media($screenLarge) {
         }
         }

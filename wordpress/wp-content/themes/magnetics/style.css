@@ -1402,6 +1402,11 @@ body.archive.products #toggler .active span {
   .tabs #systemataglance img {
     max-width: 250px;
     height: auto; }
+  .tabs #systemataglance ul {
+    width: 100%; }
+    @media screen and (min-width: 850px) {
+      .tabs #systemataglance ul {
+        width: 30%; } }
   .tabs h2 {
     padding: 92px 2.35765%; }
     @media screen and (min-width: 850px) {
@@ -1615,8 +1620,6 @@ section#steps {
       float: right; } }
 
 .banner {
-  max-height: 40vh;
-  display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
@@ -1624,6 +1627,8 @@ section#steps {
   padding: 10vh 2.35765% 0 2.35765%; }
   @media screen and (min-width: 850px) {
     .banner {
+      max-height: 40vh;
+      display: flex;
       flex-direction: row-reverse;
       min-height: 600px;
       max-width: 1080px;
@@ -1631,8 +1636,14 @@ section#steps {
       align-items: center;
       padding: 0 2.35765%; } }
   .banner .bannerImage {
+    margin: 0 auto;
+    padding: 5vh 2.35765% 0 2.35765%;
     display: block;
-    min-width: 1px; }
+    min-width: 1px;
+    max-height: 40vh; }
+    @media screen and (min-width: 850px) {
+      .banner .bannerImage {
+        max-width: 48.82117%; } }
   .banner .text {
     max-width: 100%;
     min-height: 300px;
@@ -1650,14 +1661,6 @@ section#steps {
       .banner .text {
         width: 48.82117 !important;
         margin-bottom: 0; } }
-  @media screen and (min-width: 850px) {
-    .banner > img {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 48.82117%; }
-      .banner > img:last-child {
-        margin-right: 0; } }
   .banner h1 {
     padding-bottom: 18px; }
 
@@ -2112,7 +2115,7 @@ article.overview:last-of-type:after {
     margin: 0 auto; }
     @media screen and (min-width: 850px) {
       .tabs.boxes > div.resp-tabs-container {
-        padding: 92px 0; }
+        padding: 48px 0; }
         .tabs.boxes > div.resp-tabs-container:first-child {
           border-left: 1px solid #667c8f; } }
 
@@ -2958,6 +2961,8 @@ section[role="main"] > section.pagination {
       color: #0088c7; }
     .category-products section[role="main"] section.products .marine-magnetometers a:hover h3, .category-product-integrations section[role="main"] section.products .marine-magnetometers a:hover h3 {
       color: #fb8547; }
+    .category-products section[role="main"] section.products .product-integrations a:hover h3, .category-product-integrations section[role="main"] section.products .product-integrations a:hover h3 {
+      color: #00c7d5; }
     .category-products section[role="main"] section.products label, .category-product-integrations section[role="main"] section.products label {
       clear: both;
       display: block;
