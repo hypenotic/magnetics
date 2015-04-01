@@ -23,6 +23,12 @@
         max-width:250px;
         height:auto;
     }
+    & #systemataglance ul {
+          width: 100%;
+          @include media($screenLarge) {
+              width: 30%;
+          }
+    }
 
 
 

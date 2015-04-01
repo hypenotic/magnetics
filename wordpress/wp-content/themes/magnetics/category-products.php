@@ -93,7 +93,8 @@
 
     <li class="product <?php echo $category->slug; ?>">
 
-     <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+     <h3><?php the_title(); ?></h3>
 
         <?php 
         // Banner Subheading
@@ -112,6 +113,7 @@
 
         <?php } ?>
 
+        </a>
        
 
     </li>

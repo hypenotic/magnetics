@@ -7,11 +7,10 @@
     $metaSystemAtAGlance = get_post_meta(get_the_ID(), '_product_tabs_system_at_a_glance', true);
 
 
-    if($metaWhatsInTheBox || (isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== '')) || (!$metaIntegrations[0] == 0) || (!$metaSystemAtAGlance[0] == 0)) {
+    if($metaWhatsInTheBox || (isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== '')) || ($metaIntegrations[0] != 0) || ($metaSystemAtAGlance[0] != 0)) {
 
 
 ?>
-
 
 
 
@@ -20,7 +19,7 @@
 
         <ul class="resp-tabs-list">
              <?php if($metaWhatsInTheBox)  { ?>
-            <li >
+            <li aria-controls="whatsinthebox">
                 What's In The Box   
             </li>
             <?php } ?>
@@ -30,12 +29,12 @@
             </li>
             <?php } ?>
 
-            <?php if(!$metaIntegrations[0] == 0)  { ?>
+            <?php if($metaIntegrations[0] != 0)  { ?>
              <li >
                 Integrations
             </li>
             <?php } ?>
-            <?php if(!$metaSystemAtAGlance[0] == 0)  { ?>
+            <?php if($metaSystemAtAGlance[0] != 0)  { ?>
             <li>
                 System At a Glance  
             </li>     
@@ -48,29 +47,29 @@
 
              <?php
                 if($metaWhatsInTheBox) { ?>
-
-            <div id="whatsinthebox">
-                    <?php echo $metaWhatsInTheBox; ?>  
-            </div>
+                <div id="whatsinthebox" aria-controls="whatsinthebox">
+                        <?php echo $metaWhatsInTheBox; ?>  
+                </div>
             <?php } ?>
             <!-- end #metawhatsinthebox -->
 
             <?php
-              if(isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== false))  { ?>
-            <div id="additionaloptions">
+           if(isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== ''))  { ?>
+           <div id="additionaloptions">
                     
                 <?php foreach ( $metaAdditionalOptions as $option ) { ?>
                 <h3 id="<?php sanitize_title($option['_title']); ?>"><?php echo $option['_title']; ?></h3>
                 <p><?php echo $option['_description']; ?></p>
-            <!-- End Loop -->
-            <?php } ?>
+                <!-- End Loop -->
+                <?php } ?>
 
             </div>
 
            <?php  } ?>
            <!-- end #additionaloptions -->
 
-            <?php if(!($metaIntegrations[0] == 0))  { ?>
+
+            <?php if($metaIntegrations[0] != 0)  { ?>
             <div id="integrations"> 
             <?php
 
@@ -100,7 +99,7 @@
             <?php } ?>
             <!-- end integrations -->
 
-<?php if(!$metaSystemAtAGlance[0] == 0) { ?>
+<?php if($metaSystemAtAGlance[0] != 0) { ?>
             <div id="systemataglance">
 
                 <?php get_template_part( 'template', 'brochureFileOptions' ); ?>
