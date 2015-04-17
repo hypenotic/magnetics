@@ -9,6 +9,7 @@
 
 body.products.single, body.product-integrations {
 
+
     .banner + article {
         display:none;
     }
@@ -24,10 +25,22 @@ body.products.single, body.product-integrations {
 
     .owl-carousel {
         margin-bottom: $spacingSectionSmall;
+        position:relative;
+        left:8.3%;
+
+        & .owl-stage-outer {
+ 
+            @include media($screenLarge) {
+                transform:scale(1.5,1.5);
+            }
+        }
+
+
         & img {
             @include media($screenLarge) {
                 @include shift(1);
-                width:100%;
+
+
             }
         }
     }

@@ -1,7 +1,6 @@
 
 .banner {
 
-    
     flex-direction:column;
     @include media($screenLarge) {
     max-height:40vh;
@@ -24,7 +23,8 @@
         display:block;
         min-width:1px;
           @include media($screenLarge) {
-        margin-right: -8.5298%;
+        margin-right: -17.4%;
+        @include shift(1);
         width:100%;
         height:auto;
 
@@ -34,7 +34,7 @@
     & .text {
         max-width:100%;
         @include media($screenLarge) {
-          max-width:48.82117%;
+          width: 50%;
         }
         min-height:300px;
         display:flex;
@@ -45,36 +45,22 @@
             text-shadow:1px 1px 4px rgba(0,0,0,1);
         }
         margin-bottom:$spacingSectionSmall;
-        @include media($screenLarge) {
-            width:48.82117 !important;
-            margin-bottom:0;
-        }
-    }
-
-
-    & > img {
-        @include media($screenLarge) {
-                @include media($screenLarge) {
-        }
-        }
     }
 
     & h1 {
           padding-bottom: 18px;
     }
 
- 
-
 }
 
-.owl-carousel  {
+.owl-carousel, .banner .owl-carousel  {
         color:white;
             padding-top:4em;
         @include media($screenLarge) {
             padding-top:0;
         }
         @include media($screenLarge) {
-            @include span-columns(5);
+            width:50%;
         }
         & .owl-stage {
             transition:0.001s !important;
@@ -85,6 +71,7 @@
             height:100%;
             & img {
                 max-height: 100vh;
+
             }
         }
 
@@ -113,8 +100,10 @@
             margin-bottom:em($fontSizeLarge);
 
             @include media($screenLarge) {
-                @include span-columns(5);
+                margin-right: -17.4%;
                 @include shift(1);
+                width:100%;
+                height:auto;
             }
         }
         & h3 {
