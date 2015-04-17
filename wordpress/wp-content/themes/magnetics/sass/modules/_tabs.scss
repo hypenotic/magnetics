@@ -42,7 +42,8 @@
     & header {
         margin-bottom: 96px;
     }
-    &.boxes {
+    &.boxes li:not(.active) {
+        text-decoration: underline;
     }
     & > section {
         display: none;
