@@ -20,12 +20,13 @@
     .bannerImage {
         margin:0 auto;
 
-           @include pad(5vh default 0 default);
+        @include pad(5vh default 0 default);
         display:block;
         min-width:1px;
-        max-height:40vh;
           @include media($screenLarge) {
-          max-width:48.82117%;
+        margin-right: -8.5298%;
+        width:100%;
+        height:auto;
 
         }
     }
@@ -83,7 +84,7 @@
             align-items:center;
             height:100%;
             & img {
-                max-height: 40vh;
+                max-height: 100vh;
             }
         }
 
