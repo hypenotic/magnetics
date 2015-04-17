@@ -17,6 +17,10 @@ body.blog.single {
         @include pad($spacingSectionSmall default);
         margin:0 auto;
     }
+    & .owl-carousel {
+        margin-right:-17.6%;
+        
+    }
 
     & section[role="main"] {
         background:white;
