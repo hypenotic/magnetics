@@ -1,4 +1,4 @@
-body.blog.single {
+body.blog.single, body.articles.single  {
     & h1 {
         color: $gray;
         margin-bottom:$spacingSection;
@@ -38,8 +38,9 @@ body.blog.single {
             color:$blueDark;
         }
         & .resource.icon span {
-            margin-left:4px;
-            margin-top:-2px;
+            margin-left:6px;
+            position:relative;
+            top:-6px;
             display:inline-block;
             font-size: em($fontSizeMeta);
             text-decoration:underline;
@@ -62,6 +63,9 @@ body.blog.single {
 
         & figure {
             margin:0;
+            border-radius: 1000px;
+            margin-bottom:14px;
+            line-height:0;
         }
         & .fn {
             display: block;
@@ -69,7 +73,7 @@ body.blog.single {
             margin-bottom: em($fontSizeMeta);
         }
         & img {
-            border-radius: 1000px;
+            width:100%;
         }
     }
     & section.content {

@@ -81,12 +81,10 @@ echo trim($output, $separator);
 
 <?php
     // Custom meta values 
-    $metaPDF = get_post_meta($post->ID,'_article_file',true);
+        $metaPDF = get_post_meta($post->ID,'_article_file',true);
         $articleDescription = get_post_meta($post->ID,'_article_content',true);
         $articleFile = get_post_meta($post->ID,'_article_file',true);
         
-
-
     if(!$metaPDF) {
 
         $metaAssociatedBrochurePostID = get_post_meta($post->ID,'_banner_post_article',true);
@@ -98,11 +96,8 @@ echo trim($output, $separator);
         $metaPDF = get_post_meta($post->ID,'_article_file',true);
         endwhile;
         wp_reset_query();
-    }
 
-        if ($metaPDF) { ?>
-
-   
+    } else { ?>
 
     <a title="<?php the_title() ?> - Brochure" href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"></a>
 

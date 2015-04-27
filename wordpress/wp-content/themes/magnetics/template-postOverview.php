@@ -12,19 +12,14 @@
 			$postType == 'article';
 		}
 	?>
-
 	<article class="overview">
-		
 		<h6><?php echo $postType; ?></h6>	
 
-		
 				<?php if($postType == 'brochure') { ?>
 				<?php get_template_part( 'template', 'brochureFile' ); ?>
 				<?php } else { ?>
 				<?php get_template_part( 'template', 'articleFile' ); ?>
 				<?php } ?>
-
-				
-<br style="clear:both" />
- 
+			
+		<br style="clear:both" />
 	</article>

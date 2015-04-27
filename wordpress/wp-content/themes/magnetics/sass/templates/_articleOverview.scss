@@ -15,7 +15,6 @@ article.overview {
             color:$teal;
         }
 
-        
 
     &  h6 {
         text-transform: uppercase;
@@ -26,7 +25,7 @@ article.overview {
     }
     &  header {
         @include media($screenLarge) {
-            @include span-columns(3);
+            @include span-columns(4);
         }
 
         & h3 {
@@ -47,7 +46,7 @@ article.overview {
 
 
         @include media($screenLarge) {
-            @include span-columns(7);
+            @include span-columns(6);
             @include shift(1);
             padding:0;
          
