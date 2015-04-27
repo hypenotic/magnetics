@@ -16,20 +16,22 @@ Nav Panel
 */
 
 .panel {
+
     -webkit-overflow-scrolling: touch;
     height: 100%;
     overflow: auto;
-    padding-top: 75px;
+    padding-top: 40px;
     position: fixed;
     right: -15em;
     top: 0;
     width: 15em;
     z-index: 9999;
-    background:white;
+    background:$blueDark;
+    box-shadow:inset 10px 0px 50px rgba(0,0,0,0.2);
 
     @include media($screenLarge) {
-        right: -20em;
-        width: 20em;
+        right: -40em;
+        width: 40em !important;
     }
 
     /*should match the above value*/
@@ -51,47 +53,71 @@ Nav Panel
             width: 20px;
         }
     }
+    & ul#menu-main-menu > li {
+         font-weight:800;
+    }
     ul {
         //@include adjust-font-size-to(15px);
         font-size: $base-font-size;
         margin: 0;
         padding: 0;
-          width: 100%;
+        width: 100%;
         li {
+           
+            transition:border-left 0.2s ease-in-out;
+            &:hover {
+               background: transparent;
+               a {
+                    color: $orange;
+               }
+            }
+            @include media($screenLarge) {
+                padding:4px 30px 4px 84px;
+
+            }
+
+            & li {
+                @include media($screenLarge) {
+                    border-left:0px;
+                    &:hover {
+                        border-left:0px;
+                    }
+                    padding:4px 30px 4px 0px;
+
+                    width:15em;
+                    float:left;
+                }
+            }
             & li a {
                 font-size:0.8em;
-                padding:8px 30px 10px 34px;
+                padding:4px 30px 4px 34px;
             }
             list-style: none;
             margin: 0;
             padding: 0;
             &.current-menu-item {
-                background: #5c6f81;
                 & ul.sub-menu li {
                     background: white;
+                    font-weight:normal;
                     a {
-                        color: #5C6F81;
+                        color: rgba(255,255,255,0.7);
                         &:hover {
-                            color: white !important;
                         }
                     }
                 }
                 a {
-                    color: white;
+                    color: $orange;
                 }
             }
             a {
-               
                 font-size: 1em;
                 line-height: 1.63636em;
-                border-bottom: 1px solid #c0c9d1;
-                color: #5c6f81;
+                color: rgba(255,255,255,0.9);
                 display: block;
-                padding: 15px 30px;
+                padding: 10px 30px;
                 text-decoration: none;
                 &:hover {
-                    background: #5c6f81;
-                    color:white;
+                    color:$orange;
                 }
             }
         }
@@ -100,13 +126,19 @@ Nav Panel
             li {
                 @include transition(all 0.3s);
                 a {
-                    color: #5C6F81;
+                    font-weight:normal;
+                    color: rgba(255,255,255,0.7);
                     &:hover {
-                        color:white !important;
+                        color:$orange;
                     }
                 }
-                &.current-menu-item a {
-                    color: white;
+                &.current-menu-item {
+                    & a {
+                        color:$orange;
+                    }
+                    & a:hover {
+                        color:$orange;
+                    }
                 }
             }
         }
@@ -127,7 +159,7 @@ body .dark #nav-toggle {
         background:$blueDark !important;
     }
 }
-#nav-toggle {
+#nav-toggle:not(.active) {
     text-shadow:1px 1px 2px #062840;
     cursor: pointer;
     padding: 15px 33px 18px 8px;
@@ -170,6 +202,7 @@ nav#toggler {
         position: absolute;
         display: block;
         content: '';
+        text-shadow:none;
     }
 }
 
@@ -181,7 +214,6 @@ nav#toggler {
     position: absolute;
     display: block;
     content: '';
-    box-shadow:1px 1px 2px #062840;
     background: white;
 }
 

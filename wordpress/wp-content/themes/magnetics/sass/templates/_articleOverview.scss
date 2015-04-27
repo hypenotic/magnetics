@@ -1,15 +1,15 @@
 article.overview {
         & h3 {
             & a:hover {
-                color: $orange;
-                    text-decoration: underline;
+                //color: $orange;
+                //    text-decoration: underline;
             }
         }
         & a.resource:hover, & a.more:hover {
             color: $teal;
         }
         &:hover h3 {
-            color:$orange;
+            //color:$orange;
         }
         &:hover a.more {
             color:$teal;
@@ -32,6 +32,7 @@ article.overview {
         & h3 {
             font-weight: bold;
             color: $blueDark;
+            margin-bottom:$spacingSectionSmall;
             & a {
                 color: $blueDark;
             }
@@ -74,7 +75,8 @@ article.overview {
         display: block;
         margin: 0 auto;
         width: 100%;
-        background: $blueDark;
+        /* background: $blueDark; */
+        background: #E0E0E0;
         height: 1px;
     }
     &:last-of-type:after {

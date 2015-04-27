@@ -3,8 +3,6 @@
 	$metaPDF = get_post_meta($post->ID,'_article_file',true);
 		$articleDescription = get_post_meta($post->ID,'_article_content',true);
 		$articleFile = get_post_meta($post->ID,'_article_file',true);
-		
-
 
 	if(!$metaPDF) {
 
@@ -22,10 +20,8 @@
 		if ($metaPDF) { ?>
 
 	<header>
-
-			<h3><a href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" ><?php the_title();?></a></h3>
-
-		</header>
+		<h3><?php the_title();?></h3>
+	</header>
 
 		<section>
 			
@@ -38,9 +34,8 @@
 			?>
 
 			<footer>
-
-	<a href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span>Download this Brochure</span></a>
-</footer>
+				<a href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span>Download this Brochure</span></a>
+			</footer>
 
 		</section>
 	<?php } ?>

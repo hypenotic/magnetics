@@ -1,4 +1,4 @@
-<section class="banner">
+<section id="banner" class="banner">
 
 	<?php 
 

@@ -42,6 +42,8 @@ nav#toggler {
     z-index: 1000000;
     text-shadow:1px 1px 2px #062840;
     text-align: center;
+    color:$blueDark;
+    
     .menu-btn {
         font-family: $fontIcons;
         content: '\f0c9';
@@ -50,8 +52,8 @@ nav#toggler {
         font-family: $fontPrimary;
         display: none;
         
-        &.dark {
-            color:$blueDark
+        &.white {
+            color:white;
         }
 
 

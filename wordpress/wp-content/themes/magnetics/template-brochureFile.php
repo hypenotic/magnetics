@@ -3,10 +3,9 @@
 	$metaPDF = get_post_meta($post->ID,'_brochure_file',true);
 	$metaPDFName = rtrim($metaPDF, "/");
 
-			$brochureFile = get_post_meta($post->ID,'_brochure_file',true);
-		$brochureDescription = get_post_meta($post->ID,'_brochure_content',true);
+	$brochureFile = get_post_meta($post->ID,'_brochure_file',true);
+	$brochureDescription = get_post_meta($post->ID,'_brochure_content',true);
 		
-
 	if(!$metaPDF) {
 
 		$metaAssociatedBrochurePostID = get_post_meta($post->ID,'_banner_post_brochure',true);
@@ -24,7 +23,7 @@
 
 	<header>
 
-			<h3><a href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" ><?php the_title();?></a></h3>
+			<h3><?php the_title();?></h3>
 
 		</header>
 
@@ -39,9 +38,8 @@
 			?>
 
 			<footer>
-
-	<a href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span>Download this Brochure</span></a>
-</footer>
+				<a href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span>Download this Brochure</span></a>
+			</footer>
 
 		</section>
 	<?php } ?>
