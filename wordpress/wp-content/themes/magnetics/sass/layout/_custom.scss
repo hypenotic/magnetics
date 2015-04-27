@@ -70,7 +70,6 @@ section[role="main"] > section, section[role="main"] > article  {
   height:50vh;
   display:flex;
 
-
   flex-direction:column;
   @include fontShadow($blackOverlayLight);
   @include pad(default);
@@ -87,8 +86,8 @@ section[role="main"] > section, section[role="main"] > article  {
     width:100%;
 
     @include media($screenLarge) {
-      width: $screenLarge;
-        max-width: $screenLarge;
+      width: $screenOuter;
+        max-width: $screenOuter;
     }
 
   }
