@@ -7,19 +7,19 @@ body section.products {
 }
 
 .archive:not(.blog) > header:first-of-type {
-        
-           max-width: 1080px;
-  margin: 0 auto;
 
         @include media(1280px) {
-            
             @include shift(1);
         }
     }
 
 .archive.blog section[role="main"]  {
+
     & > header {
         @include pad(0 default);
+        @include media($screenLarge) {
+            @include pad(0);
+        }
         & h1 {
             padding:$spacingSectionLarge 0 $spacingSectionSmall 0;
         }
@@ -42,6 +42,24 @@ body section.products {
  
 }
 
+
+.archive section[role="main"] article.overview {
+        & h3 {
+            & a:hover {
+                color: $orange;
+            }
+        }
+        & a.resource:hover, & a.more:hover {
+            color: $teal;
+        }
+        & a:hover h3 {
+            color:$orange;
+        }
+        &:hover a.more {
+            color:$teal;
+        }
+}
+
 section[role="main"] > section.pagination {
       @include pad($spacingSectionSmall default);
       text-transform:uppercase;
@@ -60,6 +78,7 @@ section[role="main"] > section.pagination {
 }
 
 
+
 .archive section[role="main"] {
     & > header {
         @include outer-container($screenLarge);
@@ -69,6 +88,9 @@ section[role="main"] > section.pagination {
             text-transform: uppercase;
             font-weight: 800;
             @include pad($spacingSection default);
+            @include media($screenLarge) {
+               @include pad($spacingSection 0);  
+            }
             letter-spacing: -2px;
         }
         & #categories {
