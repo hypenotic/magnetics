@@ -1,4 +1,4 @@
-body .gform_wrapper input[type="text"], body .gform_wrapper  input[type="email"], body .gform_wrapper textarea {
+body.contact .gform_wrapper input[type="text"], body.contact .gform_wrapper  input[type="email"], body.contact .gform_wrapper textarea {
 
 	background:white;
 	border:0px;
@@ -11,7 +11,7 @@ body .gform_wrapper input[type="text"], body .gform_wrapper  input[type="email"]
 	
 }
 
-body .gform_wrapper , body .gform_footer {
+body.contact .gform_wrapper , body.contact .gform_footer {
 	margin:0;
 	padding:0;
 }

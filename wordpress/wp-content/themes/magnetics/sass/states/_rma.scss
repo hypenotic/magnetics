@@ -1,0 +1,11 @@
+ .rma-form {
+ 	& h1 {
+ 		color:$gray;
+ 	}
+ 	& .gform_fields {
+ 		width:100%;
+ 		& input {
+ 			border:1px solid $gray;
+ 		}
+ 	}
+ }
