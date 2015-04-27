@@ -12,5 +12,19 @@
 article > h2, section > h2 {
 	padding:0 0 92px 0;
 }
+@include media($screenMedium) {
+	#menu-main-menu > li {
+			& a {
+            font-size:em($fontSizeMedium);
+	        }
+	        & li a {
+            font-size:em($fontSizeSmall);        	
+	        }
+			font-weight:700;
+	 	& ul > li {
+	 		font-weight:400;
+	 	}
+	}
+}
 
 

@@ -109,10 +109,29 @@ body.products.single, body.product-integrations {
 
         #whatsinthebox ul, #additionaloptions ul {
             list-style-type: disc;
-            margin-bottom: $base-spacing / 2;
-            padding-left: $base-spacing;
+            margin-bottom: $base-spacing*2;
+            margin-top: $base-spacing/2;
+            padding-left: $base-spacing * 2;
             text-align:left;
             font-size: em($fontSizeBodySecondary);
+
+        }
+        .resp-tab-content {
+            line-height: 1.5em;
+        }
+
+        .resp-tab-content h3:first-child:before {
+            background:transparent;
+        }
+
+        .resp-tab-content h3:before {
+            width: 100%;
+            height: 1px;
+            display: block;
+            background: #E0E0E0;
+            margin-top: 1em;
+            content: '';
+            margin-bottom: 1em;
         }
 
         & .tabs aside.options {

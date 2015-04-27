@@ -10,7 +10,7 @@
       'menu': ('#menu'),
       'push': ('.push'),
       'side': 'left',
-      'menuWidth': '15em',
+      'menuWidth': jQuery('.panel').width(),
       'speed': '300'
     }, options);
 	var overlay = $('.site-overlay');
@@ -82,3 +82,14 @@
   };
 
 }(jQuery));
+
+jQuery(document).ready(function() {
+
+  var waypoints = jQuery('.banner, header.masthead').waypoint({
+    handler: function(direction) {
+      jQuery('#toggler').toggleClass('white');
+      console.log('hit');
+    }
+  });
+
+})

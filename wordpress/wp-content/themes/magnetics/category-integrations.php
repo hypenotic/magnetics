@@ -33,13 +33,13 @@
             <li>
                 <div>
                     <h3>Hardware Integrations</h3>
-                   <?php echo category_description( 10 ); ?>
+                   <p><?php echo category_description( 10 ); ?></p>
                 </div>
             </li>
             <li>
                 <div>
                     <h3>Software Integrations</h3>
-                    <?php echo category_description( 9 ); ?>
+                    <p><?php echo category_description( 9 ); ?></p>
                 </div>
             </li>                 
         </ul>
