@@ -38,7 +38,8 @@
             $metaPDF = get_post_meta($post->ID,'_article_file',true);
             $articleDescription = get_post_meta($post->ID,'_article_content',true);
             $articleFile = get_post_meta($post->ID,'_article_file',true);
-        ?>
+          ?>
+
               <a href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span class="small">Article</span></a>
             <?php } ?>
 
@@ -60,9 +61,9 @@
 
   </article>
 
-<?php if(in_category('products') && !in_category('product-integrations')) { ?>
-  <!-- Module: Steps -->
-  <?php get_template_part('module', 'callUs'); ?>
+   <?php get_template_part('module', 'callUs'); ?>
+
+<?php if(in_category('products')) { ?>
 
   <!-- Module: Timeline -->
   <?php get_template_part( 'module', 'timeline' ); ?>
