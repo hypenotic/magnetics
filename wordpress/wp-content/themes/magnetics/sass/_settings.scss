@@ -47,6 +47,7 @@ Version: 1.0
 @import "modules/productsRelated";
 @import "modules/team";
 @import "modules/callUs";
+@import "modules/modal";
 
 // Layout - Templates
 @import "templates/articleOverview.scss";
@@ -58,6 +59,7 @@ Version: 1.0
 @import "components/buttons";
 @import "components/forms";
 @import "components/smoothZoom";
+@import "components/modal";
 
 // Pages (States)
 @import "states/about";

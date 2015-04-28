@@ -64,16 +64,6 @@ body.products.single, body.product-integrations {
         }
     }
 
-    #toggler .active {
-        & span {
-            background:none;
-            &:after, &:before {
-                background: $blueDark;
-            }
-        }
-    }
-
-
     & section[role="main"] {
         & article {
             h1 {
