@@ -107,9 +107,6 @@ body.blog.single, body.articles.single  {
             @include media($screenLarge) {
                 @include shift(3);
             }
-            font-weight: bold;
-            color: $blueDark;
-            text-decoration: underline;
             line-height: em($fontSizeSubheading);
         
     }

@@ -3,18 +3,16 @@
  <header class="banner">
         <h1>Integrations</h1>
 
-
-        <h4><?php 
-
-             remove_filter('term_description','wpautop'); 
-
-        echo category_description(); ?></h4>
-    </header>
+        <h4>
+<?php 
+            remove_filter('term_description','wpautop'); 
+            echo category_description(); 
+?>
+        </h4>
+</header>
 
 <section role="main">
-
-
-    
+  
     <div class="background">
     <div class="overlay"></div>
 
@@ -25,8 +23,6 @@
     </div>
 
     <div class="mobile-bg"></div>
-
-   
 
 <section class="tabs">
     <ul class="resp-tabs-list two">
@@ -48,7 +44,8 @@
 
     <div >
       <article>
-   <?php 
+<?php 
+
 query_posts('post_type=post&cat=10');
 if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 
@@ -59,7 +56,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 ?>
     <div class="vendor">
 
-    <?php 
+<?php 
         $metaIntegrationsImageAttachment = wp_get_attachment_image_src( $metaIntegrationsImageID, 'full' );
         $metaIntegrationsImageAttachmentURL = $metaIntegrationsImageAttachment[0];
 
@@ -76,15 +73,20 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
         <br style="clear:both" />
     </div>
 
-<?php endwhile; endif; wp_reset_query();?>
+<?php 
+    endwhile; 
+    endif; 
+    wp_reset_query();
+?>
 
         </article>
     </div>
-    
+
 
     <div>
     <article>
-    <?php 
+<?php 
+
 query_posts('post_type=post&cat=9');
 if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 
@@ -95,7 +97,8 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 ?>
     <div class="vendor">
 
-    <?php 
+<?php 
+
         $metaIntegrationsImageAttachment = wp_get_attachment_image_src( $metaIntegrationsImageID, 'full' );
         $metaIntegrationsImageAttachmentURL = $metaIntegrationsImageAttachment[0];
 

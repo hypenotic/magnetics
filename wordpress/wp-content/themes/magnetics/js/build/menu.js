@@ -10,14 +10,20 @@
       'menu': ('#menu'),
       'push': ('.push'),
       'side': 'left',
-      'menuWidth': jQuery('.panel').width(),
       'speed': '300'
     }, options);
+
+    if(window.innerHeight > 850 ) { 
+      settings.menuWidth = '40em'; 
+    } else { 
+      settings.menuWidth = '15em';
+    }
+
 	var overlay = $('.site-overlay');
     var menuLink = this,
         menu = $(settings.menu),
         push = $(settings.push),
-        width = settings.menuWidth;
+        width = jQuery('.panel').width();
 
     var positionOffScreen = {
       'position': 'fixed',
@@ -85,6 +91,12 @@
 
 jQuery(document).ready(function() {
 
+  jQuery(window).on('resize', function() {
+  
+      jQuery('#nav-toggle').bigSlide({'side':'right'});
+
+  });
+
   var waypoints = jQuery('.banner, header.masthead').waypoint({
     handler: function(direction) {
       jQuery('#toggler').toggleClass('white');
@@ -93,3 +105,4 @@ jQuery(document).ready(function() {
   });
 
 })
+
