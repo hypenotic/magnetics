@@ -1,4 +1,8 @@
-
+section[role="main"] section#banner {
+    @include media($screenLarge) {
+        padding:92px !important;
+    }
+}
 .banner {
 
     flex-direction:column;

@@ -35,12 +35,19 @@
 
             if(in_category('articles')) { 
             // Custom meta values 
-            $metaPDF = get_post_meta($post->ID,'_article_file',true);
+            $metaPDF = get_post_meta($post->ID,'_related_content_post_article',true);
             $articleDescription = get_post_meta($post->ID,'_article_content',true);
-            $articleFile = get_post_meta($post->ID,'_article_file',true);
+      
+            $query = new WP_Query('post_type=article&p='.$metaPDF[0]);
+            while ($query->have_posts()): $query->the_post(); 
+            global $post;
+            $metaPDFURL = get_post_meta($post->ID,'_article_file',true);
+            endwhile;
+            wp_reset_query();
+    
           ?>
 
-              <a href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span class="small">Article</span></a>
+              <a href="<?php echo $metaPDFURL; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span class="small">Article</span></a>
             <?php } ?>
 
           </header>
@@ -53,8 +60,11 @@
     <?php if(in_category('articles')) { ?> 
     <br style="clear:both" />   
     <footer class="container">
-      <a class="return" href="<?php bloginfo('url');?>/products">&laquo; Return to Products Page</a>
-      <a class="return" href="<?php bloginfo('url');?>/articles">&laquo; Return to Articles Page</a>
+      
+      <p>
+        <small>Posted on <?php the_time('l, F jS, Y') ?>.</small>
+      </p>
+
     </footer>
     <?php } ?>
 

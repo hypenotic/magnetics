@@ -31,6 +31,9 @@ body section.products {
 .archive #footer footer {
     max-width:850px;
 }
+#archive {
+    padding-top:0 !important;
+}
 #archive article {
          @include pad(0 default);
          & h6 {

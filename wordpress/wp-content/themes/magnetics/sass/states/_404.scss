@@ -1,13 +1,54 @@
-.error404 .banner {
-	height:100vh;
-	justify-content: center;
-	flex-direction:column;
-	& h1 {
-		margin-bottom: $spacingSectionSmall;
-		text-align:center;
-	}
+.error404 .background #fish {
+	background:url(images/404.png) center right;
+	background-size:cover;
+	background-repeat:no-repeat;
+	position:fixed;
+	z-index:1;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	opacity:0.95;
 }
-
 .error404 > header {
 	background:transparent;
+}
+
+.error404 {
+	& h1, & h3 {
+		text-transform:uppercase;
+		max-width: 50%;
+	}
+	& p {
+		max-width: 50%;
+	}
+	& ul li {
+		float:left;
+		list-style:none;
+		margin:0;
+		padding:0;
+		& a {
+			padding:6px 6px 6px 0;
+			margin-right:20px;
+			display:block;
+			color:white;
+			&:hover {
+				color:$orange;
+			}
+		}
+	}
+	& .banner {
+		min-height:0;
+		height:0
+	}
+
+	article {
+		color:white;
+		margin:0;
+		padding: 92px 2.35765%;
+		@include media($screenLarge) {
+			max-width: 1080px;
+			margin:0 auto;
+		}
+	}
 }
