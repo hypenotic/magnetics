@@ -8,18 +8,21 @@ body > header {
     & .container {
         max-width:1080px;
         margin:0 auto;
+
+        @include media($screenLarge) {
+            padding: 0 2.37%;
+        }
     }
 
     background: $gray;
     z-index:10000;
     @include pad(25px 0 14px default);
-    @include media(1280px) {
+    @include media($screenMedium) {
         padding: em($fontSizeSmall) 0;
     }
 
     &  a.logo {
         display: inline-block;
-        padding: 4px;
         @include media($screenOuter) {
         }
 
