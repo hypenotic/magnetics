@@ -58,9 +58,6 @@
 		
 	}
 
-
- 
-
 	$related_posts = get_posts($args);
 
 	/**
@@ -80,7 +77,6 @@
 
 	?>
 
-
 	<section class="related">
 
 	<?php if ( in_category( 'products' )) { ?>
@@ -94,8 +90,6 @@
 	 foreach ( $related_posts as $post ) {
 
 ?>
-
-
 
 	<?php get_template_part('template','postOverview'); ?>
 	 	

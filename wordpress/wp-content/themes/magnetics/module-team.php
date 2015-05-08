@@ -23,9 +23,7 @@
             $phone  = $teammate['_phone'];
             $fax  	= $teammate['_fax'];
             $image  = $teammate['_image'];
-        ?>
-
-       
+        ?>       
             <li>
              <?php if ($image) {
                 echo wp_get_attachment_image($image) . '<br>';

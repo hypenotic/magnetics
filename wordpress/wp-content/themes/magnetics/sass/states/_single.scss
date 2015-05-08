@@ -1,4 +1,4 @@
-body.blog.single, body.articles.single  {
+body.blog.single, body.articles.single, body.single-article  {
     & h1 {
         color: $gray;
         margin-bottom:$spacingSection;
@@ -48,8 +48,6 @@ body.blog.single, body.articles.single  {
         }
         
     }
-
-
 
     & #author {
 

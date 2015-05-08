@@ -11,10 +11,8 @@
 }
 
 .resp-tab-content {
-      @include pad($spacingSectionSmall default);
+    @include pad($spacingSectionSmall default);
       
-
-
      @include media($screenLarge) {
             @include pad($spacingSectionSmall 0);
         }
@@ -32,12 +30,10 @@
           }
     }
 
-
-
     & h2 {
-        @include pad($spacingSectionLarge default);
+        @include pad($spacingSectionSmall default);
         @include media($screenLarge) {
-            @include pad($spacingSectionLarge 0);
+            @include pad(0 0 $spacingSectionLarge 0);
         }
     }
     background: white;
@@ -62,6 +58,7 @@
         & li {
             flex: 1 0 auto;
         }
+
     }
     .resp-accordion {
         background: $blueDark;
@@ -156,6 +153,11 @@
         @include media($screenLarge) {
         margin-top: $spacingSectionLarge;
         }
+    }
+}
+.resp-tabs-container {
+    & h6 {
+      text-decoration:underline;
     }
 }
 .resp-tabs-container.two {

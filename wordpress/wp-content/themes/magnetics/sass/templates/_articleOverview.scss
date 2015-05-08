@@ -1,7 +1,7 @@
 article.overview {
         & h3 {
             & a:hover {
-                //color: $orange;
+                color: $orange;
                 //    text-decoration: underline;
             }
         }
@@ -14,8 +14,6 @@ article.overview {
         &:hover a.more {
             color:$teal;
         }
-
-
     &  h6 {
         text-transform: uppercase;
         font-size: em($fontSizeSmall);
