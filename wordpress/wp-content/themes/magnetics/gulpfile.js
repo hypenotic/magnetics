@@ -22,9 +22,8 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('sass', function () {
-	    gulp.src('./sass/**/*.scss')
+	    sass('./sass')
 	        .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
-	        .pipe(sass())
 		    .pipe(concat('style.css'))
 	        .pipe(gulp.dest('./'))
 			.pipe(browserSync.reload({stream:true}));
