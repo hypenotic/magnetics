@@ -7,12 +7,12 @@ body.about {
     & > header {
         position:absolute;
         width:100%;
-        
     }
     & .masthead {
         display:flex;
         justify-content: center;
         min-height:55vh;
+        text-align:center;
     }
 
     background: $gray;
@@ -24,9 +24,9 @@ body.about {
             @include media($screenLarge) {
 	            @include pad($spacingSectionLarge default);
 		    }
-
         }
     }
+
     #footer {
     	border-top:0;
 
@@ -34,4 +34,5 @@ body.about {
             border-top: $spacingSectionLarge solid white;
         }
     }
+
 }

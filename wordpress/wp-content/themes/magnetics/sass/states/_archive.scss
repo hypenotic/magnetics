@@ -6,13 +6,6 @@ body section.products {
     padding-top:0 !important;
 }
 
-.archive:not(.blog) > header:first-of-type {
-
-        @include media(1280px) {
-            @include shift(1);
-        }
-    }
-
 .archive.blog section[role="main"]  {
 
     & > header {
@@ -135,31 +128,37 @@ section[role="main"] > section.pagination {
 
 .archive {
     & header.banner {
-        height: 55vh;
-
+        min-height: 60vh;
         box-sizing:border-box;
-        min-height:0;
         flex-direction: column;
-        text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
         display:flex;
-        flex-direction: column;
         justify-content:center;
+
         @include outer-container($screenOuter);
-        @include pad(0 default $spacingSectionSmall default);
+        @include pad(0 2.37% $spacingSectionSmall 2.37%);
         color:white;
-        @include fontShadow($blackOverlayLight);
 
-        @include media($screenLarge) {
-          min-height: 350px;
+
+        & h4 {  
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
         }
+    }
+}
 
-        & h2 {
-            @include pad($spacingSectionSmall 0);
+.archive.category-integrations {
+    & header.banner {
+        max-width:850px;
+        text-align:center;
+        h1 {
+        text-shadow:0px !important;
+        display:block;
+        width:100%;
         }
     }
 }
 
 .category-integrations section[role="main"] {
+
     & .vendor {
 
         & a:last-of-type {

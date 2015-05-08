@@ -1,25 +1,27 @@
 section[role="main"] section#banner {
+
+    @include pad(25px 0 14px default);
+    @include media($screenMedium) {
+        padding: em($fontSizeSmall)  2.37% !important;
+    }
     @include media($screenLarge) {
-        padding:92px !important;
+        padding:92px 2.37% !important;
     }
 }
 .banner {
 
     flex-direction:column;
     @include media($screenLarge) {
-    max-height:40vh;
+    max-height:60vh;
     display:flex;
     flex-direction:row-reverse;
     min-height:600px;
     max-width:1080px;
     margin:0 auto;
-    align-items:center;
-    @include pad(0 default);
     }
     align-items:center;
     color:white;
     min-height:70vh;
-     @include pad(10vh default 0 default);
     .bannerImage {
         margin:0 auto;
 
@@ -46,7 +48,7 @@ section[role="main"] section#banner {
         align-items:left;
         justify-content: center;
         & h4 {
-            text-shadow:1px 1px 4px rgba(0,0,0,1);
+            text-shadow:1px 1px 4px rgba(0,0,0,0.8);
         }
         margin-bottom:$spacingSectionSmall;
     }

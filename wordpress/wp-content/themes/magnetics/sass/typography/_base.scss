@@ -73,11 +73,11 @@ h6 {
 
 p, ul, ol {
     font-size: em($fontSizeBody);
-    margin: 0 0 em($fontSizeBody) 0;
+    margin: 0 0 em($fontSizeMedium) 0;
     @include media($screenLarge) {
         font-size: em($fontSizeBody);
-        line-height: em($fontSizeLarge);
-        margin: 0 0 em($fontSizeLarge) 0;
+        line-height: em($fontSizeSubheading);
+        margin: 0 0 em($fontSizeHeadingSmall) 0;
     }
 }
 

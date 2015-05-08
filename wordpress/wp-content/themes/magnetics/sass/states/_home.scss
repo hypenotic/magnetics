@@ -11,8 +11,8 @@
 		width:90%;
 		color:white;
 		@include pad(0 default);
-		@include media($screenOuter) {
-			padding:0;
+		@include media($screenLarge) {
+			padding:0 2.37%;
 			margin:0 auto;
 			width:100%;
 		}
@@ -22,18 +22,15 @@
 	h1 {
 		@include media($screenMedium) {
 			margin-top:70px;
-			font-size:3.5em;
 			line-height:0.9em;
 			& small {
 				font-size:0.7em;
 			}
 		}
-		@include media($screenOuter) {
+		@include media($screenLarge) {
 			margin-top:30px;
 			margin-bottom:40px;
 			width:60%;
-			font-size:4em;
-			line-height:1em;
 			& small {
 				font-size:0.7em;
 			}
@@ -42,13 +39,15 @@
 		
 	}
 
-	p {
+	h4 {
+
+		text-shadow:1px 1px 4px rgba(0,0,0,0.8);
 
 		@include media($screenMedium) {
 			width:50%;
 		}
 
-		@include media($screenOuter) {
+		@include media($screenLarge) {
 			width:40%;
 		}
 		& a {
