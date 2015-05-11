@@ -46,6 +46,10 @@ body.contact {
 			margin-bottom: $spacingSectionLarge;
 		}
 
+		& .gform_body ul {
+			width:100%;
+		}
+
 		& .gform_footer {
 			padding-top:0;
 		}
@@ -90,7 +94,8 @@ body.contact {
 		}
 
 		& .optional a.icon {
-			display:block;
+			display:inline-block;
+
 			&:hover {
 				color:$orange;
 				&:before {
@@ -103,6 +108,8 @@ body.contact {
 			font-weight:200;
 			&:before {
 			float: right;
+			position:relative;
+			left:10px;
 			}
 		}
 	}
