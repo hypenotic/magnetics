@@ -41,6 +41,7 @@ section[role="main"] section#banner {
         max-width:100%;
         @include media($screenLarge) {
           width: 50%;
+          text-align:left;
         }
         min-height:300px;
         display:flex;

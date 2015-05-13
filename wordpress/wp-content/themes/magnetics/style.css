@@ -5334,7 +5334,8 @@ section[role="main"] section#banner {
     margin-bottom: 32px; }
     @media screen and (min-width: 850px) {
       .banner .text {
-        width: 50%; } }
+        width: 50%;
+        text-align: left; } }
     .banner .text h4 {
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); }
   .banner h1 {
