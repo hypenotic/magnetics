@@ -406,10 +406,10 @@ input[type="submit"] {
     opacity: 0.5; }
 
 body {
-  -webkit-font-feature-settings: "kern", "liga", "frac", "pnum";
-  -moz-font-feature-settings: "kern", "liga", "frac", "pnum";
-  -ms-font-feature-settings: "kern", "liga", "frac", "pnum";
-  font-feature-settings: "kern", "liga", "frac", "pnum";
+  -webkit-font-feature-settings: "kern", "liga", "pnum";
+  -moz-font-feature-settings: "kern", "liga", "pnum";
+  -ms-font-feature-settings: "kern", "liga", "pnum";
+  font-feature-settings: "kern", "liga", "pnum";
   -webkit-font-smoothing: antialiased;
   background-color: white;
   color: #333333;
@@ -4546,7 +4546,7 @@ body > header {
         padding: 0 2.37%; } }
   @media screen and (min-width: 698px) {
     body > header {
-      padding: 0.875em 0; } }
+      padding: 0.875em 25px; } }
   body > header a.logo {
     display: inline-block; }
     body > header a.logo img {
@@ -5294,25 +5294,61 @@ section#steps {
       float: right; } }
 
 section[role="main"] section#banner {
+  position: relative;
   padding: 25px 0 14px 2.35765%; }
   @media screen and (min-width: 698px) {
     section[role="main"] section#banner {
       padding: 0.875em 2.37% !important; } }
   @media screen and (min-width: 850px) {
     section[role="main"] section#banner {
-      padding: 92px 2.37% !important; } }
+      padding: 92px 2.37% !important; }
+      section[role="main"] section#banner + #scrollDown i {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transform: translate(0, 0);
+        position: absolute;
+        margin-top: -140px;
+        left: 50%;
+        margin-left: -28px;
+        border: 3px solid white;
+        border-radius: 1000px;
+        width: 57px;
+        text-align: center;
+        line-height: 50px;
+        letter-spacing: 0;
+        opacity: 1;
+        color: white; }
+        section[role="main"] section#banner + #scrollDown i:hover {
+          cursor: pointer; } }
+
+#below {
+  visibility: hidden; }
+
+@media screen and (min-width: 850px) {
+  .masthead {
+    min-height: 500px; } }
+
+.background.enabled ~ .text {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto; }
+.background.enabled ~ .bannerImage {
+  display: none; }
 
 .banner {
   flex-direction: column;
   align-items: center;
-  color: white;
-  min-height: 70vh; }
+  color: white; }
   @media screen and (min-width: 850px) {
     .banner {
       max-height: 60vh;
       display: flex;
       flex-direction: row-reverse;
-      min-height: 600px;
+      min-height: 700px;
       max-width: 1080px;
       margin: 0 auto; } }
   .banner .bannerImage {
@@ -6249,7 +6285,7 @@ nav.left ul {
 
 .button.clear, body .gform_wrapper input.clear[type="submit"] {
   border: 2px solid white;
-  padding: 12px 24px;
+  padding: 16px 24px;
   text-transform: uppercase;
   text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
   font-weight: 600;
@@ -6391,7 +6427,6 @@ body.about {
   body.about .masthead {
     display: flex;
     justify-content: center;
-    min-height: 55vh;
     text-align: center; }
   body.about section:first-of-type article {
     color: white;
@@ -6412,7 +6447,7 @@ body.about {
   max-width: 850px;
   margin: 0 auto; }
 
-body.products.single .banner + article, body.product-integrations .banner + article {
+body.products.single #below + article, body.product-integrations #below + article {
   display: none; }
 body.products.single > header, body.product-integrations > header {
   position: absolute;
@@ -6776,7 +6811,8 @@ section[role="main"] > section.pagination {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 100%; }
+  height: 100%;
+  min-height: 500px; }
   .home section[role="main"] {
     max-width: 1080px;
     width: 90%;
@@ -6818,21 +6854,26 @@ section[role="main"] > section.pagination {
     font-size: 18px; }
   .home .background > img {
     opacity: 0.5;
+    left: auto;
     right: -40%;
     position: fixed;
     width: auto;
     z-index: 10000;
     object-fit: none;
-    max-width: none;
-    right: 0; }
+    max-width: none; }
     @media screen and (min-width: 850px) {
       .home .background > img {
         opacity: 1;
         right: 0;
         left: auto; } }
+    @media screen and (min-width: 698px) {
+      .home .background > img {
+        opacity: 1;
+        right: -20%;
+        left: auto; } }
   .home header {
     background: none;
-    position: fixed;
+    position: absolute;
     width: 100%;
     top: 0; }
 

@@ -12,13 +12,14 @@ body > header {
         @include media($screenLarge) {
             padding: 0 2.37%;
         }
+
     }
 
     background: $gray;
     z-index:10000;
     @include pad(25px 0 14px default);
     @include media($screenMedium) {
-        padding: em($fontSizeSmall) 0;
+        padding: em($fontSizeSmall) 25px;
     }
 
     &  a.logo {
