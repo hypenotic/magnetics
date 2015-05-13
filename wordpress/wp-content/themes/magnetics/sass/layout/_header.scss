@@ -45,6 +45,10 @@ nav#toggler {
     z-index: 1000000;
     text-align: center;
     color:$blueDark;
+
+    &.transparent * {
+        color:rgba(255,255,255,0) !important;
+    }
     
     .menu-btn {
         font-family: $fontIcons;
@@ -60,7 +64,6 @@ nav#toggler {
         &.white {
             color:white;
         }
-
 
         @include media($screenLarge) {
             display: block;

@@ -4567,6 +4567,8 @@ nav#toggler {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   transition: all 0.5s; }
+  nav#toggler.transparent * {
+    color: rgba(255, 255, 255, 0) !important; }
   nav#toggler .menu-btn {
     font-family: "fontAwesome";
     content: '\f0c9'; }
