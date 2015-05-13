@@ -769,11 +769,12 @@ blockquote {
       font-size: 1.5625em;
       margin: 0 auto rhythm(1, 25); } }
 
-p > a {
+p > a:not(.button), h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
   text-decoration: none !important;
   display: inline-block;
   border-bottom: 1px solid;
-  padding-bottom: 2px; }
+  padding-bottom: 2px;
+  line-height: 90%; }
 
 a[href^=mailto] {
   text-decoration: none !important;
@@ -3202,7 +3203,7 @@ section[role="main"] > section.pagination {
         width: 50%; } }
     @media screen and (min-width: 850px) {
       .home h4 {
-        width: 40%; } }
+        width: 60%; } }
     .home h4 a {
       color: white; }
   .home .button, .home body .gform_wrapper input[type="submit"], body .gform_wrapper .home input[type="submit"] {
