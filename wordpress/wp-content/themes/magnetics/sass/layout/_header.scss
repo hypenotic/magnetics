@@ -50,6 +50,9 @@ nav#toggler {
         font-family: $fontIcons;
         content: '\f0c9';
     }
+    a span {
+        border:0px;
+    }
     .menu-btn.text {
         font-family: $fontPrimary;
         display: none;

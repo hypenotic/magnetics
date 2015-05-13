@@ -101,12 +101,15 @@ blockquote {
     }
 }
 
-p > a:not(.button), h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
+p > a:not(.button), h2 > a, h3 > a, h4 > a, h5 > a, h6 > a, a > span {
     text-decoration:none !important;
     display:inline-block;
     border-bottom:1px solid;
     padding-bottom:2px;
     line-height:90%;
+}
+a > span {
+    display:inline;
 }
 a[href^=mailto] {
     text-decoration:none !important;
@@ -127,6 +130,9 @@ a {
     &:focus {
         outline: none;
     }
+}
+a {
+    color:$blueDark;
 }
 
 .text-center {

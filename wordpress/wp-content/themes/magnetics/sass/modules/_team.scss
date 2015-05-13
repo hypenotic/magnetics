@@ -1,11 +1,18 @@
 section#team {
 
 	background:white;
-	color:$gray;
 	padding: $spacingSectionSmall 0;
+	color:$grayDark;
+
+	& a {
+		color:$blueDark;
+		&:before {
+			content:''
+		}
+	}
 
 	h2 {
-
+		color:$blueDark;
 		@include outer-container($screenOuter);
 		margin-bottom:$spacingSection;
 		text-align:center;
@@ -22,7 +29,7 @@ section#team {
 		display:block;
 
 		& li {
-
+			white-space:nowrap;
 			text-align:left;
 			margin-bottom: $spacingSection;
 
@@ -37,8 +44,8 @@ section#team {
 			text-align:center;
 
 			@include media($screenMedium) {
-				@include span-columns(3);
-				text-align:left;
+				@include span-columns(5);
+				text-align:center;
 			}
 
 			@include media($screenOuter) {

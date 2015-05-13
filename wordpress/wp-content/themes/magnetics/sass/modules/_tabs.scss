@@ -40,8 +40,8 @@
     & header {
         margin-bottom: 96px;
     }
-    &.boxes .resp-tabs-list li {
-        text-decoration: underline;
+    &.boxes .resp-tabs-list li span {
+        border-bottom:1px solid;
     }
     & > section {
         display: none;
@@ -156,8 +156,8 @@
     }
 }
 .resp-tabs-container {
-    & h6 {
-      text-decoration:underline;
+    h6 span {
+        border-bottom:1px solid;
     }
 }
 .resp-tabs-container.two {

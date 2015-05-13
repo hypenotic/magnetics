@@ -20,23 +20,23 @@
         <ul class="resp-tabs-list">
              <?php if($metaWhatsInTheBox)  { ?>
             <li aria-controls="whatsinthebox">
-                What's In The Box   
+                <span>What's In The Box</span>  
             </li>
             <?php } ?>
              <?php if(isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== ''))  { ?>
             <li >
-                Additional Options
+                <span>Additional Options</span>
             </li>
             <?php } ?>
 
             <?php if($metaIntegrations[0] != 0)  { ?>
              <li >
-                Integrations
+                <span>Integrations</span>
             </li>
             <?php } ?>
             <?php if($metaSystemAtAGlance[0] != 0)  { ?>
             <li>
-                System At a Glance  
+                <span>System At a Glance</span>
             </li>     
             <?php } ?>                
         </ul>

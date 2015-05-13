@@ -1,12 +1,16 @@
 jQuery(document).ready(function($){
 
-	var $container = $('#timeline > ul');
+	setTimeout(function(){
 
-	$container.addClass('gradient');
-	// initialize Isotope
-	$container.isotope();
+		var $ = jQuery;
 
-	jQuery('#timeline > ul').find('li').each(function(i,e){
+		var $container = $('#timeline > ul');
+
+		$container.addClass('gradient');
+		// initialize Isotope
+		$container.isotope();
+
+		jQuery('#timeline > ul').find('li').each(function(i,e){
 
 
 			if(window.innerWidth > 860) {
@@ -24,10 +28,10 @@ jQuery(document).ready(function($){
 					jQuery(e).addClass('rightSide');
 					jQuery(e).removeClass('left');
 				}
-
 			} else {	
 					jQuery(e).removeClass('left');
 					jQuery(e).removeClass('rightSide');
+					jQuery(e).css('margin-top',0);
 			}
 
 			// TODO: Find Blockquote inside JS
@@ -35,7 +39,9 @@ jQuery(document).ready(function($){
 				jQuery(e).addClass('quote');
 			}
 
-	});
+		});
+
+	}, 1600);
 
 });
 
@@ -82,7 +88,7 @@ jQuery(window).on('resize', function() {
 
 		});
 
-	}, 1600);
+	}, 1000);
 
 
 });

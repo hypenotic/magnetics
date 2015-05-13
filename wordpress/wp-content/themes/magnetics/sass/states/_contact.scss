@@ -28,7 +28,6 @@ body.contact {
 			font-size: em($fontSizeSmall);
 		}
 		& a {
-			text-decoration:underline;
 			color:white;
 		}
 
@@ -108,7 +107,7 @@ body.contact {
 				right:-30px;
 				position:absolute;
 			}
-			
+
 		}
 	}
 }
