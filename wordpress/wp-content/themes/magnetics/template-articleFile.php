@@ -4,6 +4,7 @@
 		$articleDescription = get_post_meta($post->ID,'_article_content',true);
 		$articleFile = get_post_meta($post->ID,'_article_file',true);
 
+		print_r($metaAssociatedBrochurePostID);
 	if(!$metaPDF) {
 
 		$metaAssociatedBrochurePostID = get_post_meta($post->ID,'_banner_post_article',true);
@@ -20,7 +21,7 @@
 		if ($metaPDF) { ?>
 
 	<header>
-		<h3><?php the_title();?></h3>
+	<h3><a href="<?php echo get_permalink($metaAssociatedBrochurePostID ); ?>"><?php the_title();?></a></h3>
 	</header>
 
 		<section>
@@ -35,6 +36,7 @@
 
 			<footer>
 				<a href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span>Download this Brochure</span></a>
+				<a href="<?php echo get_permalink($metaAssociatedBrochurePostID ); ?>" class="icon more"></a>
 			</footer>
 
 		</section>

@@ -53,6 +53,14 @@ Nav Panel
             width: 20px;
         }
     }
+
+    & a:after {
+        border-bottom:1px solid;
+        display:block;
+        opacity:0.5;
+        content:'';
+    }
+
     & ul#menu-main-menu > li {
          font-weight:800;
     }
@@ -63,7 +71,9 @@ Nav Panel
         padding: 0;
         width: 100%;
         li {
-           
+
+
+
             transition:border-left 0.2s ease-in-out;
             &:hover {
                background: transparent;
@@ -84,13 +94,14 @@ Nav Panel
                     }
                     padding:4px 30px 4px 0px;
 
-                    width:15em;
+                    width:12em;
                     float:left;
                 }
             }
             & li a {
                 font-size:0.8em;
                 padding:4px 30px 4px 34px;
+
             }
             list-style: none;
             margin: 0;
@@ -112,21 +123,28 @@ Nav Panel
                 font-size: 1em;
                 line-height: 1.63636em;
                 color: rgba(255,255,255,0.9);
-                display: block;
-                padding: 10px 30px;
+                display: inline-block;
+                margin: 18px 30px;
+                padding:0;
                 text-decoration: none;
+                line-height:100%;
                 &:hover {
                     color:$orange;
                 }
             }
         }
         &.sub-menu {
-            padding: 0;
+            margin-left:30px;
             li {
                 @include transition(all 0.3s);
                 a {
                     font-weight:normal;
                     color: rgba(255,255,255,0.7);
+                    display:inline-block;
+                    margin-left:0;
+                    text-align:left;
+                    padding-left:0;
+                    margin:10px 0;
                     &:hover {
                         color:$orange;
                     }
@@ -226,7 +244,7 @@ nav#toggler {
 }
 
 #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
-    @include transition(all 500ms ease-in-out);
+    @include transition(all 300ms ease-in-out);
 }
 
 #nav-toggle.active span {

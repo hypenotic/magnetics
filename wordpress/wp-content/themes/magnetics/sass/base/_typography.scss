@@ -1,5 +1,5 @@
 body {
-    @include font-feature-settings("kern", "liga", "frac", "pnum");
+    @include font-feature-settings("kern", "liga", "pnum");
     -webkit-font-smoothing: antialiased;
     background-color: $base-background-color;
     color: $base-font-color;

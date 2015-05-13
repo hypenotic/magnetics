@@ -67,7 +67,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 
             <?php echo $metaIntegrationsText; ?>
 
-            <a target="_blank" href="//<?php echo $metaIntegrationsLink ?>" title="<?php the_title(); ?>"><?php echo $metaIntegrationsLink; ?></a> 
+            <a target="_blank" href="//<?php echo $metaIntegrationsLink ?>" title="<?php the_title(); ?>"><span><?php echo $metaIntegrationsLink; ?></span></a> 
         </section>
 
         <br style="clear:both" />
@@ -109,7 +109,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 
                 <p><?php echo $metaIntegrationsText; ?></p>
 
-                <a href="//<?php echo $metaIntegrationsLink ?>" title="<?php the_title(); ?>"><?php echo $metaIntegrationsLink; ?></a>
+                <a href="//<?php echo $metaIntegrationsLink ?>" title="<?php the_title(); ?>"><span><?php echo $metaIntegrationsLink; ?></span></a>
             </section>
             <br style="clear:both" />
     </div>

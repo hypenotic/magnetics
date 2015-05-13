@@ -28,7 +28,6 @@ body.contact {
 			font-size: em($fontSizeSmall);
 		}
 		& a {
-			text-decoration:underline;
 			color:white;
 		}
 
@@ -44,6 +43,10 @@ body.contact {
 
 		& h1 {
 			margin-bottom: $spacingSectionLarge;
+		}
+
+		& .gform_body ul {
+			width:100%;
 		}
 
 		& .gform_footer {
@@ -71,9 +74,6 @@ body.contact {
 				text-shadow:none;
 			}
 		}
-		a.resource {
-			border-bottom:0px;
-		}
 
 		@include media($screenLarge) {
 
@@ -85,12 +85,13 @@ body.contact {
 		}
 
 		& .optional {
-			@include pad(default);
+			@include pad($spacingSectionSmall default);
 			padding-bottom:$spacingSectionLarge;
 		}
 
 		& .optional a.icon {
-			display:block;
+			display:inline-block;
+
 			&:hover {
 				color:$orange;
 				&:before {
@@ -98,13 +99,15 @@ body.contact {
 				}
 			}
 
+			position:relative;
 			font-size:em($fontSizeBody);
 			text-decoration:none;
 			font-weight:200;
 			&:before {
-			float: right;
+				right:-30px;
+				position:absolute;
 			}
+
 		}
 	}
-
 }

@@ -12,13 +12,14 @@ body > header {
         @include media($screenLarge) {
             padding: 0 2.37%;
         }
+
     }
 
     background: $gray;
     z-index:10000;
     @include pad(25px 0 14px default);
     @include media($screenMedium) {
-        padding: em($fontSizeSmall) 0;
+        padding: em($fontSizeSmall) 25px;
     }
 
     &  a.logo {
@@ -45,10 +46,17 @@ nav#toggler {
     z-index: 1000000;
     text-align: center;
     color:$blueDark;
+
+    &.transparent * {
+        color:rgba(255,255,255,0) !important;
+    }
     
     .menu-btn {
         font-family: $fontIcons;
         content: '\f0c9';
+    }
+    a span {
+        border:0px;
     }
     .menu-btn.text {
         font-family: $fontPrimary;
@@ -57,7 +65,6 @@ nav#toggler {
         &.white {
             color:white;
         }
-
 
         @include media($screenLarge) {
             display: block;

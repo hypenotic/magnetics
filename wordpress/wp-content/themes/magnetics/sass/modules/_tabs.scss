@@ -11,10 +11,8 @@
 }
 
 .resp-tab-content {
-      @include pad($spacingSectionSmall default);
+    @include pad($spacingSectionSmall default);
       
-
-
      @include media($screenLarge) {
             @include pad($spacingSectionSmall 0);
         }
@@ -32,20 +30,18 @@
           }
     }
 
-
-
     & h2 {
-        @include pad($spacingSectionLarge default);
+        @include pad($spacingSectionSmall default);
         @include media($screenLarge) {
-            @include pad($spacingSectionLarge 0);
+            @include pad(0 0 $spacingSectionLarge 0);
         }
     }
     background: white;
     & header {
         margin-bottom: 96px;
     }
-    &.boxes .resp-tabs-list li {
-        text-decoration: underline;
+    &.boxes .resp-tabs-list li span {
+        border-bottom:1px solid;
     }
     & > section {
         display: none;
@@ -62,6 +58,7 @@
         & li {
             flex: 1 0 auto;
         }
+
     }
     .resp-accordion {
         background: $blueDark;
@@ -158,10 +155,15 @@
         }
     }
 }
+.resp-tabs-container {
+    h6 span {
+        border-bottom:1px solid;
+    }
+}
 .resp-tabs-container.two {
 
     & p {
-        font-size:em($fontSizeSmall) !important;
+        font-size:rem($fontSizeBody) !important;
     }
     
     & .resp-accordion h3 {

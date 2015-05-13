@@ -23,9 +23,7 @@
             $phone  = $teammate['_phone'];
             $fax  	= $teammate['_fax'];
             $image  = $teammate['_image'];
-        ?>
-
-       
+        ?>       
             <li>
              <?php if ($image) {
                 echo wp_get_attachment_image($image) . '<br>';
@@ -41,10 +39,10 @@
             endif ?>
 
             <?php if ($email):
-                echo '<i class="fa fa-envelope"></i> <a href="mailto:' . $email . '">' . $email . '</a><br>';
+                echo '<a href="mailto:' . $email . '"><i class="fa fa-envelope"></i> <span>' . $email . '</span></a><br>';
             endif ?>
             <?php if ($phone): 
-                echo '<i class="fa fa-phone"></i> <span class="contactNumber">' . $phone . '</span><br>';
+                echo '<a href="tel:' . $phone . '"><i class="fa fa-phone"></i> <span class="contactNumber">Tel.' . $phone . '</span></a><br>';
             endif ?>
 
             <?php if ($fax):

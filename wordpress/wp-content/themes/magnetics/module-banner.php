@@ -53,7 +53,7 @@
 	<div class="mobile-bg"></div>
 
 	 <?php	}  else { ?>
- 	<div class="background" style="background-image:url(<?php echo $metaBannerBackgroundImageAttachmentURL; ?>);background-size:cover">
+ 	<div class="background <?php if($metaBannerBackgroundImageAttachmentURL) {echo 'enabled';} ?> " style="background-image:url(<?php echo $metaBannerBackgroundImageAttachmentURL; ?>);background-size:cover">
 	</div>
 	<?php }
 
@@ -129,3 +129,7 @@
 	</div>
 
 </section>
+<a id="scrollDown" href="#below">
+	<i class="fa fa-chevron-down"></i>
+</a>
+<div id="below"></div>

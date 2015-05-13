@@ -1,8 +1,19 @@
 section#team {
 
-	@include outer-container($screenOuter);
+	background:white;
+	padding: $spacingSectionSmall 0;
+	color:$grayDark;
+
+	& a {
+		color:$blueDark;
+		&:before {
+			content:''
+		}
+	}
 
 	h2 {
+		color:$blueDark;
+		@include outer-container($screenOuter);
 		margin-bottom:$spacingSection;
 		text-align:center;
 
@@ -13,8 +24,12 @@ section#team {
 
 	& ul.list {
 
-		& li {
+		@include outer-container($screenOuter);
+		margin:0 auto;
+		display:block;
 
+		& li {
+			white-space:nowrap;
 			text-align:left;
 			margin-bottom: $spacingSection;
 
@@ -25,7 +40,15 @@ section#team {
 				display:inline-block;
 			}
 
-			@include media($screenLarge) {
+			@include span-columns(12);
+			text-align:center;
+
+			@include media($screenMedium) {
+				@include span-columns(5);
+				text-align:center;
+			}
+
+			@include media($screenOuter) {
 				@include span-columns(3);
 				padding:2.35765% 2.35765% 2.35765% 0 ;
 				&:nth-child(3n-1), &:nth-child(3n) {

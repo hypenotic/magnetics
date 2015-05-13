@@ -1,13 +1,64 @@
 section[role="main"] section#banner {
 
+    position:relative;
+
     @include pad(25px 0 14px default);
     @include media($screenMedium) {
         padding: em($fontSizeSmall)  2.37% !important;
     }
     @include media($screenLarge) {
         padding:92px 2.37% !important;
+
+        + #scrollDown i {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transform: translate(0, 0);
+            position:absolute;
+            margin-top:-140px;
+            left:50%;
+            margin-left:-28px;
+            border:3px solid white;
+            border-radius:1000px;
+            width: 57px;
+            text-align:center;
+            line-height: 50px;
+            letter-spacing:0;
+            opacity:1;
+            color:white;
+            &:hover {
+            cursor:pointer;
+            }
+        }
+
+    }
+
+}
+
+#below {
+    visibility:hidden;
+}
+
+.masthead {
+    @include media($screenLarge) {
+        min-height:500px;
     }
 }
+
+.background.enabled {
+    & ~ .text {
+        text-align:center;
+        width:60%;
+        margin:0 auto;
+    }
+    & ~ .bannerImage {
+        display:none;
+    }
+}
+
 .banner {
 
     flex-direction:column;
@@ -15,13 +66,12 @@ section[role="main"] section#banner {
     max-height:60vh;
     display:flex;
     flex-direction:row-reverse;
-    min-height:600px;
+    min-height:700px;
     max-width:1080px;
     margin:0 auto;
     }
     align-items:center;
     color:white;
-    min-height:70vh;
     .bannerImage {
         margin:0 auto;
 
@@ -41,6 +91,7 @@ section[role="main"] section#banner {
         max-width:100%;
         @include media($screenLarge) {
           width: 50%;
+          text-align:left;
         }
         min-height:300px;
         display:flex;
