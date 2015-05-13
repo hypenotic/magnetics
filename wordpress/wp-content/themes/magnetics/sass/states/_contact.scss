@@ -75,9 +75,6 @@ body.contact {
 				text-shadow:none;
 			}
 		}
-		a.resource {
-			border-bottom:0px;
-		}
 
 		@include media($screenLarge) {
 
@@ -89,7 +86,7 @@ body.contact {
 		}
 
 		& .optional {
-			@include pad(default);
+			@include pad($spacingSectionSmall default);
 			padding-bottom:$spacingSectionLarge;
 		}
 
@@ -103,13 +100,13 @@ body.contact {
 				}
 			}
 
+			position:relative;
 			font-size:em($fontSizeBody);
 			text-decoration:none;
 			font-weight:200;
 			&:before {
-			float: right;
-			position:relative;
-			left:10px;
+				right:-30px;
+				position:absolute;
 			}
 		}
 	}
