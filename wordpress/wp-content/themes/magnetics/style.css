@@ -6869,7 +6869,7 @@ section[role="main"] > section.pagination {
     @media screen and (min-width: 698px) {
       .home .background > img {
         opacity: 1;
-        right: -20%;
+        right: -10%;
         left: auto; } }
   .home header {
     background: none;
