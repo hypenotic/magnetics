@@ -4413,6 +4413,9 @@ article > h2, section > h2 {
       font-size: 0.875em; }
     #menu-main-menu > li ul > li {
       font-weight: 400; } }
+a[href$="product-integrations/rov/"], a[href$="product-integrations/auv/"] {
+  cursor: default !important; }
+
 @font-face {
   font-family: monoSocialIcons;
   font-weight: 200;

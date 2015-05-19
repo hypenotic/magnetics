@@ -1,5 +1,10 @@
 jQuery(document).ready(function($){
-		
+
+	$('a[href$="product-integrations/rov/"], a[href$="product-integrations/auv/"]').on('click', function(e){
+		e.preventDefault;
+		return false;
+	})
+
 /*
 	jQuery("body.single.products h1, body.single.product-integrations h1").css("font-size", window.innerWidth*1.3/(jQuery('h1').html().length))
 		*/
