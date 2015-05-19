@@ -87,7 +87,10 @@ section[role="main"] > section.pagination {
             }
             letter-spacing: -2px;
         }
-        & #categories {
+        & #tags {
+        margin-top:14px;
+        }
+        & #categories, & #tags {
             & nav {
                 & > h3 {
                     color: $blueDark;

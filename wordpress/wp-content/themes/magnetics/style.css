@@ -6647,13 +6647,15 @@ section[role="main"] > section.pagination {
     @media screen and (min-width: 850px) {
       .archive section[role="main"] > header > h1 {
         padding: 48px 0; } }
-  .archive section[role="main"] > header #categories nav > h3 {
+  .archive section[role="main"] > header #tags {
+    margin-top: 14px; }
+  .archive section[role="main"] > header #categories nav > h3, .archive section[role="main"] > header #tags nav > h3 {
     color: #001f3f; }
-  .archive section[role="main"] > header #categories nav li.current-cat a, .archive section[role="main"] > header #categories nav li:hover a {
+  .archive section[role="main"] > header #categories nav li.current-cat a, .archive section[role="main"] > header #categories nav li:hover a, .archive section[role="main"] > header #tags nav li.current-cat a, .archive section[role="main"] > header #tags nav li:hover a {
     background: #001f3f;
     text-decoration: none;
     color: white; }
-  .archive section[role="main"] > header #categories nav li a {
+  .archive section[role="main"] > header #categories nav li a, .archive section[role="main"] > header #tags nav li a {
     font-size: 1em;
     margin: 4px 4px 4px 0;
     background: #e7eef3;
@@ -6662,7 +6664,7 @@ section[role="main"] > section.pagination {
     font-weight: 700;
     color: #001f3f; }
     @media screen and (min-width: 850px) {
-      .archive section[role="main"] > header #categories nav li a {
+      .archive section[role="main"] > header #categories nav li a, .archive section[role="main"] > header #tags nav li a {
         padding: 8px 18px;
         font-size: 1em;
         margin: 0 10px 0px 0; } }

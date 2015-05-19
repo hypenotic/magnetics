@@ -34,6 +34,32 @@
                 </ul>
             </nav>
         </section>
+
+
+<?php
+        $args = array('categories' => get_query_var('cat'));
+        $tags = get_category_tags($args);
+        if($tags) {
+?>
+        <section id="tags">
+            <nav class="left">
+                <h3> Tags:</h3>
+                <ul>
+<?php
+                 foreach($tags as $tag) {
+
+                    echo "<li><a href=".$tag->tag_link ." >";
+                    echo $tag->tag_name;
+                    echo "</a></li>";
+
+                 }
+
+?>
+                </ul>
+            </nav>
+        </section>
+        <?php } ?>
+
     
     </header>
 
