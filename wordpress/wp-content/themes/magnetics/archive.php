@@ -37,9 +37,7 @@
 
 
 <?php
-        $args = array('categories' => get_query_var('cat'));
-        $tags = get_category_tags($args);
-        if($tags || is_category('resources')) {
+        $tags = get_tags();
 ?>
         <section id="tags">
             <nav class="left">
@@ -48,8 +46,8 @@
 <?php
                  foreach($tags as $tag) {
 
-                    echo "<li><a href=".$tag->tag_link ." >";
-                    echo $tag->tag_name;
+                    echo "<li><a href=".$tag->link ." >";
+                    echo $tag->name;
                     echo "</a></li>";
 
                  }
@@ -58,7 +56,6 @@
                 </ul>
             </nav>
         </section>
-        <?php } ?>
 
     
     </header>
