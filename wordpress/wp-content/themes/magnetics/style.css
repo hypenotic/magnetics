@@ -6663,7 +6663,8 @@ section[role="main"] > section.pagination span.pages {
       .archive section[role="main"] > header > h1 {
         padding: 48px 0; } }
   .archive section[role="main"] > header #tags {
-    margin-top: 14px; }
+    margin-top: 14px;
+    font-size: 0.6em; }
   .archive section[role="main"] > header #categories nav > h3, .archive section[role="main"] > header #tags nav > h3 {
     color: #001f3f; }
   .archive section[role="main"] > header #categories nav li.current-cat a, .archive section[role="main"] > header #categories nav li:hover a, .archive section[role="main"] > header #tags nav li.current-cat a, .archive section[role="main"] > header #tags nav li:hover a {

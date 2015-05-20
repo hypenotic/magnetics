@@ -39,7 +39,7 @@
 <?php
         $args = array('categories' => get_query_var('cat'));
         $tags = get_category_tags($args);
-        if($tags) {
+        if($tags || is_category('resources')) {
 ?>
         <section id="tags">
             <nav class="left">
