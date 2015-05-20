@@ -63,11 +63,44 @@ body.rma-form .gform_wrapper input[type="text"], body.rma-form .gform_wrapper in
     padding: 12px 8px;
     font-size: 1em;
     font-family: "open-sans";
-    float:right;
+    float:left;
+    width:100%;
     padding-right:20px;
 }
 
+body.rma-form select { 
+	height:50px !important;
+}
+
 body.rma-form {
+
+& .gform_wrapper .right_label textarea.small, & .gform_wrapper .left_label textarea.small, & .gform_wrapper .right_label textarea.medium, & .gform_wrapper .left_label textarea.medium, & .gform_wrapper .right_label textarea.large, & .gform_wrapper .left_label textarea.large {
+    width: 58%;
+     border: 1px solid #667c8f
+}
+
+	.ginput_complex label {
+		display:none;
+	}
+	& .gform_wrapper a {
+	border-bottom:1px solid;
+	}
+	& .gfield_html p {
+		font-size:0.9em !important;
+	}
+	& .gfield_html {
+		font-size:0.9em !important;
+	    padding: 0px 10px;
+	    line-height:0.8em;
+	    & li {
+	    font-size:0.9em;
+	    }
+	}
+
+	& .gfield_html h4 {
+	font-weight:bold;
+	color:$orange;
+	}
 
 & .gfield_label {
 	position:relative;
@@ -80,9 +113,17 @@ body.rma-form {
 }
 
 
+
+
+
+
 & .gform_wrapper ul.right_label li, & .gform_wrapper form ul.right_label li, & .gform_wrapper ul.left_label li, & .gform_wrapper form ul.left_label li {
     margin:24px 0;
 }
+}
+
+.gform_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container, .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_description, .gform_wrapper li.gfield.gfield_error.gfield_contains_required label.gfield_label, .gform_wrapper li.gfield.gfield_error.gfield_contains_required fieldset legend.gfield_label {
+    margin-left:0px !important;
 }
 
 .gform_wrapper .left_label .gfield_label {
@@ -137,11 +178,15 @@ body.rma-form .gform_wrapper li.gfield.gfield_error, body.rma-form .gform_wrappe
 }
 
 body.rma-form .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_description {
-    max-width: 97.5%;
     padding-right: 6px !important;
-    font-weight:normal !important;
-    font-style:italic;
-    color:$orange;
+    font-weight: normal !important;
+    font-style: italic;
+    color: #fb8547;
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+    padding-left: 31% !important;
+    margin: 0 !important;
+    box-sizing: content-box;
 }
 body.rma-form .gform_wrapper .gfield_error .gfield_label {
     color: $grayDark;
@@ -153,8 +198,11 @@ body.rma-form .gform_wrapper li.gfield_error input[type=text], body.rma-form .gf
 body.rma-form li.gfield_error .gfield_required {
 	color:white !important;
 }
+.button.gform_next_button, #gform_submit_button_7 {
+	float:right;
+}
 
-.gform_wrapper .gform_page_footer .button.gform_next_button, .gform_wrapper .gform_page_footer .button.gform_button {
+.gform_wrapper .gform_page_footer .button.gform_next_button, .gform_wrapper .gform_page_footer .button.gform_previous_button, #gform_submit_button_7 {
     border:none;
     font-weight:bold;
     letter-spacing:1px;
@@ -189,4 +237,12 @@ body.rma-form .gfield_description validation_message {
 
 .gform_wrapper li.gfield_error input[type=text], .gform_wrapper li.gfield_error input[type=url], .gform_wrapper li.gfield_error input[type=email], .gform_wrapper li.gfield_error input[type=tel], .gform_wrapper li.gfield_error input[type=number], .gform_wrapper li.gfield_error input[type=password], .gform_wrapper li.gfield_error textarea {
     border: 4px solid $orange !important;
+}
+
+body.rma-form .gform_wrapper li.gfield.gfield_error.gfield_contains_required label.gfield_label, .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container {
+    margin-top: .5em;
+}
+
+body.rma-form .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html ol li li, body.rma-form .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html ol li li {
+    list-style-type: upper-roman !important;
 }
