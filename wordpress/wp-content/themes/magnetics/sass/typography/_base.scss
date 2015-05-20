@@ -89,7 +89,11 @@ ol {
         font-family: $fontSecondary;
         font-size: em($fontSizeLarge);
     }
+    & li ol li {
+        
+    }
 }
+
 
 blockquote {
     font-size: em($fontSizeBody);
