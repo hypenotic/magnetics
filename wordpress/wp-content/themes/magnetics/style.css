@@ -6317,6 +6317,18 @@ body.contact .gform_wrapper, body.contact .gform_footer {
 body .gform_wrapper input[type="submit"] {
   font-size: 0.8em !important; }
 
+.gf_progressbar_percentage {
+  border-radius: 0px !important;
+  background: #fb8547 !important; }
+
+.gf_progressbar {
+  border-radius: 0px !important;
+  box-shadow: none !important; }
+
+.gform_wrapper .gf_progressbar_percentage span {
+  font-weight: bold;
+  text-shadow: none !important; }
+
 .gform_wrapper .percentbar_blue {
   background-image: none !important;
   background-repeat: repeat-x;
@@ -6330,6 +6342,51 @@ body .gform_wrapper input[type="submit"] {
 
 .gf_progressbar_title {
   text-transform: uppercase; }
+
+.rma-form .gform_fields input {
+  border: 1px solid #e7eef3; }
+
+.gf_progressbar_wrapper {
+  border-bottom: none !important; }
+
+body.rma-form .gform_wrapper input[type="text"], body.rma-form .gform_wrapper input[type="email"], body.rma-form .gform_wrapper input[type="tel"], body.rma-form .gform_wrapper textarea {
+  color: #001f3f;
+  font-weight: 300;
+  border-radius: 0;
+  padding: 12px 8px;
+  font-size: 1em;
+  font-family: "open-sans"; }
+
+body.rma-form .gfield_label {
+  position: relative;
+  top: 8px !important; }
+body.rma-form .gform_wrapper .right_label input.medium, body.rma-form .gform_wrapper .right_label select.medium, body.rma-form .gform_wrapper .left_label input.medium, body.rma-form .gform_wrapper .left_label select.medium {
+  width: 58%;
+  border-radius: 0px !important; }
+body.rma-form .gform_wrapper ul.right_label li, body.rma-form .gform_wrapper form ul.right_label li, body.rma-form .gform_wrapper ul.left_label li, body.rma-form .gform_wrapper form ul.left_label li {
+  margin: 24px 0; }
+
+.gform_wrapper .left_label .gfield_label {
+  float: left;
+  margin: .75em 15px 0 0;
+  width: 29%;
+  font-weight: 400;
+  font-family: inherit;
+  color: #667c8f; }
+
+.gfield_required {
+  color: #fb8547 !important;
+  font-size: 0.6em;
+  top: -0.5em;
+  display: inline-block;
+  position: relative; }
+
+.gform_wrapper .gsection {
+  border-bottom: 0px !important;
+  color: #667c8f;
+  padding: 0 0 .5em 0;
+  margin: 1.8em 0;
+  clear: both; }
 
 .sz-overlay {
   position: fixed;
