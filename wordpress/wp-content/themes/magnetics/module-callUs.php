@@ -1,2 +1,2 @@
-<a id="call" href="mailto:mm@marinemagnetics.com">mm@marinemagnetics.com</a>
+<a id="call" href="<?php bloginfo('url') ?>/contact">mm@marinemagnetics.com</a>
 

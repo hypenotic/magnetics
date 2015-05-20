@@ -1,40 +1,32 @@
 <?php
 
-/*
-function namespace_add_custom_types( $query ) {
+function get_category_tags($args) {
+	global $wpdb;
+	$tags = $wpdb->get_results
+	("
+		SELECT DISTINCT terms2.term_id as tag_id, terms2.name as tag_name, null as tag_link
+		FROM
+			wp_posts as p1
+			LEFT JOIN wp_term_relationships as r1 ON p1.ID = r1.object_ID
+			LEFT JOIN wp_term_taxonomy as t1 ON r1.term_taxonomy_id = t1.term_taxonomy_id
+			LEFT JOIN wp_terms as terms1 ON t1.term_id = terms1.term_id,
 
-	
-	$articles = get_posts(array(
-		'post_type' => 'post',
-		'cat'		=>	'articles'
-	));
-
-	$brochures = get_posts(array(
-		'post_type' => 'brochure'
-	));
-
-	$mergedposts = array_merge( $brochures, $articles ); //combine queries
-
-	$postids = array();
-
-	foreach( $mergedposts as $item ) {
-
-	$postids[]=$item->ID; //create a new query only of the post ids
-
+			wp_posts as p2
+			LEFT JOIN wp_term_relationships as r2 ON p2.ID = r2.object_ID
+			LEFT JOIN wp_term_taxonomy as t2 ON r2.term_taxonomy_id = t2.term_taxonomy_id
+			LEFT JOIN wp_terms as terms2 ON t2.term_id = terms2.term_id
+		WHERE
+			t1.taxonomy = 'category' AND p1.post_status = 'publish' AND terms1.term_id IN (".$args['categories'].") AND
+			t2.taxonomy = 'post_tag' AND p2.post_status = 'publish'
+			AND p1.ID = p2.ID
+		ORDER by tag_name
+	");
+	$count = 0;
+	foreach ($tags as $tag) {
+		$tags[$count]->tag_link = get_tag_link($tag->tag_id);
+		$count++;
 	}
+	return $tags;
+}
 
-	$uniqueposts = array_unique($postids); //remove duplicate post ids
-
-	
-	if( !is_admin() && is_post_type_archive() && empty( $query->query_vars['suppress_filters'] ) ) {
-	    $query->set( 'post_type', array(
-	     'brochure','post'
-		));
-	    $query->set('post__in', $uniqueposts);
-		  return $query;
-		}
-	}
-
-	add_action( 'pre_get_posts', 'namespace_add_custom_types' );
-*/
 ?>

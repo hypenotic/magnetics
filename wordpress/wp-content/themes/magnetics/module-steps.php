@@ -4,7 +4,7 @@
     if(count($steps) > 1) {
  ?>
 <section id="steps">
-    <h2>Step by step</h2>
+    <h2>Features</h2>
     <ol>
         <!-- For loop cycle through Array -->
         <?php
