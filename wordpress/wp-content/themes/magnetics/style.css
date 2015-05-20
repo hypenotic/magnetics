@@ -6355,7 +6355,9 @@ body.rma-form .gform_wrapper input[type="text"], body.rma-form .gform_wrapper in
   border-radius: 0;
   padding: 12px 8px;
   font-size: 1em;
-  font-family: "open-sans"; }
+  font-family: "open-sans";
+  float: right;
+  padding-right: 20px; }
 
 body.rma-form .gfield_label {
   position: relative;
@@ -6371,8 +6373,7 @@ body.rma-form .gform_wrapper ul.right_label li, body.rma-form .gform_wrapper for
   margin: .75em 15px 0 0;
   width: 29%;
   font-weight: 400;
-  font-family: inherit;
-  color: #667c8f; }
+  font-family: inherit; }
 
 .gfield_required {
   color: #fb8547 !important;
@@ -6387,6 +6388,54 @@ body.rma-form .gform_wrapper ul.right_label li, body.rma-form .gform_wrapper for
   padding: 0 0 .5em 0;
   margin: 1.8em 0;
   clear: both; }
+
+body.rma-form .gform_wrapper div.validation_error {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1.6em;
+  border: 1px solid #fb8547;
+  background: #fb8547;
+  color: white;
+  padding: 1em;
+  clear: both;
+  width: 97.5%; }
+
+body.rma-form .gform_wrapper li.gfield.gfield_error, body.rma-form .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+  background-color: #fb8547;
+  margin-bottom: .375em !important;
+  padding: 0; }
+
+body.rma-form .gfield_error {
+  padding: 0.25em !important; }
+
+body.rma-form .gform_wrapper li.gfield.gfield_error, body.rma-form .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+  background-color: #fb8547;
+  margin-bottom: .375em !important;
+  padding: 0; }
+
+body.rma-form .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_description {
+  max-width: 97.5%;
+  padding-right: 6px !important;
+  font-weight: normal !important;
+  font-style: italic;
+  color: white; }
+
+body.rma-form .gform_wrapper .gfield_error .gfield_label {
+  color: white; }
+
+body.rma-form li.gfield_error .gfield_required {
+  color: white !important; }
+
+.gform_wrapper .gform_page_footer .button.gform_next_button, body .gform_wrapper .gform_page_footer input.gform_next_button[type="submit"], .gform_wrapper .gform_page_footer .button.gform_button, body .gform_wrapper .gform_page_footer input.gform_button[type="submit"] {
+  border: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background: #fb8547;
+  color: white;
+  padding: 12px;
+  text-transform: uppercase; }
+  .gform_wrapper .gform_page_footer .button.gform_next_button:hover, body .gform_wrapper .gform_page_footer input.gform_next_button[type="submit"]:hover, .gform_wrapper .gform_page_footer .button.gform_button:hover, body .gform_wrapper .gform_page_footer input.gform_button[type="submit"]:hover {
+    background: #00c7d5; }
 
 .sz-overlay {
   position: fixed;
