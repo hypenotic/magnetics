@@ -6,16 +6,11 @@
 * Must have in query: $paged  = (get_query_var('paged')) ? get_query_var('paged') : 1;
 */
 
-function show_posts_nav() {
-    global $wp_query;
-    return ($wp_query->max_num_pages > 1);
-}
-
 function pagination() {
     global $wp_query;
     $big = 999999999; // need an unlikely integer
 
-    if(show_posts_nav()) {
+    if($wp_query->max_num_pages > 1) {
 
     echo '<span class="pages">Pages: </span>';
 
@@ -26,7 +21,7 @@ function pagination() {
     'total' => $wp_query->max_num_pages
     ) );
 
-    }
+}
 
 }
 
