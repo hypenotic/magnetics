@@ -64,6 +64,8 @@ body.rma-form .gform_wrapper input[type="text"], body.rma-form .gform_wrapper in
     padding: 12px 8px;
     font-size: 1em;
     font-family: "open-sans";
+    float:right;
+    padding-right:20px;
 }
 
 body.rma-form {
@@ -90,7 +92,6 @@ body.rma-form {
     width: 29%;
     font-weight: 400;
     font-family: inherit;
-    color:$gray;
 }
 .gfield_required {
     color: $orange !important;
@@ -106,4 +107,64 @@ body.rma-form {
     padding: 0 0 .5em 0;
     margin: 1.8em 0;
     clear: both;
+}
+
+body.rma-form .gform_wrapper div.validation_error {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 1.6em;
+    border: 1px solid $orange;
+    background:$orange;
+    color:white;
+    padding: 1em;
+    clear: both;
+    width: 97.5%;
+}
+
+body.rma-form .gform_wrapper li.gfield.gfield_error, body.rma-form .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+    background-color: $orange;
+    margin-bottom: .375em !important;
+    padding: 0;
+}
+body.rma-form .gfield_error {
+	padding:0.25em !important;
+}
+
+body.rma-form .gform_wrapper li.gfield.gfield_error, body.rma-form .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+    background-color: $orange;
+    margin-bottom: .375em !important;
+    padding: 0;
+}
+
+body.rma-form .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_description {
+    max-width: 97.5%;
+    padding-right: 6px !important;
+    font-weight:normal !important;
+    font-style:italic;
+    color:white;
+}
+body.rma-form .gform_wrapper .gfield_error .gfield_label {
+    color: white;
+}
+body.rma-form .gform_wrapper li.gfield_error input[type=text], body.rma-form .gform_wrapper li.gfield_error input[type=url], body.rma-form .gform_wrapper li.gfield_error input[type=email], body.rma-form .gform_wrapper li.gfield_error input[type=tel], body.rma-form .gform_wrapper li.gfield_error input[type=number], body.rma-form .gform_wrapper li.gfield_error input[type=password], body.rma-form .gform_wrapper li.gfield_error textarea {
+    
+}
+
+body.rma-form li.gfield_error .gfield_required {
+	color:white !important;
+}
+
+.gform_wrapper .gform_page_footer .button.gform_next_button, .gform_wrapper .gform_page_footer .button.gform_button {
+    border:none;
+    font-weight:bold;
+    letter-spacing:1px;
+    background:$orange;
+    color:white;
+    padding:12px;
+    text-transform:uppercase;
+
+    &:hover {
+    background:$teal;
+    
+    }
 }
