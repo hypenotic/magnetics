@@ -20,3 +20,19 @@ body .gform_wrapper input[type="submit"] {
 	@extend .button;
 	font-size:0.8em !important;
 }
+
+
+.gform_wrapper .percentbar_blue {
+    background-image: none !important;
+    background-repeat: repeat-x;
+    background-color: $orange;
+    color: white;
+}
+.gform_wrapper .gf_progressbar {
+	background:#efefef !important;
+	border:0px !important;
+	border-radius:0
+}
+.gf_progressbar_title {
+	text-transform:uppercase;
+}

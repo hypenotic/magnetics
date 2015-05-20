@@ -6317,6 +6317,20 @@ body.contact .gform_wrapper, body.contact .gform_footer {
 body .gform_wrapper input[type="submit"] {
   font-size: 0.8em !important; }
 
+.gform_wrapper .percentbar_blue {
+  background-image: none !important;
+  background-repeat: repeat-x;
+  background-color: #fb8547;
+  color: white; }
+
+.gform_wrapper .gf_progressbar {
+  background: #efefef !important;
+  border: 0px !important;
+  border-radius: 0; }
+
+.gf_progressbar_title {
+  text-transform: uppercase; }
+
 .sz-overlay {
   position: fixed;
   display: none;
@@ -6618,19 +6632,17 @@ body section.products {
 .archive section[role="main"] article.overview:hover a.more {
   color: #00c7d5; }
 
-section[role="main"] > section.pagination {
+section[role="main"] > section.pagination span.pages {
   padding: 32px 2.35765%;
   text-transform: uppercase;
-  font-weight: 500; }
+  font-weight: 500;
+  font-weight: bold;
+  color: #fb8547; }
   @media screen and (min-width: 850px) {
-    section[role="main"] > section.pagination {
+    section[role="main"] > section.pagination span.pages {
       max-width: 850px;
       padding: 32px 0;
       margin: 0 auto; } }
-  section[role="main"] > section.pagination:before {
-    content: 'Pages: ';
-    font-weight: bold;
-    color: #fb8547; }
 
 .archive section[role="main"] > header {
   max-width: 850px;
