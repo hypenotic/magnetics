@@ -196,9 +196,6 @@ select--white {
         /* accommodate with the pseudo elements for the dropdown arrow */
         border: 0;
         border-radius: 3px;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
     }
     .custom-dropdown::before,
     .custom-dropdown::after {
@@ -252,4 +249,8 @@ select--white {
             padding-right: 0.5em;
         }
     }
+}
+
+body.rma-form article {
+    max-width:1080px;
 }

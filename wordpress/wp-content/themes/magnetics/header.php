@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<?php 
+  // required for gforms
+  wp_enqueue_script('jquery'); 
+
+?>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title><?php wp_title( '|', true, 'right' ); ?><?php bloginfo('name') ?></title>
@@ -19,6 +25,9 @@
         <meta property="og:type" content="website" />
         <meta property="og:image" content="<?php bloginfo('template_url' ); ?>/images/logo.png">
 <?php } endwhile; endif; ?>
+
+
+
 <?php wp_reset_query(); ?>
 
 <?php wp_head(); ?>
