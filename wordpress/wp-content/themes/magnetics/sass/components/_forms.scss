@@ -55,6 +55,33 @@ body .gform_wrapper input[type="submit"] {
 	border-bottom:none !important;
 }
 
+body.rma-form label {
+    width:100%;
+    padding-bottom:10px;
+    @include media($screenLarge) {
+        width:29% !important;
+    }
+}
+body.rma-form .gform_wrapper input:not(.button) {
+    width:100% !important;
+    @include media($screenLarge) {
+        width:60% !important;
+    }
+}
+body.rma-form .gform_wrapper textarea {
+
+    width:100% !important;
+    @include media($screenLarge) {
+        width:60% !important
+    }
+}
+body.rma-form .gform_wrapper .ginput_complex input:not(.button) {
+    width:100% !important;
+}
+body.rma-form .gform_next_button {
+    width:30% !important;
+}
+
 body.rma-form .gform_wrapper input[type="text"], body.rma-form .gform_wrapper input[type="email"],  body.rma-form .gform_wrapper input[type="tel"], body.rma-form .gform_wrapper textarea {
 
     color: #001f3f;
@@ -73,6 +100,30 @@ body.rma-form select {
 }
 
 body.rma-form {
+
+& .gform_wrapper .ginput_complex .ginput_right {
+    margin-left: 2.9%;
+}
+
+    & .gform_wrapper form .left_label li.gfield_html_formatted, & .gform_wrapper form .right_label li.gfield_html_formatted, & .gfield_description, & .ginput_complex {
+
+    margin-left:0 !important;
+    width:100%;
+
+    @include media($screenLarge) {
+        margin-left: 30% !important;
+        width: 60%;
+    }
+        line-height:120% !important;
+
+    }
+
+    & .ginput_complex {
+    width:100% !important;
+     @include media($screenLarge) {
+        width: 60% !important;
+    }
+    }
 
 & .gform_wrapper .right_label textarea.small, & .gform_wrapper .left_label textarea.small, & .gform_wrapper .right_label textarea.medium, & .gform_wrapper .left_label textarea.medium, & .gform_wrapper .right_label textarea.large, & .gform_wrapper .left_label textarea.large {
     width: 58%;
@@ -108,7 +159,7 @@ body.rma-form {
 }
 
 & .gform_wrapper .right_label input.medium, & .gform_wrapper .right_label select.medium, & .gform_wrapper .left_label input.medium, & .gform_wrapper .left_label select.medium {
-    width: 58%;
+    width: 60%;
     border-radius:0px !important;
 }
 
@@ -129,7 +180,10 @@ body.rma-form {
 .gform_wrapper .left_label .gfield_label {
     float: left;
     margin: .75em 15px 0 0;
-    width: 29%;
+    @include media($screenLarge) {
+    width: 29% !important;
+    }
+    width:100% !important;
     font-weight: 400;
     font-family: inherit;
 }
@@ -208,9 +262,12 @@ body.rma-form li.gfield_error .gfield_required {
     letter-spacing:1px;
     background:$orange;
     color:white;
-    padding:12px;
+    padding:12px !important;
+    border-radius:0;
+    font-size:1.2em !important;
     text-transform:uppercase;
-
+    line-height:1.4em !important;
+    margin:0 !important;
     &:hover {
     background:$teal;
 
