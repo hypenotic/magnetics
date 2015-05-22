@@ -7171,17 +7171,29 @@ body.contact section[role="main"] {
   body.contact section[role="main"] .optional {
     padding: 32px 2.35765%;
     padding-bottom: 92px; }
-  body.contact section[role="main"] .optional a.icon {
+  body.contact section[role="main"] .optional a {
     display: inline-block;
+    font-weight: 600 !important;
     position: relative;
     font-size: 1.125em;
     text-decoration: none;
     font-weight: 200; }
-    body.contact section[role="main"] .optional a.icon:hover {
+    body.contact section[role="main"] .optional a:before {
+      font-family: "icomoon";
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "\e601"; }
+    body.contact section[role="main"] .optional a:hover {
       color: #fb8547; }
-      body.contact section[role="main"] .optional a.icon:hover:before {
+      body.contact section[role="main"] .optional a:hover:before {
         color: #00c7d5; }
-    body.contact section[role="main"] .optional a.icon:before {
+    body.contact section[role="main"] .optional a:before {
       right: -30px;
       position: absolute; }
 
