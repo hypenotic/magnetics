@@ -89,8 +89,22 @@ body.contact {
 			padding-bottom:$spacingSectionLarge;
 		}
 
-		& .optional a.icon {
+		& .optional a {
 			display:inline-block;
+			font-weight:600 !important;
+
+			&:before {
+				font-family: "icomoon";
+				speak: none;
+				font-style: normal;
+				font-weight: normal;
+				font-variant: normal;
+				text-transform: none;
+				line-height: 1;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				content: "\e601";
+			}
 
 			&:hover {
 				color:$orange;
