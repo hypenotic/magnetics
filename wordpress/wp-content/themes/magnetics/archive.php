@@ -73,7 +73,9 @@ $tags = get_terms('post_tag');
         <!-- start loop -->
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         
-            
+<?php 
+    $link = get_permalink();
+?>
 <a href="<?php the_permalink(); ?>">
     <article class="overview">
         
@@ -168,7 +170,7 @@ echo trim($output, $separator);
 
 
 
-     <a href="<?php the_permalink();?>" class="icon more"></a>
+     <a href="<?php echo $link; ?>" class="icon more"></a>
 
 </footer>
 

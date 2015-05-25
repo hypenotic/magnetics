@@ -4,6 +4,7 @@ var	sass 		= require('gulp-ruby-sass');
 var	concat 		= require('gulp-concat');
 var notify 		= require("gulp-notify");
 var	browserSync = require('browser-sync');
+var autoprefixer = require('gulp-autoprefixer');
 
 // browser-sync task for starting the server.
 gulp.task('browser-sync', function() {
@@ -23,7 +24,12 @@ gulp.task('browser-sync', function() {
 
 gulp.task('sass', function () {
 	    sass('./sass')
+
 	        .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+            .pipe(autoprefixer({
+            browsers: ['> 1%'],
+            cascade: false
+            }))
 		    .pipe(concat('style.css'))
 	        .pipe(gulp.dest('./'))
 			.pipe(browserSync.reload({stream:true}));

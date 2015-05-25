@@ -20,6 +20,10 @@
 
 	}
 
+	video {
+		object-fit:cover;
+	}
+
 	h1 {
 		@include media($screenMedium) {
 			margin-top:70px;
@@ -82,7 +86,6 @@
 		position: fixed;
 		width: auto;
 		z-index: 10000;
-		object-fit: none;
 		max-width: none;
 		}
 	}
