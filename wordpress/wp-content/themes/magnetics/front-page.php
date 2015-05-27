@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+    
     <div class="background">
     <img src="<?php echo get_bloginfo('template_url') ?>/images/homepage.png"/>
     <div class="overlay"></div>

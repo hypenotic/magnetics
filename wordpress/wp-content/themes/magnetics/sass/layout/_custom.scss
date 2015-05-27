@@ -95,3 +95,7 @@ section[role="main"] > section, section[role="main"] > article  {
     padding-bottom:18px;
   }
 }
+.pagination {
+margin:0 auto;
+max-width:$screenLarge;
+}

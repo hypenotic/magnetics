@@ -1,5 +1,7 @@
 <?php
 
+
+remove_filter('term_description','wpautop'); 
 function get_category_tags($args) {
 	global $wpdb;
 	$tags = $wpdb->get_results

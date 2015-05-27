@@ -2,12 +2,12 @@ a#call {
 
 	position:fixed;
 	right:0;
-	top:40%;
+	top:50%;
+	margin-top:-80px;
 	z-index:10000;
 	background:$teal;
 	color:white;
 	letter-spacing:1px;
-	text-transform:lowercase;
 	font-weight:bold;
 	font-size:em($fontSizeMeta);
 	padding:2px 12px;

@@ -129,7 +129,7 @@
 	</div>
 
 </section>
-<a id="scrollDown" href="#below">
+<a id="scrollDown" href="#scrollDown">
 	<i class="fa fa-chevron-down"></i>
 </a>
 <div id="below"></div>

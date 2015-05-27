@@ -3,7 +3,7 @@
 	$metaPDF = get_post_meta($post->ID,'_article_file',true);
 		$articleDescription = get_post_meta($post->ID,'_article_content',true);
 		$articleFile = get_post_meta($post->ID,'_article_file',true);
-
+		$articleAssociatedPost = get_post_meta($post->ID,'_article_associated_post',true);
 		print_r($metaAssociatedBrochurePostID);
 	if(!$metaPDF) {
 

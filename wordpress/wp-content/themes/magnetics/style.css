@@ -4412,6 +4412,9 @@ article > h2, section > h2 {
 a[href$="product-integrations/rov/"], a[href$="product-integrations/auv/"] {
   cursor: default !important; }
 
+.submission-successful h1 {
+  color: #667c8f; }
+
 @font-face {
   font-family: monoSocialIcons;
   font-weight: 200;
@@ -4537,6 +4540,10 @@ section[role="main"] {
         max-width: 1080px; } }
   .masthead > h1 {
     padding-bottom: 18px; }
+
+.pagination {
+  margin: 0 auto;
+  max-width: 850px; }
 
 body.products.single > header, body.about > header, body.category-products > header, body.category-integrations > header, body.category-product-integrations > header, body.product-integrations header {
   background: none; }
@@ -5436,6 +5443,8 @@ section[role="main"] section#banner {
 @media screen and (min-width: 850px) {
   .masthead {
     min-height: 500px; } }
+.masthead h4 {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); }
 
 .background.enabled ~ .text {
   text-align: center;
@@ -5507,7 +5516,8 @@ section[role="main"] section#banner {
         width: 50%;
         text-align: left; } }
     .banner .text h4 {
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); }
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+      font-size: 1.375rem; }
   .banner h1 {
     padding-bottom: 18px; }
 
@@ -5801,7 +5811,7 @@ section#team {
       clear: both; }
     @media screen and (min-width: 850px) {
       section#team h2 {
-        text-align: left; } }
+        text-align: center; } }
   section#team ul.list {
     max-width: 1080px;
     margin-left: auto;
@@ -5814,13 +5824,19 @@ section#team {
       clear: both; }
     section#team ul.list li {
       white-space: nowrap;
-      text-align: left;
+      text-align: center;
       margin-bottom: 48px;
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 100%;
       text-align: center; }
+      section#team ul.list li li:before {
+        content: "";
+        margin-left: -100%; }
+      section#team ul.list li li:after {
+        content: "";
+        margin-right: -100%; }
       section#team ul.list li .contactNumber {
         font-size: 90%; }
       section#team ul.list li a {
@@ -5832,8 +5848,9 @@ section#team {
           float: left;
           display: block;
           margin-right: 2.35765%;
-          width: 40.29137%;
-          text-align: center; }
+          width: 48.82117%;
+          text-align: center;
+          margin-right: 0; }
           section#team ul.list li:last-child {
             margin-right: 0; } }
       @media screen and (min-width: 1080px) {
@@ -5841,12 +5858,13 @@ section#team {
           float: left;
           display: block;
           margin-right: 2.35765%;
-          width: 23.23176%;
+          width: 31.76157%;
+          margin-right: 0;
           padding: 2.35765% 2.35765% 2.35765% 0; }
           section#team ul.list li:last-child {
             margin-right: 0; }
           section#team ul.list li:nth-child(3n-1), section#team ul.list li:nth-child(3n) {
-            margin-left: 8.5298%; } }
+            margin-left: 0%; } }
       section#team ul.list li img {
         margin-bottom: 24px;
         border-radius: 1000px; }
@@ -5854,12 +5872,12 @@ section#team {
 a#call {
   position: fixed;
   right: 0;
-  top: 40%;
+  top: 50%;
+  margin-top: -80px;
   z-index: 10000;
   background: #00c7d5;
   color: white;
   letter-spacing: 1px;
-  text-transform: lowercase;
   font-weight: bold;
   font-size: 0.625em;
   padding: 2px 12px;
@@ -7208,10 +7226,10 @@ section[role="main"] > section.pagination span.pages {
         min-height: 140px; } }
 
 .home {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -7225,7 +7243,7 @@ section[role="main"] > section.pagination span.pages {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
   min-height: 500px; }
   .home section[role="main"] {
     max-width: 1080px;
@@ -7238,8 +7256,9 @@ section[role="main"] > section.pagination span.pages {
         margin: 0 auto;
         width: 100%; } }
   .home video {
-    -o-object-fit: cover;
-    object-fit: cover; }
+    -o-object-fit: fill;
+    object-fit: fill;
+    height: 150%; }
   .home h1 {
     margin-bottom: 20px; }
     @media screen and (min-width: 698px) {
@@ -7291,7 +7310,8 @@ section[role="main"] > section.pagination span.pages {
     background: none;
     position: absolute;
     width: 100%;
-    top: 0; }
+    top: 0;
+    left: 0; }
 
 body.contact section[role="main"] {
   background: #667c8f;
