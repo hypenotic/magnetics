@@ -11,6 +11,20 @@ function my_theme_add_editor_styles() {
 add_action( 'init', 'my_theme_add_editor_styles' );
 */
 
+add_action('admin_head', 'my_custom_fonts');
+
+function my_custom_fonts() {
+  echo '<style>
+    .form-table td {
+    margin-bottom: 9px;
+    padding: 15px 10px;
+    line-height: 1.3;
+    vertical-align: middle;
+    max-width: 500px;
+}
+  </style>';
+}
+
 // Callback function to insert 'styleselect' into the $buttons array
 function my_mce_buttons_2( $buttons ) {
 	array_unshift( $buttons, 'styleselect' );
