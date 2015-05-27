@@ -6462,12 +6462,17 @@ body.contact .gform_wrapper input[type="text"], body.contact .gform_wrapper inpu
   font-weight: 300;
   border-radius: 0;
   padding: 16px 8px;
-  font-size: 1em;
+  font-size: 1rem;
   font-family: "open-sans"; }
 
 body.contact .gform_wrapper, body.contact .gform_footer {
   margin: 0;
   padding: 0; }
+
+body .gform_wrapper h2.gsection_title {
+  margin: 20px  !important 0 0 0;
+  padding: 0 !important;
+  letter-spacing: normal !important; }
 
 body .gform_wrapper input[type="submit"] {
   font-size: 0.8em !important; }
@@ -6565,13 +6570,13 @@ body.rma-form .ginput_complex label {
 body.rma-form .gform_wrapper a {
   border-bottom: 1px solid; }
 body.rma-form .gfield_html p {
-  font-size: 0.9em !important; }
+  font-size: 1rem !important; }
 body.rma-form .gfield_html {
-  font-size: 0.9em !important;
+  font-size: 1rem !important;
   padding: 0px 10px;
   line-height: 0.8em; }
   body.rma-form .gfield_html li {
-    font-size: 0.9em; }
+    font-size: 1rem; }
 body.rma-form .gfield_html h4 {
   font-weight: bold;
   color: #fb8547; }
@@ -6647,9 +6652,6 @@ body.rma-form .gform_wrapper li.gfield.gfield_error.gfield_contains_required div
 
 body.rma-form .gform_wrapper .gfield_error .gfield_label {
   color: #4d4e51; }
-
-body.rma-form li.gfield_error .gfield_required {
-  color: white !important; }
 
 .button.gform_next_button, body .gform_wrapper input.gform_next_button[type="submit"], #gform_submit_button_7 {
   float: right; }

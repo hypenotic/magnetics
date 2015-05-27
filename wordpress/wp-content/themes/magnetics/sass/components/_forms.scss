@@ -6,7 +6,7 @@ body.contact .gform_wrapper input[type="text"], body.contact .gform_wrapper  inp
 	font-weight:300;
 	border-radius:0;
 	padding:16px 8px;
-	font-size:1em;
+	font-size:1rem;
 	font-family: $fontPrimary;
 	
 }
@@ -15,6 +15,14 @@ body.contact .gform_wrapper , body.contact .gform_footer {
 	margin:0;
 	padding:0;
 }
+
+
+body .gform_wrapper h2.gsection_title {
+    margin: 20px  !important 0 0 0;
+    padding: 0 !important;
+    letter-spacing: normal !important;
+}
+
 
 body .gform_wrapper input[type="submit"] {
 	@extend .button;
@@ -137,14 +145,14 @@ body.rma-form {
 	border-bottom:1px solid;
 	}
 	& .gfield_html p {
-		font-size:0.9em !important;
+		font-size:1rem !important;
 	}
 	& .gfield_html {
-		font-size:0.9em !important;
+		font-size:1rem !important;
 	    padding: 0px 10px;
 	    line-height:0.8em;
 	    & li {
-	    font-size:0.9em;
+	    font-size:1rem;
 	    }
 	}
 
@@ -250,7 +258,6 @@ body.rma-form .gform_wrapper li.gfield_error input[type=text], body.rma-form .gf
 }
 
 body.rma-form li.gfield_error .gfield_required {
-	color:white !important;
 }
 .button.gform_next_button, #gform_submit_button_7 {
 	float:right;

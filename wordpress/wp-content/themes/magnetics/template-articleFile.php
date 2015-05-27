@@ -21,7 +21,7 @@
 		if ($metaPDF) { ?>
 
 	<header>
-	<h3><a href="<?php echo get_permalink($metaAssociatedBrochurePostID ); ?>"><?php the_title();?></a></h3>
+	<h3><a href="<?php echo get_permalink($articleAssociatedPost ); ?>"><?php the_title();?></a></h3>
 	</header>
 
 		<section>
@@ -36,7 +36,7 @@
 
 			<footer>
 				<a href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span>Download this Brochure</span></a>
-				<a href="<?php echo get_permalink($metaAssociatedBrochurePostID ); ?>" class="icon more"></a>
+				<a href="<?php echo get_permalink($articleAssociatedPost ); ?>" class="icon more"></a>
 			</footer>
 
 		</section>
