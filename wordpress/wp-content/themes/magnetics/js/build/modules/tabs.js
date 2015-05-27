@@ -201,3 +201,7 @@ jQuery(document).ready(function($) {
 
 jQuery('.tabs').easyResponsiveTabs();
 
+if(jQuery('.resp-tabs-list li').length === 1) {
+    jQuery('.resp-tabs-list').remove();
+}
+

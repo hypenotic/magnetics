@@ -24,7 +24,17 @@ $article->add_meta_box(
 				'label'         => 'File',
 				'description'   => 'Upload/Select PDF file',
 				'type'          => 'file',
-			)
+			),
+	        array(
+	            'name'          => 'associated_post',
+	            'label'         => 'Associated post',
+	            'description'   => 'Select associated post',
+	            'type'          => 'post_select',
+	            'args'          => array(
+	                'post_type' => 'post',
+	                'show_option_none'   => '-- Select Post --'
+	            )
+	        ),
 		)
 	);
 ?>

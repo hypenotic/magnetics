@@ -18,7 +18,7 @@ section#team {
 		text-align:center;
 
 		@include media($screenLarge) {
-			text-align:left;
+			text-align:center;
 		}
 	}
 
@@ -30,8 +30,16 @@ section#team {
 
 		& li {
 			white-space:nowrap;
-			text-align:left;
+			text-align:center;
 			margin-bottom: $spacingSection;
+			& li:before {
+			content: "";
+			margin-left: -100%;
+			}
+			& li:after {
+			content: "";
+			margin-right: -100%;
+			}
 
 			.contactNumber {
 				font-size:90%;
@@ -44,15 +52,18 @@ section#team {
 			text-align:center;
 
 			@include media($screenMedium) {
-				@include span-columns(5);
+				@include span-columns(6);
 				text-align:center;
+				margin-right:0
 			}
 
 			@include media($screenOuter) {
-				@include span-columns(3);
+				@include span-columns(4);
+				margin-right:0;
+
 				padding:2.35765% 2.35765% 2.35765% 0 ;
 				&:nth-child(3n-1), &:nth-child(3n) {
-					@include shift(1);
+					@include shift(0);
 				}
 			}
 
