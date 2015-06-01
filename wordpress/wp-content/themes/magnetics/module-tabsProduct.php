@@ -18,6 +18,11 @@
     <h2>Specifications</h2>
 
         <ul class="resp-tabs-list">
+            <?php if($metaSystemAtAGlance[0] != 0)  { ?>
+            <li>
+                <span>System At a Glance</span>
+            </li>     
+            <?php } ?>
              <?php if($metaWhatsInTheBox)  { ?>
             <li aria-controls="whatsinthebox">
                 <span>What's In The Box</span>  
@@ -34,11 +39,7 @@
                 <span>Integrations</span>
             </li>
             <?php } ?>
-            <?php if($metaSystemAtAGlance[0] != 0)  { ?>
-            <li>
-                <span>System At a Glance</span>
-            </li>     
-            <?php } ?>                
+              
         </ul>
 
         <br style="clear:both" />
