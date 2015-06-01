@@ -259,11 +259,11 @@ body.rma-form .gform_wrapper li.gfield_error input[type=text], body.rma-form .gf
 
 body.rma-form li.gfield_error .gfield_required {
 }
-.button.gform_next_button, #gform_submit_button_7 {
+.button.gform_next_button, .gform_button {
 	float:right;
 }
 
-.gform_wrapper .gform_page_footer .button.gform_next_button, .gform_wrapper .gform_page_footer .button.gform_previous_button, #gform_submit_button_7 {
+.gform_wrapper .gform_page_footer .button.gform_next_button, .gform_wrapper .gform_page_footer .button.gform_previous_button, .gform_button {
     border:none;
     font-weight:bold;
     letter-spacing:1px;

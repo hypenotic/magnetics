@@ -6653,10 +6653,10 @@ body.rma-form .gform_wrapper li.gfield.gfield_error.gfield_contains_required div
 body.rma-form .gform_wrapper .gfield_error .gfield_label {
   color: #4d4e51; }
 
-.button.gform_next_button, body .gform_wrapper input.gform_next_button[type="submit"], #gform_submit_button_7 {
+.button.gform_next_button, body .gform_wrapper input.gform_next_button[type="submit"], .gform_button {
   float: right; }
 
-.gform_wrapper .gform_page_footer .button.gform_next_button, body .gform_wrapper .gform_page_footer input.gform_next_button[type="submit"], .gform_wrapper .gform_page_footer .button.gform_previous_button, body .gform_wrapper .gform_page_footer input.gform_previous_button[type="submit"], #gform_submit_button_7 {
+.gform_wrapper .gform_page_footer .button.gform_next_button, body .gform_wrapper .gform_page_footer input.gform_next_button[type="submit"], .gform_wrapper .gform_page_footer .button.gform_previous_button, body .gform_wrapper .gform_page_footer input.gform_previous_button[type="submit"], .gform_button {
   border: none;
   font-weight: bold;
   letter-spacing: 1px;
@@ -6668,7 +6668,7 @@ body.rma-form .gform_wrapper .gfield_error .gfield_label {
   text-transform: uppercase;
   line-height: 1.4em !important;
   margin: 0 !important; }
-  .gform_wrapper .gform_page_footer .button.gform_next_button:hover, body .gform_wrapper .gform_page_footer input.gform_next_button[type="submit"]:hover, .gform_wrapper .gform_page_footer .button.gform_previous_button:hover, body .gform_wrapper .gform_page_footer input.gform_previous_button[type="submit"]:hover, #gform_submit_button_7:hover {
+  .gform_wrapper .gform_page_footer .button.gform_next_button:hover, body .gform_wrapper .gform_page_footer input.gform_next_button[type="submit"]:hover, .gform_wrapper .gform_page_footer .button.gform_previous_button:hover, body .gform_wrapper .gform_page_footer input.gform_previous_button[type="submit"]:hover, .gform_button:hover {
     background: #00c7d5; }
 
 body.rma-form select {
