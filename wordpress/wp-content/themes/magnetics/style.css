@@ -7469,7 +7469,7 @@ body.blog.single #author, body.articles.single #author, body.single-article #aut
         margin-right: 0; } }
   body.blog.single #author figure, body.articles.single #author figure, body.single-article #author figure {
     margin: 0;
-    border-radius: 1000px;
+    border-bottom: 4px solid orange;
     margin-bottom: 14px;
     line-height: 0; }
   body.blog.single #author .fn, body.articles.single #author .fn, body.single-article #author .fn {
