@@ -4808,7 +4808,7 @@ Nav Panel
           margin-left: 0;
           text-align: left;
           padding-left: 0;
-          margin: 10px 0; }
+          margin: 5px 0; }
           .panel ul.sub-menu li a:hover {
             color: #fb8547; }
         .panel ul.sub-menu li.current-menu-item a {
@@ -5790,39 +5790,40 @@ section.related ul {
   section.related ul li.marine-magnetometers a {
     background: #fb8547; }
 
-section#team {
+#team {
   background: white;
   padding: 32px 0;
   color: #4d4e51; }
-  section#team a {
+  #team a {
     color: #001f3f; }
-    section#team a:before {
+    #team a:before {
       content: ""; }
-  section#team h2 {
+  #team h2 {
     color: #001f3f;
     max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 48px;
     text-align: center; }
-    section#team h2:after {
+    #team h2:after {
       content: "";
       display: table;
       clear: both; }
     @media screen and (min-width: 850px) {
-      section#team h2 {
+      #team h2 {
         text-align: center; } }
-  section#team ul.list {
+  #team ul.list {
     max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
     margin: 0 auto;
-    display: block; }
-    section#team ul.list:after {
+    display: block;
+    color: grey; }
+    #team ul.list:after {
       content: "";
       display: table;
       clear: both; }
-    section#team ul.list li {
+    #team ul.list li {
       white-space: nowrap;
       text-align: center;
       margin-bottom: 48px;
@@ -5831,43 +5832,52 @@ section#team {
       margin-right: 2.35765%;
       width: 100%;
       text-align: center; }
-      section#team ul.list li li:before {
+      #team ul.list li li:before {
         content: "";
         margin-left: -100%; }
-      section#team ul.list li li:after {
+      #team ul.list li li:after {
         content: "";
         margin-right: -100%; }
-      section#team ul.list li .contactNumber {
+      #team ul.list li .contactNumber {
         font-size: 90%; }
-      section#team ul.list li a {
-        display: inline-block; }
-      section#team ul.list li:last-child {
+      #team ul.list li a {
+        display: inline-block;
+        color: grey; }
+        #team ul.list li a:hover {
+          color: #fb8547; }
+        #team ul.list li a span {
+          border-bottom: 1px solid #ddd; }
+      #team ul.list li b {
+        color: #001f3f; }
+      #team ul.list li i {
+        font-size: 70%; }
+      #team ul.list li:last-child {
         margin-right: 0; }
       @media screen and (min-width: 698px) {
-        section#team ul.list li {
+        #team ul.list li {
           float: left;
           display: block;
           margin-right: 2.35765%;
           width: 48.82117%;
           text-align: center;
           margin-right: 0; }
-          section#team ul.list li:last-child {
+          #team ul.list li:last-child {
             margin-right: 0; } }
       @media screen and (min-width: 1080px) {
-        section#team ul.list li {
+        #team ul.list li {
           float: left;
           display: block;
           margin-right: 2.35765%;
           width: 31.76157%;
           margin-right: 0;
-          padding: 2.35765% 2.35765% 2.35765% 0; }
-          section#team ul.list li:last-child {
+          padding: 2.35765%; }
+          #team ul.list li:last-child {
             margin-right: 0; }
-          section#team ul.list li:nth-child(3n-1), section#team ul.list li:nth-child(3n) {
+          #team ul.list li:nth-child(3n-1), #team ul.list li:nth-child(3n) {
             margin-left: 0%; } }
-      section#team ul.list li img {
+      #team ul.list li img {
         margin-bottom: 24px;
-        border-radius: 1000px; }
+        border-bottom: 4px solid #fb8547; }
 
 a#call {
   position: fixed;
@@ -7571,3 +7581,88 @@ body.product-integrations article h1 {
   width: 100%; }
   .rma-form .gform_fields input {
     border: 1px solid #667c8f; }
+
+.submission-successful h1 {
+  margin: 0 0 32px 0;
+  font-size: 2.1875em; }
+.submission-successful p, .submission-successful ol, .submission-successful ul {
+  font-size: 1em; }
+.submission-successful ul {
+  margin: 0 0 1.375em 1em; }
+  @media screen and (min-width: 850px) {
+    .submission-successful ul {
+      line-height: 1.5625em;
+      margin: 0 0 1.375em 1em; } }
+  .submission-successful ul li {
+    list-style: disc;
+    margin-bottom: 1em; }
+.submission-successful a {
+  color: #001f3f; }
+  .submission-successful a:before {
+    content: ""; }
+.submission-successful ul.list {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 auto;
+  display: block;
+  color: grey; }
+  .submission-successful ul.list:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .submission-successful ul.list li {
+    white-space: nowrap;
+    text-align: left;
+    margin-bottom: 48px;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    text-align: left; }
+    .submission-successful ul.list li li:before {
+      content: "";
+      margin-left: -100%; }
+    .submission-successful ul.list li li:after {
+      content: "";
+      margin-right: -100%; }
+    .submission-successful ul.list li .contactNumber {
+      font-size: 90%; }
+    .submission-successful ul.list li a {
+      display: inline-block;
+      color: grey; }
+      .submission-successful ul.list li a:hover {
+        color: #fb8547; }
+      .submission-successful ul.list li a span {
+        border-bottom: 1px solid #ddd; }
+    .submission-successful ul.list li b {
+      color: #001f3f; }
+    .submission-successful ul.list li i {
+      font-size: 70%; }
+    .submission-successful ul.list li:last-child {
+      margin-right: 0; }
+    @media screen and (min-width: 698px) {
+      .submission-successful ul.list li {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 48.82117%;
+        text-align: left;
+        margin-right: 0; }
+        .submission-successful ul.list li:last-child {
+          margin-right: 0; } }
+    @media screen and (min-width: 1080px) {
+      .submission-successful ul.list li {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 48.82117%;
+        margin-right: 0;
+        padding: 2.35765%; }
+        .submission-successful ul.list li:last-child {
+          margin-right: 0; }
+        .submission-successful ul.list li:nth-child(3n-1), .submission-successful ul.list li:nth-child(3n) {
+          margin-left: 0%; } }
+    .submission-successful ul.list li img {
+      margin-bottom: 24px;
+      border-bottom: 4px solid #fb8547; }

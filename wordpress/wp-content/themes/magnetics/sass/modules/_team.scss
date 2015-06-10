@@ -1,4 +1,4 @@
-section#team {
+#team {
 
 	background:white;
 	padding: $spacingSectionSmall 0;
@@ -27,11 +27,13 @@ section#team {
 		@include outer-container($screenOuter);
 		margin:0 auto;
 		display:block;
+		color:grey;
 
 		& li {
 			white-space:nowrap;
 			text-align:center;
 			margin-bottom: $spacingSection;
+
 			& li:before {
 			content: "";
 			margin-left: -100%;
@@ -45,8 +47,22 @@ section#team {
 				font-size:90%;
 			}
 			& a {
+				&:hover {
+					color:$orange;
+				}
 				display:inline-block;
+				color:grey;
+				& span {
+					border-bottom:1px solid #ddd;
+				}
 			}
+			& b {
+				color:$blueDark;
+			}
+			& i {
+				font-size:70%;
+			}
+			// c
 
 			@include span-columns(12);
 			text-align:center;
@@ -61,7 +77,7 @@ section#team {
 				@include span-columns(4);
 				margin-right:0;
 
-				padding:2.35765% 2.35765% 2.35765% 0 ;
+				padding:2.35765%;
 				&:nth-child(3n-1), &:nth-child(3n) {
 					@include shift(0);
 				}
@@ -69,7 +85,7 @@ section#team {
 
 			& img {
 				margin-bottom:24px;
-				border-radius:1000px;
+				border-bottom:4px solid $orange;
 			}
 
 		}
