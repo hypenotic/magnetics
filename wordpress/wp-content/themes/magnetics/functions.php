@@ -15,7 +15,7 @@ include('includes/wp-cuztom-posts/custom-team-members.php');
 require_once('includes/functions/add-classes-to-body.php');
 require_once('includes/functions/admin-tinymce.php'); 
 require_once('includes/functions/archives.php');
-
+require_once('includes/functions/get-parent-category-name.php');
 //require_once('includes/functions/custom-login-logo.php');
 require_once('includes/functions/enqueue-style.php');
 require_once('includes/functions/enqueue-script.php');
@@ -30,7 +30,7 @@ require_once('includes/functions/remove-menu-id.php');
 require_once('includes/functions/remove-wp-version.php');
 require_once('includes/functions/add-placeholder-field-gravity-forms.php');
 //Load shortcodes
-include('includes/shortcodes/form-entry-shortcode.php');
+require_once('includes/functions/form-entry-shortcode.php');
 //require_once('includes/shortcodes/accordion.php');
 //require_once('includes/shortcodes/button.php');
 //require_once('includes/shortcodes/content.php');
