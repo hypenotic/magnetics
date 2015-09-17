@@ -7810,13 +7810,13 @@ h6.resp-tab-title:last-child {
   position: relative;
   left: -14px;
   margin-top: 3px;
-  content: '╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├▓├╣Γò¼├┤Γö£ΓûôΓö£Γöé';
+  content: 'Γò¼├┤Γö£ΓûôΓö¼Γò¥╬ô├╢┬ú╬ô├╢├▒Γò¼├┤Γö£ΓòóΓö¼├║Γò¼├┤Γö£ΓûôΓö£Γòú╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├╗├┤╬ô├╢┬ú╬ô├╢├⌐';
   opacity: 0.4;
   font-size: 12px;
 }
 
 h6.resp-tab-active span.resp-arrow:after {
-  content: '╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├▓├╣Γò¼├┤Γö£ΓûôΓö¼├æ';
+  content: 'Γò¼├┤Γö£ΓûôΓö¼Γò¥╬ô├╢┬ú╬ô├╢├▒Γò¼├┤Γö£ΓòóΓö¼├║Γò¼├┤Γö£ΓûôΓö£Γòú╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├╗├┤╬ô├╢┬╝Γö£├ª';
   opacity: 0.8;
 }
 
@@ -9323,7 +9323,6 @@ body.contact section[role="main"] .optional a:before {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\e601";
-  bottom: 5px;
 }
 body.contact section[role="main"] .optional a:hover {
   color: #fb8547;
