@@ -6564,6 +6564,7 @@ x-object-fit > .x-object-fit-wider {
 }
 .tabs .gimages {
   float: left;
+  margin-bottom: 20px;
 }
 .tabs #systemataglance img {
   /*max-width:250px;*/
@@ -7809,13 +7810,13 @@ h6.resp-tab-title:last-child {
   position: relative;
   left: -14px;
   margin-top: 3px;
-  content: '╬ô├╗Γòó';
+  content: 'Γò¼├┤Γö£Γòù╬ô├▓├│';
   opacity: 0.4;
   font-size: 12px;
 }
 
 h6.resp-tab-active span.resp-arrow:after {
-  content: '╬ô├╗Γò¥';
+  content: 'Γò¼├┤Γö£Γòù╬ô├▓┬Ñ';
   opacity: 0.8;
 }
 
