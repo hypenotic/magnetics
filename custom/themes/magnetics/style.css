@@ -7810,13 +7810,13 @@ h6.resp-tab-title:last-child {
   position: relative;
   left: -14px;
   margin-top: 3px;
-  content: 'Γò¼├┤Γö£Γòù╬ô├▓├│';
+  content: '╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├▓├╣Γò¼├┤Γö£ΓûôΓö£Γöé';
   opacity: 0.4;
   font-size: 12px;
 }
 
 h6.resp-tab-active span.resp-arrow:after {
-  content: 'Γò¼├┤Γö£Γòù╬ô├▓┬Ñ';
+  content: '╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├▓├╣Γò¼├┤Γö£ΓûôΓö¼├æ';
   opacity: 0.8;
 }
 
@@ -9323,6 +9323,7 @@ body.contact section[role="main"] .optional a:before {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\e601";
+  bottom: 5px;
 }
 body.contact section[role="main"] .optional a:hover {
   color: #fb8547;

@@ -51,11 +51,10 @@
    </nav>
 
 <header>
-<div class="container">
-<a class="logo" href="<?php bloginfo('url') ?>" title="Marine Magnetics" alt="Marine Magnetics - Home">
-  <img src="<?php bloginfo('template_url') ?>/images/logo.png" />
-</a>
-</div>
-
+	<div class="container">
+		<a class="logo" href="<?php bloginfo('url') ?>" alt="Marine Magnetics - Home">
+		  <img src="<?php bloginfo('template_url') ?>/images/logo.png" />
+		</a>
+	</div>
 </header>
 <?php get_template_part( 'module', 'callUs' ); ?>
