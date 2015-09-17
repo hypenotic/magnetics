@@ -67,7 +67,7 @@
 
 	<div class="bannerImage"></div>
 
-	<? } elseif (sizeof($metaBannerImageIDs) == 1) {
+	<?php } elseif (sizeof($metaBannerImageIDs) == 1) {
 
  
 		$metaBannerImageAttachment = wp_get_attachment_image_src( $metaBannerImageIDs[0], 'full' );
@@ -100,7 +100,7 @@
 	   
 		</div>
 
-		<? } ?>
+		<?php } ?>
 		</section>
 	<?php } ?>
 

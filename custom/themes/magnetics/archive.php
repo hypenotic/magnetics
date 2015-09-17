@@ -14,7 +14,6 @@
 
        <?php } ?>
        
-       <?php  ?>
         <section id="categories">
             <nav class="left">
                 <h3>Select a Category:</h3>
