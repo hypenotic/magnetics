@@ -29,6 +29,7 @@ require_once('includes/functions/remove-header-meta.php');
 require_once('includes/functions/remove-menu-id.php');
 require_once('includes/functions/remove-wp-version.php');
 require_once('includes/functions/add-placeholder-field-gravity-forms.php');
+require_once('includes/functions/remove-wordpress-emoji.php');
 //Load shortcodes
 require_once('includes/shortcodes/form-entry-shortcode.php');
 //require_once('includes/shortcodes/accordion.php');
