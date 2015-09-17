@@ -1,9 +1,9 @@
-        @include media($screenLarge) {
+@include media($screenLarge) {
+    section[role="main"] > section.tabs {
+        padding: 0 !important;
+    }
+}
 
-            section[role="main"] > section.tabs {
-                padding:0 !important;
-            }
-        }
 
 #additionaloptions {
     max-width: 850px;
@@ -12,24 +12,25 @@
 
 .resp-tab-content {
     @include pad($spacingSectionSmall default);
-      
-     @include media($screenLarge) {
-            @include pad($spacingSectionSmall 0);
-        }
+    @include media($screenLarge) {
+        @include pad($spacingSectionSmall 0);
+    }
 }
-.tabs {
 
+.tabs {
+    .gimages {
+        float: left;
+    }
     & #systemataglance img {
-        max-width:250px;
-        height:auto;
+        /*max-width:250px;*/
+        height: auto;
     }
     & #systemataglance ul {
-          width: 100%;
-          @include media($screenLarge) {
-              width: 30%;
-          }
+        width: 100%;
+        @include media($screenLarge) {
+            width: 30%;
+        }
     }
-
     & h2 {
         @include pad($spacingSectionSmall default);
         @include media($screenLarge) {
@@ -41,7 +42,7 @@
         margin-bottom: 96px;
     }
     &.boxes .resp-tabs-list li span {
-        border-bottom:1px solid;
+        border-bottom: 1px solid;
     }
     & > section {
         display: none;
@@ -50,15 +51,13 @@
         }
     }
     & h2 {
-        color:$blueDark;
-        margin:0 auto;
+        color: $blueDark;
+        margin: 0 auto;
     }
     .resp-tabs-list {
-        
         & li {
             flex: 1 0 auto;
         }
-
     }
     .resp-accordion {
         background: $blueDark;
@@ -66,25 +65,20 @@
             background: white;
         }
         & div {
-                @include pad($spacingSectionSmall default);
-                display: block;
-
-
-                & h4 {
-
-                    font-weight:normal;
-                    font-size:em($fontSizeSmall);
+            @include pad($spacingSectionSmall default);
+            display: block;
+            & h4 {
+                font-weight: normal;
+                font-size: em($fontSizeSmall);
+                line-height: em($fontSizeBody);
+                @include media($screenLarge) {
+                    font-size: em($fontSizeBody);
                     line-height: em($fontSizeBody);
-
-                    @include media($screenLarge) {
-                        font-size:em($fontSizeBody);
-                        line-height: em($fontSizeBody);
-                    }
-
                 }
-                & p {
-                    font-size: em($fontSizeSmall);
-                }
+            }
+            & p {
+                font-size: em($fontSizeSmall);
+            }
         }
     }
     & ul.two {
@@ -100,43 +94,36 @@
             width: 50%;
             float: left;
             background: $blueDark;
-            transform:all 0.3s ease-in-out;
-
+            transform: all 0.3s ease-in-out;
             &:hover {
                 background: $blueSteel;
             }
-
             display: flex;
             align-items: stretch;
             flex-direction: column;
             color: white;
             &.resp-tab-active {
-                    background: white;
-                    color: $blueDark;
-           
-                    & h3 {
-                        border-bottom:1.5px solid $blueDark;
-                    }
-
-                &:hover {
-                    background:white;
+                background: white;
+                color: $blueDark;
+                & h3 {
+                    border-bottom: 1.5px solid $blueDark;
                 }
-
+                &:hover {
+                    background: white;
+                }
             }
             & h3 {
-                display:inline-block;
-                border-bottom:1.5px solid rgba(255,255,255,0.5);
+                display: inline-block;
+                border-bottom: 1.5px solid rgba(255, 255, 255, 0.5);
             }
             & div {
                 padding: 48px 4.7153%;
                 display: block;
                 & h3, & h4 {
-                    
-                    font-size:em($fontSizeSmall);
+                    font-size: em($fontSizeSmall);
                     line-height: em($fontSizeBody);
-
                     @include media($screenLarge) {
-                        font-size:em($fontSizeBody);
+                        font-size: em($fontSizeBody);
                         line-height: em($fontSizeBody);
                     }
                 }
@@ -147,29 +134,26 @@
         }
     }
     & .resp-tab-content.two {
-
         margin-top: $spacingSection;
-
         @include media($screenLarge) {
-        margin-top: $spacingSectionLarge;
+            margin-top: $spacingSectionLarge;
         }
     }
 }
+
 .resp-tabs-container {
     h6 span {
-        border-bottom:1px solid;
+        border-bottom: 1px solid;
     }
 }
+
 .resp-tabs-container.two {
-
     & p {
-        font-size:rem($fontSizeBody) !important;
+        font-size: rem($fontSizeBody) !important;
     }
-    
     & .resp-accordion h3 {
-        padding-top:$spacingSectionSmall;
+        padding-top: $spacingSectionSmall;
     }
-
 }
 
 .custom-dropdown--large {
@@ -252,5 +236,5 @@ select--white {
 }
 
 body.rma-form article {
-    max-width:1080px;
+    max-width: 1080px;
 }

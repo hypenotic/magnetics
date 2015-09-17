@@ -1,101 +1,87 @@
 .submission-successful {
+    & h1 {
+        margin: 0 0 $spacingSectionSmall 0;
+        font-size: em($fontSizeHeadingSmall);
+    }
+    & p, & ol, & ul {
+        font-size: 1em;
+    }
+    & ul {
+        margin: 0 0 em($fontSizeMedium) 1em;
+        @include media($screenLarge) {
+            line-height: em($fontSizeSubheading);
+            margin: 0 0 em($fontSizeMedium) 1em;
+        }
 
-	    & h1 {
-	    	margin:0 0 $spacingSectionSmall 0;
-	    	font-size:em($fontSizeHeadingSmall);
-	    }
-	    & p, & ol, & ul {
-	    	font-size:1em;
-	    }
+        & li {
+            list-style: disc;
+            margin-bottom: 1em;
+        }
+    }
+    & a {
+        color: $blueDark;
+        &:before {
+            content: "";
+        }
+    }
+    & ul.list {
+        @include outer-container($screenOuter);
+        margin: 0 auto;
+        display: block;
+        color: grey;
+        & li {
+            white-space: nowrap;
+            text-align: left;
+            margin-bottom: $spacingSection;
+            & li:before {
+                content: "";
+                margin-left: -100%;
+            }
+            & li:after {
+                content: "";
+                margin-right: -100%;
+            }
+            .contactNumber {
+                font-size: 90%;
+            }
+            & a {
+                &:hover {
+                    color: $orange;
+                }
+                display: inline-block;
+                color: grey;
+                & span {
+                    border-bottom: 1px solid #ddd;
+                }
+            }
+            & b {
+                color: $blueDark;
+            }
+            & i {
+                font-size: 70%;
+            }
+            // c
+            @include span-columns(12);
+            text-align: left;
+            @include media($screenMedium) {
+                @include span-columns(6);
+                text-align: left;
+                margin-right: 0;
+            }
 
-		& ul {
-	    margin: 0 0 em($fontSizeMedium) 1em;
-	    @include media($screenLarge) {
-	        line-height: em($fontSizeSubheading);
-	        margin: 0 0 em($fontSizeMedium) 1em;
-	    }
-	    & li {
-	    	list-style:disc;
-	    	margin-bottom:1em;
-	   	}
+            @include media($screenOuter) {
+                @include span-columns(6);
+                margin-right: 0;
+                padding: 2.35765%;
+                &:nth-child(3n-1), &:nth-child(3n) {
+                    @include shift(0);
+                }
+            }
 
-	}
-
-		& a {
-			color:$blueDark;
-			&:before {
-				content:''
-			}
-		}
-
-		& ul.list {
-
-			@include outer-container($screenOuter);
-			margin:0 auto;
-			display:block;
-			color:grey;
-
-			& li {
-				white-space:nowrap;
-				text-align:left;
-				margin-bottom: $spacingSection;
-
-				& li:before {
-				content: "";
-				margin-left: -100%;
-				}
-				& li:after {
-				content: "";
-				margin-right: -100%;
-				}
-
-				.contactNumber {
-					font-size:90%;
-				}
-				& a {
-					&:hover {
-						color:$orange;
-					}
-					display:inline-block;
-					color:grey;
-					& span {
-						border-bottom:1px solid #ddd;
-					}
-				}
-				& b {
-					color:$blueDark;
-				}
-				& i {
-					font-size:70%;
-				}
-				// c
-
-				@include span-columns(12);
-				text-align:left;
-
-				@include media($screenMedium) {
-					@include span-columns(6);
-					text-align:left;
-					margin-right:0
-				}
-
-				@include media($screenOuter) {
-					@include span-columns(6);
-					margin-right:0;
-
-					padding:2.35765%;
-					&:nth-child(3n-1), &:nth-child(3n) {
-						@include shift(0);
-					}
-				}
-
-				& img {
-					margin-bottom:24px;
-					border-bottom:4px solid $orange;
-				}
-
-			}
-
-		}
-
+            & img {
+                margin-bottom: 24px;
+                border-bottom: 4px solid $orange;
+            }
+        }
+    }
 }

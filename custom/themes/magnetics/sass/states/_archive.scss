@@ -1,74 +1,74 @@
 .archive .banner {
-    align-items: left
+    align-items: left;
 }
 
 body section.products {
-    padding-top:0 !important;
+    padding-top: 0 !important;
 }
 
-.archive.blog section[role="main"]  {
-
+.archive.blog section[role="main"] {
     & > header {
         @include pad(0 default);
         @include media($screenLarge) {
             @include pad(0);
         }
+
         & h1 {
-            padding:$spacingSectionLarge 0 $spacingSectionSmall 0;
+            padding: $spacingSectionLarge 0 $spacingSectionSmall 0;
         }
     }
     & #categories li {
-        margin:8px 0 ;
+        margin: 8px 0;
     }
 }
 
 .archive #footer footer {
-    max-width:850px;
+    max-width: 850px;
 }
+
 #archive {
-    padding-top:0 !important;
+    padding-top: 0 !important;
 }
+
 #archive article {
-         @include pad(0 default);
-         & h6 {
-             @include pad($spacingSectionSmall 0 0 0);
-         }
-         @include media($screenLarge) {
-              @include pad($spacingSectionSmall 2.5%);
-         }
- 
+    @include pad(0 default);
+    & h6 {
+        @include pad($spacingSectionSmall 0 0 0);
+    }
+    @include media($screenLarge) {
+        @include pad($spacingSectionSmall 2.5%);
+    }
 }
 
 .archive section[role="main"] article.overview {
-        & h3 {
-            & a:hover {
-                color: $orange;
-            }
+    & h3 {
+        & a:hover {
+            color: $orange;
         }
-        & a.resource:hover, & a.more:hover {
-            color: $teal;
-        }
-        & a:hover h3 {
-            color:$orange;
-        }
-        &:hover a.more {
-            color:$teal;
-        }
+    }
+    & a.resource:hover, & a.more:hover {
+        color: $teal;
+    }
+    & a:hover h3 {
+        color: $orange;
+    }
+    &:hover a.more {
+        color: $teal;
+    }
 }
 
 section[role="main"] > section.pagination span.pages {
-      @include pad($spacingSectionSmall default);
-      text-transform:uppercase;
-      font-weight:500;
+    @include pad($spacingSectionSmall default);
+    text-transform: uppercase;
+    font-weight: 500;
+    @include media($screenLarge) {
+        max-width: 850px;
+        padding: $spacingSectionSmall 0;
+        margin: 0 auto;
+    }
 
-      @include media($screenLarge) {
-        max-width:850px;
-        padding:$spacingSectionSmall 0;
-        margin:0 auto;
-      }
-        font-weight:bold;
-        color:$orange;
-      
+    font-weight: bold;
+    color: $orange;
 }
 
 .archive section[role="main"] {
@@ -81,13 +81,14 @@ section[role="main"] > section.pagination span.pages {
             font-weight: 800;
             @include pad($spacingSection default);
             @include media($screenLarge) {
-               @include pad($spacingSection 0);  
+                @include pad($spacingSection 0);
             }
+
             letter-spacing: -2px;
         }
         & #tags {
-        margin-top:14px;
-        font-size:0.6em;
+            margin-top: 14px;
+            font-size: 0.6em;
         }
         & #categories, & #tags {
             & nav {
@@ -129,17 +130,14 @@ section[role="main"] > section.pagination span.pages {
 .archive {
     & header.banner {
         min-height: 60vh;
-        box-sizing:border-box;
+        box-sizing: border-box;
         flex-direction: column;
-        display:flex;
-        justify-content:center;
-
+        display: flex;
+        justify-content: center;
         @include outer-container($screenOuter);
         @include pad(0 2.37% $spacingSectionSmall 2.37%);
-        color:white;
-
-
-        & h4 {  
+        color: white;
+        & h4 {
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
         }
     }
@@ -147,164 +145,137 @@ section[role="main"] > section.pagination span.pages {
 
 .archive.category-integrations {
     & header.banner {
-        max-width:850px;
-        text-align:center;
+        max-width: 850px;
+        text-align: center;
         h1 {
-        text-shadow:0px !important;
-        display:block;
-        width:100%;
+            text-shadow: 0px !important;
+            display: block;
+            width: 100%;
         }
     }
 }
 
 .category-integrations section[role="main"] {
-
     & .vendor {
-
         & a:last-of-type {
-            color:$blueDark;
-            display:block;
-            transition:all 0.2s ease-in-out;
-
+            color: $blueDark;
+            display: block;
+            transition: all 0.2s ease-in-out;
             &:hover {
-                color:$orange;
+                color: $orange;
                 &:after {
-                    color:$teal;
+                    color: $teal;
                 }
             }
         }
         & a:after {
-            font-family:$fontIcons;
-            content: "\f08e";   
-            padding-left:6px;
-            opacity:0.9;
-            font-size:80%;
-
+            font-family: $fontIcons;
+            content: "\f08e";
+            padding-left: 6px;
+            opacity: 0.9;
+            font-size: 80%;
         }
-        clear:both;
+        clear: both;
         margin-top: $spacingSection;
-
         @include media($screenLarge) {
-
-        & img {
-            @include span-columns(3);
-        }
-        & section {
-            @include span-columns(7);
-            @include shift(1);
-        }
-        & a {
-            font-weight:bold;
-        }
-
+            & img {
+                @include span-columns(3);
+            }
+            & section {
+                @include span-columns(7);
+                @include shift(1);
+            }
+            & a {
+                font-weight: bold;
+            }
         }
     }
 }
 
 .category-products section[role="main"], .category-product-integrations section[role="main"] {
-
     & section.products {
-
         ul {
-            margin:0;
-            padding:0;
-
+            margin: 0;
+            padding: 0;
             & li.product {
                 @include media($screenLarge) {
-                    min-height:280px;
+                    min-height: 280px;
                 }
 
                 & a {
-                    color:white;
-                    transition:all 0.3s ease-in-out;
+                    color: white;
+                    transition: all 0.3s ease-in-out;
                 }
-                
             }
         }
-
-        color:white;
+        color: white;
         @include pad($spacingSectionLarge default);
         @include outer-container($screenOuter);
-
         & h3 a {
-            color:white;
-
+            color: white;
             &:hover {
-                color:$orange;
+                color: $orange;
             }
         }
-
         & .base-stations a:hover h3, & .hardware-product-integrations h3 a:hover {
-            color:$teal;
+            color: $teal;
         }
         & .marine-gradiometers a:hover h3, & .software-product-integrations h3 a:hover {
-            color:$blueLight;
+            color: $blueLight;
         }
         & .marine-magnetometers a:hover h3 {
-            color:$orange;
+            color: $orange;
         }
         & .product-integrations a:hover h3 {
-            color:$teal;
+            color: $teal;
         }
-
         & label {
-
-            clear:both;
-            display:block;
-            margin-bottom:$spacingSectionSmall;
-
+            clear: both;
+            display: block;
+            margin-bottom: $spacingSectionSmall;
             span {
-                display:inline-block;
-                color:white;
-                font-weight:bold;
-                padding:4px 8px;
+                display: inline-block;
+                color: white;
+                font-weight: bold;
+                padding: 4px 8px;
             }
-
             &.base-stations span, &.hardware-product-integrations span, &.product-integrations span {
-                background:$teal;
+                background: $teal;
             }
             &.marine-gradiometers span, &.software-product-integrations span {
-                background:$blueLight;
+                background: $blueLight;
             }
             &.marine-magnetometers span {
-                background:$orange;
+                background: $orange;
             }
         }
-
     }
-
-    background: -moz-linear-gradient(top, rgba(0,31,63,0) 0%, rgba(0,31,63,1) 300px, rgba(0,31,63,1) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,31,63,0)), color-stop(300px,rgba(0,31,63,1)), color-stop(100%,rgba(0,31,63,1)));
-    background: -webkit-linear-gradient(top, rgba(0,31,63,0) 0%,rgba(0,31,63,1) 300px,rgba(0,31,63,1) 100%);
-    background: -o-linear-gradient(top, rgba(0,31,63,0) 0%,rgba(0,31,63,1) 300px,rgba(0,31,63,1) 100%);
-    background: -ms-linear-gradient(top, rgba(0,31,63,0) 0%,rgba(0,31,63,1) 300px,rgba(0,31,63,1) 100%);
-    background: linear-gradient(to bottom, rgba(0,31,63,0) 0%,rgba(0,31,63,1) 300px,rgba(0,31,63,1) 100%);
+    background: -moz-linear-gradient(top, rgba(0, 31, 63, 0) 0%, rgba(0, 31, 63, 1) 300px, rgba(0, 31, 63, 1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 31, 63, 0)), color-stop(300px, rgba(0, 31, 63, 1)), color-stop(100%, rgba(0, 31, 63, 1)));
+    background: -webkit-linear-gradient(top, rgba(0, 31, 63, 0) 0%, rgba(0, 31, 63, 1) 300px, rgba(0, 31, 63, 1) 100%);
+    background: -o-linear-gradient(top, rgba(0, 31, 63, 0) 0%, rgba(0, 31, 63, 1) 300px, rgba(0, 31, 63, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(0, 31, 63, 0) 0%, rgba(0, 31, 63, 1) 300px, rgba(0, 31, 63, 1) 100%);
+    background: linear-gradient(to bottom, rgba(0, 31, 63, 0) 0%, rgba(0, 31, 63, 1) 300px, rgba(0, 31, 63, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00001f3f', endColorstr='#001f3f',GradientType=0 );
-
     & ul .product {
-
-        display:flex;
-        flex-direction:column;
-        margin:0;
-        margin-bottom:$spacingSectionSmall;
-
-
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        margin-bottom: $spacingSectionSmall;
         @include media($screenLarge) {
             @include span-columns(5);
             &:nth-child(2n) {
                 @include shift(1);
             }
             &:nth-child(2n + 1) {
-                clear:left;
+                clear: left;
             }
         }
 
         p {
             @include media($screenLarge) {
-                min-height:140px;
+                min-height: 140px;
             }
-            
         }
-
     }
-} 
+}

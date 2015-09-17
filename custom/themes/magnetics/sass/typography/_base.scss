@@ -33,7 +33,6 @@ h2 {
     line-height: em($fontSizeBody);
     font-weight: 700;
     padding: $spacingSectionSmall 0;
-
     @include media($screenLarge) {
         font-size: em($fontSizeHeading);
         line-height: em($fontSizeBody);
@@ -89,11 +88,8 @@ ol {
         font-family: $fontSecondary;
         font-size: em($fontSizeLarge);
     }
-    & li ol li {
-        
-    }
+    & li ol li {}
 }
-
 
 blockquote {
     font-size: em($fontSizeBody);
@@ -106,24 +102,25 @@ blockquote {
 }
 
 p > a:not(.button), h2 > a, h3 > a, h4 > a, h5 > a, h6 > a, a > span {
-    text-decoration:none !important;
-    display:inline-block;
-    border-bottom:1px solid;
-    padding-bottom:2px;
-    line-height:90%;
+    text-decoration: none !important;
+    display: inline-block;
+    border-bottom: 1px solid;
+    padding-bottom: 2px;
+    line-height: 90%;
 }
+
 a > span {
-    display:inline;
+    display: inline;
 }
+
 a[href^=mailto] {
-    text-decoration:none !important;
-    display:inline-block;
-    line-height:140%;
+    text-decoration: none !important;
+    display: inline-block;
+    line-height: 140%;
 }
+
 a {
-
-    text-decoration:none;
-
+    text-decoration: none;
     &:hover {
         outline: none;
         text-decoration: none;
@@ -135,8 +132,9 @@ a {
         outline: none;
     }
 }
+
 a {
-    color:$blueDark;
+    color: $blueDark;
 }
 
 .text-center {
@@ -144,6 +142,6 @@ a {
 }
 
 blockquote, blockquote p {
-    color:$blueSteel;
-    line-height:em($fontSizeBody);
+    color: $blueSteel;
+    line-height: em($fontSizeBody);
 }

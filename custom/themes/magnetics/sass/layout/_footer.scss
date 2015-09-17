@@ -1,50 +1,37 @@
 .archive #footer footer {
-
     @include pad(48px default);
-
     @include media($screenLarge) {
-             @include pad($spacingSectionLarge default);
-        
+        @include pad($spacingSectionLarge default);
     }
 }
 
 #footer {
-
     background: $blueDark;
     padding-top: $spacingSection;
     & footer {
         @include outer-container(1080px);
-                @include pad($spacingSectionSmall default);
-    
+        @include pad($spacingSectionSmall default);
         color: white;
         & > section:last-child a {
-            color:$teal;
+            color: $teal;
         }
-        p > a {   
-            color:$teal;
+        p > a {
+            color: $teal;
         }
-
         @include media($screenLarge) {
-
-             @include pad($spacingSectionSmall default);
-        
-
+            @include pad($spacingSectionSmall default);
             & > section {
-
                 &:last-child {
                     @include shift(1);
                 }
                 & > *:first-child {
-                    padding-top:0;
+                    padding-top: 0;
                 }
-
                 @include span-columns(5);
-
                 &:first-child {
-                    margin-right:0;
+                    margin-right: 0;
                     @include pad(0 default 0 0);
                 }
-
             }
         }
     }

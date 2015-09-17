@@ -10,28 +10,29 @@
 }
 
 article > h2, section > h2 {
-	padding:0 0 $spacingSectionSmall 0;
-}
-@include media($screenMedium) {
-	#menu-main-menu > li {
-			& a {
-            font-size:em($fontSizeMedium);
-	        }
-	        & li a {
-            font-size:em($fontSizeSmall);        	
-	        }
-			font-weight:700;
-	 	& ul > li {
-	 		font-weight:400;
-	 	}
-	}
+    padding: 0 0 $spacingSectionSmall 0;
 }
 
-a[href$="product-integrations/rov/"], a[href$="product-integrations/auv/"] 
-{
-	cursor:default !important;
+@include media($screenMedium) {
+    #menu-main-menu > li {
+        & a {
+            font-size: em($fontSizeMedium);
+        }
+        & li a {
+            font-size: em($fontSizeSmall);
+        }
+        font-weight: 700;
+        & ul > li {
+            font-weight: 400;
+        }
+    }
+}
+
+
+a[href$="product-integrations/rov/"], a[href$="product-integrations/auv/"] {
+    cursor: default !important;
 }
 
 .submission-successful h1 {
-	color:$gray;
+    color: $gray;
 }

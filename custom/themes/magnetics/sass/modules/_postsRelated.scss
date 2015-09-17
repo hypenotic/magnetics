@@ -1,34 +1,29 @@
 section[role="main"] .related {
-    background:white;
+    background: white;
 }
+
 footer .related {
-    padding:0;
+    padding: 0;
 }
 
 .related {
-
-    
-    margin:0 auto;
+    margin: 0 auto;
     @include pad($spacingSection default);
-
     @include media($screenLarge) {
         @include pad($spacingSection 0);
     }
+
     & > article {
-
-         @include pad(0 0 $spacingSectionSmall 0);
+        @include pad(0 0 $spacingSectionSmall 0);
     }
-
     & > * {
         max-width: $screenLarge;
         margin: 0 auto;
     }
-
     & h2 {
-        color:$blueDark;
-        margin:0 auto;
+        color: $blueDark;
+        margin: 0 auto;
     }
-
     & a.resource span {
         display: none;
     }
@@ -39,20 +34,18 @@ footer .related {
 }
 
 .single section[role="main"] .related {
-    background:white;
+    background: white;
 }
 
 .single footer .related {
-    padding:0;
-
+    padding: 0;
     & a {
-        color:white;
+        color: white;
         &:hover {
-            text-decoration:underline;
+            text-decoration: underline;
         }
     }
     & ul {
-        padding:$spacingSectionSmall 0;
+        padding: $spacingSectionSmall 0;
     }
 }
-

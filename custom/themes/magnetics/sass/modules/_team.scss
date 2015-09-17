@@ -1,94 +1,80 @@
 #team {
+    background: white;
+    padding: $spacingSectionSmall 0;
+    color: $grayDark;
+    & a {
+        color: $blueDark;
+        &:before {
+            content: "";
+        }
+    }
+    h2 {
+        color: $blueDark;
+        @include outer-container($screenOuter);
+        margin-bottom: $spacingSection;
+        text-align: center;
+        @include media($screenLarge) {
+            text-align: center;
+        }
+    }
+    & ul.list {
+        @include outer-container($screenOuter);
+        margin: 0 auto;
+        display: block;
+        color: grey;
+        & li {
+            white-space: nowrap;
+            text-align: center;
+            margin-bottom: $spacingSection;
+            & li:before {
+                content: "";
+                margin-left: -100%;
+            }
+            & li:after {
+                content: "";
+                margin-right: -100%;
+            }
+            .contactNumber {
+                font-size: 90%;
+            }
+            & a {
+                &:hover {
+                    color: $orange;
+                }
+                display: inline-block;
+                color: grey;
+                & span {
+                    border-bottom: 1px solid #ddd;
+                }
+            }
+            & b {
+                color: $blueDark;
+            }
+            & i {
+                font-size: 70%;
+            }
+            // c
+            @include span-columns(12);
+            text-align: center;
+            @include media($screenMedium) {
+                @include span-columns(6);
+                text-align: center;
+                margin-right: 0;
+            }
 
-	background:white;
-	padding: $spacingSectionSmall 0;
-	color:$grayDark;
+            @include media($screenOuter) {
+                @include span-columns(4);
+                margin-right: 0;
+                padding: 2.35765%;
+                &:nth-child(3n-1), &:nth-child(3n) {
+                    @include shift(0);
+                }
+            }
 
-	& a {
-		color:$blueDark;
-		&:before {
-			content:''
-		}
-	}
-
-	h2 {
-		color:$blueDark;
-		@include outer-container($screenOuter);
-		margin-bottom:$spacingSection;
-		text-align:center;
-
-		@include media($screenLarge) {
-			text-align:center;
-		}
-	}
-
-	& ul.list {
-
-		@include outer-container($screenOuter);
-		margin:0 auto;
-		display:block;
-		color:grey;
-
-		& li {
-			white-space:nowrap;
-			text-align:center;
-			margin-bottom: $spacingSection;
-
-			& li:before {
-			content: "";
-			margin-left: -100%;
-			}
-			& li:after {
-			content: "";
-			margin-right: -100%;
-			}
-
-			.contactNumber {
-				font-size:90%;
-			}
-			& a {
-				&:hover {
-					color:$orange;
-				}
-				display:inline-block;
-				color:grey;
-				& span {
-					border-bottom:1px solid #ddd;
-				}
-			}
-			& b {
-				color:$blueDark;
-			}
-			& i {
-				font-size:70%;
-			}
-			// c
-
-			@include span-columns(12);
-			text-align:center;
-
-			@include media($screenMedium) {
-				@include span-columns(6);
-				text-align:center;
-				margin-right:0
-			}
-
-			@include media($screenOuter) {
-				@include span-columns(4);
-				margin-right:0;
-
-				padding:2.35765%;
-				&:nth-child(3n-1), &:nth-child(3n) {
-					@include shift(0);
-				}
-			}
-
-			& img {
-				margin-bottom:24px;
-				border-bottom:4px solid $orange;
-			}
-
-		}
-
-	}
+            & img {
+                margin-bottom: 24px;
+                border-bottom: 4px solid $orange;
+            }
+        }
+    }
 }

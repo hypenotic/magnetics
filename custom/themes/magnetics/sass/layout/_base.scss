@@ -1,14 +1,14 @@
 html {
-	height:100%;
+    height: 100%;
 }
 
 article {
     @include outer-container;
     @include pad($spacingSectionLarge default);
-
     @include media($screenLarge) {
-	    @include pad($spacingSectionLarge 0);	
+        @include pad($spacingSectionLarge 0);
     }
+
     color: $grayDark;
 }
 

@@ -1,127 +1,107 @@
 body.contact {
+    & section[role="main"] {
+        background: $gray;
+        background-repeat: no-repeat;
+        color: white;
+        background-position: top center;
+        & article {
+            color: white;
+            max-width: $screenOuter;
+            @include media($screenLarge) {}
 
-	& section[role="main"] {
-		background: $gray;
-		background-repeat:no-repeat;
-		color:white;
-		background-position:top center;
+            padding-top: $spacingSectionLarge;
+        }
+        & .optional {
+            @include outer-container($screenOuter);
+        }
+        & h6 {
+            margin-top: $spacingSectionSmall;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: em($fontSizeSmall);
+        }
+        & a {
+            color: white;
+        }
+        & #gform_fields_3 {
+            & label {
+                display: none !important;
+            }
+            & input, textarea {
+                width: 100%;
+                margin-bottom: em($fontSizeBodySecondary);
+            }
+        }
+        & h1 {
+            margin-bottom: $spacingSectionLarge;
+        }
+        & .gform_body ul {
+            width: 100%;
+        }
+        & .gform_footer {
+            padding-top: 0;
+        }
+        & #gform_submit_button_3 {
+            border: 2px solid white;
+            padding: 12px 24px;
+            text-transform: uppercase;
+            text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
+            font-weight: 600;
+            color: white;
+            display: inline-block;
+            background: none;
+            text-shadow: none;
+            border-radius: 0;
+            float: right;
+            font-size: em($fontSizeSmall);
+            padding: 18px 36px;
+            &:hover {
+                background: white;
+                color: $blueDark;
+                text-shadow: none;
+            }
+        }
+        @include media($screenLarge) {
+            & .gform_wrapper {
+                @include span-columns(6);
+                @include shift(1);
+                float: right;
+            }
+        }
 
-		& article {
-			color:white;
-			max-width:$screenOuter;
-			@include media($screenLarge) {
-
-			}
-
-			padding-top:$spacingSectionLarge;
-		}
-
-		& .optional {
-
-			@include outer-container($screenOuter);
-
-		}
-		& h6 {
-			margin-top: $spacingSectionSmall;
-			font-weight:bold;
-			text-transform:uppercase;
-			font-size: em($fontSizeSmall);
-		}
-		& a {
-			color:white;
-		}
-
-		& #gform_fields_3 {
-			& label {
-				display:none !important;
-			}
-			& input, textarea {
-				width:100%;
-				margin-bottom: em($fontSizeBodySecondary);
-			}
-		}
-
-		& h1 {
-			margin-bottom: $spacingSectionLarge;
-		}
-
-		& .gform_body ul {
-			width:100%;
-		}
-
-		& .gform_footer {
-			padding-top:0;
-		}
-
-		& #gform_submit_button_3 {
-			border:2px solid white;
-			padding:12px 24px;
-			text-transform:uppercase;
-			text-shadow:0px 4px 20px rgba(0,0,0,0.6);
-			font-weight:600;
-			color:white;
-			display:inline-block;
-			background:none;
-			text-shadow:none;
-			border-radius:0;
-			float:right;
-			font-size: em($fontSizeSmall);
-			padding:18px 36px;
-
-			&:hover {
-				background:white;
-				color:$blueDark;
-				text-shadow:none;
-			}
-		}
-
-		@include media($screenLarge) {
-
-			& .gform_wrapper {
-				@include span-columns(6);
-				@include shift(1);
-				float:right;
-			}
-		}
-
-		& .optional {
-			@include pad($spacingSectionSmall default);
-			padding-bottom:$spacingSectionLarge;
-		}
-
-		& .optional a {
-			display:inline-block;
-			font-weight:600 !important;
-
-			&:before {
-				font-family: "icomoon";
-				speak: none;
-				font-style: normal;
-				font-weight: normal;
-				font-variant: normal;
-				text-transform: none;
-				line-height: 1;
-				-webkit-font-smoothing: antialiased;
-				-moz-osx-font-smoothing: grayscale;
-				content: "\e601";
-			}
-
-			&:hover {
-				color:$orange;
-				&:before {
-					color:$teal;
-				}
-			}
-
-			position:relative;
-			font-size:em($fontSizeBody);
-			text-decoration:none;
-			font-weight:200;
-			&:before {
-				right:-30px;
-				position:absolute;
-			}
-
-		}
-	}
+        & .optional {
+            @include pad($spacingSectionSmall default);
+            padding-bottom: $spacingSectionLarge;
+        }
+        & .optional a {
+            display: inline-block;
+            font-weight: 600 !important;
+            &:before {
+                font-family: "icomoon";
+                speak: none;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                content: "\e601";
+            }
+            &:hover {
+                color: $orange;
+                &:before {
+                    color: $teal;
+                }
+            }
+            position: relative;
+            font-size: em($fontSizeBody);
+            text-decoration: none;
+            font-weight: 200;
+            &:before {
+                right: -30px;
+                position: absolute;
+            }
+        }
+    }
 }

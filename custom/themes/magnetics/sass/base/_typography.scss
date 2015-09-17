@@ -43,7 +43,6 @@ h6 {
     font-size: $h6-font-size;
 }
 
-
 a {
     @include transition(color 0.1s linear);
     color: $base-link-color;

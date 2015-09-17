@@ -3,35 +3,29 @@ body.about #footer footer {
 }
 
 body.about {
-
     & > header {
-        position:absolute;
-        width:100%;
+        position: absolute;
+        width: 100%;
     }
     & .masthead {
-        display:flex;
+        display: flex;
         justify-content: center;
-        text-align:center;
+        text-align: center;
     }
-
     background: $gray;
     & section:first-of-type {
         & article {
             color: white;
             @include pad($spacingSection default);
-
             @include media($screenLarge) {
-	            @include pad($spacingSectionLarge default);
-		    }
+                @include pad($spacingSectionLarge default);
+            }
         }
     }
-
     #footer {
-    	border-top:0;
-
+        border-top: 0;
         @include media($screenLarge) {
             border-top: $spacingSectionLarge solid white;
         }
     }
-
 }
