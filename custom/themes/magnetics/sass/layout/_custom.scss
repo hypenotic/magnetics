@@ -3,99 +3,100 @@
 }
 
 section[role="main"] {
-  overflow-x:hidden;
+    overflow-x: hidden;
 }
 
-section[role="main"] > section, section[role="main"] > article  {
-
-  @include media($screenMedium) {
-    padding:$spacingSectionLarge 2.5% $spacingSectionLarge 2.5% !important;
-  }
+section[role="main"] > section, section[role="main"] > article {
+    @include media($screenMedium) {
+        padding: $spacingSectionLarge 2.5% $spacingSectionLarge 2.5% !important;
+    }
 }
 
-#footer footer {
-}
+#footer footer {}
 
 .background {
-  position: fixed;
-  top: 0; right: 0; bottom: 0; left: 0;
-  overflow: hidden;
-  z-index:-1;
-
-  & .overlay {
-    width:100%;
-    height:100%;
-    position:fixed;
-    left:0;
-    top:0;
-    z-index:2;
-    background:$blueDark;
-    opacity:0.7;
-  }
-
-  & > video {
-    -webkit-filter: contrast(140%) hue-rotate(-5deg) saturate(73%);
-    transform: rotateY(180deg);
-    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
-    -moz-transform:rotateY(180deg); /* Firefox */
-  }
-
-  & > video, & > img {
-    position: absolute;
+    position: fixed;
     top: 0;
+    right: 0;
+    bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-
-    @include media(min-aspect-ratio, 16/9) {
-      height: 300%; top: -100%;
+    overflow: hidden;
+    z-index: -1;
+    & .overlay {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        background: $blueDark;
+        opacity: 0.7;
     }
-
-    @include media(max-aspect-ratio, 16/9) {
-      width: 300%; left: -100%;
+    & > video {
+        -webkit-filter: contrast(140%) hue-rotate(-5deg) saturate(73%);
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        /* Safari and Chrome */
+        -moz-transform: rotateY(180deg);
+        /* Firefox */
     }
-  }
+    & > video, & > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include media(min-aspect-ratio, 16 / 9) {
+            height: 300%;
+            top: -100%;
+        }
+
+        @include media(max-aspect-ratio, 16 / 9) {
+            width: 300%;
+            left: -100%;
+        }
+    }
 }
 
 /* 2. If supporting object-fit, overriding (1): */
 @supports (object-fit: cover) {
     .background > video, .background > img {
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-  }
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .masthead {
-  height:50vh;
-  display:flex;
-
-  flex-direction:column;
-  @include fontShadow($blackOverlayLight);
-  @include pad(default);
-  & > h1 {
-    padding-top:20px;
-    @include media($screenLarge) {
-      padding-top:40px;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    @include fontShadow($blackOverlayLight);
+    @include pad(default);
+    & > h1 {
+        padding-top: 20px;
+        @include media($screenLarge) {
+            padding-top: 40px;
+        }
     }
-  }
-  & > * {
-    @include pad(0 default);
-    color:white;
-    margin:0 auto;
-    width:100%;
-
-    @include media($screenOuter) {
-      width: $screenOuter;
-        max-width: $screenOuter;
+    & > * {
+        @include pad(0 default);
+        color: white;
+        margin: 0 auto;
+        width: 100%;
+        @include media($screenOuter) {
+            width: $screenOuter;
+            max-width: $screenOuter;
+        }
     }
-
-  }
-  & > h1 {
-    padding-bottom:18px;
-  }
+    & > h1 {
+        padding-bottom: 18px;
+    }
 }
+
 .pagination {
-margin:0 auto;
-max-width:$screenLarge;
+    margin: 0 auto;
+    max-width: $screenLarge;
 }

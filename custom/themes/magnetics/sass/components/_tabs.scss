@@ -10,55 +10,49 @@
 }
 
 .tabs.boxes {
-
-        overflow:hidden;
-        .images {
-            height:auto !important;
+    overflow: hidden;
+    .images {
+        height: auto !important;
+    }
+    & > h2 {
+        max-width: $screenLarge;
+        @include media($screenLarge) {
+            display: block;
         }
-        & > h2 {
-        max-width: $screenLarge; 
-
-            @include media($screenLarge) {
-                display: block;
-            }             
-        }
-        & > ul {
+    }
+    & > ul {
         display: block;
         margin: 0 auto;
         display: none;
-
         @include media($screenLarge) {
             display: block;
             display: flex;
             flex-direction: row;
             width: 105.5%;
-              margin-left: -2.6%;
+            margin-left: -2.6%;
         }
 
         & > li {
-
             &:hover {
-                background:$blueSteel;
+                background: $blueSteel;
             }
             width: 25%;
             padding: 48px 3%;
-            box-sizing:border-box;
+            box-sizing: border-box;
             float: left;
             display: inline-block;
             float: left;
             text-align: center;
-
             @include media($screenLarge) {
-
-                &:first-child {
-                }
+                &:first-child {}
             }
+
             background: $blueDark;
-            color:white;
+            color: white;
             &.current-cat, &.resp-tab-active {
-                background:white;
-                color:$blueDark;
-                font-weight:bold;
+                background: white;
+                color: $blueDark;
+                font-weight: bold;
                 & a {
                     background: none;
                     border: none;
@@ -75,41 +69,32 @@
             }
         }
     }
-
-         & #whatsinthebox {
-            max-width:850px;
-            margin:0 auto;
-        }
-
+    & #whatsinthebox {
+        max-width: 850px;
+        margin: 0 auto;
+    }
     & > div.resp-tabs-container {
-
-        max-width:$screenOuter;
-        margin:0 auto;
-
+        max-width: $screenOuter;
+        margin: 0 auto;
         @include media($screenLarge) {
-
             &:first-child {
                 border-left: 1px solid $gray;
             }
         }
-    } 
+    }
 }
 
-
-ul.resp-tabs-list, p {
-}
+ul.resp-tabs-list, p {}
 
 .resp-tabs-list li {
     font-weight: 600;
-
     @include media($screenLarge) {
         font-weight: 300;
     }
 
     &:hover {
-        background:$blueMediumDark;
+        background: $blueMediumDark;
     }
-
     display: inline-block;
     padding: $spacingSection 5%;
     margin: 0;
@@ -127,7 +112,7 @@ h6.resp-accordion {
     cursor: pointer;
     @include pad(0 default);
     display: none;
-    color:white;
+    color: white;
 }
 
 .resp-tab-content {
@@ -141,7 +126,7 @@ h6.resp-accordion {
 .resp-tab-active {
     border-bottom: none;
     background-color: #fff;
-    color:$blueDark;
+    color: $blueDark;
 }
 
 .resp-content-active, .resp-accordion-active {
@@ -149,8 +134,8 @@ h6.resp-accordion {
 }
 
 .resp-tab-content {
-    @include media($screenLarge) {
-    }
+    @include media($screenLarge) {}
+
     & > article {
         @include pad($spacingSectionLarge default);
     }
@@ -165,13 +150,14 @@ h6.resp-tab-active {
     border-bottom: 0px solid #c1c1c1 !important;
     margin-bottom: 0px !important;
     padding: 16px 15px !important;
-    color:$blueDark;
+    color: $blueDark;
 }
 
 h6.resp-tab-title:last-child {
     border-bottom: 12px solid #c1c1c1 !important;
     background: blue;
 }
+
 /*-----------Vertical tabs-----------*/
 .resp-vtabs ul.resp-tabs-list {
     float: left;
@@ -212,31 +198,31 @@ h6.resp-tab-title:last-child {
     width: 0;
     height: 0;
     float: right;
-    position:relative;
-    left:-14px;
+    position: relative;
+    left: -14px;
     margin-top: 3px;
-    content:'▶';
-    opacity:0.4;
-    font-size:12px;
+    content: 'Γò¼├┤Γö£Γòù╬ô├▓├│';
+    opacity: 0.4;
+    font-size: 12px;
 }
 
 h6.resp-tab-active span.resp-arrow:after {
-    content:'▼';
-    opacity:0.8;
+    content: 'Γò¼├┤Γö£Γòù╬ô├▓┬Ñ';
+    opacity: 0.8;
 }
 
 /*-----------Accordion styles-----------*/
 h6.resp-tab-active {
     background: $blueDark;
 }
-.resp-easy-accordion  h6.resp-accordion {
-        display: block;
-}
-.resp-easy-accordion .resp-tab-content {
+
+.resp-easy-accordion h6.resp-accordion {
+    display: block;
 }
 
-.resp-easy-accordion .resp-tab-content:last-child {
-}
+.resp-easy-accordion .resp-tab-content {}
+
+.resp-easy-accordion .resp-tab-content:last-child {}
 
 .resp-jfit {
     width: 100%;
@@ -247,22 +233,17 @@ h6.resp-tab-active {
     display: block;
 }
 
-h6.resp-accordion:first-child {
-}
+h6.resp-accordion:first-child {}
 
 /*Here your can change the breakpoint to set the accordion, when screen resolution changed*/
 @media only screen and (max-width: 768px) {
     ul.resp-tabs-list {
         display: none;
     }
-
     h6.resp-accordion {
         display: block;
     }
-
-    .resp-vtabs .resp-tab-content {
-    }
-
+    .resp-vtabs .resp-tab-content {}
     .resp-vtabs .resp-tabs-container {
         border: none;
         float: none;
@@ -271,8 +252,7 @@ h6.resp-accordion:first-child {
         clear: none;
     }
     .resp-accordion-closed {
-        display:none !important;
+        display: none !important;
     }
-    .resp-vtabs .resp-tab-content:last-child {
-    }
+    .resp-vtabs .resp-tab-content:last-child {}
 }

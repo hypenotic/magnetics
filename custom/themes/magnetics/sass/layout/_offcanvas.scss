@@ -16,20 +16,18 @@ Nav Panel
 */
 
 .panel {
-
     -webkit-overflow-scrolling: touch;
     height: 100%;
     overflow: auto;
-    overflow-x:hidden;
+    overflow-x: hidden;
     padding-top: 40px;
     position: fixed;
     right: -15em;
     top: 0;
     width: 15em;
     z-index: 999999;
-    background:$blueDark;
-    box-shadow:inset 10px 0px 50px rgba(0,0,0,0.2);
-
+    background: $blueDark;
+    box-shadow: inset 10px 0px 50px rgba(0, 0, 0, 0.2);
     @include media($screenLarge) {
         right: -40em;
         width: 40em !important;
@@ -54,16 +52,14 @@ Nav Panel
             width: 20px;
         }
     }
-
     & a:after {
-        border-bottom:1px solid;
-        display:block;
-        opacity:0.5;
-        content:'';
+        border-bottom: 1px solid;
+        display: block;
+        opacity: 0.5;
+        content: '';
     }
-
     & ul#menu-main-menu > li {
-         font-weight:800;
+        font-weight: 800;
     }
     ul {
         //@include adjust-font-size-to(15px);
@@ -72,48 +68,41 @@ Nav Panel
         padding: 0;
         width: 100%;
         li {
-
-
-
-            transition:border-left 0.2s ease-in-out;
+            transition: border-left 0.2s ease-in-out;
             &:hover {
-               background: transparent;
-               a {
+                background: transparent;
+                a {
                     color: $orange;
-               }
+                }
             }
             @include media($screenLarge) {
-                padding:4px 30px 4px 84px;
-
+                padding: 4px 30px 4px 84px;
             }
 
             & li {
                 @include media($screenLarge) {
-                    border-left:0px;
+                    border-left: 0px;
                     &:hover {
-                        border-left:0px;
+                        border-left: 0px;
                     }
-                    padding:4px 30px 4px 0px;
-
-                    width:12em;
-                    float:left;
+                    padding: 4px 30px 4px 0px;
+                    width: 12em;
+                    float: left;
                 }
             }
             & li a {
-                font-size:0.8em;
-                padding:4px 30px 4px 34px;
-
+                font-size: 0.8em;
+                padding: 4px 30px 4px 34px;
             }
             list-style: none;
             margin: 0;
             padding: 0;
             &.current-menu-item {
                 & ul.sub-menu li {
-                    font-weight:normal;
+                    font-weight: normal;
                     a {
-                        color: rgba(255,255,255,0.7);
-                        &:hover {
-                        }
+                        color: rgba(255, 255, 255, 0.7);
+                        &:hover {}
                     }
                 }
                 a {
@@ -123,39 +112,39 @@ Nav Panel
             a {
                 font-size: 1em;
                 line-height: 1.63636em;
-                color: rgba(255,255,255,0.9);
+                color: rgba(255, 255, 255, 0.9);
                 display: inline-block;
                 margin: 18px 30px;
-                padding:0;
+                padding: 0;
                 text-decoration: none;
-                line-height:100%;
+                line-height: 100%;
                 &:hover {
-                    color:$orange;
+                    color: $orange;
                 }
             }
         }
         &.sub-menu {
-            margin-left:30px;
+            margin-left: 30px;
             li {
                 @include transition(all 0.3s);
                 a {
-                    font-weight:normal;
-                    color: rgba(255,255,255,0.7);
-                    display:inline-block;
-                    margin-left:0;
-                    text-align:left;
-                    padding-left:0;
-                    margin:5px 0;
+                    font-weight: normal;
+                    color: rgba(255, 255, 255, 0.7);
+                    display: inline-block;
+                    margin-left: 0;
+                    text-align: left;
+                    padding-left: 0;
+                    margin: 5px 0;
                     &:hover {
-                        color:$orange;
+                        color: $orange;
                     }
                 }
                 &.current-menu-item {
                     & a {
-                        color:$orange;
+                        color: $orange;
                     }
                     & a:hover {
-                        color:$orange;
+                        color: $orange;
                     }
                 }
             }
@@ -168,25 +157,27 @@ Nav Panel
     right: 30px;
     top: 33%;
 }
+
 body .dark #nav-toggle {
-    border-color:$blueDark !important;
+    border-color: $blueDark !important;
     & span {
         &:after, &:before {
-          background:$blueDark !important;          
+            background: $blueDark !important;
         }
-        background:$blueDark !important;
+        background: $blueDark !important;
     }
 }
+
 #nav-toggle:not(.active) {
-    text-shadow:6px 6px 0px rgba(0,0,0,0.4);
+    text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.4);
     cursor: pointer;
     padding: 15px 33px 18px 8px;
     border: 2px solid white;
     display: block;
     margin-right: -10px;
-    box-shadow:3px 3px 0px rgba(0,0,0,0.4);
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4);
     span {
-        box-shadow:3px 3px 0px rgba(0,0,0,0.4);
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4);
         cursor: pointer;
         height: 3px;
         width: 25px;
@@ -198,11 +189,8 @@ body .dark #nav-toggle {
 }
 
 nav#toggler {
-    z-index:1000000;
+    z-index: 1000000;
 }
-
-
-
 
 #nav-toggle.active {
     cursor: pointer;
@@ -211,7 +199,6 @@ nav#toggler {
     display: block;
     position: fixed;
     right: 20px;
-
     span {
         cursor: pointer;
         height: 3px;
@@ -220,13 +207,12 @@ nav#toggler {
         position: absolute;
         display: block;
         content: '';
-        text-shadow:none;
+        text-shadow: none;
     }
 }
 
-
 #nav-toggle span:before, #nav-toggle span:after {
-    box-shadow:3px 3px 0px rgba(0,0,0,0.4);
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4);
     cursor: pointer;
     height: 3px;
     width: 25px;
@@ -254,7 +240,7 @@ nav#toggler {
 
 #nav-toggle.active span:before, #nav-toggle.active span:after {
     background: white !important;
-    box-shadow:0px 0px 0px !important;
+    box-shadow: 0px 0px 0px !important;
     top: 0;
 }
 
@@ -274,20 +260,20 @@ nav#toggler {
 
 body.archive.products {
     & #nav-toggle span:before, #nav-toggle span:after, #nav-toggle span {
-            cursor: pointer;
-            height: 3px;
-            width: 25px;
-            position: absolute;
-            display: block;
-            content: '';
-            background: white;
+        cursor: pointer;
+        height: 3px;
+        width: 25px;
+        position: absolute;
+        display: block;
+        content: '';
+        background: white;
+    }
+    & #toggler {
+        opacity: 0.8;
+        & .menu-btn.text {
+            color: white;
         }
-        & #toggler{
-            opacity:0.8;
-            & .menu-btn.text {
-                color: white;
-            }
-        }
+    }
 }
 
 /*!
@@ -378,4 +364,3 @@ x-object-fit > .x-object-fit-wider {
     left: 0 !important;
     right: auto !important;
 }
-

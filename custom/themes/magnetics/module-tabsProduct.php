@@ -7,10 +7,7 @@
     $metaPlaysWellWith = get_post_meta($postID, '_product_tabs_plays_well_with', true);
     $metaSystemAtAGlance = get_post_meta($postID, '_product_tabs_system_at_a_glance', true);
 
-
     if($metaWhatsInTheBox || (isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== '')) || ($metaIntegrations[0] != 0) || ($metaSystemAtAGlance[0] != 0)) {
-
-
 ?>
 
 
@@ -20,7 +17,7 @@
 
         <ul class="resp-tabs-list">
             <?php if($metaSystemAtAGlance[0] != 0)  { ?>
-            <li>
+            <li aria-controls="systemataglance">
                 <span>System At a Glance</span>
             </li>     
             <?php } ?>
@@ -30,13 +27,13 @@
             </li>
             <?php } ?>
              <?php if(isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== ''))  { ?>
-            <li >
+            <li aria-controls="additionaloptions">
                 <span>Additional Options</span>
             </li>
             <?php } ?>
 
             <?php if($metaIntegrations[0] != 0)  { ?>
-             <li >
+             <li aria-controls="integrations">
                 <span>Integrations</span>
             </li>
             <?php } ?>
@@ -56,8 +53,13 @@
 						 if($metaSystemAtAGlance) {
 								foreach($metaSystemAtAGlance as $image) { ?>
 								<?php 
+									//print_r($image);
 									if ($image) {
-										echo wp_get_attachment_image($image, 'full', 'class=item');
+										$src=wp_get_attachment_image_src($image,'full');
+										echo "<div class='gimages'>";
+											echo "<img src='".$src[0]."'>";
+										echo "</div>";
+										//echo wp_get_attachment_image($image, 'full', 'class=item');
 									}
 								?>
 						<?php 	}
@@ -140,7 +142,7 @@
 
             <?php
            if(isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== ''))  { ?>
-           <div id="additionaloptions">
+           <div id="additionaloptions" aria-controls="additionaloptions">
                     
                 <?php foreach ( $metaAdditionalOptions as $option ) { ?>
                 <h3 id="<?php sanitize_title($option['_title']); ?>"><?php echo $option['_title']; ?></h3>
@@ -155,7 +157,7 @@
 
 
             <?php if($metaIntegrations[0] != 0)  { ?>
-            <div id="integrations"> 
+            <div id="integrations" aria-controls="integrations"> 
             <?php
 
             if($metaIntegrations) {

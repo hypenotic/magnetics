@@ -19,15 +19,13 @@
 ///   }
 
 @mixin direction-context($direction: left-to-right) {
-  $scope-direction: $layout-direction;
-
-  @if to-lower-case($direction) == "left-to-right" {
-    $layout-direction: LTR !global;
-  } @else if to-lower-case($direction) == "right-to-left" {
-    $layout-direction: RTL !global;
-  }
-
-  @content;
-
-  $layout-direction: $scope-direction !global;
+    $scope-direction: $layout-direction;
+    @if to-lower-case($direction) == "left-to-right" {
+        $layout-direction: LTR !global;
+    }
+    @else if to-lower-case($direction) == "right-to-left" {
+        $layout-direction: RTL !global;
+    }
+    @content;
+    $layout-direction: $scope-direction !global;
 }

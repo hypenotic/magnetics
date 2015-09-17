@@ -2,30 +2,24 @@ body.products.single > header, body.about > header, body.category-products > hea
     background: none;
 }
 
-
 body > header {
-
     & .container {
-        max-width:1080px;
-        margin:0 auto;
-
+        max-width: 1080px;
+        margin: 0 auto;
         @include media($screenLarge) {
             padding: 0 2.37%;
         }
-
     }
-
     background: $gray;
-    z-index:10000;
+    z-index: 10000;
     @include pad(25px 0 14px default);
     @include media($screenMedium) {
         padding: em($fontSizeSmall) 25px;
     }
 
-    &  a.logo {
+    & a.logo {
         display: inline-block;
-        @include media($screenOuter) {
-        }
+        @include media($screenOuter) {}
 
         & img {
             height: auto;
@@ -35,7 +29,6 @@ body > header {
             }
         }
     }
-    
 }
 
 nav#toggler {
@@ -45,27 +38,23 @@ nav#toggler {
     right: 8.5298%;
     z-index: 1000000;
     text-align: center;
-    color:$blueDark;
-
+    color: $blueDark;
     &.transparent * {
-        color:rgba(255,255,255,0) !important;
+        color: rgba(255, 255, 255, 0) !important;
     }
-    
     .menu-btn {
         font-family: $fontIcons;
         content: '\f0c9';
     }
     a span {
-        border:0px;
+        border: 0px;
     }
     .menu-btn.text {
         font-family: $fontPrimary;
         display: none;
-        
         &.white {
-            color:white;
+            color: white;
         }
-
         @include media($screenLarge) {
             display: block;
             margin-right: 48px;
