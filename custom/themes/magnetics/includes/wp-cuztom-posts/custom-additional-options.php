@@ -3,7 +3,7 @@
 $args = array(
 	'has_archive' => true,
 	//'menu_position' => 5,
-	'menu_icon' => 'dashicons-admin-plugins', //http://melchoyce.github.io/dashicons/
+	'menu_icon' => 'dashicons-images-alt', //http://melchoyce.github.io/dashicons/
 	'supports'	=> array( 'title', 'editor' ),
  	);
 
