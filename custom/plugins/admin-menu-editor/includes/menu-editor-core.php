@@ -77,6 +77,11 @@ class WPMenuEditor extends MenuEd_ShadowPluginFramework {
 	private $get = array();
 	private $originalPost = array();
 
+	/**
+	 * @var array A cache of user role names indexed by user ID. E.g. [123 => array("administrator", "foo")]
+	 */
+	private $cached_user_roles = array();
+
 	function init(){
 		$this->sitewide_options = true;
 
@@ -119,7 +124,9 @@ class WPMenuEditor extends MenuEd_ShadowPluginFramework {
 		$this->settings_link = 'options-general.php?page=menu_editor';
 		
 		$this->magic_hooks = true;
-		$this->magic_hook_priority = 99999;
+		//Run our hooks last (almost). Priority is less than PHP_INT_MAX mostly for defensive programming purposes.
+		//Old PHP versions have known bugs related to large array keys, and WP might have undiscovered edge cases.
+		$this->magic_hook_priority = PHP_INT_MAX - 10;
 		
 		//AJAXify screen options
 		add_action('wp_ajax_ws_ame_save_screen_options', array($this,'ajax_save_screen_options'));
@@ -147,6 +154,14 @@ class WPMenuEditor extends MenuEd_ShadowPluginFramework {
 
 		//Tell first-time users where they can find the plugin settings page.
 		add_action('all_admin_notices', array($this, 'display_plugin_menu_notice'));
+
+		//Workaround for buggy plugins that unintentionally remove user roles.
+		/** @see WPMenuEditor::get_user_roles */
+		add_action('set_current_user', array($this, 'update_current_user_cache'), 1, 0); //Run before most plugins.
+		add_action('updated_user_meta', array($this, 'clear_user_role_cache'), 10, 2);
+		add_action('deleted_user_meta', array($this, 'clear_user_role_cache'), 10, 2);
+		//There's also a "set_user_role" hook, but it's only called by WP_User::set_role and not WP_User::add_role.
+		//It's also redundant - WP_User::set_role updates user meta, so the above hooks already cover it.
 	}
 	
 	function init_finish() {
@@ -272,6 +287,10 @@ class WPMenuEditor extends MenuEd_ShadowPluginFramework {
 		$this->apply_woocommerce_compat_fix();
 		//Compatibility fix for WordPress Mu Domain Mapping.
 		$this->apply_wpmu_domain_mapping_fix();
+		//As of WP 3.5, the "Links" menu is hidden by default.
+		if ( !current_user_can('manage_links') ) {
+			$this->remove_link_manager_menus();
+		}
 
 		//Generate item templates from the default menu.
 		$this->item_templates = $this->build_templates($this->default_wp_menu, $this->default_wp_submenu);
@@ -301,6 +320,7 @@ class WPMenuEditor extends MenuEd_ShadowPluginFramework {
 					$message .= '<p><strong>Admin Menu Editor security log</strong></p>';
 					$message .= $this->get_formatted_security_log();
 				}
+				do_action('admin_page_access_denied');
 				wp_die($message);
 			} else {
 				$this->log_security_note('ALLOW access.');
@@ -535,7 +555,7 @@ class WPMenuEditor extends MenuEd_ShadowPluginFramework {
 		$users[$current_user->get('user_login')] = array(
 			'user_login' => $current_user->get('user_login'),
 			'id' => $current_user->ID,
-			'roles' => array_values($current_user->roles),
+			'roles' => array_values($this->get_user_roles($current_user)),
 			'capabilities' => $this->castValuesToBool($current_user->caps),
 			'is_super_admin' => is_multisite() && is_super_admin(),
 		);
@@ -1482,6 +1502,9 @@ class WPMenuEditor extends MenuEd_ShadowPluginFramework {
 
 					return;
 				}
+
+				//Sanitize menu item properties.
+				$menu['tree'] = ameMenu::sanitize($menu['tree']);
 
 				//Save the custom menu
 				$this->set_custom_menu($menu);
@@ -2478,6 +2501,115 @@ class WPMenuEditor extends MenuEd_ShadowPluginFramework {
 		if ( ($priority !== false) && (has_filter('plugins_url', 'domain_mapping_post_content') !== false) ) {
 			remove_filter('plugins_url', 'domain_mapping_plugins_uri', $priority);
 		}
+	}
+
+	/**
+	 * As of WP 3.5, the Links Manager is hidden by default. It's only visible if the user has existing links
+	 * or they choose to enable it by installing the Links Manager plugin.
+	 *
+	 * However, the "Links" menu still exists. This can be confusing to users who will now see an apparently
+	 * useless menu item that can't be enabled (since they don't have the Links Manager plugin) and can't be
+	 * deleted either (since it's a default menu). To remedy that, hide the default "Links" menu.
+	 */
+	private function remove_link_manager_menus() {
+		//Find the "Links" menu.
+		$links_index = null;
+		$links_slug = null;
+		foreach($this->default_wp_menu as $index => $menu) {
+			if ( ($menu[1] === 'manage_links') && isset($menu[5]) && ($menu[5] === 'menu-links') ) {
+				$links_index = $index;
+				$links_slug = $menu[2];
+			}
+		}
+
+		//Remove the default "Links" submenus, but leave custom items created by other plugins.
+		if ( isset($this->default_wp_submenu[$links_slug]) ) {
+			$this->default_wp_submenu[$links_slug] = array_filter(
+				$this->default_wp_submenu[$links_slug],
+				array($this, 'filter_default_links_submenus')
+			);
+			if ( empty($this->default_wp_submenu[$links_slug]) ) {
+				unset($this->default_wp_submenu[$links_slug]);
+			}
+		}
+
+		//Remove the "Links" menu itself if it no longer has any children.
+		if ( !isset($this->default_wp_submenu[$links_slug]) ) {
+			unset($this->default_wp_menu[$links_index]);
+		}
+	}
+
+	private function filter_default_links_submenus($item) {
+		$default_items = array('link-manager.php', 'link-add.php', 'edit-tags.php?taxonomy=link_category');
+		$is_default = isset($item[2]) && in_array($item[2], $default_items);
+		return !$is_default;
+	}
+
+	/**
+	 * Get the names of the roles that a user belongs to.
+	 *
+	 * "Why not just read the $user->roles array directly?", you may ask. Because some popular plugins have a really
+	 * nasty bug where they inadvertently remove entries from that array. Specifically, they retrieve the first user
+	 * role like this:
+	 *
+	 * $roleName = array_shift($currentUser->roles);
+	 *
+	 * What some plugin developers fail to realize is that, in addition to returning the first entry, array_shift()
+	 * also *removes* it from the array. As a result, $user->roles is now missing one of the user's roles. This bug
+	 * doesn't cause major problems only because most plugins check capabilities and don't care about roles as such.
+	 * AME needs to know to determine menu permissions for different roles.
+	 *
+	 * Known buggy plugins:
+	 * - W3 Total Cache 0.9.4.1
+	 *
+	 * The current workaround is to cache the role list before it can get corrupted by other plugins. This approach
+	 * has its own risks (cache invalidation is hard), but it should be reasonably safe assuming that everyone uses
+	 * only standard WP APIs to modify user roles (e.g. @see WP_User::add_role ).
+	 *
+	 * @param WP_User $user
+	 * @return array
+	 */
+	public function get_user_roles($user) {
+		if ( empty($user) ) {
+			return array();
+		}
+		if ( !$user->exists() ) {
+			return $user->roles;
+		}
+
+		if ( !isset($this->cached_user_roles[$user->ID]) ) {
+			//Note: In rare cases, WP_User::$roles can be false. For AME it's more convenient to have an empty list.
+			$this->cached_user_roles[$user->ID] = !empty($user->roles) ? $user->roles : array();
+		}
+		return $this->cached_user_roles[$user->ID];
+	}
+
+	/**
+	 * The current user has changed; cache their roles.
+	 */
+	public function update_current_user_cache() {
+		$user = wp_get_current_user();
+		if ( empty($user) || !$user->exists() ) {
+			return;
+		}
+
+		$this->cached_user_roles[$user->ID] = $user->roles;
+	}
+
+	/**
+	 * User metadata was updated or deleted; invalidate the role cache.
+	 *
+	 * Not all metadata updates are related to role changes, but filtering them is non-trivial (meta keys change)
+	 * and not really necessary for our purposes.
+	 *
+	 * @param int|array $unused_meta_id
+	 * @param int $user_id
+	 */
+	public function clear_user_role_cache(/** @noinspection PhpUnusedParameterInspection */$unused_meta_id, $user_id) {
+		if ( empty($user_id) || !is_numeric($user_id) ) {
+			return;
+		}
+		unset($this->cached_user_roles[$user_id]);
 	}
 
 	/**
