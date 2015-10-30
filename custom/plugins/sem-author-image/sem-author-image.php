@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Author Image
-Plugin URI: http://www.semiologic.com/software/author-image/
+Plugin URI: https://www.semiologic.com/software/author-image/
 Description: Adds authors images to your site, which individual users can configure in their profile. Your wp-content folder needs to be writable by the server.
-Version: 4.8
+Version: 4.9.3
 Author: Denis de Bernardy & Mike Koepke
-Author URI: http://www.getsemiologic.com
+Author URI: https://www.semiologic.com
 Text Domain: sem-author-image
 Domain Path: /lang
 License: Dual licensed under the MIT and GPLv2 licenses
@@ -110,7 +110,7 @@ class author_image extends WP_Widget {
    			'description' => __('Displays the post author\'s image', 'sem-author-image'),
    			);
 
-   		$this->WP_Widget('author_image', __('Author Image', 'sem-author-image'), $widget_ops);
+   		parent::__construct('author_image', __('Author Image', 'sem-author-image'), $widget_ops);
    	} # author_image()
 
 
@@ -376,21 +376,26 @@ class author_image extends WP_Widget {
      * @return string $image
      */
 
-	static function get_author_image($author_id, $width = null, $height = null) {
+	static function get_author_image($author_id, $width = null, $height = null, $avatar = false) {
 
    		$author_image = author_image::get_author_image_url($author_id);
 
 	    if ( $author_image != '' ) {
 		    $author_name = author_image::get_author_name($author_id);
 
+		    $image_class = '';
+		    if ($avatar) {
+			    $image_class = 'class="avatar photo"';
+		    }
+
 	        if ( !empty($width) ) {
 		        if ( empty ($height) )
 			        $height = $width;
-		            $author_image = '<img src="' . esc_url($author_image) . '" alt="' . $author_name
+		            $author_image = '<img src="' . esc_url($author_image) . '" ' . $image_class . ' alt="' . $author_name
 		               . '" width="'. $width . '" height="' . $height . '" />';
 	        }
 		    else {
-	            $author_image = '<img src="' . esc_url($author_image) . '" alt="' . $author_name
+	            $author_image = '<img src="' . esc_url($author_image) . '" ' . $image_class . ' alt="' . $author_name
 	                . '" />';
 		    }
 	    }
@@ -493,7 +498,7 @@ class author_image extends WP_Widget {
 		echo '<p>'
 			. '<label>'
 			. '<input type="checkbox"'
-			. ' name="'. $this->get_field_name('bio') . '"'
+			. ' name="'. $this->get_field_name('bio') . '" '
 			. checked($bio, true, false)
 			. ' />'
 			. '&nbsp;' . __('Display the author\'s bio', 'sem-author-image')
@@ -503,7 +508,7 @@ class author_image extends WP_Widget {
 		echo '<p>'
 			. '<label>'
 			. '<input type="checkbox"'
-			. ' name="'. $this->get_field_name('link') . '"'
+			. ' name="'. $this->get_field_name('link') . '" '
 			. checked($link, true, false)
 			. ' />'
 			. '&nbsp;' . __('Link to the author\'s posts', 'sem-author-image')
@@ -513,7 +518,7 @@ class author_image extends WP_Widget {
 		echo '<p>'
 			. '<label>'
 			. '<input type="checkbox"'
-			. ' name="'. $this->get_field_name('always') . '"'
+			. ' name="'. $this->get_field_name('always') . '" '
 			. checked($always, true, false)
 			. ' />'
 			. '&nbsp;' . __('This site has a single author', 'sem-author-image')
@@ -557,7 +562,10 @@ class author_image extends WP_Widget {
 	static function get_meta($author_id) {
 		$user = get_userdata($author_id);
 		$author_login = $user->user_login;
-		
+
+//		if ( empty( $user->user_login ) )
+//			return false;
+
 		if ( defined('GLOB_BRACE') ) {
 			if ( $author_image = glob(WP_CONTENT_DIR . '/authors/' . $author_login . '{,-*}.{jpg,jpeg,png}', GLOB_BRACE) )
 				$author_image = current($author_image);
@@ -602,6 +610,8 @@ class author_image extends WP_Widget {
         return $author_name;
     }
 
+
+
 	/**
 	 * upgrade()
 	 *
@@ -631,6 +641,8 @@ $author_image = author_image::get_instance();
 /**
  * the_author_image()
  *
+ * This is the full html link wrapped in a div and echoed to the webpage
+ *
  * @param int $author_id
  * @return void
  */
@@ -639,8 +651,24 @@ function the_author_image($author_id = null) {
 	echo author_image::get($author_id, null);
 } # the_author_image()
 
+
+/**
+ * get_author_image()
+ *
+ *  This is the full html link wrapped in a div and returned for further processing by a theme or plugin
+ *
+ * @param int $author_id
+ * @return string
+ */
+
+function get_author_image($author_id = null) {
+	return author_image::get($author_id, null);
+}
+
 /**
  * the_author_image_size()
+ *
+ *  This is the full html link wrapped in a div and echoed to the webpage.  The output size is passed in.
  *
  * @param int $width
  * @param int $height
@@ -656,6 +684,8 @@ function the_author_image_size($width, $height, $author_id = null) {
 /**
  * the_author_image_url()
  *
+ * This simply returns the url for the given author
+ *
  * @param null $author_id
  * @return string
  */
@@ -670,6 +700,18 @@ function the_author_image_url($author_id = null) {
  * @return void
  **/
 
+/**
+ * shortcode_callback()
+ *
+ * @return void
+ **/
+function shortcode_callback() {
+
+	the_author_image();
+}
+
+add_shortcode( 'author-image', 'shortcode_callback' );
+
 
 if ( !function_exists( 'get_avatar' ) ) :
 /**
@@ -683,7 +725,7 @@ if ( !function_exists( 'get_avatar' ) ) :
  * @param string $alt Alternative text to use in image tag. Defaults to blank
  * @return string <img> tag for the user's avatar
 */
-function get_avatar( $id_or_email, $size = '96', $default = '', $alt = false ) {
+function get_avatar( $id_or_email, $size = 96, $default = '', $alt = '', $args = null ) {
 	if ( ! get_option('show_avatars') )
 		return false;
 
@@ -695,6 +737,7 @@ function get_avatar( $id_or_email, $size = '96', $default = '', $alt = false ) {
 	if ( !is_numeric($size) )
 		$size = '96';
 
+	// find avatar for user
 	$email = '';
     $id = '';
 	if ( is_numeric($id_or_email) ) {
@@ -728,67 +771,82 @@ function get_avatar( $id_or_email, $size = '96', $default = '', $alt = false ) {
             $id = $user->ID;
     }
 
+	if ( ! $args['force_display'] && ! get_option( 'show_avatars' ) ) {
+		return false;
+	}
+
     $avatar = '';
     if ( $id && !is_admin() ) {
-        $avatar = author_image::get_instance()->get_author_image($id, $size);
+        $avatar = author_image::get_instance()->get_author_image($id, $size, $size, true);
     }
 
     if ( empty($avatar) ) {
+	    if ( empty($default) ) {
+	     $avatar_default = get_option('avatar_default');
+	     if ( empty($avatar_default) )
+	         $default = 'mystery';
+	     else
+	         $default = $avatar_default;
+	    }
 
-        if ( empty($default) ) {
-            $avatar_default = get_option('avatar_default');
-            if ( empty($avatar_default) )
-                $default = 'mystery';
-            else
-                $default = $avatar_default;
-        }
+		if ( !empty($email) )
+	        $email_hash = md5( strtolower( trim( $email ) ) );
 
-        if ( !empty($email) )
-            $email_hash = md5( strtolower( trim( $email ) ) );
+		if ( is_ssl() ) {
+		    $host = 'https://secure.gravatar.com';
+		} else {
+		    if ( !empty($email) )
+		        $host = sprintf( "http://%d.gravatar.com", ( hexdec( $email_hash[0] ) % 2 ) );
+		    else
+		         $host = 'http://0.gravatar.com';
+		}
 
-        if ( is_ssl() ) {
-            $host = 'https://secure.gravatar.com';
-        } else {
-            if ( !empty($email) )
-                $host = sprintf( "http://%d.gravatar.com", ( hexdec( $email_hash[0] ) % 2 ) );
-            else
-                $host = 'http://0.gravatar.com';
-        }
+		if ( 'mystery' == $default )
+		    $default = "$host/avatar/ad516503a11cd5ca435acc9bb6523536?s={$size}"; // ad516503a11cd5ca435acc9bb6523536 == md5('unknown@gravatar.com')
+		elseif ( 'blank' == $default )
+		    $default = $email ? 'blank' : includes_url( 'images/blank.gif' );
+		elseif ( !empty($email) && 'gravatar_default' == $default )
+		    $default = '';
+		elseif ( 'gravatar_default' == $default )
+		    $default = "$host/avatar/?s={$size}";
+		elseif ( empty($email) )
+		    $default = "$host/avatar/?d=$default&amp;s={$size}";
+		elseif ( strpos($default, 'http://') === 0 )
+		    $default = esc_url( add_query_arg( 's', $size, $default ) );
 
-        if ( 'mystery' == $default )
-            $default = "$host/avatar/ad516503a11cd5ca435acc9bb6523536?s={$size}"; // ad516503a11cd5ca435acc9bb6523536 == md5('unknown@gravatar.com')
-        elseif ( 'blank' == $default )
-            $default = $email ? 'blank' : includes_url( 'images/blank.gif' );
-        elseif ( !empty($email) && 'gravatar_default' == $default )
-            $default = '';
-        elseif ( 'gravatar_default' == $default )
-            $default = "$host/avatar/?s={$size}";
-        elseif ( empty($email) )
-            $default = "$host/avatar/?d=$default&amp;s={$size}";
-        elseif ( strpos($default, 'http://') === 0 )
-            $default = add_query_arg( 's', $size, $default );
+		if ( !empty($email) ) {
+		    $out = "$host/avatar/";
+		    $out .= $email_hash;
+		    $out .= '?s='.$size;
+		    $out .= '&amp;d=' . urlencode( $default );
 
-        if ( !empty($email) ) {
-            $out = "$host/avatar/";
-            $out .= $email_hash;
-            $out .= '?s='.$size;
-            $out .= '&amp;d=' . urlencode( $default );
+		    $rating = get_option('avatar_rating');
+		    if ( !empty( $rating ) )
+		        $out .= "&amp;r={$rating}";
 
-            $rating = get_option('avatar_rating');
-            if ( !empty( $rating ) )
-                $out .= "&amp;r={$rating}";
-
-	        $out = str_replace( '&#038;', '&amp;', esc_url( $out ) );
-            $avatar = "<img alt='{$safe_alt}' src='{$out}' class='avatar avatar-{$size} photo' height='{$size}' width='{$size}' />";
-        } else {
-	        $out = esc_url( $default );
-            $avatar = "<img alt='{$safe_alt}' src='{$out}' class='avatar avatar-{$size} photo avatar-default' height='{$size}' width='{$size}' />";
-        }
+			$out = str_replace( '&#038;', '&amp;', esc_url( $out ) );
+		        $avatar = "<img alt='{$safe_alt}' src='{$out}' class='avatar avatar-{$size} photo' height='{$size}' width='{$size}' />";
+		} else {
+			$out = esc_url( $default );
+		    $avatar = "<img alt='{$safe_alt}' src='{$out}' class='avatar avatar-{$size} photo avatar-default' height='{$size}' width='{$size}' />";
+		}
     }
 
-	return apply_filters('get_avatar', $avatar, $id_or_email, $size, $default, $alt);
+	/**
+	 * Filter the avatar to retrieve.
+	 *
+	 * @since 2.5.0
+	 *
+	 * @param string            $avatar      Image tag for the user's avatar.
+	 * @param int|object|string $id_or_email A user ID, email address, or comment object.
+	 * @param int               $size        Square avatar width and height in pixels to retrieve.
+	 * @param string            $alt         Alternative text to use in the avatar image tag.
+	 *                                       Default empty.
+	 */
+	return apply_filters( 'get_avatar', $avatar, $id_or_email, $size, $default, $alt );
 }
 endif;
+
 
 if ( !function_exists('load_multipart_user') ) :
 function load_multipart_user() {
