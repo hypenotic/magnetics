@@ -42,7 +42,7 @@ jQuery("#field_placeholder").val(field["placeholder"]);
 
 /* We use jQuery to read the placeholder value and inject it to its field */
 
-add_action('gform_enqueue_scripts',"my_gform_enqueue_scripts", 10, 2);
+//add_action('gform_enqueue_scripts',"my_gform_enqueue_scripts");
 
 function my_gform_enqueue_scripts($form, $is_ajax=false){
 ?>
@@ -72,5 +72,5 @@ jQuery('#input_<?php echo $form['id']?>_<?php echo $field['id']?>').attr('placeh
 });
 </script>
 <?php
-}
+} 
 ?>

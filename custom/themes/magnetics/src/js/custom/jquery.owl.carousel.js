@@ -729,7 +729,7 @@
 
 		// get stage position left
 		this.drag.offsetX = this.$stage.position().left;
-		this.drag.offsetY = this.$stage.position().top;
+		this.drag.offsetY = this.$stage.offset().top;
 
 		if (this.settings.rtl) {
 			this.drag.offsetX = this.$stage.position().left + this.$stage.width() - this.width()
