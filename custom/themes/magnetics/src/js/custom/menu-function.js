@@ -8,8 +8,6 @@ jQuery(document).ready(function() {
 	  } else {
 	  	jQuery('nav#toggler').removeClass('transparent');
 	  }
-
 	});
-
 });
 

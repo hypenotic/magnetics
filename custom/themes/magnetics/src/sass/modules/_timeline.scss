@@ -27,9 +27,9 @@
     @include dot;
     width: 24px;
     height: 24px;
-    background: $gray url(images/quoteEndWhite.png);
+    background: $gray url(dist/images/quoteEndWhite.png);
     @include media($screenLarge) {
-        background: $blueDark url(images/quoteEndWhite.png) 45% 47%;
+        background: $blueDark url(dist/images/quoteEndWhite.png) 45% 47%;
         width: 70px;
         height: 70px;
     }

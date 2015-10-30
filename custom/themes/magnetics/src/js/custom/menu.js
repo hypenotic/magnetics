@@ -102,7 +102,7 @@ jQuery(document).ready(function() {
   var waypoints = jQuery('.banner, header.masthead').waypoint({
     handler: function(direction) {
       jQuery('#toggler').toggleClass('white');
-      console.log('hit');
+      //console.log('hit');
     }
   });
 
