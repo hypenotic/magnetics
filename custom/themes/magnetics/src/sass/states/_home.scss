@@ -1,0 +1,92 @@
+.home {
+    display: flex !important;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    min-height: 500px;
+    section[role="main"] {
+        max-width: $screenOuter;
+        width: 90%;
+        color: white;
+        @include pad(0 default);
+        @include media($screenLarge) {
+            padding: 0 2.37%;
+            margin: 0 auto;
+            width: 100%;
+        }
+    }
+    video {
+        object-fit: fill;
+        height: 150%;
+    }
+    h1 {
+        @include media($screenMedium) {
+            margin-top: 70px;
+            line-height: 0.9em;
+            & small {
+                font-size: 0.7em;
+            }
+        }
+
+        @include media($screenLarge) {
+            margin-top: 30px;
+            margin-bottom: 40px;
+            width: 60%;
+            & small {
+                font-size: 0.7em;
+            }
+        }
+
+        margin-bottom: 20px;
+    }
+    h4 {
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+        @include media($screenMedium) {
+            width: 50%;
+        }
+
+        @include media($screenLarge) {
+            width: 60%;
+        }
+
+        & a {
+            color: white;
+        }
+    }
+    .button {
+        display: inline-block;
+        margin-top: 35px;
+        font-size: 18px;
+    }
+    & .background {
+        & > img {
+            opacity: 0.5;
+            left: auto;
+            right: -40%;
+            @include media($screenLarge) {
+                opacity: 1;
+                right: 0;
+                left: auto;
+            }
+
+            @include media($screenMedium) {
+                opacity: 1;
+                right: -10%;
+                left: auto;
+            }
+
+            position: fixed;
+            width: auto;
+            z-index: 10000;
+            max-width: none;
+        }
+    }
+    & header {
+        background: none;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+}

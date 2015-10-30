@@ -1,0 +1,99 @@
+section#steps {
+    @include pad(0 default);
+    @include media($screenLarge) {
+        padding: 0 0 $spacingSectionLarge 0;
+    }
+
+    background: $grayLight;
+    & h2 {
+        max-width: $screenOuter;
+        margin: 0 auto;
+    }
+    & ol {
+        max-width: $screenOuter;
+        margin: 0 auto;
+        & li {
+            padding-bottom: $spacingSection;
+            &:not(:last-child):after {
+                content: '';
+                display: block;
+                margin: 0 auto;
+                margin-top: $spacingSectionSmall;
+                width: 100%;
+                background: #565E64;
+                height: 1px;
+                opacity: 0.2;
+                height: 1px;
+            }
+        }
+    }
+    & ol li:before {
+        display: none;
+    }
+    & .enlarges {
+        position: relative;
+        margin-bottom: $spacingSectionSmall;
+        &:hover {
+            cursor: -webkit-zoom-in;
+            cursor: -moz-soom-in;
+        }
+    }
+    & .frame {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        z-index: 2;
+        position: relative;
+    }
+    & figure:not(.modal) {
+        position: absolute;
+        top: 7%;
+        left: 13.5%;
+        width: 73%;
+        z-index: 1;
+        margin: 0;
+        background: $blueDark;
+        box-sizing: border-box;
+        background-repeat: no-repeat;
+        height: 76.8%;
+        & img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    @include media($screenLarge) {
+        & p {
+            font-size: 1em;
+        }
+        & li:nth-child(even) {
+            & .enlarges {
+                float: right !important;
+                width: 43%;
+                & img {
+                    height: auto;
+                }
+            }
+            & section.description {
+                @include media($screenLarge) {
+                    float: left;
+                }
+
+                width: 43%;
+                margin: 0;
+                text-align: right;
+            }
+        }
+        & .enlarges {
+            width: 43%;
+            float: left;
+            & img {
+                height: auto;
+            }
+        }
+        & section.description {
+            width: 43%;
+            float: right;
+        }
+    }
+}

@@ -35,7 +35,7 @@
 </head>
 
 <body <?php body_class();?>>
-
+<div class="site-overlay"></div>
 <!-- Menu Section Starts -->
     <!-- Pushy Menu -->
   <nav id="menu" class="panel" role="navigation">

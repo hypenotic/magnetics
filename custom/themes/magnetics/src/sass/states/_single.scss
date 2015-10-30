@@ -1,0 +1,97 @@
+body.blog.single, body.articles.single, body.single-article {
+    & h1 {
+        color: $gray;
+        margin-bottom: $spacingSection;
+    }
+    .banner {
+        display: none;
+    }
+    & .related {
+        max-width: 850px;
+        margin: 0 auto;
+    }
+    & #footer footer {
+        max-width: 850px;
+        @include pad($spacingSectionSmall default);
+        margin: 0 auto;
+    }
+    & .owl-carousel {
+        margin-right: -17.6%;
+    }
+    & section[role="main"] {
+        background: white;
+    }
+    & header.meta {
+        @include media($screenLarge) {
+            @include span-columns(2);
+        }
+
+        & .resource.icon {
+            margin-top: 3px;
+            color: $blueDark;
+        }
+        & .resource.icon span {
+            margin-left: 6px;
+            position: relative;
+            top: -6px;
+            display: inline-block;
+            font-size: em($fontSizeMeta);
+            text-decoration: underline;
+        }
+    }
+    & #author {
+        @include span-columns(2);
+        margin-right: $spacingSectionSmall;
+        @include media($screenLarge) {
+            @include span-columns(12);
+        }
+
+        & figure {
+            margin: 0;
+            border-bottom: 4px solid orange;
+            margin-bottom: 14px;
+            line-height: 0;
+        }
+        & .fn {
+            display: block;
+            text-align: center;
+            margin-bottom: em($fontSizeMeta);
+        }
+        & img {
+            width: 100%;
+        }
+    }
+    & section.content {
+        @include media($screenLarge) {
+            @include span-columns(8);
+            @include shift(1);
+        }
+
+        & ol {
+            @include media($screenLarge) {
+                @include shift(1);
+            }
+
+            margin: $spacingSectionSmall 0;
+            & li {
+                @include shift(1);
+                margin-bottom: $spacingSectionSmall;
+                &:before {
+                    color: $blueDark;
+                    margin-right: $spacingSection;
+                }
+            }
+        }
+    }
+    & .return {
+        display: block;
+    }
+    & footer.container {
+        clear: both;
+        @include media($screenLarge) {
+            @include shift(3);
+        }
+
+        line-height: em($fontSizeSubheading);
+    }
+}

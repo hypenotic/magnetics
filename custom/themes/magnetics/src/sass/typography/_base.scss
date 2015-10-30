@@ -1,0 +1,147 @@
+/* Modular Scale ---------------------- 16px @ 1:1.618   275px @ 1:1.618     ----------------------*/
+
+body {
+    font-family: $fontPrimary;
+    font-size: em($fontSizeBody);
+    line-height: em($fontSizeLarge);
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $fontPrimary;
+    a {
+        text-decoration: none;
+        &:hover {}
+    }
+}
+
+h1 {
+    font-size: em($fontSizeHeadingSmall);
+    margin: 0;
+    line-height: em($fontSizeBody);
+    font-weight: 800;
+    @include media($screenLarge) {
+        font-size: em($fontSizeHeading);
+        margin: 0;
+        line-height: em($fontSizeBody);
+        font-weight: 800;
+    }
+}
+
+h2 {
+    font-size: em($fontSizeHeadingSmall);
+    line-height: em($fontSizeBody);
+    font-weight: 700;
+    padding: $spacingSectionSmall 0;
+    @include media($screenLarge) {
+        font-size: em($fontSizeHeading);
+        line-height: em($fontSizeBody);
+        font-weight: 700;
+        padding: $spacingSectionLarge 0;
+    }
+}
+
+h3 {
+    font-size: em($fontSizeLarge);
+    line-height: em($fontSizeBody);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: em($fontSizeCaption);
+}
+
+h4 {
+    font-size: em($fontSizeMedium);
+    line-height: em($fontSizeSubheading);
+    font-weight: 300;
+}
+
+h5 {
+    font-size: em($fontSizeLarge);
+    line-height: em($fontSizeSubheading);
+    font-family: $fontPrimary;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+h6 {
+    font-size: em($fontSizeBody);
+    line-height: em($fontSizeBody);
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+p, ul, ol {
+    font-size: em($fontSizeBody);
+    margin: 0 0 em($fontSizeMedium) 0;
+    @include media($screenLarge) {
+        font-size: em($fontSizeBody);
+        line-height: em($fontSizeSubheading);
+        margin: 0 0 em($fontSizeMedium) 0;
+    }
+}
+
+ol {
+    counter-reset: numeral-counter;
+    & > li:before {
+        content: counter(numeral-counter, decimal);
+        counter-increment: numeral-counter;
+        font-family: $fontSecondary;
+        font-size: em($fontSizeLarge);
+    }
+    & li ol li {}
+}
+
+blockquote {
+    font-size: em($fontSizeBody);
+    line-height: em($fontSizeBody);
+    font-family: $fontSecondary;
+    @include media($screenLarge) {
+        font-size: em($fontSizeSubheading);
+        margin: 0 auto rhythm(1, $fontSizeSubheading);
+    }
+}
+
+p > a:not(.button), h2 > a, h3 > a, h4 > a, h5 > a, h6 > a, a > span {
+    text-decoration: none !important;
+    display: inline-block;
+    border-bottom: 1px solid;
+    padding-bottom: 2px;
+    line-height: 90%;
+}
+
+a > span {
+    display: inline;
+}
+
+a[href^=mailto] {
+    text-decoration: none !important;
+    display: inline-block;
+    line-height: 140%;
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        outline: none;
+        text-decoration: none;
+    }
+    &:active {
+        outline: none;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+a {
+    color: $blueDark;
+}
+
+.text-center {
+    text-align: center;
+}
+
+blockquote, blockquote p {
+    color: $blueSteel;
+    line-height: em($fontSizeBody);
+}

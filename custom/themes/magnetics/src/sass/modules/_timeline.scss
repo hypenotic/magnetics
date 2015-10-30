@@ -1,0 +1,161 @@
+/* Timeline Dots */
+@mixin dot {
+    content: '';
+    width: 12px;
+    height: 12px;
+    display: none;
+    @include media($screenLarge) {
+        width: 40px;
+        height: 40px;
+        display: block;
+    }
+
+    background-position: center center;
+    background-repeat: no-repeat !important;
+    background-size: 30% 28%;
+    background: $gray;
+    position: absolute;
+    border-radius: 100px;
+    border: 0px;
+    @include media($screenLarge) {
+        border: 2px solid white;
+        background: $blueDark;
+    }
+}
+
+@mixin dotQuote {
+    @include dot;
+    width: 24px;
+    height: 24px;
+    background: $gray url(images/quoteEndWhite.png);
+    @include media($screenLarge) {
+        background: $blueDark url(images/quoteEndWhite.png) 45% 47%;
+        width: 70px;
+        height: 70px;
+    }
+}
+
+section#timeline {
+    position: relative;
+    & > p {
+        display: none;
+    }
+    padding-bottom: $spacingSectionSmall;
+    @include pad($spacingSection 2.35765% 0 2.35765%);
+    @include media($screenLarge) {
+        @include pad($spacingSectionLarge 0 0 0);
+        box-sizing: border-box;
+    }
+
+    background: white;
+    & > ul {
+        max-width: $screenOuter;
+        margin: 0 auto;
+        width: 100%;
+        display: block;
+        & ul {
+            list-style-type: disc;
+            margin-bottom: $base-spacing / 2;
+            padding-left: $base-spacing;
+            text-align: left;
+            font-size: em($fontSizeBodySecondary);
+        }
+        & p {
+            font-size: 1em;
+        }
+        & blockquote {
+            padding: 0;
+            @include margin(16px 0);
+            & + p > small {
+                line-height: em($fontSizeBodySecondary);
+                & a {
+                    display: block;
+                    text-decoration: underline;
+                    color: $blueSteel;
+                }
+            }
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -9px;
+            height: 100%;
+            width: 2px;
+            background: $grayLight;
+            @include media($screenLarge) {
+                left: 50%;
+                background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwYzdkNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg2JSIgc3RvcC1jb2xvcj0iIzAwYzdkNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMGM3ZDUiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+                background: -moz-linear-gradient(top, rgba(0, 199, 213, 1) 0%, rgba(0, 199, 213, 1) 86%, rgba(0, 199, 213, 0) 100%);
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 199, 213, 1)), color-stop(86%, rgba(0, 199, 213, 1)), color-stop(100%, rgba(0, 199, 213, 0)));
+                background: -webkit-linear-gradient(top, rgba(0, 199, 213, 1) 0%, rgba(0, 199, 213, 1) 86%, rgba(0, 199, 213, 0) 100%);
+                background: -o-linear-gradient(top, rgba(0, 199, 213, 1) 0%, rgba(0, 199, 213, 1) 86%, rgba(0, 199, 213, 0) 100%);
+                background: -ms-linear-gradient(top, rgba(0, 199, 213, 1) 0%, rgba(0, 199, 213, 1) 86%, rgba(0, 199, 213, 0) 100%);
+                background: linear-gradient(to bottom, rgba(0, 199, 213, 1) 0%, rgba(0, 199, 213, 1) 86%, rgba(0, 199, 213, 0) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00c7d5', endColorstr='#0000c7d5',GradientType=0 );
+            }
+        }
+        & > li {
+            margin-bottom: 40px;
+            @include media($screenLarge) {
+                padding: 0 8.4153% 6.4153% 8.4153%;
+                list-style: none;
+                width: 49.999%;
+                box-sizing: border-box;
+                &:nth-child(2) {
+                    margin-top: 80px;
+                }
+            }
+
+            &:before {
+                @include dot;
+                top: 47px;
+                left: 0;
+                margin-left: -23px;
+                margin-top: 14px;
+                @include media($screenLarge) {
+                    margin-top: 0;
+                    top: auto;
+                    left: 0;
+                    margin-left: -18px;
+                }
+            }
+            &.quote {
+                &:before {
+                    @include dotQuote;
+                    margin-left: -12px;
+                    left: 22px;
+                    top: 72px;
+                    @include media($screenLarge) {
+                        left: 0;
+                        margin-left: -35px;
+                        top: auto;
+                    }
+                }
+            }
+            &.left {
+                @include media($screenLarge) {
+                    list-style: none;
+                    margin-left: 0%;
+                    text-align: right;
+                    min-height: 350px;
+                }
+
+                &:before {
+                    left: 22px;
+                    right: 0%;
+                    left: auto;
+                    margin-right: -22px;
+                }
+                &.quote:before {
+                    margin-left: -30px;
+                    right: auto;
+                    @include media($screenLarge) {
+                        right: 0;
+                        margin-right: -37px;
+                    }
+                }
+            }
+        }
+    }
+}
