@@ -1,49 +1,100 @@
-var gulp 		= require('gulp');
-var plumber 	= require('gulp-plumber');
-var	sass 		= require('gulp-ruby-sass');
-var	concat 		= require('gulp-concat');
-var notify 		= require("gulp-notify");
-var	browserSync = require('browser-sync');
-var autoprefixer = require('gulp-autoprefixer');
+/* TO-DO:
+1. add sass-linting
+2. Fonts
 
-// browser-sync task for starting the server.
-gulp.task('browser-sync', function() {
-    //watch files
-    var files = [
-    './style.css',
-    './js/app.min.js'
-    ];
- 
-    //initialize browsersync
-    browserSync.init(files, {
-    //browsersync with a php server
-    proxy: "dev.marinemagnetics.com",
-    host:'dev.marinemagnetics.com'
-    });
+*/
+
+// Pull in gulp plugins and assign to variables
+var gulp 		= require('gulp'),
+	uglify 		= require('gulp-uglifyjs'),
+	plumber    	= require('gulp-plumber'),
+	sass 		= require('gulp-ruby-sass'),
+	imagemin 	= require('gulp-imagemin'),
+	pngquant 	= require('imagemin-pngquant'),
+	livereload 	= require('gulp-livereload'),
+	notify 		= require('gulp-notify'),
+	jshint 		= require('gulp-jshint');
+
+// Create custom variables to make life easier
+var outputDir = 'dist';
+
+var scriptList = [
+	'src/js/custom/easing.js',
+	'src/js/custom/isotope.pkgd.min.js',
+	'src/js/custom/jquery.debouncedresize.js',
+	'src/js/custom/jquery.owl.carousel.js',
+	'src/js/custom/menu.js',
+	'src/js/custom/menu-function.js',
+	'src/js/custom/offcanvas.js',
+	'src/js/custom/smoothzoom.min.js',
+	'src/js/custom/typekit.js',
+	'src/js/custom/modules/anchors.js',
+	'src/js/custom/modules/carousel.js',
+	'src/js/custom/modules/jquery.waypoints.min.js',
+	'src/js/custom/modules/steps.js',
+	'src/js/custom/modules/tabs.js',
+	'src/js/custom/modules/timeline.js',
+	'src/js/custom/states/product.js',
+];
+
+var fontIcons = [
+	'src/components/fontawesome/fonts/**.*', 
+	'src/components/monosocialiconsfont/MonoSocialIconsFont*.*'
+];
+
+var sassOptions = {
+	style: 'compressed'
+};
+
+// Create sass compile task
+gulp.task('sass', function() {
+    return sass('src/sass/style.scss', sassOptions) 
+    .on('error', function (err) { console.error('Error!', err.message); })
+    .pipe(gulp.dest(''))
+    .pipe(livereload())
+    .pipe(notify("sass task finished"));
 });
 
-gulp.task('sass', function () {
-	    sass('./sass')
-
-	        .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
-            .pipe(autoprefixer({
-            browsers: ['> 1%'],
-            cascade: false
-            }))
-		    .pipe(concat('style.css'))
-	        .pipe(gulp.dest('./'))
-			.pipe(browserSync.reload({stream:true}));
+// Create image minification task
+gulp.task('imagemin', function () {
+    return gulp.src('src/images/*')
+    	//.pipe(cache())
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest(outputDir + '/images'))
+        .pipe(notify("image task finished"));
 });
 
-gulp.task('jsConcat', function () {
-        gulp.src('./js/build/**/*.js')
-            .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
-            .pipe(concat('app.min.js'))
-            .pipe(gulp.dest('./js/'))
-            .pipe(browserSync.reload({stream:true}));
+// Create js scripts concat and minify task.
+gulp.task('js', function() {
+ 	return gulp.src(scriptList)
+ 		.pipe(jshint('.jshintrc'))
+    	.pipe(jshint.reporter('default'))
+ 		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+    	.pipe(uglify('app.min.js', {outSourceMap: true}))
+    	.pipe(gulp.dest(outputDir + '/js'))
+    	.pipe(livereload())
+    	.pipe(notify("js task finished"));
 });
 
-gulp.task('default', ['sass', 'jsConcat', 'browser-sync'], function(){
-	gulp.watch("./sass/**/*.scss", ['sass']);
-    gulp.watch("./js/build/**/*.js", ['jsConcat']);
+
+// Create fonticons compile task
+gulp.task('icons', function() {
+    return gulp.src(fontIcons)
+        .pipe(gulp.dest(outputDir + '/fonts'));
 });
+
+// Create watch task
+gulp.task('watch', function() {
+	gulp.watch('src/js/**/*.js', ['js']);
+	gulp.watch('src/sass/**/*.scss', ['sass']);
+	gulp.watch('src/images/*', ['imagemin']);
+	livereload.listen();
+	gulp.watch('*.php').on('change', livereload.changed);
+});
+
+// Create default task so you can gulp whenever you don't want to watch
+gulp.task('default', ['js', 'sass', 'imagemin', 'icons']);

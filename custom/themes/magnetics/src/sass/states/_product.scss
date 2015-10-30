@@ -1,0 +1,155 @@
+.b-o-b .tabs.boxes {
+    display: none;
+}
+
+#integrations, #systemataglance {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+body.products.single, body.product-integrations {
+    #below + article {
+        display: none;
+    }
+    & > header {
+        position: absolute;
+        width: 100%;
+        @include media(1280px) {}
+    }
+    .owl-carousel {
+        margin-bottom: $spacingSectionSmall;
+        position: relative;
+        left: 8.3%;
+        & .owl-stage-outer {
+            @include media($screenLarge) {
+                transform: scale(1.5, 1.5);
+            }
+        }
+        & img {
+            @include media($screenLarge) {
+                @include shift(1);
+            }
+        }
+    }
+    & #nav-toggle span:before, #nav-toggle span:after, #nav-toggle span {
+        cursor: pointer;
+        height: 3px;
+        width: 25px;
+        .single &, .articles-and-brochures &, .single-brochure & {}
+        position: absolute;
+        display: block;
+        content: '';
+        background: white;
+    }
+    & #toggler {
+        opacity: 0.8;
+        & .menu-btn.text {}
+    }
+    & section[role="main"] {
+        & article {
+            h1 {
+                display: none;
+                @include opacity(0.7);
+                color: white;
+                font-weight: 700;
+                position: absolute;
+                line-height: 70%;
+                top: -1%;
+                left: -1%;
+                text-align: center;
+                width: 100%;
+                z-index: -1;
+                margin: 0 auto;
+                max-width: 100%;
+                & span {
+                    display: block;
+                    font-size: 50%;
+                    line-height: 160%;
+                }
+            }
+        }
+        & .tabs {}
+        .resp-tabs-list.four {
+            min-height: 125px;
+        }
+        #whatsinthebox ul, #additionaloptions ul {
+            list-style-type: disc;
+            margin-bottom: $base-spacing * 2;
+            margin-top: $base-spacing / 2;
+            padding-left: $base-spacing * 2;
+            text-align: left;
+            font-size: em($fontSizeBodySecondary);
+        }
+        .resp-tab-content {
+            line-height: 1.5em;
+        }
+        .resp-tab-content h3:first-child:before {
+            background: transparent;
+        }
+        .resp-tab-content h3:before {
+            width: 100%;
+            height: 1px;
+            display: block;
+            background: #E0E0E0;
+            margin-top: 1em;
+            content: '';
+            margin-bottom: 1em;
+        }
+        & .tabs aside.options {
+            @include media($screenLarge) {
+                @include span-columns(1);
+            }
+
+            & + h3 {
+                color: $orange;
+            }
+            a {
+                @include media($screenLarge) {
+                    display: block;
+                }
+
+                margin-bottom: 10px;
+                color: $blueDark;
+                &:hover {
+                    color: $teal;
+                }
+            }
+        }
+        & .tabs .images {
+            margin-bottom: em($spacingSectionSmall);
+            @include media($screenLarge) {
+                @include span-columns(10);
+                @include shift(0);
+            }
+        }
+        & .tabs .images + footer {
+            @include media($screenLarge) {
+                @include span-columns(11);
+                @include shift(1);
+                margin-top: $spacingSection;
+            }
+
+            & ul {
+                margin-bottom: em($spacingSectionSmall);
+                @include media($screenLarge) {
+                    @include span-columns(4);
+                }
+
+                & li {
+                    &:first-child {
+                        color: $orange;
+                        margin-bottom: 4px;
+                        font-weight: bold;
+                    }
+                    color: black;
+                    font-size: em($fontSizeSmall);
+                    line-height: em($fontSizeBody);
+                    margin-bottom: 4px;
+                    & a {
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}

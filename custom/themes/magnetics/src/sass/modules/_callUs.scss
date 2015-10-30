@@ -1,0 +1,34 @@
+a#call {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    margin-top: -80px;
+    z-index: 10000;
+    background: $teal;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: em($fontSizeMeta);
+    padding: 2px 12px;
+    display: block;
+    -ms-transform: rotate(-90deg);
+    /* IE 9 */
+    -ms-transform-origin: 100% 100%;
+    /* IE 9 */
+    -webkit-transform: rotate(90deg);
+    /* Chrome, Safari, Opera */
+    -webkit-transform-origin: 100% 100%;
+    /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+    transform-origin: 100% 100%;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    &:hover {
+        background: orange;
+    }
+    @include media($screenLarge) {
+        padding: 8px 18px;
+        font-weight: bold;
+        font-size: em($fontSizeBody);
+    }
+}
