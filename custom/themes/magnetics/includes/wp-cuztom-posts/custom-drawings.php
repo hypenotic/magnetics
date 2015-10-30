@@ -8,4 +8,17 @@ $args = array(
 
 $drawings = register_cuztom_post_type( 'Drawing', $args);
 
+$drawings->add_meta_box(
+    'measurements',
+    'Measurements', 
+    array(
+		array(
+			'name'          => 'weight',
+			'label'         => 'Weight',
+			'description'   => 'Please enter weight.',
+			'type'          => 'text'
+		)
+    )
+);
+
 ?>
