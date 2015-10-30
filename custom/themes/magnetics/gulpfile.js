@@ -19,6 +19,7 @@ var gulp 		= require('gulp'),
 var outputDir = 'dist';
 
 var scriptList = [
+	'src/components/jquery/dist/jquery.js', 
 	'src/js/custom/easing.js',
 	'src/js/custom/isotope.pkgd.min.js',
 	'src/js/custom/jquery.debouncedresize.js',
