@@ -32,3 +32,45 @@ section.related {
         }
     }
 }
+
+.drawing-content {
+	overflow:hidden;
+	h6 {
+		color: $orange;
+		font-weight:bold;
+	}
+	.drawing-content-box {
+		margin-bottom:20px;
+		@include media($screenLarge) {
+			@include span-columns(4);
+			margin-bottom:0px;
+		}
+		ul {
+			.tabs #systemataglance & { 
+				display: block;
+				margin: 0;
+				width:100%;
+				li {
+					width:100%;
+					text-align:left;
+					font-size: em($fontSizeSmall);
+                    line-height: em($fontSizeBody);
+                    margin-bottom: 4px;
+					&:first-child {
+						color:$orange;
+						font-weight:bold;
+					}
+					a {
+						background:none;
+						color:black;
+						font-size: em($fontSizeSmall);
+						line-height: em($fontSizeBody);
+						padding:0;
+                    }
+				}
+			}
+			display:block;
+			padding:0;
+		}
+	}
+}

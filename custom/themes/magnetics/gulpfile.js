@@ -19,23 +19,25 @@ var gulp 		= require('gulp'),
 var outputDir = 'dist';
 
 var scriptList = [
-	'src/components/jquery/dist/jquery.js', 
+	//'src/components/jquery/dist/jquery.js', 
+	'src/js/custom/typekit.js',
 	'src/js/custom/easing.js',
 	'src/js/custom/isotope.pkgd.min.js',
 	'src/js/custom/jquery.debouncedresize.js',
 	'src/js/custom/jquery.owl.carousel.js',
-	'src/js/custom/menu.js',
-	'src/js/custom/menu-function.js',
-	'src/js/custom/offcanvas.js',
-	'src/js/custom/smoothzoom.min.js',
-	'src/js/custom/typekit.js',
+	'src/js/custom/modules/jquery.waypoints.min.js',
+	//'src/js/custom/modules/tabs.js',
 	'src/js/custom/modules/anchors.js',
 	'src/js/custom/modules/carousel.js',
-	'src/js/custom/modules/jquery.waypoints.min.js',
 	'src/js/custom/modules/steps.js',
-	'src/js/custom/modules/tabs.js',
 	'src/js/custom/modules/timeline.js',
 	'src/js/custom/states/product.js',
+	'src/js/custom/smoothzoom.min.js',
+	'src/js/custom/menu.js',
+	'src/js/custom/menu-function.js',
+	'src/js/custom/jQueryTab.js',
+	'src/js/custom/jQueryTab-function.js',
+	'src/js/custom/justifiedGallery-function.js',
 ];
 
 var fontIcons = [
@@ -98,4 +100,4 @@ gulp.task('watch', function() {
 });
 
 // Create default task so you can gulp whenever you don't want to watch
-gulp.task('default', ['js', 'sass', 'imagemin', 'icons']);
+gulp.task('default', ['js', 'sass', 'imagemin']);

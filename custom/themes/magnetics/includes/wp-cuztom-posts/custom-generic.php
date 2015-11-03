@@ -394,22 +394,22 @@ $posts->add_meta_box(
             ),
             'repeatable'    =>  'true'
         ),
-		// array(
-            // 'name'          => 'system_at_a_glance',
-            // 'label'         => 'System at a Glance',
-            // 'description'   => 'Select Drawings',
-            // 'type'          => 'post_checkboxes',
-			// 'args'          => array(
-				// 'post_type' => 'drawing',
-			// )  
-        // ),
-        array(
+		array(
             'name'          => 'system_at_a_glance',
             'label'         => 'System at a Glance',
-            'description'   => 'Upload system images',
-            'type'          => 'image',
-            'repeatable'    =>  'true'  
+            'description'   => 'Select Drawings',
+            'type'          => 'post_checkboxes',
+			'args'          => array(
+				'post_type' => 'drawing',
+			)  
         ),
+        // array(
+            // 'name'          => 'system_at_a_glance',
+            // 'label'         => 'System at a Glance',
+            // 'description'   => 'Upload system images',
+            // 'type'          => 'image',
+            // 'repeatable'    =>  'true'  
+        // ),
 
        array(
             'name'          => 'system_at_a_glance_PDF',

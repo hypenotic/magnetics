@@ -1,5 +1,4 @@
-jQuery(document).ready(function($){
-      
+jQuery(document).ready(function($){      
 	$('.owl-carousel').owlCarousel({
 		 dots: true,
       	 items : 1, 

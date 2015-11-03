@@ -1,0 +1,91 @@
+/*  == tab heading */
+#responsive-tabs {
+	background:#fff;
+	overflow:hidden;
+}
+.tabs.r-tabs ul { 
+	overflow:hidden; 
+	display: flex;
+	flex-direction: row;
+	width: 105.5%;
+	margin-left: -2.6%;
+	li { 
+		float: left;
+		display: inline-block;
+		float: left;
+		text-align: center;
+		width: 25%;
+		padding:0;
+		span {
+			border-bottom: 1px solid #fff;
+		}
+		a { 
+			padding: 48px 3%;
+			background: $blueDark;
+			color: white;
+			box-sizing: border-box;
+			display:block; 
+			&:hover {
+				background: $blueSteel;
+				color: #fff;
+            }
+		}
+		&.r-tabs-state-active { 
+			a {
+				background: white;
+				color: $blueDark;
+				&:hover {
+					background: white;
+				}
+			}
+			& h3 {
+				border-bottom: 1.5px solid $blueDark;
+			}
+			
+		}
+	}
+	h2 {
+		padding:0 0 92px 0;
+	}
+}
+.r-tabs .r-tabs-tab {
+    display: inline-block;
+    margin: 0;
+    list-style: none;
+}
+
+.r-tabs .r-tabs-panel {
+    padding: 30px 15px 15px;
+    display: none;
+}
+
+.r-tabs .r-tabs-accordion-title {
+    display: none;
+	a { 
+		color: white;
+		background: $blueDark;
+		border-bottom:1px solid #fff;
+		box-sizing: border-box;
+		display:block;
+		padding: 20px 3%; 
+		&:hover {
+			background: $blueSteel;
+			color: #fff;
+		}
+	}
+}
+
+.r-tabs-tab.r-tabs-state-active {
+    display: block;
+}
+
+/* Accordion responsive breakpoint */
+@media only screen and (max-width: 768px) {
+    .tabs.r-tabs .r-tabs-nav {
+        display: none;
+    }
+
+    .r-tabs .r-tabs-accordion-title {
+        display: block;
+    }
+}
