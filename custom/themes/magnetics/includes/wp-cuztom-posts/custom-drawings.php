@@ -3,7 +3,7 @@
 $args = array(
 	'has_archive' => true,
 	'menu_icon' => 'dashicons-admin-plugins', //http://melchoyce.github.io/dashicons/
-	'supports'	=> array( 'title', 'editor','thumbnail' ),
+	'supports'	=> array( 'title', 'editor','thumbnail','page-attributes' ),
  	);
 
 $drawings = register_cuztom_post_type( 'Drawing', $args);

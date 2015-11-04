@@ -35,6 +35,8 @@ section.related {
 
 .drawing-content {
 	overflow:hidden;
+	max-width:850px;
+	margin:0 auto;
 	h6 {
 		color: $orange;
 		font-weight:bold;

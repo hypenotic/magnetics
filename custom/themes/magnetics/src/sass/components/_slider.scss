@@ -308,24 +308,29 @@
 			margin: 0;
 			width:100%;
 			li {
-				margin-bottom:30px;
+				margin-bottom:10px;
 				@include span-columns(12);
 				@include media($screenLarge) {
-					@include span-columns(6);
+					@include span-columns(4);
 					//height:300px;
 					padding-bottom:30px;
-					&:nth-child(2n+2) {
+					&:nth-child(3n+3) {
 						margin-right:0;
 					}
 					.image {
 						display: table-cell;
-						height:300px;
+						//height:250px;
 						vertical-align: middle;
+					}
+					p {
+						font-size: em($fontSizeSmall);
+						line-height: em($fontSizeBody);
+						margin-bottom:4px;
 					}
 				}
 				img {
-					width: 80%;
-					max-height: 80%;
+					width: 100%;
+					max-height: 100%;
 					max-width: 100%;
 					vertical-align: bottom;
 				}
