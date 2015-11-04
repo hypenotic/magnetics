@@ -2,11 +2,14 @@
     display: none;
 }
 
-#integrations, #systemataglance {
+#integrations {
     max-width: 850px;
     margin: 0 auto;
 }
-
+#systemataglance {
+    max-width: $screenOuter;
+    margin: 0 auto;
+}
 body.products.single, body.product-integrations {
     #below + article {
         display: none;
