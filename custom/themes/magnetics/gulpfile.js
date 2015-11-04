@@ -26,7 +26,7 @@ var scriptList = [
 	'src/js/custom/jquery.debouncedresize.js',
 	'src/js/custom/jquery.owl.carousel.js',
 	'src/js/custom/modules/jquery.waypoints.min.js',
-	//'src/js/custom/modules/tabs.js',
+	'src/js/custom/modules/tabs.js',
 	'src/js/custom/modules/anchors.js',
 	'src/js/custom/modules/carousel.js',
 	'src/js/custom/modules/steps.js',
@@ -37,7 +37,6 @@ var scriptList = [
 	'src/js/custom/menu-function.js',
 	'src/js/custom/jQueryTab.js',
 	'src/js/custom/jQueryTab-function.js',
-	'src/js/custom/justifiedGallery-function.js',
 ];
 
 var fontIcons = [
