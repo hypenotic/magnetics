@@ -184,7 +184,7 @@ jQuery(document).ready(function($) {
                                 newHash = '#'+newHash;
                             }
                             
-                            history.replaceState(null,null,newHash);
+                            //history.replaceState(null,null,newHash);
                         }
                     });
                     
@@ -198,9 +198,9 @@ jQuery(document).ready(function($) {
         }
     });
 })(jQuery);
-
-jQuery('.tabs').easyResponsiveTabs();
-
-if(jQuery('.resp-tabs-list li').length === 1) {
-    jQuery('.resp-tabs-list').remove();
-}
+jQuery(document).ready(function(){	
+	jQuery('.tabs').easyResponsiveTabs();
+	if(jQuery('.resp-tabs-list li').length === 1) {
+		jQuery('.resp-tabs-list').remove();
+	}
+})
