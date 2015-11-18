@@ -62,16 +62,14 @@
                 text-align: center;
                 margin-right: 0;
             }
-
-            @include media($screenOuter) {
-                @include span-columns(4);
-                margin-right: 0;
-                padding: 2.35765%;
-                &:nth-child(3n-1), &:nth-child(3n) {
-                    @include shift(0);
-                }
-            }
-
+			@include media($screenOuter) {
+				@include span-columns(4 of 12);
+				margin-right: 4.35765%;
+				width: 29.76157%;
+			}
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
             & img {
                 margin-bottom: 24px;
                 border-bottom: 4px solid $orange;
