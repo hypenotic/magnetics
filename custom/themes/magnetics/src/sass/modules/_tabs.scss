@@ -119,7 +119,7 @@
             & div {
                 padding: 48px 4.7153%;
                 display: block;
-                & h3, & h4 {
+                & h4 {
                     font-size: em($fontSizeSmall);
                     line-height: em($fontSizeBody);
                     @include media($screenLarge) {
