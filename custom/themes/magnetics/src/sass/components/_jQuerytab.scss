@@ -7,8 +7,8 @@
 	overflow:hidden; 
 	display: flex;
 	flex-direction: row;
-	width: 105.5%;
-	margin-left: -2.6%;
+	width: 100%;
+	//margin-left: -2.6%;
 	li { 
 		float: left;
 		display: inline-block;
@@ -81,14 +81,13 @@
 .r-tabs-tab.r-tabs-state-active {
     display: block;
 }
-
 /* Accordion responsive breakpoint */
 @media only screen and (max-width: 768px) {
     .tabs.r-tabs .r-tabs-nav {
         display: none;
     }
-
     .r-tabs .r-tabs-accordion-title {
         display: block;
     }
 }
+

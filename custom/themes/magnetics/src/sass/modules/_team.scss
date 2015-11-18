@@ -23,7 +23,7 @@
         display: block;
         color: grey;
         & li {
-            white-space: nowrap;
+            //white-space: nowrap;
             text-align: center;
             margin-bottom: $spacingSection;
             & li:before {
@@ -38,7 +38,8 @@
                 font-size: 90%;
             }
             & a {
-                &:hover {
+				white-space: nowrap;
+				&:hover {
                     color: $orange;
                 }
                 display: inline-block;
