@@ -41,7 +41,7 @@
                 <h3> Tags:</h3>
                 <ul>
 <?php
-
+$currentTagID=$wp_query->query_vars['tag_id'];
 $tags = get_terms('post_tag');
   foreach ( $tags as $key => $tag ) {
       if ( 'edit' == 'view' )
@@ -54,8 +54,11 @@ $tags = get_terms('post_tag');
       $tags[ $key ]->link = $link;
       $tags[ $key ]->id = $tag->term_id;
       $tags[ $key ]->name = $tag->name;
-
-                    echo "<li><a href=".$link ." >";
+					if($currentTagID == $tag->term_id) {
+						echo "<li class='current-cat'><a href=".$link ." >";
+					}else {
+						echo "<li><a href=".$link ." >";	
+					}
                     echo $tag->name;
                     echo "</a></li>";
     }
@@ -63,10 +66,8 @@ $tags = get_terms('post_tag');
                 </ul>
             </nav>
         </section>
-
     
     </header>
-
 
     <section id="archive">  
         <!-- start loop -->
