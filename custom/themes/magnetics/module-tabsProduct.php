@@ -49,11 +49,16 @@
 					echo "<ul>";
 					foreach($metaSystemAtAGlance as $drawing) {
 						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $drawing ), 'single-post-thumbnail' ); 	
-						$drawingImage=$image[0];
+						$drawingImage="";
+						if($image!='') {
+							$drawingImage=$image[0];	
+						}
 						$drawingLink=get_permalink($drawing);
 						$weight=get_post_meta($drawing,'_measurements_weight',true);
 							echo '<li>';
-								echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
+								if($drawingImage!='') {
+									echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
+								}
 								echo "<p>".get_the_title($drawing)."</p>";
 								echo "<p>".$weight."</p>";
 								

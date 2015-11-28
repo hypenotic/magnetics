@@ -11,9 +11,9 @@ body.blog.single, body.articles.single, body.single-article {
         margin: 0 auto;
     }
     & #footer footer {
-        max-width: 850px;
+        /*max-width: 850px;
         @include pad($spacingSectionSmall default);
-        margin: 0 auto;
+        margin: 0 auto;*/
     }
     & .owl-carousel {
         margin-right: -17.6%;

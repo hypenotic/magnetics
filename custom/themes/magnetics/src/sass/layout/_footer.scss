@@ -27,7 +27,7 @@
                 & > *:first-child {
                     padding-top: 0;
                 }
-                @include span-columns(5);
+                @include span-columns(5.575);
                 &:first-child {
                     margin-right: 0;
                     @include pad(0 default 0 0);
