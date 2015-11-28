@@ -78,8 +78,7 @@ section#steps {
                 @include media($screenLarge) {
                     float: left;
                 }
-
-                width: 43%;
+                width: 50%;
                 margin: 0;
                 text-align: right;
             }
@@ -92,7 +91,7 @@ section#steps {
             }
         }
         & section.description {
-            width: 43%;
+            width: 50%;
             float: right;
         }
     }
