@@ -51,8 +51,11 @@ section[role="main"] section#banner {
 .background.enabled {
     & ~ .text {
         text-align: center;
-        width: 60%;
-        margin: 0 auto;
+        width: 60%;        
+		margin: 40px auto 0;
+		@include media($screenLarge) {
+			margin: 0 auto;
+		}
     }
     & ~ .bannerImage {
         display: none;
