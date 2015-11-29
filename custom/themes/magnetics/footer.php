@@ -1,4 +1,4 @@
-<?php if(is_category('products') || is_front_page()) { ?>
+<?php if(is_front_page()) { ?>
 
 <?php wp_footer();?>
 </body>
@@ -10,7 +10,7 @@
     <footer>
         <section>   
          
-         <?php if(in_category('products') || in_category('product-integrations') && is_single()) { ?>  
+         <?php if(in_category('product-integrations') && is_single()) { ?>  
         <!-- Module: productInformation -->
         <?php get_template_part( 'module', 'productsRelated' ); ?>
         <?php } else { ?>
