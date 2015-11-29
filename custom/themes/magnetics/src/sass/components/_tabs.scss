@@ -134,10 +134,11 @@ h6.resp-accordion {
 }
 
 .resp-tab-content {
-    @include media($screenLarge) {}
-
     & > article {
-        @include pad($spacingSectionLarge default);
+		@include media($screenLarge) {
+			max-width:91%;
+		}
+		@include pad($spacingSectionLarge default);
     }
 }
 
@@ -201,13 +202,13 @@ h6.resp-tab-title:last-child {
     position: relative;
     left: -14px;
     margin-top: 3px;
-    content: 'Γò¼├┤Γö£ΓûôΓö¼Γò¥╬ô├╢┬ú╬ô├╢├▒Γò¼├┤Γö£ΓòóΓö¼├║Γò¼├┤Γö£ΓûôΓö£Γòú╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├╗├┤╬ô├╢┬ú╬ô├╢├⌐';
+    content: '';
     opacity: 0.4;
     font-size: 12px;
 }
 
 h6.resp-tab-active span.resp-arrow:after {
-    content: 'Γò¼├┤Γö£ΓûôΓö¼Γò¥╬ô├╢┬ú╬ô├╢├▒Γò¼├┤Γö£ΓòóΓö¼├║Γò¼├┤Γö£ΓûôΓö£Γòú╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├╗├┤╬ô├╢┬╝Γö£├ª';
+    content: '';
     opacity: 0.8;
 }
 
