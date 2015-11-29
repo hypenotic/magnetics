@@ -8,8 +8,8 @@ a#call {
     color: white;
     letter-spacing: 1px;
     font-weight: bold;
-    font-size: em($fontSizeMeta);
-    padding: 2px 12px;
+    font-size: em($fontSizeBody);
+    padding: 8px 18px;
     display: block;
     -ms-transform: rotate(-90deg);
     /* IE 9 */
@@ -26,9 +26,9 @@ a#call {
     &:hover {
         background: orange;
     }
-    @include media($screenLarge) {
+    /*@include media($screenLarge) {
         padding: 8px 18px;
         font-weight: bold;
         font-size: em($fontSizeBody);
-    }
+    }*/
 }
