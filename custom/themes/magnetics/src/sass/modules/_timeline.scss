@@ -5,8 +5,8 @@
     height: 12px;
     display: none;
     @include media($screenLarge) {
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         display: block;
     }
 
@@ -117,7 +117,7 @@ section#timeline {
                     margin-top: 0;
                     top: auto;
                     left: 0;
-                    margin-left: -18px;
+                    margin-left: -13px;
                 }
             }
             &.quote {
@@ -145,7 +145,7 @@ section#timeline {
                     left: 22px;
                     right: 0%;
                     left: auto;
-                    margin-right: -22px;
+                    margin-right: -17px;
                 }
                 &.quote:before {
                     margin-left: -30px;

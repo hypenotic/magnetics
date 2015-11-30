@@ -99,6 +99,7 @@ body.products.single, body.product-integrations {
             margin-bottom: 1em;
         }
         & .tabs aside.options {
+			text-align:center;
             @include media($screenLarge) {
                 @include span-columns(1);
             }
@@ -107,6 +108,7 @@ body.products.single, body.product-integrations {
                 color: $orange;
             }
             a {
+				margin-right:20px;
                 @include media($screenLarge) {
                     display: block;
                 }
