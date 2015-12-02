@@ -42,7 +42,7 @@
         margin-bottom: 96px;
     }
     &.boxes .resp-tabs-list li span {
-        border-bottom: 1px solid;
+        //border-bottom: 1px solid;
     }
     & > section {
         display: none;
@@ -106,7 +106,7 @@
                 background: white;
                 color: $blueDark;
                 & h3 {
-                    border-bottom: 1.5px solid $blueDark;
+                    //border-bottom: 1.5px solid $blueDark;
                 }
                 &:hover {
                     background: white;
@@ -114,7 +114,7 @@
             }
             & h3 {
                 display: inline-block;
-                border-bottom: 1.5px solid rgba(255, 255, 255, 0.5);
+                //border-bottom: 1.5px solid rgba(255, 255, 255, 0.5);
             }
             & div {
                 padding: 48px 4.7153%;

@@ -32,6 +32,7 @@ var scriptList = [
 	'src/js/custom/carousel.js',
 	'src/js/custom/steps.js',
 	'src/js/custom/timeline.js',
+	'src/js/custom/new-timeline.js',
 	'src/js/custom/product.js',
 	'src/js/custom/menu.js',
 	'src/js/custom/menu-function.js',
