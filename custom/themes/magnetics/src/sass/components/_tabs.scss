@@ -140,13 +140,11 @@ h6.resp-accordion {
 			padding-bottom:0;
 		}
 		@include pad($spacingSectionLarge default);
-		& > ul {
-			li {
-				@include media($screenLarge) {
-					@include span-columns(6 of 12);
-					@include omega(2n);
-					padding-bottom:1.5em;
-				}
+		section {
+			@include media($screenLarge) {
+				@include span-columns(6 of 12);
+				@include omega(2n);
+				padding-bottom:1.5em;
 			}
 		}
     }
