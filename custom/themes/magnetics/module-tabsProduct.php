@@ -130,8 +130,10 @@
 		<?php if(isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== '')) { ?>
 			<div id="additionaloptions">
 				<?php foreach ( $metaAdditionalOptions as $option ) { ?>
-                <h3 id="<?php sanitize_title($option['_title']); ?>"><?php echo $option['_title']; ?></h3>
-                <p><?php echo $option['_description']; ?></p>
+					<section>
+						<h3 id="<?php sanitize_title($option['_title']); ?>"><?php echo $option['_title']; ?></h3>
+						<p><?php echo $option['_description']; ?></p>
+					</section>
                 <!-- End Loop -->
                 <?php } ?>
 			</div>
@@ -154,8 +156,10 @@
                 $metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
          
                 ?>
-                <h3><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
-                <p><?php echo $metaBannerSubheading; ?></p>
+				<section>
+					<h3><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
+					<p><?php echo $metaBannerSubheading; ?></p>
+				</section>	
             <!-- End Loop -->
             <?php }
             }
