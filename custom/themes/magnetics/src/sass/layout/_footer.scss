@@ -7,7 +7,8 @@
 
 #footer {
     background: $blueDark;
-    padding-top: $spacingSection;
+    border-top: 1px solid #fff;
+	padding-top: $spacingSection;
     & footer {
         @include outer-container(1080px);
         @include pad($spacingSectionSmall default);
