@@ -1,14 +1,11 @@
 /*  == tab heading */
 #responsive-tabs {
-	background:#fff;
+	background:$grayLight;
 	overflow:hidden;
 }
 .tabs.r-tabs ul { 
 	overflow:hidden; 
-	//display: flex;
-	//flex-direction: row;
 	width: 100%;
-	//margin-left: -2.6%;
 	li { 
 		float: left;
 		display: inline-block;
@@ -32,10 +29,10 @@
 		}
 		&.r-tabs-state-active { 
 			a {
-				background: white;
+				background:$grayLight;
 				color: $blueDark;
 				&:hover {
-					background: white;
+					background-color: none;
 				}
 			}
 			& h3 {

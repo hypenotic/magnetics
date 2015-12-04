@@ -24,7 +24,7 @@
 
     <div class="mobile-bg"></div>
 
-<section class="tabs">
+<section class="tabs tabs-2">
     <ul class="resp-tabs-list two">
             <li>
                 <div>

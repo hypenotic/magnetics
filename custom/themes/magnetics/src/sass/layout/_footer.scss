@@ -8,7 +8,10 @@
 #footer {
     background: $blueDark;
     border-top: 1px solid #fff;
-	padding-top: $spacingSection;
+	padding: 46px 5%;
+	@include media($screenLarge) {
+		padding: $spacingSection 2.5%;
+	}
     & footer {
         @include outer-container(1080px);
         @include pad($spacingSectionSmall default);

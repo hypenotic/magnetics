@@ -59,15 +59,14 @@ gulp.task('sass', function() {
 });
 
 // Create image minification task
-gulp.task('imagemin', function () {
+gulp.task('images', function () {
     return gulp.src('src/images/*')
-    	//.pipe(cache())
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
         }))
-        .pipe(gulp.dest(outputDir + '/images'))
+        .pipe(gulp.dest('dist/images'))
         .pipe(notify("image task finished"));
 });
 
@@ -94,10 +93,10 @@ gulp.task('icons', function() {
 gulp.task('watch', function() {
 	gulp.watch('src/js/**/*.js', ['js']);
 	gulp.watch('src/sass/**/*.scss', ['sass']);
-	gulp.watch('src/images/*', ['imagemin']);
+	gulp.watch('src/images/*', ['images']);
 	livereload.listen();
 	gulp.watch('*.php').on('change', livereload.changed);
 });
 
 // Create default task so you can gulp whenever you don't want to watch
-gulp.task('default', ['js', 'sass', 'imagemin']);
+gulp.task('default', ['js', 'sass', 'images']);
