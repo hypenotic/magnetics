@@ -270,9 +270,12 @@ Modules - reusable parts of our design
 		}
 	}
 	.quote {
+		
 		.cd-timeline-icon {
-			background: $blueDark url(dist/images/quoteEndWhite.png) 47% 48%;
-			background-repeat:no-repeat;
+			background: $blueDark url(dist/images/quoteEndWhite-small.png) 47% 48% no-repeat;
+			@include media($screenLarge) {
+				background: $blueDark url(dist/images/quoteEndWhite.png) 47% 48% no-repeat;
+			}
 			@include media($screenLarge) {
 				margin-left:-36px;
 				width: 70px;

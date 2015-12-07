@@ -8,7 +8,7 @@
 
     if ($metaTabsTabLeft && $metaTabsTabLeftContent && $metaTabsTabRight && $metaTabsTabRightContent) {
 ?>
-<section class="tabs">
+<section class="tabs tabs-2">
     <ul class="resp-tabs-list two">
         <li>
             <div>

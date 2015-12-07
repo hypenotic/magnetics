@@ -13,7 +13,7 @@
 
 
 <section id="responsive-tabs" class="tabs boxes">
-    <h2>Specifications</h2>
+		<div class="box-title"><h2>Specifications</h2></div>
         <ul>
             <?php if($metaSystemAtAGlance != -1)  { ?>
             <li>

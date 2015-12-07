@@ -6,10 +6,11 @@ section[role="main"] {
     overflow-x: hidden;
 }
 
-section[role="main"] > section, section[role="main"] > article {
-    @include media($screenMedium) {
-        padding: $spacingSectionLarge 2.5% $spacingSectionLarge 2.5% !important;
-    }
+section[role="main"] > section , section[role="main"] > article {
+	padding: 46px 2.5%;
+	@include media($screenLarge) {
+		padding: $spacingSectionLarge 2.5%;
+	}	
 }
 
 .background {
