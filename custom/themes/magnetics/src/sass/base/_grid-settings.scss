@@ -10,3 +10,12 @@ $max-width: 850px;
 // Neat Breakpoints
 $medium-screen: new-breakpoint(min-width em(640) 7);
 $screenLarge: new-breakpoint(min-width em(850) 12);
+
+// Portrait
+$bp-xlarge: new-breakpoint(min-width 81em 12);
+$bp-large: new-breakpoint(min-width 50em 12);
+$bp-med: new-breakpoint(min-width 30em 12);
+$bp-small: new-breakpoint(max-width 30em 5);
+
+// Landscape
+$bp-ls-small: new-breakpoint(max-height 30em 12);

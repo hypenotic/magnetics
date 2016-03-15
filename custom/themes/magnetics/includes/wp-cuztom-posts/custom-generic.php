@@ -394,15 +394,26 @@ $posts->add_meta_box(
             ),
             'repeatable'    =>  'true'
         ),
-		array(
+        array(
             'name'          => 'system_at_a_glance',
             'label'         => 'System at a Glance',
             'description'   => 'Select Drawings',
-            'type'          => 'post_checkboxes',
-			'args'          => array(
-				'post_type' => 'drawing',
-			)  
+            'type'          => 'post_select',
+            'args'          => array(
+                'post_type' => 'drawing',
+                'show_option_none'   => '-- Select Drawing --'
+            ),
+            'repeatable'    =>  'true'
         ),
+		// array(
+  //           'name'          => 'system_at_a_glance',
+  //           'label'         => 'System at a Glance',
+  //           'description'   => 'Select Drawings',
+  //           'type'          => 'post_checkboxes',
+		// 	'args'          => array(
+		// 		'post_type' => 'drawing',
+		// 	)  
+  //       ),
         // array(
             // 'name'          => 'system_at_a_glance',
             // 'label'         => 'System at a Glance',

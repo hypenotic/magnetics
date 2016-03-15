@@ -46,7 +46,7 @@
 				
 				<div class="drawing-images">
 				<?php 
-					echo "<ul>";
+					echo '<ul id="drawing__list">';
 					foreach($metaSystemAtAGlance as $drawing) {
 						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $drawing ), 'single-post-thumbnail' ); 	
 						$drawingImage="";
@@ -55,14 +55,62 @@
 						}
 						$drawingLink=get_permalink($drawing);
 						$weight=get_post_meta($drawing,'_measurements_weight',true);
-							echo '<li>';
-								if($drawingImage!='') {
-									echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
-								}
-								echo "<p>".get_the_title($drawing)."</p>";
-								echo "<p>".$weight."</p>";
-								
-							echo '</li>';
+						$size=get_post_meta($drawing,'_measurements_size',true);
+							if ($size == 'value1') {
+								echo '<li class="drawing--twelve">';
+									if($drawingImage!='') {
+										echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
+									}
+									echo "<p>".get_the_title($drawing)."</p>";
+									echo "<p>".$weight."</p>";
+									
+								echo '</li>';
+							} else if ($size == 'value2') {
+								echo '<li class="drawing--nine">';
+									if($drawingImage!='') {
+										echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
+									}
+									echo "<p>".get_the_title($drawing)."</p>";
+									echo "<p>".$weight."</p>";
+									
+								echo '</li>';
+							} else if ($size == 'value3') {
+								echo '<li class="drawing--eight">';
+									if($drawingImage!='') {
+										echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
+									}
+									echo "<p>".get_the_title($drawing)."</p>";
+									echo "<p>".$weight."</p>";
+									
+								echo '</li>';
+							} else if ($size == 'value4') {
+								echo '<li class="drawing--six">';
+									if($drawingImage!='') {
+										echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
+									}
+									echo "<p>".get_the_title($drawing)."</p>";
+									echo "<p>".$weight."</p>";
+									
+								echo '</li>';
+							} else if ($size == 'value5') {
+								echo '<li class="drawing--three">';
+									if($drawingImage!='') {
+										echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
+									}
+									echo "<p>".get_the_title($drawing)."</p>";
+									echo "<p>".$weight."</p>";
+									
+								echo '</li>';
+							} else {
+								echo '<li class="drawing--default">';
+									if($drawingImage!='') {
+										echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
+									}
+									echo "<p>".get_the_title($drawing)."</p>";
+									echo "<p>".$weight."</p>";
+									
+								echo '</li>';
+							}
 					}
 					echo "</ul>";
 				?>

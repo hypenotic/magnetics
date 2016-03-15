@@ -243,3 +243,75 @@ select--white {
 body.rma-form article {
     max-width: 1080px;
 }
+
+// NEW TECHNICAL DRAWING LAYOUT
+
+#systemataglance {
+
+    .drawing-images {
+        margin: 50px 0;
+
+    }
+
+    #drawing__list {
+        @include media($bp-med) {
+            @include display(flex);
+            @include flex-wrap(wrap);
+            @include align-items(flex-start);
+            @include justify-content(flex-start);
+        }
+        li.drawing--twelve {
+            
+            @include media($bp-med) {
+                @include flex(0 0 100%);
+            }
+        }
+        li.drawing--nine {
+            
+            @include media($bp-med) {
+                margin-top: 30px;
+                @include flex(0 0 75%);
+            }
+        }
+        li.drawing--eight {
+            
+            @include media($bp-med) {
+                @include flex(0 0 66.66%);
+            }
+        }
+        li.drawing--six {
+            
+            @include media($bp-med) {
+                @include flex(0 0 50%);
+            }
+        }
+        li.drawing--three {
+            
+            @include media($bp-med) {
+                @include flex(0 0 33.33%);
+            }
+        }
+        li.drawing--default {
+            
+            @include media($bp-med) {
+                @include flex(0 0 100%);
+            }
+        }
+        li {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            div {
+                position: relative;
+            }
+        }
+    }
+}
+
+.tabs #systemataglance .drawing-images ul#drawing__list li p:first-of-type {
+    font-weight: bold;
+}
+
+
+
+
