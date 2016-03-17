@@ -347,6 +347,9 @@ body.rma-form article {
         }
     }
     .vertical-layout__left {
+        p {
+            margin: 0;
+        }
         > p:first-of-type {
             // text-align: center;
             font-weight: bold;

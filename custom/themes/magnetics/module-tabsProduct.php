@@ -62,13 +62,14 @@
 					}
 					$LdrawingLink=get_permalink($metaSystemAtAGlance[0]);
 					$Lweight=get_post_meta($metaSystemAtAGlance[0],'_measurements_weight',true);
+					$Ldisplay=get_post_meta($metaSystemAtAGlance[0],'_measurements_name',true);
 					$Lsize=get_post_meta($metaSystemAtAGlance[0],'_measurements_size',true);
 				?>
 					<div id="vertical-layout">
 						<div class="vertical-layout__left">
 							<img src="<?php echo $LdrawingImage;  ?>" alt="">
-							<p><?php echo get_the_title($metaSystemAtAGlance[0]);  ?></p>
-							<p><?php echo $Lweight;  ?></p>
+							<p><?php echo $Ldisplay; ?></p>
+							<p><?php echo $Lweight; ?></p>
 						</div>
 						<ul id="drawing__list" class="vertical-layout__right">
 							<?php foreach(array_slice($metaSystemAtAGlance,1) as $drawing)
@@ -79,13 +80,14 @@
 									$drawingImage=$image[0];	
 								}
 								$drawingLink=get_permalink($drawing);
+								$name=get_post_meta($drawing,'_measurements_name',true);
 								$weight=get_post_meta($drawing,'_measurements_weight',true);
 								$size=get_post_meta($drawing,'_measurements_size',true);
 							    echo '<li class="drawing--six">';
 							    	if($drawingImage!='') {
 							    		echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
 							    	}
-							    	echo "<p>".get_the_title($drawing)."</p>";
+							    	echo "<p>".$name."</p>";
 							    	echo "<p>".$weight."</p>";
 							    	
 							    echo '</li>';
@@ -101,6 +103,7 @@
 							$drawingImage=$image[0];	
 						}
 						$drawingLink=get_permalink($drawing);
+						$name=get_post_meta($drawing,'_measurements_name',true);
 						$weight=get_post_meta($drawing,'_measurements_weight',true);
 						$size=get_post_meta($drawing,'_measurements_size',true);
 							if ($size == 'value1') {
@@ -108,7 +111,7 @@
 									if($drawingImage!='') {
 										echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
 									}
-									echo "<p>".get_the_title($drawing)."</p>";
+									echo "<p>".$name."</p>";
 									echo "<p>".$weight."</p>";
 									
 								echo '</li>';
@@ -117,7 +120,7 @@
 									if($drawingImage!='') {
 										echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
 									}
-									echo "<p>".get_the_title($drawing)."</p>";
+									echo "<p>".$name."</p>";
 									echo "<p>".$weight."</p>";
 									
 								echo '</li>';
@@ -126,7 +129,7 @@
 									if($drawingImage!='') {
 										echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
 									}
-									echo "<p>".get_the_title($drawing)."</p>";
+									echo "<p>".$name."</p>";
 									echo "<p>".$weight."</p>";
 									
 								echo '</li>';
@@ -135,7 +138,7 @@
 									if($drawingImage!='') {
 										echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
 									}
-									echo "<p>".get_the_title($drawing)."</p>";
+									echo "<p>".$name."</p>";
 									echo "<p>".$weight."</p>";
 									
 								echo '</li>';
@@ -144,7 +147,7 @@
 									if($drawingImage!='') {
 										echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
 									}
-									echo "<p>".get_the_title($drawing)."</p>";
+									echo "<p>".$name."</p>";
 									echo "<p>".$weight."</p>";
 									
 								echo '</li>';
@@ -153,7 +156,7 @@
 									if($drawingImage!='') {
 										echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
 									}
-									echo "<p>".get_the_title($drawing)."</p>";
+									echo "<p>".$name."</p>";
 									echo "<p>".$weight."</p>";
 									
 								echo '</li>';
