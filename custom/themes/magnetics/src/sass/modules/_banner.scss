@@ -83,10 +83,10 @@ section[role="main"] section#banner {
         display: block;
         min-width: 1px;
         @include media($screenLarge) {
-            margin-right: -17.4%;
+            // margin-right: -17.4%;
             @include shift(1);
-            width: 100%;
-            height: auto;
+            width: auto;
+            max-height: 500px;
         }
     }
     & .text {
