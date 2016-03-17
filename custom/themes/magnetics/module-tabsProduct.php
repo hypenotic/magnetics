@@ -7,6 +7,8 @@
     $metaPlaysWellWith = get_post_meta($postID, '_product_tabs_plays_well_with', true);
     $metaSystemAtAGlance = get_post_meta($postID, '_product_tabs_system_at_a_glance', true);
 
+    $layout = get_post_meta($postID, '_product_tabs_saag_layout', true);
+
     if($metaWhatsInTheBox || (isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== '')) || ($metaIntegrations[0] != 0) || ($metaSystemAtAGlance != -1)) {
 ?>
 
@@ -44,7 +46,7 @@
 			$title = get_the_title();
 			$prehash = preg_replace("/[^a-zA-Z]/", "", $title);
 			$lowercase = strtolower($prehash);
-			$hash = $lowercase;
+			$hash = $lowercase;	
 
 		?>
 			<div id="systemataglance">
@@ -52,8 +54,11 @@
 				<h3>The <?php the_title() ?> comes with:</h3>
 				
 				<div class="drawing-images" id="<?php echo $hash; ?>-tabs">
-				<?php 
-					echo '<ul id="drawing__list">';
+					<ul id="drawing__list">
+					<?php if($layout == 'value2')  { ?>
+						
+
+					<?php } else {
 					foreach($metaSystemAtAGlance as $drawing) {
 						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $drawing ), 'single-post-thumbnail' ); 	
 						$drawingImage="";
@@ -119,8 +124,7 @@
 								echo '</li>';
 							}
 					}
-					echo "</ul>";
-				?>
+				} ?> </ul>
 				</div>
 				<div class="drawing-content">
 					<div class="drawing-content-box">

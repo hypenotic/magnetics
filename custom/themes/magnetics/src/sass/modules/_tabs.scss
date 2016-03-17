@@ -328,6 +328,16 @@ body.rma-form article {
     }
 }
 
+
+#seasentinel-tabs {
+    #drawing__list {
+        // @include flex-direction(column);
+        @include media($bp-med) {
+            // max-height: 1020px;
+        }
+    }   
+}
+
 .tabs #systemataglance .drawing-images ul#drawing__list li p:first-of-type {
     font-weight: bold;
 }

@@ -12,6 +12,12 @@ $drawings->add_meta_box(
     'measurements',
     'Measurements', 
     array(
+    	array(
+			'name'          => 'name',
+			'label'         => 'Display Name',
+			'description'   => '',
+			'type'          => 'text'
+		),
 		array(
 			'name'          => 'weight',
 			'label'         => 'Weight',

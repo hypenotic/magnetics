@@ -405,6 +405,19 @@ $posts->add_meta_box(
             ),
             'repeatable'    =>  'true'
         ),
+        array(
+            'name'          => 'saag_layout',
+            'label'         => 'Tech Drawing Layout',
+            'description'   => 'for System at a Glance',
+            'type'          => 'select',
+            'options'       => array(
+                        'value1'    => 'Default',
+                        'value2'    => 'Vertical',
+                        'value3'    => 'Custom',
+                        'value4'    => 'Custom'
+                    ),
+            'default_value' => 'value1'
+        ),
 		// array(
   //           'name'          => 'system_at_a_glance',
   //           'label'         => 'System at a Glance',
