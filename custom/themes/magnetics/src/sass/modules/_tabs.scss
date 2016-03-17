@@ -330,10 +330,41 @@ body.rma-form article {
 
 
 #seasentinel-tabs {
-    #drawing__list {
-        // @include flex-direction(column);
+    #vertical-layout {
+        margin-bottom: 3rem;
+        @include display(flex);
+        @include align-items(center);
+        @include justify-content(center);
+        @include flex-direction(column);
         @include media($bp-med) {
-            // max-height: 1020px;
+            @include flex-direction(row);
+        }
+        div, ul#drawing__list {
+            @include flex(0 0 100%);
+            @include media($bp-med) {
+                @include flex(0 0 50%);
+            }
+        }
+    }
+    .vertical-layout__left {
+        > p:first-of-type {
+            // text-align: center;
+            font-weight: bold;
+        }
+    }
+    #drawing__list.vertical-layout__right {
+        @include display(flex);
+        @include flex-wrap(wrap);
+        @include align-items(flex-start);
+        @include justify-content(center);
+        li.drawing--six {
+            @include media($bp-med) {
+                @include flex(0 0 100%);
+                margin-top: 3rem;
+                &:last-child {
+                    margin-top: 0;
+                }
+            }
         }
     }   
 }

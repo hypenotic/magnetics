@@ -54,11 +54,46 @@
 				<h3>The <?php the_title() ?> comes with:</h3>
 				
 				<div class="drawing-images" id="<?php echo $hash; ?>-tabs">
-					<ul id="drawing__list">
-					<?php if($layout == 'value2')  { ?>
-						
-
-					<?php } else {
+				<?php if($layout == 'value2')  { 
+					$Limage = wp_get_attachment_image_src( get_post_thumbnail_id( $metaSystemAtAGlance[0] ), 'single-post-thumbnail' ); 	
+					$LdrawingImage="";
+					if($Limage!='') {
+						$LdrawingImage=$Limage[0];	
+					}
+					$LdrawingLink=get_permalink($metaSystemAtAGlance[0]);
+					$Lweight=get_post_meta($metaSystemAtAGlance[0],'_measurements_weight',true);
+					$Lsize=get_post_meta($metaSystemAtAGlance[0],'_measurements_size',true);
+				?>
+					<div id="vertical-layout">
+						<div class="vertical-layout__left">
+							<img src="<?php echo $LdrawingImage;  ?>" alt="">
+							<p><?php echo get_the_title($metaSystemAtAGlance[0]);  ?></p>
+							<p><?php echo $Lweight;  ?></p>
+						</div>
+						<ul id="drawing__list" class="vertical-layout__right">
+							<?php foreach(array_slice($metaSystemAtAGlance,1) as $drawing)
+							{
+								$image = wp_get_attachment_image_src( get_post_thumbnail_id( $drawing ), 'single-post-thumbnail' ); 	
+								$drawingImage="";
+								if($image!='') {
+									$drawingImage=$image[0];	
+								}
+								$drawingLink=get_permalink($drawing);
+								$weight=get_post_meta($drawing,'_measurements_weight',true);
+								$size=get_post_meta($drawing,'_measurements_size',true);
+							    echo '<li class="drawing--six">';
+							    	if($drawingImage!='') {
+							    		echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
+							    	}
+							    	echo "<p>".get_the_title($drawing)."</p>";
+							    	echo "<p>".$weight."</p>";
+							    	
+							    echo '</li>';
+							} ?>
+						</ul>
+					</div>
+				<?php } else {
+					echo '<ul id="drawing__list">';
 					foreach($metaSystemAtAGlance as $drawing) {
 						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $drawing ), 'single-post-thumbnail' ); 	
 						$drawingImage="";
@@ -124,7 +159,8 @@
 								echo '</li>';
 							}
 					}
-				} ?> </ul>
+					echo "</ul>";
+				} ?>
 				</div>
 				<div class="drawing-content">
 					<div class="drawing-content-box">
