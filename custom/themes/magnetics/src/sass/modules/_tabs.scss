@@ -269,7 +269,6 @@ body.rma-form article {
         li.drawing--nine {
             
             @include media($bp-med) {
-                margin-top: 30px;
                 @include flex(0 0 75%);
             }
         }
@@ -308,10 +307,29 @@ body.rma-form article {
     }
 }
 
+
+#explorer-tabs {
+    #drawing__list {
+        li.drawing--nine {
+            @include media($bp-med) {
+                margin-top: 2rem;
+            }
+        }
+        li.drawing--eight {
+            @include media($bp-med) {
+                margin-top: 2rem;
+            }
+        }
+        li.drawing--three {
+            @include media($bp-med) {
+                margin-top: 3rem;
+            }
+        }
+    }
+}
+
 .tabs #systemataglance .drawing-images ul#drawing__list li p:first-of-type {
     font-weight: bold;
 }
-
-
 
 

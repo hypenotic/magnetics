@@ -39,12 +39,19 @@
               
         </ul>
 		<!-- Start System at a Glance -->	
-		<?php if($metaSystemAtAGlance != -1)  { ?>
+		<?php if($metaSystemAtAGlance != -1)  { 
+
+			$title = get_the_title();
+			$prehash = preg_replace("/[^a-zA-Z]/", "", $title);
+			$lowercase = strtolower($prehash);
+			$hash = $lowercase;
+
+		?>
 			<div id="systemataglance">
 				<?php get_template_part( 'template', 'brochureFileOptions' ); ?>
 				<h3>The <?php the_title() ?> comes with:</h3>
 				
-				<div class="drawing-images">
+				<div class="drawing-images" id="<?php echo $hash; ?>-tabs">
 				<?php 
 					echo '<ul id="drawing__list">';
 					foreach($metaSystemAtAGlance as $drawing) {
