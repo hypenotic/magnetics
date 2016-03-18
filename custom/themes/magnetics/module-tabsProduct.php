@@ -16,7 +16,9 @@
 
 
 	<section class="title-holder">
-		<h2>Specifications</h2>
+		<div class="specs">
+			<h2>Specifications</h2>
+		</div>
 	</section>
 	<section id="responsive-tabs" class="tabs boxes">
         <ul>

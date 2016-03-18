@@ -12,9 +12,17 @@
 
 
 section[role="main"]>section.title-holder {
-    // padding-bottom: 0;
+    min-height: 250px;
     width: 100%;
     background:$grayLight;
+    display: block;
+    .specs {
+        @include span-columns(10);
+        @include shift(1.5);
+    }
+    h2 {
+        padding: 0;
+    }
 }
 
 .tabs.boxes {
