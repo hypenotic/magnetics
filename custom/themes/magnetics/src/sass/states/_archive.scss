@@ -131,7 +131,8 @@ section[role="main"] > section.pagination span.pages {
     & header.banner {
         min-height: 35vh;
 		@include media($screenLarge) {
-			min-height: 60vh;
+			// min-height: 60vh;
+            min-height: 400px;
 		}
         box-sizing: border-box;
         flex-direction: column;
