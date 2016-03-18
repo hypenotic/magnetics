@@ -9,6 +9,14 @@
     }
 }
 
+
+
+section[role="main"]>section.title-holder {
+    // padding-bottom: 0;
+    width: 100%;
+    background:$grayLight;
+}
+
 .tabs.boxes {
     overflow: hidden;
     .images {

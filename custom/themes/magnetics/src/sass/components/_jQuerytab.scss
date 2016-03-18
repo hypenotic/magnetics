@@ -1,7 +1,9 @@
 /*  == tab heading */
 #responsive-tabs {
-	background:$grayLight;
+	background:$grayLLight;
+	// background-color: white;
 	overflow:hidden;
+	padding-top: 0;
 }
 .tabs.r-tabs ul { 
 	overflow:hidden; 
@@ -29,7 +31,8 @@
 		}
 		&.r-tabs-state-active { 
 			a {
-				background:$grayLight;
+				// background-color: white;
+				background:$grayLLight;
 				color: $blueDark;
 				&:hover {
 					background-color: none;

@@ -376,4 +376,16 @@ body.rma-form article {
     font-weight: bold;
 }
 
+#systemataglance.r-tabs-panel.r-tabs-state-active {
+    background-color: $grayLLight;
+}
+
+.tabs.r-tabs ul li.r-tabs-state-active a {
+    background-color: $grayLLight;
+}
+
+#responsive-tabs {
+    padding-bottom: 0;
+}
+
 
