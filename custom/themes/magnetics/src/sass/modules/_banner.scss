@@ -84,9 +84,9 @@ section[role="main"] section#banner {
         min-width: 1px;
         @include media($screenLarge) {
             margin-right: -17.4%;
-            // @include shift(1);
-            width: auto;
-            max-height: 600px;
+            @include shift(1);
+            width: 100%;
+            height: auto;
         }
     }
     & .text {
@@ -109,6 +109,24 @@ section[role="main"] section#banner {
     }
     & h1 {
         padding-bottom: 18px;
+    }
+}
+
+.banner.seasentinel {
+    @include display(flex);
+    @include justify-content(space-between);
+    .text {
+        @include flex (0 0 40%);
+    }
+    .bannerImage.seasentinel {
+        @include media($screenLarge) {
+            margin-right: 0;
+            // margin-left: 300px;
+            // @include shift(1);
+            width: auto;
+            max-height: 600px;
+        }
+
     }
 }
 

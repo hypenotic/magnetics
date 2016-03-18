@@ -1,5 +1,3 @@
-<section id="banner" class="banner">
-
 	<?php 
 
 	// Video Background
@@ -12,8 +10,15 @@
 	$metaBannerBackgroundImageAttachment = wp_get_attachment_image_src( $metaBannerBackgroundImageID, 'full' );
 	$metaBannerBackgroundImageAttachmentURL = $metaBannerBackgroundImageAttachment[0];
 
-	$metaDarkMenu = get_post_meta($post->ID, '_banner_darkmenu', true); ?>
+	$metaDarkMenu = get_post_meta($post->ID, '_banner_darkmenu', true); 
 
+	$title = get_the_title();
+	$prehash = preg_replace("/[^a-zA-Z]/", "", $title);
+	$lowercase = strtolower($prehash);
+	$hash = $lowercase;	
+
+	?>
+<section id="banner" class="banner <?php echo $hash; ?>">
 
 	<?php 
 
@@ -63,6 +68,7 @@
 	// Custom meta values 
 	$metaBannerImageIDs = get_post_meta($post->ID, '_banner_image', true);
 
+
 	if ($metaBannerImageIDs  == -1) { ?>
 
 	<div class="bannerImage"></div>
@@ -74,7 +80,7 @@
 		$metaBannerImageAttachmentURL = $metaBannerImageAttachment[0];
 
 		?>
-	<img class="bannerImage" src="<?php 
+	<img class="bannerImage <?php echo $hash; ?>" src="<?php 
 	if($metaBannerImageAttachmentURL) {
 		echo $metaBannerImageAttachmentURL;	
 	} else {
