@@ -168,7 +168,7 @@
 				<div class="drawing-content">
 					<div class="drawing-content-box">
 						<?php
-							if($metaAdditionalOptions) {
+							if($metaAdditionalOptions[0][_title] !== '') {
 								echo "<ul>";
 								echo '<li>Additional Options</li>';		
 								foreach ( $metaAdditionalOptions as $option ) {
@@ -180,7 +180,7 @@
 					</div>
 					<div class="drawing-content-box">
 						<?php
-							if($metaIntegrations) {
+							if($metaIntegrations[0] !== '0') {
 								$args = array(
 									'post__in'    =>     $metaIntegrations
 								);	
@@ -198,7 +198,7 @@
 					</div>
 					<div class="drawing-content-box">
 						<?php
-							if($metaPlaysWellWith) {
+							if($metaPlaysWellWith[0] !== '0') {
 								$args = array(
 									'post__in'    => $metaPlaysWellWith
 								);	
