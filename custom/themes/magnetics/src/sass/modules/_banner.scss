@@ -131,6 +131,24 @@ section[role="main"] section#banner {
     }
 }
 
+.banner.seastar {
+    @include display(flex);
+    @include justify-content(space-between);
+    .text {
+        @include flex (0 0 40%);
+    }
+    .bannerImage.seastar {
+        @include media($screenLarge) {
+            margin-right: 0;
+            // margin-left: 300px;
+            // @include shift(1);
+            width: auto;
+            max-height: 500px;
+        }
+
+    }
+}
+
 .owl-carousel, .banner .owl-carousel {
     color: white;
     padding-top: 4em;
