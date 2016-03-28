@@ -150,3 +150,12 @@ body.products.single, body.product-integrations {
         }
     }
 }
+
+section#steps {
+    @include media($bp-med) {
+        padding-top: 92px;
+        h2 {
+            margin-bottom: 60px;
+        }
+    }
+}
