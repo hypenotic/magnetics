@@ -36,3 +36,7 @@ a[href$="product-integrations/rov/"], a[href$="product-integrations/auv/"] {
 .submission-successful h1 {
     color: $gray;
 }
+
+label.wireless-gnss span {
+    background-color: #00568d;
+}
