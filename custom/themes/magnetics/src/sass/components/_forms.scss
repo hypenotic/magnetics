@@ -301,3 +301,13 @@ body.rma-form .gform_wrapper li.gfield.gfield_error.gfield_contains_required lab
 body.rma-form .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html ol li li, body.rma-form .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html ol li li {
     list-style-type: upper-roman !important;
 }
+
+#gform_submit_button_5 {
+    // background-color: $orange;
+    border-radius: 0;
+    font-size: 1.2em !important;
+    &:hover {
+        background-color: $teal;
+        color: white;
+    }
+}
