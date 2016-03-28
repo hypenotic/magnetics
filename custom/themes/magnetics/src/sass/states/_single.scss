@@ -63,8 +63,11 @@ body.blog.single, body.articles.single, body.single-article {
     }
     & section.content {
         @include media($screenLarge) {
-            @include span-columns(8);
-            @include shift(1);
+            @include span-columns(10);
+            @include shift(0);
+            padding-left: 30px;
+            padding-right: 40px;
+            margin-right: -1%;
         }
 
         & ol {
@@ -99,12 +102,12 @@ body.blog.single, body.articles.single, body.single-article {
 article .content {
     h5 {
         line-height: 1.2em;
-        margin-bottom: 0;
+        margin-bottom: 0.5em;
         margin-top: 2.5em;
     }
     h6 {
         margin-bottom: 0.7em;
-        margin-top: 1.5em;
+        margin-top: 1em;
     }
     .wp-caption {
         width: 100% !important;

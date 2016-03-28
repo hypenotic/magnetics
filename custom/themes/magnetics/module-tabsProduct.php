@@ -12,9 +12,6 @@
     if($metaWhatsInTheBox || (isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== '')) || ($metaIntegrations[0] != 0) || ($metaSystemAtAGlance != -1)) {
 ?>
 
-
-
-
 	<section class="title-holder">
 		<div class="specs">
 			<h2>Specifications</h2>
