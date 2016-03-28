@@ -353,6 +353,25 @@ body.rma-form article {
     }
 }
 
+#seaquestpodarray-tabs {
+    #drawing__list {
+        li.drawing--twelve {
+            @include media($bp-med) {
+                margin-bottom: 3rem;
+                p:first-of-type {
+                    margin-top: 2rem;
+                }
+            }
+        }
+        li.drawing--three {
+            @include media($bp-med) {
+                margin-bottom: 2.5rem;
+            }
+        }
+    }
+}
+
+
 #seasentinel-tabs {
     #vertical-layout {
         margin-bottom: 3rem;
