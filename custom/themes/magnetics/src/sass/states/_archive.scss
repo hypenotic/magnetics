@@ -202,9 +202,13 @@ section[role="main"] > section.pagination span.pages {
         ul {
             margin: 0;
             padding: 0;
+            @include media($bp-med) {
+                margin-bottom: 92px;
+                margin-top: 20px;
+            }
             & li.product {
                 @include media($screenLarge) {
-                    min-height: 280px;
+                    // min-height: 280px;
                 }
 
                 & a {
@@ -231,6 +235,12 @@ section[role="main"] > section.pagination span.pages {
         & .marine-magnetometers a:hover h3 {
             color: $orange;
         }
+        & .wireless-gnss a:hover h3 {
+            color: #00568d;
+        }
+        & .product-integrations a:hover h3 {
+            color: $teal;
+        }
         & .product-integrations a:hover h3 {
             color: $teal;
         }
@@ -253,6 +263,9 @@ section[role="main"] > section.pagination span.pages {
             &.marine-magnetometers span {
                 background: $orange;
             }
+            &.wireless-gnss span {
+                background-color: #00568d;
+            }
         }
     }
     background: -moz-linear-gradient(top, rgba(0, 31, 63, 0) 0%, rgba(0, 31, 63, 1) 300px, rgba(0, 31, 63, 1) 100%);
@@ -266,7 +279,7 @@ section[role="main"] > section.pagination span.pages {
         display: flex;
         flex-direction: column;
         margin: 0;
-        margin-bottom: $spacingSectionSmall;
+        // margin-bottom: $spacingSectionSmall;
         @include media($screenLarge) {
             @include span-columns(5);
             &:nth-child(2n) {
