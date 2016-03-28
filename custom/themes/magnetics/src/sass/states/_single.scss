@@ -95,3 +95,24 @@ body.blog.single, body.articles.single, body.single-article {
         line-height: em($fontSizeSubheading);
     }
 }
+
+article .content {
+    h5 {
+        line-height: 1.2em;
+        margin-bottom: 0;
+        margin-top: 2.5em;
+    }
+    h6 {
+        margin-bottom: 0.7em;
+        margin-top: 2em;
+    }
+    .wp-caption {
+        width: 100% !important;
+        height: auto;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1.375em;
+    }
+}
