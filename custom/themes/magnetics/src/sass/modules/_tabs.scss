@@ -328,6 +328,30 @@ body.rma-form article {
     }
 }
 
+#seaquest-tabs {
+    #drawing__list {
+        @include media($bp-med) {
+            @include align-items(flex-start);
+        }
+        li.drawing--eight {
+            @include media($bp-med) {
+                p {
+                    margin-top: 2rem;
+                }
+            }
+        }
+        li.drawing--three {
+            @include media($bp-med) {
+                margin-top: 2.5rem;
+            }
+        }
+        > li:nth-child(2) {
+            @include media($bp-med) {
+                margin-top: 30%;
+            }
+        }
+    }
+}
 
 #seasentinel-tabs {
     #vertical-layout {

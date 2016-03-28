@@ -94,6 +94,7 @@ section[role="main"] section#banner {
         @include media($screenLarge) {
             width: 50%;
             text-align: left;
+            // text-align: right;
         }
 
         min-height: 300px;
@@ -139,11 +140,12 @@ section[role="main"] section#banner {
     }
     .bannerImage.seastar {
         @include media($screenLarge) {
-            margin-right: 0;
+            margin-left: 20px;
+            margin-bottom: -300px;
             // margin-left: 300px;
             // @include shift(1);
             width: auto;
-            max-height: 500px;
+            max-height: 800px;
         }
 
     }
