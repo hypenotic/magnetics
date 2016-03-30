@@ -236,13 +236,13 @@ section[role="main"] > section.pagination span.pages {
             color: $orange;
         }
         & .wireless-gnss a:hover h3 {
-            color: #00568d;
+            color: $blueMid;
         }
         & .product-integrations a:hover h3 {
-            color: $teal;
+            color: $blueGray;
         }
-        & .product-integrations a:hover h3 {
-            color: $teal;
+        & .software a:hover h3 {
+            color: $grayMed;
         }
         & label {
             clear: both;
@@ -264,7 +264,13 @@ section[role="main"] > section.pagination span.pages {
                 background: $orange;
             }
             &.wireless-gnss span {
-                background-color: #00568d;
+                background-color: $blueMid;
+            }
+            &.product-integrations span {
+                background-color: $blueGray;
+            }
+            &.software span {
+                background-color: $grayMed;
             }
         }
     }
