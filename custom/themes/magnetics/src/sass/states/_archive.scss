@@ -203,12 +203,18 @@ section[role="main"] > section.pagination span.pages {
             margin: 0;
             padding: 0;
             @include media($bp-med) {
-                margin-bottom: 92px;
+                margin-bottom: 80px;
                 margin-top: 20px;
             }
             & li.product {
+
+                p {
+                    margin-bottom: 0;
+                }
+
                 @include media($screenLarge) {
                     // min-height: 280px;
+                    margin-bottom: 50px;
                 }
 
                 & a {
@@ -298,7 +304,7 @@ section[role="main"] > section.pagination span.pages {
 
         p {
             @include media($screenLarge) {
-                min-height: 140px;
+                // min-height: 140px;
             }
         }
     }
