@@ -1,34 +1,40 @@
 a#call {
     position: fixed;
-    right: 0;
-    top: 50%;
-    margin-top: -80px;
     z-index: 10000;
     background: $teal;
     color: white;
     letter-spacing: 1px;
     font-weight: bold;
     font-size: em($fontSizeBody);
-    padding: 8px 18px;
     display: block;
-    -ms-transform: rotate(-90deg);
-    /* IE 9 */
-    -ms-transform-origin: 100% 100%;
-    /* IE 9 */
-    -webkit-transform: rotate(90deg);
-    /* Chrome, Safari, Opera */
-    -webkit-transform-origin: 100% 100%;
-    /* Chrome, Safari, Opera */
-    transform: rotate(-90deg);
-    transform-origin: 100% 100%;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
     &:hover {
         background: orange;
     }
-    /*@include media($screenLarge) {
+    @include media($bp-small) {
+        bottom: 0px;
+        right: 0;
+        font-size: em($fontSizeMeta);
+        text-transform: uppercase;
+        text-align: center;
+        padding: 6px 10px;
+        width: 100%;
+    }
+    @include media($bp-med) {
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
         padding: 8px 18px;
-        font-weight: bold;
-        font-size: em($fontSizeBody);
-    }*/
+        -ms-transform: rotate(-90deg);
+        /* IE 9 */
+        -ms-transform-origin: 100% 100%;
+        /* IE 9 */
+        -webkit-transform: rotate(90deg);
+        /* Chrome, Safari, Opera */
+        -webkit-transform-origin: 100% 100%;
+        /* Chrome, Safari, Opera */
+        transform: rotate(-90deg);
+        transform-origin: 100% 100%;
+        right: 0;
+        top: 50%;
+        margin-top: -80px;
+    }
 }

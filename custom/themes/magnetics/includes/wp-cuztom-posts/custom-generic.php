@@ -78,6 +78,19 @@ $pages->add_meta_box(
 );
 
 $pages->add_meta_box(
+    'intro',
+    'Intro Blurb', 
+    array(
+        array(
+            'name'          => 'intro',
+            'label'         => 'Introduction',
+            'description'   => 'Text that will be on top of main content.',
+            'type'          => 'wysiwyg',
+        )
+    )
+);
+
+$pages->add_meta_box(
     'integrations',
     'Integrations', 
     array(

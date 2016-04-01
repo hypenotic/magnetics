@@ -12,13 +12,21 @@
 
 
 section[role="main"]>section.title-holder {
-    min-height: 260px;
+    min-height: 140px;
     width: 100%;
     background:$grayLight;
     display: block;
+    @include media($bp-med) {
+        min-height: 260px;
+    }
     .specs {
-        @include span-columns(10);
-        @include shift(1.5);
+        text-align: center;
+        @include media($bp-med) {
+            @include span-columns(10);
+            @include shift(1.5);
+            padding: 0;
+            text-align: left;
+        }
     }
     h2 {
         padding: 0;

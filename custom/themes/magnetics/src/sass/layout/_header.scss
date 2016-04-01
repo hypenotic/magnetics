@@ -27,6 +27,9 @@ body > header {
             @include media($screenLarge) {
                 max-width: 300px;
             }
+            @include media($bp-small) {
+                margin-left: 15px;
+            }
         }
     }
 }

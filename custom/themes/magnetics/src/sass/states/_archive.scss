@@ -4,6 +4,7 @@
 
 body section.products {
     padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 .archive.blog section[role="main"] {
@@ -28,6 +29,9 @@ body section.products {
 
 #archive {
     padding-top: 0 !important;
+    @include media($bp-small) {
+        padding: 0 30px;
+    }
 }
 
 #archive article {
@@ -75,6 +79,9 @@ section[role="main"] > section.pagination span.pages {
     & > header {
         @include outer-container($screenLarge);
         @include pad(default);
+        @include media($bp-small) {
+            padding: 0 30px;
+        }
         & > h1 {
             color: $gray;
             text-transform: uppercase;
@@ -152,6 +159,9 @@ section[role="main"] > section.pagination span.pages {
     & header.banner {
         max-width: 850px;
         text-align: center;
+        @include media($bp-small) {
+            padding: 30px;
+        }
         h1 {
             text-shadow: 0px !important;
             display: block;
@@ -199,6 +209,9 @@ section[role="main"] > section.pagination span.pages {
 
 .category-products section[role="main"], .category-product-integrations section[role="main"] {
     & section.products {
+        @include media($bp-small) {
+            margin: 20px;
+        }
         ul {
             margin: 0;
             padding: 0;
@@ -207,14 +220,14 @@ section[role="main"] > section.pagination span.pages {
                 margin-top: 20px;
             }
             & li.product {
-
-                p {
-                    margin-bottom: 0;
-                }
-
+                margin-bottom: 40px;
                 @include media($screenLarge) {
                     // min-height: 280px;
                     margin-bottom: 50px;
+                }
+
+                p {
+                    margin-bottom: 0;
                 }
 
                 & a {
@@ -278,6 +291,11 @@ section[role="main"] > section.pagination span.pages {
             &.software span {
                 background-color: $grayMed;
             }
+        }
+        & > label:not(:first-child) {
+            @include media($bp-small) {
+                margin-top: 50px;
+            }   
         }
     }
     background: -moz-linear-gradient(top, rgba(0, 31, 63, 0) 0%, rgba(0, 31, 63, 1) 300px, rgba(0, 31, 63, 1) 100%);

@@ -221,8 +221,9 @@ Modules - reusable parts of our design
 		}
 	}
 	.cd-timeline-content {
-		padding:0 1.5em 1em;
-		@include media($screenLarge) {
+		padding:0;
+        margin-left: 50px;
+		@include media($bp-med) {
 			margin-left: 0;
 			padding:0 1.5em 1em;
 			width: 45%;
@@ -362,9 +363,11 @@ Modules - reusable parts of our design
 	border-radius: 0.25em;
 	padding: 0 1em 1em;
 	//box-shadow: 0 3px 0 #d7e4ed;
+    
 	h3 {
 		padding:0;
 	}
+
 }
 /*.cd-timeline-content:after {
 	content: "";

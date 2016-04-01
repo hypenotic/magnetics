@@ -52,11 +52,11 @@ section[role="main"] section#banner {
 
 .background.enabled {
     & ~ .text {
-        text-align: center;
-        width: 60%;        
+        text-align: center;       
 		margin: 40px auto 0;
-		@include media($screenLarge) {
+		@include media($bp-med) {
 			margin: 0 auto;
+            width: 60%;
 		}
     }
     & ~ .bannerImage {
@@ -96,6 +96,9 @@ section[role="main"] section#banner {
             text-align: left;
             // text-align: right;
         }
+        @include media($bp-small) {
+            padding: 0 30px;
+        }
 
         min-height: 300px;
         display: flex;
@@ -120,6 +123,7 @@ section[role="main"] section#banner {
         @include flex (0 0 40%);
     }
     .bannerImage.seasentinel {
+        max-height: 350px;
         @include media($screenLarge) {
             margin-right: 0;
             margin-bottom: -10%;
@@ -139,7 +143,10 @@ section[role="main"] section#banner {
         @include flex (0 0 40%);
     }
     .bannerImage.seastar {
+        max-height: 200px;
+        margin-top: 20px;
         @include media($screenLarge) {
+            margin-top: 0;
             margin-left: 20px;
             margin-bottom: -300px;
             // margin-left: 300px;

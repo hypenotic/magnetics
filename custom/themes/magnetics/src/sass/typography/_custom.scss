@@ -1,8 +1,13 @@
 .intimate {
-    font-size: em($fontSizeLarge);
-    line-height: em($fontSizeSubheading);
+    text-align: center;
+    font-size: em($fontSizeBody);
+    line-height: em($fontSizeMedium);
     font-family: $fontSecondary;
     font-weight: normal;
+    @include media($bp-med) {
+        font-size: em($fontSizeLarge);
+        line-height: em($fontSizeSubheading);
+    }
 }
 
 .icon {

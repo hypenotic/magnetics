@@ -1,3 +1,47 @@
+.about-intro {
+    background-color: $white;
+    article {
+        color: $blueDark;
+        @include media($bp-small) {
+            padding: 30px;
+        }
+    }
+}
+
+p.intimate:last-child {
+    @include media($bp-med) {
+        margin-bottom: 0;
+    }
+}
+
+.about-content {
+    background-color: $grayMed;
+    article {
+        color: $white;
+        @include outer-container($screenMedium);
+        @include media($bp-small) {
+            padding: 30px;
+        }
+    }
+}
+
+article.tabs-left-content,
+article.tabs-right-content {
+    @include media($bp-small) {
+        padding: 0 30px;
+    }
+    @include media($bp-med) {
+        @include flexalignstart;
+        @include flex-wrap(wrap);
+    }
+    div {
+        @include media($bp-med) {
+            padding: 0 40px 40px;
+            @include flex(0 0 50%);
+        }
+    }
+}
+
 body.about #footer footer {
    //@include outer-container(850px);
 }
@@ -15,9 +59,9 @@ body.about {
     background: $gray;
     & section:first-of-type {
         & article {
+            padding: 20px;
             color: white;
-            @include pad($spacingSection default);
-            @include media($screenLarge) {
+            @include media($bp-med) {
                 @include pad($spacingSectionLarge default);
             }
         }

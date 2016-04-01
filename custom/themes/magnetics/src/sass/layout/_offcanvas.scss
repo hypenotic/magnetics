@@ -157,6 +157,9 @@ Nav Panel
     position: absolute;
     right: 30px;
     top: 33%;
+    @include media($bp-small) {
+        right: 0px;
+    }
 }
 
 body .dark #nav-toggle {

@@ -25,13 +25,13 @@
     <div class="resp-tabs-container two">
 
         <div>
-            <article>
+            <article class="tabs-left-content">
             <?php echo $metaTabsTabLeftContent; ?>
             </article>
         </div>
 
          <div>
-            <article>
+            <article class="tabs-right-content">
             <?php echo $metaTabsTabRightContent; ?> 
             </article>
         </div>

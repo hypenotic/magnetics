@@ -2,6 +2,9 @@ body.blog.single, body.articles.single, body.single-article {
     & h1 {
         color: $gray;
         margin-bottom: $spacingSection;
+        @include media($bp-small) {
+            font-size: 1.7rem;
+        }
     }
     .banner {
         display: none;

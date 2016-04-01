@@ -1,5 +1,8 @@
 section[role="main"] .related {
     background: white;
+    @include media($bp-small) {
+        padding: 30px;
+    }
 }
 
 footer .related {

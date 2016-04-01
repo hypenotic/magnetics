@@ -71,9 +71,9 @@ h6 {
 }
 
 p, ul, ol {
-    font-size: em($fontSizeBody);
+    font-size: em($fontSizeBodySecondary);
     margin: 0 0 em($fontSizeMedium) 0;
-    @include media($screenLarge) {
+    @include media($bp-med) {
         font-size: em($fontSizeBody);
         line-height: em($fontSizeSubheading);
         margin: 0 0 em($fontSizeMedium) 0;
