@@ -155,10 +155,16 @@ Nav Panel
 
 .menu-btn {
     position: absolute;
-    right: 30px;
-    top: 33%;
+    
     @include media($bp-small) {
         right: 0px;
+    }
+    @include media($bp-med) {
+        right: -20px;
+    }
+    @include media($bp-large) {
+        right: 30px;
+        top: 33%;
     }
 }
 

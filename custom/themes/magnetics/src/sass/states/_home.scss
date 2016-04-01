@@ -64,15 +64,14 @@
             opacity: 0.5;
             left: auto;
             right: -40%;
+            @include media($screenMedium) {
+                opacity: 1;
+                right: -10%;
+                left: auto;
+            }
             @include media($screenLarge) {
                 opacity: 1;
                 right: 0;
-                left: auto;
-            }
-
-            @include media($screenMedium) {
-                opacity: 1;
-                // right: -10%;
                 left: auto;
             }
 

@@ -1,4 +1,7 @@
 section.related {
+	@include media($bp-med) {
+	    padding: 50px 70px;
+	}
     & ul {
         padding-top: $spacingSectionSmall;
         & li {

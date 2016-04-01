@@ -5,6 +5,9 @@
         @include media($bp-small) {
             padding: 30px;
         }
+        @include media($bp-med) {
+            padding: 92px 50px;
+        }
     }
 }
 

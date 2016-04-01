@@ -154,6 +154,9 @@ body.products.single, body.product-integrations {
 section#steps {
     padding: 30px;
     @include media($bp-med) {
+        padding: 92px 100px 0;
+    }
+    @include media($bp-large) {
         padding: 0;
         padding-top: 92px;
         h2 {

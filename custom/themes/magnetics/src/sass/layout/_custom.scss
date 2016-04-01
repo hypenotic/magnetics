@@ -7,7 +7,9 @@ section[role="main"] {
 }
 
 section[role="main"] > section , section[role="main"] > article {
-	padding: 46px 30px;
+    @include media($bp-small) {
+        padding: 46px 30px;
+    }
 	@include media($screenLarge) {
 		padding: $spacingSectionLarge 2.5%;
 	}	

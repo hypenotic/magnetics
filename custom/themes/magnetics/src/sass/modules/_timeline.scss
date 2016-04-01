@@ -223,7 +223,7 @@ Modules - reusable parts of our design
 	.cd-timeline-content {
 		padding:0;
         margin-left: 50px;
-		@include media($bp-med) {
+		@include media($bp-large) {
 			margin-left: 0;
 			padding:0 1.5em 1em;
 			width: 45%;

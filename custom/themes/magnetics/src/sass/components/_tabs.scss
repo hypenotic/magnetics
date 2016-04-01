@@ -16,7 +16,7 @@ section[role="main"]>section.title-holder {
     width: 100%;
     background:$grayLight;
     display: block;
-    @include media($bp-med) {
+    @include media($bp-large) {
         min-height: 260px;
     }
     .specs {
@@ -29,7 +29,12 @@ section[role="main"]>section.title-holder {
         }
     }
     h2 {
-        padding: 0;
+        @include media($bp-med) {
+            padding: 40px 0;
+        }
+        @include media($bp-large) {
+            padding: 0;
+        }
     }
 }
 

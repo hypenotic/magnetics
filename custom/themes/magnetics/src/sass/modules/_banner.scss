@@ -66,7 +66,7 @@ section[role="main"] section#banner {
 
 .banner {
     flex-direction: column;
-    @include media($screenLarge) {
+    @include media($bp-med) {
         max-height: 60vh;
         display: flex;
         flex-direction: row-reverse;
@@ -82,22 +82,30 @@ section[role="main"] section#banner {
         @include pad(5vh default 0 default);
         display: block;
         min-width: 1px;
-        @include media($screenLarge) {
+        @include media($bp-med) {
             margin-right: -17.4%;
-            @include shift(1);
             width: 100%;
             height: auto;
+        }
+        @include media($bp-large) {
+            @include shift(1);
         }
     }
     & .text {
         max-width: 100%;
-        @include media($screenLarge) {
-            width: 50%;
-            text-align: left;
-            // text-align: right;
-        }
+        
         @include media($bp-small) {
             padding: 0 30px;
+        }
+        @include media($bp-med) {
+            width: 50%;
+            text-align: left;
+            padding-left: 50px;
+        }
+        @include media($bp-large) {
+            width: 50%;
+            text-align: left;
+            padding-left: 0;
         }
 
         min-height: 300px;
@@ -116,6 +124,18 @@ section[role="main"] section#banner {
     }
 }
 
+.banner.explorer {
+    .bannerImage.explorer {
+        @include media($bp-med) {
+            margin-left: -10%;
+        }
+        @include media($bp-large) {
+            
+        }
+
+    }
+}
+
 .banner.seasentinel {
     @include display(flex);
     @include justify-content(space-between);
@@ -124,13 +144,15 @@ section[role="main"] section#banner {
     }
     .bannerImage.seasentinel {
         max-height: 350px;
-        @include media($screenLarge) {
-            margin-right: 0;
+        @include media($bp-med) {
+            margin-left: -10%;
             margin-bottom: -10%;
-            // margin-left: 300px;
-            // @include shift(1);
             width: auto;
             max-height: 650px;
+        }
+        @include media($bp-large) {
+            margin-right: -10%;
+            margin-left: 0;
         }
 
     }
@@ -145,15 +167,19 @@ section[role="main"] section#banner {
     .bannerImage.seastar {
         max-height: 200px;
         margin-top: 20px;
-        @include media($screenLarge) {
+        @include media($bp-med) {
             margin-top: 0;
+            margin-left: -10%;
+            width: auto;
+            max-height: 400px;
+        }
+        @include media($bp-large) {
             margin-left: 20px;
             margin-bottom: -300px;
-            // margin-left: 300px;
-            // @include shift(1);
             width: auto;
             max-height: 800px;
         }
+
 
     }
 }
