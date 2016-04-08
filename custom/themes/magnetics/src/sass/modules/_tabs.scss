@@ -264,6 +264,11 @@ body.rma-form article {
         @include media($bp-large) {
             padding: 0;
         }
+        p {
+           @include media($bp-small) {
+               margin-bottom: 0;
+           } 
+        }
         li.drawing--twelve {
             
             @include media($bp-med) {
