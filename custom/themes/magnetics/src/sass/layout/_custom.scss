@@ -6,13 +6,20 @@ section[role="main"] {
     overflow-x: hidden;
 }
 
-section[role="main"] > section , section[role="main"] > article {
+section[role="main"] > section,
+section[role="main"] > article {
     @include media($bp-small) {
         padding: 46px 30px;
     }
 	@include media($screenLarge) {
 		padding: $spacingSectionLarge 2.5%;
 	}	
+}
+
+section[role="main"] > section#responsive-tabs {
+    @include media($bp-small) {
+        padding: 0 0 46px;
+    }
 }
 
 .background {
