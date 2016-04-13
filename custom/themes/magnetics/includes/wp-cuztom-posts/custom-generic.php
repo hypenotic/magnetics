@@ -193,19 +193,19 @@ $posts->add_meta_box(
 
 
 
-$posts->add_meta_box(
-    'content_block_timeline',
-    'Vertical "Timeline" Content', 
-    array(
-        array(
-            'name'          => 'text',
-            'label'         => 'List Items',
-            'description'   => '',
-            'type'          => 'wysiwyg',
+// $posts->add_meta_box(
+//     'content_block_timeline',
+//     'Vertical "Timeline" Content', 
+//     array(
+//         array(
+//             'name'          => 'text',
+//             'label'         => 'List Items',
+//             'description'   => '',
+//             'type'          => 'wysiwyg',
             
-        ),
-    )
-);
+//         ),
+//     )
+// );
 
 $posts->add_meta_box(
     'timeline_block',
