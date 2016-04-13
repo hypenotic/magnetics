@@ -208,6 +208,28 @@ $posts->add_meta_box(
 );
 
 $posts->add_meta_box(
+    'timeline_block',
+    'Timeline', 
+    array(
+        'bundle',    
+            array( 
+                array(
+                    'name'          => 'heading',
+                    'label'         => 'Heading',
+                    'description'   => '(optional)',
+                    'type'          => 'text',          
+                ),
+                array(
+                    'name'          => 'content',
+                    'label'         => 'Content',
+                    'description'   => '',
+                    'type'          => 'wysiwyg',          
+                )
+            )
+    )
+);
+
+$posts->add_meta_box(
     'steps',
     'Steps',    
     array(
