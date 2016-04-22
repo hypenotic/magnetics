@@ -22,9 +22,8 @@ get_header(); ?>
 	$metaBannerBackgroundImageAttachmentURL = $metaBannerBackgroundImageAttachment[0];
 
 	$introBlurb  = get_post_meta(get_the_ID(), '_intro_intro', true);
-
-
 ?>
+
 <!-- Start loop -->
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 

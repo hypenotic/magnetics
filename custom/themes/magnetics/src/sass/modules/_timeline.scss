@@ -160,6 +160,18 @@ section#timeline {
     }
 }
 
+#cd-timeline {
+    li.cd-timeline-block:last-child {
+        .cd-timeline-content {
+            a {
+                color: $teal;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+
 /* -------------------------------- 
 
 Modules - reusable parts of our design
