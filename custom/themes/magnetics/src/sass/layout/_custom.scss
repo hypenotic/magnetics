@@ -11,9 +11,18 @@ section[role="main"] > article {
     @include media($bp-small) {
         padding: 46px 30px;
     }
-	@include media($screenLarge) {
+	@include media($bp-med) {
 		padding: $spacingSectionLarge 2.5%;
-	}	
+	}
+    @include media($bp-xlarge) {
+        padding: $spacingSectionLarge 15%;
+    } 
+}
+
+section[role="main"] > section#timeline-container {
+    @include media($bp-xlarge) {
+        padding: $spacingSectionLarge 15%;
+    }   
 }
 
 section[role="main"] > section#responsive-tabs {

@@ -15,7 +15,7 @@
 
 
 
-<section class="cd-container" i d="timeline" >
+<section class="cd-container" i d="timeline" id="timeline-container" >
 	<ul>
 
 	<?php // For loop cycle through array
