@@ -182,6 +182,31 @@ section[role="main"] section#banner {
     }
 }
 
+
+.banner.wirelessgnss {
+    @include display(flex);
+    @include justify-content(space-between);
+    .text {
+        @include flex (0 0 40%);
+    }
+    .bannerImage.wirelessgnss {
+        max-height: 200px;
+        margin-top: 20px;
+        @include media($bp-med) {
+            margin-top: 0;
+            margin-left: -10%;
+            width: auto;
+            max-height: 400px;
+        }
+        @include media($bp-large) {
+            margin-left: 20px;
+            margin-bottom: -300px;
+            width: auto;
+            max-height: 800px;
+        }
+    }
+}
+
 .owl-carousel, .banner .owl-carousel {
     color: white;
     padding-top: 4em;
