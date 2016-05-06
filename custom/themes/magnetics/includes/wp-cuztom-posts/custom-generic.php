@@ -188,6 +188,18 @@ $posts->add_meta_box(
             'type'          => 'checkbox',
             
         ),
+        array(
+            'name'          => 'source',
+            'label'         => 'Publication Source',
+            'description'   => '',
+            'type'          => 'text',
+        ),
+        array(
+            'name'          => 'slink',
+            'label'         => 'Source Link',
+            'description'   => '',
+            'type'          => 'text',
+        )
     )
 );
 
@@ -495,7 +507,7 @@ $posts->add_meta_box(
             'label'         => 'Text Overlay',
             'description'   => 'Text that will overlay image',
             'type'          => 'textarea',
-        ),
+        )
     )
 );
 
@@ -521,7 +533,47 @@ $posts->add_meta_box(
             'label'         => 'Vendor Blurb',
             'description'   => '',
             'type'          => 'wysiwyg',
-        ),
+        )
+    )
+);
+
+$posts->add_meta_box(
+    'partners',
+    'Integration Partners', 
+    array(
+        'bundle', 
+        array(
+            array(
+                'name'          => 'partner',
+                'label'         => 'Partner',
+                'description'   => '',
+                'type'          => 'text'
+            ),
+            array(
+                'name'          => 'logo',
+                'label'         => 'Logo',
+                'description'   => '',
+                'type'          => 'image',
+            ),
+            array(
+                'name'          => 'models',
+                'label'         => 'Models',
+                'description'   => '',
+                'type'          => 'textarea'
+            ),
+            array(
+                'name'          => 'website',
+                'label'         => 'Website',
+                'description'   => 'Ex. partnersite.com <span style="color:red;">(do not add http:// or www)</span>',
+                'type'          => 'text'
+            ),
+            array(
+                'name'          => 'case',
+                'label'         => 'Case Study Link',
+                'description'   => '',
+                'type'          => 'text'
+            )
+        )
     )
 );
 

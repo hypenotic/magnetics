@@ -166,6 +166,9 @@ section#timeline {
             a {
                 color: $teal;
                 font-weight: bold;
+                &:hover {
+                    color: $orange;
+                }
             }
         }
     }

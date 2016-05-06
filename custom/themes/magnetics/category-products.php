@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-  
-
     <div class="background">
     <div class="overlay"></div>
         <video autoplay loop id="bgvid">

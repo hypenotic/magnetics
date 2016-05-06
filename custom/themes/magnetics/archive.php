@@ -75,6 +75,7 @@ $tags = get_terms('post_tag');
         
 <?php 
     $link = get_permalink();
+    $pubsource = get_post_meta($post->ID,'_author_source',true);
 ?>
 <a href="<?php the_permalink(); ?>">
     <article class="overview">
@@ -98,6 +99,9 @@ echo trim($output, $separator);
 <header>
 
             <h3><?php the_title(); ?></h3>
+            <?php if ($pubsource) { ?>
+            <p class="publication-source">Source: <?php echo $pubsource; ?></p>
+            <?php } ?>
 
         </header>
 

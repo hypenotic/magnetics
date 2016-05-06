@@ -70,10 +70,14 @@
   <!-- Module: productInformation -->
   <?php get_template_part( 'module', 'tabsProduct' ); ?>
 
+  <!-- Module: Integration Partners -->
+  <?php get_template_part( 'module', 'integrationPartners' ); ?>
+
   <!-- Module: Related Posts -->
   <?php get_template_part( 'module', 'postsRelated' ); ?>
 
 <?php } ?>
+
 
 </section>
 
