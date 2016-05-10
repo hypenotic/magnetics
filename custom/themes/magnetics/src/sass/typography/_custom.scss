@@ -46,6 +46,12 @@ a[href$="product-integrations/rov/"], a[href$="product-integrations/auv/"] {
 //     background-color: #00568d;
 // }
 
+.publication-source {
+    font-weight: bold;
+    color: $blueDark;
+    font-size: 16px;
+}
+
 section#integration-partners {
     color: $white;
     h2 {
