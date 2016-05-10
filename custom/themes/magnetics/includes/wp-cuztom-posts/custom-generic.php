@@ -193,12 +193,6 @@ $posts->add_meta_box(
             'label'         => 'Publication Source',
             'description'   => '',
             'type'          => 'text',
-        ),
-        array(
-            'name'          => 'slink',
-            'label'         => 'Source Link',
-            'description'   => '',
-            'type'          => 'text',
         )
     )
 );

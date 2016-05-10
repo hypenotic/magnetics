@@ -13,6 +13,7 @@
 <?php if($partners) { ?>
 	<section id="integration-partners">
 		<h2>Integration Partners</h2>
+			<div class="ip-container">
 	        <!-- For loop cycle through Array -->
 	        <?php
 	            foreach($partners as $partner) {
@@ -25,18 +26,25 @@
 
 	        ?>     
 
-	        <div>
-	        	<h3><?php echo $name; ?></h3>
-	        	<?php echo wp_get_attachment_image($logo); ?>
-	        	<p><?php echo $models; ?></p>
-	        	<p><?php echo $site; ?></p>
-	        	<p><?php echo $case; ?></p>
-	        </div> 
+	        
+	        	<div class="ip__single">
+	        		<div class="ip__logo">
+	        			<?php echo wp_get_attachment_image($logo, 'full'); ?>
+	        		</div>
+	        		<div class="ip__deats">
+	        			<h3><?php echo $name; ?></h3>
+	        			<p><?php echo $models; ?></p>
+	        			<a href="http://<?php echo $site; ?>" target="_blank"><?php echo $site; ?></a><br/>
+	        			<?php if ($case) { ?>
+							<a href="<?php echo $case; ?>">View case study</a>
+	        			<?php } ?>
+	        		</div>
+	        	</div>
 
 			<?php 
 					} 
 			?>
-
+			</div> 
 	</section>
 <?php } ?>
 
