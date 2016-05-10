@@ -35,6 +35,12 @@ $article->add_meta_box(
 	                'show_option_none'   => '-- Select Post --'
 	            )
 	        ),
+	        array(
+				'name'          => 'source',
+				'label'         => 'Source',
+				'description'   => '',
+				'type'          => 'text',          
+			)
 		)
 	);
 ?>
