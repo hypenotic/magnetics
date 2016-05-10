@@ -2,6 +2,12 @@
     max-width: $screenLarge;
 }
 
+.outer-container--center {
+    max-width: $screenLarge;
+    margin: 0 auto;
+    text-align: center;
+}
+
 section[role="main"] {
     overflow-x: hidden;
 }
