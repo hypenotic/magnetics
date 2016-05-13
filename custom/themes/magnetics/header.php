@@ -27,7 +27,14 @@
 <!-- Menu Section Starts -->
     <!-- Pushy Menu -->
   <nav id="menu" class="panel" role="navigation">
-    <?php wp_nav_menu(array('theme_location'=>'header-menu'));?>
+    <?php 
+    
+      wp_nav_menu( array(
+          'menu'   => 'Main Menu',
+          'walker' => new WPDocs_Walker_Nav_Menu()
+      ) );
+
+    ?>
   </nav>
 <!-- Menu Section Ends -->
 

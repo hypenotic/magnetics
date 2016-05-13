@@ -73,7 +73,7 @@ Nav Panel
             &:hover {
                 background: transparent;
                 a {
-                    color: $orange;
+                    // color: $orange;
                 }
             }
             @include media($screenLarge) {
