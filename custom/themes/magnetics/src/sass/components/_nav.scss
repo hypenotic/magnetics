@@ -29,14 +29,8 @@ a.main-menu-link {
     width: 100%;
     @include flexalignstart;
     @include flex-wrap(wrap);
-    li {
-        @include flex(0 0 50%);
-        ul {
-            margin-left: 0;
-            li {
-
-            }
-        }
+    > li {
+        @include flex(0 0 50%);   
     }
 }
 

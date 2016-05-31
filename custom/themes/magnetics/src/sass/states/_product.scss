@@ -192,6 +192,26 @@ section#integration-partners {
             @include flex(0 0 50%);
             text-align: left;
         }
+        &:nth-child(odd) {
+            @include media($bp-med) {
+               margin-top: 10px;
+               padding: 0 10%;
+            }
+            @include media($bp-large) {
+               padding: 0 1% 0 8%;
+               margin-top: 0;
+            }
+        }
+        &:nth-child(even) {
+            @include media($bp-med) {
+               margin-top: 10px;
+               padding: 0 10%;
+            }
+            @include media($bp-large) {
+               padding: 0 8% 0 1%;
+               margin-top: 0;
+            }
+        }
     }
     .ip__logo {
         position: relative;
@@ -201,6 +221,9 @@ section#integration-partners {
         @include media($bp-med) {
            @include flex(0 0 30%);
         }
+        @include media($bp-large) {
+           text-align: right;
+        }
         img {
             position: relative;
             max-width: 100px;
@@ -209,20 +232,22 @@ section#integration-partners {
                max-width: 100px;
             }
             @include media($bp-large) {
-               max-width: 120px;
+               max-width: 70%;
+               height: auto;
+               margin-right: 30px;
             }
         }
     }
     .ip__deats {
         @include flex(0 0 70%);
-        @include media($bp-med) {
-           margin-top: 10px;
-           padding: 0 10%;
-        }
-        @include media($bp-large) {
-           padding: 0 10% 0 1%;
-           margin-top: 0;
-        }
+        // @include media($bp-med) {
+        //    margin-top: 10px;
+        //    padding: 0 10%;
+        // }
+        // @include media($bp-large) {
+        //    padding: 0 10% 0 1%;
+        //    margin-top: 0;
+        // }
     }
 }
 
