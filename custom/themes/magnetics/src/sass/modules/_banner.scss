@@ -158,13 +158,13 @@ section[role="main"] section#banner {
     }
 }
 
-.banner.seastar {
+.banner.genesis {
     @include display(flex);
     @include justify-content(space-between);
     .text {
         @include flex (0 0 40%);
     }
-    .bannerImage.seastar {
+    .bannerImage.genesis {
         max-height: 200px;
         margin-top: 20px;
         @include media($bp-med) {
