@@ -1,0 +1,44 @@
+body.page-template-page-integrations {
+    & > header {
+        position: absolute;
+        width: 100%;
+        background: transparent;
+    }
+    & .masthead {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+.compatible-logos {
+	background-color: $grayLight;
+	min-height: 500px;
+}
+
+.compatible-questions {
+	max-width: $screenOuter;
+	margin: 0 auto;
+	padding: 70px 0;
+	@include media($screenLarge) {
+		min-height: 500px;
+	}
+	@include flexboxcenter;
+	>div {
+		@include flex(0 0 40%);
+		&:nth-child(even) {
+			@include flex(0 0 60%);
+			@include media($screenLarge) {
+				margin-right: -10%;
+			}
+		}
+	}
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.compatible-more {
+
+}

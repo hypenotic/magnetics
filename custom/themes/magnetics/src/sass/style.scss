@@ -52,7 +52,9 @@ Version: 1.0
 @import "modules/modal";
 
 // Layout - Templates
-@import "templates/articleOverview.scss";
+@import "templates/articleOverview";
+@import "templates/compatibleSoftware";
+
 
 // Components
 @import "components/tabs";

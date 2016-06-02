@@ -27,11 +27,14 @@ a.main-menu-link {
 
 .is-sub-menu.menu-odd.menu-depth-1 {
     width: 100%;
-    @include flexalignstart;
-    @include flex-wrap(wrap);
-    > li {
-        @include flex(0 0 50%);   
+    @include media($bp-med) {
+        @include flexalignstart;
+        @include flex-wrap(wrap);
+        > li {
+            @include flex(0 0 50%);   
+        }
     }
+    
 }
 
 .sub-menu-link {
@@ -121,5 +124,11 @@ a.main-menu-link {
     }
     &:hover {
         color: $white;
+    }
+}
+
+.menu-main-menu-container {
+    @include media($bp-small) {
+        padding: 0 30px;
     }
 }
