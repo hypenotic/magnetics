@@ -1,7 +1,10 @@
 <?php get_header(); ?>
     
     <div class="background">
-<img src="<?php echo get_bloginfo('template_url') ?>/dist/images/homepage.png"/>
+<img class="background-main" src="<?php echo get_bloginfo('template_url') ?>/dist/images/main.png"/>
+<img class="background-left" src="<?php echo get_bloginfo('template_url') ?>/dist/images/bottom-left.png"/>
+<img class="background-center" src="<?php echo get_bloginfo('template_url') ?>/dist/images/bottom-center.png"/>
+<!-- <img class="background-center" src="<?php //echo get_bloginfo('template_url') ?>/dist/images/home-all.png"/> -->
     <!-- <img src="<?php //echo get_bloginfo('template_url') ?>/dist/images/seaquest-array.png" class="seaquest-home"> -->
     <div class="overlay"></div>
     	<video autoplay loop>

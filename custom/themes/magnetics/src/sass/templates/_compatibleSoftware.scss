@@ -40,5 +40,8 @@ body.page-template-page-integrations {
 }
 
 .compatible-more {
-
+	background-color: $grayMed;
+	@include media($screenLarge) {
+		min-height: 500px;
+	}
 }

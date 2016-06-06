@@ -19,6 +19,9 @@ get_header(); ?>
 	
 
 	$introBlurb  = get_post_meta(get_the_ID(), '_intro_intro', true);
+
+	$panelTwo  = get_post_meta(get_the_ID(), '_content_block_1_text', true);
+
 ?>
 
 <!-- Start loop -->
@@ -38,16 +41,21 @@ get_header(); ?>
 </section>
 
 <section class="compatible-questions">
-		<div class="questions__text">
-			<?php the_content(); ?>
-		</div>
-		<div>
-			<?php the_post_thumbnail( 'full' ); ?>
-		</div>
+	<div class="questions__text">
+		<?php the_content(); ?>
+	</div>
+	<div>
+		<?php the_post_thumbnail( 'full' ); ?>
+	</div>
 </section>
 
 <section class="compatible-more">
-	
+	<div>
+		<img src="<?php echo get_template_directory_uri ()?>/dist/images/bob.png" alt="">
+	</div>
+	<div class="questions__text">
+		<?php echo $panelTwo; ?>
+	</div>
 </section>
 
 
