@@ -585,4 +585,38 @@ $posts->add_meta_box(
     )
 );
 
+$pages->add_meta_box(
+    'repeat',
+    'Repeatables (Optional)', 
+    array(
+        'bundle', 
+        array(
+            array(
+                'name'          => 'label',
+                'label'         => 'Partner',
+                'description'   => '',
+                'type'          => 'text'
+            ),
+            array(
+                'name'          => 'image',
+                'label'         => 'Image',
+                'description'   => '',
+                'type'          => 'image',
+            ),
+            array(
+                'name'          => 'descript',
+                'label'         => 'Description',
+                'description'   => '',
+                'type'          => 'textarea'
+            ),
+            array(
+                'name'          => 'website',
+                'label'         => 'Website',
+                'description'   => 'Ex. partnersite.com <span style="color:red;">(do not add http:// or www)</span>',
+                'type'          => 'text'
+            )
+        )
+    )
+);
+
 ?>
