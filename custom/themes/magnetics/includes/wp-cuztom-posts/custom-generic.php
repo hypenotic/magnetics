@@ -593,7 +593,7 @@ $pages->add_meta_box(
         array(
             array(
                 'name'          => 'label',
-                'label'         => 'Partner',
+                'label'         => 'Label',
                 'description'   => '',
                 'type'          => 'text'
             ),

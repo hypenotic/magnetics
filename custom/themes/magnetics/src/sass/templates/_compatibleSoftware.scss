@@ -12,18 +12,61 @@ body.page-template-page-integrations {
 }
 
 .compatible-logos {
+	padding: 92px 0;
+	.inner-wrapper--wide {
+		max-width: $screenOuter;
+		margin: 0 auto;
+	}
 	background-color: $grayLight;
-	min-height: 500px;
+	//
+	text-align: center;
+	h3 {
+		color: $blueDark;
+		margin-bottom: 50px;
+	}
+}
+
+.compatible-container {
+	text-align: center;
+	@include flexboxcenter;
+	@include flex-wrap(wrap);
+	@include media($bp-med) {
+		@include flexbetween;
+	}
+	.repeat__single {
+		@include flex(0 0 50%);
+		@include media($bp-large) {
+			@include flex(0 0 20%);
+		}
+		a {
+			color: $blueDark;
+			font-weight: bold;
+			font-size: 0.8em;
+			margin-top: 15px;
+		}
+	}
+}
+
+.repeat__logo {
+	img {
+		max-width: 100px;
+		height: auto;
+		@include media($bp-large) {
+			max-width: 120px;
+		}
+	}
 }
 
 .compatible-questions {
 	max-width: $screenOuter;
 	margin: 0 auto;
-	padding: 70px 0;
-	@include media($screenLarge) {
+	padding: 70px 30px;
+	@include media($bp-med) {
 		min-height: 500px;
+		padding: 70px 0;
+		@include flexboxcenter;
 	}
-	@include flexboxcenter;
+	
 	>div {
 		@include flex(0 0 40%);
 		&:nth-child(even) {
@@ -43,5 +86,39 @@ body.page-template-page-integrations {
 	background-color: $grayMed;
 	@include media($screenLarge) {
 		min-height: 500px;
+		@include flexboxcenter;
+	}
+	> div {
+		@include media($bp-med) {
+			@include flex(0 0 50%);
+		}
+	}
+	.more__text {
+		color: $white;
+		h2 {
+			padding: 0;
+			margin-bottom: 20px;
+		}
+		.chevron-button {
+			margin-top: 30px;
+			border: 3px solid $white;
+			border-radius: 50%;
+			width: 70px;
+			height: 70px;
+			text-align: center;
+			@include flexboxcenter;
+			&:hover {
+				border: 3px solid $teal;
+			}
+			a {
+				display: inline-block;
+			}
+		}
+		a {
+			color: $white;
+			&:hover {
+				color: $teal;
+			}
+		}
 	}
 }

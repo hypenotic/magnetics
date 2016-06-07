@@ -20,6 +20,8 @@ get_header(); ?>
 
 	$introBlurb  = get_post_meta(get_the_ID(), '_intro_intro', true);
 
+	$repeats = get_post_meta($post->ID,'_repeat',true);
+
 	$panelTwo  = get_post_meta(get_the_ID(), '_content_block_1_text', true);
 
 ?>
@@ -35,9 +37,38 @@ get_header(); ?>
 </section>
 
 <section class="compatible-logos">
-	<article>
+	<div class="inner-wrapper--wide">
+	<h3>Works with SeaSPY2, Explorer & SeaQUEST</h3>
+	<?php if($repeats) { ?>
+		<div class="compatible-container">
+        <!-- For loop cycle through Array -->
+        <?php
+            foreach($repeats as $repeat) {
+            // Get custom meta values    
+            $name  	= $repeat['_label'];
+            $logo  	= $repeat['_image'];
+            $site  	= $repeat['_website'];
+
+        ?>     
+
+        
+        	<div class="repeat__single">
+        		<div class="repeat__logo">
+        			<?php echo wp_get_attachment_image($logo, 'full'); ?>
+        		</div>
+        		<?php if ($name) { ?>
+					<p><a href="<?php echo $site; ?>" target="_blank"><?php echo $name; ?></a></p>
+        		<?php } ?>
+        		
+        	</div>
+
+		<?php 
+				} 
+		?>
+		</div> 
+	<?php } ?>
 		
-	</article>
+	</div>
 </section>
 
 <section class="compatible-questions">
@@ -53,7 +84,7 @@ get_header(); ?>
 	<div>
 		<img src="<?php echo get_template_directory_uri ()?>/dist/images/bob.png" alt="">
 	</div>
-	<div class="questions__text">
+	<div class="more__text">
 		<?php echo $panelTwo; ?>
 	</div>
 </section>
