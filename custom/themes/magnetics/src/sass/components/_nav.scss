@@ -52,6 +52,19 @@ a.main-menu-link {
     }
 }
 
+.is-sub-menu.menu-depth-1 {
+    margin-left: 10px;
+}
+
+.is-sub-menu.sub-sub-menu.menu-depth-2 {
+    margin-left: 10px;
+    li {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-right: 0;
+    }
+}
+
 
 .menu-link-956.sub-menu-link {
     background-color: $orange;
