@@ -84,6 +84,10 @@ body.page-template-page-integrations {
 
 .compatible-more {
 	background-color: $grayMed;
+	padding: 70px 30px;
+	@include media($bp-med) {
+		padding: 70px 0;
+	}
 	@include media($screenLarge) {
 		min-height: 500px;
 		@include flexboxcenter;
@@ -95,6 +99,10 @@ body.page-template-page-integrations {
 	}
 	.more__text {
 		color: $white;
+		@include media($bp-small) {
+			padding-top: 20px;
+			text-align: center;
+		}
 		h2 {
 			padding: 0;
 			margin-bottom: 20px;
@@ -107,6 +115,9 @@ body.page-template-page-integrations {
 			height: 70px;
 			text-align: center;
 			@include flexboxcenter;
+			@include media($bp-small) {
+				margin: 20px auto 0;
+			}
 			&:hover {
 				border: 3px solid $teal;
 			}

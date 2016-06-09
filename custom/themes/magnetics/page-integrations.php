@@ -30,7 +30,7 @@ get_header(); ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <section role="main">
-	<header class="masthead" style="background-image:url(<?php echo $metaBannerImageAttachmentURL; ?>); background-size:cover;background-repeat:no-repeat;background-position: center center;">
+	<header class="masthead compatible-header" style="background-image:url(<?php echo $metaBannerImageAttachmentURL; ?>); background-size:cover;background-repeat:no-repeat;background-position: center center;">
 			<h1><?php the_title(); ?></h1>
 			<h4><?php echo $metaBannerSubheading; ?></h4>
 	</header>

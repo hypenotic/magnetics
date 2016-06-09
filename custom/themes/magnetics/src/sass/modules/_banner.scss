@@ -50,6 +50,19 @@ section[role="main"] section#banner {
     }
 }
 
+.masthead.compatible-header {
+    h1 {
+        @include media($bp-small) {
+            font-size: $base-font-size * 1.5;
+        } 
+    }
+    h4 {
+       @include media($bp-small) {
+           font-size: $base-font-size * 1;
+       } 
+    }
+}
+
 .background.enabled {
     & ~ .text {
         text-align: center;       
@@ -121,6 +134,17 @@ section[role="main"] section#banner {
     }
     & h1 {
         padding-bottom: 18px;
+    }
+}
+
+.bannerImage.seaspy {
+    @include media($bp-med) {
+        margin-left: 0;
+        width: 120%;
+        height: auto;
+    }
+    @include media($bp-large) {
+        
     }
 }
 
