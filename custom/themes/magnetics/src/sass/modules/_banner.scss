@@ -53,12 +53,12 @@ section[role="main"] section#banner {
 .masthead.compatible-header {
     h1 {
         @include media($bp-small) {
-            font-size: $base-font-size * 1.5;
+            font-size: $base-font-size * 2;
         } 
     }
     h4 {
        @include media($bp-small) {
-           font-size: $base-font-size * 1;
+           font-size: $base-font-size * 0.9;
        } 
     }
 }
