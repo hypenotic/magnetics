@@ -81,7 +81,7 @@ get_header(); ?>
 </section>
 
 <section class="compatible-more">
-	<div>
+	<div class="more__image">
 		<img src="<?php echo get_template_directory_uri ()?>/dist/images/bob.png" alt="">
 	</div>
 	<div class="more__text">

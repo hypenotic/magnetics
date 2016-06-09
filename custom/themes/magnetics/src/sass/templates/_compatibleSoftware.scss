@@ -97,6 +97,16 @@ body.page-template-page-integrations {
 			@include flex(0 0 50%);
 		}
 	}
+	.more__image {
+		text-align: center;
+	}
+	img {
+		@include media($bp-med) {
+			max-width: 80%;
+			height: auto;
+			// margin: 0 auto;
+		}
+	}
 	.more__text {
 		color: $white;
 		@include media($bp-small) {
