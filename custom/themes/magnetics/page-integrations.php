@@ -12,10 +12,13 @@ get_header(); ?>
 
 	// Banner Background Image
 	$metaBannerImageID  = get_post_meta(get_the_ID(), '_banner_image', true);
+	$secondBG  = get_post_meta(get_the_ID(), '_banner_background_image', true);
 	$metaBannerSubheading  = get_post_meta(get_the_ID(), '_banner_subheading', true);
 
 	$metaBannerImageAttachment = wp_get_attachment_image_src( $metaBannerImageID, 'full' );
 	$metaBannerImageAttachmentURL = $metaBannerImageAttachment[0];
+
+	$secondBGLink = wp_get_attachment_image_src( $secondBG, 'full' );
 	
 
 	$introBlurb  = get_post_meta(get_the_ID(), '_intro_intro', true);
@@ -80,9 +83,9 @@ get_header(); ?>
 	</div>
 </section>
 
-<section class="compatible-more">
+<section class="compatible-more" style="background-image:url(<?php echo $secondBGLink[0]; ?>); background-size:cover;background-repeat:no-repeat;background-position: center center;">
 	<div class="more__image">
-		<img src="<?php echo get_template_directory_uri ()?>/dist/images/bob.png" alt="">
+		<!-- <img src="<?php echo get_template_directory_uri ()?>/dist/images/bob.png" alt=""> -->
 	</div>
 	<div class="more__text">
 		<?php echo $panelTwo; ?>
