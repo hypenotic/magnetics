@@ -59,7 +59,7 @@
 
    <?php get_template_part('module', 'callUs'); ?>
 
-<?php if(in_category('products')) { ?>
+<?php if(in_category('products') || in_category('product-integrations')) { ?>
 
   <!-- Module: Timeline -->
   <?php get_template_part( 'module', 'timeline' ); ?>
