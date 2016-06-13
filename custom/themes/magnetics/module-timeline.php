@@ -3,7 +3,7 @@
 	$timeline 			= get_post_meta($post->ID,'_timeline_block',true);
 	$metaContentBlockTimelineText = get_post_meta($post->ID,'_content_block_timeline_text',true);
 
-	if($metaContentBlockTimelineText) { ?>
+	if($timeline) { ?>
 
 <!--[if gte IE 9]>
   <style type="text/css">
