@@ -7,10 +7,9 @@
 	
     $partners = get_post_meta($post->ID,'_partners',true);
 
-    if(count($partners) > 0) {
+    if(count($partners) >= 2) {
 ?>
 
-<?php if($partners) { ?>
 	<section id="integration-partners">
 		<div class="outer-container--center">
 			<h2>Integration Partners</h2>
@@ -50,10 +49,6 @@
 			</div> 
 	</section>
 <?php } ?>
-
-<?php  
-    } 
-?>
 
 
   

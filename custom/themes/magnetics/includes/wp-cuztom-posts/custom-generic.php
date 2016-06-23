@@ -291,6 +291,7 @@ $posts->add_meta_box(
             )
         )
 );
+
 */
 
 $posts->add_meta_box(
@@ -313,10 +314,8 @@ $posts->add_meta_box(
             'name'          => 'subheading',
             'label'         => 'Subheading',
             'description'   => 'Enter Subheadine',
-            'type'          => 'text',
-            
+            'type'          => 'text',  
         ),
-
         array(
             'name'          => 'image',
             'label'         => 'Banner Image',
