@@ -11,16 +11,20 @@
 	
 	$metaRelatedProducts = get_post_meta(get_the_ID(), '_related_content_post_related_products', true);
 
-	if($metaRelatedProducts) {
+	$num = $metaRelatedProducts[0];
+
+	if($num !== '0') {
 		$args = array(
 			'post_type'   => array('post'),
 			'post__in'    =>	 $metaRelatedProducts
 		);
+		$thetitle = 'Related Products';
 	} else {
 		$args = array(
 			'post_type'   => array('post'),
 			'showposts'	  => 2
 		);
+		$thetitle = 'Related Resources';
 	}
 
 	$related_posts = get_posts($args);
@@ -29,7 +33,7 @@
 
 	<section class="related">
 
-	<h3>Related Products</h3>
+	<h3><?php echo $thetitle ?></h3>
 
 	<ul>
 
