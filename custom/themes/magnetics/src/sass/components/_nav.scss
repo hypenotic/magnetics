@@ -146,6 +146,24 @@ a.main-menu-link {
     }
 }
 
+#nav-menu-item-53 {
+    .menu-link-53.main-menu-link {
+        // margin-bottom: 10px;
+    }
+    .is-sub-menu.menu-odd.menu-depth-1 {
+        @include display(flex);
+        @include flex-direction(column);
+        #nav-menu-item-566 {
+            padding: 0;
+            a {
+                padding: 0;
+                margin: 0;
+                margin-bottom: 50px;
+            }
+        }
+    }
+}
+
 // .panel ul li.current-menu-item a {
 //     color: $white;
 // }
