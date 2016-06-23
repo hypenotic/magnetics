@@ -34,9 +34,9 @@ article > h2, section > h2 {
 }
 
 
-a[href$="product-integrations/rov/"], a[href$="product-integrations/auv/"] {
-    cursor: default !important;
-}
+// a[href$="product-integrations/rov/"], a[href$="product-integrations/auv/"] {
+//     cursor: default !important;
+// }
 
 .submission-successful h1 {
     color: $gray;

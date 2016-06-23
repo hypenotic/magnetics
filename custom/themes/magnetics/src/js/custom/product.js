@@ -1,9 +1,9 @@
 jQuery(document).ready(function($){
 
-	$('a[href$="product-integrations/rov/"], a[href$="product-integrations/auv/"]').on('click', function(e){
-		e.preventDefault;
-		return false;
-	})
+	// $('a[href$="product-integrations/rov/"], a[href$="product-integrations/auv/"]').on('click', function(e){
+	// 	e.preventDefault;
+	// 	return false;
+	// })
 
 	var container = jQuery('.tabs.boxes .images');
 		// initialize Isotope
