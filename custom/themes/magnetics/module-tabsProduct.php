@@ -1,6 +1,7 @@
 <?php 
     // Custom meta values 
 	$postID=get_the_ID();
+	$activateSpecs = get_post_meta($postID, '_product_tabs_activate', true);
     $metaWhatsInTheBox = get_post_meta($postID, '_product_tabs_whats_in_the_box', true);
     $metaAdditionalOptions = get_post_meta($postID, '_additional_options', true);
     $metaIntegrations = get_post_meta($postID, '_product_tabs_post_meta_integrations', true);
@@ -9,7 +10,9 @@
 
     $layout = get_post_meta($postID, '_product_tabs_saag_layout', true);
 
-    if($metaWhatsInTheBox || (isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== '')) || ($metaIntegrations[0] != 0) || ($metaSystemAtAGlance != -1)) {
+    // if($metaWhatsInTheBox || (isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== '')) || ($metaIntegrations[0] != 0) || ($metaSystemAtAGlance != -1)) 
+
+    if ($activateSpecs == 'on') {
 ?>
 
 	<section class="title-holder">
@@ -188,7 +191,7 @@
 								);	
 								$related_posts = get_posts($args);
 								echo "<ul>";
-									echo '<li>Integrates With</li>';		
+									echo '<li>Compatible With</li>';		
 									foreach ( $related_posts as $post ) { 
 										$metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
 										echo '<li><a href="'.get_permalink($post->ID).'">'.get_the_title($post->ID).'</a></li>';
@@ -206,7 +209,7 @@
 								);	
 								$related_posts = get_posts($args);
 								echo "<ul>";
-									echo '<li>Plays Well With</li>';		
+									echo '<li>Compatible With</li>';		
 									foreach ( $related_posts as $post ) { 
 										$metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
 										echo '<li><a href="'.get_permalink($post->ID).'">'.get_the_title($post->ID).'</a></li>';

@@ -33,7 +33,6 @@
 			<?php 
 				// Out on a limb here. If there's no brochureDescription, 
 				// we can just call excerpt. Vice versa.
-				echo $brochureDescription; 
 				echo $articleDescription;
 				the_excerpt(); 
 			?>

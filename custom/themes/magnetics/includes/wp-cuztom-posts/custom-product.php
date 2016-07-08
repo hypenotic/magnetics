@@ -233,6 +233,11 @@ $product->add_meta_box(
     'Product Tabs', 
     array(
         array(
+            'name'          => 'activate',
+            'label'         => 'Show Specifications Section?',
+            'type'          => 'checkbox',  
+        ),
+        array(
             'name'          => 'whats_in_the_box',
             'label'         => 'What\'s In The Box',
             'type'          => 'wysiwyg',  

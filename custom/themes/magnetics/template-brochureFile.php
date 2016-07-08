@@ -29,13 +29,13 @@
 
 		<section>
 			
-			<?php 
+			<!-- <?php 
 				// Out on a limb here. If there's no brochureDescription, 
 				// we can just call excerpt. Vice versa.
-				echo $brochureDescription; 
-				echo $articleDescription;
+				//echo $brochureDescription; 
+				//echo $articleDescription;
 				the_excerpt(); 
-			?>
+			?> -->
 
 			<footer>
 				<a href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span>Download this Brochure</span></a>

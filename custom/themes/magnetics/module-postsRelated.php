@@ -40,7 +40,9 @@
 		$args = array(
 			'post_type'   => array('article','brochure'),
 			'post__in'    =>	 $metaRelatedMerged,
-			'posts_per_page' => -1 
+			'posts_per_page' => -1,
+			'orderby' => 'type',
+			'order'   => 'DESC'
 		);
 
 
@@ -79,9 +81,11 @@
 
 	<section class="related">
 
-	<?php if ( in_category( 'products' )) { ?>
-		<h2>Articles &amp; Brochures</h2>
+	<?php if ( in_category( 'products' ) && $metaRelatedBrochures[0] !== '0' && $metaRelatedArticles[0] !== '0') { ?>
+		<h2>Brochures &amp; Articles</h2>
 	<!-- Start Loop -->
+	<?php } else if (in_category( 'products' ) && $metaRelatedArticles[0] == '0') { ?>
+		<h2>Brochures</h2>
 	<?php } else { ?>
 		<h2>Related Articles</h2>
 	<?php } ?>

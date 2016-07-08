@@ -13,7 +13,6 @@
 	<section id="integration-partners">
 		<div class="outer-container--center">
 			<h2>Integration Partners</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis nostrum id, rem sint nobis. Aliquam eum, ea repellat harum vitae tempore sit pariatur rerum enim!</p>
 		</div>
 			<div class="ip-container">
 	        <!-- For loop cycle through Array -->

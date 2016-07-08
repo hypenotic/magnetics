@@ -529,4 +529,26 @@ Modules - reusable parts of our design
     -o-transform: translateX(0);
     transform: translateX(0);
   }
-} 
+}
+
+.cd-timeline-content {
+    blockquote {
+        display: block;
+        margin-left: 10px;
+        &:before {
+            font-family: serif;
+            content: '“';
+            position: absolute;
+            margin-left: -0.5em;
+            font-size: modular-scale(2);
+        }
+
+        &:after {
+            font-family: serif;
+            content: '”';
+            margin-left: 0em;
+        }
+    }
+}
+
+

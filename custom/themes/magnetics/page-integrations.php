@@ -35,13 +35,12 @@ get_header(); ?>
 <section role="main">
 	<header class="masthead compatible-header" style="background-image:url(<?php echo $metaBannerImageAttachmentURL; ?>); background-size:cover;background-repeat:no-repeat;background-position: center center;">
 			<h1><?php the_title(); ?></h1>
-			<h4><?php echo $metaBannerSubheading; ?></h4>
 	</header>
 </section>
 
 <section class="compatible-logos">
 	<div class="inner-wrapper--wide">
-	<h3>Works with SeaSPY2, Explorer & SeaQUEST</h3>
+	<h2>Works with SeaSPY2, Explorer & SeaQUEST</h2>
 	<?php if($repeats) { ?>
 		<div class="compatible-container">
         <!-- For loop cycle through Array -->
@@ -60,7 +59,7 @@ get_header(); ?>
         			<?php echo wp_get_attachment_image($logo, 'full'); ?>
         		</div>
         		<?php if ($name) { ?>
-					<p><a href="<?php echo $site; ?>" target="_blank"><?php echo $name; ?></a></p>
+					<p><a href="http://<?php echo $site; ?>" target="_blank"><?php echo $name; ?></a></p>
         		<?php } ?>
         		
         	</div>
@@ -70,18 +69,20 @@ get_header(); ?>
 		?>
 		</div> 
 	<?php } ?>
-		
+	<div class="compatible-content">
+		<?php the_content(); ?>
+	</div>
 	</div>
 </section>
 
-<section class="compatible-questions">
+<!-- <section class="compatible-questions">
 	<div class="questions__text">
 		<?php the_content(); ?>
 	</div>
 	<div>
 		<?php the_post_thumbnail( 'full' ); ?>
 	</div>
-</section>
+</section> -->
 
 <section class="compatible-more" style="background-image:url(<?php echo $secondBGLink[0]; ?>); background-size:cover;background-repeat:no-repeat;background-position: center center;">
 	<div class="more__image">
