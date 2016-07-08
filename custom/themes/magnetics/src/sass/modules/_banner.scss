@@ -168,11 +168,12 @@ section[role="main"] section#banner {
     }
     .bannerImage.seasentinel {
         max-height: 350px;
+        opacity: 0.8;
         @include media($bp-med) {
             margin-left: -10%;
             margin-bottom: -10%;
             width: auto;
-            max-height: 650px;
+            max-height: 600px;
         }
         @include media($bp-large) {
             margin-right: -10%;

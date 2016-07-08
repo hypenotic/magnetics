@@ -252,6 +252,9 @@ Modules - reusable parts of our design
             padding-left: $base-spacing;
             text-align: left;
             font-size: em($fontSizeBodySecondary);
+            li {
+                padding-bottom: 8px;
+            }
         }
         p {
             font-size: 1em;

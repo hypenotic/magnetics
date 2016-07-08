@@ -15,6 +15,18 @@ ol {
     }
 }
 
+#whatsinthebox {
+    section {
+        ul {
+            list-style-type: disc;
+            li {
+                display: list-item;
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
 dl {
     margin-bottom: $base-spacing / 2;
     dt {

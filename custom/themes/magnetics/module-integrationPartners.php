@@ -25,7 +25,6 @@
 	            $models  	= $partner['_models'];
 	            $site  		= $partner['_website'];
 	            $case  		= $partner['_case'];
-
 	        ?>     
 
 	        
