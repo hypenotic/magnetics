@@ -28,8 +28,8 @@
 	<?php } ?>
 	</header>
 
-		<section>
-			
+		<section class="related-post__single">
+			<a href="<?php echo get_permalink($articleAssociatedPost ); ?>">
 			<?php 
 				// Out on a limb here. If there's no brochureDescription, 
 				// we can just call excerpt. Vice versa.
@@ -37,6 +37,7 @@
 				echo $articleDescription;
 				the_excerpt(); 
 			?>
+			</a>
 
 			<footer>
 				<a href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span>Download this Brochure</span></a>

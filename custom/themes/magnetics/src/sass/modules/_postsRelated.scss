@@ -52,3 +52,12 @@ footer .related {
         padding: $spacingSectionSmall 0;
     }
 }
+
+.related-post__single {
+    a {
+        color: $blueDark;
+        &:hover {
+            color: $orange;
+        }
+    }
+}
