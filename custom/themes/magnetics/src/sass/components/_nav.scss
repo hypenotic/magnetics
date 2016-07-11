@@ -65,11 +65,12 @@ a.main-menu-link {
     }
 }
 
-
-.menu-link-956.sub-menu-link {
-    background-color: $orange;
-    text-decoration: none;
-    border-bottom: none;
+.menu-link-956.sub-menu-link,
+.menu-link-957.sub-menu-link,
+.menu-link-958.sub-menu-link,
+.menu-link-959.sub-menu-link,
+.menu-link-960.sub-menu-link,
+.menu-link-961.sub-menu-link {
     padding: 10px;
     margin-left: 0;
     &:after {
@@ -79,71 +80,32 @@ a.main-menu-link {
         color: $white;
         cursor: default;
     }
+}
+
+
+.menu-link-956.sub-menu-link {
+    background-color: $orange;
 }
 
 .menu-link-957.sub-menu-link {
     background-color: $blueLight;
-    padding: 10px;
-    margin-left: 0;
-    &:after {
-        border-bottom: none;
-    }
-    &:hover {
-        color: $white;
-        cursor: default;
-    }
 }
 
 .menu-link-958.sub-menu-link {
     background-color: $teal;
-    padding: 10px;
-    margin-left: 0;
-    &:after {
-        border-bottom: none;
-    }
-    &:hover {
-        color: $white;
-        cursor: default;
-    }
 }
 
 .menu-link-959.sub-menu-link {
     background-color: $blueMid;
-    padding: 10px;
-    margin-left: 0;
-    &:after {
-        border-bottom: none;
-    }
-    &:hover {
-        color: $white;
-        cursor: default;
-    }
+   
 }
 
 .menu-link-960.sub-menu-link {
     background-color: $grayMed;
-    padding: 10px;
-    margin-left: 0;
-    &:after {
-        border-bottom: none;
-    }
-    &:hover {
-        color: $white;
-        cursor: default;
-    }
 }
 
 .menu-link-961.sub-menu-link {
     background-color: $blueGray;
-    padding: 10px;
-    margin-left: 0;
-    &:after {
-        border-bottom: none;
-    }
-    &:hover {
-        color: $white;
-        cursor: default;
-    }
 }
 
 .menu-main-menu-container {
@@ -153,9 +115,6 @@ a.main-menu-link {
 }
 
 #nav-menu-item-53 {
-    .menu-link-53.main-menu-link {
-        // margin-bottom: 10px;
-    }
     .is-sub-menu.menu-odd.menu-depth-1 {
         @include display(flex);
         @include flex-direction(column);
