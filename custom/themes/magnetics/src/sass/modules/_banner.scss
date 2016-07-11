@@ -138,10 +138,16 @@ section[role="main"] section#banner {
 }
 
 .bannerImage.seaspy {
-     width: 120%;
+    width: 120%;
     @include media($bp-small) {
         margin-right: -5vw;
     }
+    @include media($bp-xlarge) {
+        margin-right: -18vw;
+    }
+}
+
+.bannerImage.seaquestgradarray {
     @include media($bp-xlarge) {
         margin-right: -18vw;
     }
