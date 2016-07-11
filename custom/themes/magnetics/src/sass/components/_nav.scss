@@ -129,6 +129,31 @@ a.main-menu-link {
     }
 }
 
+// Coming Soon (TEMP)
+#nav-menu-item-962,
+#nav-menu-item-963,
+#nav-menu-item-964 {
+    a {
+        opacity: 0.6;
+        &:after {
+          border-bottom: none;  
+        }
+        &:hover {
+            color: $white;
+            opacity: 0.6;
+            cursor: default;
+        }
+    }
+    &:after {
+        padding-left: 10px;
+        content: "(Coming soon)";
+        color: $white;
+        text-transform: uppercase;
+        font-size: modular-scale(0,0.7rem);
+        line-height: modular-scale(0,0.7rem);
+    }
+}
+
 // .panel ul li.current-menu-item a {
 //     color: $white;
 // }
