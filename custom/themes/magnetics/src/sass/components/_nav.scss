@@ -134,13 +134,12 @@ a.main-menu-link {
 #nav-menu-item-963,
 #nav-menu-item-964 {
     a {
-        opacity: 0.6;
+        color: rgba(255,255,255,0.3);
         &:after {
           border-bottom: none;  
         }
         &:hover {
-            color: $white;
-            opacity: 0.6;
+            color: rgba(255,255,255,0.3);
             cursor: default;
         }
     }
@@ -153,7 +152,3 @@ a.main-menu-link {
         // line-height: modular-scale(0,0.7rem);
     }
 }
-
-// .panel ul li.current-menu-item a {
-//     color: $white;
-// }

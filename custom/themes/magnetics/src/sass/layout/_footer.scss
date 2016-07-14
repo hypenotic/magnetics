@@ -42,3 +42,16 @@
         }
     }
 }
+
+.footer-recent-posts {
+    padding: 15px 20px;
+    background: $white;
+    margin-bottom: 20px;
+    &:first-child {
+        margin-top: 15px;
+    }
+    a {
+        color: $blueDark;
+        font-weight: bold;
+    }
+}

@@ -1,9 +1,22 @@
 jQuery(document).ready(function($){
 
-	$('a[href$="product-integrations/rov/"], a[href$="product-integrations/auv/"]').on('click', function(e){
+	$('a[href$="product-integrations/rov/"], a[href$="product-integrations/auv/"], a[href$="product-integrations/glider/"]').on('click', function(e){
 		e.preventDefault;
 		return false;
-	})
+	});
+
+	$('a[href$="product-integrations/rov/"], a[href$="product-integrations/auv/"], a[href$="product-integrations/glider/"]').on('mouseover', function (e) {
+	    var $link = $(this),
+	        href = $link.attr('href') || $link.data("href");
+
+	    $link.off('click.chrome');
+	    $link.on('click.chrome', function (e) {
+	        e.preventDefault;
+	    })
+	    // .attr('data-href', href) //keeps track of the href value
+	    // .css({ cursor: 'pointer' })
+	    .removeAttr('href'); // <- this is what stops Chrome to display status bar
+	});
 
 	var container = jQuery('.tabs.boxes .images');
 		// initialize Isotope

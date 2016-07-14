@@ -16,7 +16,7 @@
 	if($num !== '0') {
 		$args = array(
 			'post_type'   => array('post'),
-			'post__in'    =>	 $metaRelatedProducts
+			'post__in'    => $metaRelatedProducts
 		);
 		$thetitle = 'Related Products';
 	} else {

@@ -1,7 +1,9 @@
 article.overview {
+    padding-top: 50px;
+    border-bottom: 1px solid #E0E0E0;
     & h3 {
         & a:hover {
-            color: $orange;
+            // color: $orange;
             //    text-decoration: underline;
        
         }
@@ -14,7 +16,7 @@ article.overview {
    
     }
     &:hover a.more {
-        color: $teal;
+        // color: $teal;
     }
     & h6 {
         text-transform: uppercase;
@@ -64,13 +66,13 @@ article.overview {
         }
     }
     &:after {
-        content: '';
-        display: block;
-        margin: 0 auto;
-        width: 100%;
-        /* background: $blueDark; */
-        background: #E0E0E0;
-        height: 1px;
+        // content: '';
+        // display: block;
+        // margin: 0 auto;
+        // width: 100%;
+        // /* background: $blueDark; */
+        // background: #E0E0E0;
+        // height: 1px;
     }
     &:last-of-type:after {
         background: transparent;
