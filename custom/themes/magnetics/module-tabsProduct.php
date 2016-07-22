@@ -220,7 +220,8 @@
 						<?php
 							if($metaPlaysWellWith[0] !== '0') {
 								$args = array(
-									'post__in'    => $metaPlaysWellWith
+									'post__in'    => $metaPlaysWellWith,
+									'orderby'	  => 'post__in'
 								);	
 								$related_posts = get_posts($args);
 								echo "<ul>";
