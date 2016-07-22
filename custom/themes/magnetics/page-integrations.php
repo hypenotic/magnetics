@@ -56,12 +56,8 @@ get_header(); ?>
         
         	<div class="repeat__single">
         		<div class="repeat__logo">
-        			<?php echo wp_get_attachment_image($logo, 'full'); ?>
+        			<a href="http://<?php echo $site; ?>" target="_blank"><?php echo wp_get_attachment_image($logo, 'full'); ?></a>
         		</div>
-        		<?php if ($name) { ?>
-					<p><a href="http://<?php echo $site; ?>" target="_blank"><?php echo $name; ?></a></p>
-        		<?php } ?>
-        		
         	</div>
 
 		<?php 
