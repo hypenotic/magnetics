@@ -10,6 +10,7 @@ body.contact {
             @include media($screenLarge) {}
 
             padding-top: $spacingSectionLarge;
+            padding: 92px 2.5%;
         }
         & .optional {
             @include outer-container($screenOuter);
