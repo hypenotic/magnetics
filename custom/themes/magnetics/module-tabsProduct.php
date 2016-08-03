@@ -202,7 +202,8 @@
 						<?php
 							if($metaIntegrations[0] !== '0') {
 								$args = array(
-									'post__in'    =>     $metaIntegrations
+									'post__in'    =>     $metaIntegrations,
+									'orderby' => 'post__in'
 								);	
 								$related_posts = get_posts($args);
 								echo "<ul>";
