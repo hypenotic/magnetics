@@ -21,7 +21,7 @@ section[role="main"] > article {
 		padding: $spacingSectionLarge 2.5%;
 	}
     @include media($bp-xlarge) {
-        padding: $spacingSectionLarge 15%;
+        padding: $spacingSectionLarge 2.5%;
     } 
 }
 
