@@ -166,11 +166,11 @@ h6.resp-accordion {
 		}
 		@include pad($spacingSectionLarge default);
 		section {
-			@include media($screenLarge) {
-				@include span-columns(6 of 12);
-				@include omega(2n);
-				padding-bottom:1.5em;
-			}
+			// @include media($screenLarge) {
+			// 	@include span-columns(6 of 12);
+			// 	@include omega(2n);
+			// 	padding-bottom:1.5em;
+			// }
 		}
     }
 }
