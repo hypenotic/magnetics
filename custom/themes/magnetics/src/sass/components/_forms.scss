@@ -328,6 +328,32 @@ body.rma-form .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_htm
             width: 100% !important;
         }
     }
+    .ginput_container.ginput_container_checkbox {
+        label {
+            // font-weight: normal;
+            font-size: 4vw;
+            @include media($bp-med) {
+                font-size: 1.4vw;
+            }
+        }
+        input[type=checkbox] {
+            width: 25px !important; /*Desired width*/
+            height: 25px; /*Desired height*/
+            background: $white;
+            cursor: pointer;
+            -webkit-appearance: none;
+            appearance: none;
+            transition: all .2s linear;
+            margin: 0px 10px 0 0;
+            &:checked {
+                background: $orange;
+            }
+            &:focus {
+                outline: 0 none;
+                box-shadow: none;
+            }
+        }
+    }
 }
 
 #gform_submit_button_6 {
