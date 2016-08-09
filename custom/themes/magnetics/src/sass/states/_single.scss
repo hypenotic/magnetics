@@ -117,8 +117,24 @@ article .content {
         height: auto;
     }
     img {
-        width: 100%;
+        max-width: 100%;
         height: auto;
         margin-bottom: 1.375em;
+    }
+    .wp-caption.aligncenter {
+        img {
+            display: block;
+            margin: 0 auto 20px;
+        }
+    }
+}
+
+.wp-caption-text {
+    // font-style: italic;
+    font-size: 4vw;
+    line-height: 5vw;
+    @include media($bp-med) {
+        font-size: 1.1vw;
+        line-height: 2vw;
     }
 }
