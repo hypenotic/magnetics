@@ -14,6 +14,7 @@ get_header(); ?>
 	$metaBannerImageID  = get_post_meta(get_the_ID(), '_banner_image', true);
 	$secondBG  = get_post_meta(get_the_ID(), '_banner_background_image', true);
 	$metaBannerSubheading  = get_post_meta(get_the_ID(), '_banner_subheading', true);
+	$metaButtonLink  = get_post_meta(get_the_ID(), '_banner_text', true);
 
 	$metaBannerImageAttachment = wp_get_attachment_image_src( $metaBannerImageID, 'full' );
 	$metaBannerImageAttachmentURL = $metaBannerImageAttachment[0];
@@ -86,6 +87,7 @@ get_header(); ?>
 	</div>
 	<div class="more__text">
 		<?php echo $panelTwo; ?>
+		<a href="<?php echo $metaButtonLink; ?>" class="chevron-button"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 	</div>
 </section>
 
