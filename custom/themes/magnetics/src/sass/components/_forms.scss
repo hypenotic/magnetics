@@ -312,6 +312,42 @@ body.rma-form .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_htm
     }
 }
 
+#gform_6 {
+    .ginput_container.ginput_container_text {
+        input {
+            width: 100% !important;
+        }
+    }
+    .ginput_container.ginput_container_select {
+        select {
+            width: 100% !important;
+        }
+    }
+    .ginput_container.ginput_container_textarea {
+        textarea {
+            width: 100% !important;
+        }
+    }
+}
+
+#gform_submit_button_6 {
+    background-color: $orange;
+    border-radius: 0;
+    display: block;
+    font-size: 1.2em !important;
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+    // margin-right: 7px !important;
+    margin-top: 20px !important;
+    @include media($bp-med) {
+        margin-top: 20px !important;
+    }
+    &:hover {
+        background-color: $teal;
+        color: white;
+    }
+}
+
 #gform_previous_button_5_21 {
     width: 30% !important;
 }

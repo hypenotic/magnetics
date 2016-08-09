@@ -7,10 +7,14 @@ body.contact {
         & article {
             color: white;
             max-width: $screenOuter;
-            @include media($screenLarge) {}
-
             padding-top: $spacingSectionLarge;
-            padding: 92px 2.5%;
+            padding: 0 30px 30px;
+            @include media($bp-med) {
+                padding: 92px 2.5%;
+            }
+            > h6:first-of-type {
+                margin-top: 115px;
+            }
         }
         & .optional {
             @include outer-container($screenOuter);
@@ -34,7 +38,10 @@ body.contact {
             }
         }
         & h1 {
-            margin-bottom: $spacingSectionLarge;
+            margin-bottom: 30px;
+            @include media($bp-med) {
+                margin-bottom: $spacingSectionLarge;
+            }
         }
         & .gform_body ul {
             width: 100%;

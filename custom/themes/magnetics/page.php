@@ -46,7 +46,13 @@
 		} else {
 ?>
 		</header>
- 	<article>
+
+	<?php 
+	    global $post;
+	    $post_slug=$post->post_name;
+	?>
+
+ 	<article class="page-<?php echo $post_slug; ?>">
     	<h1><?php the_title(); ?></h1>
 
     	<?php } ?>
