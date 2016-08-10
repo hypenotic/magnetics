@@ -139,6 +139,8 @@ section[role="main"] section#banner {
 
 .bannerImage.seaspy {
     width: 120%;
+    -webkit-filter: drop-shadow(0 15px 10px rgba(0,0,0,0.5));
+    filter: drop-shadow(0 15px 10px rgba(0,0,0,0.5));
     @include media($bp-small) {
         margin-right: -5vw;
     }
@@ -153,8 +155,15 @@ section[role="main"] section#banner {
     }
 }
 
+.bannerImage.seaspygradiometer {
+    -webkit-filter: drop-shadow(0 15px 10px rgba(0,0,0,0.5));
+    filter: drop-shadow(0 15px 10px rgba(0,0,0,0.5));
+}
+
 .banner.explorer {
     .bannerImage.explorer {
+        -webkit-filter: drop-shadow(0 15px 10px rgba(0,0,0,0.5));
+        filter: drop-shadow(0 15px 10px rgba(0,0,0,0.5));
         @include media($bp-med) {
             margin-left: -10%;
         }
