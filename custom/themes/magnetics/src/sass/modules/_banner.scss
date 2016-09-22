@@ -87,10 +87,6 @@ section[role="main"] section#banner {
         max-width: 1080px;
         margin: 0 auto;
     }
-    @include media($bp-large) {
-        min-height: 100vh;
-    }
-
     align-items: center;
     color: white;
     .bannerImage {
@@ -137,6 +133,12 @@ section[role="main"] section#banner {
     }
     & h1 {
         padding-bottom: 18px;
+    }
+}
+
+.banner.auvtowedexplorer {
+    @include media($bp-large) {
+        min-height: 100vh;
     }
 }
 
