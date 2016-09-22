@@ -137,9 +137,17 @@ section[role="main"] section#banner {
 }
 
 .banner.auvtowedexplorer {
+    .background {
+        background-position-x: right;
+    }
+    @include media($bp-small) {
+        margin-right: -5vw;
+    }
     @include media($bp-large) {
         min-height: 100vh;
     }
+
+    
 }
 
 .bannerImage.seaspy {
