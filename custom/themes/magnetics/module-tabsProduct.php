@@ -101,6 +101,7 @@
 								}
 								$drawingLink=get_permalink($drawing);
 								$name=get_post_meta($drawing,'_measurements_name',true);
+								$name_two=get_post_meta($drawing,'_measurements_name_two',true);
 								$weight=get_post_meta($drawing,'_measurements_weight',true);
 								$size=get_post_meta($drawing,'_measurements_size',true);
 							    echo '<li class="drawing--six">';
@@ -124,61 +125,114 @@
 						}
 						$drawingLink=get_permalink($drawing);
 						$name=get_post_meta($drawing,'_measurements_name',true);
+						$name_two=get_post_meta($drawing,'_measurements_name_two',true);
 						$weight=get_post_meta($drawing,'_measurements_weight',true);
+						$weight2=get_post_meta($drawing,'_measurements_weight_two',true);
 						$size=get_post_meta($drawing,'_measurements_size',true);
+						$img_one = get_post_meta($drawing,'_measurements_image_one',true);
+						$img_one_url = wp_get_attachment_url( $img_one );
+						$img_two = get_post_meta($drawing,'_measurements_image_two',true);
+						$img_two_url = wp_get_attachment_url( $img_two );
 							if ($size == 'value1') {
 								echo '<li class="drawing--twelve">';
+									echo "<p class='mb20'>".$name."</p>";
 									if($drawingImage!='') {
 										echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
 									}
-									echo "<p>".$name."</p>";
-									echo "<p>".$weight."</p>";
-									
+									echo "<p class='mt20'>".$weight."</p>";
+									if($weight2!='') {
+										echo "<p>".$weight2."</p>";
+									}
 								echo '</li>';
 							} else if ($size == 'value2') {
 								echo '<li class="drawing--nine">';
+									echo "<p class='mb20'>".$name."</p>";
 									if($drawingImage!='') {
 										echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
 									}
-									echo "<p>".$name."</p>";
-									echo "<p>".$weight."</p>";
-									
+									echo "<p class='mt20'>".$weight."</p>";
+									if($weight2!='') {
+										echo "<p>".$weight2."</p>";
+									}
 								echo '</li>';
 							} else if ($size == 'value3') {
 								echo '<li class="drawing--eight">';
+									echo "<p class='mb20'>".$name."</p>";
 									if($drawingImage!='') {
 										echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
 									}
-									echo "<p>".$name."</p>";
-									echo "<p>".$weight."</p>";
-									
+									echo "<p class='mt20'>".$weight."</p>";
+									if($weight2!='') {
+										echo "<p>".$weight2."</p>";
+									}
 								echo '</li>';
 							} else if ($size == 'value4') {
 								echo '<li class="drawing--six">';
+									echo "<p class='mb20'>".$name."</p>";
 									if($drawingImage!='') {
 										echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
 									}
-									echo "<p>".$name."</p>";
-									echo "<p>".$weight."</p>";
-									
+									echo "<p class='mt20'>".$weight."</p>";
+									if($weight2!='') {
+										echo "<p>".$weight2."</p>";
+									}
 								echo '</li>';
 							} else if ($size == 'value5') {
 								echo '<li class="drawing--three">';
+									echo "<p class='mb20'>".$name."</p>";
 									if($drawingImage!='') {
 										echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
 									}
-									echo "<p>".$name."</p>";
-									echo "<p>".$weight."</p>";
-									
+									echo "<p class='mt20'>".$weight."</p>";
+									if($weight2!='') {
+										echo "<p>".$weight2."</p>";
+									}
+								echo '</li>';
+							} else if ($size == 'value7') {
+								//This is that special power supply box
+								echo '<li class="drawing--special">';
+									echo "<div>";
+
+									echo "<div>";
+									echo "<p class='mb20'>".$name."</p>";
+									if($img_one_url) {
+										echo '<div class="image"><img src="'.$img_one_url.'" /></div>';
+									}
+									echo "<p class='mt20'>".$weight."</p>";
+									echo "</div>";
+
+									echo "<div>";
+									echo "<p class='mb20'>".$name_two."</p>";
+									if($img_two_url) {
+										echo '<div class="image"><img src="'.$img_two_url.'" /></div>';
+									}
+									echo "<p class='mt20'>".$weight2."</p>";
+									echo "</div>";
+
+									echo "</div>";
+									echo "<p class='power-supply-details'><strong>*</strong> Use either the power supply or battery clip cable. Only one is included.</p>";
+								echo '</li>';
+							} else if ($size == 'value8') {
+								echo '<li class="drawing--five">';
+									echo "<p class='mb20'>".$name."</p>";
+									if($drawingImage!='') {
+										echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
+									}
+									echo "<p class='mt20'>".$weight."</p>";
+									if($weight2!='') {
+										echo "<p>".$weight2."</p>";
+									}
 								echo '</li>';
 							} else {
 								echo '<li class="drawing--default">';
+									echo "<p class='mb20'>".$name."</p>";
 									if($drawingImage!='') {
 										echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
 									}
-									echo "<p>".$name."</p>";
-									echo "<p>".$weight."</p>";
-									
+									echo "<p class='mt20'>".$weight."</p>";
+									if($weight2!='') {
+										echo "<p>".$weight2."</p>";
+									}
 								echo '</li>';
 							}
 					}

@@ -1,21 +1,20 @@
 {
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-cssmin": "^0.12.3",
-    "gulp": "^3.8.10",
-    "gulp-imagemin": "^2.3.0",
-    "gulp-jshint": "^1.9.0",
-    "gulp-livereload": "^3.6.0",
-    "gulp-minify-css": "^1.1.6",
-    "gulp-notify": "^2.2.0",
-    "gulp-plumber": "^0.6.6",
-    "gulp-ruby-sass": "^1.0.0-alpha.2",
-    "gulp-sassbeautify": "^0.1.0",
-    "gulp-sourcemaps": "^1.5.2",
-    "gulp-uglifyjs": "^0.5.0",
-    "imagemin-pngquant": "^4.0.0"
+    "browser-sync": "^2.18.7",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "~3.1.1",
+    "gulp-cache": "~0.4.5",
+    "gulp-concat": "~2.6.1",
+    "gulp-cssnano": "~2.1.2",
+    "gulp-imagemin": "~3.1.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-rename": "~1.2.2",
+    "gulp-ruby-sass": "^2.1.1",
+    "gulp-uglify": "~2.0.1",
+    "jshint": "^2.9.4"
   },
   "dependencies": {
-    "gulp-install": "^0.4.0"
+    "del": "^2.2.2",
+    "gulp": "^3.9.0"
   }
 }

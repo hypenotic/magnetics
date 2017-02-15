@@ -47,6 +47,7 @@
     </footer>
 </section>
 <?php wp_footer();?>
+<script src="//cdn.trackduck.com/toolbar/prod/td.js" async data-trackduck-id="576be4280dca5c23310fd1d3"></script>
 </body>
 </html>
 

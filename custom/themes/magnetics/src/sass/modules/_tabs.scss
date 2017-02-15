@@ -249,8 +249,7 @@ body.rma-form article {
 #systemataglance {
 
     .drawing-images {
-        margin: 0 0 50px;
-
+        margin: 50px 0;
     }
 
     #drawing__list {
@@ -263,6 +262,12 @@ body.rma-form article {
         }
         @include media($bp-large) {
             padding: 0;
+        }
+        .mb20 {
+            margin-bottom: 20px;
+        }
+        .mt20 {
+            margin-top: 20px;
         }
         p {
            @include media($bp-small) {
@@ -293,9 +298,16 @@ body.rma-form article {
                 @include flex(0 0 50%);
             }
         }
+        li.drawing--five {
+            
+            @include media($bp-med) {
+                @include flex(0 0 41.66%);
+            }
+        }
         li.drawing--three {
             
             @include media($bp-med) {
+                margin: 50px 0 50px;
                 @include flex(0 0 33.33%);
             }
         }
@@ -304,6 +316,26 @@ body.rma-form article {
             @include media($bp-med) {
                 @include flex(0 0 100%);
             }
+        }
+        li.drawing--special {
+            @include media($bp-med) {
+                @include flex(0 0 66.66%);
+            }
+            p.power-supply-details {
+                font-size: 12px;
+                margin-top: 15px;
+                font-weight: normal;
+            }
+            >div {
+                border: 1px solid $blueDark;
+            }
+            >div > div {
+                @include media($bp-med) {
+                    display: inline-block;
+                    width: 50%;
+                    margin: 50px 0;
+                }
+            }            
         }
         li {
             margin: 0;
@@ -424,7 +456,7 @@ body.rma-form article {
     }   
 }
 
-.tabs #systemataglance .drawing-images ul#drawing__list li p:first-of-type {
+.tabs #systemataglance .drawing-images li p:first-of-type {
     font-weight: bold;
 }
 
