@@ -210,7 +210,7 @@
 									echo "</div>";
 
 									echo "</div>";
-									echo "<p class='power-supply-details'><strong>*</strong> Use either the power supply or battery clip cable. Only one is included.</p>";
+									echo "<p class='power-supply-details'><strong>*</strong> <em>Use either the power supply or battery clip cable. Only one is included.</em></p>";
 								echo '</li>';
 							} else if ($size == 'value8') {
 								echo '<li class="drawing--five">';
