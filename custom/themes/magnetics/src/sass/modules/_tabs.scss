@@ -383,23 +383,6 @@ body.rma-form article {
         @include media($bp-med) {
             @include align-items(flex-start);
         }
-        // li.drawing--eight {
-        //     @include media($bp-med) {
-        //         p {
-        //             margin-top: 2rem;
-        //         }
-        //     }
-        // }
-        // li.drawing--three {
-        //     @include media($bp-large) {
-        //         margin-top: 2.5rem;
-        //     }
-        // }
-        // > li:nth-child(2) {
-        //     @include media($bp-med) {
-        //         margin-top: 30%;
-        //     }
-        // }
     }
 }
 
@@ -422,21 +405,19 @@ body.rma-form article {
 }
 
 
-#seasentinel-tabs {
-    #vertical-layout {
-        margin-bottom: 3rem;
-        @include display(flex);
-        @include align-items(center);
-        @include justify-content(center);
-        @include flex-direction(column);
+#vertical-layout {
+    // margin-bottom: 3rem;
+    @include display(flex);
+    @include align-items(flex-start);
+    @include justify-content(center);
+    @include flex-direction(column);
+    @include media($bp-med) {
+        @include flex-direction(row);
+    }
+    div, ul#drawing__list {
+        @include flex(0 0 100%);
         @include media($bp-med) {
-            @include flex-direction(row);
-        }
-        div, ul#drawing__list {
-            @include flex(0 0 100%);
-            @include media($bp-med) {
-                @include flex(0 0 50%);
-            }
+            @include flex(0 0 50%);
         }
     }
     .vertical-layout__left {
@@ -457,13 +438,13 @@ body.rma-form article {
             @include media($bp-med) {
                 @include flex(0 0 100%);
                 margin-top: 3rem;
-                &:last-child {
-                    margin-top: 0;
+                &:first-child {
+                    margin-top: 10px;
                 }
             }
         }
-    }   
-}
+    } 
+}  
 
 .tabs #systemataglance .drawing-images li p:first-of-type {
     font-weight: bold;

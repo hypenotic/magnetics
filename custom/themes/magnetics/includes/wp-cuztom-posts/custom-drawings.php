@@ -63,7 +63,7 @@ $drawings->add_meta_box(
 		                'value5'    => '4/12',
 		                'value6'    => 'Choose Size'
 		            ),
-		    'default_value' => 'value6'
+		    'default_value' => 'value5'
 		)
     )
 );

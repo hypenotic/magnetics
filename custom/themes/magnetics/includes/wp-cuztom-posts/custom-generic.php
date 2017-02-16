@@ -458,8 +458,8 @@ $posts->add_meta_box(
             'options'       => array(
                         'value1'    => 'Default',
                         'value2'    => 'Vertical',
-                        'value3'    => 'Custom',
-                        'value4'    => 'Custom'
+                        'value3'    => 'Custom 1',
+                        'value4'    => 'Custom 2'
                     ),
             'default_value' => 'value1'
         ),

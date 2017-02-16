@@ -87,8 +87,8 @@
 				?>
 					<div id="vertical-layout">
 						<div class="vertical-layout__left">
+							<?php echo "<p class='mb20'>".$Ldisplay."</p>";?>
 							<img src="<?php echo $LdrawingImage;  ?>" alt="">
-							<p><?php echo $Ldisplay; ?></p>
 							<p><?php echo $Lweight; ?></p>
 						</div>
 						<ul id="drawing__list" class="vertical-layout__right">
@@ -103,14 +103,17 @@
 								$name=get_post_meta($drawing,'_measurements_name',true);
 								$name_two=get_post_meta($drawing,'_measurements_name_two',true);
 								$weight=get_post_meta($drawing,'_measurements_weight',true);
+								$weight2=get_post_meta($drawing,'_measurements_weight_two',true);
 								$size=get_post_meta($drawing,'_measurements_size',true);
 							    echo '<li class="drawing--six">';
+							    	echo "<p>".$name."</p>";
 							    	if($drawingImage!='') {
 							    		echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
 							    	}
-							    	echo "<p>".$name."</p>";
 							    	echo "<p>".$weight."</p>";
-							    	
+							    	if($weight2!='') {
+							    		echo "<p>".$weight2."</p>";
+							    	}
 							    echo '</li>';
 							} ?>
 						</ul>
