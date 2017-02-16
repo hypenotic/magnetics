@@ -295,6 +295,7 @@ body.rma-form article {
         li.drawing--six {
             
             @include media($bp-med) {
+                margin: 50px 0 50px;
                 @include flex(0 0 50%);
             }
         }
@@ -386,23 +387,23 @@ body.rma-form article {
     }
 }
 
-#seaquestpodarray-tabs {
-    #drawing__list {
-        li.drawing--twelve {
-            @include media($bp-med) {
-                margin-bottom: 3rem;
-                p:first-of-type {
-                    margin-top: 2rem;
-                }
-            }
-        }
-        li.drawing--three {
-            @include media($bp-med) {
-                margin-bottom: 2.5rem;
-            }
-        }
-    }
-}
+// #seaquestpodarray-tabs {
+//     #drawing__list {
+//         li.drawing--twelve {
+//             @include media($bp-med) {
+//                 margin-bottom: 3rem;
+//                 p:first-of-type {
+//                     margin-top: 2rem;
+//                 }
+//             }
+//         }
+//         li.drawing--three {
+//             @include media($bp-med) {
+//                 margin-bottom: 2.5rem;
+//             }
+//         }
+//     }
+// }
 
 
 #vertical-layout {
