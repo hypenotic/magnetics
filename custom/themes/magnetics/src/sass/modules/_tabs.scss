@@ -252,7 +252,8 @@ body.rma-form article {
         margin: 50px 0;
     }
 
-    #drawing__list {
+    #drawing__list,
+    #genesis-drawing-list {
         @include media($bp-med) {
             @include display(flex);
             @include flex-wrap(wrap);
@@ -359,6 +360,10 @@ body.rma-form article {
 }
 
 
+
+
+
+
 #explorer-tabs {
     #drawing__list {
         li.drawing--nine {
@@ -441,6 +446,27 @@ body.rma-form article {
         }
     } 
 }  
+
+#systemataglance #vertical-layout.genesis-layout { 
+    @include display(flex);
+    @include flex-wrap(wrap);
+    @include align-items(flex-start);
+    @include justify-content(center);
+    @include flex-direction(column);
+    @include media($bp-med) {
+        @include flex-direction(row);
+    }
+    #genesis-drawing-list {
+        @include media($bp-med) {
+            width: 100%;
+            @include display(flex);
+            @include flex-wrap(wrap);
+            @include align-items(flex-start);
+            @include justify-content(flex-start);
+            padding: 20px 50px;
+        }
+    }
+}
 
 .tabs #systemataglance .drawing-images li p:first-of-type {
     font-weight: bold;

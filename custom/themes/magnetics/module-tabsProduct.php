@@ -88,7 +88,7 @@
 					<div id="vertical-layout">
 						<div class="vertical-layout__left">
 							<?php echo "<p class='mb20'>".$Ldisplay."</p>";?>
-							<img src="<?php echo $LdrawingImage;  ?>" alt="">
+							<img src="<?php echo $LdrawingImage; ?>" alt="">
 							<p><?php echo $Lweight; ?></p>
 						</div>
 						<ul id="drawing__list" class="vertical-layout__right">
@@ -118,6 +118,86 @@
 							} ?>
 						</ul>
 					</div>
+				<?php } else if ($layout == 'value3') { 
+
+						$Limage = wp_get_attachment_image_src( get_post_thumbnail_id( $metaSystemAtAGlance[0] ), 'single-post-thumbnail' ); 	
+						$LdrawingImage="";
+						if($Limage!='') {
+							$LdrawingImage=$Limage[0];	
+						}
+						$LdrawingLink=get_permalink($metaSystemAtAGlance[0]);
+						$Lweight=get_post_meta($metaSystemAtAGlance[0],'_measurements_weight',true);
+						$Ldisplay=get_post_meta($metaSystemAtAGlance[0],'_measurements_name',true);
+						$Lsize=get_post_meta($metaSystemAtAGlance[0],'_measurements_size',true);
+					?>
+						<div id="vertical-layout" class="genesis-layout">
+							<div class="vertical-layout__left">
+								<?php echo "<p class='mb20'>".$Ldisplay."</p>";?>
+								<img src="<?php echo $LdrawingImage; ?>" alt="">
+								<p><?php echo $Lweight; ?></p>
+							</div>
+							<ul id="drawing__list" class="vertical-layout__right">
+								<?php foreach(array_slice($metaSystemAtAGlance,1,2) as $drawing)
+								{
+									$image = wp_get_attachment_image_src( get_post_thumbnail_id( $drawing ), 'single-post-thumbnail' ); 	
+									$drawingImage="";
+									if($image!='') {
+										$drawingImage=$image[0];	
+									}
+									$drawingLink=get_permalink($drawing);
+									$name=get_post_meta($drawing,'_measurements_name',true);
+									$name_two=get_post_meta($drawing,'_measurements_name_two',true);
+									$weight=get_post_meta($drawing,'_measurements_weight',true);
+									$weight2=get_post_meta($drawing,'_measurements_weight_two',true);
+									$size=get_post_meta($drawing,'_measurements_size',true);
+								    echo '<li class="drawing--six">';
+								    	echo "<p>".$name."</p>";
+								    	if($drawingImage!='') {
+								    		echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
+								    	}
+								    	echo "<p>".$weight."</p>";
+								    	if($weight2!='') {
+								    		echo "<p>".$weight2."</p>";
+								    	}
+								    echo '</li>';
+								} ?>
+							</ul>
+							<ul id="genesis-drawing-list" class="vertical-layout__bottom">
+								<?php foreach(array_slice($metaSystemAtAGlance,-3) as $drawing)
+								{
+									$image = wp_get_attachment_image_src( get_post_thumbnail_id( $drawing ), 'single-post-thumbnail' ); 	
+									$drawingImage="";
+									if($image!='') {
+										$drawingImage=$image[0];	
+									}
+									$drawingLink=get_permalink($drawing);
+									$name=get_post_meta($drawing,'_measurements_name',true);
+									$name_two=get_post_meta($drawing,'_measurements_name_two',true);
+									$weight=get_post_meta($drawing,'_measurements_weight',true);
+									$weight2=get_post_meta($drawing,'_measurements_weight_two',true);
+									$weight3=get_post_meta($drawing,'_measurements_weight_three',true);
+									$weight4=get_post_meta($drawing,'_measurements_weight_four',true);
+									$size=get_post_meta($drawing,'_measurements_size',true);
+								    echo '<li class="drawing--three">';
+								    	echo "<p>".$name."</p>";
+								    	if($drawingImage!='') {
+								    		echo '<div class="image"><img src="'.$drawingImage.'" /></div>';
+								    	}
+								    	echo "<p>".$weight."</p>";
+								    	if($weight2!='') {
+								    		echo "<p>".$weight2."</p>";
+								    	}
+								    	if($weight3!='') {
+								    		echo "<p>".$weight3."</p>";
+								    	}
+								    	if($weight4!='') {
+								    		echo "<p>".$weight4."</p>";
+								    	}
+								    echo '</li>';
+								} ?>
+							</ul>
+						</div>
+
 				<?php } else {
 					echo '<ul id="drawing__list">';
 					foreach($metaSystemAtAGlance as $drawing) {

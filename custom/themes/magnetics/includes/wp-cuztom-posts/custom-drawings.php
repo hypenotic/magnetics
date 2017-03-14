@@ -31,6 +31,18 @@ $drawings->add_meta_box(
 			'type'          => 'text'
 		),
 		array(
+			'name'          => 'weight_three',
+			'label'         => 'Weight (Line 3)',
+			'description'   => 'Please enter weight.',
+			'type'          => 'text'
+		),
+		array(
+			'name'          => 'weight_four',
+			'label'         => 'Weight (Line 4)',
+			'description'   => 'Please enter weight.',
+			'type'          => 'text'
+		),
+		array(
 			'name'          => 'image_one',
 			'label'         => 'Image 1',
 			'description'   => 'Please choose first image',
