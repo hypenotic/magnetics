@@ -62,7 +62,9 @@
 <?php if(in_category('products') || in_category('product-integrations')) { ?>
 
   <!-- Module: Timeline -->
-  <?php get_template_part( 'module', 'timeline' ); ?>
+  <?php if (!is_single(243)) { ?>
+    <?php get_template_part( 'module', 'timeline' ); ?>
+  <?php } ?>
 
   <!-- Module: Steps -->
   <?php get_template_part('module', 'steps'); ?>
@@ -72,6 +74,13 @@
 
   <!-- Module: productInformation -->
   <?php get_template_part( 'module', 'tabsProduct' ); ?>
+
+  <!-- AUV -->
+  <?php if (is_single(243)) { ?>
+    <section class="auv-container">
+      <div class="auv-container__wrapper"><?php the_content(); ?>  </div>
+    </section>
+  <?php } ?>
 
   <!-- Module: Related Posts -->
   <?php get_template_part( 'module', 'postsRelated' ); ?>
