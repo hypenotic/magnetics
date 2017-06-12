@@ -491,7 +491,60 @@ body.rma-form article {
     // padding-bottom: 0;
 }
 
-.specs-wrapper {
-    max-width: 960px;
+#specs section #specs-wrapper {
+    max-width: 1000px;
     margin: 0 auto;
+
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px;border: 1px solid #ddd !important;overflow:hidden;word-break:normal;}
+    .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+    .tg .tg-9er8{background-color:#e9f4f8;vertical-align:top}
+    .tg .tg-rywa{font-weight:bold;background-color:#325575;color:#ffffff;vertical-align:top; border: 1px solid #ddd;}
+    .tg .tg-3we0{background-color:#ffffff;vertical-align:top}
+    .tg .tg-t0r4{background-color:#e9f4f8;color:#333333;vertical-align:top}
+    .tg .tg-yw4l {background: #ffffff}
+
+    >table.tg:first-child {
+        width: 100% !important;
+        display: inline-block;
+        vertical-align: top;
+    }
+    >div.spec-tables-left {
+        overflow: hidden;
+        padding-left: 0;
+        width: 100% !important;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        table.tg:first-child,
+        table.tg:last-child {
+            position: relative;
+            width: 100% !important;
+        }
+    }
+
+    @include media($bp-large) {
+        >table.tg:first-child {
+            width: 45% !important;
+            display: inline-block;
+            vertical-align: top;
+        }
+        >div.spec-tables-left {
+            overflow: visible;
+            padding-left: 30px;
+            width: 45% !important;
+            display: inline-block;
+            vertical-align: top; 
+        }
+        >table.tg:nth-child(2) {
+            // width: 45% !important;
+            // display: inline-block;
+            // vertical-align: top;
+        }
+        >table.tg:last-child {
+            // width: 45% !important;
+            // display: inline-block;
+            // vertical-align: top;
+        }
+    }
 }

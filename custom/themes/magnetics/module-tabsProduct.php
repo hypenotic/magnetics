@@ -408,7 +408,7 @@
 		<?php } else { ?>
 		<div id="specs">
 			<section>
-				<div class="specs-wrapper">
+				<div id="specs-wrapper">
 					<?php echo $specsOptions; ?>	
 				</div>
 			</section>
