@@ -47,7 +47,7 @@
              <?php if($metaWhatsInTheBox)  { ?>
             <li>
                 <?php if ( is_single(252) ) { ?>
-                	 <a href="#systemconsistsof"><span>System Consists Of</span></a>
+                	 <a href="#whatsinthebox"><span>System Consists Of</span></a>
                 <?php } else { ?>
 					 <a href="#whatsinthebox"><span>What's In The Box</span></a>
                 <?php } ?>
@@ -390,7 +390,7 @@
 		<?php } ?>
 		<!-- End System at a Glance -->
 		<!-- Start What's in the Box -->
-		 <?php if($metaWhatsInTheBox && !is_single(252) )  { ?>
+		 <?php if($metaWhatsInTheBox)  { ?>
 		<div id="whatsinthebox"><?php echo $metaWhatsInTheBox; ?> </div>
 		<?php } ?>
 		<!-- End What's in the Box -->
