@@ -8,6 +8,8 @@
     $metaPlaysWellWith = get_post_meta($postID, '_product_tabs_plays_well_with', true);
     $metaSystemAtAGlance = get_post_meta($postID, '_product_tabs_system_at_a_glance', true);
 
+    $specsOptions = get_post_meta($postID, '_specs_options_specs_content', true);
+
     $layout = get_post_meta($postID, '_product_tabs_saag_layout', true);
 
    
@@ -44,12 +46,20 @@
             <?php } ?>
              <?php if($metaWhatsInTheBox)  { ?>
             <li>
-                <a href="#whatsinthebox"><span>What's In The Box</span></a>
+                <?php if ( is_single(252) ) { ?>
+                	 <a href="#systemconsistsof"><span>System Consists Of</span></a>
+                <?php } else { ?>
+					 <a href="#whatsinthebox"><span>What's In The Box</span></a>
+                <?php } ?>
             </li>
             <?php } ?>
              <?php if(isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== ''))  { ?>
             <li>
-                <a href="#additionaloptions"><span>Additional Options</span></a>
+                <?php if ( is_single(252) ) { ?>
+                	<a href="#specs"><span>Specs</span></a>
+                <?php } else { ?>
+					<a href="#additionaloptions"><span>Additional Options</span></a>
+                <?php } ?>
             </li>
             <?php } ?>
 
@@ -325,15 +335,16 @@
 				<div class="drawing-content">
 					<div class="drawing-content-box">
 						<?php
-							if($metaAdditionalOptions[0][_title] !== '') {
+							if($metaAdditionalOptions[0][_title] !== '' && !is_single(2298) ) {
 								echo "<ul>";
 								echo '<li>Additional Options</li>';		
 								foreach ( $metaAdditionalOptions as $option ) {
 									echo "<li>".$option['_title']."</li>";
 								}
 								echo "</ul>";
-							}
-						?>
+							} else {?>
+								<p>HEYA</p>
+							<?php } ?>
 					</div>
 					<div class="drawing-content-box">
 						<?php
@@ -379,12 +390,12 @@
 		<?php } ?>
 		<!-- End System at a Glance -->
 		<!-- Start What's in the Box -->
-		 <?php if($metaWhatsInTheBox)  { ?>
+		 <?php if($metaWhatsInTheBox && !is_single(252) )  { ?>
 		<div id="whatsinthebox"><?php echo $metaWhatsInTheBox; ?> </div>
 		<?php } ?>
 		<!-- End What's in the Box -->
 		<!-- Start Additional Options -->
-		<?php if(isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== '')) { ?>
+		<?php if(isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== '') && !is_single(252) ) { ?>
 			<div id="additionaloptions">
 				<?php foreach ( $metaAdditionalOptions as $option ) { ?>
 					<section>
@@ -394,6 +405,14 @@
                 <!-- End Loop -->
                 <?php } ?>
 			</div>
+		<?php } else { ?>
+		<div id="specs">
+			<section>
+				<div class="specs-wrapper">
+					<?php echo $specsOptions; ?>	
+				</div>
+			</section>
+		</div>
 		<?php } ?>
 		<!-- End Additional Options -->
 		<!-- Start Integrations -->

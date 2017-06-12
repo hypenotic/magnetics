@@ -403,6 +403,19 @@ $posts->add_meta_box(
 );
 
 $posts->add_meta_box(
+    'specs_options',
+    'Spec Options', 
+    array(
+        array(
+            'name'          => 'specs_content',
+            'label'         => 'Content',
+            'description'   => '',
+            'type'          => 'wysiwyg'
+        )
+    )
+);
+
+$posts->add_meta_box(
     'product_tabs',
     'Product Tabs', 
     array(
