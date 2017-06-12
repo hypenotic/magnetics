@@ -38,18 +38,24 @@
     <label class="<?php echo $category->slug; ?>"><span><?php echo $category->name; ?></span></label>
     <ul>
     <?php query_posts('cat='.$category->term_id);
-    while(have_posts()): the_post(); $do_not_duplicate = $post->ID; ?>
+    while(have_posts()): the_post(); $do_not_duplicate = $post->ID; 
+    $bannerImage = get_post_meta($post->ID, '_banner_image', true);
+    
+    $bannerURL = wp_get_attachment_image_src( $bannerImage[0], 'full' );
+    ?>
     <!-- POST CODE -->
 
     <li class="product <?php echo $category->slug; ?>">
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
      <h3><?php the_title(); ?></h3>
 
+     <img src="<?php echo $bannerURL[0];?>" alt="<?php the_title(); ?>" class="product-thumbnail">
+
         <?php 
         // Banner Subheading
         // Custom meta values 
         $metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
-
+        
         if($metaBannerSubheading !== -1) { ?>
             <p><?php echo $metaBannerSubheading; ?>
 
