@@ -496,13 +496,13 @@ body.rma-form article {
     margin: 0 auto;
 
     .tg  {border-collapse:collapse;border-spacing:0;}
-    .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px;border: 1px solid #ddd !important;overflow:hidden;word-break:normal;}
-    .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+    .tg td{font-family:'Open Sans', sans-serif;font-size:16px;padding:10px 20px;border: 1px solid #ddd !important;overflow:hidden;word-break:normal;}
+    .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 20px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
     .tg .tg-9er8{background-color:#e9f4f8;vertical-align:top}
-    .tg .tg-rywa{font-weight:bold;background-color:#325575;color:#ffffff;vertical-align:top; border: 1px solid #ddd;}
+    .tg .tg-rywa{font-weight:bold;background-color:#325575;color:#ffffff;vertical-align:top; border: 1px solid #ddd;font-size: 16px; text-transform: uppercase;}
     .tg .tg-3we0{background-color:#ffffff;vertical-align:top}
     .tg .tg-t0r4{background-color:#e9f4f8;color:#333333;vertical-align:top}
-    .tg .tg-yw4l {background: #ffffff}
+    .tg .tg-yw4l {background: #ffffff; font-size: 16px;line-height: 20px;}
 
     >table.tg:first-child {
         width: 100% !important;
@@ -535,6 +535,9 @@ body.rma-form article {
             width: 45% !important;
             display: inline-block;
             vertical-align: top; 
+            table {
+                margin-bottom: 30px;
+            }
         }
         >table.tg:nth-child(2) {
             // width: 45% !important;
