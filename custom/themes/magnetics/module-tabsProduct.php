@@ -10,6 +10,8 @@
 
     $specsOptions = get_post_meta($postID, '_specs_options_specs_content', true);
 
+    $systemConsistsOf = get_post_meta($postID, '_product_tabs_system_consists_of', true);
+
     $layout = get_post_meta($postID, '_product_tabs_saag_layout', true);
 
    
@@ -30,13 +32,13 @@
     if ($activateSpecs == 'on') {
 ?>
 
-	<section class="title-holder">
+<!-- 	<section class="title-holder">
 		<div class="specs">
 			<h2>Specifications</h2>
 		</div>
 
 
-	</section>
+	</section> -->
 	<section id="responsive-tabs" class="tabs boxes">
         <ul>
             <?php if($metaSystemAtAGlance != -1)  { ?>
@@ -44,16 +46,8 @@
                 <a href="#systemataglance"><span>System At a Glance</span></a>
             </li>     
             <?php } ?>
-             <?php if($metaWhatsInTheBox)  { ?>
-            <li>
-                <?php if ( is_single(252) ) { ?>
-                	 <a href="#whatsinthebox"><span>System Consists Of</span></a>
-                <?php } else { ?>
-					 <a href="#whatsinthebox"><span>What's In The Box</span></a>
-                <?php } ?>
-            </li>
-            <?php } ?>
-             <?php if(isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== ''))  { ?>
+
+            <?php if(isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== ''))  { ?>
             <li>
                 <?php if ( is_single(252) ) { ?>
                 	<a href="#specs"><span>Specs</span></a>
@@ -68,6 +62,10 @@
                 <a href="#integrations"><span>Integrations</span></a>
             </li>
             <?php } ?>
+
+            <li>
+                <a href="#brochuresandarticles"><span>Brochures &amp; Articles</span></a>
+            </li>
               
         </ul>
 		<!-- Start System at a Glance -->	
@@ -333,6 +331,8 @@
 				} ?>
 				</div>
 				<div class="drawing-content">
+					<?php
+							if($metaAdditionalOptions[0][_title] !== '' && !is_single(2298) ) { ?>
 					<div class="drawing-content-box">
 						<?php
 							if($metaAdditionalOptions[0][_title] !== '' && !is_single(2298) ) {
@@ -343,9 +343,11 @@
 								}
 								echo "</ul>";
 							} else {?>
-								<p>HEYA</p>
+								<!-- <p>HEYA</p> -->
 							<?php } ?>
 					</div>
+					<?php } ?>
+					<?php if($metaIntegrations[0] !== '0') { ?>
 					<div class="drawing-content-box">
 						<?php
 							if($metaIntegrations[0] !== '0') {
@@ -365,6 +367,8 @@
 							}
 						?>
 					</div>
+					<?php } ?>
+					<?php if($metaPlaysWellWith[0] !== '0') { ?>
 					<div class="drawing-content-box">
 						<?php
 							if($metaPlaysWellWith[0] !== '0') {
@@ -384,6 +388,22 @@
 							}
 						?>
 					</div>
+					<?php } ?>
+					<?php if($systemConsistsOf) { ?>
+					<div class="drawing-content-box content-box__system-consists-of">
+						<?php
+							if($systemConsistsOf) {
+								// print_r($systemConsistsOf);
+								echo "<ul>";
+									echo '<li>System Consists Of</li>';		
+									foreach ($systemConsistsOf as $post ) { 
+										echo '<li>'.$post.'</li>';
+									}
+								echo "</ul>";
+							}
+						?>
+					</div>
+					<?php } ?>
 				</div>
 				
 			</div>     
@@ -391,7 +411,9 @@
 		<!-- End System at a Glance -->
 		<!-- Start What's in the Box -->
 		 <?php if($metaWhatsInTheBox)  { ?>
-		<div id="whatsinthebox"><?php echo $metaWhatsInTheBox; ?> </div>
+		<div id="brochuresandarticles">
+			<?php get_template_part( 'module', 'postsRelated' ); ?>
+		</div>
 		<?php } ?>
 		<!-- End What's in the Box -->
 		<!-- Start Additional Options -->

@@ -1,4 +1,4 @@
-<?php
+ <?php
 	// Custom meta values 
 	$metaPDF = get_post_meta($post->ID,'_brochure_file',true);
 	$metaPDFName = rtrim($metaPDF, "/");

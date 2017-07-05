@@ -243,6 +243,12 @@ $product->add_meta_box(
             'type'          => 'wysiwyg',  
         ),
         array(
+            'name'          => 'system_consists_of',
+            'label'         => 'System Consists Of',
+            'type'          => 'text',
+            'repeatable'    =>  'true'
+        ),
+        array(
             'name'          => 'post_meta_integrations',
             'label'         => 'Integrations',
             'description'   => 'Select your related integrations here',

@@ -47,8 +47,12 @@ section.related {
 	.drawing-content-box {
 		margin-bottom:20px;
 		@include media($screenLarge) {
-			@include span-columns(4);
-			margin-bottom:0px;
+			// @include span-columns(4);
+			// margin-bottom:0px;
+			width: 21%;
+			display: inline-block;
+			vertical-align: top;
+			margin: 0 4% 0 0;
 		}
 		ul {
 			.tabs #systemataglance & { 
@@ -60,17 +64,18 @@ section.related {
 					text-align:left;
 					font-size: em($fontSizeSmall);
                     line-height: em($fontSizeBody);
-                    margin-bottom: 4px;
+                    margin-bottom: 10px;
 					&:first-child {
 						color:$orange;
 						font-weight:bold;
 					}
 					a {
 						background:none;
-						color:black;
+						color:$teal;
 						font-size: em($fontSizeSmall);
 						line-height: em($fontSizeBody);
 						padding:0;
+						// border-bottom: 1px
                     }
 				}
 			}

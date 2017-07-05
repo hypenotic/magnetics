@@ -83,7 +83,7 @@
   <?php } ?>
 
   <!-- Module: Related Posts -->
-  <?php get_template_part( 'module', 'postsRelated' ); ?>
+  <?php //get_template_part( 'module', 'postsRelated' ); ?>
 
 <?php } ?>
 

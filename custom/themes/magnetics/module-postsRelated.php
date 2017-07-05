@@ -81,19 +81,17 @@
 
 	<section class="related">
 
-	<?php if ( in_category( 'products' ) && $metaRelatedBrochures[0] !== '0' && $metaRelatedArticles[0] !== '0') { ?>
-		<h2>Brochures &amp; Articles</h2>
+	<?php //if ( in_category( 'products' ) && $metaRelatedBrochures[0] !== '0' && $metaRelatedArticles[0] !== '0') { ?>
+		<!-- <h2>Brochures &amp; Articles</h2> -->
 	<!-- Start Loop -->
-	<?php } else if (in_category( 'products' ) && $metaRelatedArticles[0] == '0') { ?>
-		<h2>Brochures</h2>
-	<?php } else { ?>
-		<h2>Related Articles</h2>
-	<?php } ?>
+	<?php //} else if (in_category( 'products' ) && $metaRelatedArticles[0] == '0') { ?>
+		<!-- <h2>Brochures</h2> -->
+	<?php //} else { ?>
+		<!-- <h2>Related Articles</h2> -->
+	<?php //} ?>
 
 	<?php 
-	 foreach ( $related_posts as $post ) {
-
-?>
+	foreach ( $related_posts as $post ) { ?>
 
 	<?php get_template_part('template','postOverview'); ?>
 	 	

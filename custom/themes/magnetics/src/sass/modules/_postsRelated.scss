@@ -1,5 +1,6 @@
 section[role="main"] .related {
-    background: white;
+    // background: white;
+    // background: transparent;
     @include media($bp-small) {
         padding: 30px;
     }
@@ -37,7 +38,9 @@ footer .related {
 }
 
 .single section[role="main"] .related {
-    background: white;
+    // background: white;
+    background: transparent;
+    padding: 0;
 }
 
 .single footer .related {
@@ -60,4 +63,14 @@ footer .related {
             // color: $orange;
         }
     }
+}
+
+article.overview header h3,
+article.overview header h3 a {
+    color: $orange !important;
+    line-height: 110%;
+}
+
+.content-box__system-consists-of {
+
 }
