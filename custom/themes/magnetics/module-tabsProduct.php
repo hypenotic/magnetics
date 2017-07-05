@@ -11,6 +11,8 @@
     $specsOptions = get_post_meta($postID, '_specs_options_specs_content', true);
 
     $systemConsistsOf = get_post_meta($postID, '_product_tabs_system_consists_of', true);
+    $additionalOptions = get_post_meta($postID, '_product_tabs_additional_components', true);
+    $productOptions = get_post_meta($postID, '_product_tabs_product_options', true);
 
     $layout = get_post_meta($postID, '_product_tabs_saag_layout', true);
 
@@ -331,77 +333,24 @@
 				} ?>
 				</div>
 				<div class="drawing-content">
-					<?php
-							if($metaAdditionalOptions[0][_title] !== '' && !is_single(2298) ) { ?>
-					<div class="drawing-content-box">
-						<?php
-							if($metaAdditionalOptions[0][_title] !== '' && !is_single(2298) ) {
-								echo "<ul>";
-								echo '<li>Additional Options</li>';		
-								foreach ( $metaAdditionalOptions as $option ) {
-									echo "<li>".$option['_title']."</li>";
-								}
-								echo "</ul>";
-							} else {?>
-								<!-- <p>HEYA</p> -->
-							<?php } ?>
-					</div>
-					<?php } ?>
-					<?php if($metaIntegrations[0] !== '0') { ?>
-					<div class="drawing-content-box">
-						<?php
-							if($metaIntegrations[0] !== '0') {
-								$args = array(
-									'post__in'    =>     $metaIntegrations,
-									'orderby' => 'post__in'
-								);	
-								$related_posts = get_posts($args);
-								echo "<ul>";
-									echo '<li>Compatible With</li>';		
-									foreach ( $related_posts as $post ) { 
-										$metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
-										echo '<li><a href="'.get_permalink($post->ID).'">'.get_the_title($post->ID).'</a></li>';
-									}
-								echo "</ul>";								
-								wp_reset_postdata();
-							}
-						?>
-					</div>
-					<?php } ?>
-					<?php if($metaPlaysWellWith[0] !== '0') { ?>
-					<div class="drawing-content-box">
-						<?php
-							if($metaPlaysWellWith[0] !== '0') {
-								$args = array(
-									'post__in'    => $metaPlaysWellWith,
-									'orderby'	  => 'post__in'
-								);	
-								$related_posts = get_posts($args);
-								echo "<ul>";
-									echo '<li>Compatible With</li>';		
-									foreach ( $related_posts as $post ) { 
-										$metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
-										echo '<li><a href="'.get_permalink($post->ID).'">'.get_the_title($post->ID).'</a></li>';
-									}
-								echo "</ul>";								
-								wp_reset_postdata();
-							}
-						?>
-					</div>
-					<?php } ?>
 					<?php if($systemConsistsOf) { ?>
 					<div class="drawing-content-box content-box__system-consists-of">
-						<?php
-							if($systemConsistsOf) {
-								// print_r($systemConsistsOf);
-								echo "<ul>";
-									echo '<li>System Consists Of</li>';		
-									foreach ($systemConsistsOf as $post ) { 
-										echo '<li>'.$post.'</li>';
-									}
-								echo "</ul>";
-							}
-						?>
+						<h4>System Consists Of</h4>
+						<div class="drawing-content-box__list"><?php echo $systemConsistsOf; ?></div>
+					</div>
+					<?php } ?>
+
+					<?php if($additionalOptions) { ?>
+					<div class="drawing-content-box content-box__add-options">
+						<h4>Additional Options</h4>
+						<div class="drawing-content-box__list"><?php echo $additionalOptions; ?></div>
+					</div>
+					<?php } ?>
+
+					<?php if($productOptions) { ?>
+					<div class="drawing-content-box content-box__options">
+						<h4>Options</h4>
+						<div class="drawing-content-box__list"><?php echo $productOptions; ?></div>
 					</div>
 					<?php } ?>
 				</div>

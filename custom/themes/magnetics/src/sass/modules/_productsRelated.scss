@@ -49,12 +49,20 @@ section.related {
 		@include media($screenLarge) {
 			// @include span-columns(4);
 			// margin-bottom:0px;
-			width: 21%;
+			width: 25%;
 			display: inline-block;
 			vertical-align: top;
 			margin: 0 4% 0 0;
 		}
+		h4 {
+			font-size: 1.1em;
+			line-height: 1.125em;
+			font-weight: bold;
+			color: $orange;
+			margin-bottom: 10px;
+		}
 		ul {
+			list-style-type: disc;
 			.tabs #systemataglance & { 
 				display: block;
 				margin: 0;
@@ -62,18 +70,14 @@ section.related {
 				li {
 					width:100%;
 					text-align:left;
-					font-size: em($fontSizeSmall);
-                    line-height: em($fontSizeBody);
+					font-size: 0.8em;
+					line-height: 1.1em;
                     margin-bottom: 10px;
-					&:first-child {
-						color:$orange;
-						font-weight:bold;
-					}
 					a {
 						background:none;
 						color:$teal;
-						font-size: em($fontSizeSmall);
-						line-height: em($fontSizeBody);
+						font-size: 0.8em;
+						line-height: 1.1em;
 						padding:0;
 						// border-bottom: 1px
                     }

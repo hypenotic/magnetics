@@ -22,26 +22,24 @@
 	if ($metaPDF) { ?>
 
 	<header>
+		<h3><?php the_title();?></h3>
+	</header>
 
-			<h3><?php the_title();?></h3>
+	<section>
+		
+		<!-- <?php 
+			// Out on a limb here. If there's no brochureDescription, 
+			// we can just call excerpt. Vice versa.
+			//echo $brochureDescription; 
+			//echo $articleDescription;
+			the_excerpt(); 
+		?> -->
 
-		</header>
+		<footer>
+			<a href="<?php echo $metaPDF; ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>" target="blank"><span>Download this Brochure</span></a>
+		</footer>
 
-		<section>
-			
-			<!-- <?php 
-				// Out on a limb here. If there's no brochureDescription, 
-				// we can just call excerpt. Vice versa.
-				//echo $brochureDescription; 
-				//echo $articleDescription;
-				the_excerpt(); 
-			?> -->
-
-			<footer>
-				<a href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span>Download this Brochure</span></a>
-			</footer>
-
-		</section>
+	</section>
 	<?php } ?>
 
 
