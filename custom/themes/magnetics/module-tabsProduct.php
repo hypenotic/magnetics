@@ -371,15 +371,7 @@
 			</section>
 		</div>
 		<?php } else { ?>
-		<div id="additionaloptions">
-				<?php foreach ( $metaAdditionalOptions as $option ) { ?>
-					<section>
-						<h3 id="<?php sanitize_title($option['_title']); ?>"><?php echo $option['_title']; ?></h3>
-						<p><?php echo $option['_description']; ?></p>
-					</section>
-                <!-- End Loop -->
-                <?php } ?>
-			</div>
+
 		<?php } ?>
 		<!-- End Additional Options -->
 		<!-- Start Integrations -->
