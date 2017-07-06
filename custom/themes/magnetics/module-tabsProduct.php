@@ -335,7 +335,7 @@
 				<div class="drawing-content">
 					<?php if($systemConsistsOf) { ?>
 					<div class="drawing-content-box content-box__system-consists-of">
-						<h4>System Consists Of</h4>
+						<h4><?php the_title();?> Includes</h4>
 						<div class="drawing-content-box__list"><?php echo $systemConsistsOf; ?></div>
 					</div>
 					<?php } ?>

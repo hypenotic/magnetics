@@ -431,7 +431,7 @@ $posts->add_meta_box(
         ),
         array(
             'name'          => 'system_consists_of',
-            'label'         => 'System Consists Of',
+            'label'         => 'Product Includes',
             'type'          => 'wysiwyg'
         ),
         array(
