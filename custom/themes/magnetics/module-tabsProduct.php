@@ -49,13 +49,9 @@
             </li>     
             <?php } ?>
 
-            <?php if(isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== ''))  { ?>
+            <?php if($specsOptions)  { ?>
             <li>
-                <?php if ( is_single(252) ) { ?>
-                	<a href="#specs"><span>Specs</span></a>
-                <?php } else { ?>
-					<a href="#additionaloptions"><span>Additional Options</span></a>
-                <?php } ?>
+                <a href="#specs"><span>Specs</span></a>
             </li>
             <?php } ?>
 
@@ -366,8 +362,16 @@
 		<?php } ?>
 		<!-- End What's in the Box -->
 		<!-- Start Additional Options -->
-		<?php if(isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== '') && !is_single(252) ) { ?>
-			<div id="additionaloptions">
+		<?php if($specsOptions) { ?>
+		<div id="specs">
+			<section>
+				<div id="specs-wrapper">
+					<?php echo $specsOptions; ?>	
+				</div>
+			</section>
+		</div>
+		<?php } else { ?>
+		<div id="additionaloptions">
 				<?php foreach ( $metaAdditionalOptions as $option ) { ?>
 					<section>
 						<h3 id="<?php sanitize_title($option['_title']); ?>"><?php echo $option['_title']; ?></h3>
@@ -376,14 +380,6 @@
                 <!-- End Loop -->
                 <?php } ?>
 			</div>
-		<?php } else { ?>
-		<div id="specs">
-			<section>
-				<div id="specs-wrapper">
-					<?php echo $specsOptions; ?>	
-				</div>
-			</section>
-		</div>
 		<?php } ?>
 		<!-- End Additional Options -->
 		<!-- Start Integrations -->
