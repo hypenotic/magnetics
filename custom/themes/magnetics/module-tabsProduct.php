@@ -338,7 +338,7 @@
 
 					<?php if($additionalOptions) { ?>
 					<div class="drawing-content-box content-box__add-options">
-						<h4>Additional Options</h4>
+						<h4>Additional Components</h4>
 						<div class="drawing-content-box__list"><?php echo $additionalOptions; ?></div>
 					</div>
 					<?php } ?>
