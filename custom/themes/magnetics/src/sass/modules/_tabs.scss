@@ -516,8 +516,7 @@ body.rma-form article {
         display: inline-block;
         vertical-align: top;
         position: relative;
-        table.tg:first-child,
-        table.tg:last-child {
+        table.tg {
             position: relative;
             width: 100% !important;
         }
