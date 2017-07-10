@@ -213,27 +213,27 @@ $posts->add_meta_box(
 //     )
 // );
 
-$posts->add_meta_box(
-    'timeline_block',
-    'Timeline', 
-    array(
-        'bundle',    
-            array( 
-                array(
-                    'name'          => 'heading',
-                    'label'         => 'Heading',
-                    'description'   => '(optional)',
-                    'type'          => 'text',          
-                ),
-                array(
-                    'name'          => 'content',
-                    'label'         => 'Content',
-                    'description'   => '',
-                    'type'          => 'wysiwyg',          
-                )
-            )
-    )
-);
+// $posts->add_meta_box(
+//     'timeline_block',
+//     'Timeline', 
+//     array(
+//         'bundle',    
+//             array( 
+//                 array(
+//                     'name'          => 'heading',
+//                     'label'         => 'Heading',
+//                     'description'   => '(optional)',
+//                     'type'          => 'text',          
+//                 ),
+//                 array(
+//                     'name'          => 'content',
+//                     'label'         => 'Content',
+//                     'description'   => '',
+//                     'type'          => 'wysiwyg',          
+//                 )
+//             )
+//     )
+// );
 
 $posts->add_meta_box(
     'steps',
@@ -417,7 +417,7 @@ $posts->add_meta_box(
 
 $posts->add_meta_box(
     'product_tabs',
-    'Product Tabs', 
+    'Product Tab Extras', 
     array(
         array(
             'name'          => 'activate',
@@ -429,21 +429,21 @@ $posts->add_meta_box(
             'label'         => 'What\'s In The Box',
             'type'          => 'wysiwyg',  
         ),
-        array(
-            'name'          => 'system_consists_of',
-            'label'         => 'Product Includes',
-            'type'          => 'wysiwyg'
-        ),
-        array(
-            'name'          => 'additional_components',
-            'label'         => 'Additional Components',
-            'type'          => 'wysiwyg'
-        ),
-        array(
-            'name'          => 'product_options',
-            'label'         => 'Options',
-            'type'          => 'wysiwyg'
-        ),
+        // array(
+        //     'name'          => 'system_consists_of',
+        //     'label'         => 'Product Includes',
+        //     'type'          => 'wysiwyg'
+        // ),
+        // array(
+        //     'name'          => 'additional_components',
+        //     'label'         => 'Additional Components',
+        //     'type'          => 'wysiwyg'
+        // ),
+        // array(
+        //     'name'          => 'product_options',
+        //     'label'         => 'Options',
+        //     'type'          => 'wysiwyg'
+        // ),
         array(
             'name'          => 'post_meta_integrations',
             'label'         => 'Integrations',
@@ -491,23 +491,6 @@ $posts->add_meta_box(
                     ),
             'default_value' => 'value1'
         ),
-		// array(
-  //           'name'          => 'system_at_a_glance',
-  //           'label'         => 'System at a Glance',
-  //           'description'   => 'Select Drawings',
-  //           'type'          => 'post_checkboxes',
-		// 	'args'          => array(
-		// 		'post_type' => 'drawing',
-		// 	)  
-  //       ),
-        // array(
-            // 'name'          => 'system_at_a_glance',
-            // 'label'         => 'System at a Glance',
-            // 'description'   => 'Upload system images',
-            // 'type'          => 'image',
-            // 'repeatable'    =>  'true'  
-        // ),
-
        array(
             'name'          => 'system_at_a_glance_PDF',
             'label'         => 'File',
