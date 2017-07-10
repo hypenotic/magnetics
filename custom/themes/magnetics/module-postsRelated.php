@@ -33,22 +33,21 @@
 
 
 
-	if($metaRelatedArticles || $metaRelatedBrochures) {
+	if($metaRelatedBrochures) {
 		
 		$metaRelatedMerged = array_merge($metaRelatedArticles, $metaRelatedBrochures);
 
-		$args = array(
-			'post_type'   => array('article','brochure'),
+		$args_b = array(
+			'post_type'   => array('brochure'),
 			'post__in'    =>	 $metaRelatedMerged,
 			'posts_per_page' => -1,
-			'orderby' => 'type',
 			'order'   => 'DESC'
 		);
 
 
 	} else {
 
-		$args = array(
+		$args_b = array(
 			'post_type'   => get_post_type(),
 			'numberposts' => 2,
 			'orderby'     => 'rand',
@@ -60,7 +59,34 @@
 		
 	}
 
-	$related_posts = get_posts($args);
+	if($metaRelatedArticles) {
+		
+		$metaRelatedMerged = array_merge($metaRelatedArticles, $metaRelatedBrochures);
+
+		$args_a = array(
+			'post_type'   => array('article'),
+			'post__in'    =>	 $metaRelatedMerged,
+			'posts_per_page' => -1,
+			'orderby'   => 'post__in'
+		);
+
+
+	} else {
+
+		$args_a = array(
+			'post_type'   => get_post_type(),
+			'numberposts' => 2,
+			'orderby'     => 'rand',
+			'tag__in'     => $tag_ids,
+			'cat'         => $this_cat,
+			'exclude'     => $post->ID
+		);
+
+		
+	}
+
+	$related_posts_b = get_posts($args_b);
+	$related_posts_a = get_posts($args_a);
 
 	/**
 	 * If the tags are only assigned to this post try getting
@@ -91,7 +117,16 @@
 	<?php //} ?>
 
 	<?php 
-	foreach ( $related_posts as $post ) { ?>
+	foreach ( $related_posts_b as $post ) { ?>
+
+	<?php get_template_part('template','postOverview'); ?>
+	 	
+ 	<!-- End Loop -->
+	<?php }
+	wp_reset_postdata();?>
+
+	<?php 
+	foreach ( $related_posts_a as $post ) { ?>
 
 	<?php get_template_part('template','postOverview'); ?>
 	 	
