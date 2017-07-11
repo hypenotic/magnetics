@@ -14,6 +14,8 @@
     $additionalOptions = get_post_meta($postID, '_product_tabs_additional_components', true);
     $productOptions = get_post_meta($postID, '_product_tabs_product_options', true);
 
+	$relatedProducts = get_post_meta($postID, '_product_tabs_related_products', true);
+
     $layout = get_post_meta($postID, '_product_tabs_saag_layout', true);
 
    
@@ -55,7 +57,7 @@
             </li>
             <?php } ?>
 
-            <?php if($metaIntegrations[0] != 0)  { ?>
+            <?php if($metaIntegrations[0] != 0 || $relatedProducts)  { ?>
              <li>
                 <a href="#integrations"><span>Integrations</span></a>
             </li>
@@ -67,7 +69,7 @@
               
         </ul>
         <!-- Start System at a Glance -->	
-		<?php get_template_part( 'module', 'techDrawings' ); ?>
+		<?php get_template_part( 'module', 'sysAtAGlance' ); ?>
 		<!-- End System at a Glance -->
 		<!-- Start What's in the Box -->
 		 <?php if($metaWhatsInTheBox)  { ?>
@@ -90,7 +92,7 @@
 		<?php } ?>
 		<!-- End Additional Options -->
 		<!-- Start Integrations -->
-		<?php if($metaIntegrations[0] != 0)	{ ?>
+		<?php if($metaIntegrations[0] != 0 && !in_category('product-integrations'))	{ ?>
 		 <div id="integrations">
 			<?php
 
@@ -101,24 +103,52 @@
 
             $related_posts = get_posts($args);
 
-             foreach ( $related_posts as $post ) { 
+	            foreach ( $related_posts as $post ) { 
 
-                $metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
-         
-                ?>
-				<section>
-					<h3><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
-					<p><?php echo $metaBannerSubheading; ?></p>
-				</section>	
-            <!-- End Loop -->
-            <?php }
+	                $metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
+	         
+	                ?>
+					<section>
+						<h3><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
+						<p><?php echo $metaBannerSubheading; ?></p>
+					</section>	
+	            <!-- End Loop -->
+	            <?php }
             }
             wp_reset_postdata();?>
 
             <br style="clear:both" />
 		 
 		 </div>
-		<?php } ?>
+		<?php } else if (in_category('product-integrations')) { ?>
+		<div id="integrations">
+			<?php
+
+            if($relatedProducts) {
+                $args = array(
+                    'post__in'    =>  $relatedProducts
+                );
+
+            $related_posts = get_posts($args);
+
+	            foreach ( $related_posts as $post ) { 
+
+	                $metaBannerSubheading = get_post_meta($post->ID, '_banner_subheading', true);
+	         
+	                ?>
+					<section>
+						<h3><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
+						<p><?php echo $metaBannerSubheading; ?></p>
+					</section>	
+	            <!-- End Loop -->
+	            <?php }
+            }
+            wp_reset_postdata();?>
+
+            <br style="clear:both" />
+		 
+		 </div>
+		<?php } else {} ?>
 		<!-- End Integrations -->
 </section>
  <?php } ?>

@@ -79,6 +79,25 @@ function mag_register_default( $meta_boxes ) {
             ),
         )
     );
+    $meta_boxes[] = array(
+        'title'      => __( 'Integrations (Tab)', 'textdomain' ),
+        'post_types' => array( 'post'),
+        'show'   => array(
+            // List of page templates (used for page only). Array. Optional.
+            'category'    => array( 'Product Integrations' )
+        ),
+        'fields' => array(
+            array(
+                'desc'  => 'Select your related products here',
+                'id'    => '_product_tabs_related_products',
+                'type'  => 'post',
+                'clone' => true,
+                'query_args' => array(
+                    'cat' => 7,
+                )
+            ),
+        )
+    );
     return $meta_boxes;
 }
 ?>
