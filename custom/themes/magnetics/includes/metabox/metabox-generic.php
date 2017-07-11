@@ -50,7 +50,7 @@ function mag_register_default( $meta_boxes ) {
         'post_types' => array( 'post'),
         'show'   => array(
             // List of page templates (used for page only). Array. Optional.
-            'category'    => array( 'Products' )
+            'category'    => array( 'Products', 'Product Integrations' )
         ),
         'fields' => array(
             // array(
