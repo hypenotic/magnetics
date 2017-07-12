@@ -98,6 +98,34 @@ function mag_register_default( $meta_boxes ) {
             ),
         )
     );
+    // $meta_boxes[] = array(
+    //     'title'      => __( 'Steps', 'textdomain' ),
+    //     'post_types' => array( 'post'),
+    //     'show'   => array(
+    //         // List of page templates (used for page only). Array. Optional.
+    //         'category'    => array( 'Products' )
+    //     ),
+    //     'fields' => array(
+    //         array(
+    //             'name'  => __( 'Title', 'textdomain' ),
+    //             'desc'  => 'e.g. Step 1',
+    //             'id'    => '_steps_title',
+    //             'type'  => 'text',
+    //         ),
+    //         array(
+    //             'name'  => __( 'Image', 'textdomain' ),
+    //             'desc'  => '',
+    //             'id'    => '_steps_image',
+    //             'type'  => 'image',
+    //         ),
+    //         array(
+    //             'name'  => __( 'Text', 'textdomain' ),
+    //             'desc'  => '',
+    //             'id'    => '_steps_text',
+    //             'type'  => 'wysiwyg',
+    //         ),
+    //     )
+    // );
     return $meta_boxes;
 }
 ?>

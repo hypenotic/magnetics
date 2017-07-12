@@ -18,31 +18,14 @@
 
     $layout = get_post_meta($postID, '_product_tabs_saag_layout', true);
 
-   
     if (empty($metaWhatsInTheBox)) {
     	$tab1 = 0;
     } else {
     	$tab1 = 1;
     }
 
-    // print_r($metaWhatsInTheBox);
-    // print_r($metaAdditionalOptions);
-    // print_r($metaIntegrations);
-    // print_r($metaPlaysWellWith);
-    // print_r($metaSystemAtAGlance);
-
-    // if($metaWhatsInTheBox || (isset($metaAdditionalOptions[0]['_title']) && ($metaAdditionalOptions[0]['_title'] !== '')) || ($metaIntegrations[0] != 0) || ($metaSystemAtAGlance != -1)) 
-
     if ($activateSpecs == 'on') {
 ?>
-
-<!-- 	<section class="title-holder">
-		<div class="specs">
-			<h2>Specifications</h2>
-		</div>
-
-
-	</section> -->
 	<section id="responsive-tabs" class="tabs boxes">
         <ul>
             <?php if($metaSystemAtAGlance != -1)  { ?>

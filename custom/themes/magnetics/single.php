@@ -72,15 +72,16 @@
   <!-- Module: Integration Partners -->
   <?php get_template_part( 'module', 'integrationPartners' ); ?>
 
-  <!-- Module: productInformation -->
-  <?php get_template_part( 'module', 'tabsProduct' ); ?>
-
   <!-- AUV -->
   <?php if (is_single(243)) { ?>
     <section class="auv-container">
       <div class="auv-container__wrapper"><?php the_content(); ?>  </div>
     </section>
   <?php } ?>
+
+  <!-- Module: productInformation -->
+  <?php get_template_part( 'module', 'tabsProduct' ); ?>
+
 
   <!-- Module: Related Posts -->
   <?php //get_template_part( 'module', 'postsRelated' ); ?>

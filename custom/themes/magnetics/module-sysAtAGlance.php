@@ -3,7 +3,7 @@
  $systemConsistsOf = get_post_meta($post->ID, '_product_tabs_system_consists_of', true);
  $additionalOptions = get_post_meta($post->ID, '_product_tabs_additional_components', true);
  $productOptions = get_post_meta($post->ID, '_product_tabs_product_options', true);
-if($metaSystemAtAGlance != -1)  { 
+if($metaSystemAtAGlance !== -1)  { 
 
 	$title = get_the_title();
 	$prehash = preg_replace("/[^a-zA-Z]/", "", $title);
@@ -19,6 +19,7 @@ if($metaSystemAtAGlance != -1)  {
 		
 		<div class="drawing-images" id="<?php echo $hash; ?>-tabs">
 		<?php if($layout == 'value2')  { 
+
 			$Limage = wp_get_attachment_image_src( get_post_thumbnail_id( $metaSystemAtAGlance[0] ), 'single-post-thumbnail' ); 	
 			$LdrawingImage="";
 			if($Limage!='') {

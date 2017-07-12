@@ -35,7 +35,7 @@
 			the_excerpt(); 
 		?> -->
 
-		<footer>
+		<footer class="brochure-footer">
 			<a href="<?php echo $metaPDF; ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>" target="blank"><span>Download this Brochure</span></a>
 		</footer>
 

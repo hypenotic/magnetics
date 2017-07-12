@@ -9,25 +9,8 @@
 <section id="footer">
     <footer>
         <section>   
-         
-         <?php if(in_category('product-integrations') && is_single()) { ?>  
-        <!-- Module: productInformation -->
-        <?php get_template_part( 'module', 'productsRelated' ); ?>
-        <?php } else if (is_page(562)) { ?>
-            <h3>Recent Posts</h3>
-            <ul>
-            <?php
-                $args = array( 'numberposts' => '3', 'post_type' => 'post' );
-                $recent_posts = wp_get_recent_posts( $args );
-                foreach( $recent_posts as $recent ){
-                    echo '<li class="footer-recent-posts"><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
-                }
-            ?>
-            </ul>
-        <?php } else { ?>
         <!-- Module: rmaformOverview -->
         <?php get_template_part( 'module', 'rmaformOverview' ); ?>
-        <?php } ?>
 
         </section>
 
