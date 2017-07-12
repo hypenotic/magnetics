@@ -69,6 +69,9 @@ article.overview header h3,
 article.overview header h3 a {
     color: $orange !important;
     line-height: 110%;
+    &:hover {
+        color: $teal !important;
+    }
 }
 
 .content-box__system-consists-of {

@@ -68,7 +68,7 @@ function mag_register_default( $meta_boxes ) {
             array(
                 'name'  => __( 'Additional Components', 'textdomain' ),
                 'desc'  => '',
-                'id'    => '_product_tabs_additional_componentsx',
+                'id'    => '_product_tabs_additional_components',
                 'type'  => 'wysiwyg',
             ),
             array(

@@ -22,7 +22,7 @@
 	if ($metaPDF) { ?>
 
 	<header>
-		<h3><?php the_title();?></h3>
+		<h3><a href="<?php echo $metaPDF; ?>" target="_blank"><?php the_title();?></a></h3>
 	</header>
 
 	<section>
@@ -36,7 +36,7 @@
 		?> -->
 
 		<footer class="brochure-footer">
-			<a href="<?php echo $metaPDF; ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>" target="blank"><span>Download this Brochure</span></a>
+			<a href="<?php echo $metaPDF; ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>" target="_blank"><span>Download this Brochure</span></a>
 		</footer>
 
 	</section>
