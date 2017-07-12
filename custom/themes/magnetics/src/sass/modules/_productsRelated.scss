@@ -49,10 +49,10 @@ section.related {
 		@include media($screenLarge) {
 			// @include span-columns(4);
 			// margin-bottom:0px;
-			width: 30%;
+			width: 29%;
 			display: inline-block;
 			vertical-align: top;
-			margin: 0 4% 0 0;
+			margin: 0 3% 0 0;
 		}
 		h4 {
 			font-size: 1.1em;

@@ -14,6 +14,8 @@
     $additionalOptions = get_post_meta($postID, '_product_tabs_additional_components', true);
     $productOptions = get_post_meta($postID, '_product_tabs_product_options', true);
 
+    $postBrochures = get_post_meta($postID, '_related_content_post_brochure', true);
+
 	$relatedProducts = get_post_meta($postID, '_product_tabs_related_products', true);
 
     $layout = get_post_meta($postID, '_product_tabs_saag_layout', true);
@@ -54,13 +56,13 @@
         <!-- Start System at a Glance -->	
 		<?php get_template_part( 'module', 'sysAtAGlance' ); ?>
 		<!-- End System at a Glance -->
-		<!-- Start What's in the Box -->
-		 <?php if($metaWhatsInTheBox)  { ?>
+		<!-- Start Brochures & Articles -->
+		<?php if($postBrochures)  { ?>
 		<div id="brochuresandarticles">
 			<?php get_template_part( 'module', 'postsRelated' ); ?>
 		</div>
 		<?php } ?>
-		<!-- End What's in the Box -->
+		<!-- End Brochures & Articles -->
 		<!-- Start Additional Options -->
 		<?php if($specsOptions) { ?>
 		<div id="specs">
