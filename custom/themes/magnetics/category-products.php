@@ -9,15 +9,12 @@
 
     <div class="mobile-bg"></div>
 
-    <header class="banner">
+    <div class="product-archive-banner">
         <h1>Products</h1>
         <h4><?php echo category_description(); ?></h4>
-    </header>
+    </div>
 
 <section role="main">
-
-
-
     <section class="products">
 
     <?php
