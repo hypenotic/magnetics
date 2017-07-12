@@ -50,7 +50,7 @@
 		$args_b = array(
 			'post_type'   => get_post_type(),
 			'numberposts' => 2,
-			'orderby'     => 'rand',
+			'orderby'     => 'rand', 
 			'tag__in'     => $tag_ids,
 			'cat'         => $this_cat,
 			'exclude'     => $post->ID

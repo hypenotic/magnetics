@@ -45,7 +45,7 @@
     ?>
     <!-- POST CODE -->
 
-    <li class="product <?php echo $category->slug; ?>">
+    <li class="product <?php echo $category->slug; ?> product-<?php echo $post->ID;?>">
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
      <h3><?php the_title(); ?></h3>
 
