@@ -305,3 +305,17 @@ li.product.product-269 {
     }
 }
 
+section.products li.product.product-integrations.product-245,
+section.products li.product.product-integrations.product-952 {
+    a {
+        &:hover {
+            h3 {
+                color: $white !important;
+            }
+        }
+    }
+}
+
+
+
+
