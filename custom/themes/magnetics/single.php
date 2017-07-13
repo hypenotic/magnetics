@@ -82,9 +82,13 @@
   <!-- Module: productInformation -->
   <?php get_template_part( 'module', 'tabsProduct' ); ?>
 
-
+  
+  <?php 
+  $systemConsistsOf = get_post_meta($post->ID, '_product_tabs_system_consists_of', true);
+  if ($systemConsistsOf == '') { ?>
   <!-- Module: Related Posts -->
-  <?php //get_template_part( 'module', 'postsRelated' ); ?>
+  <?php get_template_part( 'module', 'postsRelated' ); ?>
+  <?php } ?>
 
 <?php } ?>
 

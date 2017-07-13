@@ -1,11 +1,11 @@
 jQuery(document).ready(function($){
 
-	$('a[href$="product-integrations/rov/"], a[href$="product-integrations/glider/"],a[href$="products/auv-integration/"]').on('click', function(e){
+	$('a[href$="product-integrations/rov/"], a[href$="product-integrations/glider/"]').on('click', function(e){
 		e.preventDefault;
 		return false;
 	});
 
-	$('a[href$="product-integrations/rov/"], a[href$="product-integrations/glider/"], a[href$="products/auv-integration/"]').on('mouseover', function (e) {
+	$('a[href$="product-integrations/rov/"], a[href$="product-integrations/glider/"]').on('mouseover', function (e) {
 	    var $link = $(this),
 	        href = $link.attr('href') || $link.data("href");
 

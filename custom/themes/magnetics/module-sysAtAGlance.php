@@ -3,6 +3,7 @@
  $systemConsistsOf = get_post_meta($post->ID, '_product_tabs_system_consists_of', true);
  $additionalOptions = get_post_meta($post->ID, '_product_tabs_additional_components', true);
  $productOptions = get_post_meta($post->ID, '_product_tabs_product_options', true);
+ $layout = get_post_meta($post->ID, '_product_tabs_saag_layout', true);
 if($metaSystemAtAGlance !== -1)  { 
 
 	$title = get_the_title();
@@ -11,8 +12,8 @@ if($metaSystemAtAGlance !== -1)  {
 	$hash = $lowercase;	
 
 ?>
-	<div id="systemataglance">
-		<?php if (!in_category('product-integrations')) { ?>
+	<div id="systemataglance" class="saag-<?php echo $post->ID;?>">
+		<?php if (!in_category('product-integrations') || !is_single(243)) { ?>
 			<?php get_template_part( 'template', 'brochureFileOptions' ); ?>
 			<h3>The <?php the_title() ?> comes with:</h3>
 		<?php } ?>
@@ -74,6 +75,7 @@ if($metaSystemAtAGlance !== -1)  {
 				$Lweight=get_post_meta($metaSystemAtAGlance[0],'_measurements_weight',true);
 				$Ldisplay=get_post_meta($metaSystemAtAGlance[0],'_measurements_name',true);
 				$Lsize=get_post_meta($metaSystemAtAGlance[0],'_measurements_size',true);
+				// print_r($metaSystemAtAGlance);
 			?>
 				<div id="vertical-layout" class="genesis-layout">
 					<div class="vertical-layout__left">

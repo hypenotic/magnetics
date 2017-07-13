@@ -18,6 +18,8 @@
 
 	$relatedProducts = get_post_meta($postID, '_product_tabs_related_products', true);
 
+
+
     $layout = get_post_meta($postID, '_product_tabs_saag_layout', true);
 
     if (empty($metaWhatsInTheBox)) {
@@ -42,7 +44,9 @@
             </li>
             <?php } ?>
 
-            <?php if($metaIntegrations[0] != 0 || $relatedProducts)  { ?>
+            <?php if($metaIntegrations !== '')  { 
+            	// print_r($metaIntegrations);
+            	?>
              <li>
                 <a href="#integrations"><span>Integrations</span></a>
             </li>
@@ -77,7 +81,7 @@
 		<?php } ?>
 		<!-- End Additional Options -->
 		<!-- Start Integrations -->
-		<?php if($metaIntegrations[0] != 0 && !in_category('product-integrations'))	{ ?>
+		<?php if($metaIntegrations !== '' && !in_category('product-integrations'))	{ ?>
 		 <div id="integrations">
 			<?php
 

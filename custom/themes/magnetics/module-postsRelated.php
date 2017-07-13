@@ -105,7 +105,7 @@
 
 	?>
 
-	<section class="related">
+	<section class="related product-<?php echo $post->ID?>">
 
 	<?php //if ( in_category( 'products' ) && $metaRelatedBrochures[0] !== '0' && $metaRelatedArticles[0] !== '0') { ?>
 		<!-- <h2>Brochures &amp; Articles</h2> -->

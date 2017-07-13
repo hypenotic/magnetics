@@ -132,7 +132,7 @@ a.main-menu-link {
 
 // Coming Soon (TEMP)
 #nav-menu-item-962,
-#nav-menu-item-1294,
+// #nav-menu-item-1294,
 #nav-menu-item-964 {
     a {
         color: rgba(255,255,255,0.3);
@@ -151,5 +151,12 @@ a.main-menu-link {
         // text-transform: uppercase;
         // font-size: modular-scale(0,0.7rem);
         // line-height: modular-scale(0,0.7rem);
+    }
+}
+
+#menu-main-menu {
+    >li >ul >li >ul >li#nav-menu-item-342,
+    >li >ul >li >ul >li#nav-menu-item-1295 {
+        margin-top: 5px;
     }
 }

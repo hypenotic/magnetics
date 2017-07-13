@@ -278,8 +278,30 @@ li.product.product-269 {
     max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
-    padding: 100px 2.37% 130px 2.37%;
+    padding: 150px 2.37% 130px 2.37%;
     color: white;
 }
 
+.single section[role="main"] .related {
+    background: $white;
+}
+
+#brochuresandarticles section.related {
+    background: transparent;
+}
+
+#systemataglance.saag-243 {
+    .drawing-images,
+    aside.options,
+    h3 {
+        display: none;
+    }
+}
+
+
+.banner .text {
+    h1, h4 {
+        margin: 0 auto;
+    }
+}
 
