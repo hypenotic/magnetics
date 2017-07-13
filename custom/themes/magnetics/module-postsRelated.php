@@ -113,7 +113,7 @@
 			<h2>Brochures &amp; Articles</h2>
 		<!-- Start Loop -->
 		<?php } else if (in_category( 'products' ) && $metaRelatedArticles[0] == '0') { ?>
-			<h2>Brochures</h2>
+			<h2 style="margin-top: 50px;">Brochures</h2>
 		<?php } else { ?>
 			<h2>Related Articles</h2>
 		<?php } ?>
