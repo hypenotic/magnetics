@@ -107,7 +107,7 @@
 
 	<section class="related product-<?php echo $post->ID?>">
 
-	<?php if (is_single(array(241, 281, 1290))) { ?>
+	<?php if (is_single(array(281, 1290))) { ?>
 
 		<?php if ( in_category( 'products' ) && $metaRelatedBrochures[0] !== '0' && $metaRelatedArticles[0] !== '0') { ?>
 			<h2>Brochures &amp; Articles</h2>
