@@ -40,6 +40,12 @@ $article->add_meta_box(
 				'label'         => 'Source',
 				'description'   => '',
 				'type'          => 'text',          
+			),
+			array(
+				'name'          => 'direct_download',
+				'label'         => 'Direct Download?',
+				'description'   => '',
+				'type'          => 'checkbox',          
 			)
 		)
 	);
