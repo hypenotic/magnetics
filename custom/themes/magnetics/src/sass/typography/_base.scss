@@ -42,8 +42,10 @@ h2 {
 }
 
 h3 {
-    font-size: em($fontSizeLarge);
-    line-height: em($fontSizeBody);
+    // font-size: em($fontSizeLarge);
+    // line-height: em($fontSizeBody);
+    font-size: 30px;
+    line-height: 34px;
     font-weight: 700;
     letter-spacing: 0.5px;
     margin-bottom: em($fontSizeCaption);

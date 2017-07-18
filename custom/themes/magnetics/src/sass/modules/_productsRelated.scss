@@ -102,6 +102,21 @@ section.related {
 	}
 }
 
+.drawing-content.drawing-content-full {
+	// max-width: 100%;
+	.drawing-content-box {
+		@include media($screenLarge) {
+			width: 100%;
+			display: block;
+		}
+		h4 {
+			font-size: 30px;
+			line-height: 34px;
+			margin-bottom: 20px;
+		}
+	}
+}
+
 article.overview section>footer.brochure-footer {
 	padding-top: 0;
 }

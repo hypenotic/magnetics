@@ -269,6 +269,7 @@ if($metaSystemAtAGlance !== -1)  {
 			echo "</ul>";
 		} ?>
 		</div>
+		<?php if ($metaSystemAtAGlance) { ?>
 		<div class="drawing-content">
 			<?php if($systemConsistsOf) { ?>
 			<div class="drawing-content-box content-box__system-consists-of">
@@ -291,6 +292,30 @@ if($metaSystemAtAGlance !== -1)  {
 			</div>
 			<?php } ?>
 		</div>
+		<?php } else { ?>
+		<div class="drawing-content drawing-content-full">
+			<?php if($systemConsistsOf) { ?>
+			<div class="drawing-content-box content-box__system-consists-of">
+				<h4><?php the_title();?> Includes</h4>
+				<div class="drawing-content-box__list"><?php echo $systemConsistsOf; ?></div>
+			</div>
+			<?php } ?>
+
+			<?php if($additionalOptions) { ?>
+			<div class="drawing-content-box content-box__add-options">
+				<h4>Additional Components</h4>
+				<div class="drawing-content-box__list"><?php echo $additionalOptions; ?></div>
+			</div>
+			<?php } ?>
+
+			<?php if($productOptions) { ?>
+			<div class="drawing-content-box content-box__options">
+				<h4>Options</h4>
+				<div class="drawing-content-box__list"><?php echo $productOptions; ?></div>
+			</div>
+			<?php } ?>
+		</div>
+		<?php } ?>
 		
 	</div>     
 <?php } ?>

@@ -22,14 +22,14 @@
 	if ($metaPDF) { ?>
 		<?php if ($articleDirect == 'on') { ?>
 		<header>
-		<h3><a href="<?php echo $metaPDF; ?>"><?php the_title();?></a></h3>
+		<h3><a href="<?php echo $metaPDF; ?>" target="_blank"><?php the_title();?></a></h3>
 		<?php if ($articleSource) { ?>
 			<p class="publication-source">Source: <?php echo $articleSource; ?></p>
 		<?php } ?>
 		</header>
 
 		<section class="related-post__single">
-			<a href="<?php echo $metaPDF; ?>">
+			<a href="<?php echo $metaPDF; ?>" target="_blank">
 			<?php 
 				// Out on a limb here. If there's no brochureDescription, 
 				// we can just call excerpt. Vice versa.
@@ -39,7 +39,7 @@
 			</a>
 
 			<footer>
-				<a href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span>Download this Brochure</span></a>
+				<a href="<?php echo $metaPDF; ?>" target="_blank" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span>Download this Brochure</span></a>
 			</footer>
 
 		</section>
@@ -64,7 +64,7 @@
 			</a>
 
 			<footer>
-				<a href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span>Download this Brochure</span></a>
+				<a href="<?php echo $metaPDF; ?>" target="_blank" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span>Download this Brochure</span></a>
 				<a href="<?php echo get_permalink($articleAssociatedPost ); ?>" class="icon more"></a>
 			</footer>
 

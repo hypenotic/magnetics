@@ -48,9 +48,9 @@ section[role="main"]>section.title-holder {
 		@include shift(1.5);
 	}
     & > ul {
-        display: block;
+        // display: block;
         margin: 0 auto;
-        display: none;
+        // display: none;
         @include media($screenLarge) {
             display: block;
             display: flex;
@@ -61,12 +61,13 @@ section[role="main"]>section.title-holder {
             &:hover {
                 background: $blueSteel;
             }
-            width: 25%;
+            // width: 25%;
             padding: 48px 3%;
-            box-sizing: border-box;
-            float: left;
-            display: inline-block;
-            float: left;
+            flex: 1;
+            // box-sizing: border-box;
+            // float: left;
+            // display: inline-block;
+            // float: left;.
             text-align: center;
             @include media($screenLarge) {
                 &:first-child {}

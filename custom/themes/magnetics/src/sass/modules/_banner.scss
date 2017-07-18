@@ -265,11 +265,6 @@ section[role="main"] section#banner {
     }
 }
 
-.banner.explorerauv {
-    h1 {
-        margin: 0 auto;
-    }
-}
 
 .owl-carousel, .banner .owl-carousel {
     color: white;
@@ -321,5 +316,13 @@ section[role="main"] section#banner {
     & h3 {
         font-size: em($fontSizeLarge);
         text-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+    }
+}
+
+
+.banner.sidescan .text,
+.banner.explorerauv .text {
+    h1, h4 {
+        margin: 0 auto;
     }
 }

@@ -8,12 +8,13 @@
 .tabs.r-tabs ul { 
 	overflow:hidden; 
 	width: 100%;
+	display: flex;
 	li { 
-		float: left;
-		display: inline-block;
-		float: left;
+		// float: left;
+		// display: inline-block;
+		// float: left;
 		text-align: center;
-		width: 25%;
+		// width: 25%;
 		padding:0;
 		span {
 			//border-bottom: 1px solid #fff;
