@@ -25,10 +25,18 @@ article > h2, section > h2 {
         }
         & li a {
             font-size: em($fontSizeSmall);
+            line-height: 1.4em;
         }
         font-weight: 700;
         & ul > li {
             font-weight: 400;
+        }
+        .menu-depth-2 li a {
+            margin-bottom: 5px;
+            >span {
+                // border-bottom: 1px solid rgba(255,255,255,0.5);
+                text-decoration: underline !important;
+            }
         }
     }
 }

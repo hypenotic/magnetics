@@ -84,7 +84,7 @@ class WPDocs_Walker_Nav_Menu extends Walker_Nav_Menu {
         $attributes .= ' class="menu-link-' . $item->ID .( $depth > 0 ? ' sub-menu-link' : ' main-menu-link' ) . '"';
  
         // Build HTML output and pass through the proper filter.
-        $item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
+        $item_output = sprintf( '%1$s<a%2$s><span>%3$s%4$s%5$s</span></a>%6$s',
             $args->before,
             $attributes,
             $args->link_before,

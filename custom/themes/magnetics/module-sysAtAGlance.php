@@ -269,7 +269,7 @@ if($metaSystemAtAGlance !== -1)  {
 			echo "</ul>";
 		} ?>
 		</div>
-		<?php if ($metaSystemAtAGlance) { ?>
+		<?php if ($metaSystemAtAGlance && !is_single(243)) { ?>
 		<div class="drawing-content">
 			<?php if($systemConsistsOf) { ?>
 			<div class="drawing-content-box content-box__system-consists-of">
