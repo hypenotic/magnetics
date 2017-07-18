@@ -291,3 +291,18 @@ h6.resp-accordion:first-child {}
     }
     .resp-vtabs .resp-tab-content:last-child {}
 }
+
+#integrations {
+    section {
+        margin-bottom: 40px;
+    }
+    a {
+        color: $orange;
+        &:hover {
+            color: $teal;
+        }
+    }
+    h3 {
+        margin-bottom: 5px;
+    }
+}
