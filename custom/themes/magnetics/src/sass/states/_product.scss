@@ -326,5 +326,11 @@ li.product.product-integrations.product-1290 {
     }
 }
 
+section#timeline-container {
+    @include media($bp-med) {
+        padding: 92px 2.5% 20px;
+    }
+}
+
 
 
