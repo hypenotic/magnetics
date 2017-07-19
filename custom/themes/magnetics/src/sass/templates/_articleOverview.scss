@@ -76,3 +76,7 @@ article.overview {
         background: transparent;
     }
 }
+
+article.overview:last-child {
+    border-bottom: none;
+}
