@@ -41,7 +41,7 @@
 			'post_type'   => array('brochure'),
 			'post__in'    =>	 $metaRelatedMerged,
 			'posts_per_page' => -1,
-			'order'   => 'DESC'
+			'orderby'   => 'post__in'
 		);
 
 
