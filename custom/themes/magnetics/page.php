@@ -57,7 +57,16 @@
 
     	<?php } ?>
     	<?php the_content(); ?>
+
   	</article>
+
+  	<?php if(is_page('contact')) { ?>
+		<div id="contact-arrow">
+			<div id="scrollDown">
+				<i class="fa fa-chevron-down"></i>
+			</div>
+		</div>
+	<?php } ?>
 
   	<?php if(is_page('contact')) { ?>
 

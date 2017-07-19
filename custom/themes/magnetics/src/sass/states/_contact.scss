@@ -15,6 +15,10 @@ body.contact {
             > h6:first-of-type {
                 margin-top: 50px;
             }
+            > h6 {
+                margin-bottom: 5px;
+                // color: $orange;
+            }
         }
         & .optional {
             @include outer-container($screenOuter);
@@ -116,4 +120,34 @@ body.contact {
 
 body.contact section[role="main"] .optional.contact {
     padding-top: 92px;
+}
+
+#contact-arrow {
+    text-align: center;
+    padding-bottom: 70px;
+    #scrollDown {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transform: translate(0, 0);
+        // position: absolute;
+        // margin-top: -140px;
+        // left: 50%;
+        // margin-left: -28px;
+        border: 3px solid white;
+        border-radius: 50%;
+        width: 57px;
+        text-align: center;
+        line-height: 50px;
+        letter-spacing: 0;
+        opacity: 1;
+        color: white;
+    }
+}
+
+section article.page-contact {
+    padding-bottom: 50px !important;
 }
