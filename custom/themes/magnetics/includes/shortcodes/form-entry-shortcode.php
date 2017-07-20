@@ -4,6 +4,9 @@ function gravity_form_entry_number(){
 
 	//echo $_GET["rmaNumber"];
 	$rmaNumber = $_GET["rmaNumber"];
+	$rmaNewNum = intval($rmaNumber);
+	$total = 1000+$rmaNewNum;
+	$stringD = strval($total);
 	return $rmaNumber;
 }
 add_shortcode( 'rmaNumber', 'gravity_form_entry_number' );
