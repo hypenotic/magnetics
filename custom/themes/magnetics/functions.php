@@ -44,6 +44,33 @@ require_once('includes/shortcodes/form-entry-shortcode.php');
 //require_once('includes/shortcodes/content-sidebar.php');
 //require_once('includes/shortcodes/readmore.php');
 //require_once('includes/shortcodes/tab.php');
+add_filter( 'gform_replace_merge_tags', function ( $text, $form, $entry, $url_encode, $esc_html, $nl2br, $format ) {
+    $merge_tag = '{custom_date}';
 
+    if ( strpos( $text, $merge_tag ) === false ) {
+        return $text;
+    }
+
+    $local_timestamp = GFCommon::get_local_timestamp( time() );
+    $local_date      = date_i18n( 'ymd', $local_timestamp, true );
+
+    return str_replace( $merge_tag, $url_encode ? urlencode( $local_date ) : $local_date, $text );
+}, 10, 7 );
+
+add_action( 'gform_admin_pre_render', 'add_merge_tags' );
+function add_merge_tags( $form ) {
+    ?>
+    <script type="text/javascript">
+        gform.addFilter('gform_merge_tags', 'add_merge_tags');
+        function add_merge_tags(mergeTags, elementId, hideAllFields, excludeFieldTypes, isPrepop, option){
+            mergeTags["custom"].tags.push({ tag: '{custom_date}', label: 'Custom Date' });
+            
+            return mergeTags;
+        }
+    </script>
+    <?php
+    //return the form object from the php hook  
+    return $form;
+}
 
 ?>
