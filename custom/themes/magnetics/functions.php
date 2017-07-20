@@ -67,8 +67,9 @@ function replace_custom_id( $text, $form, $entry, $url_encode, $esc_html, $nl2br
 
     $entryID = intval($entry['id']);
     $customID = 1000 + $entryID;
+    $strID = strval($customID);
 
-    return str_replace( $merge_tag, $url_encode ? urlencode( $local_date ) : $customID, $text );
+    return str_replace( $merge_tag, $url_encode ? urlencode( $local_date ) : $strID, $text );
 }
 
 add_action( 'gform_admin_pre_render', 'add_merge_tags' );
