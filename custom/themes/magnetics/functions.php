@@ -57,6 +57,20 @@ add_filter( 'gform_replace_merge_tags', function ( $text, $form, $entry, $url_en
     return str_replace( $merge_tag, $url_encode ? urlencode( $local_date ) : $local_date, $text );
 }, 10, 7 );
 
+add_filter( 'gform_replace_merge_tags', 'replace_custom_id', 10, 7 );
+function replace_custom_id( $text, $form, $entry, $url_encode, $esc_html, $nl2br, $format ) {
+    $merge_tag = '{custom_id}';
+
+    if ( strpos( $text, $merge_tag ) === false ) {
+        return $text;
+    }
+
+    $entryID = intval($entry['id']);
+    $customID = 1000 + $entryID;
+
+    return str_replace( $merge_tag, $url_encode ? urlencode( $local_date ) : $customID, $text );
+}
+
 add_action( 'gform_admin_pre_render', 'add_merge_tags' );
 function add_merge_tags( $form ) {
     ?>
@@ -64,6 +78,7 @@ function add_merge_tags( $form ) {
         gform.addFilter('gform_merge_tags', 'add_merge_tags');
         function add_merge_tags(mergeTags, elementId, hideAllFields, excludeFieldTypes, isPrepop, option){
             mergeTags["custom"].tags.push({ tag: '{custom_date}', label: 'Custom Date' });
+            mergeTags["custom"].tags.push({ tag: '{custom_id}', label: 'Custom ID' });
             
             return mergeTags;
         }
