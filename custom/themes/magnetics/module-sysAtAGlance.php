@@ -15,8 +15,14 @@ if($metaSystemAtAGlance !== -1)  {
 	<div id="systemataglance" class="saag-<?php echo $post->ID;?>">
 		<?php if (!in_category('product-integrations') || !is_single(243)) { ?>
 			<?php get_template_part( 'template', 'brochureFileOptions' ); ?>
-			<h3>The <?php the_title() ?> comes with:</h3>
+			<h3>The <?php if (is_single(243)) { ?>
+			neutrally buoyant Explorer AUV Mag
+		<?php } else { ?>
+			<?php the_title(); ?>
+		<?php } ?> comes with:</h3>
 		<?php } ?>
+			
+		
 		
 		<div class="drawing-images" id="<?php echo $hash; ?>-tabs">
 		<?php if($layout == 'value2')  { 
