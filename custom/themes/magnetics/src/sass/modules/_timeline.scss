@@ -553,8 +553,12 @@ Modules - reusable parts of our design
 
 .cd-timeline-content {
     img {
-        width: 100%;
+        display: block;
+        margin: 0 auto;
+        width: auto;
         height: auto;
+        max-width: 100%;
+        max-height: 110px;
     }
 }
 
