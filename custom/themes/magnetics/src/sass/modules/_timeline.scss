@@ -393,7 +393,7 @@ Modules - reusable parts of our design
 	clear: both;
 }*/
 
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 800px) {
 	.cd-timeline-block:nth-child(even) .cd-timeline-content {
 		float: right;
 	}
@@ -408,7 +408,7 @@ Modules - reusable parts of our design
 	}
 }
 
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 800px) {
   /* inverse bounce effect on even content blocks */
   .cssanimations .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in {
     -webkit-animation: cd-bounce-2-inverse 0.6s;
