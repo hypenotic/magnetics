@@ -45,6 +45,12 @@
       ) );
 
     ?>
+
+    <?php if(is_front_page()) { ?>
+    <div class="made-with-love">
+        Made with <i class="fa fa-heart"></i> by <a href="http://hypenotic.com" target="_blank">Hypenotic
+    </div>
+    <?php } ?>
   </nav>
 <!-- Menu Section Ends -->
 

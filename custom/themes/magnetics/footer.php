@@ -26,6 +26,10 @@
                 <p style="margin-bottom: 0px">Tel. +1 (905) 479-9727</p>
                 <p>Fax. +1 (905) 479-9484</p>
         </section>
+
+        <div class="made-with-love">
+            Made with <i class="fa fa-heart"></i> by <a href="http://hypenotic.com" target="_blank">Hypenotic
+        </div>
     </footer>
 </section>
 <?php wp_footer();?>
