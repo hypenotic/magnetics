@@ -9,5 +9,9 @@ jQuery(document).ready(function() {
 	  	jQuery('nav#toggler').removeClass('transparent');
 	  }
 	});
+
+	jQuery('.menu-depth-1 >li a').on('click', function(e) {
+		e.preventDefault();
+	});
 });
 
