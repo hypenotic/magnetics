@@ -10,7 +10,22 @@ jQuery(document).ready(function() {
 	  }
 	});
 
-	jQuery('.menu-depth-1 >li a').on('click', function(e) {
+	jQuery('#nav-menu-item-956 >a').on('click', function(e) {
+		e.preventDefault();
+	});
+	jQuery('#nav-menu-item-957 >a').on('click', function(e) {
+		e.preventDefault();
+	});
+	jQuery('#nav-menu-item-958 >a').on('click', function(e) {
+		e.preventDefault();
+	});
+	jQuery('#nav-menu-item-959 >a').on('click', function(e) {
+		e.preventDefault();
+	});
+	jQuery('#nav-menu-item-960 >a').on('click', function(e) {
+		e.preventDefault();
+	});
+	jQuery('#nav-menu-item-961 >a').on('click', function(e) {
 		e.preventDefault();
 	});
 });
