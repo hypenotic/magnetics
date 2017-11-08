@@ -76,6 +76,7 @@ $tags = get_terms('post_tag');
 <?php 
     $link = get_permalink();
     $pubsource = get_post_meta($post->ID,'_author_source',true);
+    // print($post->ID);
 ?>
 <a href="<?php the_permalink(); ?>">
     <article class="overview">
@@ -98,12 +99,12 @@ echo trim($output, $separator);
 
 <header>
 
-            <h3><?php the_title(); ?></h3>
-            <?php if ($pubsource) { ?>
-            <p class="publication-source">Source: <?php echo $pubsource; ?></p>
-            <?php } ?>
+    <h3><?php the_title(); ?></h3>
+    <?php if ($pubsource) { ?>
+    <p class="publication-source">Source: <?php echo $pubsource; ?></p>
+    <?php } ?>
 
-        </header>
+</header>
 
         <section>
             
@@ -136,17 +137,20 @@ echo trim($output, $separator);
 
     } else { ?>
 
-    <a title="<?php the_title() ?> - Brochure" href="<?php echo $metaPDF; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"></a>
+    <a title="<?php the_title(); ?> - Brochure" href="<?php echo $metaPDF; ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"></a>
 
     <?php } ?>
 
 
 <?php
     // Custom meta values 
-    $metaPDF = get_post_meta($post->ID,'_brochure_file',true);
-    $metaPDFName = rtrim($metaPDF, "/");
+    // $metaPDF = get_post_meta($post->ID,'_post_article',true);
+    $metaPDF = get_post_meta($post->ID,'_related_content_post_article',true);
+    // print($post->ID." ");
+    // print($metaPDF[0]);
+    // $metaPDFName = rtrim($metaPDF, "/");
 
-            $brochureFile = get_post_meta($post->ID,'_brochure_file',true);
+        $brochureFile = get_post_meta($post->ID,'_brochure_file',true);
         $brochureDescription = get_post_meta($post->ID,'_brochure_content',true);
         
 
@@ -163,10 +167,14 @@ echo trim($output, $separator);
         
     }
 
-    if ($metaPDF) { ?>
+    if ($metaPDF[0]) { 
+        $metaPDFLink = get_post_meta($metaPDF[0],'_article_file',true);
+        // print($metaPDFLink);
+    ?>
 
+    
 
-    <a href="<?php echo $metaPDF; ?>" title="Download the Article" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"></a>
+    <a href="<?php echo $metaPDFLink; ?>" title="Download the Article" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"></a>
 
     <?php } ?>
 
