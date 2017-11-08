@@ -33,7 +33,7 @@
     
           ?>
 
-              <a href="<?php echo $metaPDFURL; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span class="small">Article</span></a>
+              <a href="<?php echo $metaPDFURL; ?>" download="<?php if(!$GLOBALS['view']) {echo $metaPDFName; } ?>" class="resource icon <?php if($GLOBALS['view']) {echo 'view';} ?>"><span class="small" style="display:block;margin-top:5px;font-size: 14px;line-height: 16px;margin-left:0;font-weight:bold;font-family:'open-sans';">Download Original Article</span></a>
             <?php } ?>
 
           </header>
