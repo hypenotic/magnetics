@@ -85,7 +85,7 @@
 		 <div id="integrations">
 		 	<?php if (is_single(243)) { ?>
 		 	<section>
-		 		<h3><a href="/products/auv-integration/">Ocean Server Iver2 &amp; Iver3</a></h3>
+		 		<h3><a href="/products/auv-integration/">OceanServer Iver2 &amp; Iver3</a></h3>
 		 		<!-- <p><?php //echo $metaBannerSubheading; ?></p> -->
 		 	</section>
 		 	<?php } ?>
