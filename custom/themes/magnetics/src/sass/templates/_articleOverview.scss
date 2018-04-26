@@ -1,6 +1,10 @@
 article.overview {
-    padding-top: 50px;
     border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 0;
+    @include media($screenLarge) {
+        padding-top: 50px;
+        padding-bottom: 32px;
+    }
     & h3 {
         & a:hover {
             
@@ -74,6 +78,11 @@ article.overview {
     }
     &:last-of-type:after {
         background: transparent;
+    }
+    footer.brochure-footer {
+        @include media($bp-small) {
+            padding-bottom: 0;
+        }
     }
 }
 
