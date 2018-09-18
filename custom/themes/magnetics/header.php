@@ -48,17 +48,17 @@
 
     <?php if(is_front_page()) { ?>
     <div class="made-with-love">
-        Made with <i class="fa fa-heart"></i> by <a href="http://hypenotic.com" target="_blank">Hypenotic
+        Made with <i class="fa fa-heart"></i> by <a href="http://hypenotic.com" target="_blank">Hypenotic</a>
     </div>
     <?php } ?>
   </nav>
 <!-- Menu Section Ends -->
 
    <nav id="toggler">
-          <div class="menu-btn text"><span>Menu</span></div>
-          <div class="menu-btn">
-               <a id="nav-toggle" href="#menu"><span></span></a>
-          </div>
+    <div class="menu-btn text"><span>Menu</span></div>
+    <div class="menu-btn">
+          <a id="nav-toggle" href="#menu"><span></span></a>
+    </div>
    </nav>
 
 <header>
