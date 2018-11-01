@@ -5,7 +5,8 @@ robots.txt
 node_modules/
 
 # Wordpress specific
-
+install/
+install/*
 wordpress/*
 wordpress/
 wp-config.php
