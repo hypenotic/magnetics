@@ -18,7 +18,7 @@ var gulp            = require('gulp'),
 // Browsersync
 gulp.task('browser-sync', function() {
     browsersync.init({
-        proxy: "magnetics.dev"
+        proxy: "magnetics.test"
     });
 });
 

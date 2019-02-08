@@ -11,6 +11,8 @@ wordpress/*
 wordpress/
 wp-config.php
 uploads/
+custom/authors/*
+custom/authors/
 upgrade/*
 backup-db/*
 advanced-cache.php
