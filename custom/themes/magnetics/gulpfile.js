@@ -26,7 +26,7 @@ gulp.task('browser-sync', function() {
 gulp.task('sass', function() {
     return sass('src/sass/style.scss', { style: 'compressed' })
         .pipe(autoprefixer('last 2 version'))
-        .pipe(gulp.dest(''))
+        .pipe(gulp.dest('dist'))
         .pipe(cssnano())
         .pipe(browsersync.reload({stream: true}));
 });
