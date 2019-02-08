@@ -18,4 +18,6 @@
 	    <?php the_content(); ?>
     </section>
 
+<a href="https://uscontractorregistration.com" target="_blank" rel="noopener" id="vendor-seal"><img  title="US Federal Contractor Registration System for Award Management Verified Vendor Seal" src="https://uscontractorregistration.com/images/Verified-Vendor-2019-2020-sm.png" alt="USFCR Verified Vendor" /></a>
+
 <?php get_footer(); ?>

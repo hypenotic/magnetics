@@ -327,3 +327,21 @@ section[role="main"] section#banner {
         margin: 0 auto;
     }
 }
+
+#vendor-seal {
+    display: none;
+    img {
+        max-width: 100px;
+        height: auto;
+    }
+    @include media($screenLarge) {
+        display: block;
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
