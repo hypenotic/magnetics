@@ -6,6 +6,7 @@
  * @var array $settings Plugin settings.
  * @var string $editor_page_url A fully qualified URL of the admin menu editor page.
  * @var string $settings_page_url
+ * @var string $db_option_name
  */
 
 $currentUser = wp_get_current_user();
@@ -15,13 +16,7 @@ $formActionUrl = add_query_arg('noheader', 1, $settings_page_url);
 $isProVersion = apply_filters('admin_menu_editor_is_pro', false);
 ?>
 
-<div class="wrap">
-	<?php screen_icon(); ?>
-	<h2>
-		<?php echo apply_filters('admin_menu_editor-self_page_title', 'Menu Editor'); ?> Settings
-		<a href="<?php echo esc_attr($editor_page_url); ?>" class="add-new-h2"
-		   title="Back to Admin Menu Editor">Editor</a>
-	</h2>
+<?php do_action('admin_menu_editor-display_header'); ?>
 
 	<form method="post" action="<?php echo esc_attr($formActionUrl); ?>" id="ws_plugin_settings_form">
 
@@ -122,6 +117,64 @@ $isProVersion = apply_filters('admin_menu_editor_is_pro', false);
 				</td>
 			</tr>
 
+			<?php do_action('admin-menu-editor-display_addons'); ?>
+
+			<tr>
+				<th scope="row">
+					Modules
+					<a class="ws_tooltip_trigger"
+					   title="Modules are plugin features that can be turned on or off.
+					&lt;br&gt;
+					Turning off unused features will slightly increase performance and may help with certain compatibility issues.
+					">
+						<div class="dashicons dashicons-info"></div>
+					</a>
+				</th>
+				<td>
+					<fieldset>
+						<?php
+						global $wp_menu_editor;
+						foreach ($wp_menu_editor->get_available_modules() as $id => $module) {
+							if ( !empty($module['isAlwaysActive']) ) {
+								continue;
+							}
+
+							$isCompatible = $wp_menu_editor->is_module_compatible($module);
+							$compatibilityNote = '';
+							if ( !$isCompatible && !empty($module['requiredPhpVersion']) ) {
+								if ( version_compare(phpversion(), $module['requiredPhpVersion'], '<') ) {
+									$compatibilityNote = sprintf(
+										'Required PHP version: %1$s or later. Installed PHP version: %2$s',
+										htmlentities($module['requiredPhpVersion']),
+										htmlentities(phpversion())
+									);
+								}
+							}
+
+							echo '<p>';
+							/** @noinspection HtmlUnknownAttribute */
+							printf(
+								'<label>
+									<input type="checkbox" name="active_modules[]" value="%1$s" %2$s %3$s>
+								    %4$s
+								</label>',
+								esc_attr($id),
+								$wp_menu_editor->is_module_active($id, $module) ? 'checked="checked"' : '',
+								$isCompatible ? '' : 'disabled="disabled"',
+								!empty($module['title']) ? $module['title'] : htmlentities($id)
+							);
+
+							if ( !empty($compatibilityNote) ) {
+								printf('<br><span class="description">%s</span>', $compatibilityNote);
+							}
+
+							echo '</p>';
+						}
+						?>
+					</fieldset>
+				</td>
+			</tr>
+
 			<tr>
 				<th scope="row">Interface</th>
 				<td>
@@ -138,10 +191,10 @@ $isProVersion = apply_filters('admin_menu_editor_is_pro', false);
 						<label>
 							<input type="checkbox" name="show_deprecated_hide_button"
 								<?php checked($settings['show_deprecated_hide_button']); ?>>
-							Enable the "Show/Hide" toolbar button (not recommended)
+							Enable the "Hide (cosmetic)" toolbar button
 						</label>
 						<br><span class="description">
-							This feature is deprecated and is only kept for backwards compatibility purposes.
+							This button hides the selected menu item without making it inaccessible.
 						</span>
 						</p>
 					<?php endif; ?>
@@ -157,6 +210,14 @@ $isProVersion = apply_filters('admin_menu_editor_is_pro', false);
 								<input type="radio" name="ui_colour_scheme" value="classic"
 									<?php checked('classic', $settings['ui_colour_scheme']); ?>>
 								Blue and yellow
+							</label>
+						</p>
+
+						<p>
+							<label>
+								<input type="radio" name="ui_colour_scheme" value="modern-one"
+									<?php checked('modern-one', $settings['ui_colour_scheme']); ?>>
+								Modern
 							</label>
 						</p>
 
@@ -202,11 +263,146 @@ $isProVersion = apply_filters('admin_menu_editor_is_pro', false);
 					</fieldset>
 				</td>
 			</tr>
+
+				<tr>
+					<th scope="row">
+						New menu visibility
+						<a class="ws_tooltip_trigger"
+						   title="This setting controls the default permissions of menu items that are
+						    not present in the last saved menu configuration.
+							&lt;br&gt;&lt;br&gt;
+							This includes new menus added by plugins and themes.
+							In Multisite, it also applies to menus that exist on some sites but not others.
+							It doesn't affect menu items that you add through the Admin Menu Editor interface.">
+							<div class="dashicons dashicons-info"></div>
+						</a>
+					</th>
+					<td>
+						<fieldset>
+							<p>
+								<label>
+									<input type="radio" name="unused_item_permissions" value="unchanged"
+										<?php checked('unchanged', $settings['unused_item_permissions']); ?>>
+									Leave unchanged (default)
+
+									<br><span class="description">
+										No special restrictions. Visibility will depend on the plugin
+										that added the menus.
+									</span>
+								</label>
+							</p>
+
+							<p>
+								<label>
+									<input type="radio" name="unused_item_permissions" value="match_plugin_access"
+										<?php checked('match_plugin_access', $settings['unused_item_permissions']); ?>>
+									Show only to users who can access this plugin
+
+									<br><span class="description">
+										Automatically hides all new and unrecognized menus from regular users.
+										To make new menus visible, you have to manually enable them in the menu editor.
+									</span>
+								</label>
+							</p>
+
+						</fieldset>
+					</td>
+				</tr>
 			<?php endif; ?>
+
+			<tr>
+			<th scope="row">
+				New menu position
+				<a class="ws_tooltip_trigger"
+				   title="This setting controls the position of menu items that are not present in the last saved menu
+					configuration.
+					&lt;br&gt;&lt;br&gt;
+					This includes new menus added by plugins and themes.
+					In Multisite, it also applies to menus that exist only on certain sites but not on all sites.
+					It doesn't affect menu items that you add through the Admin Menu Editor interface.">
+					<div class="dashicons dashicons-info"></div>
+				</a>
+			</th>
+			<td>
+				<fieldset>
+					<p>
+						<label>
+							<input type="radio" name="unused_item_position" value="relative"
+								<?php checked('relative', $settings['unused_item_position']); ?>>
+							Maintain relative order
+
+							<br><span class="description">
+								Attempts to put new items in the same relative positions
+								as they would be in in the default admin menu.
+							</span>
+						</label>
+					</p>
+
+					<p>
+						<label>
+							<input type="radio" name="unused_item_position" value="bottom"
+								<?php checked('bottom', $settings['unused_item_position']); ?>>
+							Bottom
+
+							<br><span class="description">
+								Puts new items at the bottom of the admin menu.
+							</span>
+						</label>
+					</p>
+
+				</fieldset>
+			</td>
+			</tr>
+
+			<tr>
+				<th scope="row">Error verbosity level</th>
+				<td>
+					<fieldset id="ame-submenu-icons-settings">
+						<p>
+							<label>
+								<input type="radio" name="error_verbosity" value="<?php echo WPMenuEditor::VERBOSITY_LOW ?>>"
+									<?php checked(WPMenuEditor::VERBOSITY_LOW, $settings['error_verbosity']); ?>>
+								Low
+
+								<br><span class="description">
+									Shows a generic error message without any details.
+								</span>
+							</label>
+						</p>
+
+						<p>
+							<label>
+								<input type="radio" name="error_verbosity" value="<?php echo WPMenuEditor::VERBOSITY_NORMAL; ?>>"
+									<?php checked(WPMenuEditor::VERBOSITY_NORMAL, $settings['error_verbosity']); ?>>
+								Normal
+
+								<br><span class="description">
+									Shows a one or two sentence explanation. For example: "The current user doesn't have
+									the "manage_options" capability that is required to access the "Settings" menu item."
+								</span>
+							</label>
+						</p>
+
+						<p>
+							<label>
+								<input type="radio" name="error_verbosity" value="<?php echo WPMenuEditor::VERBOSITY_VERBOSE; ?>>"
+									<?php checked(WPMenuEditor::VERBOSITY_VERBOSE, $settings['error_verbosity']); ?>>
+								Verbose
+
+								<br><span class="description">
+									Like "normal", but also includes a log of menu settings and permissions that
+									caused the current menu to be hidden. Useful for debugging.
+								</span>
+							</label>
+						</p>
+					</fieldset>
+				</td>
+			</tr>
 
 			<tr>
 				<th scope="row">Debugging</th>
 				<td>
+					<p>
 					<label>
 						<input type="checkbox" name="security_logging_enabled"
 							<?php checked($settings['security_logging_enabled']); ?>>
@@ -219,6 +415,53 @@ $isProVersion = apply_filters('admin_menu_editor_is_pro', false);
 						Note: It's not recommended to use this option on a live site as
 						it can reveal information about your menu configuration.
 					</span>
+					</p>
+
+					<p>
+						<label>
+							<input type="checkbox" name="force_custom_dashicons"
+								<?php checked($settings['force_custom_dashicons']); ?>>
+							Attempt to override menu icon CSS that was added by other plugins
+						</label>
+					</p>
+
+					<p>
+						<label>
+							<input type="checkbox" name="compress_custom_menu"
+								<?php checked($settings['compress_custom_menu']); ?>>
+							Compress menu configuration data that's stored in the database
+						</label>
+						<br><span class="description">
+							Significantly reduces the size of
+							the <code><?php echo esc_html($db_option_name); ?></code> DB option,
+							but adds decompression overhead to every page.
+						</span>
+					</p>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row">Server info</th>
+				<td>
+					<figure>
+						<figcaption>PHP error log:</figcaption>
+
+						<code><?php
+						echo esc_html(ini_get('error_log'));
+						?></code>
+					</figure>
+
+					<figure>
+						<figcaption>PHP memory usage:</figcaption>
+
+						<?php
+						printf(
+							'%.2f MiB of %s',
+							memory_get_peak_usage() / (1024 * 1024),
+							esc_html(ini_get('memory_limit'))
+						);
+						?>
+					</figure>
 				</td>
 			</tr>
 			</tbody>
@@ -231,4 +474,15 @@ $isProVersion = apply_filters('admin_menu_editor_is_pro', false);
 		?>
 	</form>
 
-</div>
+<?php do_action('admin_menu_editor-display_footer'); ?>
+
+<script type="text/javascript">
+	jQuery(function($) {
+		//Set up tooltips
+		$('.ws_tooltip_trigger').qtip({
+			style: {
+				classes: 'qtip qtip-rounded ws_tooltip_node ws_wide_tooltip'
+			}
+		});
+	});
+</script>

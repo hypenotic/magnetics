@@ -6,13 +6,10 @@
  */
  
 //Load JSON functions for PHP < 5.2
-if ( !(function_exists('json_encode') && function_exists('json_decode')) && !(class_exists('Services_JSON') || class_exists('Moxiecode_JSON')) ){
-	$class_json_path = ABSPATH.WPINC.'/class-json.php';
-	$class_moxiecode_json_path = ABSPATH.WPINC.'/js/tinymce/plugins/spellchecker/classes/utils/JSON.php';
+if ( !(function_exists('json_encode') && function_exists('json_decode')) && !class_exists('Services_JSON') ){
+	$class_json_path = ABSPATH . WPINC . '/class-json.php';
 	if ( file_exists($class_json_path) ){
 		require $class_json_path;
-	} elseif ( file_exists($class_moxiecode_json_path) ) {
-		require $class_moxiecode_json_path;
 	}
 }
 
@@ -25,7 +22,8 @@ class MenuEd_ShadowPluginFramework {
 	public $option_name = ''; //should be set or overridden by the plugin
 	protected $defaults = array(); //should be set or overridden by the plugin
 	protected $sitewide_options = false; //WPMU only : save the setting in a site-wide option
-	protected $serialize_with_json = false; //Use the JSON format for option storage 
+	protected $serialize_with_json = false; //Use the JSON format for option storage
+	protected $zlib_compression = false;
 	
 	public $plugin_file = ''; //Filename of the plugin.
 	public $plugin_basename = ''; //Basename of the plugin, as returned by plugin_basename().
@@ -61,8 +59,8 @@ class MenuEd_ShadowPluginFramework {
 		/************************************
 				Add the default hooks
 		************************************/
-		add_action('activate_'.$this->plugin_basename, array(&$this,'activate'));
-		add_action('deactivate_'.$this->plugin_basename, array(&$this,'deactivate'));
+		add_action('activate_'.$this->plugin_basename, array($this,'activate'));
+		add_action('deactivate_'.$this->plugin_basename, array($this,'deactivate'));
 		
 		$this->init();        //Call the plugin's init() function
 		$this->init_finish(); //Complete initialization by loading settings, etc
@@ -100,7 +98,7 @@ class MenuEd_ShadowPluginFramework {
 		
 		//Add a "Settings" action link
 		if ($this->settings_link)
-			add_filter('plugin_action_links', array(&$this, 'plugin_action_links'), 10, 2);
+			add_filter('plugin_action_links', array($this, 'plugin_action_links'), 10, 2);
 		
 		if ($this->magic_hooks)
 			$this->set_magic_hooks();
@@ -123,7 +121,18 @@ class MenuEd_ShadowPluginFramework {
 		} else {
 			$this->options = get_option($option_name);
 		}
-		
+
+		$prefix = 'gzcompress:';
+		if (
+			is_string($this->options)
+			&& (substr($this->options, 0, strlen($prefix)) === $prefix)
+			&& function_exists('gzuncompress')
+		) {
+			//TODO: Maybe this would be faster if we stored the flag separately?
+			/** @noinspection PhpComposerExtensionStubsInspection */
+			$this->options = unserialize(gzuncompress(base64_decode(substr($this->options, strlen($prefix)))));
+		}
+
 		if ( $this->serialize_with_json || is_string($this->options) ){
 			$this->options = $this->json_decode($this->options, true);
 		}
@@ -149,14 +158,45 @@ class MenuEd_ShadowPluginFramework {
 			if ( $this->serialize_with_json ){
 				$stored_options = $this->json_encode($stored_options);
 			}
-			
-			if ( $this->sitewide_options ) {
-				return update_site_option($this->option_name, $stored_options);
+
+			if ( $this->zlib_compression && function_exists('gzcompress') ) {
+				/** @noinspection PhpComposerExtensionStubsInspection */
+				$stored_options = 'gzcompress:' . base64_encode(gzcompress(serialize($stored_options)));
+			}
+
+			if ( $this->sitewide_options && is_multisite() ) {
+				return self::atomic_update_site_option($this->option_name, $stored_options);
 			} else {
 				return update_option($this->option_name, $stored_options);
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * Like update_site_option, but simulates record locking by using the MySQL GET_LOCK() function.
+	 *
+	 * The goal is to reduce the risk of triggering a race condition in update_site_option.
+	 * It would be better to use real transactions, but many (most?) WordPress sites use storage engines
+	 * that don't support transactions, like MyISAM.
+	 *
+	 * @param string $option_name
+	 * @param mixed $data
+	 * @return bool
+	 */
+	public static function atomic_update_site_option($option_name, $data) {
+		global $wpdb; /** @var wpdb $wpdb */
+		$lock = 'ame.' . (is_multisite() ? $wpdb->sitemeta : $wpdb->options ) . '.' . $option_name;
+
+		//Lock. Note that we're being really optimistic and not checking the return value.
+		$wpdb->query($wpdb->prepare("SELECT GET_LOCK(%s, %d)", $lock, 5));
+		//Update.
+		$updated = update_site_option($option_name, $data);
+		//Unlock.
+		$wpdb->query($wpdb->prepare('SELECT RELEASE_LOCK(%s)', $lock));
+
+		return $updated;
+
 	}
 	
 	
@@ -175,9 +215,6 @@ class MenuEd_ShadowPluginFramework {
     		$flag = $assoc?SERVICES_JSON_LOOSE_TYPE:0;
 	        $json = new Services_JSON($flag);
 	        return( $json->decode($data) );
-    	} elseif ( class_exists('Moxiecode_JSON') ){
-    		$json = new Moxiecode_JSON();
-    		return $json->decode($data);
     	} else {
     		trigger_error('No JSON parser available', E_USER_ERROR);
 		    return null;
@@ -197,9 +234,6 @@ class MenuEd_ShadowPluginFramework {
     	if ( class_exists('Services_JSON') ){
     		$json = new Services_JSON();
         	return( $json->encodeUnsafe($data) );
-    	} elseif ( class_exists('Moxiecode_JSON') ){
-    		$json = new Moxiecode_JSON();
-    		return $json->encode($data);
     	} else {
     		trigger_error('No JSON parser available', E_USER_ERROR);
 		    return '';
@@ -223,12 +257,16 @@ class MenuEd_ShadowPluginFramework {
 				//Get the hook's tag from the method name 
 				$hook = substr($method->name, 5);
 				//Add the hook. Uses add_filter because add_action is simply a wrapper of the same.
-				add_filter($hook, array(&$this, $method->name), 
-					$this->magic_hook_priority, $method->getNumberOfParameters());
+				add_filter($hook, array($this, $method->name),
+					$this->get_magic_hook_priority(), $method->getNumberOfParameters());
 			}
 		}
 		
 		unset($class);
+	}
+
+	public function get_magic_hook_priority() {
+		return $this->magic_hook_priority;
 	}
 	
 
@@ -261,8 +299,9 @@ class MenuEd_ShadowPluginFramework {
    * @return array
    */
 	function plugin_action_links($links, $file) {
-        if ($file == $this->plugin_basename)
-            $links[] = "<a href='" . $this->settings_link . "'>" . __('Settings') . "</a>";
+        if (($file == $this->plugin_basename) && is_array($links)) {
+	        $links[] = "<a href='" . $this->settings_link . "'>" . __('Settings') . "</a>";
+        }
         return $links;
     }
     
@@ -284,13 +323,31 @@ class MenuEd_ShadowPluginFramework {
    * @return bool
    */
 	function is_in_wpmu_plugin_dir( $filename = '' ){
-		if ( !defined('WPMU_PLUGIN_DIR') ) return false;
+		if ( !defined('WPMU_PLUGIN_DIR') ) {
+			return false;
+		}
 		
 		if ( empty($filename) ){
 			$filename = $this->plugin_file;
 		}
-		
-		return (strpos( realpath($filename), realpath(WPMU_PLUGIN_DIR) ) !== false);
+
+		$normalizedMuPluginDir = realpath(WPMU_PLUGIN_DIR);
+		$normalizedFileName = realpath($filename);
+
+		//If realpath() fails, just normalize the syntax instead.
+		if ( empty($normalizedFileName) || empty($normalizedMuPluginDir) ) {
+			$normalizedMuPluginDir = wp_normalize_path(WPMU_PLUGIN_DIR);
+			$normalizedFileName = wp_normalize_path($filename);
+		}
+		//Yet another fallback if the above also fails.
+		if ( !is_string($normalizedMuPluginDir) || empty($normalizedMuPluginDir) ) {
+			if ( is_string(WPMU_PLUGIN_DIR) ) {
+				$normalizedMuPluginDir = WPMU_PLUGIN_DIR;
+			} else {
+				return false;
+			}
+		}
+		return (strpos( $normalizedFileName, $normalizedMuPluginDir ) !== false);
 	}
 	
 	/**
