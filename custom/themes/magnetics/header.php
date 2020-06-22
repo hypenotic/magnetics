@@ -48,7 +48,7 @@
 
     <?php if(is_front_page()) { ?>
     <div class="made-with-love">
-        Made with <i class="fa fa-heart"></i> by <a href="http://hypenotic.com" target="_blank">Hypenotic</a>
+        Made with <i class="fa fa-heart"></i> by <a href="https://hypenotic.com" target="_blank">Hypenotic</a>
     </div>
     <?php } ?>
   </nav>

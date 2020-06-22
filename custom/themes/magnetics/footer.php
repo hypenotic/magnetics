@@ -28,12 +28,11 @@
         </section>
 
         <div class="made-with-love">
-            Made with <i class="fa fa-heart"></i> by <a href="http://hypenotic.com" target="_blank">Hypenotic
+            Made with <i class="fa fa-heart"></i> by <a href="https://hypenotic.com" target="_blank">Hypenotic
         </div>
     </footer>
 </section>
 <?php wp_footer();?>
-<script src="//cdn.trackduck.com/toolbar/prod/td.js" async data-trackduck-id="576be4280dca5c23310fd1d3"></script>
 </body>
 </html>
 
