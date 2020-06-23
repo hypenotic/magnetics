@@ -2,8 +2,8 @@
 Contributors: unclhos
 Tags: gravity, form, data, field, persistence, add-on, addon, plugin, plug-in, extension
 Requires at least: 2.9.2
-Tested up to: 4.0
-Stable tag: 3.2.3
+Tested up to: 4.2.2
+Stable tag: 3.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=W9FEL3T4BHTPU&lc=US&no_note=0&cn=Add%20special%20instructions%20to%20the%20seller%3a&no_shipping=1&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
@@ -14,10 +14,10 @@ This plugin makes your Gravity Forms data-persistent.
 
 Consider this scenario:
 
-1. Your site uses multipage <a href="http://www.gravityforms.com/" target="_blank">Gravity Forms</a>.
-2. Your user logs in to the site and starts filling up a 5-step form.
-3. During the 3rd step, the user leaves without completely finishing the form.
-4. Some days later, the user comes back and logs in to see that his inputs are all gone!
+a) Your site uses multipage <a href="http://www.gravityforms.com/" target="_blank">Gravity Forms</a>.
+b) Your user logs in to the site and starts filling up a 5-step form.
+c) During the 3rd step, the user leaves without completely finishing the form.
+d) Some days later, the user comes back and logs in to see that his inputs are all gone!
 
 This happens because Gravity Forms by default does not save partially submitted forms.
 
@@ -26,6 +26,10 @@ Our plugin resolves this issue. Simple!
 = New Features =
 1. Data can be saved automatically every 10 seconds via AJAXs.
 2. Disable persistence on a per field bases. Good for sensitive information you don't want saved.
+3. Can now persist data for guest users based on a cookie ID.
+
+= KNOWN ISSUES =
+1. Only 1 persistent form can be on a page.
 
 == Installation ==
 
@@ -45,6 +49,7 @@ No, this is an absolutely free add-on.
 = Do you have any client support? =
 
 We don't provide a dedicated support, but we will try our best to reply you back.
+If there is a specific feature you would like to sponsor, you can email me directly at: me at robertiseley dot com
 
 == Screenshots ==
 
@@ -53,7 +58,18 @@ We don't provide a dedicated support, but we will try our best to reply you back
 
 == Changelog ==
 
-= =3.2.3 =
+= 3.3.1 =
+1. No persist bug fixed.
+
+= 3.3.0 =
+1. Changed saving hook from 'gform_post_submission' to 'gform_after_submission'
+2. Added feature to persist data for guest users.
+3. Fixed conflict with when other gravity forms are on page.
+4. Added 'gfdp_ajax_interval' filter to change ajax submission frequency.
+5. Added 'Purge' ability to allow admins to delete persistent data on demand.
+6. Persistence data can now "time out" after a set duration. This uses the WordPress Transient API.
+
+= 3.2.3 =
 1. Fixed bug checking for empty variable when it always has one. Now persistence checking looking for 'off' also.
 
 = 3.2.2 =

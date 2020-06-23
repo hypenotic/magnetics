@@ -36,7 +36,10 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 		parent::__construct( $post_type );
 
 		$this->register = $register;
-		$this->encoder = $encoder;
+		$this->encoder  = $encoder;
+
+		// Change the menu positions option after all menus are registered.
+		add_action( 'admin_menu', array( $this, 'change_select_options' ), 9999 );
 	}
 
 	/**
@@ -46,7 +49,7 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 	 */
 	public function js_vars() {
 		// @codingStandardsIgnoreStart
-		return array(
+		return array_merge( parent::js_vars(), array(
 			'menu_name'          => '%name%',
 			'name_admin_bar'     => '%singular_name%',
 			'all_items'          => __( 'All %name%', 'mb-custom-post-type' ),
@@ -59,7 +62,7 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 			'not_found'          => __( 'No %name% found', 'mb-custom-post-type' ),
 			'not_found_in_trash' => __( 'No %name% found in Trash', 'mb-custom-post-type' ),
 			'parent_item_colon'  => __( 'Parent %singular_name%', 'mb-custom-post-type' ),
-		);
+		) );
 		// @codingStandardsIgnoreEnd
 	}
 
@@ -74,7 +77,7 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 		$label_prefix = 'label_';
 		$args_prefix  = 'args_';
 
-		$basic_fields    = array(
+		$basic_fields = array(
 			array(
 				'name'        => __( 'Plural name', 'mb-custom-post-type' ),
 				'id'          => $label_prefix . 'name',
@@ -91,10 +94,11 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 				'name' => __( 'Slug', 'mb-custom-post-type' ),
 				'id'   => $args_prefix . 'post_type',
 				'type' => 'text',
+				'desc' => __( 'Maximum 20 characters', 'mb-custom-post-type' ),
 			),
 		);
 
-		$labels_fields   = array(
+		$labels_fields = array(
 			array(
 				'name'        => __( 'Menu name', 'mb-custom-post-type' ),
 				'id'          => $label_prefix . 'menu_name',
@@ -169,6 +173,12 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 			),
 		);
 
+		$menu_icon_options = array();
+		$icons = mb_cpt_get_dashicons();
+		foreach ( $icons as $icon ) {
+			$menu_icon_options[ $icon ] = $icon;
+		}
+
 		$advanced_fields = array(
 			array(
 				'name'        => __( 'Description', 'mb-custom-post-type' ),
@@ -210,88 +220,104 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 				'std'  => 1,
 				'desc' => __( 'Whether post type is available for selection in navigation menus.', 'mb-custom-post-type' ),
 			),
-			array(
-				'name' => __( 'Show in menu?', 'mb-custom-post-type' ),
-				'id'   => $args_prefix . 'show_in_menu',
-				'type' => 'checkbox',
-				'std'  => 1,
-				'desc' => __( 'Where to show the post type in the admin menu. <code>show_ui</code> must be <code>true</code>.', 'mb-custom-post-type' ),
+			'show_in_menu'  => array(
+				'name'       => __( 'Show in menu?', 'mb-custom-post-type' ),
+				'id'         => $args_prefix . 'show_in_menu',
+				'type'       => 'select_advanced',
+				'options'    => array(),
+				'desc'       => __( 'Where to show the post type in the admin menu. <code>show_ui</code> must be <code>true</code>.', 'mb-custom-post-type' ),
+				'js_options' => array(
+					'width' => '400px',
+				),
 			),
 			array(
 				'name' => __( 'Show in admin bar?', 'mb-custom-post-type' ),
 				'id'   => $args_prefix . 'show_in_admin_bar',
 				'type' => 'checkbox',
+				'std'  => 1,
 				'desc' => __( 'Whether to make this post type available in the WordPress admin bar.', 'mb-custom-post-type' ),
 			),
 			array(
 				'name' => __( 'Show in REST API?', 'mb-custom-post-type' ),
 				'id'   => $args_prefix . 'show_in_rest',
 				'type' => 'checkbox',
-				'desc' => __( 'Whether to add the post type route in the REST API "wp/v2" namespace.', 'mb-custom-post-type' ),
+				'desc' => __( 'Whether to add the post type in the REST API.', 'mb-custom-post-type' ),
+				'std'  => 1,
 			),
 			array(
-				'name' => __( 'REST base', 'mb-custom-post-type' ),
-				'id'   => $args_prefix . 'rest_base',
-				'type' => 'text',
-				'desc' => __( 'To change the base url of REST API route. Default is post type.', 'mb-custom-post-type' ),
+				'name'        => __( 'REST API base slug', 'mb-custom-post-type' ),
+				'id'          => $args_prefix . 'rest_base',
+				'type'        => 'text',
+				'placeholder' => __( 'Slug to use in REST API URLs', 'mb-custom-post-type' ),
+				'desc'        => __( 'Leave empty to use the post type slug.', 'mb-custom-post-type' ),
 			),
-			array(
-				'name' => __( 'Menu position', 'mb-custom-post-type' ),
-				'id'   => $args_prefix . 'menu_position',
-				'type' => 'number',
+			'menu_position' => array(
+				'name'    => __( 'Menu position after', 'mb-custom-post-type' ),
+				'id'      => $args_prefix . 'menu_position',
+				'type'    => 'select_advanced',
+				'options' => array(),
 			),
 			array(
 				'name'    => __( 'Menu icon', 'mb-custom-post-type' ),
 				'id'      => $args_prefix . 'menu_icon',
 				'type'    => 'radio',
-				'options' => mb_cpt_get_dashicons(),
+				'options' => $menu_icon_options,
 			),
 			array(
 				'name'    => __( 'Capability type', 'mb-custom-post-type' ),
 				'id'      => $args_prefix . 'capability_type',
-				'type'    => 'select',
+				'type'    => 'radio',
+				'inline'  => true,
 				'options' => array(
-					'post' => __( 'Post', 'mb-custom-post-type' ),
-					'page' => __( 'Page', 'mb-custom-post-type' ),
+					'post'   => __( 'Post', 'mb-custom-post-type' ),
+					'page'   => __( 'Page', 'mb-custom-post-type' ),
+					'custom' => __( 'Custom', 'mb-custom-post-type' ),
 				),
 				'std'     => 'post',
+				'desc'    => __( 'The post type to use for checking read, edit, and delete capabilities.', 'mb-custom-post-type' ),
 			),
 			array(
 				'name' => __( 'Hierarchical?', 'mb-custom-post-type' ),
 				'id'   => $args_prefix . 'hierarchical',
 				'type' => 'checkbox',
-				'desc' => __( 'Whether the post type is hierarchical. Allows Parent to be specified.', 'mb-custom-post-type' ),
+				'desc' => __( 'Whether the post type is hierarchical.', 'mb-custom-post-type' ),
 			),
 			array(
 				'name' => __( 'Has archive?', 'mb-custom-post-type' ),
 				'id'   => $args_prefix . 'has_archive',
 				'type' => 'checkbox',
 				'std'  => 1,
-				'desc' => __( 'Enables post type archives. Will use <code>$post_type</code> as archive slug by default.', 'mb-custom-post-type' ),
+				'desc' => __( 'Enables post type archives.', 'mb-custom-post-type' ),
+			),
+			array(
+				'name' => __( 'Custom archive slug', 'mb-custom-post-type' ),
+				'id'   => $args_prefix . 'archive_slug',
+				'type' => 'text',
+				'desc' => __( 'Default is the post type slug.', 'mb-custom-post-type' ),
 			),
 			array(
 				'name' => __( 'Query var', 'mb-custom-post-type' ),
 				'id'   => $args_prefix . 'query_var',
 				'type' => 'checkbox',
 				'std'  => 1,
-				'desc' => __( 'False to prevent queries, or string value of the query var to use for this post type.', 'mb-custom-post-type' ),
+				'desc' => __( 'Enables request the post via URL <code>example.com/?post_type=slug</code>', 'mb-custom-post-type' ),
 			),
 			array(
 				'name' => __( 'Can export?', 'mb-custom-post-type' ),
 				'id'   => $args_prefix . 'can_export',
 				'type' => 'checkbox',
 				'std'  => 1,
-				'desc' => __( 'Can this post type be exported.', 'mb-custom-post-type' ),
+				'desc' => __( 'Can this post type be exported?', 'mb-custom-post-type' ),
 			),
 			array(
 				'name' => __( 'Rewrite', 'mb-custom-post-type' ),
 				'type' => 'heading',
 			),
 			array(
-				'name' => __( 'Rewrite slug', 'mb-custom-post-type' ),
+				'name' => __( 'Custom rewrite slug', 'mb-custom-post-type' ),
 				'id'   => $args_prefix . 'rewrite_slug',
 				'type' => 'text',
-				'desc' => __( 'Leave empty to use post type as rewrite slug.', 'mb-custom-post-type' ),
+				'desc' => __( 'Leave empty to use the post type slug.', 'mb-custom-post-type' ),
 			),
 			array(
 				'name' => __( 'No prepended permalink structure?', 'mb-custom-post-type' ),
@@ -300,6 +326,8 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 				'desc' => __( 'Do not prepend the permalink structure with the front base.', 'mb-custom-post-type' ),
 			),
 		);
+
+		$advanced_fields = apply_filters( 'mbcpt_advanced_fields', $advanced_fields, $label_prefix, $args_prefix );
 
 		$code_fields = array(
 			array(
@@ -314,29 +342,22 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 				'type' => 'text',
 				'std'  => 'text-domain',
 			),
-			array(
-				'name' => __( 'Code', 'mb-custom-post-type' ),
-				'id'   => 'code',
-				'type' => 'custom-html',
-				'callback' => array( $this, 'generated_code_html' ),
-			),
 		);
+		if ( isset( $_GET['post'] ) ) {
+			$code_fields[] = array(
+				'name'     => __( 'Code', 'mb-custom-post-type' ),
+				'id'       => 'code',
+				'type'     => 'custom-html',
+				'callback' => array( $this, 'generated_code_html' ),
+			);
+		}
 
 		// Basic settings.
 		$meta_boxes[] = array(
-			'id'         => 'basic-settings',
+			'id'         => 'mb-cpt-basic-settings',
 			'title'      => __( 'Basic Settings', 'mb-custom-post-type' ),
-			'pages'      => array( 'mb-post-type' ),
-			'fields'     => array_merge(
-				$basic_fields,
-				array(
-					array(
-						'id'   => 'btn-toggle-advanced',
-						'type' => 'button',
-						'std'  => __( 'Advanced', 'mb-custom-post-type' ),
-					),
-				)
-			),
+			'post_types' => array( 'mb-post-type' ),
+			'fields'     => $basic_fields,
 			'validation' => array(
 				'rules'    => array(
 					$label_prefix . 'name'          => array(
@@ -363,30 +384,51 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 			),
 		);
 
+		$buttons = '<button type="button" class="button" id="mb-cpt-toggle-settings">' . esc_html__( 'Advanced Settings', 'mb-custom-post-type' ) . '</button>';
+		$buttons .= ' <button type="button" class="button" id="mb-cpt-toggle-labels">' . esc_html__( 'Labels Settings', 'mb-custom-post-type' ) . '</button>';
+		$buttons .= ' <button type="button" class="button" id="mb-cpt-toggle-code">' . esc_html__( 'Get PHP Code', 'mb-custom-post-type' ) . '</button>';
+
+		if ( function_exists( 'mb_builder_load' ) ) {
+			$buttons .= ' <a class="button" href="' . esc_url( admin_url( 'edit.php?post_type=meta-box' ) ) . '" target="_blank">' . esc_html__( 'Add Custom Fields', 'mb-custom-post-type' ) . '</a>';
+		}
+
+		$meta_boxes[] = array(
+			'id'         => 'mb-cpt-buttons',
+			'title'      => ' ',
+			'post_types' => array( 'mb-post-type' ),
+			'style'      => 'seamless',
+			'fields'     => array(
+				array(
+					'type' => 'custom_html',
+					'std'  => $buttons,
+				),
+			),
+		);
+
 		// Labels settings.
 		$meta_boxes[] = array(
-			'id'     => 'label-settings',
-			'title'  => __( 'Labels Settings', 'mb-custom-post-type' ),
-			'pages'  => array( 'mb-post-type' ),
-			'fields' => $labels_fields,
+			'id'         => 'mb-cpt-label-settings',
+			'title'      => __( 'Labels Settings', 'mb-custom-post-type' ),
+			'post_types' => array( 'mb-post-type' ),
+			'fields'     => $labels_fields,
 		);
 
 		// Advanced settings.
 		$meta_boxes[] = array(
-			'id'     => 'advanced-settings',
-			'title'  => __( 'Advanced Settings', 'mb-custom-post-type' ),
-			'pages'  => array( 'mb-post-type' ),
-			'fields' => $advanced_fields,
+			'id'         => 'mb-cpt-advanced-settings',
+			'title'      => __( 'Advanced Settings', 'mb-custom-post-type' ),
+			'post_types' => array( 'mb-post-type' ),
+			'fields'     => $advanced_fields,
 		);
 
 		// Supports.
 		$meta_boxes[] = array(
-			'id'       => 'supports',
-			'title'    => __( 'Supports', 'mb-custom-post-type' ),
-			'pages'    => array( 'mb-post-type' ),
-			'priority' => 'low',
-			'context'  => 'side',
-			'fields'   => array(
+			'id'         => 'mb-cpt-supports',
+			'title'      => __( 'Supports', 'mb-custom-post-type' ),
+			'post_types' => array( 'mb-post-type' ),
+			'priority'   => 'low',
+			'context'    => 'side',
+			'fields'     => array(
 				array(
 					'id'      => $args_prefix . 'supports',
 					'type'    => 'checkbox_list',
@@ -409,12 +451,12 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 
 		// Default taxonomies.
 		$meta_boxes[] = array(
-			'id'       => 'taxonomies',
-			'title'    => __( 'Default Taxonomies', 'mb-custom-post-type' ),
-			'pages'    => array( 'mb-post-type' ),
-			'priority' => 'low',
-			'context'  => 'side',
-			'fields'   => array(
+			'id'         => 'mb-cpt-taxonomies',
+			'title'      => __( 'Default Taxonomies', 'mb-custom-post-type' ),
+			'post_types' => array( 'mb-post-type' ),
+			'priority'   => 'low',
+			'context'    => 'side',
+			'fields'     => array(
 				array(
 					'id'      => $args_prefix . 'taxonomies',
 					'type'    => 'checkbox_list',
@@ -422,22 +464,24 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 						'category' => __( 'Category', 'mb-custom-post-type' ),
 						'post_tag' => __( 'Tag', 'mb-custom-post-type' ),
 					),
-					// translators: %s: Link to edit taxonomies page.
-					'desc'    => sprintf( __( 'Add default taxonomies to post type. For custom taxonomies, please <a href="%s" target="_blank">click here</a>.', 'mb-custom-post-type' ), admin_url( 'edit.php?post_type=mb-taxonomy' ) ),
+				),
+				array(
+					'type'    => 'custom_html',
+					'std'    => '<a href="' . esc_url( admin_url( 'edit.php?post_type=mb-taxonomy' ) ) . '" class="button" target="_blank">' . esc_html__( 'Add custom taxonomies', 'mb-custom-post-type' ) . '</a>',
 				),
 			),
 		);
 
 		$meta_boxes[] = array(
-			'id'         => 'generated-code',
-			'title'      => __( 'Generated code', 'mb-custom-post-type' ),
+			'id'         => 'mb-cpt-generate-code',
+			'title'      => __( 'Generate Code', 'mb-custom-post-type' ),
 			'post_types' => array( 'mb-post-type' ),
 			'fields'     => $code_fields,
 		);
 
 		$fields = array_merge( $basic_fields, $labels_fields, $advanced_fields );
 
-		// Add ng-model attribute to all fields.
+		// Add AngularJS attributes to fields.
 		foreach ( $fields as $field ) {
 			if ( ! empty( $field['id'] ) ) {
 				add_filter( 'rwmb_' . $field['id'] . '_html', array( $this, 'modify_field_html' ), 10, 3 );
@@ -457,38 +501,60 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 	 * @return string
 	 */
 	public function modify_field_html( $html, $field, $meta ) {
+		if ( 'mb-post-type' !== get_current_screen()->id ) {
+			return $html;
+		}
+
+		// Fix for escaping single quote for AngularJS.
+		$meta = str_replace( '&#039;', "\\'", $meta );
+
 		// Labels.
 		if ( 0 === strpos( $field['id'], 'label_' ) ) {
 			$model = substr( $field['id'], 6 );
-			$html  = str_replace( '>', sprintf(
-				' ng-model="labels.%s" ng-init="labels.%s=\'%s\'"%s>',
-				$model,
-				$model,
-				$meta,
-				in_array( $model, array( 'name', 'singular_name' ), true ) ? ' ng-change="updateLabels()"' : ''
-			), $html );
-			$html  = preg_replace( '/value="(.*?)"/', 'value="{{labels.' . $model . '}}"', $html );
-		} elseif ( 'args_post_type' === $field['id'] ) {
-			$html = str_replace( '>', sprintf(
-				' ng-model="post_type" ng-init="post_type=\'%s\'">',
-				$meta
-			), $html );
+			$html  = str_replace(
+				'>',
+				sprintf(
+					' ng-model="labels.%s" ng-init="labels.%s=\'%s\'"%s>',
+					esc_attr( $model ),
+					esc_attr( $model ),
+					$meta,
+					in_array( $model, array( 'name', 'singular_name' ), true ) ? ' ng-change="updateLabels()"' : ''
+				),
+				$html
+			);
+			$html  = preg_replace( '/value="(.*?)"/', 'value="{{labels.' . esc_attr( $model ) . '}}"', $html );
+			return $html;
+		}
+
+		if ( 'args_post_type' === $field['id'] ) {
+			$html = str_replace(
+				'>',
+				sprintf(
+					' ng-model="post_type" ng-init="post_type=\'%s\'">',
+					$meta
+				),
+				$html
+			);
 			$html = preg_replace( '/value="(.*?)"/', 'value="{{post_type}}"', $html );
-		} elseif ( 'args_menu_icon' === $field['id'] ) {
+			return $html;
+		}
+
+		if ( 'args_menu_icon' === $field['id'] ) {
 			$html  = '';
 			$icons = mb_cpt_get_dashicons();
 			foreach ( $icons as $icon ) {
-				$html .= sprintf( '
-					<label class="icon-single%s">
+				$html .= sprintf(
+					'<label class="icon-single%s">
 						<i class="wp-menu-image dashicons-before %s"></i>
 						<input type="radio" name="args_menu_icon" value="%s" class="hidden"%s>
 					</label>',
 					$icon === $meta ? ' active' : '',
-					$icon,
-					$icon,
+					esc_attr( $icon ),
+					esc_attr( $icon ),
 					checked( $icon, $meta, false )
 				);
 			}
+			return $html;
 		}
 
 		return $html;
@@ -500,11 +566,15 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 	 * @return string
 	 */
 	public function generated_code_html() {
-		$post_id = get_the_ID();
+		$post_id               = get_the_ID();
 		list( $labels, $args ) = $this->register->get_post_type_data( $post_id );
+		if ( ! $labels ) {
+			return '';
+		}
+
 		$post_type_data = $this->register->set_up_post_type( $labels, $args );
 
-		$encode_data = array(
+		$encode_data    = array(
 			'function_name'  => get_post_meta( $post_id, 'function_name', true ),
 			'text_domain'    => get_post_meta( $post_id, 'text_domain', true ),
 			'post_type'      => $args['post_type'],
@@ -512,6 +582,76 @@ class MB_CPT_Post_Type_Edit extends MB_CPT_Base_Edit {
 		);
 		$encoded_string = $this->encoder->encode( $encode_data );
 
-		return '<div id="generated-code"><pre><code class="php">' . esc_textarea( $encoded_string ) . '</code></pre></div>';
+		$output  = '
+			<div id="generated-code">
+				<a href="javascript:void(0);" class="mb-button--copy">
+					<svg class="mb-icon--copy" aria-hidden="true" role="img"><use href="#mb-icon-copy" xlink:href="#icon-copy"></use></svg>
+					' . esc_html__( 'Copy', 'mb-custom-post-type' ) . '
+				</a>
+				<pre><code class="php">' . esc_textarea( $encoded_string ) . '</code></pre>
+			</div>';
+		$output .= '
+			<svg style="display: none;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<symbol id="mb-icon-copy" viewBox="0 0 1024 896">
+					<path d="M128 768h256v64H128v-64z m320-384H128v64h320v-64z m128 192V448L384 640l192 192V704h320V576H576z m-288-64H128v64h160v-64zM128 704h160v-64H128v64z m576 64h64v128c-1 18-7 33-19 45s-27 18-45 19H64c-35 0-64-29-64-64V192c0-35 29-64 64-64h192C256 57 313 0 384 0s128 57 128 128h192c35 0 64 29 64 64v320h-64V320H64v576h640V768zM128 256h512c0-35-29-64-64-64h-64c-35 0-64-29-64-64s-29-64-64-64-64 29-64 64-29 64-64 64h-64c-35 0-64 29-64 64z" />
+				</symbol>
+			</svg>';
+		return $output;
+	}
+
+	/**
+	 * Change select options.
+	 */
+	public function change_select_options() {
+		$meta_box = rwmb_get_registry( 'meta_box' )->get( 'mb-cpt-advanced-settings' );
+		$meta_box->meta_box['fields']['menu_position']['options'] = $this->get_menu_positions();
+		$meta_box->meta_box['fields']['show_in_menu']['options']  = $this->get_menu_options();
+	}
+
+	/**
+	 * Get WordPress menu positions
+	 *
+	 * @return array
+	 */
+	protected function get_menu_positions() {
+		global $menu;
+		$positions = array();
+		foreach ( $menu as $position => $params ) {
+			if ( ! empty( $params[0] ) ) {
+				$positions[ $position ] = $this->strip_span( $params[0] );
+			}
+		}
+		return $positions;
+	}
+
+	/**
+	 * Get WordPress menu options
+	 *
+	 * @return array
+	 */
+	protected function get_menu_options() {
+		global $menu;
+		$options = array(
+			'1' => esc_html__( 'Show as top-level menu', 'mb-custom-post-type' ),
+		);
+		foreach ( $menu as $position => $params ) {
+			if ( ! empty( $params[0] ) && ! empty( $params[2] ) ) {
+				// Translators: %s is the main menu label.
+				$options[ $params[2] ] = sprintf( __( 'Show as sub-menu of %s', 'mb-custom-post-type' ), $this->strip_span( $params[0] ) );
+			}
+		}
+		$options['0'] = esc_html__( 'Do not show in the admin menu', 'mb-custom-post-type' );
+		return $options;
+	}
+
+	/**
+	 * Remove <span> tag (counter) with their content.
+	 *
+	 * @param string $html HTML content.
+	 *
+	 * @return string
+	 */
+	protected function strip_span( $html ) {
+		return preg_replace( '@<span .*>.*</span>@si', '', $html );
 	}
 }

@@ -1,19 +1,25 @@
 === Plugin Name ===
-Contributors: isoftware
+Contributors: devworks, ikappas, akkis, isoftware
 Tags: forms, gravity, gravityforms, html5, wpml, jquery.placeholders.js, placeholders
 Requires at least: 3.5
-Tested up to: 4.1
-Stable tag: 2.7.4
+Tested up to: 4.4.2
+Stable tag: 2.8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+** End of Support **
 
 This plugin adds native HTML5 placeholder support to Gravity Forms' fields with javascript fallback.
 
 == Description ==
 
-**Important Notice:** HTML5 Placeholders are built-in Gravity Forms v.1.9. This plugin is **NOT** compatible with GF 1.9. We are working on a solution to ease the transition so that you can port your forms created prior to ver. 1.9 without having to re edit your forms.
+**Important Notice:**
 
-**If you need to keep this plugin's functionality please do not upgrade to Gravity Forms ver. 1.9 yet.**
+**Gravity Forms v.1.9 introduced HTML5 Placeholders and field label visiblity features. As of v.1.9.1 field label visibility feature is hidden by default and can be enabled using:**
+
+**add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' ); **
+
+This plugin is **NOT** compatible and will not be supported with Gravity Forms 1.9 and above.
 
 The plugin extends the default Gravity Forms form editor to support native HTML5 placeholders and label management.
 
@@ -50,10 +56,10 @@ It is fully compatible with WPML for placeholder and label translation using the
 
 
 = Requirements =
-This plugin requires prior installation and activation of [Gravity Forms](http://www.gravityforms.com/) plugin by [Rocketgenius](http://www.rocketgenius.com/) ver. 1.7 and above.
+This plugin requires prior installation and activation of [Gravity Forms](http://www.gravityforms.com/) plugin by [Rocketgenius](http://www.rocketgenius.com/) ver. 1.7 to 1.8.22.
 
 = Tested =
-Up to Gravity Forms plugin ver. 1.8.22. **Gravity Forms ver. 1.9.x is not yet supported.**
+Up to Gravity Forms plugin ver. 1.8.22. **Gravity Forms ver. 1.9.x and above will not be supported.**
 
 == Installation ==
 
@@ -71,6 +77,9 @@ Up to Gravity Forms plugin ver. 1.8.22. **Gravity Forms ver. 1.9.x is not yet su
 4. Editing an International Address Field
 
 == Changelog ==
+
+= 2.8 =
+* End of support
 
 = 2.7.4 =
 * Added warning in plugin manager if WordPress is not supported

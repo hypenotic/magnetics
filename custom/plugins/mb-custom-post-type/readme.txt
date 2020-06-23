@@ -1,10 +1,10 @@
 === MB Custom Post Type ===
-Contributors: metabox, rilwis, duc88b, fitwp
-Donate link: http://www.deluxeblogtips.com/donate
+Contributors: metabox, rilwis, duc88b, fitwp, truongwp
+Donate link: https://metabox.io/pricing/
 Tags: cms, custom, custom post types, custom post type, cpt, post, post types, post type, types
 Requires at least: 4.3
-Tested up to: 4.7.5
-Stable tag: 1.4
+Tested up to: 5.4
+Stable tag: 1.9.4
 License: GPLv2 or later
 
 Create and manage custom post types and custom taxonomies with an easy-to-use interface in WordPress.
@@ -21,7 +21,7 @@ Using **MB Custom Post Type**, you will be able to craft the WordPress admin and
 
 **Video demo**:
 
-https://www.youtube.com/watch?v=KG_8MF9xw6E&rel=0
+https://www.youtube.com/watch?v=9c4w5zdeTJI
 
 ### Features
 
@@ -61,51 +61,111 @@ Install **MB Custom Post Type** extension
 
 == Changelog ==
 
+= 1.9.3 - 2020-04-16 =
+- Fix notice: Undefined index `meta_box_cb`
+- Fix warning for `supports` parameter in WordPress 5.3
+- Add filter for advanced settings manipulation
+- Improve toggle buttons
+
+= 1.9.2 - 2019-11-28 =
+- Fix warning for 'supports' parameter in WordPress 5.3.
+
+= 1.9.1 - 2019-09-06 =
+- Fix menu icon not working
+
+= 1.9.0 - 2019-08-29 =
+- Add support for custom archive slug
+- Fix style in dashboard
+- Do not show upgrade message for premium users
+
+= 1.8.6 - 2019-07-17 =
+- Hide the meta box for taxonomy if set `meta_box_cb` = false in Gutenberg.
+
+= 1.8.5 - 2019-06-27 =
+- Fix quotes in plural and singular names not working.
+
+= 1.8.4 - 2019-06-01 =
+- Update the page layout to make it more friendly.
+- Enabled REST API by default for taxonomies to make they work with Gutenberg.
+- Make the plugin safe to include in Meta Box AIO.
+
+= 1.8.3 - 2019-03-21 =
+- Set `'map_meta_cap' => true` for custom capabilities
+
+= 1.8.2 - 2019-03-06 =
+- Enabled REST API by default for post types to make they work with Gutenberg.
+- Added "custom" for capability type, allowing developers to set custom capabilities.
+- Auto truncated post type slug to 20 characters.
+
+= 1.8.1 - 2018-12-10 =
+- Fix typos and reformat code.
+
+= 1.8.0 - 2018-06-08 =
+
+- Used the shared menu from Meta Box to keep the admin menu clean.
+- Added tabs to the About page
+- Remove redirection after activation.
+
+= 1.7.0 - 2018-06-02 =
+- Added support for move the custom post type menu to a sub-menu of an existing top-level menu.
+- Updated some text strings for better description
+- Fixed button "Advanced" not working
+- Fixed REST API base not a text input for taxonomy
+
+= 1.6.0 - 2018-05-28 =
+- Changed menu position from a text field to a select field, so users just select the position they want without knowing the position number.
+- Hide the ads for premium users. You need to enter correct license key to hide it.
+
+= 1.5.0 =
+- Added support for rewrite options for taxonomies.
+- Added "Copy to Clipboard" for generated code.
+
+= 1.4.3 =
+- Fixed undefined index when registering a new taxonomy.
+
+= 1.4.2 =
+- Fixed error in generated code for taxonomy.
+- Fixed translation and logo URL.
+
+= 1.4.1 =
+- Added "About" page to help new users use the plugin.
+
 = 1.4 =
-- Add export to PHP code, so you can just copy and paste into your theme or plugin.
-- Add option to enable/disable "Custom Fields" meta box.
-- Fix "menu_position" doesn't work.
+- Added export to PHP code, so you can just copy and paste into your theme or plugin.
+- Added option to enable/disable "Custom Fields" meta box.
+- Fixed "menu_position" doesn't work.
 
 = 1.3.1 =
-- Improvement: Add option to hide taxonomy meta box in the edit page.
+- Added option to hide taxonomy meta box in the edit page.
 
 = 1.3 =
-- Improvement: Add support for showing post types/taxonomies in REST API
+- Added support for showing post types/taxonomies in REST API
 
 = 1.2.5 =
-
-- Fix: Custom post types not shown when edit custom taxonomy.
+- Custom post types not shown when edit custom taxonomy.
 
 = 1.2.4 =
-
-- Fix: Remove undefined index notice.
+- Removed undefined index notice.
 
 = 1.2.3 =
-
-- Improvement: Add new options for custom rewrite slug and with_front.
+- Added new options for custom rewrite slug and with_front.
 
 = 1.2.2 =
-
-- Fix: Custom taxonomies now can be added to 'post', 'page', 'attachment'
+- Custom taxonomies now can be added to 'post', 'page', 'attachment'
 
 = 1.2.1 =
-
-- Fix: unable to assign only category or tags to custom post type.
+- Unable to assign only category or tags to custom post type.
 
 = 1.2.0 =
-
-- Improvement: allow custom post types to have default taxonomies: category and tags.
+- Allow custom post types to have default taxonomies: category and tags.
 
 = 1.1.0 =
-
-- Improvement: integrates with [MB Custom Taxonomy](https://wordpress.org/plugins/mb-custom-taxonomy/) to create and manage custom taxonomies with similar interface.
+- Integrates with [MB Custom Taxonomy](https://wordpress.org/plugins/mb-custom-taxonomy/) to create and manage custom taxonomies with similar interface.
 
 = 1.0.2 =
+- Added custom code to load plugin dependency for smaller footprint.
 
-- Improvement: user custom code to load plugin dependency for smaller footprint
-
-= 1.0.0 =
-
-- First version
+= 1.0 =
+- First version.
 
 == Upgrade Notice ==

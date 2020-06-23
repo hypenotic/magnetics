@@ -1,42 +1,25 @@
 <?php
-/*
-Plugin Name: Gravity Forms HTML5 Placeholders
-Plugin URI: http://www.isoftware.gr/wordpress/plugins/gravityforms-html5-placeholders
-Description: Adds native HTML5 placeholder support to Gravity Forms' fields with javascript fallback. Javascript & jQuery are required.
-Version: 2.7.4
-Author: iSoftware
-Author URI: http://www.isoftware.gr
-
-------------------------------------------------------------------------
-Copyright 2014 iSoftware Greece.
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software
-Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
-*/
+/**
+ * Plugin Name: Gravity Forms HTML5 Placeholders
+ * Plugin URI: https://gitlab.devworks.gr/plugins/gravityforms-html5-placeholders
+ * Description: Adds native HTML5 placeholder support to Gravity Forms' fields with javascript fallback. Javascript & jQuery are required.
+ * Version: 2.8.1
+ * Author: DevWorks
+ * Author URI: http://www.devworks.gr
+ */
 
 if (!class_exists('GFHtml5Placeholders')):
 
 class GFHtml5Placeholders
 {
-    protected $_version = "2.7.4";
-    protected $_min_gravityforms_version = "1.7";
-    protected $_max_gravityforms_version = "1.9";
+    protected $_version = '2.8.1';
+    protected $_min_gravityforms_version = '1.7';
+    protected $_max_gravityforms_version = '1.9';
     protected $_min_wordpress_version    = '3.5';
-    protected $_slug = "html5_placeholders";
+    protected $_slug = 'html5_placeholders';
     protected $_full_path = __FILE__;
-    protected $_title = "Gravity Forms HTML5 Placeholders";
-    protected $_short_title = "HTML5 Placeholders";
+    protected $_title = 'Gravity Forms HTML5 Placeholders';
+    protected $_short_title = 'HTML5 Placeholders';
     protected $_debug = false;
 
     // define strings
@@ -224,7 +207,6 @@ class GFHtml5Placeholders
         } else {
             $this->init_frontend();
         }
-
     }
 
     /**
