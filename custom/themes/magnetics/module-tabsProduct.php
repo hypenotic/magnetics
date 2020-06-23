@@ -44,12 +44,11 @@
             </li>
             <?php } ?>
 
-            <?php if($metaIntegrations !== '')  { 
-            	// print_r($metaIntegrations);
-            	?>
-             <li>
+            <?php if(!$metaIntegrations[0] == 0)  { ?>
+				<li>
                 <a href="#integrations"><span>Integrations</span></a>
             </li>
+				
             <?php } ?>
 
             <li>
