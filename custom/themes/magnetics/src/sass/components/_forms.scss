@@ -172,9 +172,11 @@ body.rma-form {
     margin-left: 0px !important;
 }
 
+
+
 .gform_wrapper .left_label .gfield_label {
     float: left;
-    margin: .75em 15px 0 0;
+    //margin: .75em 15px 0 0;
     @include media($screenLarge) {
         width: 29% !important;
     }

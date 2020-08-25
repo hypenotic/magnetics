@@ -12,7 +12,6 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'),
     del = require('del');
 browsersync = require('browser-sync').create();
-
 sass.compiler = require('node-sass');
 
 // Browsersync
@@ -24,9 +23,18 @@ gulp.task('browser-sync', function () {
 
 // Styles
 
+//gulp.task('sass', function () {
+//    return gulp.src('./sass/**/*.scss')
+//        .pipe(sass('src/sass/style.scss', { outputStyle: 'compressed' }).on('error', sass.logError))
+//       .pipe(autoprefixer('last 2 version'))
+//      .pipe(gulp.dest('dist'))
+//      .pipe(cssnano())
+//      .pipe(browsersync.reload({ stream: true }));
+//});
+
 gulp.task('sass', function () {
-    return gulp.src('./sass/**/*.scss')
-        .pipe(sass('src/sass/style.scss', { outputStyle: 'compressed' }).on('error', sass.logError))
+    return gulp.src('src/sass/style.scss')
+        .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(autoprefixer('last 2 version'))
         .pipe(gulp.dest('dist'))
         .pipe(cssnano())

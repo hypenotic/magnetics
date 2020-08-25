@@ -1,5 +1,5 @@
 /*!
-Theme Name: Magnetics
+Theme Name: Magnetics lion
 Theme URI: http://wordpress.org/
 Description: The 2014 default theme for WordPress.
 Author: Hypenotic
@@ -8,7 +8,7 @@ Version: 1.0
 */
 
 // Library
-@import "../components/normalize-scss/normalize";
+//@import "../components/normalize-scss/normalize";
 @import "../components/bourbon/app/assets/stylesheets/bourbon";
 
 @import "base/base";
@@ -62,7 +62,7 @@ Version: 1.0
 @import "components/nav";
 @import "components/slider";
 @import "components/buttons";
-@import "components/forms";
+//@import "components/forms";
 @import "components/smoothZoom";
 @import "components/modal";
 
