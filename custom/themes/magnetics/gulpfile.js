@@ -36,7 +36,7 @@ gulp.task('sass', function () {
     return gulp.src('src/sass/style.scss')
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(autoprefixer('last 2 version'))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest(''))
         .pipe(cssnano())
         .pipe(browsersync.reload({ stream: true }));
 });
