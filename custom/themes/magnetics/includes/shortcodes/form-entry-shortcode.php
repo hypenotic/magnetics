@@ -4,7 +4,8 @@ function gravity_form_entry_number(){
 
 	$rmaNumber = $_GET["rmaNumber"];
 	$rmaNewNum = intval($rmaNumber);
-	$total = 1000+$rmaNewNum;
+	//$total = 1000+$rmaNewNum; WHY? Why? why?
+	$total = $rmaNewNum;
 	$stringNum = strval($total);
 	return $stringNum;
 }
