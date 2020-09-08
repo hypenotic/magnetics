@@ -6,6 +6,9 @@ button[data-action="activateModal"] {
     left: 0;
     z-index: 10;
     background: none;
+    cursor: zoom-in;
+    cursor: -moz-zoom-in;
+    cursor: -webkit-zoom-in;
     & + figure.modal {
         background: rgba(0, 0, 0, 0.8);
         margin: 0;
