@@ -523,11 +523,11 @@ body.rma-form article {
     }
 
     @include media($bp-large) {
-        >table.tg:first-child {
+        /*>table.tg:first-child {
             width: 45% !important;
             display: inline-block;
             vertical-align: top;
-        }
+        }*/
         >div.spec-tables-left {
             overflow: visible;
             padding-left: 30px;
