@@ -39,7 +39,7 @@ $path = $_SERVER['HTTP_REFERER'];
 print_r($path);
 ?>
 
-<?php if($path == 'https://hypelabs.ca/magnetics') { ?>
+<?php if($path == 'https://hypelabs.ca/magnetics/') { ?>
     <?php print_r($path); ?>
     <!-- Use Pagebuilder DEV project -->
 
