@@ -35,7 +35,8 @@
 <?php wp_footer();?>
 
 <?php 
-$path = $_SERVER['HTTP_REFERER'] . '/magnetics'; 
+$path = $_SERVER['HTTP_REFERER']; 
+print_r($path);
 ?>
 
 <?php if($path == 'https://hypelabs.ca' . '/magnetics') { ?>
