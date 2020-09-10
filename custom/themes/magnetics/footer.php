@@ -35,7 +35,7 @@
 <?php wp_footer();?>
 
 <?php 
-$path = $_SERVER['HTTP_REFERER']; 
+$path = $_SERVER['HTTP_HOST']; 
 print_r($path);
 ?>
 
