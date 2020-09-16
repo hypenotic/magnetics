@@ -62,7 +62,7 @@
 <?php if(in_category('products') || in_category('product-integrations')) { ?>
 
   <!-- Module: Timeline -->
-  <?php if (!is_single(243)) { ?>
+  <?php if (!is_single(array(243,1462,1606,1650 ))) { ?>
     <?php get_template_part( 'module', 'timeline' ); ?>
   <?php } ?>
 
@@ -73,7 +73,7 @@
   <?php get_template_part( 'module', 'integrationPartners' ); ?>
 
   <!-- AUV -->
-  <?php if (is_single(243)) { ?>
+  <?php if (is_single(array(243,1462,1606,1650 ))) { ?>
     <section class="auv-container">
       <div class="auv-container__wrapper"><?php the_content(); ?>  </div>
     </section>
