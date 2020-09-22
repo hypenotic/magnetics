@@ -33,18 +33,6 @@
     </footer>
 </section>
 <?php wp_footer();?>
-
-    <!-- Use Pagebuilder DEV project -->
-
-    <script type="text/javascript">
-        (function (d, t) {
-        var pp = d.createElement(t), s = d.getElementsByTagName(t)[0];
-        pp.src = '//app.pageproofer.com/embed/ee5ee5bc-4068-5403-9129-63d809318e80';
-        pp.type = 'text/javascript';
-        pp.async = true;
-        s.parentNode.insertBefore(pp, s);
-        })(document, 'script');
-    </script>
 						
 </body>
 </html>
