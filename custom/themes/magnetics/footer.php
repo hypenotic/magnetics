@@ -33,6 +33,16 @@
     </footer>
 </section>
 <?php wp_footer();?>
+
+<script>
+    Userback = window.Userback || {};
+    Userback.access_token = '9876|19384|3DzrkK1zYxu3vg5CZ25z5YrvNGSYG0sJ8O1lNERdn4pdNDhzW6';
+    (function(id) {
+        var s = document.createElement('script');
+        s.async = 1;s.src = 'https://static.userback.io/widget/v1.js';
+        var parent_node = document.head || document.body;parent_node.appendChild(s);
+    })('userback-sdk');
+</script>
 						
 </body>
 </html>
