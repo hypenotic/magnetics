@@ -11,7 +11,7 @@ Template Name: 404
 
  	<div class="background">
  		<div id="fish"></div>
-	 	<video autoplay loop>
+	 	<video autoplay loop muted>
 			<source src="<?php echo get_bloginfo('template_url').'/videos/shutterstock_v3711827.mp4' ?>" type="video/mp4">
 		</video>
 	</div>

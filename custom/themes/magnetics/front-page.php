@@ -7,7 +7,7 @@
 <!-- <img class="background-center" src="<?php //echo get_bloginfo('template_url') ?>/dist/images/home-all.png"/> -->
     <!-- <img src="<?php //echo get_bloginfo('template_url') ?>/dist/images/seaquest-array.png" class="seaquest-home"> -->
     <div class="overlay"></div>
-    	<video autoplay loop>
+    	<video controls loop muted autoplay>
             <source src="<?php echo get_bloginfo('template_url').'/videos/shutterstock_v3711827.mp4' ?>" type="video/mp4">
         </video>
     </div>
