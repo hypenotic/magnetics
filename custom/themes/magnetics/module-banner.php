@@ -46,12 +46,43 @@
  		});
  	</script>
 
+	 <style>
+
+.vimeo-wrapper {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   pointer-events: none;
+   overflow: hidden;
+}
+.vimeo-wrapper iframe {
+   width: 100vw;
+   height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+   min-height: 100vh;
+   min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+	 </style>
+
  	<div class="background">
  		<div class="overlay"></div>
-
-	 	<video autoplay loop>
-			<source src="<?php echo get_bloginfo('template_url').'/videos/shutterstock_v3711827.mp4' ?>" type="video/mp4">
-		</video>
+		 <?php if(is_single('1462')) { ?>
+			<div class="vimeo-wrapper">
+				<iframe src="https://player.vimeo.com/video/459125731?background=1&autoplay=1&loop=1&byline=0&title=0"
+						frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>
+				
+			<?php } else { ?>
+				<video autoplay loop muted>
+					<source src="<?php echo get_bloginfo('template_url').'/videos/shutterstock_v3711827.mp4' ?>" type="video/mp4">
+				</video>
+		 <?php } ?>
 
 	</div>
 
