@@ -74,7 +74,7 @@
  		<div class="overlay"></div>
 		 <?php if(is_single('1462')) { ?>
 			<div class="vimeo-wrapper">
-				<iframe src="https://player.vimeo.com/video/459125731?background=1&autoplay=1&loop=1&byline=0&title=0"
+				<iframe src="https://player.vimeo.com/video/489462642?background=1&autoplay=1&loop=1&byline=0&title=0"
 						frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 			</div>
 				
